@@ -15,10 +15,10 @@ usr/X11R6/lib/modules/extensions/libdri.so	x-shared	shared-x-server	shared-objec
 usr/X11R6/lib/modules/extensions/libglx.so	x-shared	shared-x-server	shared-object	n32	721524	9c3483916fa54e3d		920	dynsym+dwarf	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/X11R6/lib/modules/irix/libdrm.so	x-shared	shared-x-server	shared-object	n32	58812	70aaea17301ae2d1		105	dynsym+dwarf	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	x-module	board-x-module	shared-object	n32	31128	0ba17b47a0ec2581		51	dynsym+dwarf	0	0	named-only	AGENTS.md#2-project-binaries-and-evidence	2. Project binaries and evidence
-usr/X11R6/lib/modules/libint10.so	x-shared	shared-x-server	shared-object	n32	374964	3ad380e17d9b1e53		482	dynsym+dwarf	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
+usr/X11R6/lib/modules/libint10.so	x-shared	shared-x-server	shared-object	n32	374964	3ad380e17d9b1e53		482	dynsym+dwarf	0	0	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
 usr/X11R6/lib/modules/libpcidata.so	x-shared	shared-x-server	shared-object	n32	86924	b1cf0b67c5d2beca		1	dynsym	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/X11R6/lib/modules/libscanpci.so	x-shared	shared-x-server	shared-object	n32	157684	521a797343e98636		5	dynsym+dwarf	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
-usr/X11R6/lib/modules/libvbe.so	x-shared	shared-x-server	shared-object	n32	26052	fa7400aa715f8fba		21	dynsym+dwarf	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
+usr/X11R6/lib/modules/libvbe.so	x-shared	shared-x-server	shared-object	n32	26052	fa7400aa715f8fba		21	dynsym+dwarf	0	0	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
 usr/cpu/firmware/ip35prom.img	firmware	board-firmware	data	-	1480360	d74b4b7ef9c11c66		0	strings	0	0	named-only	docs/open-questions.md#host-attachment	Host attachment
 usr/cpu/sysgen/IP35boot/fglrx.o	kernel	board-kernel	object	n64	567504	072451083d188a26		384	symtab+dwarf	0	0	named-only	docs/kernel-attach.md#kernel-attach-path-ip35	Kernel attach path (IP35)
 usr/cpu/sysgen/IP35boot/hubspc.o	kernel-shared	shared-kernel	object	n64	13056	899394978cddc968		13	symtab	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)

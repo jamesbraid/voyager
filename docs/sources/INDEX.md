@@ -26,5 +26,8 @@ The SGI entries were found by title search; their contents have not been read fo
 - Linux kernel, SGI SN2 PCI and crossbar headers as of Linux 2.6.5 (`include/asm-ia64/sn/pci/pciio.h`, `pci/bridge.h`, `pci/pic.h`, `xtalk/xwidget.h`), for the IRIX-derived `pciio_*` constants and the Bridge and PIC register layout: https://git.kernel.org/pub/scm/linux/kernel/git/tglx/history.git (tag v2.6.5)
 - linux-firmware, `radeon/R200_cp.bin`, `radeon/R300_cp.bin` and `radeon/R420_cp.bin` (command-processor microcode images, compared, not copied): https://gitlab.com/kernel-firmware/linux-firmware
 - VESA BIOS Extension (VBE) Core Functions Standard, for function 0x4f02/0x4f03 and mode 0x107 (version and public URL not recorded)
+- Linux kernel, radeon DRM driver, legacy ATI BIOS tables: `drivers/gpu/drm/radeon/radeon_combios.c`, `radeon_bios.c` and `radeon_reg.h`: https://github.com/torvalds/linux
+- Linux kernel, `include/uapi/video/uvesafb.h` (the VESA information block layout): https://github.com/torvalds/linux
+- EDK2, `MdePkg/Include/IndustryStandard/Pci22.h` (PCI expansion ROM header and PCI data structure, quoting the PCI Local Bus Specification 2.2): https://github.com/tianocore/edk2
 - The PCI ID database, vendor 0x1002 entries: https://raw.githubusercontent.com/pciutils/pciids/master/pci.ids
 

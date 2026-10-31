@@ -46772,7 +46772,7 @@ usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403a80	552	fireg
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403cc0	312	firegl_DRMPoll	dwarf+dynsym	617928c126aa		in	undocumented		
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403e00	8	setup	dwarf+funcnames	a7e7ca11a6b8		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x409190	764	_stub	dwarf			in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x4094c0	224	mapPciRom	dwarf+dynsym	de6331582dbf		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x4094c0	224	mapPciRom	dwarf+dynsym	de6331582dbf		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x4095c0	40	int10Setup	dwarf+funcnames	efb8ac2778ed		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409600	316	setup_int	dwarf+dynsym	cf2b31548852		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409740	248	finish_int	dwarf+dynsym	e3cacc28429b		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
@@ -46802,11 +46802,11 @@ usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40aa00	72	Mem_ww	dwarf+
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40aa80	72	Mem_wl	dwarf+dynsym	3c27653aea81		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40ab00	120	pciCfg1in	dwarf+funcnames	071f4dbe3e69		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40ab80	112	pciCfg1out	dwarf+funcnames	1edea0f79f3a		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40ac00	264	bios_checksum	dwarf+dynsym	a73e897df874		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40ac00	264	bios_checksum	dwarf+dynsym	a73e897df874		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40ad40	296	LockLegacyVGA	dwarf+dynsym	ea227d11c5d3		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40ae80	196	UnlockLegacyVGA	dwarf+dynsym	af0fa3644184		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40af80	480	setup_int_vect	dwarf+dynsym	80f271a580cb		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40b180	136	setup_system_bios	dwarf+dynsym	14a467eb9921		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40b180	136	setup_system_bios	dwarf+dynsym	14a467eb9921		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40b240	328	reset_int_vect	dwarf+dynsym	1113e0777a3f		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40b3c0	96	set_return_trap	dwarf+dynsym	493e906e5671		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40b440	280	xf86HandleInt10Options	dwarf+dynsym	e6ef61f8f070		in	undocumented		
@@ -49906,7 +49906,7 @@ usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x92c	48	Mem
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x95c	48	Mem_wl	dwarf+symtab	8122c13d9d09		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x98c	92	pciCfg1in	dwarf+symtab	bb6a8fa2a3bb		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x9e8	72	pciCfg1out	dwarf+symtab	6cf00c77b391		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0xa30	80	bios_checksum	dwarf+symtab	ac30d5992ccd		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0xa30	80	bios_checksum	dwarf+symtab	ac30d5992ccd		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
 usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64		0x0		outb	dwarf+symtab			in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64	.text	0x34	44	outw	dwarf+symtab	4a50624145ff		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64	.text	0x60	60	outl	dwarf+symtab	62e010450610		in	undocumented		
@@ -49914,7 +49914,7 @@ usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64	.text	0x9c	64	in
 usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64	.text	0xdc	96	inw	dwarf+symtab	bf194b44712f		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64	.text	0x13c	120	inl	dwarf+symtab	5aeccbc4de58		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)	board-kernel	n64		0x0		setup_int_vect	dwarf+symtab			in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)	board-kernel	n64	.text	0x1b8	100	setup_system_bios	dwarf+symtab	8b6be552cecb		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)	board-kernel	n64	.text	0x1b8	100	setup_system_bios	dwarf+symtab	8b6be552cecb		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
 usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)	board-kernel	n64	.text	0x21c	296	reset_int_vect	dwarf+symtab	2943d7a18f27		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)	board-kernel	n64	.text	0x344	68	set_return_trap	dwarf+symtab	d7b27e85fa5e		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(junkcode.o)	board-kernel	n64		0x0		pciReadByte	dwarf+symtab			in	undocumented		
@@ -50084,9 +50084,9 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000af70	84	Mem_rl	dynsym	3b55e
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000afd0	96	Mem_wb	dynsym	1b2e54a3d57c		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b030	96	Mem_ww	dynsym	8123f2df1523		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b090	92	Mem_wl	dynsym	8fa70fa2b97a		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b230	128	bios_checksum	dynsym	ed3f8d90a5ea		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b230	128	bios_checksum	dynsym	ed3f8d90a5ea		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b2b0	612	setup_int_vect	dynsym	4b46daaf4e4d		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b520	172	setup_system_bios	dynsym	c47d54c5e6a3		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b520	172	setup_system_bios	dynsym	c47d54c5e6a3		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b5d0	408	reset_int_vect	dynsym	e36005f1921a		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b770	108	set_return_trap	dynsym	d4132778f8fd		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b7e0	68	sigbusHandler	dynsym	51fba2e7997d		in	undocumented		
@@ -50118,7 +50118,7 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000f720	728	pciba_check_device
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fa00	184	path_concat	dynsym	29a3c53bad0a		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fac0	368	pciba_list_devs	dynsym	6196f3bdb38e		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fc30	196	pciba_find_dev	dynsym	0107dc055c2b		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fd00	132	pciba_enable_rom	dynsym	bc1f97e50dc8		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fd00	132	pciba_enable_rom	dynsym	bc1f97e50dc8		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fd90	160	pciba_disable_rom	dynsym	0d60a0a6e1b4		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ffa4	76	x86emu_intr_raise	dynsym	e55f497d1bc3		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fff0	380	X86EMU_exec	dynsym	f0d7633279cd		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
@@ -52916,10 +52916,10 @@ usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x10020ad4	316	dl_output_banner	d
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x10020c1c	4	__istart	dynsym	df3f619804a9		in	undocumented		
 usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x10001270	268	__start	dynsym	e33cfdc38c4b		in	undocumented		
 usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x1000137c	12	_mcount	dynsym	1c53f0b255e3		in	undocumented		
-usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x10002f18	1832	flash_rom	dynsym	089055e236d4		in	undocumented		
+usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x10002f18	1832	flash_rom	dynsym	089055e236d4		in	named-only	docs/open-questions.md#option-rom	Option ROM
 usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x10003640	152	usage	dynsym	2c8005c29bf0		in	undocumented		
 usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x100036d8	676	main	dynsym	4414edd58046		in	named-only	docs/open-questions.md#open-questions	Open questions
-usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x1000397c	1976	do_card	dynsym	f8d148325694		in	undocumented		
+usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x1000397c	1976	do_card	dynsym	f8d148325694		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
 usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x10004134	168	message	dynsym	1e8923038a63		in	undocumented		
 usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x100041ec	4	__istart	dynsym	df3f619804a9		in	undocumented		
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10001fe0	268	__start	dynsym	389b480a338f		in	undocumented		
