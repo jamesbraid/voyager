@@ -141,8 +141,70 @@
     }
   ],
   "exclude": [],
-  "windows": [],
-  "bases": [],
+  "windows": [
+    {
+      "name": "mmio",
+      "size": "0x10000",
+      "docs": [
+        "docs/registers.md"
+      ]
+    }
+  ],
+  "bases": [
+    {
+      "type": "field",
+      "disp": 656,
+      "loads": [
+        "ld"
+      ],
+      "window": "mmio",
+      "label": "board record +656",
+      "binaries": [
+        "usr/cpu/sysgen/IP35boot/fglrx.o"
+      ],
+      "functions": [
+        "(?!FGLRX)(?!drm_pages_from_order).*"
+      ],
+      "why": "the kernel object's register accessors load the register aperture base from board record +656 and add the byte offset they are given"
+    },
+    {
+      "type": "field",
+      "disp": 1000,
+      "loads": [
+        "ld"
+      ],
+      "window": "mmio",
+      "label": "device record +1000",
+      "binaries": [
+        "usr/cpu/sysgen/IP35boot/fglrx.o"
+      ],
+      "why": "firegl_addmap stores the mapped register aperture at device record +1000; the interrupt, vsync and reset paths load it from there"
+    },
+    {
+      "type": "field",
+      "disp": 48,
+      "loads": [
+        "lw"
+      ],
+      "window": "mmio",
+      "label": "driver record +48",
+      "binaries": [
+        "usr/X11R6/lib/modules/drivers/fglrx_drv.so"
+      ],
+      "why": "the X module's register accessors load the mapped register aperture from the driver record at +48 (reached through the screen's private pointer at +248)"
+    },
+    {
+      "type": "argument",
+      "function": "ulRC6PllReadUlong|vRC6PllWriteUlong",
+      "reg": 4,
+      "window": "mmio",
+      "label": "register base argument",
+      "binaries": [
+        "usr/X11R6/lib/modules/drivers/fglrx_drv.so"
+      ],
+      "why": "both PLL helpers index off their first argument, the mapped register base"
+    }
+  ],
   "accessors": [],
   "aliases": [],
   "decoders": [],
