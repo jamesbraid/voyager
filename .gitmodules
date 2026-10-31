@@ -53,3 +53,19 @@
 	path = mesa-7.11.2
 	url = https://gitlab.freedesktop.org/mesa/mesa.git
 	shallow = true
+[submodule "freebsd"]
+	path = freebsd
+	url = https://github.com/freebsd/freebsd-src.git
+	shallow = true
+[submodule "netbsd"]
+	path = netbsd
+	url = https://github.com/NetBSD/src.git
+	shallow = true
+[submodule "openbsd"]
+	path = openbsd
+	url = https://github.com/openbsd/src.git
+	shallow = true
+[submodule "haiku"]
+	path = haiku
+	url = https://github.com/haiku/haiku.git
+	shallow = true
