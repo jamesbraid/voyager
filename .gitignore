@@ -1,0 +1,32 @@
+# Disk images and archives
+*.img
+*.zip
+*.raw
+*.iso
+*.chd
+*.tar.zst
+
+# Disassembly and dump outputs
+*_disasm.txt
+*_dwarfdump.txt
+
+# Temporary and cache files
+*.m2c
+__pycache__/
+*.tmp
+
+# Proprietary IRIX and ATI binaries (see IRIX_FILES.md): root/ is a directory or a link to a shared copy
+/root
+/root/
+
+# Symlinks into root/ made by scripts/populate-root, and the archive members unpacked for them
+/r300_kernel/
+/libgl/
+/xserver/
+/dri/
+/gfxtools/
+/diags/
+/ucode/
+/firmware/
+
+/.cache/

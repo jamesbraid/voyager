@@ -1,0 +1,19 @@
+[submodule "m2c"]
+	path = m2c
+	url = https://github.com/techomancer/m2c.git
+	branch = irixn32
+[submodule "spimdisasm"]
+	path = spimdisasm
+	url = https://github.com/Decompollaborate/spimdisasm.git
+[submodule "libdwarf-code"]
+	path = libdwarf-code
+	url = https://github.com/davea42/libdwarf-code.git
+[submodule "irix-657m-src"]
+	path = irix-657m-src
+	url = https://github.com/calmsacibis995/irix-657m-src.git
+[submodule "linux"]
+	path = linux
+	url = https://github.com/torvalds/linux.git
+[submodule "mesa"]
+	path = mesa
+	url = https://gitlab.freedesktop.org/mesa/mesa.git
