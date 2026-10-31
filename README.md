@@ -18,7 +18,10 @@ covered and what is next; [docs/open-questions.md](docs/open-questions.md) holds
   option ROM images;
 - the IP35 host side the cards attach through (crossbar, PCI bridge, PROM), as far as the cards need it;
 - public AMD R3xx and R5xx register and acceleration references ([docs/sources/INDEX.md](docs/sources/INDEX.md));
-- Linux `drm/radeon` (r300) and Mesa's r300 driver as public cross-checks of register meaning. They show what the
+- open-source radeon drivers as public cross-checks of register meaning, each a pinned submodule listed in
+  [docs/sources/INDEX.md](docs/sources/INDEX.md): Linux `drm/radeon` (current and 2.6.30), libdrm, Mesa's r300 drivers
+  (classic and Gallium), the X.Org radeon, radeonhd and avivo drivers, the BSD DRM ports, Haiku's radeon
+  accelerant and AtomDis. They show what the
   public chips do, not what IRIX does on this board.
 
 There is no GL sample-implementation pipeline: the Onyx4 GL stack is ATI's driver, and the IP35VOYAGER
