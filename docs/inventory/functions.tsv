@@ -3190,12 +3190,12 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf140	96	firegl_Sy
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf1c0	100	firegl_EnableStereo	dwarf+dynsym	4686ba5ab1fd		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf240	100	firegl_AGPAcquire	dwarf+dynsym	698c9fc6271e		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf2c0	96	firegl_CPResume	dwarf+dynsym	c009068dd901		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4bf340	244	__fglQSQuietDown	dwarf+funcnames	514a4df8b108		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4bf340	244	__fglQSQuietDown	dwarf+funcnames	514a4df8b108		in	named-only	docs/open-questions.md#command-processor-and-ring	Command processor and ring
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4bf440	104	__fglDRMPM4Alloc	dwarf+funcnames	690f740e6e15	multi-unit	in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4bf4c0	488	__fglDRMPM4Queue	dwarf+funcnames	5a17c7340fcc	multi-unit	in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4bf6c0	72	__fglDRMPM4Submit	dwarf+funcnames	473b035c8fd5	multi-unit	in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf740	992	firegl_PM4Alloc	dwarf+dynsym	2ea45614a49e		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bfb40	552	firegl_PM4WaitForIdle	dwarf+dynsym	e8bee4e7744f		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf740	992	firegl_PM4Alloc	dwarf+dynsym	2ea45614a49e		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bfb40	552	firegl_PM4WaitForIdle	dwarf+dynsym	e8bee4e7744f		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bfd80	312	firegl_DRMPoll	dwarf+dynsym	02960fac3d34		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bfec0	36	dummy_5	dwarf+dynsym	a8a0de1b11cc		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bff00	36	dummy_6	dwarf+dynsym	3de9a71fc96a		in	undocumented		
@@ -7937,7 +7937,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a4c40	180	ano
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a4d00	184	aliasadd	dwarf+funcnames	5f2072459967		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a4dc0	340	skipwhite	dwarf+funcnames	a7c8b18a4212		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a4f40	468	lookup	dwarf+funcnames	7d743bd094dc		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a5140	1028	number	dwarf+funcnames	70c3ab35b006		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a5140	1028	number	dwarf+funcnames	70c3ab35b006		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a5580	788	next	dwarf+funcnames	471a0884a5a7		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a58c0	44	expect	dwarf+funcnames	ceb0aec0b6cd		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a5900	144	mapComponent	dwarf+funcnames	666d694407cb		in	undocumented		
@@ -16044,12 +16044,12 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5179a0	96	firegl_
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517a00	100	firegl_EnableStereo	dwarf+dynsym	97c83e64773c		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517a70	100	firegl_AGPAcquire	dwarf+dynsym	143d830e3119		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517ae0	96	firegl_CPResume	dwarf+dynsym	ab3cd46c93f3		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517b40	248	__fglQSQuietDown	dwarf	81969256f59d		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517b40	248	__fglQSQuietDown	dwarf	81969256f59d		in	named-only	docs/open-questions.md#command-processor-and-ring	Command processor and ring
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517c40	108	__fglDRMPM4Alloc	dwarf	f752cd4df052	multi-unit	in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517cb0	508	__fglDRMPM4Queue	dwarf	278196470b59	multi-unit	in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517eb0	76	__fglDRMPM4Submit	dwarf	21c73d2dc38b	multi-unit	in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517f00	972	firegl_PM4Alloc	dwarf+dynsym	fdfee9a21d90		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5182d0	544	firegl_PM4WaitForIdle	dwarf+dynsym	5e19dd5a9d0c		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517f00	972	firegl_PM4Alloc	dwarf+dynsym	fdfee9a21d90		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5182d0	544	firegl_PM4WaitForIdle	dwarf+dynsym	5e19dd5a9d0c		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5184f0	320	firegl_DRMPoll	dwarf+dynsym	7d627340d8a4		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x518640	36	dummy_5	dwarf+dynsym	8b46f5dc933e		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x518670	36	dummy_6	dwarf+dynsym	cc7083e9f8e0		in	undocumented		
@@ -20791,7 +20791,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ed4a0	180	a
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ed560	200	aliasadd	dwarf	cd9a5e43e3d8		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ed630	356	skipwhite	dwarf	23e24040fbb4		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ed7a0	500	lookup	dwarf	6f05a8626684		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ed9a0	1052	number	dwarf	293ed606294b		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ed9a0	1052	number	dwarf	293ed606294b		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6eddc0	892	next	dwarf	2326242b813d		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ee140	56	expect	dwarf	83730f8f6c82		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ee180	160	mapComponent	dwarf	5bb17b9e9782		in	undocumented		
@@ -28971,12 +28971,12 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		InOverlay	dw
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		InTVFifo	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		InitDRMConnection	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		LastLinePel	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		LogBase2	dwarf+funcnames			in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		LogBase2	dwarf+funcnames			in	named-only	docs/kernel-attach.md#command-processor-start-up-x-server-module	Command processor start-up (X server module)
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		MarkUnderlayWindow	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		MarkWindow	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		MulDiv64	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		OutTVFifo	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		PM4LoadMicroCode	dwarf+funcnames			in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		PM4LoadMicroCode	dwarf+funcnames			in	named-only	docs/kernel-attach.md#command-processor-start-up-x-server-module	Command processor start-up (X server module)
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		ProcATIHPVGetData	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		ProcATIHPVTMDSStopTransmission	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		ProcATIHPVTMDSTransmit	dwarf+funcnames			in	undocumented		
@@ -29239,7 +29239,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		__R300FlushZ
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		__fglDRMPM4Alloc	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		__fglDRMPM4Queue	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		__fglDRMPM4Submit	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		__fglQSQuietDown	dwarf+funcnames			in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		__fglQSQuietDown	dwarf+funcnames			in	named-only	docs/open-questions.md#command-processor-and-ring	Command processor and ring
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		_stub	dwarf			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		addFormat	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		addMode	dwarf+funcnames			in	undocumented		
@@ -29282,13 +29282,13 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		newIsBigger	
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		newSDBfileHeader	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		queryMaxBarriers	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		r200CalcDefaultOffset	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		r200_EnableCommonBusMaster	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		r200_EnableRPTRwriteback	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		r200_EnableTimeStampWriteBack	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		r200_RegisterRingBufferLocation	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		r200_SetPm4OperationMode	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		r200_StampPDEV	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		r200_WriteTimeStamp	dwarf+funcnames			in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		r200_EnableCommonBusMaster	dwarf+funcnames			in	named-only	docs/kernel-attach.md#command-processor-start-up-x-server-module	Command processor start-up (X server module)
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		r200_EnableRPTRwriteback	dwarf+funcnames			in	named-only	docs/kernel-attach.md#command-processor-start-up-x-server-module	Command processor start-up (X server module)
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		r200_EnableTimeStampWriteBack	dwarf+funcnames			in	named-only	docs/kernel-attach.md#command-processor-start-up-x-server-module	Command processor start-up (X server module)
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		r200_RegisterRingBufferLocation	dwarf+funcnames			in	named-only	docs/kernel-attach.md#command-processor-start-up-x-server-module	Command processor start-up (X server module)
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		r200_SetPm4OperationMode	dwarf+funcnames			in	named-only	docs/kernel-attach.md#command-processor-start-up-x-server-module	Command processor start-up (X server module)
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		r200_StampPDEV	dwarf+funcnames			in	named-only	docs/kernel-attach.md#command-processor-start-up-x-server-module	Command processor start-up (X server module)
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		r200_WriteTimeStamp	dwarf+funcnames			in	named-only	docs/kernel-attach.md#command-processor-start-up-x-server-module	Command processor start-up (X server module)
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		sendExposures	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		setup_overlay_visuals	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		sgiGetHyperpipeTopology	dwarf+funcnames			in	undocumented		
@@ -29345,9 +29345,9 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x429640	5168	R20
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42aa80	652	R200DRIFinishScreenInit	dynsym	9919224d96ba		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42ad40	996	R200DRICloseScreen	dynsym	66616c21539d		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42b680	504	XF86SerFGLDRIGetDrawableInfo	dynsym	f77f09d0c4f5		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42c300	140	FGLEnableCP	dynsym	d1dae4baf97d		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42c3c0	216	FGLStartCP	dynsym	83c73800bcbb		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42c4c0	720	FGLInitCP	dynsym	c34f62e9dafd		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42c300	140	FGLEnableCP	dynsym	d1dae4baf97d		in	understood	docs/kernel-attach.md#command-processor-start-up-x-server-module	Command processor start-up (X server module)
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42c3c0	216	FGLStartCP	dynsym	83c73800bcbb		in	named-only	docs/kernel-attach.md#command-processor-start-up-x-server-module	Command processor start-up (X server module)
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42c4c0	720	FGLInitCP	dynsym	c34f62e9dafd		in	named-only	docs/kernel-attach.md#command-processor-start-up-x-server-module	Command processor start-up (X server module)
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42c7c0	648	GetErrorName	dynsym	1c4737dc608c		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42cb80	316	FGL_get_cpuflags	dynsym	9f517ac6ef30		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42ccc0	504	tryexcept	dynsym	4578ac0303fc		in	undocumented		
@@ -34224,7 +34224,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69cc40	
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69cd00	184	aliasadd	dwarf+funcnames	92a6be3769a2		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69cdc0	340	skipwhite	dwarf+funcnames	a7c8b18a4212		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69cf40	468	lookup	dwarf+funcnames	35548e53bf30		in	undocumented		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69d140	1028	number	dwarf+funcnames	f9f280f1a533		in	undocumented		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69d140	1028	number	dwarf+funcnames	f9f280f1a533		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69d580	788	next	dwarf+funcnames	5d78559ec2f4		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69d8c0	44	expect	dwarf+funcnames	bdab87352782		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69d900	144	mapComponent	dwarf+funcnames	c29d1f8b11a1		in	undocumented		
@@ -46763,22 +46763,22 @@ usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403080	96	firegl
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403100	100	firegl_EnableStereo	dwarf+dynsym	54bfa19ebff3		in	undocumented		
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403180	100	firegl_AGPAcquire	dwarf+dynsym	da34a4d89053		in	undocumented		
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403200	96	firegl_CPResume	dwarf+dynsym	077888a55f2c		in	undocumented		
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403280	244	__fglQSQuietDown	dwarf+funcnames	5d3f767bf7a2		in	undocumented		
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403280	244	__fglQSQuietDown	dwarf+funcnames	5d3f767bf7a2		in	named-only	docs/open-questions.md#command-processor-and-ring	Command processor and ring
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403380	104	__fglDRMPM4Alloc	dwarf+funcnames	7e9d44c579d6		in	undocumented		
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403400	488	__fglDRMPM4Queue	dwarf+funcnames	2c15eac533e8		in	undocumented		
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403600	72	__fglDRMPM4Submit	dwarf+funcnames	0b969f03327b		in	undocumented		
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403680	992	firegl_PM4Alloc	dwarf+dynsym	5b35fa673989		in	undocumented		
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403a80	552	firegl_PM4WaitForIdle	dwarf+dynsym	97b1efb30e8a		in	undocumented		
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403680	992	firegl_PM4Alloc	dwarf+dynsym	5b35fa673989		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403a80	552	firegl_PM4WaitForIdle	dwarf+dynsym	97b1efb30e8a		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403cc0	312	firegl_DRMPoll	dwarf+dynsym	617928c126aa		in	undocumented		
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403e00	8	setup	dwarf+funcnames	a7e7ca11a6b8		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x409190	764	_stub	dwarf			in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x4094c0	224	mapPciRom	dwarf+dynsym	de6331582dbf		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x4095c0	40	int10Setup	dwarf+funcnames	efb8ac2778ed		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409600	316	setup_int	dwarf+dynsym	cf2b31548852		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409740	248	finish_int	dwarf+dynsym	e3cacc28429b		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409600	316	setup_int	dwarf+dynsym	cf2b31548852		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409740	248	finish_int	dwarf+dynsym	e3cacc28429b		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409840	116	getIntVect	dwarf+dynsym	3abbbfb13b8e		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x4098c0	120	pushw	dwarf+dynsym	74540d7e19d7		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409940	300	run_bios_int	dwarf+dynsym	5c3e398ebb69		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409940	300	run_bios_int	dwarf+dynsym	5c3e398ebb69		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409a80	304	dump_code	dwarf+dynsym	8194d8a84456		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409bc0	372	dump_registers	dwarf+dynsym	757c73cb1c3b		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409d40	320	stack_trace	dwarf+dynsym	43a70f027c31		in	undocumented		
@@ -46821,10 +46821,10 @@ usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40d2c0	100	findPci
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40d340	44	pciSlotBX	dwarf+funcnames	8196763a37be		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40d380	216	intE6_handler	dwarf+funcnames	fcee9998080a		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40d480	88	x86emu_do_int	dwarf+funcnames	08e4048d7305		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40d500	116	xf86ExecX86int10	dwarf+dynsym	329554bf2c41		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40d500	116	xf86ExecX86int10	dwarf+dynsym	329554bf2c41		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40d580	292	xf86Int10ExecSetup	dwarf+dynsym	d3a87c6bb4b7		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40d6c0	84	printk	dwarf+dynsym	1d5a5da79899		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40d740	1156	xf86InitInt10	dwarf+dynsym	b152417fa8de		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40d740	1156	xf86InitInt10	dwarf+dynsym	b152417fa8de		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40dc00	116	MapVRam	dwarf+funcnames	e654747aee5a		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40dc80	104	UnmapVRam	dwarf+funcnames	52eb3143085f		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40dd00	8	MapCurrentInt10	dwarf+dynsym	a7e7ca11a6b8		in	undocumented		
@@ -46842,7 +46842,7 @@ usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40e880	880	x86emu_dump_
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40ec00	812	x86emu_dump_xregs	dwarf+dynsym	9e03b0d04b87		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40ef40	272	x86emu_intr_handle	dwarf+funcnames	f2f2d4e1a7ac		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f080	44	x86emu_intr_raise	dwarf+dynsym	0ac9da113e82		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f0c0	300	X86EMU_exec	dwarf+dynsym	d395b4d3a686		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f0c0	300	X86EMU_exec	dwarf+dynsym	d395b4d3a686		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f200	40	X86EMU_halt_sys	dwarf+dynsym	0029996d68d9		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f240	172	fetch_decode_modrm	dwarf+dynsym	93f5a862b5b1		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f300	116	fetch_byte_imm	dwarf+dynsym	cced3402cde9		in	undocumented		
@@ -47280,21 +47280,21 @@ usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32		0x402dc0	196	VBESetGetDACPa
 usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32		0x402ec0	460	VBESetGetPaletteData	dwarf+dynsym	32fde38d61e4		in	undocumented		
 usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32		0x4030c0	196	VBEGetVBEpmi	dwarf+dynsym	347e89e418ee		in	undocumented		
 usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32	.text	0x4031c0	40	vbeSetup	dwarf+funcnames	d722cd87d9b8		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64		0x0		find_fglrx_pipe	dwarf+symtab			in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x84	1172	fglrx_init	dwarf+symtab	c186615a00ed		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64		0x0		find_fglrx_pipe	dwarf+symtab			in	understood	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x84	1172	fglrx_init	dwarf+symtab	c186615a00ed		in	named-only	docs/coverage.md#areas	Areas
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x518	52	fglrx_reload_dev	dwarf	89adc03be8aa		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x54c	324	fglrx_reg	dwarf+symtab	226f56ff40ef		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x54c	324	fglrx_reg	dwarf+symtab	226f56ff40ef		in	understood	docs/kernel-attach.md#which-cards-the-driver-claims	Which cards the driver claims
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x690	180	fglrx_unreg	dwarf+symtab	1a456581a9a8		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x744	372	fglrx_unload	dwarf+symtab	9d6c79f65937		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x8b8	172	fglrx_unload_dev	dwarf	dc39da34cfb1		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x964	372	fglrx_intr	dwarf+symtab	6d76ad1b7d26		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xad8	260	fglrx_intr_list	dwarf+symtab	bb305038951d		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xbdc	4888	fglrx_attach	dwarf+symtab	c3d8ba1a8b2d		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x964	372	fglrx_intr	dwarf+symtab	6d76ad1b7d26		in	named-only	docs/coverage.md#areas	Areas
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xad8	260	fglrx_intr_list	dwarf+symtab	bb305038951d		in	named-only	docs/kernel-attach.md#image-sync-driver	Image-sync driver
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xbdc	4888	fglrx_attach	dwarf+symtab	c3d8ba1a8b2d		in	named-only	docs/coverage.md#areas	Areas
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ef4	1072	fglrx_detach	dwarf+symtab	0e07c08ebcd6		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x2324	488	checkBoardPointers	dwarf	eaec308c3c7e		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x2324	488	checkBoardPointers	dwarf	eaec308c3c7e		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x250c	192	freeBoardPointers	dwarf	08d58a6964fc		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x25cc	404	checkBoardPointer	dwarf	31b12aa6dad9		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x2760	496	freeBoardPointer	dwarf	70c751fb3219		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x25cc	404	checkBoardPointer	dwarf	31b12aa6dad9		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x2760	496	freeBoardPointer	dwarf	70c751fb3219		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x2950	1268	fglrx_open	dwarf+symtab	b5c45c039ee4		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x2e44	920	fglrx_close	dwarf+symtab	7a83eb6e25c9		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x31dc	84	fglrx_invalid_ioctl	dwarf+symtab	ab2a3c3ca333		in	undocumented		
@@ -47305,18 +47305,18 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x336c	16	fglrx_drm_unmap
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x337c	108	fglrx_give_up_privdev	dwarf	75e479acf52d		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x33e8	128	fglrx_get_vsync_cnt	dwarf	0f081e41d2d6		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3468	988	fglrx_wait_vsync	dwarf	42a3f7460a6c		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3844	428	fglrx_validate_vsync	dwarf	bf4bbb23a3ea		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3844	428	fglrx_validate_vsync	dwarf	bf4bbb23a3ea		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x39f0	84	fglrx_dma_flush	dwarf+symtab	933317d067ae		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3a44	240	fglrx_is_brdmanager	dwarf	89fa35c7f425		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3b34	64	fglrx_swapbuf_stat	dwarf	3e4a470ac151		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3b74	1296	fglrx_ioctl	dwarf+symtab	86a0b82ffaaa		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4084	976	fglrx_map	dwarf+symtab	57c31792b667		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4454	336	fglrx_error_handler	dwarf+symtab	b151f54dbb95		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4454	336	fglrx_error_handler	dwarf+symtab	b151f54dbb95		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x45a4	180	fglrx_add_exit_callback	dwarf+symtab	c0827ca758a8		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4658	520	fglrx_exit	dwarf+symtab	1ab4e25eddf3		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4860	168	fglrx_thread_exit	dwarf+symtab	50d8a981f9b6		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4908	72	FGLRXReadRegister	dwarf+symtab	2ce669ea6e2c		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4950	80	FGLRXWriteRegister	dwarf+symtab	0fcb500bc216		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4908	72	FGLRXReadRegister	dwarf+symtab	2ce669ea6e2c		in	named-only	docs/kernel-attach.md#image-sync-driver	Image-sync driver
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4950	80	FGLRXWriteRegister	dwarf+symtab	0fcb500bc216		in	named-only	docs/kernel-attach.md#image-sync-driver	Image-sync driver
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x49a0	80	FGLRXWriteRegister8	dwarf+symtab	b68149dc6eb2		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x49f0	272	FGLRXINPLL	dwarf+symtab	2a283ef12413		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4b00	104	FGLRXinfo	dwarf+symtab	fe036d438435		in	undocumented		
@@ -47346,7 +47346,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5480	204	fglrxReadMmReg
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x554c	200	fglrxWriteMmRegister	dwarf+symtab	70e6ff13564f		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5614	292	fglrxCompositorUSBRegReadWrite	dwarf	240498251bd6		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5738	904	fglrxCompositorI2cRegRead	dwarf	a60a0353d3d8		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5ac0	800	fglrxProbeCompositor	dwarf+symtab	db89eb2f86f6		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5ac0	800	fglrxProbeCompositor	dwarf+symtab	db89eb2f86f6		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5de0	1416	fglrx_hpipe_discover	dwarf	d6703d69cc24		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6368	440	fglrx_hp_fire_swapready	dwarf+symtab	99ec4f4a3c85		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6520	1028	fglrx_program_compositor_tiling	dwarf	1d8d3f4d1b35		in	undocumented		
@@ -47372,7 +47372,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x8fc0	128	fglrx_hpipe_ad
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9040	152	__KE_ERROR	dwarf	eec7887213af	multi-unit	in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x90d8	44	__KE_INFO	dwarf	90ad92382957	multi-unit	in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9104	44	__KE_DEBUG	dwarf	90ad92382957	multi-unit	in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9130	568	firegl_init_module	dwarf+symtab	61193629e173		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9130	568	firegl_init_module	dwarf+symtab	61193629e173		in	understood	docs/kernel-attach.md#after-attach-firegl_init_module	After attach: firegl_init_module
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9368	172	firegl_cleanup_module	dwarf+symtab	a5a57b5d2928		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9414	116	__ke_alloc_wait_queue_head_struct	dwarf+symtab	e1da83871bb9		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9488	104	__ke_free_wait_queue_head_struct	dwarf+symtab	00171995f905		in	undocumented		
@@ -47390,7 +47390,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x95d0	52	__ke_getpid	dwa
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9604	56	__ke_geteuid	dwarf+symtab	ede5b151b6bd		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x963c	32	__ke_jiffies	dwarf+symtab	1044ade758a0		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x965c	52	__ke_udelay	dwarf+symtab	cd5eba17368d		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9690	72	__ke_mdelay	dwarf+symtab	bdeb15924d0b		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9690	72	__ke_mdelay	dwarf+symtab	bdeb15924d0b		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x96d8	52	__ke_virt_to_bus	dwarf+symtab	89adc03be8aa		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x970c	52	__ke_virt_to_phys	dwarf+symtab	89adc03be8aa		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9740	32	__ke_high_memory	dwarf+symtab	a9c72770e2f8		in	undocumented		
@@ -47422,8 +47422,8 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9b34	64	__ke_copy_to_us
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9b74	80	__ke_verify_area	dwarf+symtab	918b00152fd7		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9bc4	48	__ke_get_pci_device_info	dwarf+symtab	78f6eb26ee73		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9bf4	180	__ke_check_pci	dwarf+symtab	fae186a4cffd		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9ca8	44	__ke_pci_get_irq	dwarf+symtab	dd0093c9b3d5		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9cd4	52	__ke_pci_find_device	dwarf+symtab	89adc03be8aa		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9ca8	44	__ke_pci_get_irq	dwarf+symtab	dd0093c9b3d5		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9cd4	52	__ke_pci_find_device	dwarf+symtab	89adc03be8aa		in	named-only	docs/kernel-attach.md#which-cards-the-driver-claims	Which cards the driver claims
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9d08	52	__ke_malloc	dwarf+symtab	e5c621742da5		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9d3c	52	__ke_free_s	dwarf+symtab	89adc03be8aa		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9d70	60	__ke_vmalloc	dwarf+symtab	49f47727c1e7		in	undocumented		
@@ -47473,7 +47473,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa468	48	__ke_inw	dwarf+
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa498	48	__ke_inl	dwarf+symtab	4d0d4f76b289		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa4c8	8	__ke_enable_irq	dwarf+symtab	78aa5094d5ec		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa4d0	8	__ke_disable_irq	dwarf+symtab	78aa5094d5ec		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa4d8	8	__ke_request_irq	dwarf+symtab	a7e7ca11a6b8		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa4d8	8	__ke_request_irq	dwarf+symtab	a7e7ca11a6b8		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa4e0	8	__ke_free_irq	dwarf+symtab	78aa5094d5ec		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa4e8	8	vm_nopage	dwarf	87506497337c		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa4f0	8	vm_shm_nopage	dwarf	78aa5094d5ec		in	undocumented		
@@ -47514,7 +47514,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xbe3c	816	drm_vm_close	d
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xc16c	1748	firegl_mmap	dwarf+symtab	405e317af3f4		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xc92c	328	drm_find_max_locked	dwarf	27c3eca521ca		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xca74	196	drm_mem_max_init	dwarf+symtab	114edfb3ec87		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xcb38	928	drm_mem_init	dwarf+symtab	b47d1cab8b1c		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xcb38	928	drm_mem_init	dwarf+symtab	b47d1cab8b1c		in	named-only	docs/kernel-attach.md#after-attach-firegl_init_module	After attach: firegl_init_module
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xced8	348	drm_mem_inc_locked_pages	dwarf+symtab	7f3b7ffb995b		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xd034	184	drm_mem_dec_locked_pages	dwarf+symtab	6095d95bba19		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xd0ec	492	drm_alloc	dwarf+symtab	32e3458836f7		in	undocumented		
@@ -47528,9 +47528,9 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xdd48	844	drm_alloc_page
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xe094	864	drm_alloc_pages_consistent	dwarf+symtab	a2718ca2bea5		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xe3f4	688	drm_free_pages_consistent	dwarf+symtab	7cec0dfc3981		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xe6a4	680	drm_free_pages	dwarf+symtab	eee6c4118b06		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xe94c	500	drm_ioremap	dwarf+symtab	1a3b9f115e25		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xe94c	500	drm_ioremap	dwarf+symtab	1a3b9f115e25		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xeb40	400	drm_ioremapfree	dwarf+symtab	f8707a3468ee		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xedec	672	firegl_init	dwarf+symtab	2e6205596378		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xedec	672	firegl_init	dwarf+symtab	2e6205596378		in	understood	docs/kernel-attach.md#after-attach-firegl_init_module	After attach: firegl_init_module
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xf08c	136	firegl_cleanup	dwarf+symtab	179a46c805c1		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xf114	940	firegl_open	dwarf+symtab	a41b5c627a12		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xf4c0	856	firegl_release	dwarf+symtab	af6a139e2375		in	undocumented		
@@ -47546,15 +47546,15 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x105c4	2376	firegl_taked
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x10f0c	344	firegl_enable_stereo_on_device	dwarf+symtab	1d6a96babf04		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11064	540	firegl_enable_stereo	dwarf	e68f2401ee2c		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11280	548	firegl_unlock_unbind_all_clients	dwarf+symtab	bc7f6f3f7457		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x114a4	464	firegl_killall_clients	dwarf+symtab	5661e3caa061		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11734	212	__fglQSQuietDown	dwarf	4b6c40d750ad		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x114a4	464	firegl_killall_clients	dwarf+symtab	5661e3caa061		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11734	212	__fglQSQuietDown	dwarf	4b6c40d750ad		in	named-only	docs/open-questions.md#command-processor-and-ring	Command processor and ring
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11808	152	__fglDRMPM4Alloc	dwarf	63e7b76442d5		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x118a0	504	firegl_PM4Alloc	dwarf+symtab	66d351f0247a		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11a98	752	firegl_PM4WaitForIdle	dwarf+symtab	ba9d335d74a6		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x118a0	504	firegl_PM4Alloc	dwarf+symtab	66d351f0247a		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11a98	752	firegl_PM4WaitForIdle	dwarf+symtab	ba9d335d74a6		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11d88	312	firegl_DRMPoll	dwarf+symtab	ff3950fe152c		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11ec0	196	_r6x_WaitNotBusy	dwarf+symtab	d8a17d088c78		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11f84	5752	_r6x_IsDeviceSupported	dwarf+symtab	1ee9922955a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x135fc	1196	_r6x_resetPM4	dwarf+symtab	a4e546c78411		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11f84	5752	_r6x_IsDeviceSupported	dwarf+symtab	1ee9922955a4		in	named-only	docs/kernel-attach.md#which-cards-the-driver-claims	Which cards the driver claims
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x135fc	1196	_r6x_resetPM4	dwarf+symtab	a4e546c78411		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13aa8	164	_r6x_CheckWSBoard	dwarf+symtab	71c97dabb744		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13b4c	260	_r6x_EnableStereo	dwarf+symtab	06f06a4aa73d		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13c50	456	_r6x_InitMaskRamSize	dwarf+symtab	be67c904ff84		in	undocumented		
@@ -47584,7 +47584,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x16bf4	1188	firegl_lock	
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17098	424	firegl_lock_free	dwarf+symtab	fe2998834c9c		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17240	580	firegl_unlock	dwarf+symtab	d135fdd6b07f		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17484	188	firegl_get_lockid	dwarf+symtab	e62ab3c7d36b		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17600	1232	firegl_cp_init	dwarf+symtab	58de51cd96b8		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17600	1232	firegl_cp_init	dwarf+symtab	58de51cd96b8		in	understood	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17ad0	272	firegl_unlock_drm_buffers	dwarf+symtab	a813b5f6beb5		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17be0	232	firegl_checklock_drm_buffers	dwarf+symtab	cb87971ae821		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17cc8	144	firegl_cp_resume	dwarf+symtab	bbd113e9eb0c		in	undocumented		
@@ -47644,7 +47644,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1eec0	76	firegl_noop	dw
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ef0c	280	firegl_wait_for_vertical_retrace	dwarf+symtab	f94f81f39d67		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f024	52	firegl_irq_vsync	dwarf	895a9bd11999		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f058	52	firegl_irq_framelock	dwarf	895a9bd11999		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f08c	760	firegl_install_irq	dwarf+symtab	fb0777546574		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f08c	760	firegl_install_irq	dwarf+symtab	fb0777546574		in	understood	docs/kernel-attach.md#interrupts	Interrupts
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f384	272	firegl_vs_stereo_swap	dwarf+symtab	5fd2264fe2b3		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f494	340	firegl_vs_validate	dwarf+symtab	3783d6817cbe		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f5e8	264	firegl_sync_dacs	dwarf+symtab	6d5e07d12d96		in	undocumented		
@@ -47661,8 +47661,8 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20a84	64	_r6x_vs_stereo
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20ac4	68	_r6x_vs_validate	dwarf+symtab	b5335d2191a2		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20b08	176	_r6x_service_irq_vsync_handler	dwarf+symtab	3cf4042c659f		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20bb8	248	_r6x_service_irq_framelock_handler	dwarf+symtab	c09a3ca33a85		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20cb0	220	_r6x_enable_vsync_irq	dwarf+symtab	1fb58d6db2c5		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20d8c	220	_r6x_enable_framelock_irq	dwarf+symtab	1fb58d6db2c5		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20cb0	220	_r6x_enable_vsync_irq	dwarf+symtab	1fb58d6db2c5		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20d8c	220	_r6x_enable_framelock_irq	dwarf+symtab	1fb58d6db2c5		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20e68	168	_r6x_close_irq	dwarf+symtab	103c57f249a8		in	undocumented		
 usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64		0x0		prominfo_add	dwarf+symtab			in	undocumented		
 usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x64	120	prominfo_del	dwarf+symtab	8fc1b1ddb91e		in	undocumented		
@@ -47678,20 +47678,20 @@ usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x470	156	hubspc_map	dw
 usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x50c	96	hubspc_unmap	dwarf+symtab	05a036caff72		in	undocumented		
 usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x56c	124	hubspc_ioctl	dwarf+symtab	714455264080		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64		0x0		fglrx_hpipe_init_idbg	dwarf			in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x8	468	checkBoardPointers	dwarf	104388feb140		in	undocumented		
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x8	468	checkBoardPointers	dwarf	104388feb140		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x1dc	344	freeBoardPointers	dwarf	b96d3ec07a9b		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x334	476	checkBoardPointer	dwarf	41292b578ff7		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x510	512	freeBoardPointer	dwarf	ea200a1a3b92		in	undocumented		
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x334	476	checkBoardPointer	dwarf	41292b578ff7		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x510	512	freeBoardPointer	dwarf	ea200a1a3b92		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x710	504	is1_init	dwarf+symtab	e5fbad25da96		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x908	52	is1_reload_dev	dwarf	89adc03be8aa		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x93c	176	is1_reg	dwarf+symtab	8c141be2cf0e		in	undocumented		
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x93c	176	is1_reg	dwarf+symtab	8c141be2cf0e		in	named-only	docs/kernel-attach.md#image-sync-driver	Image-sync driver
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x9ec	120	is1_unreg	dwarf+symtab	4b7b4bfd5735		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0xa64	208	is1_unload	dwarf+symtab	73be3afeb52f		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0xb34	168	is1_unload_dev	dwarf	86cf36f57de1		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0xbdc	76	is1_error_handler	dwarf+symtab	c57fcf146564		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0xc28	156	is1_clear	dwarf	bb0609e2405b		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0xcc4	64	is1_clear_regs	dwarf	cf4e63dbfa89		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0xd04	2324	is1_attach	dwarf+symtab	0f801f163d5a		in	undocumented		
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0xd04	2324	is1_attach	dwarf+symtab	0f801f163d5a		in	named-only	docs/kernel-attach.md#image-sync-driver	Image-sync driver
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x1618	604	is1_detach	dwarf+symtab	ded678cad332		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x1874	172	is1_remove_pipe	dwarf	a8a3d5758132		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x1920	348	is1_exit	dwarf+symtab	c4b2cc1aca19		in	undocumented		
@@ -47936,7 +47936,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e00	36	ustore_half	d
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e24	8	fixade_error	dwarf+symtab	4429c69e8a79		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e2c	1184	memcpy	dwarf+symtab	a6e4b004a38a	shared-address	in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e2c	12	memmove	symtab	28a29cd9f9c9	shared-address	in	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e38	116	bcopy	symtab	7c904a821cc2	shared-address	in	undocumented		
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e38	116	bcopy	symtab	7c904a821cc2	shared-address	in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e38	116	ovbcopy	symtab	7c904a821cc2	shared-address	in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7eac	80	bcopy_pref1	symtab	c76e59900c0d		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7efc	976	bcopy_pref2	symtab	355b16806386		in	undocumented		
@@ -48389,7 +48389,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	spl6	symtab	
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splgio0	symtab	d20175b8aee2	shared-address	in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splgio1	symtab	d20175b8aee2	shared-address	in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splgio2	symtab	d20175b8aee2	shared-address	in	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splhi	dwarf+symtab	d20175b8aee2	shared-address	in	undocumented		
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splhi	dwarf+symtab	d20175b8aee2	shared-address	in	named-only	docs/kernel-attach.md#interrupts	Interrupts
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splhi_relnet	symtab	d20175b8aee2	shared-address	in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splhintr	symtab	d20175b8aee2	shared-address	in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splimp	symtab	d20175b8aee2	shared-address	in	undocumented		
@@ -48442,7 +48442,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22bfc	28	hub_provider
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22c18	84	hub_check_is_widget0	dwarf+symtab	ffdb7db106eb		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22c6c	104	hub_check_window_equiv	dwarf+symtab	eb8868462602		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22cd4	136	hub_check_pci_equiv	dwarf+symtab	6fc4d97c40fe		in	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22d5c	148	hub_setup_prb	dwarf+symtab	197f376d2a71		in	undocumented		
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22d5c	148	hub_setup_prb	dwarf+symtab	197f376d2a71		in	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22df0	240	hub_set_piomode	dwarf+symtab	91aa14bf7032		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22ee0	72	hub_widget_flags_set	dwarf+symtab	38634e74f701		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22f28	148	hub_device_flags_set	dwarf+symtab	ce36a865dd48		in	undocumented		
@@ -48957,7 +48957,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3eb24	120	dobuserr	dw
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3eb9c	48	badaddr	dwarf+symtab	cc1a7e544f7d		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3ebcc	48	badaddr_val	dwarf+symtab	c8106c886f1c		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3ebfc	56	wbadaddr	dwarf+symtab	96608a9f9775		in	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3ec34	48	wbadaddr_val	dwarf+symtab	97cd8050c7a5		in	undocumented		
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3ec34	48	wbadaddr_val	dwarf+symtab	97cd8050c7a5		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3ec64	8	is_buserror	dwarf+symtab	87506497337c		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3ec6c	288	probe_common	dwarf	b55e17bf8f0d		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3ed8c	960	bte_error_handler	dwarf+symtab	8cbaa7b8b38c		in	undocumented		
@@ -49201,8 +49201,8 @@ usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xe8b4	272	pcibr_is_slot
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xe9c4	32	pcibr_probe_slot	dwarf+symtab	0ff4248a2ff3		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xe9e4	80	pcibr_piomap_probe	dwarf+symtab	8a5165998120		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xea34	204	pcibr_probe_work	dwarf	6173137c4840		in	undocumented		
-usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xeb00	36	pcibr_disable_mst_timeout	dwarf+symtab	0ba45eeaa5a8		in	undocumented		
-usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xeb24	36	pcibr_enable_mst_timeout	dwarf+symtab	f6f176866461		in	undocumented		
+usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xeb00	36	pcibr_disable_mst_timeout	dwarf+symtab	0ba45eeaa5a8		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xeb24	36	pcibr_enable_mst_timeout	dwarf+symtab	f6f176866461		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xeb48	84	pcibr_disable_mst_timeout_work	dwarf	d5c341126c30		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xeb9c	84	pcibr_enable_mst_timeout_work	dwarf	d5c341126c30		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xebf0	568	pcibr_device_info_free	dwarf+symtab	b6e1bffe3fa3		in	undocumented		
@@ -49314,12 +49314,12 @@ usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x18fb8	460	pcireg_ext_a
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x19184	620	pcireg_int_ate_get	dwarf+symtab	6afcbc1ccf8c		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x193f0	620	pcireg_int_ate_set	dwarf+symtab	9e39aa7ea7b3		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x1965c	596	pcireg_int_ate_addr	dwarf+symtab	e6ded06d5aa5		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64		0x0		pciio_piomap_alloc	dwarf+symtab			in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64		0x0		pciio_piomap_alloc	dwarf+symtab			in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x1c	28	pciio_piomap_free	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x38	40	pciio_piomap_addr	dwarf+symtab	852ec84c3a31		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x38	40	pciio_piomap_addr	dwarf+symtab	852ec84c3a31		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x60	28	pciio_piomap_done	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x7c	28	pciio_piotrans_addr	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x98	300	pciio_pio_addr	dwarf+symtab	fc3e5cf6f91d		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x98	300	pciio_pio_addr	dwarf+symtab	fc3e5cf6f91d		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x1c4	36	pciio_piospace_alloc	dwarf+symtab	34a53cf03dd2		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x1e8	28	pciio_piospace_free	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x204	28	pciio_pio_flush_read	dwarf+symtab	a86de4a9d7a4		in	undocumented		
@@ -49332,14 +49332,14 @@ usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x2ac	28	pciio_dmamap_li
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x2c8	28	pciio_dmamap_done	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x2e4	28	pciio_dmatrans_addr	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x300	28	pciio_dmatrans_list	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x31c	284	pciio_dma_addr	dwarf+symtab	79d86430942f		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x31c	284	pciio_dma_addr	dwarf+symtab	79d86430942f		in	named-only	docs/open-questions.md#host-attachment	Host attachment
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x438	28	pciio_dmamap_drain	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x454	28	pciio_dmaaddr_drain	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x470	28	pciio_dmalist_drain	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x48c	104	pciio_intr_alloc	dwarf+symtab	597f5500f168		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x48c	104	pciio_intr_alloc	dwarf+symtab	597f5500f168		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x4f4	28	pciio_intr_free	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x510	28	pciio_intr_setmustrun	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x52c	28	pciio_intr_connect	dwarf+symtab	a86de4a9d7a4		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x52c	28	pciio_intr_connect	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x548	28	pciio_intr_disconnect	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x564	28	pciio_intr_cpu_get	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x580	100	pciio_slot_func_to_name	dwarf+symtab	a4baa723bf4b		in	undocumented		
@@ -49350,7 +49350,7 @@ usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x7c8	28	pciio_provider_
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x7e4	28	pciio_provider_shutdown	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x800	28	pciio_endian_set	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x81c	28	pciio_priority_set	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x838	184	pciio_config_get	dwarf+symtab	fb6bd4e7d9ea		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x838	184	pciio_config_get	dwarf+symtab	fb6bd4e7d9ea		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x8f0	184	pciio_config_get_safe	dwarf+symtab	fb6bd4e7d9ea		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x9a8	152	pciio_config_set	dwarf+symtab	ddf38d0cbe1b		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xa40	28	pciio_error_extract	dwarf+symtab	a86de4a9d7a4		in	undocumented		
@@ -49371,7 +49371,7 @@ usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xb60	68	pciio_hostinfo_
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xba4	88	pciio_info_set	dwarf+symtab	1c934379f88d		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xbfc	8	pciio_info_dev_get	dwarf+symtab	2d3084abca7d		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc04	8	pciio_info_hostdev_get	dwarf+symtab	55470fa05862		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc0c	8	pciio_info_bus_get	dwarf+symtab	33a74c6e12a2		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc0c	8	pciio_info_bus_get	dwarf+symtab	33a74c6e12a2		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc14	8	pciio_info_slot_get	dwarf+symtab	ebbd3bbc6e9f		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc1c	44	pciio_info_hostslot_get	dwarf+symtab	bcd0285ba8c0		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc48	8	pciio_info_function_get	dwarf+symtab	1c97aa57fad9		in	undocumented		
@@ -49396,11 +49396,11 @@ usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xd58	8	pciio_attach	dwa
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xd60	36	pciio_provider_register	dwarf+symtab	9b84317ece1b		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xd84	36	pciio_provider_unregister	dwarf+symtab	ce5f7189bb97		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xda8	44	pciio_provider_fns_get	dwarf+symtab	58bb2461dee9		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xdd4	116	pciio_driver_register	dwarf+symtab	cf9c9d2c0804		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xdd4	116	pciio_driver_register	dwarf+symtab	cf9c9d2c0804		in	named-only	docs/kernel-attach.md#which-cards-the-driver-claims	Which cards the driver claims
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xe48	36	pciio_driver_unregister	dwarf+symtab	17c39a74e258		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xe6c	28	pciio_driver_reg_callback	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xe88	28	pciio_driver_unreg_callback	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xea4	80	pciio_iterate	dwarf+symtab	4d48fba0640d		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xea4	80	pciio_iterate	dwarf+symtab	4d48fba0640d		in	named-only	docs/kernel-attach.md#order-of-events	Order of events
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xef4	52	pciio_device_register	dwarf+symtab	422852879a21		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xf28	28	pciio_device_unregister	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xf44	184	pciio_device_info_new	dwarf+symtab	4f8976f4c5c5		in	undocumented		
@@ -49416,7 +49416,7 @@ usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x12a4	52	pciio_device_w
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x12d8	68	pciio_device_win_populate	dwarf+symtab	aa574e29b7e6		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x131c	236	pciio_device_win_alloc	dwarf+symtab	fae88a6d0847		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x1408	48	pciio_device_win_free	dwarf+symtab	8c2ba2b576e4		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x1438	52	pciio_error_register	dwarf+symtab	4aed12658ed4		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x1438	52	pciio_error_register	dwarf+symtab	4aed12658ed4		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x146c	52	pciio_slot_inuse	dwarf+symtab	e374ad6d42ff		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x14a0	28	pciio_dma_enabled	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x14bc	8	pciio_info_type1_get	dwarf+symtab	960148d2389c		in	undocumented		
@@ -49459,7 +49459,7 @@ usr/cpu/sysgen/IP35boot/vga.a(debug.o)	board-kernel	n64		0x0		x86emu_dump_regs	d
 usr/cpu/sysgen/IP35boot/vga.a(debug.o)	board-kernel	n64	.text	0x3d4	684	x86emu_dump_xregs	dwarf+symtab	7146b8405e48		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64		0x0		x86emu_intr_handle	dwarf+symtab			in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0xa8	24	x86emu_intr_raise	dwarf+symtab	0882cc896eff		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0xc0	176	X86EMU_exec	dwarf+symtab	8adcc0f5a5d1		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0xc0	176	X86EMU_exec	dwarf+symtab	8adcc0f5a5d1		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x170	20	X86EMU_halt_sys	dwarf+symtab	5a22cd8b281d		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x184	116	fetch_decode_modrm	dwarf+symtab	b8bf754f9d85		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x1f8	60	fetch_byte_imm	dwarf+symtab	8749a7f1b4ce		in	undocumented		
@@ -49870,7 +49870,7 @@ usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x330	52	X86EMU_setu
 usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x364	52	X86EMU_setupPioFuncs	dwarf+symtab	a3818bf90933		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x398	136	X86EMU_setupIntrFuncs	dwarf+symtab	dce863e1efd4		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x420	124	X86EMU_prepareForInt	dwarf+symtab	4e198c3a5d95		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64		0x0		xf86InitInt10	dwarf+symtab			in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64		0x0		xf86InitInt10	dwarf+symtab			in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
 usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x138	116	xf86FreeInt10	dwarf+symtab	9862ca66dac6		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x1ac	304	xf86Int10AllocPages	dwarf+symtab	2d8886669e2c		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x2dc	120	xf86Int10FreePages	dwarf+symtab	2c2afff70cbf		in	undocumented		
@@ -49881,11 +49881,11 @@ usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x694	112	write_
 usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x704	244	write_w	dwarf+symtab	cb8e69d2c584		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x7f8	508	write_l	dwarf+symtab	c96a46aee97b		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x9f4	68	xf86int10Addr	dwarf+symtab	1df626e2fda2		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64		0x0		setup_int	dwarf+symtab			in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x94	80	finish_int	dwarf+symtab	0987b235b16e		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64		0x0		setup_int	dwarf+symtab			in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x94	80	finish_int	dwarf+symtab	0987b235b16e		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0xe4	92	getIntVect	dwarf+symtab	65d01e5251cf		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x140	68	pushw	dwarf+symtab	8c3db09b20f1		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x184	196	run_bios_int	dwarf+symtab	c1e5603ede24		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x184	196	run_bios_int	dwarf+symtab	c1e5603ede24		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x248	176	port_rep_inb	dwarf+symtab	15acf308f4e8		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x2f8	188	port_rep_inw	dwarf+symtab	3c8db63cd1b9		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x3b4	188	port_rep_inl	dwarf+symtab	8a5348c8a818		in	undocumented		
@@ -49928,11 +49928,11 @@ usr/cpu/sysgen/IP35boot/vga.a(xf86int10.o)	board-kernel	n64	.text	0x108	2772	int
 usr/cpu/sysgen/IP35boot/vga.a(xf86int10.o)	board-kernel	n64	.text	0xbdc	760	int1A_handler	dwarf+symtab	d285f42c9004		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(xf86int10.o)	board-kernel	n64	.text	0xed4	136	intE6_handler	dwarf+symtab	91ef0c745ead		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	board-kernel	n64		0x0		x86emu_do_int	dwarf+symtab			in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	board-kernel	n64	.text	0x38	120	xf86ExecX86int10	dwarf+symtab	81a9acb67a3c		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	board-kernel	n64	.text	0x38	120	xf86ExecX86int10	dwarf+symtab	81a9acb67a3c		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
 usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	board-kernel	n64	.text	0xb0	240	xf86Int10ExecSetup	dwarf+symtab	b1660e7a4a60		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	board-kernel	n64	.text	0x1a0	72	printk	dwarf+symtab	79ce8baad53b		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64		0x0		vga_earlyinit	dwarf+symtab			in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x314	348	vga_init	dwarf+symtab	0375a0309a54		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64		0x0		vga_earlyinit	dwarf+symtab			in	named-only	docs/kernel-attach.md#order-of-events	Order of events
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x314	348	vga_init	dwarf+symtab	0375a0309a54		in	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
 usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x470	260	vga_reg	dwarf+symtab	4beaee663b72		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x574	1252	vga_attach	dwarf+symtab	8c0a6b8f6561		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xa58	196	vga_checkBoardPointers	dwarf+symtab	a969d755957f		in	undocumented		
@@ -49941,20 +49941,20 @@ usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xbf8	336	vga_f
 usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xd48	76	vga_error_handler	dwarf+symtab	c57fcf146564		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xd94	136	vga_open	dwarf+symtab	f4fc25abde3a		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xe1c	244	vga_close	dwarf+symtab	2c4a23ebba1b		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xf10	180	vga_set_vesa_mode	dwarf+symtab	344c114873c9		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xfc4	84	vga_enable_fb	dwarf+symtab	486705fc04b7		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x1018	340	vga_shadow_bios	dwarf+symtab	779e6a408954		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x116c	100	vga_find_lfb_bar	dwarf+symtab	0cfb639dfbe3		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x11d0	240	vga_init_board	dwarf+symtab	cd28eea24520		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x12c0	172	vga_check_for_pic	dwarf+symtab	828be65f4a7c		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x136c	1024	vga_map_board_regions	dwarf+symtab	8971d9d4650b		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xf10	180	vga_set_vesa_mode	dwarf+symtab	344c114873c9		in	understood	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xfc4	84	vga_enable_fb	dwarf+symtab	486705fc04b7		in	understood	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x1018	340	vga_shadow_bios	dwarf+symtab	779e6a408954		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x116c	100	vga_find_lfb_bar	dwarf+symtab	0cfb639dfbe3		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x11d0	240	vga_init_board	dwarf+symtab	cd28eea24520		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x12c0	172	vga_check_for_pic	dwarf+symtab	828be65f4a7c		in	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x136c	1024	vga_map_board_regions	dwarf+symtab	8971d9d4650b		in	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
 usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x176c	200	vga_unmap_board	dwarf+symtab	e29e7e581009		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x1834	120	vga_find_tport_pipe	dwarf+symtab	50885d303ff3		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x18ac	64	vga_setbridge_to_legacy_io	dwarf+symtab	9a432895802c		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x18ec	64	vga_setbridge_to_lfb	dwarf+symtab	18642f588021		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x192c	48	vga_restore_bridge	dwarf+symtab	3cd7c6aaf67f		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x1834	120	vga_find_tport_pipe	dwarf+symtab	50885d303ff3		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x18ac	64	vga_setbridge_to_legacy_io	dwarf+symtab	9a432895802c		in	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x18ec	64	vga_setbridge_to_lfb	dwarf+symtab	18642f588021		in	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x192c	48	vga_restore_bridge	dwarf+symtab	3cd7c6aaf67f		in	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
 usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x195c	308	vga_mk_tport_ctl_alias	dwarf+symtab	419dc090505e		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x1a90	116	vga_change_big_window	dwarf+symtab	03924af5c38a		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x1a90	116	vga_change_big_window	dwarf+symtab	03924af5c38a		in	understood	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
 usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	board-kernel	n64		0x0		vga_tport_lock_init	dwarf+symtab			in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	board-kernel	n64	.text	0x30	84	vga_color	dwarf+symtab	7484d2f33a00		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	board-kernel	n64	.text	0x84	192	vga_mapcolor	dwarf+symtab	d8c511ce0f4d		in	undocumented		
@@ -49966,7 +49966,7 @@ usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	board-kernel	n64	.text	0x4a4	96	vga_t
 usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	board-kernel	n64	.text	0x504	68	vga_unblank	dwarf+symtab	fd3f17e9b0b0		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	board-kernel	n64	.text	0x548	68	vga_blankscreen	dwarf+symtab	fd3f17e9b0b0		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	board-kernel	n64	.text	0x58c	68	vga_pnt2i	dwarf+symtab	fd3f17e9b0b0		in	undocumented		
-usr/cpu/sysgen/IP35boot/vgastubs.a(vgastubs.o)	board-kernel	n64		0x0		vga_earlyinit	dwarf+symtab			in	undocumented		
+usr/cpu/sysgen/IP35boot/vgastubs.a(vgastubs.o)	board-kernel	n64		0x0		vga_earlyinit	dwarf+symtab			in	named-only	docs/kernel-attach.md#order-of-events	Order of events
 usr/cpu/sysgen/IP35boot/xbridge.o	shared-kernel	n64		0x0		xbridge_init	dwarf+symtab			in	undocumented		
 usr/cpu/sysgen/IP35boot/xbridge.o	shared-kernel	n64	.text	0x54	3484	xbridge_attach	dwarf+symtab	455732fd45da		in	undocumented		
 usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64		0x0		xswitch_info_get	dwarf+symtab			in	undocumented		
@@ -50027,11 +50027,11 @@ usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x524	8	xtalk_pio_mapsz_
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x52c	8	xtalk_pio_kvaddr_get	dwarf+symtab	402de11c1126		in	undocumented		
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x534	8	xtalk_dma_dev_get	dwarf+symtab	b893f60251e4		in	undocumented		
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x53c	8	xtalk_dma_target_get	dwarf+symtab	ee36d96101ba		in	undocumented		
-usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x544	44	xwidget_info_chk	dwarf+symtab	8c6627f03438		in	undocumented		
+usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x544	44	xwidget_info_chk	dwarf+symtab	8c6627f03438		in	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x570	88	xwidget_info_get	dwarf+symtab	8a8109795078		in	undocumented		
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x5c8	88	xwidget_info_set	dwarf+symtab	bcb335ef950e		in	undocumented		
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x620	52	xwidget_info_dev_get	dwarf+symtab	f7cb8ce786ae		in	undocumented		
-usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x654	52	xwidget_info_id_get	dwarf+symtab	c123f3f7a4af		in	undocumented		
+usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x654	52	xwidget_info_id_get	dwarf+symtab	c123f3f7a4af		in	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x688	52	xwidget_info_master_get	dwarf+symtab	7b7fcfa8a12e		in	undocumented		
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x6bc	52	xwidget_info_masterid_get	dwarf+symtab	9d94b7ec3e9d		in	undocumented		
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x6f0	52	xwidget_info_part_num_get	dwarf+symtab	29f7829e778d		in	undocumented		
@@ -50055,17 +50055,17 @@ usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0xc04	92	xtalk_device_sh
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0xc60	32	xtalk_device_inquiry	dwarf+symtab	8066a1f9382a		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008be0	268	__start	dynsym	8d50a767ed4b		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008cec	12	_mcount	dynsym	1c53f0b255e3		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008d00	524	xf86InitInt10	dynsym	a2bed0a1383c		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008d00	524	xf86InitInt10	dynsym	a2bed0a1383c		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008f10	24	MapCurrentInt10	dynsym	fc6a184bc473		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008f30	180	xf86FreeInt10	dynsym	3bd15d9d25f0		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008ff0	552	xf86Int10AllocPages	dynsym	6ab43af93a52		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10009220	216	xf86Int10FreePages	dynsym	1622b73d077f		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10009ef0	128	xf86int10Addr	dynsym	a3a2b891ce5f		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10009f70	440	setup_int	dynsym	84bd5c321bad		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a130	256	finish_int	dynsym	d1474dda95e3		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10009f70	440	setup_int	dynsym	84bd5c321bad		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a130	256	finish_int	dynsym	d1474dda95e3		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a230	136	getIntVect	dynsym	1cb618545a1b		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a2c0	160	pushw	dynsym	362f4f3cf257		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a360	364	run_bios_int	dynsym	f9958d384373		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a360	364	run_bios_int	dynsym	f9958d384373		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a4d0	252	port_rep_inb	dynsym	423bf115c992		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a5d0	252	port_rep_inw	dynsym	ecd8e44b061f		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a6d0	252	port_rep_inl	dynsym	7c3e746e12e5		in	undocumented		
@@ -50097,7 +50097,7 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b940	336	inb	dynsym	d707bd8
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ba90	364	inw	dynsym	0c43a536d865		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000bc00	428	inl	dynsym	753d6e90e044		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000bdb0	412	int_handler	dynsym	f128fb0ff66a		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000db60	144	xf86ExecX86int10	dynsym	8b3b54ddbffe		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000db60	144	xf86ExecX86int10	dynsym	8b3b54ddbffe		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000dbf0	340	xf86Int10ExecSetup	dynsym	12f29529e12b		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000dd50	112	printk	dynsym	969c7ef10421		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ddc0	116	xf86getsecs	dynsym	933325922660		in	undocumented		
@@ -50121,7 +50121,7 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fc30	196	pciba_find_dev	dyn
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fd00	132	pciba_enable_rom	dynsym	bc1f97e50dc8		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fd90	160	pciba_disable_rom	dynsym	0d60a0a6e1b4		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ffa4	76	x86emu_intr_raise	dynsym	e55f497d1bc3		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fff0	380	X86EMU_exec	dynsym	f0d7633279cd		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fff0	380	X86EMU_exec	dynsym	f0d7633279cd		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001016c	48	X86EMU_halt_sys	dynsym	f72f07d7a939		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001019c	200	fetch_decode_modrm	dynsym	5044470ea78b		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10010264	136	fetch_byte_imm	dynsym	dd7ae6faca32		in	undocumented		
@@ -55756,7 +55756,7 @@ usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec698e8	136	convolve	dyns
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec69970	136	__GLgetscrmask	dynsym+mdebug	e27e263413e2	shared-address	in	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec69970	136	getscrmask	dynsym	e27e263413e2	shared-address	in	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec699f8	136	__GLwindow	dynsym+mdebug	cc27885576a9	shared-address	in	undocumented		
-usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec699f8	136	window	dynsym	cc27885576a9	shared-address	in	undocumented		
+usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec699f8	136	window	dynsym	cc27885576a9	shared-address	in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec69a80	64	__GListexloaded	dynsym+mdebug	9724beb8aabf	shared-address	in	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec69a80	64	istexloaded	dynsym	9724beb8aabf	shared-address	in	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec69ac0	136	__GLsmoothline	dynsym+mdebug	eb68ea75b8ae	shared-address	in	undocumented		
@@ -62483,7 +62483,7 @@ usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6b428	180	convolve	dy
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6b4dc	180	__GLgetscrmask	dynsym	2f6328845ecf	shared-address	in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6b4dc	180	getscrmask	dynsym	2f6328845ecf	shared-address	in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6b590	180	__GLwindow	dynsym	fc96454be38d	shared-address	in	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6b590	180	window	dynsym	fc96454be38d	shared-address	in	undocumented		
+usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6b590	180	window	dynsym	fc96454be38d	shared-address	in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6b644	68	__GListexloaded	dynsym	f1a10ca26253	shared-address	in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6b644	68	istexloaded	dynsym	f1a10ca26253	shared-address	in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6b688	180	__GLsmoothline	dynsym	8a2d6b9ce541	shared-address	in	undocumented		

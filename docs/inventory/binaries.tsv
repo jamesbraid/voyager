@@ -8,7 +8,7 @@ usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	x-shared	shared-x-server	shared-objec
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	x-shared	shared-x-server	shared-object	n64	82088	a4550d9a8cfb30f2		112	dynsym+dwarf	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/X11R6/lib/modules/dri/fglrx_dri.so	x-module	board-x-module	shared-object	n32	12888480	f455f9d53d95b6e4		12854	dynsym+dwarf	0	0	named-only	AGENTS.md#2-project-binaries-and-evidence	2. Project binaries and evidence
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	x-module	board-x-module	shared-object	n64	14223320	f3342b4598e52433		12854	dynsym+dwarf	0	0	named-only	docs/open-questions.md#3d	3D
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	x-module	board-x-module	shared-object	n32	700708	4f9aef0ff9030121		623	dynsym (dwarf addresses stale, dropped)	0	0	named-only	docs/open-questions.md#command-processor-and-ring	Command processor and ring
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	x-module	board-x-module	shared-object	n32	700708	4f9aef0ff9030121		623	dynsym (dwarf addresses stale, dropped)	0	0	named-only	docs/coverage.md#areas	Areas
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	x-module	board-x-module	shared-object	n32	12841224	8cf774b6991de91a		12813	dynsym+dwarf	0	0	named-only	AGENTS.md#2-project-binaries-and-evidence	2. Project binaries and evidence
 usr/X11R6/lib/modules/extensions/libGLcore.so	x-shared	shared-x-server	shared-object	n32	2002584	ac2ece4de5c4f213		3303	dynsym+dwarf	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/X11R6/lib/modules/extensions/libdri.so	x-shared	shared-x-server	shared-object	n32	78616	7f4d3fb3f01906c1		101	dynsym+dwarf	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
@@ -20,15 +20,15 @@ usr/X11R6/lib/modules/libpcidata.so	x-shared	shared-x-server	shared-object	n32	8
 usr/X11R6/lib/modules/libscanpci.so	x-shared	shared-x-server	shared-object	n32	157684	521a797343e98636		5	dynsym+dwarf	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/X11R6/lib/modules/libvbe.so	x-shared	shared-x-server	shared-object	n32	26052	fa7400aa715f8fba		21	dynsym+dwarf	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/cpu/firmware/ip35prom.img	firmware	board-firmware	data	-	1480360	d74b4b7ef9c11c66		0	strings	0	0	named-only	docs/open-questions.md#host-attachment	Host attachment
-usr/cpu/sysgen/IP35boot/fglrx.o	kernel	board-kernel	object	n64	567504	072451083d188a26		384	symtab+dwarf	0	0	named-only	docs/open-questions.md#open-questions	Open questions
+usr/cpu/sysgen/IP35boot/fglrx.o	kernel	board-kernel	object	n64	567504	072451083d188a26		384	symtab+dwarf	0	0	named-only	docs/kernel-attach.md#kernel-attach-path-ip35	Kernel attach path (IP35)
 usr/cpu/sysgen/IP35boot/hubspc.o	kernel-shared	shared-kernel	object	n64	13056	899394978cddc968		13	symtab	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
-usr/cpu/sysgen/IP35boot/is1.o	kernel	board-kernel	object	n64	88232	0a1a158cda310067		54	symtab+dwarf	0	0	named-only	docs/open-questions.md#open-questions	Open questions
-usr/cpu/sysgen/IP35boot/kernel.o	kernel-shared	shared-kernel	object	n64	1288752	2e847fdcadfdb958		1318	symtab+dwarf	0	0	named-only	AGENTS.md#2-project-binaries-and-evidence	2. Project binaries and evidence
-usr/cpu/sysgen/IP35boot/pcibr.o	kernel-shared	shared-kernel	object	n64	300848	5a79bfd6f2bf07f4		265	symtab+dwarf	0	0	named-only	docs/open-questions.md#host-attachment	Host attachment
+usr/cpu/sysgen/IP35boot/is1.o	kernel	board-kernel	object	n64	88232	0a1a158cda310067		54	symtab+dwarf	0	0	named-only	docs/kernel-attach.md#kernel-attach-path-ip35	Kernel attach path (IP35)
+usr/cpu/sysgen/IP35boot/kernel.o	kernel-shared	shared-kernel	object	n64	1288752	2e847fdcadfdb958		1318	symtab+dwarf	0	0	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
+usr/cpu/sysgen/IP35boot/pcibr.o	kernel-shared	shared-kernel	object	n64	300848	5a79bfd6f2bf07f4		265	symtab+dwarf	0	0	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/pciio.o	kernel-shared	shared-kernel	object	n64	47872	4d2e3ed5eac64973		108	symtab	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/cpu/sysgen/IP35boot/pciio_ppb.o	kernel-shared	shared-kernel	object	n64	27528	aadca7cfd050b4f2		18	symtab	0	0	named-only	docs/open-questions.md#host-attachment	Host attachment
-usr/cpu/sysgen/IP35boot/pciiox.o	kernel-shared	shared-kernel	object	n64	6120	bc9406dffebc6428		2	symtab	0	0	named-only	docs/open-questions.md#host-attachment	Host attachment
-usr/cpu/sysgen/IP35boot/pic.o	kernel-shared	shared-kernel	object	n64	32656	4ccc69e42c0fde78		13	symtab	0	0	named-only	docs/open-questions.md#host-attachment	Host attachment
+usr/cpu/sysgen/IP35boot/pciiox.o	kernel-shared	shared-kernel	object	n64	6120	bc9406dffebc6428		2	symtab	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
+usr/cpu/sysgen/IP35boot/pic.o	kernel-shared	shared-kernel	object	n64	32656	4ccc69e42c0fde78		13	symtab	0	0	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/vga.a(debug.o)	kernel	board-kernel	object	n64	9604	8475c1a982bd0f98		2	symtab	0	0	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	kernel	board-kernel	object	n64	21332	d99a13d4b4476842		28	symtab	0	0	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(fpu.o)	kernel	board-kernel	object	n64	10660	b5161db4060ccda1		8	symtab	0	0	undocumented		
@@ -43,14 +43,14 @@ usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)	kernel	board-kernel	object	n64	6980	
 usr/cpu/sysgen/IP35boot/vga.a(junkcode.o)	kernel	board-kernel	object	n64	6324	03abcce4bdce0b4c		6	symtab	0	0	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(xf86int10.o)	kernel	board-kernel	object	n64	15364	799ee4277be0e0a0		4	symtab	0	0	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	kernel	board-kernel	object	n64	8484	f266f8569838391d		4	symtab	0	0	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	kernel	board-kernel	object	n64	31492	97e6d38797999733		24	symtab	0	0	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	kernel	board-kernel	object	n64	31492	97e6d38797999733		24	symtab	0	0	named-only	docs/kernel-attach.md#order-of-events	Order of events
 usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	kernel	board-kernel	object	n64	13012	12e6ed1f380f5e3d		11	symtab	0	0	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(vga_idbg.o)	kernel	board-kernel	object	n64	1220	75f91dc61018340c		0	none	0	0	undocumented		
-usr/cpu/sysgen/IP35boot/vgastubs.a(vgastubs.o)	kernel	board-kernel	object	n64	2916	8d2cf5ad44349166		1	none	0	0	named-only	AGENTS.md#2-project-binaries-and-evidence	2. Project binaries and evidence
-usr/cpu/sysgen/IP35boot/xbridge.o	kernel-shared	shared-kernel	object	n64	22768	c782e88889d3306a		2	symtab	0	0	named-only	docs/open-questions.md#host-attachment	Host attachment
+usr/cpu/sysgen/IP35boot/vgastubs.a(vgastubs.o)	kernel	board-kernel	object	n64	2916	8d2cf5ad44349166		1	none	0	0	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
+usr/cpu/sysgen/IP35boot/xbridge.o	kernel-shared	shared-kernel	object	n64	22768	c782e88889d3306a		2	symtab	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/cpu/sysgen/IP35boot/xswitch.o	kernel-shared	shared-kernel	object	n64	10304	2ac96f6287b076ad		13	symtab	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
-usr/cpu/sysgen/IP35boot/xtalk.o	kernel-shared	shared-kernel	object	n64	33624	7f6309db597c7480		71	symtab	0	0	named-only	docs/open-questions.md#host-attachment	Host attachment
-usr/diags/SG/bin/biosemu	diagnostics	board-diagnostic	executable	n64	303832	589569f016c63086		473	dynsym	0	0	named-only	docs/open-questions.md#host-attachment	Host attachment
+usr/cpu/sysgen/IP35boot/xtalk.o	kernel-shared	shared-kernel	object	n64	33624	7f6309db597c7480		71	symtab	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
+usr/diags/SG/bin/biosemu	diagnostics	board-diagnostic	executable	n64	303832	589569f016c63086		473	dynsym	0	0	named-only	docs/open-questions.md#what-irix-programs-at-attach	What IRIX programs at attach
 usr/diags/SG/bin/olsg	diagnostics	board-diagnostic	executable	n64	2726440	21d56f822203d9ae		2217	dynsym	0	0	named-only	docs/open-questions.md#identity	Identity
 usr/diags/SG/bin/olsgsys	diagnostics	board-diagnostic	executable	n32	190372	2e766e00fe126c9f		171	dynsym	0	0	named-only	docs/open-questions.md#identity	Identity
 usr/diags/SG/data/1280x1024_60.vmts	diagnostics	board-diagnostic	data	-	746	2041bf1c9fee8a33		0		0	0	undocumented		
@@ -75,10 +75,10 @@ usr/gfx/arch/IP35VOYAGER64/libGL.so	libraries	board-library	shared-object	n64	97
 usr/gfx/arch/IP35VOYAGER64/libGLcore.so	libraries	board-library	shared-object	n64	19096	1a3be8b6fa285037		1	dynsym	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/gfx/gfxtopology	tools	board-tool	data	-	6294	3ece1eb9e90ac3e6		0		0	0	named-only	AGENTS.md#2-project-binaries-and-evidence	2. Project binaries and evidence
 usr/gfx/sgcombine	tools	board-tool	executable	n32	230584	77d0273d5f4e91ec		402	dynsym	0	0	named-only	docs/open-questions.md#3d	3D
-usr/gfx/ucode/VOYAGER/sg2.bin	option-roms	board-microcode	data	-	40960	eb7c01d27867030b		0		0	0	named-only	docs/open-questions.md#identity	Identity
-usr/gfx/ucode/VOYAGER/sg3.bin	option-roms	board-microcode	data	-	40960	3510a7f26b9cb928		0		0	0	named-only	docs/open-questions.md#identity	Identity
-usr/gfx/ucode/VOYAGER/sg3a.bin	option-roms	board-microcode	data	-	40960	7d4520e8786024bc		0		0	0	named-only	docs/open-questions.md#identity	Identity
-var/sysgen/master.d/fglrx	kernel-config	shared-data	data	-	392	2d037a2fefdfb967		0		0	0	named-only	docs/open-questions.md#host-attachment	Host attachment
+usr/gfx/ucode/VOYAGER/sg2.bin	option-roms	board-microcode	data	-	40960	eb7c01d27867030b		0		0	0	named-only	docs/kernel-attach.md#which-cards-the-driver-claims	Which cards the driver claims
+usr/gfx/ucode/VOYAGER/sg3.bin	option-roms	board-microcode	data	-	40960	3510a7f26b9cb928		0		0	0	named-only	docs/kernel-attach.md#which-cards-the-driver-claims	Which cards the driver claims
+usr/gfx/ucode/VOYAGER/sg3a.bin	option-roms	board-microcode	data	-	40960	7d4520e8786024bc		0		0	0	named-only	docs/kernel-attach.md#which-cards-the-driver-claims	Which cards the driver claims
+var/sysgen/master.d/fglrx	kernel-config	shared-data	data	-	392	2d037a2fefdfb967		0		0	0	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 var/sysgen/master.d/is1	kernel-config	shared-data	data	-	397	da0b7c4587a48d55		0		0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 var/sysgen/master.d/pciio_ppb	kernel-config	shared-data	data	-	119	aba64368a130a66e		0		0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 var/sysgen/master.d/vga	kernel-config	shared-data	data	-	112	35b3438915ff6432		0		0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
