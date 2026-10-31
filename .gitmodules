@@ -17,3 +17,23 @@
 [submodule "mesa"]
 	path = mesa
 	url = https://gitlab.freedesktop.org/mesa/mesa.git
+[submodule "xf86-video-ati"]
+	path = xf86-video-ati
+	url = https://gitlab.freedesktop.org/xorg/driver/xf86-video-ati.git
+	shallow = true
+[submodule "xf86-video-ati-xorg-6.8.2"]
+	path = xf86-video-ati-xorg-6.8.2
+	url = https://gitlab.freedesktop.org/xorg/driver/xf86-video-ati.git
+	shallow = true
+[submodule "xf86-video-radeonhd"]
+	path = xf86-video-radeonhd
+	url = https://gitlab.freedesktop.org/xorg/driver/xf86-video-radeonhd.git
+	shallow = true
+[submodule "xf86-video-avivo"]
+	path = xf86-video-avivo
+	url = https://gitlab.freedesktop.org/xorg/driver/xf86-video-avivo.git
+	shallow = true
+[submodule "atomdis"]
+	path = atomdis
+	url = https://github.com/gpuhw/AtomDis.git
+	shallow = true
