@@ -37,3 +37,15 @@
 	path = atomdis
 	url = https://github.com/gpuhw/AtomDis.git
 	shallow = true
+[submodule "libdrm"]
+	path = libdrm
+	url = https://gitlab.freedesktop.org/mesa/drm.git
+	shallow = true
+[submodule "libdrm-2.4.0"]
+	path = libdrm-2.4.0
+	url = https://gitlab.freedesktop.org/mesa/drm.git
+	shallow = true
+[submodule "linux-2.6.30"]
+	path = linux-2.6.30
+	url = https://github.com/torvalds/linux.git
+	shallow = true
