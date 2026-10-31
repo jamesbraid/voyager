@@ -1,0 +1,167 @@
+{
+  "family": "ATI R300 and R350 (FireGL X1, FireGL X2; SGI Onyx4)",
+  "siblings": {
+    "odsy": "../odsy",
+    "kona": "../kona"
+  },
+  "docs": {
+    "prose": [
+      "docs/*.md",
+      "README.md"
+    ],
+    "headers": [
+      "*.h",
+      "*/include/*.h"
+    ],
+    "tables": [],
+    "index": [
+      "AGENTS.md",
+      "README.md",
+      "IRIX_FILES.md",
+      "docs/coverage.md",
+      "docs/open-questions.md"
+    ],
+    "dumps": [],
+    "skip": [
+      "docs/inventory/*",
+      "docs/sources/*"
+    ],
+    "context": {}
+  },
+  "prepare": [],
+  "binaries": [
+    {
+      "group": "kernel",
+      "role": "board-kernel",
+      "paths": [
+        "usr/cpu/sysgen/IP35boot/fglrx.o",
+        "usr/cpu/sysgen/IP35boot/is1.o",
+        "usr/cpu/sysgen/IP35boot/vga.a",
+        "usr/cpu/sysgen/IP35boot/vgastubs.a"
+      ]
+    },
+    {
+      "group": "kernel-shared",
+      "role": "shared-kernel",
+      "paths": [
+        "usr/cpu/sysgen/IP35boot/kernel.o",
+        "usr/cpu/sysgen/IP35boot/pciio.o",
+        "usr/cpu/sysgen/IP35boot/pciio_ppb.o",
+        "usr/cpu/sysgen/IP35boot/pciiox.o",
+        "usr/cpu/sysgen/IP35boot/pcibr.o",
+        "usr/cpu/sysgen/IP35boot/pic.o",
+        "usr/cpu/sysgen/IP35boot/xbridge.o",
+        "usr/cpu/sysgen/IP35boot/xtalk.o",
+        "usr/cpu/sysgen/IP35boot/xswitch.o",
+        "usr/cpu/sysgen/IP35boot/hubspc.o"
+      ]
+    },
+    {
+      "group": "kernel-config",
+      "role": "shared-data",
+      "paths": [
+        "var/sysgen/master.d/fglrx",
+        "var/sysgen/master.d/is1",
+        "var/sysgen/master.d/vga",
+        "var/sysgen/master.d/vgastubs",
+        "var/sysgen/master.d/pciio_ppb"
+      ]
+    },
+    {
+      "group": "libraries",
+      "role": "board-library",
+      "paths": [
+        "usr/gfx/arch/IP35VOYAGER",
+        "usr/gfx/arch/IP35VOYAGER32",
+        "usr/gfx/arch/IP35VOYAGER64"
+      ]
+    },
+    {
+      "group": "x-module",
+      "role": "board-x-module",
+      "paths": [
+        "usr/X11R6/lib/modules/drivers/fglrx_drv.so",
+        "usr/X11R6/lib/modules/extensions/fglrx_glx.so",
+        "usr/X11R6/lib/modules/irix/libfglrxdrm.so",
+        "usr/X11R6/lib/modules/dri/fglrx_dri.so",
+        "usr/X11R6/lib/modules/dri/fglrx_dri64.so"
+      ]
+    },
+    {
+      "group": "x-shared",
+      "role": "shared-x-server",
+      "paths": [
+        "usr/X11R6/bin/XFree86",
+        "usr/X11R6/lib/modules/extensions/libglx.so",
+        "usr/X11R6/lib/modules/extensions/libdri.so",
+        "usr/X11R6/lib/modules/extensions/libGLcore.so",
+        "usr/X11R6/lib/modules/irix/libdrm.so",
+        "usr/X11R6/lib/modules/libint10.so",
+        "usr/X11R6/lib/modules/libvbe.so",
+        "usr/X11R6/lib/modules/libscanpci.so",
+        "usr/X11R6/lib/modules/libpcidata.so",
+        "usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so",
+        "usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so",
+        "etc/X11/gen-XF86Config",
+        "etc/config/xf86config_autoconfig",
+        "etc/config/xf86config_autoreplace",
+        "etc/init.d/xf86config"
+      ]
+    },
+    {
+      "group": "tools",
+      "role": "board-tool",
+      "paths": [
+        "usr/gfx/VOYAGER/bin",
+        "usr/gfx/sgcombine",
+        "usr/gfx/gfxtopology"
+      ]
+    },
+    {
+      "group": "diagnostics",
+      "role": "board-diagnostic",
+      "paths": [
+        "usr/diags/SG"
+      ]
+    },
+    {
+      "group": "option-roms",
+      "role": "board-microcode",
+      "paths": [
+        "usr/gfx/ucode/VOYAGER"
+      ]
+    },
+    {
+      "group": "firmware",
+      "role": "board-firmware",
+      "paths": [
+        "usr/cpu/firmware/ip35prom.img"
+      ],
+      "string_names": "\\bfglrx\\w{3,}|\\bvga_\\w{3,}"
+    }
+  ],
+  "exclude": [],
+  "windows": [],
+  "bases": [],
+  "accessors": [],
+  "aliases": [],
+  "decoders": [],
+  "tokens": {
+    "docs": [],
+    "widths": {
+      "word": 8,
+      "block": 3
+    },
+    "value_match": [
+      "word",
+      "block"
+    ],
+    "context": {},
+    "families": [],
+    "groups": [],
+    "sources": []
+  },
+  "ioctls": {},
+  "ucode": [],
+  "spec_registers": []
+}

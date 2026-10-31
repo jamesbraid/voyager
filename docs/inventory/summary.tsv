@@ -1,0 +1,71 @@
+table	rows	out_of_scope	understood	understood_with_open	understood_distinct	templated	located	named_only	undocumented	no_software_dependency	pct_understood	pct_located_or_better	pct_mentioned	pct_done	unresolved_sites	truncated	audited_real_pct	audited_sample	audited_date	computes	reused	multi_unit	shared_address	input
+binaries	84	0	0	0	0	0	0	56	28	0	0.0	0.0	66.7	0.0							0			
+functions	67350	0	0	0	0	0	0	9	67341	0	0.0	0.0	0.0	0.0							0	630	5986	
+functions (distinct names)	30216	0	0	0	0	0	0	2	30214	0	0.0	0.0	0.0	0.0							0			
+mmio	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0	0						0			
+tokens	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
+ioctls	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
+ucode	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0						0	0			
+spec-registers	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
+input root manifest	68																							f460183ba5ef2e0d3a51a38138fa0887c0ebf7a929b85a4ef7380976fad2b88a
+input sibling kona																								5dc6e9d883985b4573b634de9d4d0a80f54d3d56
+input sibling odsy																								bbd45445a9c98b31855ceae7d3353764e8c91498
+functions in usr/X11R6/bin/XFree86	2924	0	0	0	0	0	0	1	2923	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	112	0	0	0	0	0	0	0	112	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	112	0	0	0	0	0	0	0	112	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/X11R6/lib/modules/dri/fglrx_dri.so	12854	0	0	0	0	0	0	0	12854	0	0.0	0.0	0.0	0.0							0	201	0	
+functions in usr/X11R6/lib/modules/dri/fglrx_dri64.so	12854	0	0	0	0	0	0	0	12854	0	0.0	0.0	0.0	0.0							0	201	0	
+functions in usr/X11R6/lib/modules/drivers/fglrx_drv.so	623	0	0	0	0	0	0	0	623	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/X11R6/lib/modules/extensions/fglrx_glx.so	12813	0	0	0	0	0	0	0	12813	0	0.0	0.0	0.0	0.0							0	201	0	
+functions in usr/X11R6/lib/modules/extensions/libGLcore.so	3303	0	0	0	0	0	0	0	3303	0	0.0	0.0	0.0	0.0							0	18	0	
+functions in usr/X11R6/lib/modules/extensions/libdri.so	101	0	0	0	0	0	0	0	101	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/X11R6/lib/modules/extensions/libglx.so	920	0	0	0	0	0	0	0	920	0	0.0	0.0	0.0	0.0							0	4	0	
+functions in usr/X11R6/lib/modules/irix/libdrm.so	105	0	0	0	0	0	0	0	105	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/X11R6/lib/modules/irix/libfglrxdrm.so	51	0	0	0	0	0	0	0	51	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/X11R6/lib/modules/libint10.so	482	0	0	0	0	0	0	0	482	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/X11R6/lib/modules/libpcidata.so	1	0	0	0	0	0	0	0	1	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/X11R6/lib/modules/libscanpci.so	5	0	0	0	0	0	0	0	5	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/X11R6/lib/modules/libvbe.so	21	0	0	0	0	0	0	0	21	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/fglrx.o	384	0	0	0	0	0	0	0	384	0	0.0	0.0	0.0	0.0							0	4	10	
+functions in usr/cpu/sysgen/IP35boot/hubspc.o	13	0	0	0	0	0	0	0	13	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/is1.o	54	0	0	0	0	0	0	0	54	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/kernel.o	1318	0	0	0	0	0	0	0	1318	0	0.0	0.0	0.0	0.0							0	1	112	
+functions in usr/cpu/sysgen/IP35boot/pcibr.o	265	0	0	0	0	0	0	0	265	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/pciio.o	108	0	0	0	0	0	0	0	108	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/pciio_ppb.o	18	0	0	0	0	0	0	0	18	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/pciiox.o	2	0	0	0	0	0	0	0	2	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/pic.o	13	0	0	0	0	0	0	0	13	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/vga.a(debug.o)	2	0	0	0	0	0	0	0	2	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/vga.a(decode.o)	28	0	0	0	0	0	0	0	28	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/vga.a(fpu.o)	8	0	0	0	0	0	0	0	8	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/vga.a(ops.o)	245	0	0	0	0	0	0	0	245	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	26	0	0	0	0	0	0	0	26	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	90	0	0	0	0	0	0	0	90	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/vga.a(sys.o)	16	0	0	0	0	0	0	0	16	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/vga.a(generic.o)	11	0	0	0	0	0	0	0	11	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	26	0	0	0	0	0	0	0	26	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	6	0	0	0	0	0	0	0	6	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)	4	0	0	0	0	0	0	0	4	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/vga.a(junkcode.o)	6	0	0	0	0	0	0	0	6	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/vga.a(xf86int10.o)	4	0	0	0	0	0	0	0	4	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	4	0	0	0	0	0	0	0	4	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	24	0	0	0	0	0	0	0	24	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	11	0	0	0	0	0	0	0	11	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/vgastubs.a(vgastubs.o)	1	0	0	0	0	0	0	0	1	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/xbridge.o	2	0	0	0	0	0	0	0	2	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/xswitch.o	13	0	0	0	0	0	0	0	13	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/xtalk.o	71	0	0	0	0	0	0	0	71	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/diags/SG/bin/biosemu	473	0	0	0	0	0	0	1	472	0	0.0	0.0	0.2	0.0							0	0	0	
+functions in usr/diags/SG/bin/olsg	2217	0	0	0	0	0	0	1	2216	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/diags/SG/bin/olsgsys	171	0	0	0	0	0	0	1	170	0	0.0	0.0	0.6	0.0							0	0	0	
+functions in usr/gfx/VOYAGER/bin/sg2flash	8	0	0	0	0	0	0	1	7	0	0.0	0.0	12.5	0.0							0	0	0	
+functions in usr/gfx/VOYAGER/bin/vpm	31	0	0	0	0	0	0	1	30	0	0.0	0.0	3.2	0.0							0	0	0	
+functions in usr/gfx/arch/IP35VOYAGER/libGL.so	671	0	0	0	0	0	0	0	671	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/gfx/arch/IP35VOYAGER/libGLcore.so	504	0	0	0	0	0	0	0	504	0	0.0	0.0	0.0	0.0							0	0	68	
+functions in usr/gfx/arch/IP35VOYAGER/libgl.so	3812	0	0	0	0	0	0	1	3811	0	0.0	0.0	0.0	0.0							0	0	1124	
+functions in usr/gfx/arch/IP35VOYAGER32/libGL.so	2596	0	0	0	0	0	0	0	2596	0	0.0	0.0	0.0	0.0							0	0	1774	
+functions in usr/gfx/arch/IP35VOYAGER32/libGLcore.so	1	0	0	0	0	0	0	0	1	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/gfx/arch/IP35VOYAGER32/libgl.so	3813	0	0	0	0	0	0	1	3812	0	0.0	0.0	0.0	0.0							0	0	1124	
+functions in usr/gfx/arch/IP35VOYAGER64/libGL.so	2596	0	0	0	0	0	0	0	2596	0	0.0	0.0	0.0	0.0							0	0	1774	
+functions in usr/gfx/arch/IP35VOYAGER64/libGLcore.so	1	0	0	0	0	0	0	0	1	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/gfx/sgcombine	402	0	0	0	0	0	0	1	401	0	0.0	0.0	0.2	0.0							0	0	0	
