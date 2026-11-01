@@ -2923,7 +2923,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x101f1740	2816	inflate_codes	dynsym	
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101f2240	60	inflate_codes_free	dynsym	0d6e2bb8e509		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101f2280	5808	inflate_fast	dynsym	537c8a0b9abe		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101f393c	4	__istart	dynsym	df3f619804a9		out:13	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x403ce0	424	_stub	dwarf			in	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x403ce0	424	_stub	dwarf			in	located	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x403ec0	88	OMPdestroyScreen	dwarf+funcnames	f48938b857a9		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x403f40	100	OMPdestroyContext	dwarf+funcnames	12a2550633e1		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x403fc0	300	OMPbindContext	dwarf+funcnames	6d6c46d6f753		in	undocumented		
@@ -3035,7 +3035,7 @@ usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x409000	200	drm
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x409100	56	drmRandomDestroy	dwarf+dynsym	5cf5e7a593c3		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x409140	108	drmRandom	dwarf+dynsym	64b3f735eb2f		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x4091c0	104	drmRandomDouble	dwarf+dynsym	fc7fb35cabdd		in	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x404930	356	_stub	dwarf			in	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x404930	356	_stub	dwarf			in	located	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x404ac0	88	OMPdestroyScreen	dwarf	862e0fae7f96		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x404b20	100	OMPdestroyContext	dwarf	1d9b64143558		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x404b90	312	OMPbindContext	dwarf	73656c974861		in	undocumented		
@@ -3147,7 +3147,7 @@ usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x4095c0	204	d
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x409690	56	drmRandomDestroy	dwarf+dynsym	eb4ff7f91750		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x4096d0	108	drmRandom	dwarf+dynsym	08830bd4bd1c		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x409740	132	drmRandomDouble	dwarf+dynsym	ae6770008764		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4bd010	1264	_stub	dwarf			in	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4bd010	1264	_stub	dwarf			in	located	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bd540	60	firegl_QueryVersion	dwarf+dynsym	01bf51f8b1c3		in	understood	docs/dri-driver-64.md#buffer-and-memory-requests	Buffer and memory requests
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bd580	128	firegl_GetMemInfo	dwarf+dynsym	2594f317db95		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bd600	232	firegl_AllocBuffer	dwarf+dynsym	7f28dce06886		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
@@ -16001,7 +16001,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xb72c80	584	__glDraw
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xb72f00	760	__glDrawIndexedLines	dwarf+dynsym	ea4608feea2c		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xb73200	820	__glDrawIndexedLineStrip	dwarf+dynsym	51a7ccf97205		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xb73540	1104	__glDrawIndexedLineLoop	dwarf+dynsym	3741345d2231		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x515ad0	1516	_stub	dwarf			in	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x515ad0	1516	_stub	dwarf			in	located	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5160c0	60	firegl_QueryVersion	dwarf+dynsym	01bf51f8b1c3		in	understood	docs/dri-driver-64.md#buffer-and-memory-requests	Buffer and memory requests
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516100	128	firegl_GetMemInfo	dwarf+dynsym	f9a610d5c42d		in	understood	docs/dri-driver-64.md#buffer-and-memory-requests	Buffer and memory requests
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516180	228	firegl_AllocBuffer	dwarf+dynsym	6d7e3d772787		in	understood	docs/dri-driver-64.md#buffer-and-memory-requests	Buffer and memory requests
@@ -29240,7 +29240,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		__fglDRMPM4A
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		__fglDRMPM4Queue	dwarf+funcnames			in	located	docs/libfglrxdrm-functions.md#the-command-ring-allocate-queue-submit-and-wait	The command ring: allocate, queue, submit and wait
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		__fglDRMPM4Submit	dwarf+funcnames			in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		__fglQSQuietDown	dwarf+funcnames			in	located	docs/dri-driver-64.md#startup-teardown-and-idle-wait	Startup, teardown and idle wait
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		_stub	dwarf			in	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		_stub	dwarf			in	located	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		addFormat	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		addMode	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		addNewSymbol	dwarf+funcnames			in	undocumented		
@@ -29478,7 +29478,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a564	112	xdr_
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a5d4	200	xdr_SDBsymbolTableEntry	dynsym	8be0157f5b86		in	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a69c	104	xdr_SDBversionNumber	dynsym	0e083eead946		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a704	36	SDBsetupMemoryInterface	dynsym	0113f40c4011		in	undocumented		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b8780	1424	_stub	dwarf			in	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b8780	1424	_stub	dwarf			in	located	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b8d40	36	dummy_5	dwarf+dynsym	ac4bea52a409		in	located	docs/dri-driver-64.md#shared-word-helpers	Shared word helpers
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b8d80	36	dummy_6	dwarf+dynsym	c379e9d99159		in	located	docs/dri-driver-64.md#shared-word-helpers	Shared word helpers
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b8dc0	8	fglrx_glxSetup	dwarf+funcnames	a7e7ca11a6b8		in	undocumented		
@@ -42291,7 +42291,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xb6ac80	584	_
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xb6af00	760	__glDrawIndexedLines	dwarf+dynsym	4e9f0c254bfa		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xb6b200	820	__glDrawIndexedLineStrip	dwarf+dynsym	745330219485		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xb6b540	1104	__glDrawIndexedLineLoop	dwarf+dynsym	5624644229a5		in	undocumented		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32	.text	0x42ddd0	204	_stub	dwarf			out:15	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32	.text	0x42ddd0	204	_stub	dwarf			out:15	located	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32	.text	0x42dec0	8	GLcoreSetup	dwarf+funcnames	a7e7ca11a6b8		out:15	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32	.text	0x42df00	540	Store	dwarf+funcnames	e1e27bd11cce	multi-unit	out:15	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32	.text	0x42e140	720	Fetch	dwarf+funcnames	6b48c346662d	multi-unit	out:15	undocumented		
@@ -45594,7 +45594,7 @@ usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x514280	684	
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x514540	512	__glProcessCachedTriangleFan	dwarf+dynsym	c5d0b29d594d		out:15	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x514740	136	__glProcessCachedTriangles	dwarf+dynsym	7442ca99e4e2		out:15	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x514800	136	__glProcessCachedQuads	dwarf+dynsym	fbcb26e4e807		out:15	undocumented		
-usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32	.text	0x4025a0	984	_stub	dwarf			in	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
+usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32	.text	0x4025a0	984	_stub	dwarf			in	located	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x402980	144	XFree86DRIExtensionInit	dwarf+dynsym	c913375c5756		in	undocumented		
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32	.text	0x402a40	52	XF86DRIResetProc	dwarf+funcnames	ceefd0d8f046		in	undocumented		
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32	.text	0x402a80	156	ProcXF86DRIQueryVersion	dwarf+funcnames	038fd8a11ff3		in	undocumented		
@@ -45695,7 +45695,7 @@ usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32	.text	0x408b40	34
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x408cc0	64	DRICloseFullScreen	dwarf+dynsym	733c295a2907		in	undocumented		
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x408d00	716	DRIMoveBuffersHelper	dwarf+dynsym	085e05a76c97		in	undocumented		
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32	.text	0x409000	272	driSetup	dwarf+funcnames	0b7dd02df69d		in	undocumented		
-usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32	.text	0x41ed10	7184	_stub	dwarf			in	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
+usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32	.text	0x41ed10	7184	_stub	dwarf			in	located	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x420940	52	__glXDisp_CallList	dwarf+dynsym	eeec032bec78		out:14	undocumented		
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x420980	52	__glXDisp_ListBase	dwarf+dynsym	34851e974229		out:14	undocumented		
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x4209c0	52	__glXDisp_Begin	dwarf+dynsym	5dbeb32bc5c6		out:14	undocumented		
@@ -46615,7 +46615,7 @@ usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32	.text	0x45e400	60
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32	.text	0x45e680	452	MakeBitmapsFromFont	dwarf+funcnames	e7a83f5ec223		in	undocumented		
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x45e880	296	__glXUseXFont	dwarf+dynsym	87f115e2ba04		in	undocumented		
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32	.text	0x45e9c0	280	glxSetup	dwarf+funcnames	ee5a6a6384a6		in	undocumented		
-usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32	.text	0x402030	384	_stub	dwarf			in	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
+usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32	.text	0x402030	384	_stub	dwarf			in	located	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32	.text	0x402200	80	drmMsg	dwarf+funcnames	8676edf8b6b1		in	undocumented		
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x402280	100	drmMalloc	dwarf+dynsym	cd73a03a3e9b		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x402300	60	drmFree	dwarf+dynsym	f329021f5544		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
@@ -46720,7 +46720,7 @@ usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x407140	80	drmSLNext	
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x4071c0	104	drmSLFirst	dwarf+dynsym	33b0c4f4dfc3		in	undocumented		
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x407240	388	drmSLDump	dwarf+dynsym	2ee2989e0013		in	undocumented		
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32	.text	0x407400	8	drmSetup	dwarf+funcnames	a7e7ca11a6b8		in	undocumented		
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x4013e0	64	_stub	dwarf			in	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x4013e0	64	_stub	dwarf			in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401440	60	firegl_QueryVersion	dwarf+dynsym	01bf51f8b1c3		in	understood	docs/dri-driver-64.md#buffer-and-memory-requests	Buffer and memory requests
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401480	140	firegl_GetMemInfo	dwarf+dynsym	f83bf476a906		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401540	232	firegl_AllocBuffer	dwarf+dynsym	7303c338fa4c		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-return-an-id-or-a-value	Request wrappers that return an id or a value
@@ -46734,11 +46734,11 @@ usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401a40	112	fireg
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401ac0	100	firegl_RestoreCap	dwarf+dynsym	3a15dacd94db		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401b40	100	firegl_SetBlockMode	dwarf+dynsym	83cb4af9a2b6		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401bc0	232	firegl_LockHardware	dwarf+dynsym	48e3a8d870f4		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401cc0	84	firegl_UnlockHardware	dwarf+dynsym	a62b9705205e		in	located	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401cc0	84	firegl_UnlockHardware	dwarf+dynsym	a62b9705205e		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401d40	116	firegl_AllocMutex	dwarf+dynsym	a16f6ec1a6db		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401dc0	100	firegl_FreeMutex	dwarf+dynsym	302fca57e067		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401e40	96	firegl_AgpLockPages	dwarf+dynsym	2b5fa7fcfc8d		in	located	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401ec0	104	firegl_EnableAuthentication	dwarf+dynsym	d7e2c0c2ed8d		in	located	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401e40	96	firegl_AgpLockPages	dwarf+dynsym	2b5fa7fcfc8d		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401ec0	104	firegl_EnableAuthentication	dwarf+dynsym	d7e2c0c2ed8d		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401f40	100	firegl_RegisterTexture	dwarf+dynsym	63629e564630		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401fc0	100	firegl_UnregisterTexture	dwarf+dynsym	b84d04898b4e		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402040	328	firegl_LockPages	dwarf+dynsym	7a8e57f20c73		in	understood	docs/libfglrxdrm-functions.md#setup-teardown-and-the-handle-tables	Setup, teardown and the handle tables
@@ -46746,15 +46746,15 @@ usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x4021c0	136	fireg
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402280	96	firegl_FlushCache	dwarf+dynsym	1e65c6681ba3		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402300	96	firegl_InitIrq	dwarf+dynsym	33c057decbf2		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402380	140	firegl_ModuleParm	dwarf+dynsym	dfb32a63a120		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402440	100	firegl_RmMap	dwarf+dynsym	052f75665093		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x4024c0	88	firegl_FreeKernelInfo	dwarf+dynsym	48a7ff1f2c00		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402440	100	firegl_RmMap	dwarf+dynsym	052f75665093		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x4024c0	88	firegl_FreeKernelInfo	dwarf+dynsym	48a7ff1f2c00		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402540	436	firegl_GetKernelInfo	dwarf+dynsym	4bb4273f515f		in	understood	docs/libfglrxdrm-functions.md#setup-teardown-and-the-handle-tables	Setup, teardown and the handle tables
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402700	156	firegl_VerifyArea	dwarf+dynsym	ca23c4bd66ef		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x4027c0	132	firegl_GetAGPCapPtr	dwarf+dynsym	becede1aea64		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402880	132	firegl_GetAGPStatus	dwarf+dynsym	0b29a95120aa		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402940	132	firegl_GetAGPCommand	dwarf+dynsym	4f1966ed777e		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402a00	96	firegl_InitCP	dwarf+dynsym	670daf349ed4		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402a80	96	firegl_InitUMM	dwarf+dynsym	07844e90399e		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402a00	96	firegl_InitCP	dwarf+dynsym	670daf349ed4		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402a80	96	firegl_InitUMM	dwarf+dynsym	07844e90399e		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402b00	108	firegl_modify_ldt	dwarf+dynsym	6bdb0dbdccc1		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402b80	140	firegl_QueryHwCaps	dwarf+dynsym	b7b843a1fba3		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402c40	832	firegl_InitDRM	dwarf+dynsym	503f98cd7d25		in	understood	docs/libfglrxdrm-functions.md#setup-teardown-and-the-handle-tables	Setup, teardown and the handle tables
@@ -46770,8 +46770,8 @@ usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403600	72	_
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403680	992	firegl_PM4Alloc	dwarf+dynsym	5b35fa673989		in	understood	docs/libfglrxdrm-functions.md#the-command-ring-allocate-queue-submit-and-wait	The command ring: allocate, queue, submit and wait
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403a80	552	firegl_PM4WaitForIdle	dwarf+dynsym	97b1efb30e8a		in	understood	docs/libfglrxdrm-functions.md#the-command-ring-allocate-queue-submit-and-wait	The command ring: allocate, queue, submit and wait
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403cc0	312	firegl_DRMPoll	dwarf+dynsym	617928c126aa		in	understood	docs/libfglrxdrm-functions.md#the-command-ring-allocate-queue-submit-and-wait	The command ring: allocate, queue, submit and wait
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403e00	8	setup	dwarf+funcnames	a7e7ca11a6b8		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x409190	764	_stub	dwarf			in	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403e00	8	setup	dwarf+funcnames	a7e7ca11a6b8		in	understood	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x409190	764	_stub	dwarf			in	located	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x4094c0	224	mapPciRom	dwarf+dynsym	de6331582dbf		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x4095c0	40	int10Setup	dwarf+funcnames	efb8ac2778ed		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409600	316	setup_int	dwarf+dynsym	cf2b31548852		in	located	docs/kernel-attach.md#the-emulators-glue-to-the-kernel-vgaahelper_execo	The emulator's glue to the kernel (`vga.a(helper_exec.o)`)
@@ -58007,7 +58007,7 @@ usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		__glx_TexSubImage3D4
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		_default_exterror	dwarf+funcnames			in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		_glapi_initialize	dwarf+funcnames			in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		_init	dwarf			in	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		_stub	dwarf			in	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
+usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		_stub	dwarf			in	located	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		checkExtension	dwarf+funcnames			in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		close_display	dwarf+funcnames			in	located	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		combine_strings	dwarf+funcnames			in	undocumented		
@@ -60671,7 +60671,7 @@ usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		_lamp	dwarf+funcname
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		_loadattribs	dwarf+funcnames			out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		_popattributes	dwarf+funcnames			out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		_pushattributes	dwarf+funcnames			out:16	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		_stub	dwarf			out:16	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
+usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		_stub	dwarf			out:16	located	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		add_extdev_to_query	dwarf+funcnames			out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		addrow	dwarf+funcnames			out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		appendItem_aMenu	dwarf+funcnames			out:16	undocumented		
@@ -64417,7 +64417,7 @@ usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		__glx_TexSubImage3D4
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		_default_exterror	dwarf			in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		_glapi_initialize	dwarf			in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		_init	dwarf			in	undocumented		
-usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		_stub	dwarf			in	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
+usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		_stub	dwarf			in	located	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		checkExtension	dwarf			in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		close_display	dwarf			in	located	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		combine_strings	dwarf			in	undocumented		
