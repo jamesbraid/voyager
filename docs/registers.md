@@ -887,6 +887,68 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
   read-back and the paths. The name is Inferred: the code clears every field of the CSQ register, and nothing in the
   access shows whether it means the CRC address.
 
+The entries below cover the offsets in the "no public name" list above. Each one says which public header
+was checked. The pinned Linux 2.6.30 radeon headers, the Mesa 7.11.2 r300 headers and the xf86-video-ati 6.14.6
+`radeon_reg.h` were searched for the offset in both spellings (`0x350` and `0x0350`). Where a name is found in
+one header only, the grade is `common`, not `none`.
+
+- **0x194** in `fglrx_drv.so`: no public name. The replay places its two read-and-write sites in the static code at
+  0x41bc00. A decode of the 2 KB from 0x41bc00 to 0x41c400 finds no load or store with displacement 0x194 at all,
+  so the two sites are not placed. The 0x194 word accesses elsewhere in the module that a full decode finds
+  (at 0x41dc08, 0x41de58, 0x42156c and 0x421a10 in `R200ScreenInit`, and at 0x4497c8 in `R200GetSGIInfoPtr`) use
+  bases that are not the aperture as far as traced: the sites at 0x41dc08 and 0x41de58 use pointers loaded from
+  the stack (8(sp) and 16(sp)), and the base of the other three was not traced. Unknown: no site is confirmed as a
+  register access, and the role is not read.
+- **0x294** in `fglrx.o`: no public name. In `_r6x_EnableStereo` at 0x13b4c (260 bytes) the enable path ORs 0x3000
+  into the word (the store at 0x13be8), and the disable path ANDs it with 0xffffcfff (the store at 0x13c40). Both
+  use the aperture from device record +1000. So bits 13:12 form a field that stereo switches on and off as a unit.
+  Inferred: the field's meaning is not read. Established for the two stores and their masks.
+- **0x294** in `fglrx_drv.so`: no public name. `R6TMDSTransmitLinux` at 0x445480 (580 bytes) reads the word at 0x4454c0
+  and writes it at 0x4454e8 or 0x445618. The value keeps bits 15:14 and 11:4, takes bits 3:0 from the low nibble of
+  a3 (`andi`, 0xf), and on the path that the branch at 0x4454d4 takes when a1 is -1 (store at 0x445618) clears
+  bits 13:12. On the other path bits 13:12 come from bits 1:0 of a4 shifted left 12 (store at 0x4454e8). The bits
+  13:12 field is the one `_r6x_EnableStereo` switches. Inferred: the same field as the entry above; the
+  meaning of a3 and a4 is not traced.
+- **0x350** in `fglrx_drv.so`: the public `R300_CRTC_TILE_X0_Y0` (common: `radeon_reg.h` of xf86-video-ati 6.14.6,
+  line 486). `R200AdjustFrame` at 0x422680 (1048 bytes) writes it at 0x4229f4 on the path that the branch at 0x422768
+  takes when the byte at +90 of the record in s0 is zero, after a dummy read at 0x4229ec. The value is a0, which the
+  code forms as (s3 << 16) | s4 at 0x422760 and 0x42276c. The second instruction is the delay slot of the branch at
+  0x422768, so the value is set on both paths. The public driver writes `x | (y << 16)` to the same register under
+  tiling on R300 (`radeon_driver.c`, around line 6125), so the IRIX word has the same shape. Inferred: the tile
+  origin of the first CRTC. Not traced: which of s3 and s4 holds x.
+- **0x354** in `fglrx_drv.so`: no public name in the pinned headers. In `R200AdjustFrame` the same value a0 is stored
+  at 0x422a18, after the 0x350 store on the same path, and only when the word at +9208 of the record in s0 is
+  nonzero (the branch at 0x4229fc skips it otherwise). Unknown: the register's role is not read.
+- **0x358** in `fglrx_drv.so`: the public `R300_CRTC2_TILE_X0_Y0` (common: `radeon_reg.h` of xf86-video-ati 6.14.6,
+  line 487). `R200AdjustFrame` writes a0 to it at 0x422788, after a dummy read at 0x422780, on the path the branch at
+  0x422768 takes when the byte at +90 is nonzero. The public driver uses the same register for the second CRTC's tile
+  origin. Inferred. `R200CloneAdjustFrame` also writes 0x358 (at 0x422c10); that routine is not read here.
+- **0x878** in `fglrx_drv.so`: no public name. `Set_MV_Mode` at 0x4441c0 (540 bytes) stores at 0x4442cc the value
+  (a5 << 6) | (a3 << 2). The two fields come from the word at +184 of the driver record (a2): a2 of 0, 2 or 5 gives
+  a3 = 7 and a5 = 0 (value 0x1c); a2 of 1, 3 or 4 gives a3 = 6 and a5 = 1 (value 0x58); any other value gives 0. For a2 = 5
+  the store of a3 = 7 sits in the delay slot of the branch at 0x44428c, so it runs before the branch lands. Unknown.
+- **0x87c** in `fglrx_drv.so`: no public name. `Set_MV_Mode` stores at 0x444260 the value w0 | (w1 << 2) |
+  (w2 << 4) | (w3 << 6) | (w4 << 8), where w0 to w4 are the words at 0x469180, +4, +8, +12 and +16 (in
+  the `.bss` table that the routine addresses through gp). The routine does not write those words, so their
+  values come from elsewhere; not traced. Unknown.
+- **0x880** in `fglrx_drv.so`: no public name. `Set_MV_Mode` stores at 0x444300 one of four constants, chosen by the
+  word at +184 of the driver record: 0x3f7f382d for most values; 0x4d8d3030 for 1 and 4; for 0 and 2, 0x4d8d382d when
+  the byte at +188 is zero and 0x4d8d2d2d when it is not. Unknown: the constants are fixed in the code, and their
+  effect is not read.
+- **0x884** in `fglrx_drv.so`: no public name. `Set_MV_Mode` stores at 0x444330 the low 32 bits of a 64-bit
+  constant, chosen by the word at +184: 0xb7da for 0 and 2, 0xb0cf for 1 and 4, 0xb7cf otherwise. Unknown: the
+  effect is not read.
+- **0x1700** in `fglrx_drv.so`: no public name. The replay attributes its one site to static code at 0x40ac40, but
+  the store is at 0x40b2bc inside `R200EngineInit` (at 0x40aa40). `sw t3,5888(s1)` writes the word that
+  `lw t3,8236(s0)` loads from the driver record at 0x40b2b4. The store sits in the delay slot of the branch at
+  0x40b2b8 (`beq s2,-1`), so it runs whether or not the branch is taken. s1 is the aperture pointer that
+  0x40b0b4 loads from +48 of the driver record. The name `extSECAM_K` at 0x1700 in `theatre_reg.h` belongs to the
+  video-input register set, not this aperture, so it is not a match. Unknown: the role is not read.
+- **0x26ac** in `fglrx_drv.so`: no public name. `FGLInitCP` at 0x42c4c0 (720 bytes) reads the word at 0x42c640,
+  ORs 0x110 into it (bits 8 and 4) and writes it back at 0x42c648, then runs a sync. The access is reached when
+  the compares at 0x42c620, 0x42c628 and 0x42c638 send control to 0x42c640 (the word in v0 equals ra, 47 or a2). Unknown:
+  the bits are constants and their meaning is not read.
+
 ## Not in the tables
 
 - **The compositor I2C engine, 0x2e0, 0x2e4 and 0x2e8.** `fglrxCompositorI2cRegRead` at 0x5738 reaches them
