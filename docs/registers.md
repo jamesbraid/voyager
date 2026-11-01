@@ -152,11 +152,11 @@ write) as reads.
 | 0x23c | `DISPLAY_BASE_ADDR` | exact | write 4 | 1 | `R200EngineInit` at 0x40aa40 | 0 | see below |
 | 0x250 | `FP_CRTC_H_TOTAL_DISP` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
 | 0x254 | `FP_CRTC_V_TOTAL_DISP` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
-| 0x260 | `CUR_OFFSET` | exact | write 4 | 2 | static code at 0x40d200 | 0 | unknown |
-| 0x264 | `CUR_HORZ_VERT_POSN` | common | write 4 | 1 | static code at 0x40d200 | 0 | unknown |
-| 0x268 | `CUR_HORZ_VERT_OFF` | common | write 4 | 1 | static code at 0x40d200 | 0 | unknown |
-| 0x26c | `CUR_CLR0` | common | write 4 | 1 | static code at 0x40d200 | 0 | unknown |
-| 0x270 | `CUR_CLR1` | common | write 4 | 1 | static code at 0x40d200 | 0 | unknown |
+| 0x260 | `CUR_OFFSET` | exact | write 4 | 2 | static code at 0x40d200 | 0 | see below |
+| 0x264 | `CUR_HORZ_VERT_POSN` | common | write 4 | 1 | static code at 0x40d200 | 0 | see below |
+| 0x268 | `CUR_HORZ_VERT_OFF` | common | write 4 | 1 | static code at 0x40d200 | 0 | see below |
+| 0x26c | `CUR_CLR0` | common | write 4 | 1 | static code at 0x40d200 | 0 | see below |
+| 0x270 | `CUR_CLR1` | common | write 4 | 1 | static code at 0x40d200 | 0 | see below |
 | 0x27c | `CRTC_MORE_CNTL` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
 | 0x280 | `DAC_EXT_CNTL` | common | read 4, write 4 | 9 | static code at 0x4112c0 | 0 | unknown |
 | 0x284 | `FP_GEN_CNTL` | common | read 4, write 4 | 11 | static code at 0x4112c0 | 2 | unknown |
@@ -178,14 +178,14 @@ write) as reads.
 | 0x324 | `CRTC2_OFFSET` | common | read 4, write 4 | 8 | `R200AdjustFrame` at 0x422680 | 2 | unknown |
 | 0x328 | `CRTC2_OFFSET_CNTL` | common | read 4, write 4 | 21 | `R200AdjustFrame` at 0x422680 | 4 | unknown |
 | 0x32c | `CRTC2_PITCH` | common | read 4, write 4 | 3 | static code at 0x41bc00 | 0 | unknown |
-| 0x33c | `CRTC2_DISPLAY_BASE_ADDR` | exact | write 4 | 1 | `R200EngineInit` at 0x40aa40 | 0 | unknown |
+| 0x33c | `CRTC2_DISPLAY_BASE_ADDR` | exact | write 4 | 1 | `R200EngineInit` at 0x40aa40 | 0 | see below |
 | 0x350 | none | none | read 4, write 4 | 2 | `R200AdjustFrame` at 0x422680 | 0 | unknown |
 | 0x354 | none | none | read 4, write 4 | 2 | `R200AdjustFrame` at 0x422680 | 0 | unknown |
 | 0x358 | none | none | read 4, write 4 | 4 | `R200AdjustFrame` at 0x422680 | 1 | unknown |
-| 0x360 | `CUR2_OFFSET` | exact | write 4 | 2 | static code at 0x40d200 | 0 | unknown |
-| 0x364 | `CUR2_HORZ_VERT_POSN` | common | write 4 | 2 | static code at 0x40d200 | 0 | unknown |
-| 0x368 | `CUR2_HORZ_VERT_OFF` | common | write 4 | 2 | static code at 0x40d200 | 0 | unknown |
-| 0x36c | `CUR2_CLR0` | common | write 4 | 2 | static code at 0x40d200 | 0 | unknown |
+| 0x360 | `CUR2_OFFSET` | exact | write 4 | 2 | static code at 0x40d200 | 0 | see below |
+| 0x364 | `CUR2_HORZ_VERT_POSN` | common | write 4 | 2 | static code at 0x40d200 | 0 | see below |
+| 0x368 | `CUR2_HORZ_VERT_OFF` | common | write 4 | 2 | static code at 0x40d200 | 0 | see below |
+| 0x36c | `CUR2_CLR0` | common | write 4 | 2 | static code at 0x40d200 | 0 | see below |
 | 0x370 | `CUR2_CLR1` | common | write 4 | 2 | static code at 0x40d200 | 0 | unknown |
 | 0x3c4 | `FP_H2_SYNC_STRT_WID` or `SEQ8_IDX` | conflict | read 4, write 4 | 3 | static code at 0x41bc00 | 0 | unknown |
 | 0x3c8 | `DAC_W_INDEX` or `FP_V2_SYNC_STRT_WID` | conflict | read 4, write 4 | 3 | static code at 0x41bc00 | 0 | unknown |
@@ -415,6 +415,41 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
   Inferred.
 - **0x23c** in `fglrx_drv.so`: the display base address, `DISPLAY_BASE_ADDR` (exact).
   `R200EngineInit` loads the doubleword at +32 of s0 at 0x40ab94 and stores its low word to the register at 0x40ab98.
+  Inferred.
+- **0x33c** in `fglrx_drv.so`: the second CRTC's display base address, `CRTC2_DISPLAY_BASE_ADDR` (exact).
+  `R200EngineInit` loads the doubleword at +32 of s0 into a3 at 0x40aba4 and stores its low word at 0x40aba8.
+  Inferred.
+- **0x260** in `fglrx_drv.so`: the hardware cursor image offset, `CUR_OFFSET` (exact).
+  `R200AccelInit` stores a sum at 0x40d664, built from a6 and the word at +6400 of s0 (loaded at 0x40d658), and a second sum at 0x40d884 on the other path.
+  Inferred.
+- **0x264** in `fglrx_drv.so`: the cursor position word, `CUR_HORZ_VERT_POSN` (common).
+  The store at 0x40d64c writes a word whose high half is s7 shifted left by 16 and whose low half is a5.
+  The register s1 is zero on that path.
+  Inferred.
+- **0x268** in `fglrx_drv.so`: the cursor offset word, `CUR_HORZ_VERT_OFF` (common).
+  The store at 0x40d630 writes the value in a0 in the delay slot of the branch at 0x40d62c, so the write happens on both paths through that branch.
+  Inferred.
+- **0x26c** in `fglrx_drv.so`: cursor colour 0, `CUR_CLR0` (common).
+  The store at 0x40d238 writes the value in a1 with the base register a4.
+  Inferred.
+- **0x270** in `fglrx_drv.so`: cursor colour 1, `CUR_CLR1` (common).
+  The store at 0x40d240 writes the value in a2 with the base register a4.
+  Inferred.
+- **0x360** in `fglrx_drv.so`: the second cursor's image offset, `CUR2_OFFSET` (exact).
+  `R200AccelInit` stores a1 at 0x40d488 and t0 at 0x40d52c.
+  Both stores use the base register s2.
+  Inferred.
+- **0x364** in `fglrx_drv.so`: the second cursor's position word, `CUR2_HORZ_VERT_POSN` (common).
+  `R200AccelInit` stores a3 at 0x40d474 and t3 at 0x40d50c.
+  Both stores use the base register s2.
+  Inferred.
+- **0x368** in `fglrx_drv.so`: the second cursor's offset word, `CUR2_HORZ_VERT_OFF` (common).
+  `R200AccelInit` stores a0 at 0x40d458 and a7 at 0x40d4d4.
+  Both stores use the base register s2.
+  Inferred.
+- **0x36c** in `fglrx_drv.so`: the second cursor's colour 0, `CUR2_CLR0` (common).
+  Two stores, at 0x40d210 and 0x40d224, write a1.
+  The base register is a4.
   Inferred.
 
 ## Not in the tables

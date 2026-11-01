@@ -50,11 +50,11 @@ mmio	0x238		r4,w4	2	1	routine@0x41bc00	driver record +48	usr/X11R6/lib/modules/d
 mmio	0x23c		w4	1	1	R200EngineInit	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineInit	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x250		r4,w4	2	1	routine@0x41bc00	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x41bc00	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x254		r4,w4	2	1	routine@0x41bc00	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x41bc00	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x260		w4	2	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x264		w4	1	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x268		w4	1	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x26c		w4	1	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x270		w4	1	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+mmio	0x260		w4	2	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	understood	docs/registers.md#registers-read-in-full	Registers read in full
+mmio	0x264		w4	1	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	understood	docs/registers.md#registers-read-in-full	Registers read in full
+mmio	0x268		w4	1	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	understood	docs/registers.md#registers-read-in-full	Registers read in full
+mmio	0x26c		w4	1	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	understood	docs/registers.md#registers-read-in-full	Registers read in full
+mmio	0x270		w4	1	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x27c		r4,w4	2	1	routine@0x41bc00	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x41bc00	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x280		r4,w4	9	1	routine@0x4112c0	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x4112c0	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x284		r4,w4	11	1	routine@0x4112c0;routine@0x41bc00;routine@0x4234c0	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x4112c0	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
@@ -76,14 +76,14 @@ mmio	0x318		w4	1	1	routine@0x4195c0	driver record +48	usr/X11R6/lib/modules/driv
 mmio	0x324		r4,w4	8	1	R200AdjustFrame;R200CloneAdjustFrame;routine@0x41bc00	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200AdjustFrame	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x328		r4,w4	21	1	R200AdjustFrame;R200CloneAdjustFrame;bR200SetTilingMode;routine@0x41bc00;vCalcCRTCOffsetRegs	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200AdjustFrame	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x32c		r4,w4	3	1	routine@0x41bc00	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x41bc00	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x33c		w4	1	1	R200EngineInit	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineInit	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+mmio	0x33c		w4	1	1	R200EngineInit	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineInit	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x350		r4,w4	2	1	R200AdjustFrame	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200AdjustFrame	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x354		r4,w4	2	1	R200AdjustFrame	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200AdjustFrame	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x358		r4,w4	4	1	R200AdjustFrame;R200CloneAdjustFrame	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200AdjustFrame	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x360		w4	2	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x364		w4	2	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x368		w4	2	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x36c		w4	2	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+mmio	0x360		w4	2	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	understood	docs/registers.md#registers-read-in-full	Registers read in full
+mmio	0x364		w4	2	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	understood	docs/registers.md#registers-read-in-full	Registers read in full
+mmio	0x368		w4	2	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	understood	docs/registers.md#registers-read-in-full	Registers read in full
+mmio	0x36c		w4	2	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x370		w4	2	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x3c4		r4,w4	3	1	routine@0x41bc00	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x41bc00	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x3c8		r4,w4	3	1	routine@0x41bc00	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x41bc00	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
