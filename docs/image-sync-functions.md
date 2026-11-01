@@ -126,3 +126,69 @@
   Step 2: it stores ((index << 8) & 0xff00) | 2 at offset 0x40 (0x44f4).
   Step 3: it re-reads the word up to 9999 times until bit 2 is set (loop 0x450c to 0x451c). A timeout prints "%s: reg 0x%x: valid timed out" and returns -1.
   Step 4: with a2 nonzero it stores bits 23:16 of the word as one byte through a2 (0x4534); it then returns 0.
+
+- `is1_update_sync_source` (`is1.o`, address 0x3bd8, 284 bytes):
+  **established.** It applies a sync source to the image-sync block: it records the source, stores the two words that the board's type routines assemble in the board and the card, and asks for a resync of the master pipe. All 71 words were followed, including the message tail at 0x3c8c. `is1_ioctl`, `is1_update_format` and `is1_genlock_interrupt` call it. It takes the board in a0 and the source number in a1, and returns the result of `is1_sync_pipes_request` when the master index is nonnegative; with a negative index it leaves v0 as the last call set it.
+  It stores a1 in the word at board +0x98 (0x3bd8). It calls the function pointer at board +0x30 (0x3bf8) and stores its result in the word at +0x5c and at register offset 0x24 (0x3c00, 0x3c04); it calls the pointer at +0x38 (0x3c0c) and stores that result in the word at +0x60 and at offset 0x28 (0x3c20, 0x3c2c). These are the routines `is1_attach` chooses by card type (`is1_assemble_control` and `is1_assemble_video_format`, or the `is2_` pair).
+  When `is1_showconfig` is nonzero it calls `cmn_err(5, "ImageSync[%d] %s\n", board number at +0x1c, sync_types[word at +0x188])` (0x3ce4). `sync_types` is four 8-byte pointers at `.data` +0x50 to the strings "Locked to Internal Clock", "Genlocked to External Source", "Framelocked to External Source" and "illegal Sync Source"; the index is the word at +0x188, not a1.
+  A nonnegative master index (word at +0x9c) then calls `is1_sync_pipes_request(board, word at +0x450 + 4 x index)` (0x3c70).
+
+- `is1_update_format` (`is1.o`, address 0x3d78, 284 bytes):
+  **established.** It programs a new video format into the image-sync block from the 200-byte request that `is1_ioctl` copied to board +0x188. All 71 words were followed, including the 100000-iteration busy wait. `is1_ioctl` is its caller. It takes the board in a0 and returns 0, or -1 when the busy bit never clears.
+  The word at board +0x188 is copied to +0x98 (0x3d80). The word at +0x1f8 masked with 0x1fff and ORed with 0x4000 is stored at register offset 0x14 (0x3d9c). Bytes at +0x1e6 to +0x1e9 and +0x1ec are read before the wait.
+  Wait: bit 0 of offset 0x40 is read up to 100000 times (0x3de8 to 0x3df8); a miss returns -1 after only the offset 0x14 store.
+  Stores in order after the wait: offset 0x44 receives the bytes at +0x1e4, +0x1ea, +0x1eb and +0x1e5 as bits 7:0, 15:8, 23:16 and 31:24 (0x3e28); offset 0x48 receives the bytes at +0x1e6, +0x1e7, +0x1e8 and +0x1e9 in the same bit order (0x3e30); offset 0x4c receives the byte at +0x1ec (0x3e38); offset 0x40 receives 0 (0x3e44); offset 0x5c receives the word at +0x200 (0x3e54).
+  It then calls `is1_update_sync_source(board, word at +0x188)` (0x3e5c) and the pointer at board +0x40 with the board (0x3e68), stores 1 in the word at +0xe0 (0x3e74) and returns 0.
+
+- `is1_fire_swapready` (`is1.o`, address 0x35d8, 280 bytes):
+  **established.** It clears a pipe's mask bits from the board's +0x78 mask and, in the cases listed below, runs the same set-and-copy sequence as `is1_release_swapready`. The four atomic loops and the six exit branches were traced through all 70 words. `is1_unbind` is its caller. It takes the pipe number in a0 and a flag in a1, and sets v0 to 1 on the kick path only.
+  Setup: the owning board is `is1_boards[first word of the pipe record - 1]`, where the record is `is1_pipes[a0]` (32-byte records); a zero first word returns. The mask M is the record's doubleword at +24. M is atomically cleared from the doubleword at board +0x78 (`lld`/`scd`, 0x3628 to 0x3634) and the old value is kept at sp+0.
+  Branches: it returns unless some bit of M was set in the old value and either the old value equals M exactly or a1 is nonzero. An old value of zero proceeds only with a1 nonzero and M zero.
+  Kick: bit 0 is atomically ORed into the word at board +0x68 (0x3680 to 0x368c). An old nonzero value returns. Otherwise the doubleword at +0x70 is ORed into the doubleword at +0x78 (0x36c8 to 0x36d4), 1 is stored at register offset 0x1c (0x36e4, register block from the doubleword at +0xc0) and zero in the word at +0x68 (0x36ec).
+
+- `is1_unbind` (`is1.o`, address 0x37a4, 276 bytes):
+  **established.** It clears a pipe's mask bits from the board's +0x70 mask, makes an exit-callback call with 2 in a1 where `is1_register` passes 0 and, when every bit of the pipe's mask was set in the old +0x70 value, calls `is1_fire_swapready(pipe, 1)`. The 69 words were followed through the early returns and both callback cases. `is1_clear_swapready`, `is1_ioctl` and `is1_pipe_exit` call it. It takes the pipe number in a0 (kept in s2) and sets no return value.
+  It returns at once when the first word of `is1_pipes[a0]` is zero or the doubleword at record +24 (the mask M) is zero. Otherwise the owner is `is1_boards[first word - 1]`. M is atomically cleared from the doubleword at owner +0x70 (0x3808 to 0x3814) and the old value is kept at sp+0.
+  A nonzero word at record +16 (a process id) calls `add_exit_callback(id, 2, is1_pipe_exit, pipe number)` (0x385c) and the word is then zeroed (0x3864). `is1_register` makes the matching call with 0 in a1.
+  If M was entirely set in the old value (old & M equals M) it calls `is1_fire_swapready(pipe number, 1)` (0x38a8). The record's first word and mask are left as they were.
+
+- `is2_assemble_control` (`is1.o`, address 0x4778, 212 bytes):
+  **established.** It builds the control word for the second image-sync card type from the sync-source data block and the 200-byte request. All 53 words were decoded, including the shifts and masks. `is1_attach` stores its address in board +0x30 for cards of revision type 1. It takes the board in a0 and returns the word.
+  It calls `is1_get_sync_data(board)` (0x479c) for the block p and ORs these fields together with bit 0:
+  - bits 31:28: bits 7:4 of the word at board +0x1c8;
+  - bits 27:26: the low 2 bits of p word 2 (offset 8);
+  - bit 25: bit 0 of the word at +0x194;
+  - bits 24:23: the low 2 bits of p word 0;
+  - bits 19:16: the low 4 bits of the word at +0x1c8;
+  - bit 15: bit 0 of the word at +0x198;
+  - bits 14:11: the low 4 bits of the word at +0x1d4;
+  - bits 10:7: the low 4 bits of the word at +0x1d8.
+  `is1_assemble_control` reads the words at +0x1d4 and +0x1d8 with the two shifts swapped.
+
+- `is1_unload` (`is1.o`, address 0xa64, 208 bytes):
+  **established.** It is the unload hook: it refuses while the open counter that `is1_open` raises (the word at `.data` +0x10) is nonzero, otherwise detaches every card and frees the tables. The 52 words were read against the three relocated calls. It takes no argument and returns 16 when the word at `.data` +0x10 is nonzero, else 0. The object has no call site for it.
+  With that word zero it calls `pciio_iterate("is1_", is1_unload_dev)` (0xae0, handler address 0xb34), `freeBoardPointers` (0xb00, the routine at address 0x1dc) and `is1_dbg_unload` (0xb20), in that order.
+
+- `is1_register` (`is1.o`, address 0x38b8, 208 bytes):
+  **established.** It registers an exit callback for the calling process on an already-bound pipe, so the binding is dropped when the process dies. The 52 words were followed through the single owned-record test and the one call chain. `fglrx_swap_ready` in `fglrx.o` (address 0x14e60) calls it at 0x14f40, when the low 16 bits of its third argument equal 1, passing the word at +428 of its second argument. It takes the pipe number in a0 and returns what `add_exit_callback` returns, or sets nothing when the pipe is unowned.
+  A zero first word of `is1_pipes[a0]` returns (0x38ec). Otherwise it calls `curproc` (0x390c) and `proc_pid` (0x392c), stores the id in the record's word at +16 in the delay slot of the next call (0x3978), and calls `add_exit_callback(id, 0, is1_pipe_exit, pipe number)` (0x3974).
+
+- `is1_assemble_control` (`is1.o`, address 0x4628, 192 bytes):
+  **established.** It builds the control word for the first image-sync card type from the sync-source data block and the 200-byte request. All 48 words were decoded, shift by shift. `is1_attach` stores its address in board +0x30 for revision type 0 and as the fallback. It takes the board in a0 and returns the word.
+  It calls `is1_get_sync_data(board)` (0x464c) for the block p and ORs these fields together with bit 0:
+  - bits 31:27: the low 5 bits of the word at board +0x1d0;
+  - bit 26: bit 0 of p word 3 (offset 12);
+  - bit 24: set when p word 0 is nonzero;
+  - bits 19:16: the low 4 bits of the word at +0x1c8;
+  - bit 15: bit 0 of the word at +0x19c;
+  - bits 14:11: the low 4 bits of the word at +0x1d8;
+  - bits 10:7: the low 4 bits of the word at +0x1d4.
+
+- `is1_pipe_exit` (`is1.o`, address 0x36f0, 180 bytes):
+  **established.** It is the exit callback for a bound pipe: it unbinds the pipe the dying process owned. All 45 words were read, including the assertion tail at 0x3760. The address is passed to `add_exit_callback` by `is1_register` and `is1_unbind`. It takes the pipe number in a0, keeps its low 16 bits in s0 and returns the `is1_unbind` result.
+  It tests the masked number twice, once for a negative value (which the 16-bit mask makes impossible) and once for `GfxBoardLimit < number`. Either test failing calls `assfail` (text "0 <= pipenum && pipenum <= GfxBoardLimit", line 1856, 0x3794) and goes on. It then calls `is1_unbind(number)` (0x3744).
+
+- `is1_reg` (`is1.o`, address 0x93c, 176 bytes):
+  **established.** It registers the driver for the two image-sync PCI IDs. The 44 words and the two-entry loop were checked against the `.data` bytes of `is1_devids`. It takes no argument, returns 0 and ignores the registration results. The object has no call site for it.
+  For entry i of 2 it calls `pciio_driver_register(halfword at is1_devids + 8i, halfword at +8i+2, "is1_", 0)` (0x9b4). The table holds vendor 0x10a9 with device 0x100c, then vendor 0x10a9 with device 0x100f; the words at +4 and +12 repeat the same pairs and the loop never loads them.
+
