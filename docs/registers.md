@@ -535,13 +535,15 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
   52, bit 2 for any other value. Between polls it calls a delay helper with 500 (`li a0,500` at 0x40a75c), then
   reloads the record and the register. Established.
 - **0x198** in `fglrx_drv.so`: the public `GPIOPAD_MASK` (common, `RADEON_GPIOPAD_MASK` in `radeon_reg.h`).
-  `SGIGLXSwapBarrierInit` at 0x430740 reads it at 0x430858, sets bit 0 with `ori` and stores it back at 0x430864 on
-  the common tail that both of its paths reach (0x430844). The symbol's name points to the swap barrier, and the
-  routine touches no other GPIO pad. Inferred.
+  `SGIGLXSwapBarrierInit` at 0x430740 reads it at 0x430858, sets bit 0 with `ori` and stores it back at 0x430864.
+  These pad writes run only when the branch at 0x4307dc is not taken, that is when the word at +9340 of the driver
+  record is nonzero. When it is zero, the branch goes to 0x43090c, which calls a helper and then branches to the
+  epilogue at 0x4308a4 without touching either pad. The symbol's name points to the swap barrier, and the code shows
+  no other use of this pad. Inferred.
 - **0x1a0** in `fglrx_drv.so`: the public `GPIOPAD_EN` (common, `RADEON_GPIOPAD_EN` in `radeon_reg.h`).
   `SGIGLXSwapBarrierInit` reads it at 0x430844, clears bit 0 with the mask 0xfffffffe (`li` -2 at 0x43084c) and
-  stores it at 0x430854, on the same common tail as 0x198. The pair sets the mask bit and clears the enable bit of
-  one pad. Inferred.
+  stores it at 0x430854, on the same path as the 0x198 write above. Those two writes set bit 0 of 0x198 and clear
+  bit 0 of 0x1a0. Inferred.
 - **0x288** in `fglrx_drv.so`: the public `FP2_GEN_CNTL` (common). When the word at +160 of the driver record is 44,
   `SGIGLXSwapBarrierInit` reads it at 0x4308f4, clears bit 25 with the mask 0xfdffffff (`lui` 0xfdff, `ori` 0xffff)
   and stores it at 0x430908 in the delay slot of the branch to the common tail. `radeon_reg.h` names bit 25
