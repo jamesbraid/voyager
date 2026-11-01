@@ -47304,7 +47304,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x335c	16	fglrx_drm_map	d
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x336c	16	fglrx_drm_unmap	dwarf	4b615bd6c342		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x337c	108	fglrx_give_up_privdev	dwarf	75e479acf52d		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x33e8	128	fglrx_get_vsync_cnt	dwarf	0f081e41d2d6		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3468	988	fglrx_wait_vsync	dwarf	42a3f7460a6c		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3468	988	fglrx_wait_vsync	dwarf	42a3f7460a6c		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3844	428	fglrx_validate_vsync	dwarf	bf4bbb23a3ea		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x39f0	84	fglrx_dma_flush	dwarf+symtab	933317d067ae		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3a44	240	fglrx_is_brdmanager	dwarf	89fa35c7f425		in	undocumented		
