@@ -532,7 +532,13 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
 - **0xf0** in `fglrx_drv.so`: the public `RBBM_SOFT_RESET` (exact). `R200EngineReset` at 0x40a5c0 writes 121
   (0x79) to it at 0x40a66c, reads it back, writes zero at 0x40a674 and reads it again. In `r300d.h` the value 0x79
   is bits 0, 3, 4, 5 and 6: the CP, RE, PP, E2 and RB soft resets. After the pulse the routine polls the word at
-  0xe40 (`RBBM_STATUS`) until bit 31 clears. Established.
+  0xe40 (`RBBM_STATUS`) until bit 31 clears, with no counter. Around that pulse the routine also selects PLL
+  register 0x0d through the index at 0x8 (index low bits 0x0d, then 0x8d with the write-enable bit), reads the
+  data at 0xc, ORs 0x1fff8000 into it before the pulse (the `lui` 0x1fff and `ori` 0x8000 at 0x40a64c and
+  0x40a654, the write at 0x40a65c) and writes the saved value back after the idle wait (0x40a728), then clears
+  bit 7 of 0x8 (0x40a73c); it also writes zero to 0x740 (`CP_CSQ_CNTL`) at 0x40a660 before the pulse. PLL
+  register 0x0d is `SCLK_CNTL` in the public Radeon headers, so the OR is inferred to force clocks on during the
+  reset. Established for the writes; the clock-force reading is inferred.
 - **0x150** in `fglrx_drv.so`: the public `RADEON_MC_STATUS` (`radeon_reg.h`), read at 0x40a6f4 in the delay slot
   of a branch in `R200EngineReset`. `radeon_reg.h` gives `RADEON_MC_IDLE` as bit 2 and `R300_MC_IDLE` as bit 4. The
   routine loads the word at +160 of the driver record and waits for the idle bit: bit 4 when that value is 44, 45 or

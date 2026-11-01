@@ -55,9 +55,9 @@ The four interrupt routines read three words of `.data` at 0x9b8, 0x9bc and 0x9c
 - `_r6x_CheckWSBoard` (`fglrx.o`, 164 bytes at address 0x13aa8): decides whether a board counts as a workstation board and records the answer in bit 4 (0x10) of the device record's flag word at +16.
   It first clears that bit and loads the global `firegl_SuperFlags`.
   When bit 1 of that word is set it sets the bit only if bit 0 is also set.
-  When bit 1 is clear it follows the doubleword at record +1000 to a second record and tests bit 27 of that record's word at +228 (the code shifts the word left by 36 and tests the sign): if it is set the bit goes on.
-  Otherwise, when the record's word at +28 equals 0x85000004 or 0x8820ffff and bit 13 (0x2000) of the second record's word at +40 is set, the bit goes on; any other combination leaves it clear.
-  It sets no return value. **Inferred:** the second record is the card's configuration window, with the fields at +228, +40 and +28 acting as flag bits and a board identifier, because the routine uses them only as bit tests and a two-value compare.
+  When bit 1 is clear it loads the doubleword at record +1000, the mapped register window (BAR 2, as this chapter's opening says), and tests bit 27 of the word at window offset 0xe4 (`lw` at 0x13afc, then a left shift by 36 and a sign test at 0x13b00 and 0x13b04): if it is set the bit goes on.
+  Otherwise it loads the device record's own word at +28 (`lw` at 0x13b14, from a0, not from the window), and only when that equals 0x85000004 or 0x8820ffff does it test bit 13 (0x2000) of the window word at offset 0x28 (`lw` at 0x13b34); if that is set the bit goes on, and any other combination leaves it clear.
+  It sets no return value. **Established** as code. The window offsets 0xe4 and 0x28 are the public `CONFIG_XSTRAP` and `BIOS_6_SCRATCH` registers by offset ([registers.md](registers.md)); an earlier version of this entry read the second record as the card's configuration window, which contradicted the +1000 meaning above and the register table. The word at +28 is the identifier `_r6x_IsDeviceSupported` stores in the device-private structure, per [kernel-object-functions.md](kernel-object-functions.md#detach-initialisation-and-device-identity); that the device record's +28 is the same word is **inferred** from the equal constants. What the global flag word holds and who sets it is **unknown**.
 
 ## Vertical-sync wait and engine reset
 
