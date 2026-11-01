@@ -152,7 +152,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003fac0	76	xf86CloseLog	dynsym	53e
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003fb40	64	xf86TokenToString	dynsym	83b0c6991522		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003fb80	140	xf86StringToToken	dynsym	1f10f435f85d		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003fc40	296	xf86ShowClocks	dynsym	7dac5264df0e		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003fd80	328	xf86PrintChipsets	dynsym	e9dfd0d03eb2		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003fd80	328	xf86PrintChipsets	dynsym	e9dfd0d03eb2		out:13	named-only	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003ff00	692	xf86MatchDevice	dynsym	e7b90fa96dec		out:13	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100401c0	3348	xf86MatchPciInstances	dynsym	83e5c439f2ed		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10040f00	936	xf86MatchIsaInstances	dynsym	06e8c70ceab8		in	undocumented		
@@ -472,8 +472,8 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006d3c0	188	xf86freeVideoPortList	
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006d480	132	xf86findVideoAdaptor	dynsym	a853f84045a4		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006d540	1996	xf86parsePointerSection	dynsym	a9ab6eb9141e		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006dd80	104	pciInit	dynsym	cd299afa236f		in	named-only	docs/kernel-attach.md#the-emulated-pcs-memory-image-and-the-legacy-port-space-vgaahelper_memo-helper_legacyo-junkcodeo	The emulated PC's memory image and the legacy port space (`vga.a(helper_mem.o)`, `helper_legacy.o`, `junkcode.o`)
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006de00	100	pciFindFirst	dynsym	03e2e8980a5a		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006de80	68	pciFindNext	dynsym	44e618a8962d		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006de00	100	pciFindFirst	dynsym	03e2e8980a5a		in	named-only	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006de80	68	pciFindNext	dynsym	44e618a8962d		in	named-only	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006df00	164	pciReadLong	dynsym	1db383499a07		in	located	docs/kernel-attach.md#the-emulated-pcs-memory-image-and-the-legacy-port-space-vgaahelper_memo-helper_legacyo-junkcodeo	The emulated PC's memory image and the legacy port space (`vga.a(helper_mem.o)`, `helper_legacy.o`, `junkcode.o`)
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006dfc0	136	pciReadWord	dynsym	cf7d04d6c586		in	located	docs/kernel-attach.md#the-emulated-pcs-memory-image-and-the-legacy-port-space-vgaahelper_memo-helper_legacyo-junkcodeo	The emulated PC's memory image and the legacy port space (`vga.a(helper_mem.o)`, `helper_legacy.o`, `junkcode.o`)
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006e080	84	pciReadByte	dynsym	6c4d469067c3		in	located	docs/kernel-attach.md#the-emulated-pcs-memory-image-and-the-legacy-port-space-vgaahelper_memo-helper_legacyo-junkcodeo	The emulated PC's memory image and the legacy port space (`vga.a(helper_mem.o)`, `helper_legacy.o`, `junkcode.o`)
@@ -572,7 +572,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074480	52	xf86strcpy	dynsym	a3339
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100744c0	60	xf86strcspn	dynsym	0d3d8818dbcb		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074500	60	xf86strlen	dynsym	63be70420550		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074540	52	xf86strncat	dynsym	82a1e54af243		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074580	52	xf86strncmp	dynsym	eea111c77845		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074580	52	xf86strncmp	dynsym	eea111c77845		out:13	named-only	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100745c0	236	xf86strncasecmp	dynsym	019f34ffaf01		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100746c0	52	xf86strncpy	dynsym	8042110e3d90		out:13	named-only	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074700	52	xf86strpbrk	dynsym	d7d0347e53a5		out:13	undocumented		
@@ -639,10 +639,10 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x100768c0	56	xf86bsearch	dynsym	db6e
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076900	764	xf86execl	dynsym	eae5a56e7693		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076c00	68	xf86abort	dynsym	69f57c6f43a5		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076c80	60	xf86exit	dynsym	a19f521a93ae		out:13	named-only	docs/fglrx-drv-functions.md#command-fifo-accounting-engine-reset-and-engine-restore	Command-FIFO accounting, engine reset and engine restore
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076d40	140	xf86opendir	dynsym	85dcd28241ec		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076d40	140	xf86opendir	dynsym	85dcd28241ec		out:13	named-only	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076e00	180	xf86readdir	dynsym	2a21ba69ca15		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076ec0	84	xf86rewinddir	dynsym	259d206be4cc		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076f40	120	xf86closedir	dynsym	2a6ffd9badaa		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076f40	120	xf86closedir	dynsym	2a6ffd9badaa		out:13	named-only	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100770c0	108	xf86chmod	dynsym	6133843ad81e		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077140	80	xf86chown	dynsym	63155f3c82bd		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100771c0	52	xf86geteuid	dynsym	d3b56106cf86		out:13	undocumented		
@@ -681,7 +681,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077ac0	52	xf86tan	dynsym	6412dedc
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077b00	52	xf86memchr	dynsym	4e486bb9d5dd		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077b40	52	xf86memcmp	dynsym	89d821596e6f		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077b80	52	xf86memcpy	dynsym	d8f331e356bd		out:13	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077bc0	52	xf86memmove	dynsym	2bb258f84d44		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077bc0	52	xf86memmove	dynsym	2bb258f84d44		out:13	named-only	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077c00	52	xf86memset	dynsym	e428708dd62a		out:13	named-only	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077c40	44	xf86isalnum	dynsym	29f8025dbf5b		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077c80	44	xf86isalpha	dynsym	4856669ac1fe		in	undocumented		
@@ -885,8 +885,8 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10091b40	196	DeleteWindowFromAnySav
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10091c40	44	NoopDDA	dynsym	66be0dbbe675		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10091c80	608	BlockHandler	dynsym	04fb8db4aabc		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10091f00	592	WakeupHandler	dynsym	9c517d4638a5		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10092180	192	RegisterBlockAndWakeupHandlers	dynsym	744b7cdba6b6		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10092240	344	RemoveBlockAndWakeupHandlers	dynsym	1f43c59c4662		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10092180	192	RegisterBlockAndWakeupHandlers	dynsym	744b7cdba6b6		out:13	named-only	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10092240	344	RemoveBlockAndWakeupHandlers	dynsym	1f43c59c4662		out:13	named-only	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100923c0	64	InitBlockAndWakeupHandlers	dynsym	11eee008aae2		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10092400	180	ProcessWorkQueue	dynsym	83a64cd7fe14		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100924c0	200	ProcessWorkQueueZombies	dynsym	dddfdeb13d07		out:13	undocumented		
@@ -28882,8 +28882,8 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		CMapSwitchMo
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		CMapUnwrapScreen	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		CalcGamma	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		CalcTime	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		CheckForAthlon	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		CheckForOSSupport_SSE	dwarf+funcnames			in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		CheckForAthlon	dwarf+funcnames			in	named-only	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		CheckForOSSupport_SSE	dwarf+funcnames			in	named-only	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		CheckForOSSupport_SSE2	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		Choose_Mode	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		CollectUnderlayChildrenRegions	dwarf+funcnames			in	undocumented		
@@ -29339,7 +29339,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x423f80	1272	Upd
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424580	164	FGLCalculateCPUSpeed	dynsym	c5e7231ed109		in	understood	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424640	188	FGLMDelay	dynsym	658fc3e2e920		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424700	88	R200AvailableOptions	dynsym	71612adc35dc		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424780	364	R200Identify	dynsym	2bd0ca3a79e5		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424780	364	R200Identify	dynsym	2bd0ca3a79e5		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424900	816	R200Probe	dynsym	4fef7a013f28		in	understood	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x429640	5168	R200DRIScreenInit	dynsym	1f9bc39ba488		in	understood	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42aa80	652	R200DRIFinishScreenInit	dynsym	9919224d96ba		in	understood	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
@@ -29349,7 +29349,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42c300	140	FGLE
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42c3c0	216	FGLStartCP	dynsym	83c73800bcbb		in	understood	docs/kernel-attach.md#command-processor-start-up-x-server-module	Command processor start-up (X server module)
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42c4c0	720	FGLInitCP	dynsym	c34f62e9dafd		in	understood	docs/x-driver-functions.md#command-processor-initialisation	Command processor initialisation
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42c7c0	648	GetErrorName	dynsym	1c4737dc608c		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42cb80	316	FGL_get_cpuflags	dynsym	9f517ac6ef30		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42cb80	316	FGL_get_cpuflags	dynsym	9f517ac6ef30		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42ccc0	504	tryexcept	dynsym	4578ac0303fc		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42d380	72	R200CPWriteBitmap	dynsym	dd9be65bd014		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42d400	1092	R200CPWritePixmap	dynsym	881d24bf2725		in	named-only	docs/fglrx-drv-functions.md#overlay-command-ring-packets-and-2d-acceleration-hooks	Overlay, command-ring packets and 2D acceleration hooks
@@ -29359,11 +29359,11 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e1c0	72	R200C
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e240	72	R200CPWritePixmapOverlay	dynsym	65454224fc82		in	understood	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e2c0	72	R200CPReadPixmapOverlay	dynsym	c81dfbfbe45f		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e340	548	Rage6SetGamma16Correction	dynsym+funcnames	fdd674df203a		in	understood	docs/x-driver-functions.md#gamma-and-palette	Gamma and palette
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e580	60	vAddFixed	dynsym	3f8c4368439f		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e600	168	vSubtractFixed	dynsym	7da63cddf9c5		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e6c0	192	vMultiplyFixed	dynsym	9cebc3bab2b9		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e580	60	vAddFixed	dynsym	3f8c4368439f		in	understood	docs/fglrx-drv-functions.md#fixed-point-arithmetic-and-symbol-database-writers	Fixed-point arithmetic and symbol-database writers
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e600	168	vSubtractFixed	dynsym	7da63cddf9c5		in	understood	docs/fglrx-drv-functions.md#fixed-point-arithmetic-and-symbol-database-writers	Fixed-point arithmetic and symbol-database writers
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e6c0	192	vMultiplyFixed	dynsym	9cebc3bab2b9		in	understood	docs/fglrx-drv-functions.md#fixed-point-arithmetic-and-symbol-database-writers	Fixed-point arithmetic and symbol-database writers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e780	40	vCeilFixed	dynsym	7cd72567f5fc		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e7c0	224	vDivideFixed	dynsym	bd5b83c6e96a		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e7c0	224	vDivideFixed	dynsym	bd5b83c6e96a		in	understood	docs/fglrx-drv-functions.md#fixed-point-arithmetic-and-symbol-database-writers	Fixed-point arithmetic and symbol-database writers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e940	44	ulRC6PllReadUlong	dynsym	db9aa1456da0		in	understood	docs/x-driver-functions.md#clock-pll-access	Clock PLL access
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e980	76	vRC6PllWriteUlong	dynsym	9d46c33ba5e9		in	understood	docs/x-driver-functions.md#clock-pll-access	Clock PLL access
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42ea00	164	vRC6ProgramHTOT_CNTL_EDGE	dynsym	6ef04c05b5ed		in	understood	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
@@ -29408,13 +29408,13 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x447c80	144	R200
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x447d40	132	R200GetBoardNumberFromScreen	dynsym	0fba92301a04		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448300	200	R200CompositorConnected	dynsym	e44ed893795d		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448400	204	R200CompositorModeFlags	dynsym	d76134e9478d		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448780	600	R200LstComb	dynsym	ecbd81903343		in	named-only	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448780	600	R200LstComb	dynsym	ecbd81903343		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448f80	924	R200SetMonitorInfo	dynsym	9b6aa61201c6		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449540	60	R200GetCRTCResetState	dynsym	f4a553048662		in	understood	docs/x-video-driver.md#register-readback	Register readback
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449580	96	R200GetCursorScreen	dynsym	a00199fd559a		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449600	324	R200QryPltParam	dynsym	421c23c311fc		in	named-only	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449600	324	R200QryPltParam	dynsym	421c23c311fc		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449780	92	R200GetSGIInfoPtr	dynsym	f2a8319158a2		in	understood	docs/fglrx-drv-functions.md#sgi-extensions-and-pipe-control	SGI extensions and pipe control
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449800	500	R200SetPltParam	dynsym	64a78e2af36d		in	named-only	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449800	500	R200SetPltParam	dynsym	64a78e2af36d		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449e40	84	R200LdCombination	dynsym	280a8eafacfe		in	named-only	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44a400	1340	R200SGIVCAttach	dynsym	35fd47965bad		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44a940	96	R200SGIVCUpdateGenlockInfo	dynsym	2a4d1c2d5a3d		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
@@ -29426,19 +29426,19 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44d340	252	SGIG
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44d440	232	SGIGLXHyperpipeInit	dynsym	6a100667affb		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44d540	872	R200_driLockInit	dynsym	d5c332db7f6b		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x451bc0	1276	is1Attach	dynsym	263b7fbaeb46		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4520c0	296	is1Reset	dynsym	e03b5a068e42		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4520c0	296	is1Reset	dynsym	e03b5a068e42		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x452200	268	is1SyncPipes	dynsym	cee5ac7c9d75		in	understood	docs/fglrx-drv-functions.md#sgi-extensions-and-pipe-control	SGI extensions and pipe control
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x452fc0	500	is1UpdateVideoFormat	dynsym	e79710ef4733		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4531c0	176	is1GetGenlockParams	dynsym	9d7e4a423055		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453280	296	is1SaveGenlockParams	dynsym	a19287aef63e		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4534c0	316	is1SetGenlock	dynsym	5e2ae6f619ca		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453600	280	is1GenlockAchieved	dynsym	f3f5721eb9ad		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4531c0	176	is1GetGenlockParams	dynsym	9d7e4a423055		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453280	296	is1SaveGenlockParams	dynsym	a19287aef63e		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4534c0	316	is1SetGenlock	dynsym	5e2ae6f619ca		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453600	280	is1GenlockAchieved	dynsym	f3f5721eb9ad		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453740	88	is1IsAvailable	dynsym	0756d3e5ba0f		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4537c0	408	is1HsyncDetect	dynsym	927dd4f56e4f		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453980	56	is1WakeupHandler	dynsym	6233a795d0da		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4539c0	184	is1BlockHandler	dynsym	d46ceccd5930		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453a80	336	is1Unblank	dynsym	94b8894ce77a		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453c00	200	is1SwapReady	dynsym	54007add0bae		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4539c0	184	is1BlockHandler	dynsym	d46ceccd5930		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453a80	336	is1Unblank	dynsym	94b8894ce77a		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453c00	200	is1SwapReady	dynsym	54007add0bae		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453d00	196	is1Bind	dynsym	8f5cb256771c		in	understood	docs/fglrx-drv-functions.md#sgi-extensions-and-pipe-control	SGI extensions and pipe control
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4558a0	500	vfmtReadCmp1Format	dynsym	721cbdfd0ee2		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x455aa0	292	vfmtReadCmp1OdyFormat	dynsym	606d95f70d0a		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
@@ -29448,13 +29448,13 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x455fe0	76	vfmtF
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x456030	144	vfmtFindCmpFormatFile	dynsym	47c7eed15b8c		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4560c0	76	vfmtFindOdyFormatFile	dynsym	346b55e9f6fe		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x456110	76	vfmtFindSG2FormatFile	dynsym	cedfe1706187		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x456160	292	vfmtFindKonaCombinationFile	dynsym	02e2880746f3		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x456160	292	vfmtFindKonaCombinationFile	dynsym	02e2880746f3		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x456290	584	vfmtFindCmpCombinationFile	dynsym	f95dcb192457		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4564e0	132	vfmtGetLastKonaFileStat	dynsym	167e5d6ee841		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4566d0	5956	vfmtReadCmp1Combination	dynsym	1a8552a17bf4		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x457e20	4948	vfmtWriteCmp1Combination	dynsym	b6a68bb571b8		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459434	56	SDBaddNewArraySymbol	dynsym	27dfa3818a85		in	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45946c	64	SDBaddNewScalarSymbol	dynsym	9c412e09a1a4		in	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459434	56	SDBaddNewArraySymbol	dynsym	27dfa3818a85		in	understood	docs/fglrx-drv-functions.md#fixed-point-arithmetic-and-symbol-database-writers	Fixed-point arithmetic and symbol-database writers
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45946c	64	SDBaddNewScalarSymbol	dynsym	9c412e09a1a4		in	understood	docs/fglrx-drv-functions.md#fixed-point-arithmetic-and-symbol-database-writers	Fixed-point arithmetic and symbol-database writers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4594ac	404	SDBcloseNewDatabase	dynsym	5a974545025d		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459640	356	SDBopenNewDatabase	dynsym	bb5c48c4318a		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4597a4	120	SDBsetHeader	dynsym	88ff0b897a7a		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
@@ -29465,7 +29465,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459af0	56	SDBge
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459b28	56	SDBgetSymbolValueScalar	dynsym	031ceb77cc23		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459b60	184	SDBcloseReadDatabase	dynsym	6948f4e71394		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459c18	424	SDBreadOpenDatabase	dynsym	ee56f9ca176e		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459e18	420	SDBprocessOneUserMethod	dynsym	939a2438cc1b		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459e18	420	SDBprocessOneUserMethod	dynsym	939a2438cc1b		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459fbc	56	compareSTEName	dynsym	302d27fc28e3		in	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459ff4	524	mapTypeToXDRPROC	dynsym	b30f33032ba6		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a200	52	SDBinitializeSymbolTableEntries	dynsym	3ed45d9db855		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
@@ -29473,9 +29473,9 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a234	52	xdr_S
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a268	52	xdr_SDBfileOffset	dynsym	c813a38ac031		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a29c	340	xdr_typedData	dynsym	378163443e9d		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a3f0	320	xdr_SDBfileHeader	dynsym	fed9589e8da4		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a530	52	xdr_SDBdataType	dynsym	21ab4b35703d		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a530	52	xdr_SDBdataType	dynsym	21ab4b35703d		in	understood	docs/fglrx-drv-functions.md#fixed-point-arithmetic-and-symbol-database-writers	Fixed-point arithmetic and symbol-database writers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a564	112	xdr_SDBsymbolName	dynsym	09a59313e23a		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a5d4	200	xdr_SDBsymbolTableEntry	dynsym	8be0157f5b86		in	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a5d4	200	xdr_SDBsymbolTableEntry	dynsym	8be0157f5b86		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a69c	104	xdr_SDBversionNumber	dynsym	0e083eead946		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a704	36	SDBsetupMemoryInterface	dynsym	0113f40c4011		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b8780	1424	_stub	dwarf			in	located	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
@@ -67287,11 +67287,11 @@ usr/gfx/sgcombine	board-tool	n32		0x10024b80	76	vfmtFindKonaFormatFile	dynsym	3d
 usr/gfx/sgcombine	board-tool	n32		0x10024bd0	156	vfmtFindCmpFormatFile	dynsym	acb4a0eec76f		in	located	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/gfx/sgcombine	board-tool	n32		0x10024c70	76	vfmtFindOdyFormatFile	dynsym	2b82398ff0ba		in	located	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/gfx/sgcombine	board-tool	n32		0x10024cc0	76	vfmtFindSG2FormatFile	dynsym	d82fe2dc98fd		in	located	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
-usr/gfx/sgcombine	board-tool	n32		0x10024d10	308	vfmtFindKonaCombinationFile	dynsym	72101929c774		in	undocumented		
+usr/gfx/sgcombine	board-tool	n32		0x10024d10	308	vfmtFindKonaCombinationFile	dynsym	72101929c774		in	located	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/gfx/sgcombine	board-tool	n32		0x10024e50	616	vfmtFindCmpCombinationFile	dynsym	572a81121237		in	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x100250c0	132	vfmtGetLastKonaFileStat	dynsym	540a890a6f14		in	located	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
-usr/gfx/sgcombine	board-tool	n32		0x10025404	56	SDBaddNewArraySymbol	dynsym	649da118f4de		out:21	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
-usr/gfx/sgcombine	board-tool	n32		0x1002543c	64	SDBaddNewScalarSymbol	dynsym	256053e6ff3b		out:21	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
+usr/gfx/sgcombine	board-tool	n32		0x10025404	56	SDBaddNewArraySymbol	dynsym	649da118f4de		out:21	located	docs/fglrx-drv-functions.md#fixed-point-arithmetic-and-symbol-database-writers	Fixed-point arithmetic and symbol-database writers
+usr/gfx/sgcombine	board-tool	n32		0x1002543c	64	SDBaddNewScalarSymbol	dynsym	256053e6ff3b		out:21	located	docs/fglrx-drv-functions.md#fixed-point-arithmetic-and-symbol-database-writers	Fixed-point arithmetic and symbol-database writers
 usr/gfx/sgcombine	board-tool	n32		0x1002547c	404	SDBcloseNewDatabase	dynsym	e0b7a10442d2		out:21	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x10025610	356	SDBopenNewDatabase	dynsym	3b538149b0ff		out:21	located	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/gfx/sgcombine	board-tool	n32		0x10025774	120	SDBsetHeader	dynsym	0253b870c388		out:21	located	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
@@ -67302,7 +67302,7 @@ usr/gfx/sgcombine	board-tool	n32		0x10025ac0	56	SDBgetSymbolValueArray	dynsym	01
 usr/gfx/sgcombine	board-tool	n32		0x10025af8	56	SDBgetSymbolValueScalar	dynsym	b4262eaafcb5		out:21	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x10025b30	184	SDBcloseReadDatabase	dynsym	243e1b38859e		out:21	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x10025be8	424	SDBreadOpenDatabase	dynsym	2d0e08a91052		out:21	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
-usr/gfx/sgcombine	board-tool	n32		0x10025de8	420	SDBprocessOneUserMethod	dynsym	f959e2444d5e		out:21	undocumented		
+usr/gfx/sgcombine	board-tool	n32		0x10025de8	420	SDBprocessOneUserMethod	dynsym	f959e2444d5e		out:21	located	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/gfx/sgcombine	board-tool	n32		0x10025f8c	56	compareSTEName	dynsym	07b537d5ff2b		out:21	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x10025fc4	524	mapTypeToXDRPROC	dynsym	2c33830f19c6		out:21	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x100261d0	52	SDBinitializeSymbolTableEntries	dynsym	3ed45d9db855		out:21	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
@@ -67310,9 +67310,9 @@ usr/gfx/sgcombine	board-tool	n32		0x10026204	52	xdr_SDBelementIndex	dynsym	fd1ed
 usr/gfx/sgcombine	board-tool	n32		0x10026238	52	xdr_SDBfileOffset	dynsym	d2eb655539b0		out:21	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x1002626c	340	xdr_typedData	dynsym	6adee6ae893b		out:21	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x100263c0	320	xdr_SDBfileHeader	dynsym	e3a28aaf84d8		out:21	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
-usr/gfx/sgcombine	board-tool	n32		0x10026500	52	xdr_SDBdataType	dynsym	fa7ae80b6a6c		out:21	undocumented		
+usr/gfx/sgcombine	board-tool	n32		0x10026500	52	xdr_SDBdataType	dynsym	fa7ae80b6a6c		out:21	located	docs/fglrx-drv-functions.md#fixed-point-arithmetic-and-symbol-database-writers	Fixed-point arithmetic and symbol-database writers
 usr/gfx/sgcombine	board-tool	n32		0x10026534	112	xdr_SDBsymbolName	dynsym	0c494cdced0f		out:21	located	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
-usr/gfx/sgcombine	board-tool	n32		0x100265a4	200	xdr_SDBsymbolTableEntry	dynsym	ace7e711f7dc		out:21	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
+usr/gfx/sgcombine	board-tool	n32		0x100265a4	200	xdr_SDBsymbolTableEntry	dynsym	ace7e711f7dc		out:21	located	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/gfx/sgcombine	board-tool	n32		0x1002666c	104	xdr_SDBversionNumber	dynsym	c190158499f4		out:21	located	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/gfx/sgcombine	board-tool	n32		0x100266d4	36	SDBsetupMemoryInterface	dynsym	cdebbd41f479		out:21	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10026700	32	InitEZ__Gv	dynsym	532a8cac44e1		out:21	undocumented		
