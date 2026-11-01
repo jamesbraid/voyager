@@ -331,3 +331,80 @@ Where an entry reads `errno`, it does so through the GOT slot at `gp+1728`.
 - `close_display` (`fglrx_dri.so`, address 0x4c0000, 56 bytes): **established.** The routine is read through its return.
   It calls `XextRemoveDisplay` with the info at gp+3060 as the first argument and its own a0, moved into a1, as the second. It returns the call's result.
 
+- `fglX11DRMLock` (`fglrx_dri.so`, address 0x4c0d80, 56 bytes): **established.** Every instruction is read.
+  It calls `FGLX11_DRM_LOCK_AND_UPDATE_WINGEOM` at 0x4c08c0 with its arguments unchanged, and returns what the callee returns.
+  The `t9` value loaded before the call goes unused, because the call is a direct branch-and-link.
+
+- `fglX11DRMUnlock` (`fglrx_dri.so`, address 0x4c0e00, 56 bytes): **established.** Every instruction is read.
+  It calls `FGLX11_DRM_UNLOCK` at 0x4c0b40 with its arguments unchanged, and returns what the callee returns.
+
+- `fglX11DRMLockScreen` (`fglrx_dri.so`, address 0x4c0d40, 60 bytes): **established.** Every instruction is read.
+  It passes a0 unchanged, the caller's a1 as a2, and the word at a0+240 as a1 to `FGLX11_DRM_LOCK_AND_UPDATE_WINGEOM` at 0x4c08c0, and returns that result.
+
+- `fglX11DRMUnlockScreen` (`fglrx_dri.so`, address 0x4c0dc0, 56 bytes): **established.** Every instruction is read.
+  It passes a0 unchanged and the word at a0+240 as a1 to `FGLX11_DRM_UNLOCK` at 0x4c0b40, and returns that result.
+
+- `fglX11GLDRMLock` (`fglrx_dri.so`, address 0x4c0c00, 156 bytes): **established.** Every instruction is read.
+  With s0 the word at a0+100, it calls `FGLX11_DRM_LOCK_AND_UPDATE_WINGEOM` at 0x4c08c0 with a0 set to the word at [[[s0+4]+28]+180], a1 to the word at [s0+4]+4, and a2 to the word at s0+120.
+  When bit 0 of the word at s0 is set, it stores that word back with bit 0 cleared.
+  When bit 0 of the word at a0+0x46c78 (a0 plus 0x40000 plus 27768) is also set, it calls the function pointer at a0+124 with a0 as argument.
+  The return value is whatever v0 holds at the epilogue: the lock call's result, 0 when the flag test fails, or the indirect call's result.
+
+- `fglX11GLDRMUnlock` (`fglrx_dri.so`, address 0x4c0cc0, 72 bytes): **established.** Every instruction is read.
+  It calls `FGLX11_DRM_UNLOCK` at 0x4c0b40 with a0 set to the word at [[[a0+100]+4]+28]+180 and a1 set to the word at [[a0+100]+4]+4, then returns the callee's result.
+
+- `fglx11GetDrawablePrivate` (`fglrx_dri.so`, address 0x4c0f40, 32 bytes): **established.** Every instruction is read.
+  It loads the word at a0+100, then the word at offset 120 of that record. A zero result returns 0; otherwise it returns that record plus 13288.
+
+- `fglx11GetReadDrawablePrivate` (`fglrx_dri.so`, address 0x4c0f80, 40 bytes): **established.** Every instruction is read.
+  It walks a0+100, then offset 4, then offset 24 of the record it reaches. A zero pointer there returns 0; otherwise it returns the word at offset 4 of that record plus 13288.
+
+- `fglX11DrawableGetSize` (`fglrx_dri.so`, address 0x4c1140, 40 bytes): **established.** Every instruction is read.
+  It takes the record at the word at a0+720 and stores its words at offsets 136, 140, 144 and 148 through the pointers a1, a2, a3 and a4, in that order.
+
+- `fglX11DrawableGetScreenSize` (`fglrx_dri.so`, address 0x4c1180, 36 bytes): **established.** Every instruction is read.
+  It follows a0+720 to a record R, offset 16 of R to Q, and offset 44 of Q to P. It stores the word at P+124 through a1 and the word at P+128 through a2.
+
+- `fglX11SetCoreClipRect` (`fglrx_dri.so`, address 0x4c1100, 8 bytes): **established.** The routine is a return with an empty delay slot. It stores nothing and does nothing.
+
+- `fglX11DrawableUpdate` (`fglrx_dri.so`, address 0x4c11c0, 8 bytes): **established.** The routine is a single return. The delay slot at 0x4c11c4 sets v0 to 1, so every caller gets 1 back. It stores nothing and makes no call, so it leaves the drawable it is given as it found it.
+
+- `fglX11InitPerformanceCounters` (`fglrx_dri.so`, address 0x4c1200, 8 bytes): **established.** The routine is a single return with an empty delay slot at 0x4c1204. It stores nothing, makes no call and returns no value.
+
+- `FGLX11_DRM_UNLOCK` (`fglrx_dri.so`, address 0x4c0b40, 172 bytes): **established.** Every instruction is read.
+  It reads the count at a0+128. With a zero count it tail-calls `fprintf` on stderr with the format at 0xb74070, and the format text is not read here.
+  Otherwise it compares the word at a0+124 with its a1. On a mismatch it tail-calls `fprintf` on stderr with the format at 0xb740a8, passing the count minus one, the word at a0+124, the word at the pointer at a0+120 and the count.
+  When the words match and the count is above one, it stores the count minus one at a0+128 and returns without setting v0.
+  When the count is one, it clears the word at a0+124 and attempts a swap on the word at the pointer at offset 100 of the record at a0+44: from 0x80000000 OR the old holder value to the old holder value, using a load-linked and store-conditional loop.
+  It returns without setting v0 when the register holding the swap result, or the word it loaded when the swap was skipped, equals 1. Otherwise it tail-calls `firegl_UnlockHardware` with the word at the pointer at a0+120 and the old holder value.
+  The count is left at one on that path.
+
+## Memory and logging helpers
+
+- `fglx11Warning` (`fglrx_dri.so`, address 0x4c0e40, 148 bytes): **established.** Every instruction is read.
+  It measures the message in a0 with `strlen` and caps the count at 248.
+  It writes the 7-byte prefix "fglrx: " into a 288-byte frame buffer, appends up to that many message bytes with `strncat`, and writes a NUL at offset 7 plus the count.
+  It passes the buffer to `perror` and returns what `perror` returns.
+
+- `fglx11Fatal` (`fglrx_dri.so`, address 0x4c0f00, 48 bytes): **established.** Every instruction is read.
+  It calls `fglx11Warning` at 0x4c0e40 with a0 unchanged, then calls `exit` through `gp+1768` with -1. It does not return.
+
+- `fglx11Malloc` (`fglrx_dri.so`, address 0x4c1240, 56 bytes): **established.** Every instruction is read.
+  It calls `calloc` through `gp+1592` with 1 as the element count and a0 as the size, and returns the pointer.
+
+- `fglx11Calloc` (`fglrx_dri.so`, address 0x4c1280, 68 bytes): **established.** Every instruction is read.
+  It substitutes 1 for a zero a0, then calls `calloc` through `gp+1592` with a0 and a1 as count and size, and returns the pointer.
+
+- `fglx11Realloc` (`fglrx_dri.so`, address 0x4c1300, 68 bytes): **established.** Every instruction is read.
+  When a1 is zero it substitutes 1, then calls `realloc` through `gp+1656` with a0 and a1 and returns the pointer.
+
+- `fglx11Free` (`fglrx_dri.so`, address 0x4c1380, 52 bytes): **established.** Every instruction is read.
+  It calls `free` through `gp+1804` with a0 unchanged and returns.
+
+- `fglx11AlignedMalloc` (`fglrx_dri.so`, address 0x4c13c0, 100 bytes): **established.** Every instruction is read.
+  It calls `malloc` through `gp+1808` with a0 + a1 + 4 bytes, where a1 is the alignment. A zero alignment traps in the divide check.
+  With M the malloc result, it computes X = M + a1 + 4, rounds X down to a multiple of a1, and stores M in the word just below that address.
+  It returns that aligned address.
+
+- `fglx11AlignedFree` (`fglrx_dri.so`, address 0x4c1440, 52 bytes): **established.** Every instruction is read.
+  It loads the word at a0-4, which holds the malloc pointer that `fglx11AlignedMalloc` stored, and calls `free` through `gp+1804` with it.
