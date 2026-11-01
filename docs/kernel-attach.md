@@ -162,6 +162,115 @@ The PCI bus clock and width the cards run at are neither read nor set by `fglrx.
 
 So the card's BIOS runs once, under the kernel's own x86 emulator, during the early console start-up; the FireGL driver relies on that and only shadows the ROM. Whether the IP35 PROM also runs it is in [the open questions](open-questions.md#host-attachment).
 
+## The emulator's glue to the kernel (`vga.a(helper_exec.o)`)
+
+The x86 emulator in `vga.a` runs the card's option ROM against an emulated PC.
+This member holds the routines that load the emulator's registers, push an interrupt frame and route its port and memory accesses to the kernel.
+All of them reach the active emulation record through the global `Int10Current`, and the emulator's register file through a pointer in `.srdata`.
+In the record, the doubleword at +24 points at a table of six function pointers (read byte, halfword and word at +0, +8 and +16, write byte, halfword and word at +24, +32 and +40), and the doubleword at +80 is a handle that every port access passes to the kernel's `inb`, `inw`, `inl`, `outb`, `outw` and `outl`.
+That table layout is **inferred** from how `Mem_rb` to `Mem_wl` and the repeat-port routines index it; nothing in this member fills it, so which kernel routines it points at is not read here.
+
+- `setup_int` (`vga.a(helper_exec.o)`, address 0x0, 148 bytes): **established.**
+  Takes the record in a0 and stores it in `Int10Current` (0x10).
+  Copies the record's words at +36, +40, +44, +48, +52 and +56 into the emulator's register file at +24, +28, +32, +36, +48 and +52, and the word at +64 to +44.
+  Sets the register-file word at +40 to 0x1000, the word at +56 to 0x600 and the word at +60 to 0x3200, and the halfwords at +64, +66, +72 and +74 to 0, 0x40, 0 and 0.
+  Stores the record's word at +72 shifted right by 4 (arithmetic) into the halfword at +68 and the low halfword of its word at +60 into +70.
+  It returns 1, and does the copies on every call.
+- `finish_int` (`vga.a(helper_exec.o)`, address 0x94, 80 bytes): **established.**
+  Takes the record in a0 and copies registers back out of the emulator: the halfwords at +26, +30, +34, +38, +50, +54, +70, +46 and +62 of the register file are stored, in that order, as zero-extended words at record +36, +40, +44, +48, +52, +56, +60, +64 and +68.
+  It returns nothing and calls nothing.
+- `getIntVect` (`vga.a(helper_exec.o)`, address 0xe4, 92 bytes): **established.**
+  Takes the record in a0 and an interrupt number in a1, and reads the vector at linear address 4 times the number through the record's read-halfword entry (table +8): first the segment at address 4n + 2 (call at 0x104), then the offset at 4n (call at 0x11c).
+  It returns the segment shifted left by 4 plus the offset, the linear address the vector points at.
+- `pushw` (`vga.a(helper_exec.o)`, address 0x140, 68 bytes): **established.**
+  Takes the record in a0 and a halfword value in a1.
+  It subtracts 2 from the register-file word at +40 (the emulated stack pointer, which `setup_int` initialises), then writes the value through the record's write-halfword entry (table +32) at the linear address (halfword at +68 shifted left by 4) plus the low 16 bits of the new pointer.
+  The result of the write is returned.
+- `run_bios_int` (`vga.a(helper_exec.o)`, address 0x184, 196 bytes): **established.**
+  Takes an interrupt number in a0 and the record in a1, and begins an emulated software interrupt.
+  It reads the vector's segment halfword at 4n + 2 through the record's read-halfword entry; when that is 0xf000 it logs "Card BIOS on non-PC like platform not loaded" through `cmn_err` with level 5 (0x238) and returns 0.
+  Otherwise it calls `pushw` three times, with the register-file halfwords at +62, +64 and +58 (0x1c8, 0x1d4, 0x1e0), and then replaces the halfword at +64 with the vector's segment and the halfword at +58 with its offset.
+  It returns 1.
+  **Inferred:** the three values are the flags, code segment and instruction pointer, which an interrupt pushes before it jumps through the vector.
+- `x_inb` (`vga.a(helper_exec.o)`, address 0x698, 92 bytes): **established.**
+  Takes a port number in a0 and returns a byte.
+  Port 64 (0x40) is answered from a counter instead of hardware: it adds 1 to the halfword at +10 of the `Int10Current` record and returns its low byte when bit 0 of the new value is clear and its high byte when bit 0 is set.
+  Every other port is passed to `inb` (0x6d8) with the handle at record +80 and the result is masked to 0xff.
+  **Inferred:** the alternating bytes imitate reads of the timer channel 0 counter that BIOS delay loops use.
+- `x_inw` (`vga.a(helper_exec.o)`, address 0x6f4, 84 bytes): **established.**
+  Takes a port in a0 and returns a halfword.
+  Port 92 (0x5c) calls `get_ust_nano` (0x728) with a stack slot and returns the 64-bit value in the slot divided by 3260, unsigned, masked to 16 bits.
+  Every other port is passed to `inw` (0x70c) with the handle at record +80 and the result is masked to 0xffff.
+- `x_inl` (`vga.a(helper_exec.o)`, address 0x7d4, 80 bytes): **established.**
+  Takes a port in a0 and returns a word.
+  It calls `pciCfg1in` with the handle at record +80, the port and a stack slot (0x7ec); when that returns nonzero it returns the word it left in the slot.
+  Otherwise it returns the result of `inl` (0x814) on the same handle and port.
+- `x_outb` (`vga.a(helper_exec.o)`, address 0x748, 96 bytes): **established.**
+  Takes a port in a0 and a value in a1 and returns nothing of its own.
+  A write of the value 0 to port 67 (0x43) calls `get_ust_nano` (0x780) with a stack slot, divides the 64-bit result by 838 (unsigned), ORs 1 and stores the result as the halfword at +10 of the record, which is the counter `x_inb` reads through port 64.
+  Every other port and value goes to `outb` (0x76c) with the handle at record +80.
+  **Inferred:** port 67 with value 0 is the timer's counter-latch command.
+- `x_outw` (`vga.a(helper_exec.o)`, address 0x7a8, 44 bytes): **established.**
+  Takes a port in a0 and a value in a1 and passes both unchanged to `outw` (0x7c0) with the handle at record +80.
+  It special-cases no port.
+- `x_outl` (`vga.a(helper_exec.o)`, address 0x824, 84 bytes): **established.**
+  Takes a port in a0 and a value in a1.
+  It first calls `pciCfg1out` with the handle at record +80, the port and the value (0x844) and returns when that result is nonzero.
+  Otherwise it calls `outl` (0x868) with the handle, port and value.
+- `pciCfg1in` (`vga.a(helper_exec.o)`, address 0x98c, 92 bytes): **established.**
+  Takes the handle in a0, a port in a1 and a result pointer in a2, and returns 1 when it handled the port and 0 otherwise.
+  Port 3320 (0xcf8) stores the static `.sdata` word that `pciCfg1out` fills (the address latch) through the pointer.
+  Port 3324 (0xcfc) calls `pciReadLong` with the handle and only the low byte of the latch, 0xff-masked (0x9cc), and stores its result through the pointer.
+  Bus, device and function bits of the latch are not used: the access always goes to the card whose handle was passed, at the register offset in the latch's low byte.
+- `pciCfg1out` (`vga.a(helper_exec.o)`, address 0x9e8, 72 bytes): **established.**
+  Takes the handle in a0, a port in a1 and a value in a2, and returns 1 when it handled the port and 0 otherwise.
+  Port 3320 (0xcf8) stores the value in the static `.sdata` latch.
+  Port 3324 (0xcfc) calls `pciWriteLong` with the handle, the latch's low byte (0xff-masked) and the value (0xa1c).
+  As in `pciCfg1in`, the bus, device and function bits of the latch are ignored.
+- `Mem_rb` (`vga.a(helper_exec.o)`, address 0x878, 44 bytes): **established.**
+  Takes an emulated address in a0 and returns a byte.
+  It loads the `Int10Current` record, takes the table at record +24 and calls its entry at +0 with the record and the address (call at 0x890); the callee's result is returned unchanged.
+- `Mem_rw` (`vga.a(helper_exec.o)`, address 0x8a4, 44 bytes): **established.**
+  The halfword read: the same dispatch through the table entry at +8, with the record and the address in a0 as arguments (call at 0x8bc), the result returned unchanged.
+- `Mem_rl` (`vga.a(helper_exec.o)`, address 0x8d0, 44 bytes): **established.**
+  The word read: the same dispatch through the table entry at +16 (call at 0x8e8), the result returned unchanged.
+- `Mem_wb` (`vga.a(helper_exec.o)`, address 0x8fc, 48 bytes): **established.**
+  Takes an address in a0 and a value in a1.
+  It calls the table entry at +24 with the record, the address and the value in that order (call at 0x918) and returns that call's result.
+- `Mem_ww` (`vga.a(helper_exec.o)`, address 0x92c, 48 bytes): **established.**
+  The halfword write: the same call through the table entry at +32 with the record, the address and the value (call at 0x948).
+- `Mem_wl` (`vga.a(helper_exec.o)`, address 0x95c, 48 bytes): **established.**
+  The word write: the same call through the table entry at +40 with the record, the address and the value (call at 0x978).
+- `port_rep_inb` (`vga.a(helper_exec.o)`, address 0x248, 176 bytes): **established.**
+  Emulates a repeated byte input.
+  Takes the record in a0, a port in a1, a start address in a2, a direction flag in a3 and a count in a4.
+  It runs a4 times (a zero count does nothing): `x_inb` on the port (0x294), then a write of that byte through the record's write-byte entry (table +24) at the current address (call at 0x2ac), then the address moves by +1, or by -1 when a3 is nonzero.
+  It returns the final address minus the start address, which is the count when the direction flag is zero and its negative otherwise.
+- `port_rep_inw` (`vga.a(helper_exec.o)`, address 0x2f8, 188 bytes): **established.**
+  The halfword version of the repeated input, with the same argument registers.
+  Each pass calls `x_inw` (0x34c) and writes the halfword through the table entry at +32 (call at 0x364); the address steps by +2, or by -2 when a3 is nonzero.
+  It returns the final address minus the start address.
+- `port_rep_inl` (`vga.a(helper_exec.o)`, address 0x3b4, 188 bytes): **established.**
+  The word version of the repeated input, with the same argument registers.
+  Each pass calls `x_inl` (0x408) and writes the word through the table entry at +40 (call at 0x420); the address steps by +4, or by -4 when a3 is nonzero.
+  It returns the final address minus the start address.
+- `port_rep_outb` (`vga.a(helper_exec.o)`, address 0x470, 176 bytes): **established.**
+  Emulates a repeated byte output, with the argument registers of `port_rep_inb`.
+  Each pass reads a byte through the record's read-byte entry (table +0) at the current address (call at 0x4c8), sends it to `x_outb` with the port (0x4d4), and steps the address by +1, or by -1 when a3 is nonzero.
+  It returns the final address minus the start address.
+- `port_rep_outw` (`vga.a(helper_exec.o)`, address 0x520, 188 bytes): **established.**
+  The halfword version of the repeated output.
+  Each pass reads a halfword through the table entry at +8 (call at 0x580), sends it to `x_outw` (0x58c), and steps the address by +2, or by -2 when a3 is nonzero.
+  It returns the final address minus the start address.
+- `port_rep_outl` (`vga.a(helper_exec.o)`, address 0x5dc, 188 bytes): **established.**
+  The word version of the repeated output.
+  Each pass reads a word through the table entry at +16 (call at 0x63c), sends it to `x_outl` (0x648), and steps the address by +4, or by -4 when a3 is nonzero.
+  It returns the final address minus the start address.
+- `bios_checksum` (`vga.a(helper_exec.o)`, address 0xa30, 80 bytes): **established.**
+  Takes a base address in a0 and a length in a1 and returns the sum of that many bytes, reduced to eight bits after every addition.
+  A length of zero or less returns 0 without reading; the loop reads two bytes a pass and stops when the count goes negative after the first or the second.
+  Nothing in this member calls it; whether the result is compared with zero is up to the caller.
+
 ## After attach: firegl_init_module
 
 - `firegl_init_module` (`fglrx.o`, address 0x9130): **established** as a call sequence. Allocates a 232-byte device structure (`kmem_alloc(0xe8)`), clears it, initialises a mutex and a semaphore, and calls `firegl_init`; on failure it frees the structure. It returns 1 after the call at 0x9310 and 0 on the paths that free the structure or log through `cmn_err`.
