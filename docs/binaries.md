@@ -64,3 +64,61 @@ One entry per file in the install set, in the order of [the binaries table](inve
   They also include 15 `SDB*` symbol-database routines and 15 `is1*` routines for the image-sync option, such as `is1Attach`.
   Overlay and stereo entries include `FIREGL_InitOverlay` and `QBS_EnableStereo`.
   66 exports carry the `R200` prefix, for example `R200Probe`, and none carry `R300`.
+
+- `usr/X11R6/lib/modules/extensions/fglrx_glx.so` (N32 shared object, 12841224 bytes): **inferred** to be the server-side GLX extension of the same driver.
+  It defines 9703 functions and 134 objects, and imports 113 names.
+  It has no `NEEDED` entries.
+  It exports 974 names that start with `gl`, 1256 that contain `R300` and 1232 that contain `R200`.
+  None of its exports start with `firegl`.
+
+- `usr/X11R6/lib/modules/extensions/libGLcore.so` (N32 shared object, 2002584 bytes): **inferred** to be the X server's software OpenGL core for indirect rendering.
+  It defines 2868 functions and 31 objects, and imports 23 names.
+  Its only `NEEDED` entry is `libc.so.1`.
+  It exports 423 names that start with `gl` and 15 that start with `__glX`.
+  No export contains `R300` or `R200`.
+
+- `usr/X11R6/lib/modules/extensions/libdri.so` (N32 shared object, 78616 bytes): **inferred** to be the server half of the DRI extension.
+  It defines 64 functions, of which 47 start with `DRI`, for example `DRIScreenInit` and `DRIQueryVersion`.
+  Another 14 start with `XF86SerDRI`.
+  It imports 71 names, and its only `NEEDED` entry is `libc.so.1`.
+
+- `usr/X11R6/lib/modules/extensions/libglx.so` (N32 shared object, 721524 bytes): **inferred** to be the GLX protocol extension of the X server.
+  It defines 879 functions, 824 of them starting with `__glX`.
+  It imports 397 names.
+  Its exports include `GlxExtensionInit` and `GlxInitVisuals`.
+  It also exports `GlxSetFBConfigs` and `GlxSetVisualConfigs`, and the `SwapBarrierGone` and `SwapGroupGone` notices.
+
+- `usr/X11R6/lib/modules/irix/libdrm.so` (N32 shared object, 58812 bytes): **inferred** to be the DRM client code the X modules link against.
+  It defines 87 functions: 16 `drmAgp*`, 7 `drmHash*` and 9 `drmSL*`.
+  It also exports the map and context calls `drmMap`, `drmOpen` and `drmAddMap`.
+  It imports 33 names, 31 of them `xf86*` wrappers around the server's file and memory calls.
+  Those wrappers include `xf86open`, `xf86ioctl` and `xf86mmap`.
+  Its strings include `/dev/dri`.
+
+- `usr/X11R6/lib/modules/irix/libfglrxdrm.so` (N32 shared object, 31128 bytes): **inferred** to be the card's kernel-interface code.
+  All 45 of its defined functions start with `firegl_`.
+  They include `firegl_InitDRM`, `firegl_InitCP` and `firegl_PM4Alloc`.
+  It imports 12 names: `drmMap`, `drmUnmap`, `drmMalloc` and `drmFree`.
+  It also imports six `xf86` wrappers for I/O and strings, and `sginap`, which is the IRIX sleep primitive.
+
+- `usr/X11R6/lib/modules/libint10.so` (N32 shared object, 374964 bytes): **inferred** to be the public x86 emulator the server uses for real-mode BIOS calls.
+  It defines 456 functions and 19 objects, and imports 56 names.
+  Its only `NEEDED` entry is `libc.so.1`.
+  Its exports include `X86EMU_exec` and `X86EMU_halt_sys`.
+  The six memory accessors `Mem_rb` to `Mem_ww` are exported too, as are `bios_checksum` and `MapCurrentInt10`.
+  The emulator names are the same as those the `vga.a` members define.
+
+- `usr/X11R6/lib/modules/libpcidata.so` (N32 shared object, 86924 bytes): **established** from the symbol table that the module defines one function, `xf86SetupPciData`, 48 bytes long at address 0x401a00.
+  It also defines one 12-byte object, `pcidataModuleData`, and imports no names.
+  **Inferred** that the module carries the PCI vendor and device name table the scan output uses.
+
+- `usr/X11R6/lib/modules/libscanpci.so` (N32 shared object, 157684 bytes): **established** from the symbol table that it exports four functions.
+  They are `xf86SetupScanPci`, `xf86DisplayPCICardInfo`, `xf86FindPCIClassInCardList` and `xf86FindPCIClassInDeviceList`.
+  It also exports a 12-byte object, `scanpciModuleData`, and imports three names: `xf86scanpci`, `xf86EnableIO` and `xf86MsgVerb`.
+  **Inferred** that it is the module the server loads for `-scanpci`, since the server's string table names it.
+
+- `usr/X11R6/lib/modules/libvbe.so` (N32 shared object, 26052 bytes): **inferred** to be the VESA BIOS Extensions wrapper.
+  It defines 17 functions named `VBE*` or `vbe*`, for example `VBEGetVBEInfo` and `VBESetVBEMode`.
+  It also exports `vbeDoEDID`.
+  It imports 23 names from the emulator, among them `xf86InitInt10` and `xf86ExecX86int10`.
+  Its other imports include `xf86Int10AllocPages` and `xf86InterpretEDID`.

@@ -142,7 +142,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f0c0	220	xf86EnableDisableFBAcc
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f400	372	xf86VDrvMsgVerb	dynsym	f8f842644eba		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f580	72	xf86DrvMsgVerb	dynsym	e218bc3d40ae		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f600	88	xf86DrvMsg	dynsym	1f01a0d5992e		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f680	104	xf86MsgVerb	dynsym	10230649df4c		out:14	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f680	104	xf86MsgVerb	dynsym	10230649df4c		out:14	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f700	100	xf86Msg	dynsym	514c6e7adbf7		out:14	named-only	docs/xserver-functions.md#driver-lists	Driver lists
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f780	120	xf86ErrorFVerb	dynsym	fea1a570c216		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f800	124	xf86ErrorF	dynsym	bdc691c4b554		out:14	undocumented		
@@ -498,7 +498,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006f340	8	pciReadLongNULL	dynsym	6
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006f380	8	pciWriteLongNULL	dynsym	78aa5094d5ec		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006f3c0	8	pciSetBitsLongNULL	dynsym	78aa5094d5ec		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006f400	8	pciAddrNOOP	dynsym	0e2e26765928		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006f440	1192	xf86scanpci	dynsym	aef0879e60ba		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006f440	1192	xf86scanpci	dynsym	aef0879e60ba		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006f900	92	pciCheckForBrokenBase	dynsym	50bd4beaee8c		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006f980	344	xf86MapPciMem	dynsym	9b53a0b771a2		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070540	52	xf86ReadPciBIOS	dynsym	2e131b986b53		in	undocumented		
@@ -512,7 +512,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x100707c0	300	inb	dynsym	58ae120d334
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070900	276	inw	dynsym	5184639920ed		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070a40	296	inl	dynsym	867d98e8783d		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070b80	152	irixInitVGAIOBase	dynsym	64b474c8ef34		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070c40	16	xf86EnableIO	dynsym	665e81ecd14d		out:14	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070c40	16	xf86EnableIO	dynsym	665e81ecd14d		out:14	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070c80	1308	irixOpenDevIO	dynsym	d168536dc75a		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100711c0	228	xf86DisableIO	dynsym	1ed309edba7f		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100712c0	304	xf86OpenConsole	dynsym	27bdd5754657		out:14	undocumented		
@@ -585,13 +585,13 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074880	80	xf86sprintf	dynsym	c9e1
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074900	80	xf86snprintf	dynsym	3003dd4a2831		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074980	56	xf86bzero	dynsym	6015e73115b8		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100749c0	80	xf86sscanf	dynsym	730848e9d5f6		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074a80	184	xf86open	dynsym	2b7f2599ea94		out:14	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074a80	184	xf86open	dynsym	2b7f2599ea94		out:14	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074b40	80	xf86close	dynsym	2d7e1b75e8c6		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074bc0	104	xf86lseek	dynsym	7a46b6227808		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074c40	80	xf86ioctl	dynsym	912dfaacc036		out:14	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074c40	80	xf86ioctl	dynsym	912dfaacc036		out:14	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074cc0	84	xf86read	dynsym	50f4a8229b3d		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074d40	84	xf86write	dynsym	5ab35297047e		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074dc0	228	xf86mmap	dynsym	94a3a4619e81		out:14	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074dc0	228	xf86mmap	dynsym	94a3a4619e81		out:14	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074ec0	84	xf86munmap	dynsym	880864437d27		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074f40	96	xf86stat	dynsym	e0be41313f5e		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074fc0	96	xf86fstat	dynsym	e213f8a3c801		out:14	undocumented		
@@ -2957,8 +2957,8 @@ usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x405580	168	drm
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x405640	104	drmHashNext	dwarf+dynsym	e85e2407e4e6		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x4056c0	104	drmHashFirst	dwarf+dynsym	9d9ff39edbc8		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x405780	128	drmMsg	dwarf+funcnames	32a6253c2144		in	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x405800	128	drmMalloc	dwarf+dynsym	06587cbf7a2e		in	named-only	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x405880	60	drmFree	dwarf+dynsym	f7a498cd293e		in	named-only	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x405800	128	drmMalloc	dwarf+dynsym	06587cbf7a2e		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x405880	60	drmFree	dwarf+dynsym	f7a498cd293e		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x4058c0	132	drmStrdup	dwarf+funcnames	865c4193d4c0		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x405980	40	drmGetKeyFromFd	dwarf+funcnames	a1d9db0a3ecf		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x4059c0	188	drmGetEntry	dwarf+funcnames	916ba781096f		in	undocumented		
@@ -2967,7 +2967,7 @@ usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x405c80	15
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x405d40	204	drmAvailable	dwarf+dynsym	0a25cbef364f		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x405e40	68	drmOpenByDevName	dwarf+funcnames	9ed285c3da53		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x405ec0	372	drmOpenByBusid	dwarf+funcnames	db9b6fc2283d		in	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x406040	96	drmOpen	dwarf+dynsym	b0968010528f		in	undocumented		
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x406040	96	drmOpen	dwarf+dynsym	b0968010528f		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x4060c0	128	drmFreeVersion	dwarf+dynsym	6721e8b81a3f		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x406140	120	drmFreeKernelVersion	dwarf+funcnames	a47937380520		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x4061c0	156	drmCopyVersion	dwarf+funcnames	6d353acf1b0b		in	undocumented		
@@ -2977,14 +2977,14 @@ usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x4064c0	192	drm
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x406580	144	drmSetBusid	dwarf+dynsym	fcd6b43baeb0		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x406640	116	drmGetMagic	dwarf+dynsym	2408932414e7		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x4066c0	100	drmAuthMagic	dwarf+dynsym	7ec3ad7de0ea		in	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x406740	144	drmAddMap	dwarf+dynsym	226128955abd		in	undocumented		
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x406740	144	drmAddMap	dwarf+dynsym	226128955abd		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x406800	100	drmRmMap	dwarf+dynsym	ad45b0268bc8		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x406880	120	drmAddBufs	dwarf+dynsym	792776a98e33		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x406900	440	drmMarkBufs	dwarf+dynsym	b80ff65fd23b		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x406ac0	104	drmFreeBufs	dwarf+dynsym	f88be74842e3		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x406b40	168	drmClose	dwarf+dynsym	38e0d94aa058		in	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x406c00	200	drmMap	dwarf+dynsym	c9244ccd3d5c		in	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x406d00	52	drmUnmap	dwarf+dynsym	2c8efc6e13c6		in	named-only	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x406c00	200	drmMap	dwarf+dynsym	c9244ccd3d5c		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x406d00	52	drmUnmap	dwarf+dynsym	2c8efc6e13c6		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x406d40	420	drmGetBufInfo	dwarf+dynsym	9ca55e8d6d4b		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x406f00	380	drmMapBufs	dwarf+dynsym	81a36aa64111		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x407080	144	drmUnmapBufs	dwarf+dynsym	1d317626f2aa		in	undocumented		
@@ -3069,8 +3069,8 @@ usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x405fb0	172	d
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x406060	108	drmHashNext	dwarf+dynsym	f2f393fe5288		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x4060d0	96	drmHashFirst	dwarf+dynsym	40ac34c7418a		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x406180	136	drmMsg	dwarf	250eb01a12ea		in	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x406210	128	drmMalloc	dwarf+dynsym	a108d7647dc5		in	named-only	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x406290	72	drmFree	dwarf+dynsym	9891964f2d8a		in	named-only	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x406210	128	drmMalloc	dwarf+dynsym	a108d7647dc5		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x406290	72	drmFree	dwarf+dynsym	9891964f2d8a		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x4062e0	140	drmStrdup	dwarf	16b8ff995026		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x406370	40	drmGetKeyFromFd	dwarf	514277a4d772		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x4063a0	200	drmGetEntry	dwarf	878186593396		in	undocumented		
@@ -3079,7 +3079,7 @@ usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x4066a0	
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x406750	212	drmAvailable	dwarf+dynsym	7ba627c06bbd		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x406830	68	drmOpenByDevName	dwarf	b550be346d7f		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x406880	400	drmOpenByBusid	dwarf	46144dd139f3		in	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x406a10	100	drmOpen	dwarf+dynsym	eb2e388a7af4		in	undocumented		
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x406a10	100	drmOpen	dwarf+dynsym	eb2e388a7af4		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x406a80	132	drmFreeVersion	dwarf+dynsym	318e9331858e		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x406b10	124	drmFreeKernelVersion	dwarf	ee158023adb3		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x406b90	160	drmCopyVersion	dwarf	1a49312c217f		in	undocumented		
@@ -3089,14 +3089,14 @@ usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x406e60	208	d
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x406f30	136	drmSetBusid	dwarf+dynsym	7f2a251e8553		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x406fc0	116	drmGetMagic	dwarf+dynsym	6ed78abe308a		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x407040	100	drmAuthMagic	dwarf+dynsym	7b1ac7379061		in	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x4070b0	144	drmAddMap	dwarf+dynsym	a63b165e7597		in	undocumented		
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x4070b0	144	drmAddMap	dwarf+dynsym	a63b165e7597		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x407140	100	drmRmMap	dwarf+dynsym	40e293aa7797		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x4071b0	120	drmAddBufs	dwarf+dynsym	61fa3940b548		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x407230	448	drmMarkBufs	dwarf+dynsym	f2a25f5f8eea		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x4073f0	104	drmFreeBufs	dwarf+dynsym	5fb84d509e25		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x407460	176	drmClose	dwarf+dynsym	143dbef49922		in	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x407510	216	drmMap	dwarf+dynsym	5226656a2d0e		in	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x4075f0	56	drmUnmap	dwarf+dynsym	cad9d515c5bd		in	named-only	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x407510	216	drmMap	dwarf+dynsym	5226656a2d0e		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x4075f0	56	drmUnmap	dwarf+dynsym	cad9d515c5bd		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x407630	440	drmGetBufInfo	dwarf+dynsym	8a0d2c05a1a2		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x4077f0	420	drmMapBufs	dwarf+dynsym	265e1da889c0		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x4079a0	148	drmUnmapBufs	dwarf+dynsym	ffc82aea37bc		in	undocumented		
@@ -3184,7 +3184,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4beb00	96	firegl_In
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4beb80	96	firegl_InitUMM	dwarf+dynsym	3930947cc6bd		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bec00	108	firegl_modify_ldt	dwarf+dynsym	448e0ae82e70		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bec80	112	firegl_QueryHwCaps	dwarf+dynsym	6fa9ed5eebc3		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bed00	832	firegl_InitDRM	dwarf+dynsym	34ea1c5c1dbf		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bed00	832	firegl_InitDRM	dwarf+dynsym	34ea1c5c1dbf		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf040	204	firegl_TermDRM	dwarf+dynsym	c63f67eecc0d		in	understood	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf140	96	firegl_SyncDacs	dwarf+dynsym	c165cd4d5dcb		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf1c0	100	firegl_EnableStereo	dwarf+dynsym	4686ba5ab1fd		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
@@ -3194,7 +3194,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4bf340	244	__f
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4bf440	104	__fglDRMPM4Alloc	dwarf+funcnames	690f740e6e15	multi-unit	in	understood	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4bf4c0	488	__fglDRMPM4Queue	dwarf+funcnames	5a17c7340fcc	multi-unit	in	named-only	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4bf6c0	72	__fglDRMPM4Submit	dwarf+funcnames	473b035c8fd5	multi-unit	in	understood	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf740	992	firegl_PM4Alloc	dwarf+dynsym	2ea45614a49e		in	named-only	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf740	992	firegl_PM4Alloc	dwarf+dynsym	2ea45614a49e		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bfb40	552	firegl_PM4WaitForIdle	dwarf+dynsym	e8bee4e7744f		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bfd80	312	firegl_DRMPoll	dwarf+dynsym	02960fac3d34		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bfec0	36	dummy_5	dwarf+dynsym	a8a0de1b11cc		in	understood	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
@@ -13417,8 +13417,8 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad5300	116	FFX_Copy
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad5380	168	FFX_EndProgram	dwarf+dynsym	30dacd72965a		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad5440	164	FFX_DeleteProgram	dwarf+dynsym	6d3caea5be5a		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0xad5500	128	drmMsg	dwarf+funcnames	5d903e003905		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad5580	128	drmMalloc	dwarf+dynsym	f3b4c4f32639		in	named-only	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad5600	60	drmFree	dwarf+dynsym	863f568b99f9		in	named-only	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad5580	128	drmMalloc	dwarf+dynsym	f3b4c4f32639		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad5600	60	drmFree	dwarf+dynsym	863f568b99f9		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0xad5640	132	drmStrdup	dwarf+funcnames	e89d97d98003		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0xad5700	40	drmGetKeyFromFd	dwarf+funcnames	db1d82dd9b62		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0xad5740	188	drmGetEntry	dwarf+funcnames	988b65842200		in	undocumented		
@@ -13427,7 +13427,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0xad5a00	152	drm
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad5ac0	204	drmAvailable	dwarf+dynsym	e0d18b1b0426		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0xad5bc0	68	drmOpenByDevName	dwarf+funcnames	51c389e2c76b		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0xad5c40	372	drmOpenByBusid	dwarf+funcnames	34d97266457f		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad5dc0	96	drmOpen	dwarf+dynsym	7d2a3d588299		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad5dc0	96	drmOpen	dwarf+dynsym	7d2a3d588299		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad5e40	128	drmFreeVersion	dwarf+dynsym	9e13de4e8bdf		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0xad5ec0	120	drmFreeKernelVersion	dwarf+funcnames	5d325db8ea10		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0xad5f40	156	drmCopyVersion	dwarf+funcnames	e2daf8587d01		in	undocumented		
@@ -13437,14 +13437,14 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad6240	192	drmGetBu
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad6300	144	drmSetBusid	dwarf+dynsym	9269624d2cc2		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad63c0	116	drmGetMagic	dwarf+dynsym	499652da078c		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad6440	100	drmAuthMagic	dwarf+dynsym	2441b0ad60f7		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad64c0	144	drmAddMap	dwarf+dynsym	bebca7350ea3		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad64c0	144	drmAddMap	dwarf+dynsym	bebca7350ea3		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad6580	100	drmRmMap	dwarf+dynsym	19500e19a503		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad6600	120	drmAddBufs	dwarf+dynsym	9805413c8947		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad6680	440	drmMarkBufs	dwarf+dynsym	4239ab9a3684		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad6840	104	drmFreeBufs	dwarf+dynsym	134a8b969d3d		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad68c0	168	drmClose	dwarf+dynsym	905f1a91dd70		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad6980	200	drmMap	dwarf+dynsym	fd1117eb5b87		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad6a80	52	drmUnmap	dwarf+dynsym	87b5cbe7cad2		in	named-only	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad6980	200	drmMap	dwarf+dynsym	fd1117eb5b87		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad6a80	52	drmUnmap	dwarf+dynsym	87b5cbe7cad2		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad6ac0	420	drmGetBufInfo	dwarf+dynsym	47d3c9a91b0a		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad6c80	380	drmMapBufs	dwarf+dynsym	2cf3ba3a9649		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0xad6e00	144	drmUnmapBufs	dwarf+dynsym	fa37190b7200		in	undocumented		
@@ -16038,7 +16038,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517390	96	firegl_
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5173f0	96	firegl_InitUMM	dwarf+dynsym	d426acd23faa		in	understood	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517450	108	firegl_modify_ldt	dwarf+dynsym	e7045e83da10		in	understood	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5174c0	112	firegl_QueryHwCaps	dwarf+dynsym	5be96502c1e0		in	understood	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517530	900	firegl_InitDRM	dwarf+dynsym	bc9e089b9674		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517530	900	firegl_InitDRM	dwarf+dynsym	bc9e089b9674		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5178c0	216	firegl_TermDRM	dwarf+dynsym	b8f3f70374c7		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5179a0	96	firegl_SyncDacs	dwarf+dynsym	ee51944671a3		in	understood	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517a00	100	firegl_EnableStereo	dwarf+dynsym	97c83e64773c		in	understood	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
@@ -16048,7 +16048,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517b40	248	_
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517c40	108	__fglDRMPM4Alloc	dwarf	f752cd4df052	multi-unit	in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517cb0	508	__fglDRMPM4Queue	dwarf	278196470b59	multi-unit	in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517eb0	76	__fglDRMPM4Submit	dwarf	21c73d2dc38b	multi-unit	in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517f00	972	firegl_PM4Alloc	dwarf+dynsym	fdfee9a21d90		in	named-only	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517f00	972	firegl_PM4Alloc	dwarf+dynsym	fdfee9a21d90		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5182d0	544	firegl_PM4WaitForIdle	dwarf+dynsym	5e19dd5a9d0c		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5184f0	320	firegl_DRMPoll	dwarf+dynsym	7d627340d8a4		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x518640	36	dummy_5	dwarf+dynsym	8b46f5dc933e		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
@@ -26271,8 +26271,8 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5e090	108	FFX_Co
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5e100	168	FFX_EndProgram	dwarf+dynsym	615f229bbd57		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5e1b0	164	FFX_DeleteProgram	dwarf+dynsym	3c38334eb667		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0xb5e280	136	drmMsg	dwarf	ad1278c2d058		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5e310	128	drmMalloc	dwarf+dynsym	04866b6f7db6		in	named-only	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5e390	72	drmFree	dwarf+dynsym	9177bb86a5c9		in	named-only	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5e310	128	drmMalloc	dwarf+dynsym	04866b6f7db6		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5e390	72	drmFree	dwarf+dynsym	9177bb86a5c9		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0xb5e3e0	140	drmStrdup	dwarf	27cca353d564		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0xb5e470	40	drmGetKeyFromFd	dwarf	cd693bf73fa6		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0xb5e4a0	200	drmGetEntry	dwarf	b2e8e943cbbd		in	undocumented		
@@ -26281,7 +26281,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0xb5e7a0	172	d
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5e850	212	drmAvailable	dwarf+dynsym	4531160b725e		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0xb5e930	68	drmOpenByDevName	dwarf	b508e1d62fd1		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0xb5e980	400	drmOpenByBusid	dwarf	cf42aa23b97d		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5eb10	100	drmOpen	dwarf+dynsym	43b99b90f641		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5eb10	100	drmOpen	dwarf+dynsym	43b99b90f641		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5eb80	132	drmFreeVersion	dwarf+dynsym	6e7caa423023		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0xb5ec10	124	drmFreeKernelVersion	dwarf	dc4068882e91		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0xb5ec90	160	drmCopyVersion	dwarf	f1900269d843		in	undocumented		
@@ -26291,14 +26291,14 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5ef60	208	drmGet
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5f030	136	drmSetBusid	dwarf+dynsym	1d930bbfab3c		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5f0c0	116	drmGetMagic	dwarf+dynsym	f9efc2a565a8		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5f140	100	drmAuthMagic	dwarf+dynsym	ee93fc1ac531		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5f1b0	144	drmAddMap	dwarf+dynsym	f466f585ca48		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5f1b0	144	drmAddMap	dwarf+dynsym	f466f585ca48		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5f240	100	drmRmMap	dwarf+dynsym	6ca58110a226		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5f2b0	120	drmAddBufs	dwarf+dynsym	83e007b7864b		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5f330	448	drmMarkBufs	dwarf+dynsym	285af8e18300		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5f4f0	104	drmFreeBufs	dwarf+dynsym	67c6c9dcbac8		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5f560	176	drmClose	dwarf+dynsym	e894e247314e		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5f610	216	drmMap	dwarf+dynsym	ea4d255522ae		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5f6f0	56	drmUnmap	dwarf+dynsym	38b41bfd057e		in	named-only	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5f610	216	drmMap	dwarf+dynsym	ea4d255522ae		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5f6f0	56	drmUnmap	dwarf+dynsym	38b41bfd057e		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5f730	440	drmGetBufInfo	dwarf+dynsym	c58e5693eb3c		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5f8f0	420	drmMapBufs	dwarf+dynsym	4ea4dfef184e		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb5faa0	148	drmUnmapBufs	dwarf+dynsym	27ba921fe8eb		in	undocumented		
@@ -39707,8 +39707,8 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xacd300	116	F
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xacd380	168	FFX_EndProgram	dwarf+dynsym	aab2c2b0fd04		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xacd440	164	FFX_DeleteProgram	dwarf+dynsym	ab2a5c25c0a7		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0xacd500	128	drmMsg	dwarf+funcnames	e3847b95b063		in	undocumented		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xacd580	128	drmMalloc	dwarf+dynsym	3c4b38bede30		in	named-only	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xacd600	60	drmFree	dwarf+dynsym	bf8db00292ab		in	named-only	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xacd580	128	drmMalloc	dwarf+dynsym	3c4b38bede30		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xacd600	60	drmFree	dwarf+dynsym	bf8db00292ab		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0xacd640	132	drmStrdup	dwarf+funcnames	a333bcf2c70e		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0xacd700	40	drmGetKeyFromFd	dwarf+funcnames	9f3e2f2f0bb4		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0xacd740	188	drmGetEntry	dwarf+funcnames	4559707ad23a		in	undocumented		
@@ -39717,7 +39717,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0xacda00	
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xacdac0	204	drmAvailable	dwarf+dynsym	3b66c98027ac		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0xacdbc0	68	drmOpenByDevName	dwarf+funcnames	552dcfb43fa6		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0xacdc40	372	drmOpenByBusid	dwarf+funcnames	3c4ac0264404		in	undocumented		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xacddc0	96	drmOpen	dwarf+dynsym	89bf6f5e4476		in	undocumented		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xacddc0	96	drmOpen	dwarf+dynsym	89bf6f5e4476		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xacde40	128	drmFreeVersion	dwarf+dynsym	ecd8603f5201		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0xacdec0	120	drmFreeKernelVersion	dwarf+funcnames	90d15f3f6751		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0xacdf40	156	drmCopyVersion	dwarf+funcnames	274d233878ff		in	undocumented		
@@ -39727,14 +39727,14 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xace240	192	d
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xace300	144	drmSetBusid	dwarf+dynsym	8f87145b0035		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xace3c0	116	drmGetMagic	dwarf+dynsym	6e3fa671b796		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xace440	100	drmAuthMagic	dwarf+dynsym	0fae8a4b9123		in	undocumented		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xace4c0	144	drmAddMap	dwarf+dynsym	3b1ce589061c		in	undocumented		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xace4c0	144	drmAddMap	dwarf+dynsym	3b1ce589061c		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xace580	100	drmRmMap	dwarf+dynsym	6ecbbad98e6f		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xace600	120	drmAddBufs	dwarf+dynsym	2bfd83664514		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xace680	440	drmMarkBufs	dwarf+dynsym	6543e1d3e69b		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xace840	104	drmFreeBufs	dwarf+dynsym	7a19c3108d62		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xace8c0	168	drmClose	dwarf+dynsym	b09d4de9f726		in	undocumented		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xace980	200	drmMap	dwarf+dynsym	31f254f30a77		in	undocumented		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xacea80	52	drmUnmap	dwarf+dynsym	ab79f822d5bb		in	named-only	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xace980	200	drmMap	dwarf+dynsym	31f254f30a77		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xacea80	52	drmUnmap	dwarf+dynsym	ab79f822d5bb		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xaceac0	420	drmGetBufInfo	dwarf+dynsym	f16f8adbefd2		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xacec80	380	drmMapBufs	dwarf+dynsym	15b78b41a9e2		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xacee00	144	drmUnmapBufs	dwarf+dynsym	0137fc412a77		in	undocumented		
@@ -45633,7 +45633,7 @@ usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x404600	112	__d
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32	.text	0x404680	68	DRIDrvMsg	dwarf+funcnames	b4c9f74f992f		in	undocumented		
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x404700	68	__glXFindDRIScreen	dwarf+dynsym	0f252e48a08d		in	undocumented		
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32	.text	0x404780	228	GLXDRIScreenInit	dwarf+funcnames	06ad913f4802		in	undocumented		
-usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x404880	1496	DRIScreenInit	dwarf+dynsym	a72192db2040		in	undocumented		
+usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x404880	1496	DRIScreenInit	dwarf+dynsym	a72192db2040		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x404e80	900	DRIFinishScreenInit	dwarf+dynsym	32313cb01a00		in	undocumented		
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x405240	736	DRICloseScreen	dwarf+dynsym	004e192f92a1		in	undocumented		
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x405540	300	DRIExtensionInit	dwarf+dynsym	af82bcdde593		in	undocumented		
@@ -45687,7 +45687,7 @@ usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x408440	220	DRI
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x408540	68	DRIGetSAREAPrivate	dwarf+dynsym	bcabeb8ccc47		in	undocumented		
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x4085c0	64	DRIGetContext	dwarf+dynsym	4c02d32e15ce		in	undocumented		
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x408600	56	DRIGetWrappedFuncs	dwarf+dynsym	6470989ecd82		in	undocumented		
-usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x408640	20	DRIQueryVersion	dwarf+dynsym	910a4f7dbba5		in	undocumented		
+usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x408640	20	DRIQueryVersion	dwarf+dynsym	910a4f7dbba5		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32	.text	0x408680	60	_DRIAdjustFrame	dwarf+funcnames	f51dc92603ba		in	undocumented		
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x4086c0	512	DRIAdjustFrame	dwarf+dynsym	447bf6520432		in	undocumented		
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x4088c0	588	DRIOpenFullScreen	dwarf+dynsym	b1ccff2db67d		in	undocumented		
@@ -46367,8 +46367,8 @@ usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44af80	20	__gl
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32	.text	0x44afc0	72	ContextGone	dwarf+funcnames	00c32914d4d8		in	undocumented		
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32	.text	0x44b040	352	ClientGone	dwarf+funcnames	e3ec6a54f819		in	undocumented		
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32	.text	0x44b1c0	140	PixmapGone	dwarf+funcnames	520531d60313		in	undocumented		
-usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44b280	124	SwapBarrierGone	dwarf+dynsym	246e22204859		in	undocumented		
-usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44b300	52	SwapGroupGone	dwarf+dynsym	b8a99083174f		in	undocumented		
+usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44b280	124	SwapBarrierGone	dwarf+dynsym	246e22204859		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44b300	52	SwapGroupGone	dwarf+dynsym	b8a99083174f		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32	.text	0x44b340	112	DrawPrivGone	dwarf+funcnames	a75f350c8bf8		in	undocumented		
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32	.text	0x44b3c0	164	OtherPbClientGone	dwarf+funcnames	a165bcf23269		in	undocumented		
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32	.text	0x44b480	136	PbufferGone	dwarf+funcnames	994cc2ee5adb		in	undocumented		
@@ -46377,11 +46377,11 @@ usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44b600	264	__g
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44b740	24	__glXErrorCallBack	dwarf+dynsym	f0402449c2b7		in	undocumented		
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44b780	20	__glXClearErrorOccured	dwarf+dynsym	2c68e0032118		in	undocumented		
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44b7c0	20	__glXErrorOccured	dwarf+dynsym	83d361f4741a		in	undocumented		
-usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44b800	688	GlxExtensionInit	dwarf+dynsym	e414ccf68d90		in	undocumented		
+usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44b800	688	GlxExtensionInit	dwarf+dynsym	e414ccf68d90		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44bac0	28	__glXCoreType	dwarf+dynsym	482d500d2369		in	undocumented		
-usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44bb00	60	GlxSetFBConfigs	dwarf+dynsym	b35ebd67f1af		in	undocumented		
-usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44bb40	60	GlxSetVisualConfigs	dwarf+dynsym	0c2a6d66a249		in	undocumented		
-usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44bb80	272	GlxInitVisuals	dwarf+dynsym	00a65e693e20		in	undocumented		
+usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44bb00	60	GlxSetFBConfigs	dwarf+dynsym	b35ebd67f1af		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44bb40	60	GlxSetVisualConfigs	dwarf+dynsym	0c2a6d66a249		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44bb80	272	GlxInitVisuals	dwarf+dynsym	00a65e693e20		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44bcc0	32	GlxWrapInitVisuals	dwarf+dynsym	ada49927ddb6		in	undocumented		
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44bd00	24	__glXFlushContextCache	dwarf+dynsym	54cbadf0feaa		in	undocumented		
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44bd40	320	__glXForceCurrent	dwarf+dynsym	0c211cbc404d		in	undocumented		
@@ -46617,8 +46617,8 @@ usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x45e880	296	__g
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32	.text	0x45e9c0	280	glxSetup	dwarf+funcnames	ee5a6a6384a6		in	undocumented		
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32	.text	0x402030	384	_stub	dwarf			in	undocumented		
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32	.text	0x402200	80	drmMsg	dwarf+funcnames	8676edf8b6b1		in	undocumented		
-usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x402280	100	drmMalloc	dwarf+dynsym	cd73a03a3e9b		in	named-only	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
-usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x402300	60	drmFree	dwarf+dynsym	f329021f5544		in	named-only	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
+usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x402280	100	drmMalloc	dwarf+dynsym	cd73a03a3e9b		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x402300	60	drmFree	dwarf+dynsym	f329021f5544		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32	.text	0x402340	100	drmStrdup	dwarf+funcnames	7c115d5a10f8		in	undocumented		
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32	.text	0x4023c0	40	drmGetKeyFromFd	dwarf+funcnames	c31821891cfd		in	undocumented		
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32	.text	0x402400	188	drmGetEntry	dwarf+funcnames	3269cd9a96c8		in	undocumented		
@@ -46627,7 +46627,7 @@ usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32	.text	0x402800	152	drmO
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x4028c0	204	drmAvailable	dwarf+dynsym	63f34391504d		in	undocumented		
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32	.text	0x4029c0	68	drmOpenByDevName	dwarf+funcnames	222d353fbe6c		in	undocumented		
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32	.text	0x402a40	372	drmOpenByBusid	dwarf+funcnames	59a4d9eb9a31		in	undocumented		
-usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x402bc0	96	drmOpen	dwarf+dynsym	fe5b9dc2697c		in	undocumented		
+usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x402bc0	96	drmOpen	dwarf+dynsym	fe5b9dc2697c		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x402c40	128	drmFreeVersion	dwarf+dynsym	1160608f86d1		in	undocumented		
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32	.text	0x402cc0	120	drmFreeKernelVersion	dwarf+funcnames	51ab34babde9		in	undocumented		
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32	.text	0x402d40	156	drmCopyVersion	dwarf+funcnames	a3fa187f36c0		in	undocumented		
@@ -46637,14 +46637,14 @@ usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x403040	192	drmGetBus
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x403100	136	drmSetBusid	dwarf+dynsym	cc7beffeb4e3		in	undocumented		
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x4031c0	116	drmGetMagic	dwarf+dynsym	320f73bac4af		in	undocumented		
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x403240	100	drmAuthMagic	dwarf+dynsym	b6d2c251c1c8		in	undocumented		
-usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x4032c0	144	drmAddMap	dwarf+dynsym	f9d0a38c714b		in	undocumented		
+usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x4032c0	144	drmAddMap	dwarf+dynsym	f9d0a38c714b		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x403380	100	drmRmMap	dwarf+dynsym	258744b5b11f		in	undocumented		
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x403400	120	drmAddBufs	dwarf+dynsym	3495418fa616		in	undocumented		
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x403480	440	drmMarkBufs	dwarf+dynsym	4474f4b70170		in	undocumented		
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x403640	104	drmFreeBufs	dwarf+dynsym	084d9fc33af8		in	undocumented		
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x4036c0	168	drmClose	dwarf+dynsym	b3a90dc867dd		in	undocumented		
-usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x403780	216	drmMap	dwarf+dynsym	9a59bd5bb197		in	undocumented		
-usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x403880	56	drmUnmap	dwarf+dynsym	7e02b10c5924		in	named-only	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
+usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x403780	216	drmMap	dwarf+dynsym	9a59bd5bb197		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x403880	56	drmUnmap	dwarf+dynsym	7e02b10c5924		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x4038c0	420	drmGetBufInfo	dwarf+dynsym	84398f44b29f		in	undocumented		
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x403a80	380	drmMapBufs	dwarf+dynsym	476d2b3d4b25		in	undocumented		
 usr/X11R6/lib/modules/irix/libdrm.so	shared-x-server	n32		0x403c00	144	drmUnmapBufs	dwarf+dynsym	f132c2e59de9		in	undocumented		
@@ -46757,7 +46757,7 @@ usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402a00	96	firegl
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402a80	96	firegl_InitUMM	dwarf+dynsym	07844e90399e		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402b00	108	firegl_modify_ldt	dwarf+dynsym	6bdb0dbdccc1		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402b80	140	firegl_QueryHwCaps	dwarf+dynsym	b7b843a1fba3		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402c40	832	firegl_InitDRM	dwarf+dynsym	503f98cd7d25		in	undocumented		
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402c40	832	firegl_InitDRM	dwarf+dynsym	503f98cd7d25		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402f80	204	firegl_TermDRM	dwarf+dynsym	16afac90cbbb		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403080	96	firegl_SyncDacs	dwarf+dynsym	2ef3adad38d7		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403100	100	firegl_EnableStereo	dwarf+dynsym	54bfa19ebff3		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
@@ -46767,7 +46767,7 @@ usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403280	244	
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403380	104	__fglDRMPM4Alloc	dwarf+funcnames	7e9d44c579d6		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403400	488	__fglDRMPM4Queue	dwarf+funcnames	2c15eac533e8		in	named-only	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403600	72	__fglDRMPM4Submit	dwarf+funcnames	0b969f03327b		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403680	992	firegl_PM4Alloc	dwarf+dynsym	5b35fa673989		in	named-only	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403680	992	firegl_PM4Alloc	dwarf+dynsym	5b35fa673989		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403a80	552	firegl_PM4WaitForIdle	dwarf+dynsym	97b1efb30e8a		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403cc0	312	firegl_DRMPoll	dwarf+dynsym	617928c126aa		in	undocumented		
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403e00	8	setup	dwarf+funcnames	a7e7ca11a6b8		in	undocumented		
@@ -46794,15 +46794,15 @@ usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a5c0	116	x_outb	dwarf
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a640	164	x_outw	dwarf+dynsym	3474d6e68e18		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a700	96	x_inl	dwarf+dynsym	2417eb7a45b2		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a780	88	x_outl	dwarf+dynsym	83d2b269b7c8		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a800	68	Mem_rb	dwarf+dynsym	5b9a6f84bda4		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a800	68	Mem_rb	dwarf+dynsym	5b9a6f84bda4		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a880	68	Mem_rw	dwarf+dynsym	35dc1d63b226		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a900	68	Mem_rl	dwarf+dynsym	cf7c80aa469a		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a980	72	Mem_wb	dwarf+dynsym	db902c0824dd		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40aa00	72	Mem_ww	dwarf+dynsym	d361f4b5223d		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40aa00	72	Mem_ww	dwarf+dynsym	d361f4b5223d		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40aa80	72	Mem_wl	dwarf+dynsym	3c27653aea81		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40ab00	120	pciCfg1in	dwarf+funcnames	071f4dbe3e69		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40ab80	112	pciCfg1out	dwarf+funcnames	1edea0f79f3a		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40ac00	264	bios_checksum	dwarf+dynsym	a73e897df874		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40ac00	264	bios_checksum	dwarf+dynsym	a73e897df874		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40ad40	296	LockLegacyVGA	dwarf+dynsym	ea227d11c5d3		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40ae80	196	UnlockLegacyVGA	dwarf+dynsym	af0fa3644184		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40af80	480	setup_int_vect	dwarf+dynsym	80f271a580cb		in	undocumented		
@@ -46821,15 +46821,15 @@ usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40d2c0	100	findPci
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40d340	44	pciSlotBX	dwarf+funcnames	8196763a37be		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40d380	216	intE6_handler	dwarf+funcnames	fcee9998080a		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40d480	88	x86emu_do_int	dwarf+funcnames	08e4048d7305		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40d500	116	xf86ExecX86int10	dwarf+dynsym	329554bf2c41		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40d500	116	xf86ExecX86int10	dwarf+dynsym	329554bf2c41		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40d580	292	xf86Int10ExecSetup	dwarf+dynsym	d3a87c6bb4b7		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40d6c0	84	printk	dwarf+dynsym	1d5a5da79899		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40d740	1156	xf86InitInt10	dwarf+dynsym	b152417fa8de		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40d740	1156	xf86InitInt10	dwarf+dynsym	b152417fa8de		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40dc00	116	MapVRam	dwarf+funcnames	e654747aee5a		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40dc80	104	UnmapVRam	dwarf+funcnames	52eb3143085f		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40dd00	8	MapCurrentInt10	dwarf+dynsym	a7e7ca11a6b8		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40dd00	8	MapCurrentInt10	dwarf+dynsym	a7e7ca11a6b8		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40dd40	156	xf86FreeInt10	dwarf+dynsym	e95cc1d932eb		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40de00	480	xf86Int10AllocPages	dwarf+dynsym	47ab73fb886f		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40de00	480	xf86Int10AllocPages	dwarf+dynsym	47ab73fb886f		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40e000	212	xf86Int10FreePages	dwarf+dynsym	c4b5847295f8		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40e100	108	read_b	dwarf+funcnames	225f245e7dbd		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40e180	236	read_w	dwarf+funcnames	b4929f8b73ef		in	undocumented		
@@ -46842,8 +46842,8 @@ usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40e880	880	x86emu_dump_
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40ec00	812	x86emu_dump_xregs	dwarf+dynsym	9e03b0d04b87		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40ef40	272	x86emu_intr_handle	dwarf+funcnames	f2f2d4e1a7ac		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f080	44	x86emu_intr_raise	dwarf+dynsym	0ac9da113e82		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f0c0	300	X86EMU_exec	dwarf+dynsym	d395b4d3a686		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f200	40	X86EMU_halt_sys	dwarf+dynsym	0029996d68d9		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f0c0	300	X86EMU_exec	dwarf+dynsym	d395b4d3a686		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f200	40	X86EMU_halt_sys	dwarf+dynsym	0029996d68d9		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f240	172	fetch_decode_modrm	dwarf+dynsym	93f5a862b5b1		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f300	116	fetch_byte_imm	dwarf+dynsym	cced3402cde9		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f380	136	fetch_word_imm	dwarf+dynsym	5d173904490b		out:19	undocumented		
@@ -47253,21 +47253,21 @@ usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x433480	112	X86EMU_setup
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x433500	112	X86EMU_setupPioFuncs	dwarf+dynsym	cd8a6af512c3		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x433580	160	X86EMU_setupIntrFuncs	dwarf+dynsym	231af84083c0		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x433640	236	X86EMU_prepareForInt	dwarf+dynsym	e6fa75c2370d		in	undocumented		
-usr/X11R6/lib/modules/libpcidata.so	shared-x-server	n32		0x401a00	48	xf86SetupPciData	dwarf+dynsym	19c4ae3336d1		in	named-only	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
+usr/X11R6/lib/modules/libpcidata.so	shared-x-server	n32		0x401a00	48	xf86SetupPciData	dwarf+dynsym	19c4ae3336d1		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/libscanpci.so	shared-x-server	n32	.text	0x4022c0	44	_stub	dwarf			in	undocumented		
-usr/X11R6/lib/modules/libscanpci.so	shared-x-server	n32		0x402300	48	xf86SetupScanPci	dwarf+dynsym	6229e91bde13		in	undocumented		
-usr/X11R6/lib/modules/libscanpci.so	shared-x-server	n32		0x402340	1284	xf86DisplayPCICardInfo	dwarf+dynsym	db6573c730fc		in	undocumented		
-usr/X11R6/lib/modules/libscanpci.so	shared-x-server	n32		0x402880	112	xf86FindPCIClassInCardList	dwarf+dynsym	2d0094a9e2ce		in	undocumented		
-usr/X11R6/lib/modules/libscanpci.so	shared-x-server	n32		0x402900	112	xf86FindPCIClassInDeviceList	dwarf+dynsym	49ff54d0d196		in	undocumented		
+usr/X11R6/lib/modules/libscanpci.so	shared-x-server	n32		0x402300	48	xf86SetupScanPci	dwarf+dynsym	6229e91bde13		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/libscanpci.so	shared-x-server	n32		0x402340	1284	xf86DisplayPCICardInfo	dwarf+dynsym	db6573c730fc		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/libscanpci.so	shared-x-server	n32		0x402880	112	xf86FindPCIClassInCardList	dwarf+dynsym	2d0094a9e2ce		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/libscanpci.so	shared-x-server	n32		0x402900	112	xf86FindPCIClassInDeviceList	dwarf+dynsym	49ff54d0d196		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32	.text	0x4010b0	264	_stub	dwarf			in	undocumented		
 usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32		0x4011c0	1432	VBEInit	dwarf+dynsym	6d25e6d7bcb5		in	undocumented		
 usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32		0x401780	112	vbeFree	dwarf+dynsym	54400131f667		in	undocumented		
 usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32	.text	0x401800	572	vbeProbeDDC	dwarf+funcnames	50056f515335		in	undocumented		
 usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32	.text	0x401a40	596	vbeReadEDID	dwarf+funcnames	4318aefacac7		in	undocumented		
-usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32		0x401cc0	300	vbeDoEDID	dwarf+dynsym	15ddba8fce0c		in	undocumented		
-usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32		0x401e00	920	VBEGetVBEInfo	dwarf+dynsym	f5960a76c4c0		in	undocumented		
+usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32		0x401cc0	300	vbeDoEDID	dwarf+dynsym	15ddba8fce0c		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32		0x401e00	920	VBEGetVBEInfo	dwarf+dynsym	f5960a76c4c0		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32		0x4021c0	160	VBEFreeVBEInfo	dwarf+dynsym	8972c63aab11		in	undocumented		
-usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32		0x402280	204	VBESetVBEMode	dwarf+dynsym	1b0b741914f4		in	undocumented		
+usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32		0x402280	204	VBESetVBEMode	dwarf+dynsym	1b0b741914f4		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32		0x402380	148	VBEGetVBEMode	dwarf+dynsym	f33b5e656872		in	undocumented		
 usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32		0x402440	860	VBEGetModeInfo	dwarf+dynsym	213f29bfdee3		in	undocumented		
 usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32		0x4027c0	52	VBEFreeModeInfo	dwarf+dynsym	7284423536db		in	undocumented		
@@ -47549,7 +47549,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11280	548	firegl_unlock
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x114a4	464	firegl_killall_clients	dwarf+symtab	5661e3caa061		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11734	212	__fglQSQuietDown	dwarf	4b6c40d750ad		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11808	152	__fglDRMPM4Alloc	dwarf	63e7b76442d5		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x118a0	504	firegl_PM4Alloc	dwarf+symtab	66d351f0247a		in	named-only	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x118a0	504	firegl_PM4Alloc	dwarf+symtab	66d351f0247a		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11a98	752	firegl_PM4WaitForIdle	dwarf+symtab	ba9d335d74a6		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11d88	312	firegl_DRMPoll	dwarf+symtab	ff3950fe152c		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11ec0	196	_r6x_WaitNotBusy	dwarf+symtab	d8a17d088c78		in	undocumented		
@@ -49459,8 +49459,8 @@ usr/cpu/sysgen/IP35boot/vga.a(debug.o)	board-kernel	n64		0x0		x86emu_dump_regs	d
 usr/cpu/sysgen/IP35boot/vga.a(debug.o)	board-kernel	n64	.text	0x3d4	684	x86emu_dump_xregs	dwarf+symtab	7146b8405e48		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64		0x0		x86emu_intr_handle	dwarf+symtab			out:20	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0xa8	24	x86emu_intr_raise	dwarf+symtab	0882cc896eff		out:20	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0xc0	176	X86EMU_exec	dwarf+symtab	8adcc0f5a5d1		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
-usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x170	20	X86EMU_halt_sys	dwarf+symtab	5a22cd8b281d		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0xc0	176	X86EMU_exec	dwarf+symtab	8adcc0f5a5d1		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x170	20	X86EMU_halt_sys	dwarf+symtab	5a22cd8b281d		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x184	116	fetch_decode_modrm	dwarf+symtab	b8bf754f9d85		out:20	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x1f8	60	fetch_byte_imm	dwarf+symtab	8749a7f1b4ce		out:20	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x234	68	fetch_word_imm	dwarf+symtab	62c7c0018eb5		out:20	undocumented		
@@ -49870,9 +49870,9 @@ usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x330	52	X86EMU_setu
 usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x364	52	X86EMU_setupPioFuncs	dwarf+symtab	a3818bf90933		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x398	136	X86EMU_setupIntrFuncs	dwarf+symtab	dce863e1efd4		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x420	124	X86EMU_prepareForInt	dwarf+symtab	4e198c3a5d95		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64		0x0		xf86InitInt10	dwarf+symtab			in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64		0x0		xf86InitInt10	dwarf+symtab			in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x138	116	xf86FreeInt10	dwarf+symtab	9862ca66dac6		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
-usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x1ac	304	xf86Int10AllocPages	dwarf+symtab	2d8886669e2c		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x1ac	304	xf86Int10AllocPages	dwarf+symtab	2d8886669e2c		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x2dc	120	xf86Int10FreePages	dwarf+symtab	2c2afff70cbf		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x354	112	read_b	dwarf+symtab	5b08de73559d		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x3c4	232	read_w	dwarf+symtab	2ee4469b6371		in	undocumented		
@@ -49898,15 +49898,15 @@ usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x748	96	x_o
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x7a8	44	x_outw	dwarf+symtab	5e28d59b6e84		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x7d4	80	x_inl	dwarf+symtab	bfcc0dedcfcf		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x824	84	x_outl	dwarf+symtab	17c8f489b07f		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x878	44	Mem_rb	dwarf+symtab	b160b9316e69		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x878	44	Mem_rb	dwarf+symtab	b160b9316e69		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x8a4	44	Mem_rw	dwarf+symtab	674ce8b104f7		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x8d0	44	Mem_rl	dwarf+symtab	bd73a9303851		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x8fc	48	Mem_wb	dwarf+symtab	ed6303fb84f1		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x92c	48	Mem_ww	dwarf+symtab	e04f42dbbf6b		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x92c	48	Mem_ww	dwarf+symtab	e04f42dbbf6b		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x95c	48	Mem_wl	dwarf+symtab	8122c13d9d09		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x98c	92	pciCfg1in	dwarf+symtab	bb6a8fa2a3bb		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x9e8	72	pciCfg1out	dwarf+symtab	6cf00c77b391		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0xa30	80	bios_checksum	dwarf+symtab	ac30d5992ccd		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
+usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0xa30	80	bios_checksum	dwarf+symtab	ac30d5992ccd		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64		0x0		outb	dwarf+symtab			in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64	.text	0x34	44	outw	dwarf+symtab	4a50624145ff		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64	.text	0x60	60	outl	dwarf+symtab	62e010450610		in	undocumented		
@@ -49928,7 +49928,7 @@ usr/cpu/sysgen/IP35boot/vga.a(xf86int10.o)	board-kernel	n64	.text	0x108	2772	int
 usr/cpu/sysgen/IP35boot/vga.a(xf86int10.o)	board-kernel	n64	.text	0xbdc	760	int1A_handler	dwarf+symtab	d285f42c9004		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(xf86int10.o)	board-kernel	n64	.text	0xed4	136	intE6_handler	dwarf+symtab	91ef0c745ead		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	board-kernel	n64		0x0		x86emu_do_int	dwarf+symtab			in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	board-kernel	n64	.text	0x38	120	xf86ExecX86int10	dwarf+symtab	81a9acb67a3c		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	board-kernel	n64	.text	0x38	120	xf86ExecX86int10	dwarf+symtab	81a9acb67a3c		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	board-kernel	n64	.text	0xb0	240	xf86Int10ExecSetup	dwarf+symtab	b1660e7a4a60		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	board-kernel	n64	.text	0x1a0	72	printk	dwarf+symtab	79ce8baad53b		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64		0x0		vga_earlyinit	dwarf+symtab			in	named-only	docs/kernel-attach.md#order-of-events	Order of events
@@ -50055,10 +50055,10 @@ usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0xc04	92	xtalk_device_sh
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0xc60	32	xtalk_device_inquiry	dwarf+symtab	8066a1f9382a		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008be0	268	__start	dynsym	8d50a767ed4b		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008cec	12	_mcount	dynsym	1c53f0b255e3		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008d00	524	xf86InitInt10	dynsym	a2bed0a1383c		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008f10	24	MapCurrentInt10	dynsym	fc6a184bc473		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008d00	524	xf86InitInt10	dynsym	a2bed0a1383c		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008f10	24	MapCurrentInt10	dynsym	fc6a184bc473		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008f30	180	xf86FreeInt10	dynsym	3bd15d9d25f0		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008ff0	552	xf86Int10AllocPages	dynsym	6ab43af93a52		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008ff0	552	xf86Int10AllocPages	dynsym	6ab43af93a52		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10009220	216	xf86Int10FreePages	dynsym	1622b73d077f		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10009ef0	128	xf86int10Addr	dynsym	a3a2b891ce5f		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10009f70	440	setup_int	dynsym	84bd5c321bad		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
@@ -50078,13 +50078,13 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ac30	168	x_outb	dynsym	802e
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ace0	176	x_outw	dynsym	3dfc2ebc4ed2		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ad90	132	x_inl	dynsym	03e6fd8f7280		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ae20	132	x_outl	dynsym	a0222ddc8c43		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000aeb0	84	Mem_rb	dynsym	191b72fdd8a4		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000aeb0	84	Mem_rb	dynsym	191b72fdd8a4		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000af10	84	Mem_rw	dynsym	258bf6e0ad06		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000af70	84	Mem_rl	dynsym	3b55e6c991d3		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000afd0	96	Mem_wb	dynsym	1b2e54a3d57c		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b030	96	Mem_ww	dynsym	8123f2df1523		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b030	96	Mem_ww	dynsym	8123f2df1523		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b090	92	Mem_wl	dynsym	8fa70fa2b97a		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b230	128	bios_checksum	dynsym	ed3f8d90a5ea		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b230	128	bios_checksum	dynsym	ed3f8d90a5ea		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b2b0	612	setup_int_vect	dynsym	4b46daaf4e4d		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b520	172	setup_system_bios	dynsym	c47d54c5e6a3		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b5d0	408	reset_int_vect	dynsym	e36005f1921a		in	undocumented		
@@ -50097,7 +50097,7 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b940	336	inb	dynsym	d707bd8
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ba90	364	inw	dynsym	0c43a536d865		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000bc00	428	inl	dynsym	753d6e90e044		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000bdb0	412	int_handler	dynsym	f128fb0ff66a		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000db60	144	xf86ExecX86int10	dynsym	8b3b54ddbffe		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000db60	144	xf86ExecX86int10	dynsym	8b3b54ddbffe		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000dbf0	340	xf86Int10ExecSetup	dynsym	12f29529e12b		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000dd50	112	printk	dynsym	969c7ef10421		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ddc0	116	xf86getsecs	dynsym	933325922660		in	undocumented		
@@ -50121,8 +50121,8 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fc30	196	pciba_find_dev	dyn
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fd00	132	pciba_enable_rom	dynsym	bc1f97e50dc8		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fd90	160	pciba_disable_rom	dynsym	0d60a0a6e1b4		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ffa4	76	x86emu_intr_raise	dynsym	e55f497d1bc3		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fff0	380	X86EMU_exec	dynsym	f0d7633279cd		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001016c	48	X86EMU_halt_sys	dynsym	f72f07d7a939		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fff0	380	X86EMU_exec	dynsym	f0d7633279cd		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001016c	48	X86EMU_halt_sys	dynsym	f72f07d7a939		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001019c	200	fetch_decode_modrm	dynsym	5044470ea78b		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10010264	136	fetch_byte_imm	dynsym	dd7ae6faca32		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100102ec	156	fetch_word_imm	dynsym	d7a202368950		out:19	undocumented		
