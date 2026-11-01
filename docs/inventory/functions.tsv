@@ -47664,19 +47664,19 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20bb8	248	_r6x_service_
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20cb0	220	_r6x_enable_vsync_irq	dwarf+symtab	1fb58d6db2c5		in	understood	docs/kernel-ioctl-irq-functions.md#interrupt-control	Interrupt control
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20d8c	220	_r6x_enable_framelock_irq	dwarf+symtab	1fb58d6db2c5		in	understood	docs/kernel-ioctl-irq-functions.md#interrupt-control	Interrupt control
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20e68	168	_r6x_close_irq	dwarf+symtab	103c57f249a8		in	understood	docs/kernel-ioctl-irq-functions.md#interrupt-control	Interrupt control
-usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64		0x0		prominfo_add	dwarf+symtab			in	undocumented		
-usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x64	120	prominfo_del	dwarf+symtab	8fc1b1ddb91e		in	undocumented		
-usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0xdc	112	prominfo_nodeget	dwarf+symtab	7e9d4fd41e86		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
-usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x14c	132	cpuprom_detailed_inventory_info_add	dwarf+symtab	b51ce62fcbb9		in	undocumented		
-usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x1d0	192	cpuprom_attach	dwarf+symtab	1553b257def1		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
-usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x290	188	cpuprom_map	dwarf+symtab	d98905762ef7		in	undocumented		
-usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x34c	8	cpuprom_unmap	dwarf+symtab	87506497337c		in	undocumented		
-usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x354	60	hubspc_init	dwarf+symtab	35ff03d7520b		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
-usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x390	116	hubspc_open	dwarf+symtab	1a5154e2aa65		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
-usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x404	108	hubspc_close	dwarf+symtab	f87186d9e08f		in	undocumented		
-usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x470	156	hubspc_map	dwarf+symtab	ed8144a728c1		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
-usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x50c	96	hubspc_unmap	dwarf+symtab	05a036caff72		in	undocumented		
-usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x56c	124	hubspc_ioctl	dwarf+symtab	714455264080		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
+usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64		0x0		prominfo_add	dwarf+symtab			in	understood	docs/kernel-bus-objects.md#per-node-prom-and-counter-device-hubspco	Per-node PROM and counter device (`hubspc.o`)
+usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x64	120	prominfo_del	dwarf+symtab	8fc1b1ddb91e		in	understood	docs/kernel-bus-objects.md#per-node-prom-and-counter-device-hubspco	Per-node PROM and counter device (`hubspc.o`)
+usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0xdc	112	prominfo_nodeget	dwarf+symtab	7e9d4fd41e86		in	understood	docs/kernel-bus-objects.md#per-node-prom-and-counter-device-hubspco	Per-node PROM and counter device (`hubspc.o`)
+usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x14c	132	cpuprom_detailed_inventory_info_add	dwarf+symtab	b51ce62fcbb9		in	understood	docs/kernel-bus-objects.md#per-node-prom-and-counter-device-hubspco	Per-node PROM and counter device (`hubspc.o`)
+usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x1d0	192	cpuprom_attach	dwarf+symtab	1553b257def1		in	understood	docs/kernel-bus-objects.md#per-node-prom-and-counter-device-hubspco	Per-node PROM and counter device (`hubspc.o`)
+usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x290	188	cpuprom_map	dwarf+symtab	d98905762ef7		in	understood	docs/kernel-bus-objects.md#per-node-prom-and-counter-device-hubspco	Per-node PROM and counter device (`hubspc.o`)
+usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x34c	8	cpuprom_unmap	dwarf+symtab	87506497337c		in	understood	docs/kernel-bus-objects.md#per-node-prom-and-counter-device-hubspco	Per-node PROM and counter device (`hubspc.o`)
+usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x354	60	hubspc_init	dwarf+symtab	35ff03d7520b		in	understood	docs/kernel-bus-objects.md#per-node-prom-and-counter-device-hubspco	Per-node PROM and counter device (`hubspc.o`)
+usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x390	116	hubspc_open	dwarf+symtab	1a5154e2aa65		in	understood	docs/kernel-bus-objects.md#per-node-prom-and-counter-device-hubspco	Per-node PROM and counter device (`hubspc.o`)
+usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x404	108	hubspc_close	dwarf+symtab	f87186d9e08f		in	understood	docs/kernel-bus-objects.md#per-node-prom-and-counter-device-hubspco	Per-node PROM and counter device (`hubspc.o`)
+usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x470	156	hubspc_map	dwarf+symtab	ed8144a728c1		in	understood	docs/kernel-bus-objects.md#per-node-prom-and-counter-device-hubspco	Per-node PROM and counter device (`hubspc.o`)
+usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x50c	96	hubspc_unmap	dwarf+symtab	05a036caff72		in	understood	docs/kernel-bus-objects.md#per-node-prom-and-counter-device-hubspco	Per-node PROM and counter device (`hubspc.o`)
+usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x56c	124	hubspc_ioctl	dwarf+symtab	714455264080		in	understood	docs/kernel-bus-objects.md#per-node-prom-and-counter-device-hubspco	Per-node PROM and counter device (`hubspc.o`)
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64		0x0		fglrx_hpipe_init_idbg	dwarf			in	understood	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x8	468	checkBoardPointers	dwarf	104388feb140		in	understood	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x1dc	344	freeBoardPointers	dwarf	b96d3ec07a9b		in	understood	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
@@ -48697,8 +48697,8 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2d2d0	44	hubdev_init	
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2d2fc	88	hubdev_register	dwarf+symtab	d4c0df2eb6ad		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2d354	128	hubdev_unregister	dwarf+symtab	1e06b7eabc39		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2d3d4	140	hubdev_docallouts	dwarf+symtab	f7d27c3676bd		in	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2d460	60	hubdev_prombase_get	dwarf+symtab	8d8464b79ad6		out:7	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2d49c	48	hubdev_cnodeid_get	dwarf+symtab	d304937d1a43		out:7	undocumented		
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2d460	60	hubdev_prombase_get	dwarf+symtab	8d8464b79ad6		out:7	named-only	docs/kernel-bus-objects.md#per-node-prom-and-counter-device-hubspco	Per-node PROM and counter device (`hubspc.o`)
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2d49c	48	hubdev_cnodeid_get	dwarf+symtab	d304937d1a43		out:7	named-only	docs/kernel-bus-objects.md#per-node-prom-and-counter-device-hubspco	Per-node PROM and counter device (`hubspc.o`)
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2d4cc	8	add_ioboard	dwarf+symtab	78aa5094d5ec		out:7	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2d4d4	8	set_pwr_fail	dwarf+symtab	78aa5094d5ec		out:7	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2d4dc	8	readadapters	dwarf+symtab	87506497337c		out:7	undocumented		
@@ -48816,7 +48816,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x31a58	748	_sqrt_sd	dw
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x31d44	196	_msub_sd	dwarf+symtab	90b3b21eecb2		out:1	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x31e08	444	_cvts_d	dwarf+symtab	818b48ec2a13		out:1	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x31fd0	472	checkfp	dwarf+symtab	5d6a2546ae0d		out:1	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x321a8	128	klhwg_invent_alloc	dwarf+symtab	17f91bfe5d13		out:7	undocumented		
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x321a8	128	klhwg_invent_alloc	dwarf+symtab	17f91bfe5d13		out:7	named-only	docs/kernel-bus-objects.md#per-node-prom-and-counter-device-hubspco	Per-node PROM and counter device (`hubspc.o`)
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x32228	276	klhwg_cpu_invent_info	dwarf+symtab	b96c172b5a7a		out:7	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3233c	284	klhwg_disabled_cpu_invent_info	dwarf+symtab	67ce8772d3fc		out:7	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x32458	140	klhwg_baseio_inventory_add	dwarf+symtab	514f16c0aded		out:7	undocumented		
@@ -49440,8 +49440,8 @@ usr/cpu/sysgen/IP35boot/pciio_ppb.o	shared-kernel	n64	.text	0x1c24	116	ppb_attac
 usr/cpu/sysgen/IP35boot/pciio_ppb.o	shared-kernel	n64	.text	0x1c98	116	pciio_ppb_detach	dwarf+symtab	b0be829ce917		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio_ppb.o	shared-kernel	n64	.text	0x1d0c	84	ppb_roundup_log2	dwarf+symtab	acb81c51fdfb		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio_ppb.o	shared-kernel	n64	.text	0x1d60	72	pciio_ppb_businfo_get	dwarf+symtab	b96ded3832d2		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciiox.o	shared-kernel	n64		0x0		pciiox_init	dwarf+symtab			in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
-usr/cpu/sysgen/IP35boot/pciiox.o	shared-kernel	n64	.text	0x20	80	pciiox_vmc	dwarf+symtab	141b097ce0e9		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
+usr/cpu/sysgen/IP35boot/pciiox.o	shared-kernel	n64		0x0		pciiox_init	dwarf+symtab			in	understood	docs/kernel-bus-objects.md#expansion-chassis-hook-pciioxo	Expansion-chassis hook (`pciiox.o`)
+usr/cpu/sysgen/IP35boot/pciiox.o	shared-kernel	n64	.text	0x20	80	pciiox_vmc	dwarf+symtab	141b097ce0e9		in	understood	docs/kernel-bus-objects.md#expansion-chassis-hook-pciioxo	Expansion-chassis hook (`pciiox.o`)
 usr/cpu/sysgen/IP35boot/pic.o	shared-kernel	n64		0x0		pic_init	dwarf+symtab			in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
 usr/cpu/sysgen/IP35boot/pic.o	shared-kernel	n64	.text	0x3c	172	pic_bus1_inventory_dup	dwarf+symtab	2f097496e0ab		in	undocumented		
 usr/cpu/sysgen/IP35boot/pic.o	shared-kernel	n64	.text	0xe8	376	pic_bus1_widget_info_dup	dwarf+symtab	37ab2a14c91d		in	undocumented		
@@ -49969,19 +49969,19 @@ usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	board-kernel	n64	.text	0x58c	68	vga_p
 usr/cpu/sysgen/IP35boot/vgastubs.a(vgastubs.o)	board-kernel	n64		0x0		vga_earlyinit	dwarf+symtab			in	located	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
 usr/cpu/sysgen/IP35boot/xbridge.o	shared-kernel	n64		0x0		xbridge_init	dwarf+symtab			in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
 usr/cpu/sysgen/IP35boot/xbridge.o	shared-kernel	n64	.text	0x54	3484	xbridge_attach	dwarf+symtab	455732fd45da		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
-usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64		0x0		xswitch_info_get	dwarf+symtab			in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
-usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x54	28	xswitch_info_vhdl_set	dwarf+symtab	671174966860		in	undocumented		
-usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x70	96	xswitch_info_vhdl_get	dwarf+symtab	5cefc477efe3		in	undocumented		
-usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0xd0	28	xswitch_info_master_assignment_set	dwarf+symtab	eb3ba6970eae		in	undocumented		
-usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0xec	32	xswitch_info_master_assignment_get	dwarf+symtab	702a4a938e0e		in	undocumented		
-usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x10c	32	xswitch_info_set	dwarf+symtab	91be8afc327c		in	undocumented		
-usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x12c	152	xswitch_info_new	dwarf+symtab	7b9ff8859509		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
-usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x1c4	40	xswitch_provider_register	dwarf+symtab	ba4cecd656f8		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
-usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x1ec	24	xswitch_info_link_is_ok	dwarf+symtab	406643ac795a		in	undocumented		
-usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x204	36	xswitch_info_link_ok	dwarf+symtab	e2cf7e378a75		in	undocumented		
-usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x228	28	xswitch_reset_link	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x244	40	xswitch_id_get	dwarf+symtab	7a9b8b03403b		in	undocumented		
-usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x26c	36	xswitch_id_set	dwarf+symtab	a88c93b3cde7		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
+usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64		0x0		xswitch_info_get	dwarf+symtab			in	understood	docs/kernel-bus-objects.md#crossbar-switch-records-xswitcho	Crossbar switch records (`xswitch.o`)
+usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x54	28	xswitch_info_vhdl_set	dwarf+symtab	671174966860		in	understood	docs/kernel-bus-objects.md#crossbar-switch-records-xswitcho	Crossbar switch records (`xswitch.o`)
+usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x70	96	xswitch_info_vhdl_get	dwarf+symtab	5cefc477efe3		in	understood	docs/kernel-bus-objects.md#crossbar-switch-records-xswitcho	Crossbar switch records (`xswitch.o`)
+usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0xd0	28	xswitch_info_master_assignment_set	dwarf+symtab	eb3ba6970eae		in	understood	docs/kernel-bus-objects.md#crossbar-switch-records-xswitcho	Crossbar switch records (`xswitch.o`)
+usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0xec	32	xswitch_info_master_assignment_get	dwarf+symtab	702a4a938e0e		in	understood	docs/kernel-bus-objects.md#crossbar-switch-records-xswitcho	Crossbar switch records (`xswitch.o`)
+usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x10c	32	xswitch_info_set	dwarf+symtab	91be8afc327c		in	understood	docs/kernel-bus-objects.md#crossbar-switch-records-xswitcho	Crossbar switch records (`xswitch.o`)
+usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x12c	152	xswitch_info_new	dwarf+symtab	7b9ff8859509		in	understood	docs/kernel-bus-objects.md#crossbar-switch-records-xswitcho	Crossbar switch records (`xswitch.o`)
+usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x1c4	40	xswitch_provider_register	dwarf+symtab	ba4cecd656f8		in	understood	docs/kernel-bus-objects.md#crossbar-switch-records-xswitcho	Crossbar switch records (`xswitch.o`)
+usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x1ec	24	xswitch_info_link_is_ok	dwarf+symtab	406643ac795a		in	understood	docs/kernel-bus-objects.md#crossbar-switch-records-xswitcho	Crossbar switch records (`xswitch.o`)
+usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x204	36	xswitch_info_link_ok	dwarf+symtab	e2cf7e378a75		in	understood	docs/kernel-bus-objects.md#crossbar-switch-records-xswitcho	Crossbar switch records (`xswitch.o`)
+usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x228	28	xswitch_reset_link	dwarf+symtab	a86de4a9d7a4		in	understood	docs/kernel-bus-objects.md#crossbar-switch-records-xswitcho	Crossbar switch records (`xswitch.o`)
+usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x244	40	xswitch_id_get	dwarf+symtab	7a9b8b03403b		in	understood	docs/kernel-bus-objects.md#crossbar-switch-records-xswitcho	Crossbar switch records (`xswitch.o`)
+usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64	.text	0x26c	36	xswitch_id_set	dwarf+symtab	a88c93b3cde7		in	understood	docs/kernel-bus-objects.md#crossbar-switch-records-xswitcho	Crossbar switch records (`xswitch.o`)
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64		0x0		xtalk_piomap_alloc	dwarf+symtab			in	undocumented		
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x1c	28	xtalk_piomap_free	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x38	28	xtalk_piomap_addr	dwarf+symtab	a86de4a9d7a4		in	undocumented		
