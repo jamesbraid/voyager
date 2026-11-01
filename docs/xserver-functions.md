@@ -64,3 +64,49 @@ The Onyx4 installs a stock XFree86 4.x server, `usr/X11R6/bin/XFree86` (an N32 e
   It looks up the screen in `xf86Screens`, follows the word at +8 of that record to the screen structure and calls the function pointer at +380 of it (**inferred:** the screen-pixmap getter) to obtain the root pixmap.
   With enable set it stores the saved pointer from the screen record's word at +876 into the pixmap's word at +32 and, when `xf86Resetting` is zero, calls the static routine at 0x1003ec80 with the screen and 1.
   With enable clear it calls that routine with 0 first, saves the pixmap's word at +32 in the screen record's +876 and zeroes the pixmap's +32. **Inferred:** the static routine sets or clears the root window's clip region and the word at +32 is the pixmap's data pointer, so disabling access hides the frame buffer from the server's drawing code until it is restored.
+
+## PCI records, lookups and bus-access hooks
+
+- `xf86GetPciVideoInfo` (`XFree86`, 24 bytes at address 0x100514c0): **Established.**
+  Loads the global offset table slot for the data symbol `xf86PciVideoInfo` (slot 2308) and returns the word stored there, a null-terminated array pointer filled in by the bus scan (**inferred** from the other PCI routines walking the same kind of array).
+  It reads nothing else and has no other exit.
+- `xf86GetPciConfigInfo` (`XFree86`, 24 bytes at address 0x10051500): **Established.**
+  The same shape as `xf86GetPciVideoInfo`, for the data symbol `xf86PciInfo` (slot 2307): returns the word stored there.
+  `xf86IsPciDevPresent` walks the array this pointer names, so it is the table of every PCI function the scan found, not only the video ones (**inferred**).
+- `xf86CheckPciMemBase` (`XFree86`, 48 bytes at address 0x10051dc0): **Established.**
+  Takes a record pointer in a0 and a value in a1.
+  It compares the value with the six consecutive words at record +44, +48, +52, +56, +60 and +64, in that order, and returns 1 at the first equal word, otherwise 0 (the zero is set by the delay slot at 0x10051de4 of the loop-exit return at 0x10051de0).
+  The pointer step is made in the delay slot of the equality branch at 0x10051dd0, so the loop makes six passes.
+  **Inferred:** the six words are the record's base address registers, since PCI headers have six, and the routine asks whether a given base belongs to the device.
+- `xf86BusProbe` (`XFree86`, 52 bytes at address 0x100526c0): **Established.**
+  Calls `xf86PciProbe` (global slot 394) with no arguments and returns its result.
+  No ISA or other bus is probed from here.
+- `xf86PciProbe` (`XFree86`, 92 bytes at address 0x1004e800): **Established.**
+  Calls `LoaderSymbol` with the string "xf86SetupPciData" (address 0x101f87a8) and then calls the function it returns, with the addresses of three data symbols as arguments: `xf86PCIVendorNameInfo` in a0, `xf86PCIVendorInfo` in a1 and `xf86PCICardInfo` in a2.
+  The returned pointer is used as a call target with no null test.
+  It then calls the static routine at 0x10049fc0 with no arguments and returns that routine's result.
+  **Inferred:** the looked-up routine hands the PCI vendor and card name tables to the server from the loadable PCI data module (`libpcidata.so` is installed), and the static routine performs the scan.
+- `xf86FixPciResource` (`XFree86`, 96 bytes at address 0x1004de40): **Established.**
+  Passes a0 unchanged to `xf86GetPciInfoForEntity` and then calls the static routine at 0x1004d200 with a0 set to its own a1, a1 to its own a2, a2 to the record that lookup returned and a3 to its own a3, returning that routine's result.
+  The record is not tested for null here.
+  The static routine is not read by this entry.
+- `xf86IsPciDevPresent` (`XFree86`, 100 bytes at address 0x10051180): **Established.**
+  Takes three values in a0, a1 and a2.
+  It reads the array pointer stored at `xf86PciInfo` (slot 2307) and walks that array of record pointers, stopping at a null entry.
+  A record matches when its word at +4 equals a0, its word at +8 equals a1 and its word at +12 equals a2; the third compare at 0x100511cc is branch-likely, the other two are plain branches.
+  The routine returns 1 for the first match and 0 when the array ends (an empty array also returns 0).
+  **Inferred:** the three values are bus, device and function numbers.
+- `PciBusStateEnter` (`XFree86`, 112 bytes at address 0x10050e40): **Established.**
+  Reads the list head stored at `xf86BusAccInfo` (slot 2317) and walks the list by the word at node +28 until it is null.
+  For each node whose word at +12 is nonzero it calls that function with the node as the only argument; a node with a zero word is skipped.
+  An empty list returns at once.
+  The routine returns nothing defined.
+  **Inferred:** the nodes are the server's bus-access records and the word at +12 is the hook that switches that bus's access on when the server takes over the screen.
+- `PciBusStateLeave` (`XFree86`, 112 bytes at address 0x10050f80): **Established.**
+  The same walk over `xf86BusAccInfo` as `PciBusStateEnter`, calling the word at node +16 instead of +12, for nodes where it is nonzero.
+  **Inferred:** the +16 hook restores the bus state when the server gives up the screen.
+- `pciConvertRange2Host` (`XFree86`, 112 bytes at address 0x10052580): **Established.**
+  Calls `xf86GetPciInfoForEntity` with a0 unchanged and keeps its own a1 across the call.
+  A null record returns that null.
+  Otherwise it calls `pciTag` with the record's words at +20, +24 and +28 (a0, a1, a2) and then the static routine at 0x10052380 with the tag in a0 and the saved a1, and returns that routine's result.
+  **Inferred:** the record's three words are bus, device and function, and the static routine converts a bus range to a host range for that device.
