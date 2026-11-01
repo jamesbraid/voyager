@@ -775,18 +775,6 @@
         "usr/X11R6/lib/modules/dri/fglrx_dri64.so",
         "usr/X11R6/lib/modules/extensions/fglrx_glx.so"
       ],
-      "reason": "Code for the R100 and R200 chip families (named in the symbol: R100, R200 prefixes in the ATI GL driver): the R300 and R350 boards select the R300-named paths, so these are other chips; inferred from names, not from tracing the runtime family choice",
-      "patterns": [
-        ".*R100.*",
-        ".*R200.*"
-      ]
-    },
-    {
-      "binaries": [
-        "usr/X11R6/lib/modules/dri/fglrx_dri.so",
-        "usr/X11R6/lib/modules/dri/fglrx_dri64.so",
-        "usr/X11R6/lib/modules/extensions/fglrx_glx.so"
-      ],
       "reason": "OpenGL API entry points and immediate-mode dispatch wrappers (glFoo, __glim_Foo for the non-R300 variants): thin argument-forwarding layer with no chip state of its own; the R300-named variants stay in scope",
       "patterns": [
         "__glim_(?!R300).*",
