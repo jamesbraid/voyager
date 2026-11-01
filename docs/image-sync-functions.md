@@ -192,3 +192,54 @@
   **established.** It registers the driver for the two image-sync PCI IDs. The 44 words and the two-entry loop were checked against the `.data` bytes of `is1_devids`. It takes no argument, returns 0 and ignores the registration results. The object has no call site for it.
   For entry i of 2 it calls `pciio_driver_register(halfword at is1_devids + 8i, halfword at +8i+2, "is1_", 0)` (0x9b4). The table holds vendor 0x10a9 with device 0x100c, then vendor 0x10a9 with device 0x100f; the words at +4 and +12 repeat the same pairs and the loop never loads them.
 
+
+- `is1_remove_pipe` (`is1.o`, address 0x1874, 172 bytes):
+  **established.** It drops one pipe from a board: it clears the slot, lowers the board's pipe count, clears the slot's bit in three masks and then clears the pipe's record. All 43 words were followed through the three atomic loops. `is1_exit` and `is1_ioctl` (request 10003) call it. It takes the board in a0, the pipe number in a1 (kept in `at`; `is1_exit` passes the word it read from the board's +0x450 table) and the slot index in a2. It sets no return value.
+  Stores in order: zero in the word at board +0x250 + 4 x slot (0x187c); -1 in the word at +0x450 + 4 x slot (0x1884); the word at +0xe4 minus 1 back to +0xe4 (0x18a0). It then builds the mask `1 << slot` with a variable 64-bit left shift and atomically clears it in the doublewords at +0x90 (`lld`/`scd`, 0x18a8 to 0x18b4), +0x88 (0x18e4) and +0x80 (0x18f8), in that order.
+  It ends by calling `is1_clear_swapready(pipe number)` (call 0x190c, target address 0x3988).
+
+- `is1_unload_dev` (`is1.o`, address 0xb34, 168 bytes):
+  **established.** It is the per-card callback that `is1_unload` gives `pciio_iterate`: it looks up the card's board and detaches it. The 42 words and the one assertion tail were read. It takes the device vertex in a0 (kept in s8) and returns the `is1_detach` result.
+  It calls `hwgraph_fastinfo_get(vertex)` (0xb58). A null result calls `assfail` (text "bdata != NULL", line 371, 0xbcc) and goes on. It then calls `is1_detach(vertex)` (0xb80) with the vertex, not the board.
+
+- `is1_clear` (`is1.o`, address 0xc28, 156 bytes):
+  **established.** It resets a board record's per-process tables and its scalar state to the idle values. All 39 words were read, including the two-way unrolled table loop. `is1_attach` and `is1_close` call it. It takes the board in a0 and sets no return value.
+  Table loop: for each of 64 words, in this order per word, it stores zero at board +0x350 + 4i (0xc3c and 0xc5c), zero at +0x250 + 4i (0xc44, 0xc64) and -1 at +0x450 + 4i (0xc48, 0xc6c). The loop body appears twice back to back, each copy testing the index against 64.
+  Scalar stores in order: zero in the doubleword at +0x90 (0xc70); zero in the words at +0xe8, +0xe0; -1 at +0x9c; zero at +0x5c, +0x60; -1 at +0x64; zero at +0xe4, +0xfc, +0xec, +0xdc, +0xf0, +0x68; zero in the doublewords at +0x70, +0x78, +0x88, +0x80; zero in the word at +0x98; and, in the delay slot of the return, the word at +0x1c stored at +0xf4 (0xcc0).
+
+- `is1_malloc` (`is1.o`, address 0x2cf8, 156 bytes):
+  **established.** It is the driver's allocator: it takes memory from the kernel, zeroed on request, and adds the size to a running total. All 39 words were followed. Only `checkBoardPointers` calls it, three times. It takes the size in a0, a zero-fill flag in a2 and the allocation flags in a3 and returns the pointer. a1 and a4 (the name string its caller passes) are never read.
+  A nonzero a2 calls `kmem_zalloc(size, a3)` (0x2d24); zero calls `kmem_alloc(size, a3)` (0x2d84). On both paths the size is then added to `is1_memused`, the word at `.data` +0x18, without testing for a null result.
+
+- `is1_free` (`is1.o`, address 0x2d94, 96 bytes):
+  **established.** It is the matching release routine: it takes the size off the running total and frees the memory when there is any. All 24 words were read. Only `freeBoardPointers` calls it. It takes the pointer in a0 and the size in a1; a2 (the name string its caller passes) is never read. It sets no return value.
+  The word at `.data` +0x18 (`is1_memused`) is lowered by a1 whether or not a0 is null (the store is in the delay slot of the test, 0x2dc0). A nonzero a0 calls `kmem_free(a0, a1)` (0x2de4).
+
+- `is1_release_swapready` (`is1.o`, address 0x3540, 152 bytes):
+  **established.** It sets bit 0 of the word at +0x68 of a pipe's board and, only when that bit was clear, copies the board's +0x70 mask into its +0x78 mask, writes 1 to register offset 0x1c and clears the word. The two atomic loops and both exits were traced through all 38 words. `is1_ioctl` (request 10011) calls it. It takes the pipe number in a0 and sets no return value.
+  The first word of `is1_pipes[a0]` (32-byte records) is zero: it returns. Otherwise the board is `is1_boards[first word - 1]`. Bit 0 is atomically ORed into the word at board +0x68 (`ll`/`sc`, 0x3584 to 0x3590); a nonzero old value returns. With an old value of zero it ORs the doubleword at +0x70 into the doubleword at +0x78 (`lld`/`scd`, 0x35b4 to 0x35c0), stores 1 at register offset 0x1c (0x35cc, register block from the doubleword at +0xc0) and, in the delay slot of the return, zero in the word at +0x68.
+
+- `is1_clear_swapready` (`is1.o`, address 0x3988, 148 bytes):
+  **established.** It empties one pipe record after unbinding the pipe. The 37 words were followed through the single test. `is1_remove_pipe` calls it. It takes the pipe number in a0 and sets no return value.
+  When the first word of `is1_pipes[a0]` is zero it returns without a call. Otherwise it calls `is1_unbind(pipe number)` (0x39dc) and then stores zero in the record's word at +0 (0x39f0), zero in the word at +4 (0x39fc) and zero in the doubleword at +24 (0x3a0c).
+
+- `is2_assemble_video_format` (`is1.o`, address 0x484c, 148 bytes):
+  **established.** It builds the video-format word for the second image-sync card type from the sync-source data block and four board words. All 37 words were decoded. `is1_attach` stores its address at board +0x38 for cards of type 1. It takes the board in a0 and returns the word.
+  It calls `is1_get_sync_data(board)` (0x4870) for the block p and ORs:
+  - bits 31:28: the low 4 bits of the word at board +0x1d0;
+  - bit 27: bit 0 of the word at +0x1cc;
+  - bits 26:20: the low 7 bits of the word at +0x1f4;
+  - bits 19:16: the low 4 bits of the word at +0x1fc;
+  - bits 15:0: the low half of p word 1 (offset 4).
+  `is1_assemble_video_format` takes 8 bits of the word at +0x1f4 for bits 27:20 and has nothing in bits 31:28.
+
+- `is1_assemble_video_format` (`is1.o`, address 0x46e8, 108 bytes):
+  **established.** It builds the video-format word for the first image-sync card type from the sync-source data block and two board words. All 27 words were decoded. `is1_attach` stores its address at board +0x38 for type 0 and as the fallback. It takes the board in a0 and returns the word.
+  It calls `is1_get_sync_data(board)` (0x470c) for the block p and ORs:
+  - bits 27:20: the low 8 bits of the word at board +0x1f4;
+  - bits 19:16: the low 4 bits of the word at +0x1fc;
+  - bits 15:0: the low half of p word 1 (offset 4).
+
+- `is1_get_sync_data` (`is1.o`, address 0x45f8, 48 bytes):
+  **established.** It picks which of the board's two 16-byte sync-parameter blocks applies to the current sync source. All 12 words were read. The four word-builder routines (`is1_assemble_control`, `is1_assemble_video_format` and the two `is2_` versions) each call it. It takes the board in a0 and returns an address.
+  It reads the word at board +0x98. A value of 1 or 2 returns board +0x214 (532); any other value, 0 and everything above 2 included, returns board +0x204 (516).
