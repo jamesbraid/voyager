@@ -1,0 +1,3 @@
+table	date	sample	real	shallow	wrong	note
+mmio	2026-11-02	4	4	0	0	CRTC, flat-panel, TV and overlay words copied by the save and restore routines, re-derived from the X module disassembly and public radeon_reg.h masks
+functions	2026-11-02	11	9	2	0	the scope change plus ten rows of the VGA console driver and kernel driver detach path; the two shallow rows were same-named routines in the X server and the BIOS emulator tool credited to entries describing different code (now described). Five option ROM table rows were audited alongside: 4 real, 1 thin and fixed

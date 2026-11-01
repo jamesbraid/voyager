@@ -326,6 +326,16 @@ That table layout is **inferred** from how `Mem_rb` to `Mem_wl` and the repeat-p
 - `pciWriteLong` (`vga.a(junkcode.o)`, address 0xa8, 16 bytes): **established.**
   Stores a2 as a word at offset a1 in the configuration window (record +120) of the board record in a0.
 
+Same-named routines in other binaries are different code, not copies of the entries above:
+
+- `Mem_rw` in `biosemu` (address 0x1000af10, 84 bytes): **established.**
+  It dispatches the halfword read like the kernel routine, but through a global record pointer whose table sits at record +32, not +24 (entry +8, called with the record and the address).
+- `outw` in `XFree86` (address 0x100706c0, 72 bytes): **established.**
+  It swaps the two bytes of the halfword and stores it at a base word plus the port, only when the port plus 2 is below a limit word; otherwise it does nothing.
+- `pciReadLong` in `XFree86` (address 0x1006df00, 164 bytes): **established.**
+  It is not the configuration-window read above.
+  After `pciInit` (0x1006dd80) it takes bits 15:11 of its first argument as an index into a table of record pointers. An index at or above a count word is refused unless a separate flag word is nonzero. It calls the record's function at +12 with the tag and the offset, and returns -1 when the index is refused or the record or the function is missing.
+
 ## After attach: firegl_init_module
 
 - `firegl_init_module` (`fglrx.o`, address 0x9130): **established** as a call sequence. Allocates a 232-byte device structure (`kmem_alloc(0xe8)`), clears it, initialises a mutex and a semaphore, and calls `firegl_init`; on failure it frees the structure. It returns 1 after the call at 0x9310 and 0 on the paths that free the structure or log through `cmn_err`.

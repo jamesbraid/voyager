@@ -471,7 +471,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006d280	308	xf86freeVideoAdaptorLi
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006d3c0	188	xf86freeVideoPortList	dynsym	67d176ac4844		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006d480	132	xf86findVideoAdaptor	dynsym	a853f84045a4		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006d540	1996	xf86parsePointerSection	dynsym	a9ab6eb9141e		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006dd80	104	pciInit	dynsym	cd299afa236f		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006dd80	104	pciInit	dynsym	cd299afa236f		in	named-only	docs/kernel-attach.md#the-emulated-pcs-memory-image-and-the-legacy-port-space-vgaahelper_memo-helper_legacyo-junkcodeo	The emulated PC's memory image and the legacy port space (`vga.a(helper_mem.o)`, `helper_legacy.o`, `junkcode.o`)
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006de00	100	pciFindFirst	dynsym	03e2e8980a5a		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006de80	68	pciFindNext	dynsym	44e618a8962d		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006df00	164	pciReadLong	dynsym	1db383499a07		in	located	docs/kernel-attach.md#the-emulated-pcs-memory-image-and-the-legacy-port-space-vgaahelper_memo-helper_legacyo-junkcodeo	The emulated PC's memory image and the legacy port space (`vga.a(helper_mem.o)`, `helper_legacy.o`, `junkcode.o`)
