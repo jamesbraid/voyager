@@ -47310,7 +47310,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x39f0	84	fglrx_dma_flush
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3a44	240	fglrx_is_brdmanager	dwarf	89fa35c7f425		in	understood	docs/kernel-ioctl-irq-functions.md#ioctl-handlers	Ioctl handlers
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3b34	64	fglrx_swapbuf_stat	dwarf	3e4a470ac151		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3b74	1296	fglrx_ioctl	dwarf+symtab	86a0b82ffaaa		in	understood	docs/kernel-drm-functions.md#contexts-and-the-device-ioctl-entry	Contexts and the device ioctl entry
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4084	976	fglrx_map	dwarf+symtab	57c31792b667		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4084	976	fglrx_map	dwarf+symtab	57c31792b667		in	understood	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4454	336	fglrx_error_handler	dwarf+symtab	b151f54dbb95		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x45a4	180	fglrx_add_exit_callback	dwarf+symtab	c0827ca758a8		in	named-only	docs/kernel-ioctl-irq-functions.md#ioctl-handlers	Ioctl handlers
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4658	520	fglrx_exit	dwarf+symtab	1ab4e25eddf3		in	understood	docs/kernel-ioctl-irq-functions.md#forced-exit	Forced exit
@@ -47339,22 +47339,22 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x51dc	468	irix_pci_write
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x53b0	8	fglrx_hpipe_init_idbg	dwarf+symtab	78aa5094d5ec		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x53b8	44	fglrx_hpipe_log	dwarf+symtab	90ad92382957		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x53e4	76	fglrx_usb_comp_update_tiles	dwarf+symtab	2a82b8448280	shared-address	in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x53e4	76	usb_comp_update_tiles	symtab	2a82b8448280	shared-address	in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x53e4	76	usb_comp_update_tiles	symtab	2a82b8448280	shared-address	in	named-only	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5430	80	fglrx_usb_comp_readwrite_register	dwarf+symtab	77d2e938cfa7	shared-address	in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5430	80	usb_comp_readwrite_register	symtab	77d2e938cfa7	shared-address	in	named-only	docs/kernel-object-functions.md#detach-initialisation-and-device-identity	Detach, initialisation and device identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5430	80	usb_comp_readwrite_register	symtab	77d2e938cfa7	shared-address	in	named-only	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5480	204	fglrxReadMmRegister	dwarf+symtab	cc5a8cac371d		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x554c	200	fglrxWriteMmRegister	dwarf+symtab	70e6ff13564f		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5614	292	fglrxCompositorUSBRegReadWrite	dwarf	240498251bd6		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5614	292	fglrxCompositorUSBRegReadWrite	dwarf	240498251bd6		in	named-only	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5738	904	fglrxCompositorI2cRegRead	dwarf	a60a0353d3d8		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5ac0	800	fglrxProbeCompositor	dwarf+symtab	db89eb2f86f6		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5de0	1416	fglrx_hpipe_discover	dwarf	d6703d69cc24		in	understood	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6368	440	fglrx_hp_fire_swapready	dwarf+symtab	99ec4f4a3c85		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6520	1028	fglrx_program_compositor_tiling	dwarf	1d8d3f4d1b35		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6368	440	fglrx_hp_fire_swapready	dwarf+symtab	99ec4f4a3c85		in	named-only	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6520	1028	fglrx_program_compositor_tiling	dwarf	1d8d3f4d1b35		in	understood	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6924	280	bdata_from_pipename	dwarf	e0144ebcfbea		in	understood	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6a3c	292	fglrx_compositor_reg_acc	dwarf+symtab	3caa91370697		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6b60	712	fglrx_compositor_setnic	dwarf+symtab	6ed251a57968		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6e28	164	fglrx_hp_get_topology	dwarf+symtab	9775f497edde		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6ecc	172	fglrx_hp_invalid_hpId	dwarf	b89aa082cbc5		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6ecc	172	fglrx_hp_invalid_hpId	dwarf	b89aa082cbc5		in	named-only	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6f78	480	fglrx_hp_get_config	dwarf+symtab	9488430dd130		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x7158	968	fglrx_hp_config	dwarf+symtab	dfa7add9f4f5		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x7520	316	fglrx_hp_destroy_config_sub	dwarf	00010f48c8f0		in	undocumented		
@@ -47363,9 +47363,9 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x787c	516	fglrx_hp_unbin
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x7a80	200	fglrx_hp_exit	dwarf	9eda24be3f1f		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x7b48	572	fglrx_hp_bind	dwarf+symtab	542378c586c3		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x7d84	520	fglrx_hp_unbind	dwarf+symtab	8c821b0700bb		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x7f8c	1000	fglrx_hp_qry_attrib	dwarf+symtab	874acfda27b3		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x7f8c	1000	fglrx_hp_qry_attrib	dwarf+symtab	874acfda27b3		in	understood	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x8374	12	fglrx_hp_qry_bestattrib	dwarf+symtab	dc27baee7d3e		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x8380	1200	fglrx_hp_set_attrib	dwarf+symtab	ac2f2d3cd4f4		in	named-only	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x8380	1200	fglrx_hp_set_attrib	dwarf+symtab	ac2f2d3cd4f4		in	understood	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x8830	1764	fglrxReadCompositorNic	dwarf	b93f2f84100e		in	understood	docs/kernel-object-functions.md#detach-initialisation-and-device-identity	Detach, initialisation and device identity
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x8f14	172	set_showconfig	dwarf	5556673ed058		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x8fc0	128	fglrx_hpipe_add_log	dwarf+symtab	1a801ba1fdc5		in	undocumented		
@@ -47401,8 +47401,8 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9804	64	__ke_down_struc
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9844	60	__ke_up_struct_sem	dwarf+symtab	8c06f5ba8d79		in	understood	docs/kernel-compat-layer.md#semaphores	Semaphores
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9880	56	__ke_sema_init	dwarf+symtab	bee453a30b81		in	understood	docs/kernel-compat-layer.md#semaphores	Semaphores
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x98b8	8	__ke_sema_size	dwarf+symtab	32295a3087c3		in	understood	docs/kernel-compat-layer.md#semaphores	Semaphores
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x98c0	52	__ke_down	dwarf+symtab	ea3c620e6375		in	named-only	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x98f4	52	__ke_up	dwarf+symtab	89adc03be8aa		in	named-only	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x98c0	52	__ke_down	dwarf+symtab	ea3c620e6375		in	named-only	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x98f4	52	__ke_up	dwarf+symtab	89adc03be8aa		in	named-only	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9928	32	__ke_atomic_inc	dwarf+symtab	90586972b56e		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9948	32	__ke_atomic_dec	dwarf+symtab	d0327c420a91		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9968	32	__ke_atomic_add	dwarf+symtab	f5b69e2ac25c		in	undocumented		
@@ -47574,13 +47574,13 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15288	512	firegl_remove
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15488	496	firegl_new_mutex	dwarf+symtab	35adc29afa3f		in	named-only	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15678	216	firegl_alloc_mutex	dwarf+symtab	4637fbbca378		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15750	456	firegl_free_mutex	dwarf+symtab	5d8f9836ae30		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15918	216	firegl_valid_mutex	dwarf+symtab	c8fb4da1a430		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15918	216	firegl_valid_mutex	dwarf+symtab	c8fb4da1a430		in	named-only	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15a1c	640	firegl_register_texture	dwarf+symtab	b65fd9f68a0e		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15c9c	468	firegl_unregister_texture	dwarf+symtab	19bd4f780246		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15e70	272	firegl_texture_died	dwarf+symtab	7928a5d391e1		in	named-only	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15f80	292	firegl_unregister_all_textures	dwarf+symtab	d19a38f2f1b9		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x16194	2656	firegl_lock_device	dwarf+symtab	ca3491e24150		in	understood	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x16bf4	1188	firegl_lock	dwarf+symtab	d3afa33f2d95		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x16bf4	1188	firegl_lock	dwarf+symtab	d3afa33f2d95		in	understood	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17098	424	firegl_lock_free	dwarf+symtab	fe2998834c9c		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17240	580	firegl_unlock	dwarf+symtab	d135fdd6b07f		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17484	188	firegl_get_lockid	dwarf+symtab	e62ab3c7d36b		in	undocumented		
@@ -47600,7 +47600,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x18894	228	_r6x_init_hw_
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x18978	572	_r6x_switch_context	dwarf+symtab	5e00d9fdc767		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x18c74	300	remove_buffer_queue	dwarf	27eeab842fb5		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x18da0	192	add_buffer_queue	dwarf	7d2436160a21		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x18e60	1120	create_buffer_queue	dwarf	763e9826fc59		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x18e60	1120	create_buffer_queue	dwarf	763e9826fc59		in	understood	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x192c0	804	alloc_cache_ram	dwarf	d9de86638dfd		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x195e4	784	firegl_free_buffer_queue	dwarf+symtab	c2d6506d7634		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x198f4	1540	firegl_alloc_bufs	dwarf+symtab	0ef5a87bf37e		in	understood	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
@@ -47611,11 +47611,11 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1a498	292	modify_buffer
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1a5bc	488	firegl_modify_buf	dwarf+symtab	85e423510d2a		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1a7d0	536	firegl_init_aperture	dwarf+symtab	c87e2b2f704d		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1a9e8	332	firegl_term_aperture	dwarf+symtab	d5109a09322b		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ab34	644	firegl_aperture_alloc	dwarf+symtab	ee6cd28ac64f		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ab34	644	firegl_aperture_alloc	dwarf+symtab	ee6cd28ac64f		in	named-only	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1adb8	300	firegl_aperture_free_size	dwarf+symtab	226a8dc2b3b3		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1aee4	336	firegl_aperture_maxfree_size	dwarf+symtab	0d264c47a629		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1b034	172	firegl_aperture_size	dwarf+symtab	d9755949ec7d		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1b0e0	952	firegl_aperture_alloc_offset	dwarf+symtab	9348e5e911c8		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1b0e0	952	firegl_aperture_alloc_offset	dwarf+symtab	9348e5e911c8		in	understood	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1b498	276	firegl_aperture_alloc_from_end	dwarf+symtab	6671f997aa1e		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1b5ac	836	firegl_aperture_free	dwarf+symtab	a4bd121d0888		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1b8f0	8	firegl_aperture_slot_size_in_elements	dwarf+symtab	ed5a838876c9		in	undocumented		
@@ -47623,8 +47623,8 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1b9b8	224	drm_order	dwa
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ba98	212	drm_pages_from_order	dwarf+symtab	8f6eb1880f2c		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1bb6c	228	calc_offset	dwarf	8df741849b1b		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1bc50	1684	firegl_addmap	dwarf+symtab	4fc2f33d8223		in	understood	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1c2e4	980	firegl_rmmap	dwarf+symtab	e78050ac0e9c		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1c6b8	1280	drm_addmap	dwarf+symtab	72c4b6eaac37		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1c2e4	980	firegl_rmmap	dwarf+symtab	e78050ac0e9c		in	understood	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1c6b8	1280	drm_addmap	dwarf+symtab	72c4b6eaac37		in	understood	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1cbb8	228	drm_rmmap	dwarf+symtab	3599fda124c7		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1cd5c	272	drm_irq_busid	dwarf+symtab	2b4896a4679e		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ce6c	272	drm_getunique	dwarf+symtab	1785977a4a2c		in	undocumented		
@@ -47634,7 +47634,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1d560	232	_firegl_remov
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1d648	384	drm_rmdraw	dwarf+symtab	cd1eb54cf4e6		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1d7c8	224	firegl_remove_all_drawables	dwarf+symtab	736e6ba3e340		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1d968	1400	_firegl_alloc_ctx	dwarf	97e44c69fa1e		in	understood	docs/kernel-drm-functions.md#contexts-and-the-device-ioctl-entry	Contexts and the device ioctl entry
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1dee0	984	firegl_addctx	dwarf+symtab	dc600bba4053		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1dee0	984	firegl_addctx	dwarf+symtab	dc600bba4053		in	understood	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1e2b8	932	firegl_rmctx	dwarf+symtab	fc7826c2ef0e		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1e65c	516	firegl_modctx	dwarf+symtab	8c6272ca8f7e		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1e860	484	firegl_getctx	dwarf+symtab	f2cdf48aa9e5		in	undocumented		
@@ -52664,7 +52664,7 @@ usr/diags/SG/bin/olsg	board-diagnostic	n64		0x101b24c0	1568	pci_map	dynsym	d920a
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x101b2ae0	432	pci_map_is1	dynsym	b90213b945f7		in	undocumented		
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x101b2c90	384	makepath	dynsym	36344dd7260b		in	undocumented		
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x101b2e10	296	makepath_is1	dynsym	035fc9b76fd7		in	undocumented		
-usr/diags/SG/bin/olsg	board-diagnostic	n64		0x101b2f38	1736	fglrx_map	dynsym	75f933163583		in	undocumented		
+usr/diags/SG/bin/olsg	board-diagnostic	n64		0x101b2f38	1736	fglrx_map	dynsym	75f933163583		in	located	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x101b3600	512	VMTSPath	dynsym	54c7000aeb3a		in	undocumented		
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x101b3800	100	VMTSLoad	dynsym	120aad1f8398		in	undocumented		
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x101b3864	1448	VMTSParseLine	dynsym	e12634fd9c2e		in	undocumented		
