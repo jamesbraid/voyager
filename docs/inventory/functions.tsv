@@ -631,7 +631,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076480	96	xf86setbuf	dynsym	45c3c
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076500	192	xf86setvbuf	dynsym	6c004529261f		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100765c0	172	xf86tmpfile	dynsym	34c4e4cdcb56		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076680	100	xf86ungetc	dynsym	1132fd19b157		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076700	84	xf86usleep	dynsym	8025424aad49		out:13	named-only	docs/x-helper-modules.md#libint10so	libint10.so
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076700	84	xf86usleep	dynsym	8025424aad49		out:13	named-only	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076780	128	xf86getsecs	dynsym	0bf2d149ff0a		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076800	64	xf86ffs	dynsym	44bee6a5ce75		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076840	112	xf86getenv	dynsym	24ccc4a83fdf		out:13	undocumented		
@@ -2650,14 +2650,14 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019a800	8	miCopyGC	dynsym	78aa5094
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019a840	920	miComputeCompositeClip	dynsym	35d70cf82825		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019ac00	268	miRegionCreate	dynsym	3fa674359e37		out:13	named-only	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019ad40	232	miRegionInit	dynsym	64c4c456cb23		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019ae40	108	miRegionDestroy	dynsym	638805fb29e1		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019ae40	108	miRegionDestroy	dynsym	638805fb29e1		out:13	named-only	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019aec0	68	miRegionUninit	dynsym	d0ab14162ada		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019af40	128	miRegionBreak	dynsym	7922b9c13293		in	located	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019afc0	384	miRectAlloc	dynsym	a367787999d0		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019b140	380	miRegionCopy	dynsym	7b83687de2f7		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019c040	328	miSetExtents	dynsym	67c2f32afda5		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019c380	760	miIntersect	dynsym	9b4fd987d37f		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019cb80	764	miUnion	dynsym	58e0c89990d6		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019c380	760	miIntersect	dynsym	9b4fd987d37f		out:13	named-only	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019cb80	764	miUnion	dynsym	58e0c89990d6		out:13	named-only	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019ce80	1388	miRegionAppend	dynsym	21f73b9dab3a		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019d640	2088	miRegionValidate	dynsym	d16872bf0d83		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019de80	916	miRectsToRegion	dynsym	de069b146a4e		out:13	undocumented		
@@ -7938,7 +7938,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a4d00	184	ali
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a4dc0	340	skipwhite	dwarf+funcnames	a7c8b18a4212		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a4f40	468	lookup	dwarf+funcnames	7d743bd094dc		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a5140	1028	number	dwarf+funcnames	70c3ab35b006		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a5580	788	next	dwarf+funcnames	471a0884a5a7		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a5580	788	next	dwarf+funcnames	471a0884a5a7		in	named-only	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a58c0	44	expect	dwarf+funcnames	ceb0aec0b6cd		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a5900	144	mapComponent	dwarf+funcnames	666d694407cb		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a59c0	188	addbinding	dwarf+funcnames	126db1a5d07a		in	undocumented		
@@ -20792,7 +20792,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ed560	200	a
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ed630	356	skipwhite	dwarf	23e24040fbb4		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ed7a0	500	lookup	dwarf	6f05a8626684		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ed9a0	1052	number	dwarf	293ed606294b		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6eddc0	892	next	dwarf	2326242b813d		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6eddc0	892	next	dwarf	2326242b813d		in	named-only	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ee140	56	expect	dwarf	83730f8f6c82		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ee180	160	mapComponent	dwarf	5bb17b9e9782		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ee220	216	addbinding	dwarf	427472b0e27c		in	undocumented		
@@ -29311,7 +29311,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40b480	448	R200
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40b640	168	R200CPSubsequentSolidFillRect	dynsym	ae8dffda40e6		in	understood	docs/fglrx-drv-functions.md#acceleration-hooks-overlay-cursor-and-read-back	Acceleration hooks, overlay, cursor and read-back
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40b700	204	R200CPSetupForSolidFillOverlay	dynsym	de023209d8e8		in	understood	docs/fglrx-drv-functions.md#acceleration-hooks-overlay-cursor-and-read-back	Acceleration hooks, overlay, cursor and read-back
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40b800	168	R200CPSubsequentSolidFillRectOverlay	dynsym	d9baa8e0ec99		in	understood	docs/fglrx-drv-functions.md#acceleration-hooks-overlay-cursor-and-read-back	Acceleration hooks, overlay, cursor and read-back
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40b8c0	716	R200CPSetupForScreenToScreenCopy	dynsym	5ffd5babe4a3		in	located	docs/fglrx-drv-functions.md#acceleration-hooks-overlay-cursor-and-read-back	Acceleration hooks, overlay, cursor and read-back
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40b8c0	716	R200CPSetupForScreenToScreenCopy	dynsym	5ffd5babe4a3		in	understood	docs/fglrx-drv-functions.md#acceleration-hooks-overlay-cursor-and-read-back	Acceleration hooks, overlay, cursor and read-back
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40bbc0	284	R200CPSubsequentScreenToScreenCopy	dynsym	ed2f6cdb01d8		in	understood	docs/fglrx-drv-functions.md#overlay-command-ring-packets-and-2d-acceleration-hooks	Overlay, command-ring packets and 2D acceleration hooks
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40ccc0	72	R200SelectBuffer	dynsym	d0aca22a34d7		in	understood	docs/fglrx-drv-functions.md#command-fifo-accounting-engine-reset-and-engine-restore	Command-FIFO accounting, engine reset and engine restore
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40cd40	128	R200SelectBufferCP	dynsym	4cac09d8ec67		in	undocumented		
@@ -29333,16 +29333,16 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422ac0	504	R200
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422cc0	636	R200EnterVT	dynsym	545d51ae067b		in	understood	docs/x-driver-functions.md#tiling-frame-offsets-and-mode-switch	Tiling, frame offsets and mode switch
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422f40	284	R200LeaveVT	dynsym	df78da98f0af		in	understood	docs/x-driver-functions.md#tiling-frame-offsets-and-mode-switch	Tiling, frame offsets and mode switch
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x423440	116	R200FreeScreen	dynsym	1b23c4c9d2db		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x423b00	368	checkXF86Version	dynsym	05327bac63a1		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x423b00	368	checkXF86Version	dynsym	05327bac63a1		in	understood	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x423c80	544	getXF86ConfigFileName	dynsym	bb39293df7ee		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x423f80	1272	UpdateFile	dynsym	201f93500049		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424580	164	FGLCalculateCPUSpeed	dynsym	c5e7231ed109		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424580	164	FGLCalculateCPUSpeed	dynsym	c5e7231ed109		in	understood	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424640	188	FGLMDelay	dynsym	658fc3e2e920		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424700	88	R200AvailableOptions	dynsym	71612adc35dc		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424780	364	R200Identify	dynsym	2bd0ca3a79e5		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424900	816	R200Probe	dynsym	4fef7a013f28		in	understood	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x429640	5168	R200DRIScreenInit	dynsym	1f9bc39ba488		in	understood	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42aa80	652	R200DRIFinishScreenInit	dynsym	9919224d96ba		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42aa80	652	R200DRIFinishScreenInit	dynsym	9919224d96ba		in	understood	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42ad40	996	R200DRICloseScreen	dynsym	66616c21539d		in	understood	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42b680	504	XF86SerFGLDRIGetDrawableInfo	dynsym	f77f09d0c4f5		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42c300	140	FGLEnableCP	dynsym	d1dae4baf97d		in	understood	docs/kernel-attach.md#command-processor-start-up-x-server-module	Command processor start-up (X server module)
@@ -29356,7 +29356,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42d400	1092	R20
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42d880	768	R200CPReadPixmap	dynsym	a0d6d869ca9a		in	named-only	docs/fglrx-drv-functions.md#overlay-command-ring-packets-and-2d-acceleration-hooks	Overlay, command-ring packets and 2D acceleration hooks
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42db80	1584	R200CPReadDisplay	dynsym	9a810b3e518a		in	understood	docs/fglrx-drv-functions.md#acceleration-hooks-overlay-cursor-and-read-back	Acceleration hooks, overlay, cursor and read-back
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e1c0	72	R200CPWriteBitmapOverlay	dynsym	5a0ebd72e371		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e240	72	R200CPWritePixmapOverlay	dynsym	65454224fc82		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e240	72	R200CPWritePixmapOverlay	dynsym	65454224fc82		in	understood	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e2c0	72	R200CPReadPixmapOverlay	dynsym	c81dfbfbe45f		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e340	548	Rage6SetGamma16Correction	dynsym+funcnames	fdd674df203a		in	understood	docs/x-driver-functions.md#gamma-and-palette	Gamma and palette
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e580	60	vAddFixed	dynsym	3f8c4368439f		in	undocumented		
@@ -29366,7 +29366,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e780	40	vCeil
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e7c0	224	vDivideFixed	dynsym	bd5b83c6e96a		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e940	44	ulRC6PllReadUlong	dynsym	db9aa1456da0		in	understood	docs/x-driver-functions.md#clock-pll-access	Clock PLL access
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e980	76	vRC6PllWriteUlong	dynsym	9d46c33ba5e9		in	understood	docs/x-driver-functions.md#clock-pll-access	Clock PLL access
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42ea00	164	vRC6ProgramHTOT_CNTL_EDGE	dynsym	6ef04c05b5ed		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42ea00	164	vRC6ProgramHTOT_CNTL_EDGE	dynsym	6ef04c05b5ed		in	understood	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42fd00	92	FGLRXAddExtension	dynsym	66d72642fa51		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42fe00	1700	FGLSetGammaData	dynsym	f603fc7251bd		in	understood	docs/x-driver-functions.md#gamma-and-palette	Gamma and palette
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x430740	492	SGIGLXSwapBarrierInit	dynsym	807c8bbe1738		in	understood	docs/x-driver-functions.md#image-sync-and-swap-barrier	Image sync and swap barrier
@@ -29378,7 +29378,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x432ac0	232	FIRE
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4357c0	820	FIREGL_OverlayHandleColormaps	dynsym	a19f926ec610		in	understood	docs/fglrx-drv-functions.md#overlay-command-ring-packets-and-2d-acceleration-hooks	Overlay, command-ring packets and 2D acceleration hooks
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x437bc0	124	miRegionBreak	dynsym	a22000b76bd8		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43aac0	1092	FIREGL_OverlayWindowExposures	dynsym	33e7166ab42a		in	named-only	docs/fglrx-drv-functions.md#acceleration-hooks-overlay-cursor-and-read-back	Acceleration hooks, overlay, cursor and read-back
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43af40	1008	FIREGL_WindowExposures	dynsym	d6110c3fd2e4		in	named-only	docs/fglrx-drv-functions.md#acceleration-hooks-overlay-cursor-and-read-back	Acceleration hooks, overlay, cursor and read-back
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43af40	1008	FIREGL_WindowExposures	dynsym	d6110c3fd2e4		in	understood	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43cd00	80	FIREGL_OverlayGetPrivateClips	dynsym	b5bb037f8bc4		in	understood	docs/fglrx-drv-functions.md#overlay-command-ring-packets-and-2d-acceleration-hooks	Overlay, command-ring packets and 2D acceleration hooks
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43d040	156	FIREGL_OverlayCollectUnderlayRegions	dynsym	5bb0c2f0234c		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43db80	136	FIREGL_HideOverlay	dynsym	230064a54682		in	understood	docs/x-video-driver.md#overlay-scaler	Overlay scaler
@@ -29390,7 +29390,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43e780	636	FIRE
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43ea80	828	R200LinuxCailInitCail	dynsym	0ef1c488bdd8		in	understood	docs/x-video-driver.md#chip-library-start-up	Chip-library start-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f0c0	200	QBS_EnableOverlay	dynsym	a6c6f10c87c5		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f1c0	196	QBS_FinishInit	dynsym	513f7acef94e		in	understood	docs/x-video-driver.md#stereo-and-clock-set-up	Stereo and clock set-up
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f2c0	328	QBS_MakeTrans	dynsym	2878d87e7e01		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f2c0	328	QBS_MakeTrans	dynsym	2878d87e7e01		in	understood	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f440	80	QBS_EnableStereo	dynsym	edb111640b3d		in	understood	docs/x-video-driver.md#stereo-and-clock-set-up	Stereo and clock set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4400c0	208	SaveTimingCode	dynsym	af76ad6d4f0a		in	understood	docs/x-video-driver.md#tv-timing	TV timing
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4401c0	240	RestoreTimingCode	dynsym	9f99a1e79d6a		in	understood	docs/x-video-driver.md#tv-timing	TV timing
@@ -29398,8 +29398,8 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4437c0	1176	Wri
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x443c80	416	LoadTimingCode	dynsym	5c2eda9a1783		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4441c0	540	Set_MV_Mode	dynsym	7cb40e430164		in	understood	docs/x-video-driver.md#tv-timing	TV timing
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x444400	1796	SetClk	dynsym	23ddf1f8de52		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x444b40	1256	SetCrtMN	dynsym	4ce9e0c30e61		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x445040	1036	VTMaster	dynsym	268c60de36aa		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x444b40	1256	SetCrtMN	dynsym	4ce9e0c30e61		in	understood	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x445040	1036	VTMaster	dynsym	268c60de36aa		in	understood	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x445480	580	R6TMDSTransmitLinux	dynsym	e1e5c02af224		in	understood	docs/x-video-driver.md#stereo-and-clock-set-up	Stereo and clock set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x446400	92	ATITVoutAddExtension	dynsym	1ebdea3b4331		in	understood	docs/fglrx-drv-functions.md#sgi-extensions-and-pipe-control	SGI extensions and pipe control
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4467c0	92	ATIHPVAddExtension	dynsym	e75956208a8e		in	understood	docs/fglrx-drv-functions.md#sgi-extensions-and-pipe-control	SGI extensions and pipe control
@@ -29420,7 +29420,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44a400	1340	R20
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44a940	96	R200SGIVCUpdateGenlockInfo	dynsym	2a4d1c2d5a3d		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44a9c0	216	R200SGIVCGetDefMode	dynsym	9e72e344629c		in	understood	docs/fglrx-drv-functions.md#sgi-extensions-and-pipe-control	SGI extensions and pipe control
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44aac0	144	R200SGIVCSetDefGamma	dynsym	b37a02821fa7		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44be40	440	ConvertPixel	dynsym	253964bd12ba		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44be40	440	ConvertPixel	dynsym	253964bd12ba		in	understood	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44c800	56	R200ReadDisplayRegisterInfo	dynsym	26923ecb59d2		in	understood	docs/fglrx-drv-functions.md#sgi-extensions-and-pipe-control	SGI extensions and pipe control
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44d340	252	SGIGLXHyperpipeInitPipe	dynsym	c39704c77439		in	understood	docs/fglrx-drv-functions.md#sgi-extensions-and-pipe-control	SGI extensions and pipe control
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44d440	232	SGIGLXHyperpipeInit	dynsym	6a100667affb		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
@@ -34225,7 +34225,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69cd00	
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69cdc0	340	skipwhite	dwarf+funcnames	a7c8b18a4212		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69cf40	468	lookup	dwarf+funcnames	35548e53bf30		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69d140	1028	number	dwarf+funcnames	f9f280f1a533		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69d580	788	next	dwarf+funcnames	5d78559ec2f4		in	undocumented		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69d580	788	next	dwarf+funcnames	5d78559ec2f4		in	named-only	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69d8c0	44	expect	dwarf+funcnames	bdab87352782		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69d900	144	mapComponent	dwarf+funcnames	c29d1f8b11a1		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69d9c0	188	addbinding	dwarf+funcnames	395fba391d9e		in	undocumented		
@@ -45634,7 +45634,7 @@ usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32	.text	0x404680	68
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x404700	68	__glXFindDRIScreen	dwarf+dynsym	0f252e48a08d		in	undocumented		
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32	.text	0x404780	228	GLXDRIScreenInit	dwarf+funcnames	06ad913f4802		in	undocumented		
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x404880	1496	DRIScreenInit	dwarf+dynsym	a72192db2040		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
-usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x404e80	900	DRIFinishScreenInit	dwarf+dynsym	32313cb01a00		in	undocumented		
+usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x404e80	900	DRIFinishScreenInit	dwarf+dynsym	32313cb01a00		in	named-only	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x405240	736	DRICloseScreen	dwarf+dynsym	004e192f92a1		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x405540	300	DRIExtensionInit	dwarf+dynsym	af82bcdde593		in	undocumented		
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x405680	8	DRIReset	dwarf+dynsym	78aa5094d5ec		in	undocumented		
