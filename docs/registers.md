@@ -194,15 +194,15 @@ write) as reads.
 | 0x404 | `OV0_Y_X_END` | common | write 4 | 4 | `FIREGL_ShowOverlay` at 0x43df00 | 1 | see below |
 | 0x410 | `OV0_REG_LOAD_CNTL` | common | read 4, write 4 | 6 | static code at 0x437c3c | 0 | unknown |
 | 0x420 | `OV0_SCALE_CNTL` | exact | read 4, write 4 | 12 | `FIREGL_HideOverlay` at 0x43db80 | 2 | see below |
-| 0x424 | `OV0_V_INC` | common | write 4 | 2 | `FIREGL_ShowOverlay` at 0x43df00 | 1 | unknown |
+| 0x424 | `OV0_V_INC` | common | write 4 | 2 | `FIREGL_ShowOverlay` at 0x43df00 | 1 | see below |
 | 0x428 | `OV0_P1_V_ACCUM_INIT` | common | read 4, write 4 | 3 | `FIREGL_ShowOverlay` at 0x43df00 | 1 | unknown |
 | 0x42c | `OV0_P23_V_ACCUM_INIT` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
-| 0x430 | `OV0_P1_BLANK_LINES_AT_TOP` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
-| 0x434 | `OV0_P23_BLANK_LINES_AT_TOP` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
+| 0x430 | `OV0_P1_BLANK_LINES_AT_TOP` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | see below |
+| 0x434 | `OV0_P23_BLANK_LINES_AT_TOP` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | see below |
 | 0x43c | `OV0_BASE_ADDR` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
 | 0x440 | `OV0_VID_BUF0_BASE_ADRS` | common | write 4 | 2 | `FIREGL_ShowOverlay` at 0x43df00 | 1 | unknown |
-| 0x444 | `OV0_VID_BUF1_BASE_ADRS` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
-| 0x448 | `OV0_VID_BUF2_BASE_ADRS` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
+| 0x444 | `OV0_VID_BUF1_BASE_ADRS` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | see below |
+| 0x448 | `OV0_VID_BUF2_BASE_ADRS` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | see below |
 | 0x460 | `OV0_VID_BUF_PITCH0_VALUE` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
 | 0x470 | `OV0_AUTO_FLIP_CNTL` | common | read 4, write 4 | 4 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | see below |
 | 0x474 | `OV0_DEINTERLACE_PATTERN` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | see below |
@@ -217,7 +217,7 @@ write) as reads.
 | 0x4e4 | `OV0_VIDEO_KEY_CLR_LOW` | common | write 4 | 2 | static code at 0x43d100 | 0 | unknown |
 | 0x4e8 | `OV0_VIDEO_KEY_CLR_HIGH` | common | write 4 | 2 | static code at 0x43d100 | 0 | unknown |
 | 0x4f4 | `OV0_KEY_CNTL` | common | read 4, write 4 | 12 | static code at 0x43d100 | 0 | unknown |
-| 0x4f8 | `OV0_TEST` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
+| 0x4f8 | `OV0_TEST` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | see below |
 | 0x540 | `SUBPIC_CNTL` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
 | 0x600 | `OV1_Y_X_START` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
 | 0x604 | `OV1_Y_X_END` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
@@ -649,6 +649,25 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
 - **0xd34** in `fglrx_drv.so`: the public `OV0_LIN_TRANS_F` (common; `RADEON_OV0_LIN_TRANS_F`). It is the last of the
   six constants `FIREGL_ShowOverlay` stores before the `beq` at 0x43e020: `FIREGL_ShowOverlay` at 0x43df00 (1900
   bytes) writes zero to it at 0x43e00c. Inferred.
+
+- **0x424** in `fglrx_drv.so`: the public `OV0_V_INC` (common; `RADEON_OV0_V_INC` in `radeon_reg.h`).
+  `FIREGL_ShowOverlay` at 0x43df00 (1900 bytes) shifts s7 right by 4 at 0x43e160, shifts the result left by 8 at
+  0x43e168 and stores it at 0x43e16c. Inferred.
+- **0x430** in `fglrx_drv.so`: the public `OV0_P1_BLANK_LINES_AT_TOP` (common; `RADEON_OV0_P1_BLANK_LINES_AT_TOP` in
+  `radeon_reg.h`). `FIREGL_ShowOverlay` at 0x43df00 (1900 bytes) ORs 0xfff into the word in a4 at 0x43e46c and stores
+  the result at 0x43e470. Inferred.
+- **0x434** in `fglrx_drv.so`: the public `OV0_P23_BLANK_LINES_AT_TOP` (common; `RADEON_OV0_P23_BLANK_LINES_AT_TOP`).
+  The same routine ORs 0x7ff into the a4 word at 0x43e474, and stores the result at 0x43e478, two instructions after
+  the 0x430 store. Inferred.
+- **0x444** in `fglrx_drv.so`: the public `OV0_VID_BUF1_BASE_ADRS` (common; `RADEON_OV0_VID_BUF1_BASE_ADRS` in
+  `radeon_reg.h`). `FIREGL_ShowOverlay` at 0x43df00 (1900 bytes) stores zero to it at 0x43e4a8, which follows the
+  store at 0x43e49c in the same straight-line block. Inferred.
+- **0x448** in `fglrx_drv.so`: the public `OV0_VID_BUF2_BASE_ADRS` (common; `RADEON_OV0_VID_BUF2_BASE_ADRS`). The
+  store at 0x43e4b4 of `FIREGL_ShowOverlay` (1900 bytes) writes zero to it, in the same block as the 0x444 store.
+  Inferred.
+- **0x4f8** in `fglrx_drv.so`: the public `OV0_TEST` (common; `RADEON_OV0_TEST` in `radeon_reg.h`). `FIREGL_ShowOverlay`
+  at 0x43df00 (1900 bytes) stores zero to it at 0x43e484, two instructions before the read-modify-write of 0x420 at
+  0x43e48c. Inferred.
 
 ## Not in the tables
 
