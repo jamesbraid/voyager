@@ -265,3 +265,69 @@ Where an entry reads `errno`, it does so through the GOT slot at `gp+1728`.
   The request is void, with a declared size of 0.
   A call that succeeds returns 0.
   If ioctl fails, the negated errno comes back, read through `gp+1728`.
+
+## Locking, DRM handles and queue waits
+
+- `firegl_LockHardware` (`fglrx_dri.so`, address 0x4bdc80, 220 bytes): **established.** Every instruction is read.
+  It keeps a0 as the file descriptor and stores the caller's a1 as a word at offset 0 of an 8-byte block, with a zero word at offset 4.
+  It calls `ioctl` with request 0x8008642a, an in-only request of 8 bytes, and passes the block as the data argument.
+  A zero result returns 0.
+  On a non-zero result it loads errno through `gp+1728`. Errno 12, 19 or 22 makes it call `exit` through `gp+1768` with the negated errno, and it does not return.
+  For any other errno it calls `ioctl` again at once with the same arguments, and it rechecks errno after each failed repeat until one succeeds and it returns 0.
+  The binary gives only the errno numbers. Which condition the repeat waits out is an open sub-fact: the route tried is this routine's own code, and the next route is a published errno list for the IRIX release.
+
+- `firegl_LockPages` (`fglrx_dri.so`, address 0x4be100, 328 bytes): **established.** The body is read through its last word.
+  It returns -22 when a1 or a2 is zero.
+  It allocates 24 bytes with `drmMalloc` for a handle, and returns -12 when that fails.
+  It computes a page count from a2 and a1: with x = a2 + (a1 & 0x3fff), the count is x >> 14, plus one when x & 0x3fff is non-zero.
+  It allocates 4 times that count with `drmMalloc` for a table. When that fails it frees the handle and returns -12.
+  It builds a 20-byte request with a1 at offset 4, a2 at offset 8, the page count at offset 12 and the table pointer at offset 16.
+  It calls `ioctl` with request 0xc014644b, in and out, 20 bytes, and takes the kernel's word at offset 0 as an id.
+  On success it fills the handle with the id as a dword at offset 0, a1 at offset 8, a2 at offset 12, the page count at offset 16 and the table pointer at offset 20. It stores the handle through the a3 argument and returns 0.
+  On failure it frees the table, then the handle, and returns the negated errno.
+  Why only the low 14 bits of a1 enter the count is an open sub-fact, and the only route so far is this routine's code.
+
+- `firegl_TermDRM` (`fglrx_dri.so`, address 0x4bf040, 204 bytes): **established.** The routine is read through its last word.
+  It returns -22 when the handle in a0 is zero, or when its word at offset 12, 16 or 20 is zero.
+  The first `drmUnmap` takes the table's word at offset 12 as the address and the product of the table's word at offset 0 and its word at offset 16 as the size.
+  The second `drmUnmap` takes the handle's word at offset 12 as the address and four times the word at offset 8 of the pointer stored at handle offset 8 as the size.
+  The third `drmUnmap` takes the handle's word at offset 16 as the address and 16384 as the size.
+  It frees the table at offset 20, then the handle, and returns 0.
+  The layouts disagree: `firegl_LockPages` stores the byte size at handle offset 8 and the page count at offset 16, while this routine dereferences offset 8 and passes offset 16 as an address. Which layout a real handle has is an open sub-fact.
+
+- `__fglQSQuietDown` (`fglrx_dri.so`, address 0x4bf340, 244 bytes): **established.** The whole body is read.
+  It returns 0 at once when the bit 0x80000000 of the word at a0+3648 is clear.
+  Otherwise it reads that word up to 2,000,000 times and returns 0 as soon as the bit reads clear.
+  If the bit stays set through those reads, it calls the function pointer in the GOT slot at `gp+1608` with argument 0, testing the bit before each call. Each call adds 10,000 to a counter, and the loop runs 200 calls in all. It returns 0 when the bit clears, and 1 when the 200 calls finish with the bit still set.
+  The fact sheet labels the callee `sginap`. This build's symbol table does not name the slot, so that label is inferred.
+  The queue-quiet role is inferred from the polling loop itself.
+
+- `__fglDRMPM4Alloc` (`fglrx_dri.so`, address 0x4bf440, 104 bytes, the lowest of several definitions of this name): **established.** Every instruction is read.
+  It returns 0 when a1 is zero or negative.
+  Otherwise, with S the structure at a0+8, it computes an aligned count A = (a1 + [S+16] + 2) & ~[S+16].
+  When [S+4] + A is below [S+8] (unsigned) and [S+20] is not below A (unsigned), it returns [a0+12] + 4 times [S+4] and stores nothing.
+  Any other case tail-calls `firegl_PM4Alloc` through `gp+2096` with a0 and a1 as they arrived.
+  The field meanings are inferred from how these checks use them: an index at +4, a limit at +8, a mask at +16 and a free count at +20.
+
+- `__fglDRMPM4Submit` (`fglrx_dri.so`, address 0x4bf6c0, 72 bytes): **established.** Every instruction is read.
+  It calls `__fglDRMPM4Queue` at 0x4bf4c0 with a0 unchanged.
+  After that call it reads the word at a0+8 as P and the word at a0+4 as Q. It stores the word at P+4 into Q+1812, runs two SYNC instructions, and returns P.
+
+- `dummy_5` (`fglrx_dri.so`, address 0x4bfec0, 36 bytes): **established.** Every instruction is read.
+  It loads the word at gp+3024, reads the word at the address that holds, subtracts 2, and stores the result through the pointer at gp+3036.
+  gp is t9 plus 0x6dd8e0. With t9 equal to the routine's own address, which is the usual MIPS PIC entry convention, gp is 0xb9d7a0. That value is inferred, and it matches the gp of the other routines in this build.
+
+- `dummy_6` (`fglrx_dri.so`, address 0x4bff00, 36 bytes): **established.** Every instruction is read.
+  It loads the word at gp+3028, reads the word at the address that holds, subtracts 2, and stores the result through the pointer at gp+3024.
+
+## Display and drawable helpers
+
+- `find_display` (`fglrx_dri.so`, address 0x4bff40, 152 bytes): **established.** The whole routine is read.
+  The global at gp+3060 holds the X extension info. When it is null, the routine calls `XextCreateExtension` and stores the result there, and a null result returns 0.
+  With the info in hand, it calls `XextFindDisplay` with the info and the display in a0. A non-null result is returned.
+  When nothing is found, it calls `XextAddDisplay` with the info, the display, the extension name word at gp+3064, the hooks pointer 0xb827d8, and zero for the event count and the data argument. It returns that result.
+  The argument order matches the public libXext prototypes, which is inferred from the call sites.
+
+- `close_display` (`fglrx_dri.so`, address 0x4c0000, 56 bytes): **established.** The routine is read through its return.
+  It calls `XextRemoveDisplay` with the info at gp+3060 as the first argument and its own a0, moved into a1, as the second. It returns the call's result.
+
