@@ -850,6 +850,42 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
   (mask 0x1ff), V_BURST_LEVEL (mask 0x1ff) and a V_BURST_LEVEL shift of 16. Here the restore stores the value
   at 0x41c28c after loading +348 at 0x41c288. The save reads the register at 0x41d8bc and copies it to +348 at
   0x41d8c0. Inferred.
+- **0x42c** in `fglrx_drv.so`: the public `OV0_P23_V_ACCUM_INIT` (common, `radeon_reg.h`). `FIREGL_ShowOverlay` at 0x43df00 (1900 bytes) stores at 0x43e320 the value ((w24 + (w28 << 5)) << 15) | 2. w24 and w28 are the words at sp+24 and sp+28
+  that the call at 0x43e2c0 leaves there, loaded at 0x43e2ec and 0x43e2e8; the shifted w28 is written back to sp+28 at
+  0x43e310. Bit 1 is set. The pinned tables give no field layout for this register. Inferred.
+- **0x43c** in `fglrx_drv.so`: the public `OV0_BASE_ADDR` (common). In `FIREGL_ShowOverlay` at 0x43df00 (1900 bytes), the store at 0x43e510, in the delay slot of the
+  call at 0x43e50c, writes the low word of the doubleword at a5+176, loaded at 0x43e504. a5 is the doubleword at sp+96,
+  loaded at 0x43e2f8. The store runs only when the word at +9204 of the record in s2 is nonzero; the branch at
+  0x43e4d0 skips it otherwise. The pinned tables give no field layout. Inferred.
+- **0x460** in `fglrx_drv.so`: the public `OV0_VID_BUF_PITCH0_VALUE` (common). In `FIREGL_ShowOverlay` at 0x43df00 (1900 bytes), the store at 0x43e4bc writes
+  ((low word of a0 >> 3) << 4) & 0x000ffff0. a0 is the doubleword at sp+40, loaded at 0x43e2c8, and nothing writes a0
+  between that load and the store. The pinned tables give no field layout. Inferred.
+- **0x480** in `fglrx_drv.so`: the public `OV0_H_INC` (common). In `FIREGL_ShowOverlay` at 0x43df00 (1900 bytes), the store at 0x43e1c0 writes
+  ((w8 & 0x3fff) << 16) | (w0 & 0x3fff), where w8 and w0 are the words at sp+8 and sp+0, loaded at 0x43e19c and
+  0x43e1a0 after the call at 0x43e17c. Two 14-bit halves. Inferred.
+- **0x484** in `fglrx_drv.so`: the public `OV0_STEP_BY` (common). In `FIREGL_ShowOverlay` at 0x43df00 (1900 bytes), the store at 0x43e1f0 writes
+  (w4 & 7) | ((w12 & 7) << 8), with w4 and w12 the words at sp+4 and sp+12, loaded at 0x43e1a8 and 0x43e1b8. The fields
+  are bits 2:0 and bits 10:8. The pinned tables give no field layout. Inferred.
+- **0x488** in `fglrx_drv.so`: the public `OV0_P1_H_ACCUM_INIT` (common). In `FIREGL_ShowOverlay` at 0x43df00 (1900 bytes), the store at 0x43e22c writes
+  (w24 << 15) | (w28 << 28), with w24 and w28 read from sp+24 and sp+28 at 0x43e20c and 0x43e200. Both reads come after
+  the call at 0x43e1f8 and before the call at 0x43e230. The pinned tables give no field layout. Inferred.
+- **0x48c** in `fglrx_drv.so`: the public `OV0_P23_H_ACCUM_INIT` (common). In `FIREGL_ShowOverlay` at 0x43df00 (1900 bytes), the store at 0x43e24c writes the same shape,
+  (w24 << 15) | (w28 << 28), from the words read at 0x43e23c and 0x43e238, after the call at 0x43e230. So 0x488 and
+  0x48c take the stack slots before and after that call. The pinned tables give no field layout. Inferred.
+- **0x600** in `fglrx_drv.so`: the public `OV1_Y_X_START` (common). In `FIREGL_ShowOverlay` at 0x43df00 (1900 bytes), the store at 0x43e0ec writes zero. It runs only
+  when the word at +120 of the record in s2 is nonzero; the branch at 0x43e0e4 skips it otherwise. Inferred.
+- **0x604** in `fglrx_drv.so`: the public `OV1_Y_X_END` (common). In `FIREGL_ShowOverlay` at 0x43df00 (1900 bytes), the store at 0x43e0f0 writes a1, which the code
+  builds at 0x43e0d0 to 0x43e0e0 as ((s0 - 1) << 16) | (s5 - 1). The high half is the s0 term and the low half the s5
+  term, which follows the Y_X order of the name. It runs under the same condition as the store to 0x600. Inferred.
+- **0x740** in `fglrx_drv.so`: the public `CP_CSQ_CNTL` (`R_000740_CP_CSQ_CNTL` in `r100d.h`). `radeon_reg.h` also
+  names this offset `CRC_CMDFIFO_ADDR`, which is the conflict in the table above. In `R200EngineReset` at 0x40a5c0 (436 bytes),
+  the store of zero at 0x40a660 is followed at 0x40a664 by a read of the same word into zero. The branch at 0x40a608
+  either jumps to 0x40a630 or falls through a block that ends at 0x40a62c and reaches 0x40a630. The stretch from
+  0x40a630 to 0x40a668 has no branch, so the store runs on every path through the routine. The fields are
+  CSQ_CNT_PRIMARY (bits 7:0), CSQ_CNT_INDIRECT (bits 15:8) and CSQ_MODE (bits 31:28). Zero is mode 0,
+  `RADEON_CSQ_PRIDIS_INDDIS` in `radeon_reg.h`, with both queue counts cleared. Established for the store, the
+  read-back and the paths. The name is Inferred: the code clears every field of the CSQ register, and nothing in the
+  access shows whether it means the CRC address.
 
 ## Not in the tables
 

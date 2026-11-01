@@ -97,17 +97,17 @@ mmio	0x428		r4,w4	3	1	FIREGL_ShowOverlay;R200AdjustFrame	driver record +48	usr/X
 mmio	0x42c		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x430		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x434		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
-mmio	0x43c		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+mmio	0x43c		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x440		w4	2	1	FIREGL_ShowOverlay;R200AdjustFrame	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x444		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x448		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
-mmio	0x460		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+mmio	0x460		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x470		r4,w4	4	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x474		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
-mmio	0x480		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x484		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x488		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x48c		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+mmio	0x480		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
+mmio	0x484		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
+mmio	0x488		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
+mmio	0x48c		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x494		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x498		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x49c		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
@@ -117,9 +117,9 @@ mmio	0x4e8		w4	2	1	routine@0x43d100	driver record +48	usr/X11R6/lib/modules/driv
 mmio	0x4f4		r4,w4	12	1	routine@0x43d100	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x43d100	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x4f8		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x540		r4,w4	2	1	routine@0x41bc00	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x41bc00	understood	docs/registers.md#registers-read-in-full	Registers read in full
-mmio	0x600		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x604		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x740		r4,w4	2	1	R200EngineReset	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineReset	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+mmio	0x600		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
+mmio	0x604		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
+mmio	0x740		r4,w4	2	1	R200EngineReset	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineReset	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x7c0		r4	1	1	_r6x_resetPM4	device record +1000	usr/cpu/sysgen/IP35boot/fglrx.o:_r6x_resetPM4	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x800		r4,w4	41	1	RestoreTimingCode;SaveTimingCode;Set_MV_Mode;Write_FIFO_Values;routine@0x4112c0;routine@0x41bc00;+2 more	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:RestoreTimingCode	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x804		r4,w4	2	1	routine@0x41bc00	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x41bc00	understood	docs/registers.md#registers-read-in-full	Registers read in full
