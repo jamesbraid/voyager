@@ -40,16 +40,16 @@ usr/cpu/sysgen/IP35boot/vga.a(generic.o)	kernel	board-kernel	object	n64	12244	eb
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	kernel	board-kernel	object	n64	16260	784a30822d9da7a6		26	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	kernel	board-kernel	object	n64	6004	8eed8eff87c981fc		6	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)	kernel	board-kernel	object	n64	6980	3f71448ffb260753		4	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
-usr/cpu/sysgen/IP35boot/vga.a(junkcode.o)	kernel	board-kernel	object	n64	6324	03abcce4bdce0b4c		6	symtab	0	0	located	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(junkcode.o)	kernel	board-kernel	object	n64	6324	03abcce4bdce0b4c		6	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(xf86int10.o)	kernel	board-kernel	object	n64	15364	799ee4277be0e0a0		4	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	kernel	board-kernel	object	n64	8484	f266f8569838391d		4	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	kernel	board-kernel	object	n64	31492	97e6d38797999733		24	symtab	0	0	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
-usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	kernel	board-kernel	object	n64	13012	12e6ed1f380f5e3d		11	symtab	0	0	located	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	kernel	board-kernel	object	n64	31492	97e6d38797999733		24	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	kernel	board-kernel	object	n64	13012	12e6ed1f380f5e3d		11	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(vga_idbg.o)	kernel	board-kernel	object	n64	1220	75f91dc61018340c		0	none	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
-usr/cpu/sysgen/IP35boot/vgastubs.a(vgastubs.o)	kernel	board-kernel	object	n64	2916	8d2cf5ad44349166		1	none	0	0	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
-usr/cpu/sysgen/IP35boot/xbridge.o	kernel-shared	shared-kernel	object	n64	22768	c782e88889d3306a		2	symtab	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
-usr/cpu/sysgen/IP35boot/xswitch.o	kernel-shared	shared-kernel	object	n64	10304	2ac96f6287b076ad		13	symtab	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
-usr/cpu/sysgen/IP35boot/xtalk.o	kernel-shared	shared-kernel	object	n64	33624	7f6309db597c7480		71	symtab	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
+usr/cpu/sysgen/IP35boot/vgastubs.a(vgastubs.o)	kernel	board-kernel	object	n64	2916	8d2cf5ad44349166		1	none	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/xbridge.o	kernel-shared	shared-kernel	object	n64	22768	c782e88889d3306a		2	symtab	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
+usr/cpu/sysgen/IP35boot/xswitch.o	kernel-shared	shared-kernel	object	n64	10304	2ac96f6287b076ad		13	symtab	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
+usr/cpu/sysgen/IP35boot/xtalk.o	kernel-shared	shared-kernel	object	n64	33624	7f6309db597c7480		71	symtab	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
 usr/diags/SG/bin/biosemu	diagnostics	board-diagnostic	executable	n64	303832	589569f016c63086		473	dynsym	0	0	named-only	docs/open-questions.md#what-irix-programs-at-attach	What IRIX programs at attach
 usr/diags/SG/bin/olsg	diagnostics	board-diagnostic	executable	n64	2726440	21d56f822203d9ae		2217	dynsym	0	0	named-only	docs/open-questions.md#identity	Identity
 usr/diags/SG/bin/olsgsys	diagnostics	board-diagnostic	executable	n32	190372	2e766e00fe126c9f		171	dynsym	0	0	named-only	docs/open-questions.md#identity	Identity
@@ -75,9 +75,9 @@ usr/gfx/arch/IP35VOYAGER64/libGL.so	libraries	board-library	shared-object	n64	97
 usr/gfx/arch/IP35VOYAGER64/libGLcore.so	libraries	board-library	shared-object	n64	19096	1a3be8b6fa285037		1	dynsym	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/gfx/gfxtopology	tools	board-tool	data	-	6294	3ece1eb9e90ac3e6		0		0	0	named-only	AGENTS.md#2-project-binaries-and-evidence	2. Project binaries and evidence
 usr/gfx/sgcombine	tools	board-tool	executable	n32	230584	77d0273d5f4e91ec		402	dynsym	0	0	named-only	docs/open-questions.md#3d	3D
-usr/gfx/ucode/VOYAGER/sg2.bin	option-roms	board-microcode	data	-	40960	eb7c01d27867030b		0		0	0	named-only	docs/kernel-attach.md#which-cards-the-driver-claims	Which cards the driver claims
-usr/gfx/ucode/VOYAGER/sg3.bin	option-roms	board-microcode	data	-	40960	3510a7f26b9cb928		0		0	0	named-only	docs/kernel-attach.md#which-cards-the-driver-claims	Which cards the driver claims
-usr/gfx/ucode/VOYAGER/sg3a.bin	option-roms	board-microcode	data	-	40960	7d4520e8786024bc		0		0	0	named-only	docs/kernel-attach.md#which-cards-the-driver-claims	Which cards the driver claims
+usr/gfx/ucode/VOYAGER/sg2.bin	option-roms	board-microcode	data	-	40960	eb7c01d27867030b		0		0	0	understood	docs/binaries.md#option-rom-images	Option ROM images
+usr/gfx/ucode/VOYAGER/sg3.bin	option-roms	board-microcode	data	-	40960	3510a7f26b9cb928		0		0	0	understood	docs/binaries.md#option-rom-images	Option ROM images
+usr/gfx/ucode/VOYAGER/sg3a.bin	option-roms	board-microcode	data	-	40960	7d4520e8786024bc		0		0	0	understood	docs/binaries.md#option-rom-images	Option ROM images
 var/sysgen/master.d/fglrx	kernel-config	shared-data	data	-	392	2d037a2fefdfb967		0		0	0	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 var/sysgen/master.d/is1	kernel-config	shared-data	data	-	397	da0b7c4587a48d55		0		0	0	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 var/sysgen/master.d/pciio_ppb	kernel-config	shared-data	data	-	119	aba64368a130a66e		0		0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)

@@ -198,9 +198,28 @@ All objects in this section are 64-bit MIPS-IV relocatable files with DWARF debu
   It returns that call's result.
   **Inferred** that it is the PIC widget driver, the bus-side ASIC driver that sits above `pcibr.o`.
 
+- `usr/cpu/sysgen/IP35boot/xbridge.o` (REL, 22768 bytes): **established** from the symbol table that it defines two global functions.
+  `xbridge_init` is at address 0x0 (84 bytes) and `xbridge_attach` at address 0x54 (3484 bytes).
+  It imports 126 names, among them `pciio_provider_register` and `xwidget_driver_register`.
+  It has DWARF sections and no `.mdebug` section.
+  **Inferred** that it is the widget provider for the bridge chip: it registers a PCI I/O provider and a widget driver with the crossbar layer.
+- `usr/cpu/sysgen/IP35boot/xswitch.o` (REL, 10304 bytes): **established** from the symbol table that it defines 13 global functions, from `xswitch_info_get` to `xswitch_id_set`.
+  `xswitch_info_new` is at address 0x12c (152 bytes) and `xswitch_provider_register` at address 0x1c4 (40 bytes).
+  It imports eight names, among them `xbow_reset_link`.
+  It has DWARF sections and no `.mdebug` section.
+  **Inferred** that it keeps the per-link information records of a crossbar switch.
+  **Inferred** that `xbow_reset_link` is the call that resets one of its links.
+- `usr/cpu/sysgen/IP35boot/xtalk.o` (REL, 33624 bytes): **established** from the symbol table that it defines 70 global functions.
+  `xtalk_init` is at address 0x78c (88 bytes) and `xtalk_intr_connect` at 0x320 (28 bytes).
+  `xwidget_driver_register` is at 0x838 (116 bytes) and `xwidget_register` at 0x8f8 (292 bytes).
+  It imports 61 names, among them the `hub_piomap_alloc` and `hub_dmamap_alloc` routines of the hub provider.
+  It has DWARF sections and no `.mdebug` section.
+  **Inferred** that it is the crossbar bus layer: it keeps the widget and driver registries.
+  **Inferred** that it maps I/O and DMA space through the hub provider.
+
 ## VGA console and x86 emulator archive
 
-`usr/cpu/sysgen/IP35boot/vga.a` is an archive of 17 members, each a 64-bit MIPS-IV relocatable object with DWARF data. This section covers sixteen of them; `vga_init.o` is not described here. The routines named were checked instruction by instruction from their disassembly.
+`usr/cpu/sysgen/IP35boot/vga.a` is an archive of 17 members, each a 64-bit MIPS-IV relocatable object with DWARF data. This section covers all seventeen of them. The routines named were checked instruction by instruction from their disassembly.
 
 - `usr/cpu/sysgen/IP35boot/vga.a(debug.o)` (9604 bytes): **established** that it defines two global functions, `x86emu_dump_regs` and `x86emu_dump_xregs`.
   It imports `_X86EMU_env`, `cmn_err`, `sprintf` and `strlen`.
@@ -328,11 +347,9 @@ All objects in this section are 64-bit MIPS-IV relocatable files with DWARF debu
   `pciReadWord` at 0x2c (44 bytes) is the same with a 16-bit mask.
   `pciReadLong` at 0x58 (48 bytes) returns the word at the base plus `a1` when `a1` is nonzero.
   When `a1` is zero it returns the word at offset 280 of its first argument, ORed with the word at offset 284 shifted left 16.
-  `pciWriteByte` at 0x88 stores the low byte of `a2` at the base plus `a1`.
-  `pciWriteWord` at 0x98 stores a halfword.
-  `pciWriteLong` at 0xa8 stores a word.
-  **Inferred** from the names and the shift and mask pattern that these are PCI configuration accessors. The callers sit in other members, which were not read.
-
+  `pciWriteByte` at 0x88 (16 bytes) stores the low byte of `a2` at the base plus `a1`, where the base is the 64-bit word at offset 120 of its first argument.
+  `pciWriteWord` at 0x98 and `pciWriteLong` at 0xa8 do the same with a halfword and a word store.
+  **Inferred** that these are the PCI register accessors the VGA set-up calls: the routine names say PCI, and every accessor reaches its register through the same base pointer in the first argument.
 - `usr/cpu/sysgen/IP35boot/vga.a(xf86int10.o)` (15364 bytes): **established** from the symbol table that it defines `int_handler` and `int42_handler`.
   It also defines `int1A_handler` and `intE6_handler`.
   It defines the data word `Int10Current`.
@@ -383,16 +400,66 @@ All objects in this section are 64-bit MIPS-IV relocatable files with DWARF debu
   `vga_tport_lock_init` at 0x0 (48 bytes) sets `vga_tport_mute` to 1.
   It calls `wbflush` and sets `vga_tport_inuse` to 0.
   It calls `spinlock_init` on `vga_tport_lock`.
-  **Inferred** from the names that this initialises the TPort lock and its mute and in-use words. The whole body was read.
+  **Inferred** that this initialises the TPort lock and its mute and in-use words. The whole body was read.
   `vga_blankscreen` at 0x548 (68 bytes) returns at once when `vga_tport_mute` is nonzero.
   Otherwise it takes `vga_tport_lock` with `mutex_spinlock`.
   It stores `vga_tport_inuse` plus one, then stores zero back to `vga_tport_inuse`.
   It releases the lock with `mutex_spinunlock`, passing the new count.
-  It makes no other call, so the body never reaches a drawing routine. The name suggests blanking, but the body only takes and releases the lock.
+  It makes no other call, so the body never reaches a drawing routine. The body only takes and releases the lock, whatever the routine's name says.
   `vga_color` at 0x30 (84 bytes) follows the same mute check and lock pattern.
   It then stores the low byte of its second argument at offset 8 of the pointer in the gp-relative slot -30712.
-  **Inferred** from the names and the lock pattern that the mute and in-use words gate the TPort access path.
-
+  **Inferred** that the mute and in-use words gate the TPort access path, with the lock held while `vga_color` writes its byte.
 - `usr/cpu/sysgen/IP35boot/vga.a(vga_idbg.o)` (1220 bytes): **established** from its section table and symbol table that it has no code section and defines no symbol.
   It holds only DWARF debug sections, with the `.debug_info` section at offset 0x1c8 in the file.
   The unit it describes has one compile unit name. That name is not recorded here.
+
+- `usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)` (REL, 31492 bytes): **established** from the symbol table that it defines 24 function symbols.
+  `vga_earlyinit` is at address 0x0 (788 bytes), and `vga_shadow_bios` is at address 0x1018 (340 bytes).
+  `vga_init_board` is at address 0x11d0 (240 bytes), and `vga_restore_bridge` at address 0x192c (48 bytes).
+  It has DWARF sections.
+  **Inferred** that it is the VGA console set-up that the kernel runs before the PCI layer attaches drivers.
+  `docs/kernel-attach.md` gives its routines one by one and the order they run in.
+- `usr/cpu/sysgen/IP35boot/vgastubs.a(vgastubs.o)` (REL, 2916 bytes): **established** from the disassembly that it defines one global function, `vga_earlyinit`.
+  That function is at address 0x0 and 8 bytes long.
+  Its body is `jr ra` followed by `move v0,zero`, so the routine returns 0 and does nothing else.
+  **Inferred** that this member is a stand-in for the `vga_earlyinit` of `vga.a(vga_init.o)`, since both have the same name.
+
+## Kernel configuration entries
+
+Each file under `var/sysgen/master.d/` is the `lboot` entry for one kernel module.
+Every one is plain text.
+After the comment lines comes a data line with a flag, a routine prefix, a soft value, a device count and the dependencies.
+The file ends at a `$$$` line.
+
+## Option ROM images
+
+The three images are x86 PC option ROMs, each 40960 bytes long.
+Each opens with the signature `55 aa`, and offset 3 holds a near jump (`e9`) to the init code.
+The 16-bit pointer at offset 0x18 gives the PCI data structure, which starts with the text `PCIR`.
+[option-roms.md](option-roms.md) reads every field of the three images.
+
+- `usr/gfx/ucode/VOYAGER/sg2.bin` (40960 bytes): **established** from the header bytes.
+  The jump at offset 3 goes to 0x6c8.
+  The pointer at offset 0x18 is 0x194, where vendor 0x1002 and device 0x4e47 sit.
+  **Inferred** from the device ID that this is the FireGL X1 (R300) ROM.
+  The public Mesa PCI ID table names that device FireGL X1.
+- `usr/gfx/ucode/VOYAGER/sg3.bin` (40960 bytes): **established** from the header bytes.
+  The jump at offset 3 goes to 0x6d3.
+  The pointer at offset 0x18 is 0x194, where vendor 0x1002 and device 0x4e4b sit.
+  **Inferred** from the device ID that this is the FireGL X2 (R350) ROM.
+- `usr/gfx/ucode/VOYAGER/sg3a.bin` (40960 bytes): **established** from the header bytes.
+  The jump at offset 3 goes to 0x6c3.
+  The pointer at offset 0x18 is 0x184, where vendor 0x1002 and device 0x4e4b sit.
+  **Inferred** from the device ID that this is also a FireGL X2 (R350) image.
+  Its pointer and jump values differ from those of `sg3.bin`.
+
+## Board tools
+
+## Diagnostics
+
+## OpenGL libraries
+
+The o32 and N32 directories each hold `libGL.so`, `libGLcore.so` and `libgl.so`.
+The 64-bit directory holds `libGL.so` and `libGLcore.so` only.
+The export lists were compared as sorted name lists from the dynamic symbol tables.
+

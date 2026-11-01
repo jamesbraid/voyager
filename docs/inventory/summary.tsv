@@ -1,7 +1,7 @@
 table	rows	out_of_scope	understood	understood_with_open	understood_distinct	templated	located	named_only	undocumented	no_software_dependency	pct_understood	pct_located_or_better	pct_mentioned	pct_done	unresolved_sites	truncated	audited_real_pct	audited_sample	audited_date	computes	reused	multi_unit	shared_address	input
-binaries	84	0	43	0	43	0	2	28	11	0	51.2	53.6	86.9	51.2							0			
-functions	22294	45056	264	2	247	0	109	426	21495	0	1.2	1.7	3.6	1.2							0	503	17	
-functions (distinct names)	10713	19503	188	2	186	0	0	257	10268	0	1.8	1.8	4.2	1.8							0			
+binaries	84	0	53	0	53	0	0	20	11	0	63.1	63.1	86.9	63.1							0			
+functions	22294	45056	264	2	247	0	109	438	21483	0	1.2	1.7	3.6	1.2							0	503	17	
+functions (distinct names)	10713	19503	188	2	186	0	0	269	10256	0	1.8	1.8	4.3	1.8							0			
 mmio	201	0	69	0	66	0	132	0	0	0	34.3	100.0	100.0	34.3	37						0			
 tokens	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
 ioctls	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
@@ -29,9 +29,9 @@ functions in usr/X11R6/lib/modules/libvbe.so	21	0	21	0	21	0	0	0	0	0	100.0	100.0	
 functions in usr/cpu/sysgen/IP35boot/fglrx.o	384	0	44	1	42	0	3	50	287	0	11.5	12.2	25.3	11.5							0	4	10	
 functions in usr/cpu/sysgen/IP35boot/hubspc.o	13	0	0	0	0	0	0	6	7	0	0.0	0.0	46.2	0.0							0	0	0	
 functions in usr/cpu/sysgen/IP35boot/is1.o	54	0	0	0	0	0	0	8	46	0	0.0	0.0	14.8	0.0							0	0	0	
-functions in usr/cpu/sysgen/IP35boot/kernel.o	161	1157	0	0	0	0	0	7	154	0	0.0	0.0	4.3	0.0							0	0	7	
+functions in usr/cpu/sysgen/IP35boot/kernel.o	161	1157	0	0	0	0	0	9	152	0	0.0	0.0	5.6	0.0							0	0	7	
 functions in usr/cpu/sysgen/IP35boot/pcibr.o	160	105	0	0	0	0	0	8	152	0	0.0	0.0	5.0	0.0							0	0	0	
-functions in usr/cpu/sysgen/IP35boot/pciio.o	108	0	0	0	0	0	0	14	94	0	0.0	0.0	13.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/pciio.o	108	0	0	0	0	0	0	15	93	0	0.0	0.0	13.9	0.0							0	0	0	
 functions in usr/cpu/sysgen/IP35boot/pciio_ppb.o	18	0	0	0	0	0	0	3	15	0	0.0	0.0	16.7	0.0							0	0	0	
 functions in usr/cpu/sysgen/IP35boot/pciiox.o	2	0	0	0	0	0	0	2	0	0	0.0	0.0	100.0	0.0							0	0	0	
 functions in usr/cpu/sysgen/IP35boot/pic.o	13	0	0	0	0	0	0	2	11	0	0.0	0.0	15.4	0.0							0	0	0	
@@ -52,9 +52,9 @@ functions in usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	4	0	0	0	0	0	0	4	0	0	0.0
 functions in usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	24	0	3	0	3	0	0	11	10	0	12.5	12.5	58.3	12.5							0	0	0	
 functions in usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	11	0	0	0	0	0	0	4	7	0	0.0	0.0	36.4	0.0							0	0	0	
 functions in usr/cpu/sysgen/IP35boot/vgastubs.a(vgastubs.o)	1	0	0	0	0	0	0	1	0	0	0.0	0.0	100.0	0.0							0	0	0	
-functions in usr/cpu/sysgen/IP35boot/xbridge.o	2	0	0	0	0	0	0	0	2	0	0.0	0.0	0.0	0.0							0	0	0	
-functions in usr/cpu/sysgen/IP35boot/xswitch.o	13	0	0	0	0	0	0	0	13	0	0.0	0.0	0.0	0.0							0	0	0	
-functions in usr/cpu/sysgen/IP35boot/xtalk.o	71	0	0	0	0	0	0	4	67	0	0.0	0.0	5.6	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/xbridge.o	2	0	0	0	0	0	0	2	0	0	0.0	0.0	100.0	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/xswitch.o	13	0	0	0	0	0	0	4	9	0	0.0	0.0	30.8	0.0							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/xtalk.o	71	0	0	0	0	0	0	7	64	0	0.0	0.0	9.9	0.0							0	0	0	
 functions in usr/diags/SG/bin/biosemu	75	398	0	0	0	0	12	48	15	0	0.0	16.0	80.0	0.0							0	0	0	
 functions in usr/diags/SG/bin/olsg	2183	34	0	0	0	0	0	1	2182	0	0.0	0.0	0.0	0.0							0	0	0	
 functions in usr/diags/SG/bin/olsgsys	171	0	0	0	0	0	0	1	170	0	0.0	0.0	0.6	0.0							0	0	0	
