@@ -110,3 +110,58 @@ The Onyx4 installs a stock XFree86 4.x server, `usr/X11R6/bin/XFree86` (an N32 e
   A null record returns that null.
   Otherwise it calls `pciTag` with the record's words at +20, +24 and +28 (a0, a1, a2) and then the static routine at 0x10052380 with the tag in a0 and the saved a1, and returns that routine's result.
   **Inferred:** the record's three words are bus, device and function, and the static routine converts a bus range to a host range for that device.
+- `xf86GetPciInfoForEntity` (`XFree86`, 160 bytes at address 0x10051c80): **Established.**
+  Takes an entity index in a0.
+  It returns 0 when the index is not below the word at `xf86NumEntities` (signed compare), and 0 when the entity record `xf86Entities[a0]` has a word at +40 other than 2.
+  Otherwise it walks the array pointed to by `xf86PciVideoInfo`, up to a null entry, and returns the first record whose words at +20, +24 and +28 equal the entity's words at +44, +48 and +52, compared in that order; the last compare is branch-likely (0x10051d08).
+  If no record matches it returns 0.
+  **Inferred:** the value 2 at entity +40 is the PCI bus type, and the three words are bus, device and function, so the routine maps an entity to the video-device record the scan found for it.
+- `xf86GetPciEntity` (`XFree86`, 128 bytes at address 0x10051d40): **Established.**
+  Takes three values in a0, a1 and a2.
+  It scans `xf86Entities`, a count of `xf86NumEntities` pointers, in order, skipping entities whose word at +40 is not 2.
+  It returns the index of the first entity whose words at +44, +48 and +52 equal a0, a1 and a2, and -1 when the count is zero or nothing matches.
+  **Inferred:** the three values are bus, device and function; this is the reverse of the lookup in `xf86GetPciInfoForEntity`.
+- `xf86CheckPciSlot` (`XFree86`, 124 bytes at address 0x10051e00): **Established.**
+  The same scan of `xf86Entities` as `xf86GetPciEntity`, over entities whose word at +40 is 2 and whose words at +44, +48 and +52 equal a0, a1 and a2.
+  It returns 0 when one matches and 1 when none does or the count is zero.
+  **Inferred:** it answers whether a PCI slot is free, that is, not yet claimed by an entity.
+- `xf86IsPrimaryPci` (`XFree86`, 116 bytes at address 0x10051b00): **Established.**
+  Takes a record pointer in a0.
+  It reads the word at the data symbol `primaryBus` (slot 2320) and returns 0 unless that word is 2.
+  Otherwise it compares the symbol's words at +4, +8 and +12 with the record's words at +20, +24 and +28, in that order, and returns 1 only when all three are equal, otherwise 0.
+  **Inferred:** `primaryBus` is a record of the bus type and the bus, device and function of the display the firmware used, so the routine tells whether a device is that display.
+- `PciStateEnter` (`XFree86`, 208 bytes at address 0x10050d40): **Established.**
+  Walks the array of record pointers named by `xf86PciAccInfo`, up to a null entry, re-reading the array pointer after each record it processes.
+  A record whose word at +124 is zero is skipped.
+  For any other record it calls the static routine at 0x1004be00 with the word at record +12 in a0 and the address record +60 in a1, then the static routine at 0x1004bf00 with the same word and the address record +92, and finally copies the word at record +92 into the word at record +20.
+  The routine at 0x1004be00 reads PCI configuration offsets 0x04, 0x10, 0x14, 0x18, 0x1c, 0x20, 0x24 and 0x30 with `pciReadLong` and stores them as eight words, in that order, from the address it is given.
+  The routine at 0x1004bf00 clears the low two bits of configuration offset 0x04 with `pciSetBitsLong` (mask 3, value 0), writes offsets 0x30, 0x10, 0x14, 0x18, 0x1c, 0x20 and 0x24 back from the saved words with `pciWriteLong`, and finishes by writing offset 0x04 from the first saved word through a tail call.
+  **Inferred:** the word at record +12 is the PCI tag, the +60 area holds the state found on entry and the +92 area the server's own state, so the routine saves the boot-time configuration of each device and installs the server's.
+- `PciStateLeave` (`XFree86`, 160 bytes at address 0x10050ec0): **Established.**
+  Walks the same array as `PciStateEnter` and skips the same records (word at +124 zero).
+  For each other record it calls the static routine at 0x1004be00 with the word at record +12 and the address record +92, which stores the device's eight configuration words there.
+  It does not call the routine at 0x1004bf00 and does not write the word at +20.
+  **Inferred:** it captures the server's configuration so that a later `PciStateEnter` can restore it.
+- `DisablePciAccess` (`XFree86`, 156 bytes at address 0x10051000): **Established.**
+  Walks the same `xf86PciAccInfo` array as `PciStateEnter`, skipping records whose word at +124 is zero.
+  For the others it calls the static routine at 0x1004bb40 with the word at record +44.
+  That routine is a bare return: its first instruction at 0x1004bb40 is `jr ra` and the code at 0x1004bb80 is a separate routine.
+  So the per-device disable does nothing in this build.
+- `DisablePciBusAccess` (`XFree86`, 144 bytes at address 0x100510c0): **Established.**
+  Walks the list at `xf86BusAccInfo` by the word at node +28.
+  For each node whose word at +8 is nonzero it calls that function with the node as its argument.
+  Whether or not there was a hook, if the node's word at +24 is nonzero it stores zero into the word at +20 of the record that word points to.
+  An empty list returns at once and the routine returns nothing defined.
+  **Inferred:** the +8 hook switches the bus's access off, and the store clears the owning device record's cached command state.
+- `xf86ComparePciBusString` (`XFree86`, 152 bytes at address 0x10051a40): **Established.**
+  Takes a bus-address string in a0 and three values in a1, a2 and a3.
+  It calls `xf86ParsePciBusString` with the string and the addresses of three stack words (offsets 0, 4 and 8 of its frame).
+  If that returns 0 it returns 0.
+  Otherwise it compares the parsed words with a1, a2 and a3 in that order and returns 1 only when all three are equal.
+  **Inferred:** the three parsed words are bus, device and function.
+- `xf86EnablePciBusMaster` (`XFree86`, 160 bytes at address 0x10052600): **Established.**
+  Takes a record pointer in a0 and a flag in a1.
+  A null record returns at once (the returned value is the null).
+  Otherwise it builds a tag with `pciTag` from the record's words at +20, +24 and +28, reads configuration offset 4 with `pciReadLong`, and writes it back with `pciWriteLong`: with the flag nonzero the value ORed with 4, with the flag zero the value ANDed with 0xfffffffb (immediate -5).
+  It returns `pciWriteLong`'s result.
+  **Inferred:** offset 4 is the PCI command register and bit 2 the bus-master enable bit, as in the PCI specification.
