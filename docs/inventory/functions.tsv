@@ -7937,7 +7937,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a4c40	180	ano
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a4d00	184	aliasadd	dwarf+funcnames	5f2072459967		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a4dc0	340	skipwhite	dwarf+funcnames	a7c8b18a4212		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a4f40	468	lookup	dwarf+funcnames	7d743bd094dc		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a5140	1028	number	dwarf+funcnames	70c3ab35b006		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a5140	1028	number	dwarf+funcnames	70c3ab35b006		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a5580	788	next	dwarf+funcnames	471a0884a5a7		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a58c0	44	expect	dwarf+funcnames	ceb0aec0b6cd		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x6a5900	144	mapComponent	dwarf+funcnames	666d694407cb		in	undocumented		
@@ -20791,7 +20791,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ed4a0	180	a
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ed560	200	aliasadd	dwarf	cd9a5e43e3d8		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ed630	356	skipwhite	dwarf	23e24040fbb4		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ed7a0	500	lookup	dwarf	6f05a8626684		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ed9a0	1052	number	dwarf	293ed606294b		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ed9a0	1052	number	dwarf	293ed606294b		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6eddc0	892	next	dwarf	2326242b813d		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ee140	56	expect	dwarf	83730f8f6c82		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x6ee180	160	mapComponent	dwarf	5bb17b9e9782		in	undocumented		
@@ -34224,7 +34224,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69cc40	
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69cd00	184	aliasadd	dwarf+funcnames	92a6be3769a2		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69cdc0	340	skipwhite	dwarf+funcnames	a7c8b18a4212		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69cf40	468	lookup	dwarf+funcnames	35548e53bf30		in	undocumented		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69d140	1028	number	dwarf+funcnames	f9f280f1a533		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69d140	1028	number	dwarf+funcnames	f9f280f1a533		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69d580	788	next	dwarf+funcnames	5d78559ec2f4		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69d8c0	44	expect	dwarf+funcnames	bdab87352782		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x69d900	144	mapComponent	dwarf+funcnames	c29d1f8b11a1		in	undocumented		
@@ -47560,11 +47560,11 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13b4c	260	_r6x_EnableSt
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13c50	456	_r6x_InitMaskRamSize	dwarf+symtab	be67c904ff84		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13ed8	856	firegl_open_helper	dwarf+symtab	f55b5dde64c5		in	named-only	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x14230	128	firegl_release_swapready	dwarf+symtab	4dd91ed4c457	shared-address	in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x14230	128	is1_release_swapready	symtab	4dd91ed4c457	shared-address	in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x14230	128	is1_release_swapready	symtab	4dd91ed4c457	shared-address	in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x142b0	128	firegl_fire_swapready	dwarf+symtab	b1c12a349699	shared-address	in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x142b0	128	is1_fire_swapready	symtab	b1c12a349699	shared-address	in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x14330	128	firegl_unbind	dwarf+symtab	640acca81da0	shared-address	in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x14330	128	is1_unbind	symtab	640acca81da0	shared-address	in	named-only	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x14330	128	is1_unbind	symtab	640acca81da0	shared-address	in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x143b0	2736	firegl_release_helper	dwarf+symtab	6a8b8897e1a1		in	understood	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x14e60	308	fglrx_swap_ready	dwarf+symtab	82c0ce4fefe2		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15054	8	firegl_hash_mutex	dwarf	a67fb3d4fe26		in	undocumented		
@@ -47688,49 +47688,49 @@ usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x93c	176	is1_reg	dwarf+sym
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x9ec	120	is1_unreg	dwarf+symtab	4b7b4bfd5735		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0xa64	208	is1_unload	dwarf+symtab	73be3afeb52f		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0xb34	168	is1_unload_dev	dwarf	86cf36f57de1		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0xbdc	76	is1_error_handler	dwarf+symtab	c57fcf146564		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0xc28	156	is1_clear	dwarf	bb0609e2405b		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0xcc4	64	is1_clear_regs	dwarf	cf4e63dbfa89		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0xd04	2324	is1_attach	dwarf+symtab	0f801f163d5a		in	named-only	docs/kernel-attach.md#image-sync-driver	Image-sync driver
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x1618	604	is1_detach	dwarf+symtab	ded678cad332		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x1874	172	is1_remove_pipe	dwarf	a8a3d5758132		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x1920	348	is1_exit	dwarf+symtab	c4b2cc1aca19		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x1a7c	620	is1_open	dwarf+symtab	71afba3739b2		in	undocumented		
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0xbdc	76	is1_error_handler	dwarf+symtab	c57fcf146564		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0xc28	156	is1_clear	dwarf	bb0609e2405b		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0xcc4	64	is1_clear_regs	dwarf	cf4e63dbfa89		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0xd04	2324	is1_attach	dwarf+symtab	0f801f163d5a		in	understood	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x1618	604	is1_detach	dwarf+symtab	ded678cad332		in	understood	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x1874	172	is1_remove_pipe	dwarf	a8a3d5758132		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x1920	348	is1_exit	dwarf+symtab	c4b2cc1aca19		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x1a7c	620	is1_open	dwarf+symtab	71afba3739b2		in	understood	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x1ce8	468	is1_close	dwarf+symtab	6a6da0a05cbc		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x1ebc	412	is1_map	dwarf+symtab	648ed3802c63		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x2058	292	is1_ioctl_getargs	dwarf	4fd4480a35bf		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x217c	2940	is1_ioctl	dwarf+symtab	0a7d634d5bca		in	undocumented		
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x2058	292	is1_ioctl_getargs	dwarf	4fd4480a35bf		in	understood	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x217c	2940	is1_ioctl	dwarf+symtab	0a7d634d5bca		in	understood	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x2cf8	156	is1_malloc	dwarf+symtab	77556d8419b9		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x2d94	96	is1_free	dwarf+symtab	40af01a253aa		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x2df4	944	is1_hsync_discovery	dwarf+symtab	78e173146d35		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x31a4	924	is1_sync_pipes_request	dwarf+symtab	6f7a074e8364		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x3540	152	is1_release_swapready	dwarf+symtab	ef1c6eda7b74		in	undocumented		
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x2df4	944	is1_hsync_discovery	dwarf+symtab	78e173146d35		in	understood	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x31a4	924	is1_sync_pipes_request	dwarf+symtab	6f7a074e8364		in	understood	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x3540	152	is1_release_swapready	dwarf+symtab	ef1c6eda7b74		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x35d8	280	is1_fire_swapready	dwarf+symtab	bc043e0c10f9		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x36f0	180	is1_pipe_exit	dwarf	578a667c5e37		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x37a4	276	is1_unbind	dwarf+symtab	e6b4132f4996		in	named-only	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x37a4	276	is1_unbind	dwarf+symtab	e6b4132f4996		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x38b8	208	is1_register	dwarf+symtab	6359542e4217		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x3988	148	is1_clear_swapready	dwarf	7fe5cb478f5f		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x3a1c	300	is1_close_swapready	dwarf	7227e18418e4		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x3b48	144	is1_pipe_bound	dwarf+symtab	25c834ab5123		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x3bd8	284	is1_update_sync_source	dwarf+symtab	a141204954eb		in	undocumented		
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x3bd8	284	is1_update_sync_source	dwarf+symtab	a141204954eb		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x3cf4	112	is1_genlock_interrupt	dwarf+symtab	f16da5ea08a8		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x3d64	20	is1_attach_init	dwarf+symtab	3eb2d282bc50		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x3d78	284	is1_update_format	dwarf+symtab	830f0bf0f43a		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x3e94	708	is1_check_resync_done	dwarf+symtab	48709dd25129		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x4158	856	is1_intr	dwarf+symtab	d76d65717961		in	undocumented		
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x3d64	20	is1_attach_init	dwarf+symtab	3eb2d282bc50		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x3d78	284	is1_update_format	dwarf+symtab	830f0bf0f43a		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x3e94	708	is1_check_resync_done	dwarf+symtab	48709dd25129		in	understood	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x4158	856	is1_intr	dwarf+symtab	d76d65717961		in	understood	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x44b0	288	is1_read_pll	dwarf+symtab	dc5de503555d		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x45d0	8	is1_dbg_init	dwarf+symtab	78aa5094d5ec		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x45d8	8	is1_dbg_reset	dwarf+symtab	78aa5094d5ec		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x45e0	8	is1_dbg_attach	dwarf+symtab	78aa5094d5ec		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x45e8	8	is1_dbg_detach	dwarf+symtab	78aa5094d5ec		in	undocumented		
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x45d8	8	is1_dbg_reset	dwarf+symtab	78aa5094d5ec		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x45e0	8	is1_dbg_attach	dwarf+symtab	78aa5094d5ec		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x45e8	8	is1_dbg_detach	dwarf+symtab	78aa5094d5ec		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x45f0	8	is1_dbg_unload	dwarf+symtab	78aa5094d5ec		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x45f8	48	is1_get_sync_data	dwarf+symtab	e532dae77fb8		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x4628	192	is1_assemble_control	dwarf+symtab	84f78cf8ec9a		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x46e8	108	is1_assemble_video_format	dwarf+symtab	ddee4a28eba4		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x4754	36	is1_update_swap_sample	dwarf+symtab	afad1a157f74		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x4778	212	is2_assemble_control	dwarf+symtab	c81224ffec64		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x484c	148	is2_assemble_video_format	dwarf+symtab	e467a0394d6f		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x48e0	80	is2_update_swap_sample	dwarf+symtab	ce9b7d1f7ca2		in	undocumented		
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x4628	192	is1_assemble_control	dwarf+symtab	84f78cf8ec9a		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x46e8	108	is1_assemble_video_format	dwarf+symtab	ddee4a28eba4		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x4754	36	is1_update_swap_sample	dwarf+symtab	afad1a157f74		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x4778	212	is2_assemble_control	dwarf+symtab	c81224ffec64		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x484c	148	is2_assemble_video_format	dwarf+symtab	e467a0394d6f		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x48e0	80	is2_update_swap_sample	dwarf+symtab	ce9b7d1f7ca2		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64		0x0		VEC_int	dwarf+symtab			out:1	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x30	428	tfp_special_int_exit	symtab	dd899551a191		out:1	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x1dc	80	kpreemption	symtab	ca65f6ff0b60		out:4	undocumented		
@@ -47890,7 +47890,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7184	56	vector_concat
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x71bc	132	net_errmsg	dwarf+symtab	e1628d0cf439		out:7	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7240	240	hub_vector_read	dwarf+symtab	9497d3d1a211		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7330	240	hub_vector_write	dwarf+symtab	96f4c258fca6		in	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7420	140	copyin	dwarf+symtab	fb3474ce3584		out:3	named-only	docs/kernel-ioctl-irq-functions.md#ioctl-handlers	Ioctl handlers
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7420	140	copyin	dwarf+symtab	fb3474ce3584		out:3	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x74ac	140	copyout	dwarf+symtab	c649c7e0caf4		out:3	named-only	docs/kernel-ioctl-irq-functions.md#ioctl-handlers	Ioctl handlers
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7538	88	swcopyin	dwarf+symtab	bc3714125305		out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7590	88	swcopyout	dwarf+symtab	9061542da6f1		out:3	undocumented		
@@ -48358,7 +48358,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2179c	92	intr_thread_
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21800	56	tfi_save	dwarf+symtab	23e6f8986331		out:1	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21838	56	tfi_restore	dwarf+symtab	0a54feea6840		out:1	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21870	4	assbuffer	dwarf+symtab	df3f619804a9		out:3	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21874	1084	assfail	dwarf+symtab	5ab35cbbb27c		out:3	named-only	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21874	1084	assfail	dwarf+symtab	5ab35cbbb27c		out:3	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21cb0	12	getsr	dwarf+symtab	2ea7fc1f266e		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21cbc	16	setsr	dwarf+symtab	d5ed0e1e4ca1		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21ccc	8	getpc	dwarf+symtab	c343413c267a		out:4	undocumented		
@@ -48597,7 +48597,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29838	60	findcpufreq	
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29874	28	early_counter_intr	dwarf+symtab	264b54ee7fac		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29890	8	delay_calibrate	dwarf+symtab	78aa5094d5ec		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29898	52	us_delaybus	dwarf+symtab	fa8dffc9ef68		out:4	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x298cc	216	us_delay	dwarf+symtab	c50f4e303444		out:4	named-only	docs/kernel-compat-layer.md#time-address-translation-and-error-codes	Time, address translation and error codes
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x298cc	216	us_delay	dwarf+symtab	c50f4e303444		out:4	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x299b0	28	atomicAddInt	dwarf+symtab	fc57e68455bd	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x299b0	28	atomicAddUint	symtab	fc57e68455bd	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x299cc	32	atomicAddIntHot2	dwarf+symtab	3b46ea096c3c	shared-address	out:4	undocumented		
@@ -48634,7 +48634,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29d20	28	test_and_set
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29d20	28	test_and_set_long	symtab	d7bf6952a39d	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29d20	28	test_and_set_ptr	symtab	d7bf6952a39d	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29d3c	28	swap_int	dwarf+symtab	16dbf7b98860		out:4	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29d58	40	compare_and_swap_int	dwarf+symtab	42942dafb2b7		out:4	undocumented		
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29d58	40	compare_and_swap_int	dwarf+symtab	42942dafb2b7		out:4	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29d80	40	compare_and_inc_int_gt_zero	dwarf+symtab	9585f9cf6174		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29da8	48	compare_and_dec_int_gt	dwarf+symtab	0676ea1bbca6		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29dd8	48	compare_and_dec_int_gt_hot2	dwarf+symtab	4de61c2f4d97		out:4	undocumented		
@@ -49319,7 +49319,7 @@ usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x1c	28	pciio_piomap_fre
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x38	40	pciio_piomap_addr	dwarf+symtab	852ec84c3a31		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x60	28	pciio_piomap_done	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x7c	28	pciio_piotrans_addr	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x98	300	pciio_pio_addr	dwarf+symtab	fc3e5cf6f91d		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x98	300	pciio_pio_addr	dwarf+symtab	fc3e5cf6f91d		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x1c4	36	pciio_piospace_alloc	dwarf+symtab	34a53cf03dd2		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x1e8	28	pciio_piospace_free	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x204	28	pciio_pio_flush_read	dwarf+symtab	a86de4a9d7a4		in	undocumented		
@@ -49336,11 +49336,11 @@ usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x31c	284	pciio_dma_addr
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x438	28	pciio_dmamap_drain	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x454	28	pciio_dmaaddr_drain	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x470	28	pciio_dmalist_drain	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x48c	104	pciio_intr_alloc	dwarf+symtab	597f5500f168		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x4f4	28	pciio_intr_free	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x48c	104	pciio_intr_alloc	dwarf+symtab	597f5500f168		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x4f4	28	pciio_intr_free	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x510	28	pciio_intr_setmustrun	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x52c	28	pciio_intr_connect	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x548	28	pciio_intr_disconnect	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x52c	28	pciio_intr_connect	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x548	28	pciio_intr_disconnect	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x564	28	pciio_intr_cpu_get	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x580	100	pciio_slot_func_to_name	dwarf+symtab	a4baa723bf4b		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x5e4	160	pciio_cardinfo_get	dwarf+symtab	15a1d1b424ba		in	undocumented		
@@ -49366,25 +49366,25 @@ usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xac4	8	pciio_pio_kvaddr
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xacc	8	pciio_dma_dev_get	dwarf+symtab	f300cc2a20ca		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xad4	8	pciio_dma_slot_get	dwarf+symtab	2bc3072fa13b		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xadc	44	pciio_info_chk	dwarf+symtab	756b2e21dc21		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xb08	88	pciio_info_get	dwarf+symtab	3b609bd47efa		in	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xb08	88	pciio_info_get	dwarf+symtab	3b609bd47efa		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xb60	68	pciio_hostinfo_get	dwarf+symtab	ebc07ed6e434		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xba4	88	pciio_info_set	dwarf+symtab	1c934379f88d		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xbfc	8	pciio_info_dev_get	dwarf+symtab	2d3084abca7d		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc04	8	pciio_info_hostdev_get	dwarf+symtab	55470fa05862		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc0c	8	pciio_info_bus_get	dwarf+symtab	33a74c6e12a2		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc0c	8	pciio_info_bus_get	dwarf+symtab	33a74c6e12a2		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc14	8	pciio_info_slot_get	dwarf+symtab	ebbd3bbc6e9f		in	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc1c	44	pciio_info_hostslot_get	dwarf+symtab	bcd0285ba8c0		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc48	8	pciio_info_function_get	dwarf+symtab	1c97aa57fad9		in	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc50	8	pciio_info_vendor_id_get	dwarf+symtab	036d45786ba3		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc58	8	pciio_info_device_id_get	dwarf+symtab	6f38a18c3cfd		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc60	8	pciio_info_master_get	dwarf+symtab	6e5e9cada2b9		in	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc60	8	pciio_info_master_get	dwarf+symtab	6e5e9cada2b9		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc68	8	pciio_info_mfast_get	dwarf+symtab	e7201485a58d		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc70	8	pciio_info_pops_get	dwarf+symtab	a3fbec8c3140		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc78	8	pciio_info_efunc_get	dwarf+symtab	1aafdc9edf9a		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc80	8	pciio_info_einfo_get	dwarf+symtab	af1dbd06960a		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc88	24	pciio_info_bar_space_get	dwarf+symtab	83324a712bdb		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xca0	24	pciio_info_bar_base_get	dwarf+symtab	a4ae27d483b8		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xcb8	24	pciio_info_bar_size_get	dwarf+symtab	39744ebd0485		in	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xcb8	24	pciio_info_bar_size_get	dwarf+symtab	39744ebd0485		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xcd0	8	pciio_info_rom_base_get	dwarf+symtab	a127b1ae3c78		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xcd8	8	pciio_info_rom_size_get	dwarf+symtab	be69dc73eec3		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xce0	8	pciio_businfo_multi_master_get	dwarf+symtab	b893f60251e4		in	undocumented		
@@ -49416,7 +49416,7 @@ usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x12a4	52	pciio_device_w
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x12d8	68	pciio_device_win_populate	dwarf+symtab	aa574e29b7e6		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x131c	236	pciio_device_win_alloc	dwarf+symtab	fae88a6d0847		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x1408	48	pciio_device_win_free	dwarf+symtab	8c2ba2b576e4		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x1438	52	pciio_error_register	dwarf+symtab	4aed12658ed4		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x1438	52	pciio_error_register	dwarf+symtab	4aed12658ed4		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x146c	52	pciio_slot_inuse	dwarf+symtab	e374ad6d42ff		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x14a0	28	pciio_dma_enabled	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x14bc	8	pciio_info_type1_get	dwarf+symtab	960148d2389c		in	undocumented		
@@ -50027,11 +50027,11 @@ usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x524	8	xtalk_pio_mapsz_
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x52c	8	xtalk_pio_kvaddr_get	dwarf+symtab	402de11c1126		in	undocumented		
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x534	8	xtalk_dma_dev_get	dwarf+symtab	b893f60251e4		in	undocumented		
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x53c	8	xtalk_dma_target_get	dwarf+symtab	ee36d96101ba		in	undocumented		
-usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x544	44	xwidget_info_chk	dwarf+symtab	8c6627f03438		in	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
-usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x570	88	xwidget_info_get	dwarf+symtab	8a8109795078		in	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x544	44	xwidget_info_chk	dwarf+symtab	8c6627f03438		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x570	88	xwidget_info_get	dwarf+symtab	8a8109795078		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x5c8	88	xwidget_info_set	dwarf+symtab	bcb335ef950e		in	undocumented		
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x620	52	xwidget_info_dev_get	dwarf+symtab	f7cb8ce786ae		in	undocumented		
-usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x654	52	xwidget_info_id_get	dwarf+symtab	c123f3f7a4af		in	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
+usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x654	52	xwidget_info_id_get	dwarf+symtab	c123f3f7a4af		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x688	52	xwidget_info_master_get	dwarf+symtab	7b7fcfa8a12e		in	undocumented		
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x6bc	52	xwidget_info_masterid_get	dwarf+symtab	9d94b7ec3e9d		in	undocumented		
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x6f0	52	xwidget_info_part_num_get	dwarf+symtab	29f7829e778d		in	undocumented		
