@@ -314,7 +314,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10059500	84	xf86IsPrimInitDone	dyns
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10059580	72	xf86SetPrimInitDone	dynsym	2e53bbe8a406		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10059600	76	xf86ClearPrimInitDone	dynsym	8c8833a9674a		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10059680	220	xf86AllocateEntityPrivateIndex	dynsym	40763102a981		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10059780	84	xf86GetEntityPrivate	dynsym	43180219a30d		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10059780	84	xf86GetEntityPrivate	dynsym	43180219a30d		out:13	named-only	docs/x-video-driver.md#overlay-scaler	Overlay scaler
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10059800	316	xf86ClaimIsaSlot	dynsym	8b3603fbc51c		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10059940	1716	xf86GetIsaInfoForScreen	dynsym	723024b2bd0f		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1005a000	60	xf86ParseIsaBusString	dynsym	dc1f62c8959c		in	undocumented		
@@ -520,7 +520,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10071400	56	xf86CloseConsole	dynsym
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10071440	8	xf86VTSwitchPending	dynsym	87506497337c		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10071480	8	xf86VTSwitchAway	dynsym	87506497337c		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100714c0	8	xf86VTSwitchTo	dynsym	87506497337c		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10071500	220	xf86ReadBIOS	dynsym	239c7733af1a		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10071500	220	xf86ReadBIOS	dynsym	239c7733af1a		in	named-only	docs/x-video-driver.md#chip-library-start-up	Chip-library start-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10071600	60	xf86DisableInterrupts	dynsym	5c7c88975868		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10071640	56	xf86EnableInterrupts	dynsym	a92006f3a5bf		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10071680	188	xf86ProcessArgument	dynsym	40341a8195e0		out:13	undocumented		
@@ -29337,7 +29337,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x423b00	368	chec
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x423c80	544	getXF86ConfigFileName	dynsym	bb39293df7ee		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x423f80	1272	UpdateFile	dynsym	201f93500049		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424580	164	FGLCalculateCPUSpeed	dynsym	c5e7231ed109		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424640	188	FGLMDelay	dynsym	658fc3e2e920		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424640	188	FGLMDelay	dynsym	658fc3e2e920		in	named-only	docs/x-video-driver.md#x-video-driver-overlay-timing-stereo-and-bios-interface-routines	X video driver: overlay, timing, stereo and BIOS-interface routines
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424700	88	R200AvailableOptions	dynsym	71612adc35dc		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424780	364	R200Identify	dynsym	2bd0ca3a79e5		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424900	816	R200Probe	dynsym	4fef7a013f28		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
@@ -29381,26 +29381,26 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43aac0	1092	FIR
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43af40	1008	FIREGL_WindowExposures	dynsym	d6110c3fd2e4		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43cd00	80	FIREGL_OverlayGetPrivateClips	dynsym	b5bb037f8bc4		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43d040	156	FIREGL_OverlayCollectUnderlayRegions	dynsym	5bb0c2f0234c		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43db80	136	FIREGL_HideOverlay	dynsym	230064a54682		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43db80	136	FIREGL_HideOverlay	dynsym	230064a54682		in	understood	docs/x-video-driver.md#overlay-scaler	Overlay scaler
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43dc40	484	FIREGL_InitOverlay	dynsym	dcb9159b52d1		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43de40	184	FIREGL_FinishOverlayInit	dynsym	b099422dd956		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43df00	1900	FIREGL_ShowOverlay	dynsym	a217cd6b3ff4		in	named-only	docs/open-questions.md#register-accesses	Register accesses
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43df00	1900	FIREGL_ShowOverlay	dynsym	a217cd6b3ff4		in	understood	docs/x-video-driver.md#overlay-scaler	Overlay scaler
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43e680	244	FIREGL_EnableOverlay	dynsym	f8330a36886f		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43e780	636	FIREGL_OverlayLoadPalette	dynsym	bc5433e2b15e		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43ea80	828	R200LinuxCailInitCail	dynsym	0ef1c488bdd8		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f0c0	200	QBS_EnableOverlay	dynsym	a6c6f10c87c5		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f1c0	196	QBS_FinishInit	dynsym	513f7acef94e		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43ea80	828	R200LinuxCailInitCail	dynsym	0ef1c488bdd8		in	understood	docs/x-video-driver.md#chip-library-start-up	Chip-library start-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f0c0	200	QBS_EnableOverlay	dynsym	a6c6f10c87c5		in	named-only	docs/x-video-driver.md#stereo-and-clock-set-up	Stereo and clock set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f1c0	196	QBS_FinishInit	dynsym	513f7acef94e		in	understood	docs/x-video-driver.md#stereo-and-clock-set-up	Stereo and clock set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f2c0	328	QBS_MakeTrans	dynsym	2878d87e7e01		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f440	80	QBS_EnableStereo	dynsym	edb111640b3d		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4400c0	208	SaveTimingCode	dynsym	af76ad6d4f0a		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4401c0	240	RestoreTimingCode	dynsym	9f99a1e79d6a		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4437c0	1176	Write_FIFO_Values	dynsym	34d6dec96ffa		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f440	80	QBS_EnableStereo	dynsym	edb111640b3d		in	understood	docs/x-video-driver.md#stereo-and-clock-set-up	Stereo and clock set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4400c0	208	SaveTimingCode	dynsym	af76ad6d4f0a		in	understood	docs/x-video-driver.md#tv-timing	TV timing
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4401c0	240	RestoreTimingCode	dynsym	9f99a1e79d6a		in	understood	docs/x-video-driver.md#tv-timing	TV timing
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4437c0	1176	Write_FIFO_Values	dynsym	34d6dec96ffa		in	understood	docs/x-video-driver.md#tv-timing	TV timing
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x443c80	416	LoadTimingCode	dynsym	5c2eda9a1783		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4441c0	540	Set_MV_Mode	dynsym	7cb40e430164		in	named-only	docs/open-questions.md#register-accesses	Register accesses
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4441c0	540	Set_MV_Mode	dynsym	7cb40e430164		in	understood	docs/x-video-driver.md#tv-timing	TV timing
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x444400	1796	SetClk	dynsym	23ddf1f8de52		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x444b40	1256	SetCrtMN	dynsym	4ce9e0c30e61		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x445040	1036	VTMaster	dynsym	268c60de36aa		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x445480	580	R6TMDSTransmitLinux	dynsym	e1e5c02af224		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x445480	580	R6TMDSTransmitLinux	dynsym	e1e5c02af224		in	understood	docs/x-video-driver.md#stereo-and-clock-set-up	Stereo and clock set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x446400	92	ATITVoutAddExtension	dynsym	1ebdea3b4331		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4467c0	92	ATIHPVAddExtension	dynsym	e75956208a8e		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x446cc0	1040	R200SGIVCCopyModes	dynsym	cbb9a7f605a3		in	undocumented		
@@ -29410,7 +29410,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448300	200	R200
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448400	204	R200CompositorModeFlags	dynsym	d76134e9478d		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448780	600	R200LstComb	dynsym	ecbd81903343		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448f80	924	R200SetMonitorInfo	dynsym	9b6aa61201c6		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449540	60	R200GetCRTCResetState	dynsym	f4a553048662		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449540	60	R200GetCRTCResetState	dynsym	f4a553048662		in	understood	docs/x-video-driver.md#register-readback	Register readback
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449580	96	R200GetCursorScreen	dynsym	a00199fd559a		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449600	324	R200QryPltParam	dynsym	421c23c311fc		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449780	92	R200GetSGIInfoPtr	dynsym	f2a8319158a2		in	undocumented		
@@ -47783,7 +47783,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x13d0	300	set_sn12_typ
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x14fc	100	get_chimera_type	dwarf+symtab	e83cd0860867		out:7	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x1560	1072	in_cksum_sub	dwarf+symtab	345c882c1b77		out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x1674	796	in_cksum_pref	symtab	ad10fda21bca		out:3	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x1990	544	start	dwarf+symtab	141340c889b5		out:7	undocumented		
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x1990	544	start	dwarf+symtab	141340c889b5		out:7	named-only	docs/x-video-driver.md#tv-timing	TV timing
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x1b98	24	proc1	symtab	69302c1728cf		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x1bb0	168	mlclosure	dwarf+symtab	a1f795dec70c		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x1c58	8	silence_all_audio	dwarf+symtab	78aa5094d5ec	shared-address	out:7	undocumented		
