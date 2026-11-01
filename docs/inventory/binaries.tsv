@@ -46,7 +46,7 @@ usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	kernel	board-kernel	object	n64	8484	
 usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	kernel	board-kernel	object	n64	31492	97e6d38797999733		24	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	kernel	board-kernel	object	n64	13012	12e6ed1f380f5e3d		11	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(vga_idbg.o)	kernel	board-kernel	object	n64	1220	75f91dc61018340c		0	none	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
-usr/cpu/sysgen/IP35boot/vgastubs.a(vgastubs.o)	kernel	board-kernel	object	n64	2916	8d2cf5ad44349166		1	none	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vgastubs.a(vgastubs.o)	kernel	board-kernel	object	n64	2916	8d2cf5ad44349166		1	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/xbridge.o	kernel-shared	shared-kernel	object	n64	22768	c782e88889d3306a		2	symtab	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
 usr/cpu/sysgen/IP35boot/xswitch.o	kernel-shared	shared-kernel	object	n64	10304	2ac96f6287b076ad		13	symtab	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
 usr/cpu/sysgen/IP35boot/xtalk.o	kernel-shared	shared-kernel	object	n64	33624	7f6309db597c7480		71	symtab	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
