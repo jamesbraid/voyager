@@ -166,7 +166,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10041a40	36	xf86GetWeight	dynsym	93
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10041a80	36	xf86GetGamma	dynsym	5b6aa7d44e40		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10041ac0	24	xf86GetFlipPixels	dynsym	514e81514675		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10041b00	24	xf86GetServerName	dynsym	14858e35e4dc		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10041b40	36	xf86ServerIsExiting	dynsym	448eb8541865		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10041b40	36	xf86ServerIsExiting	dynsym	448eb8541865		out:13	named-only	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10041b80	24	xf86ServerIsResetting	dynsym	9ab678863509		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10041bc0	24	xf86ServerIsInitialising	dynsym	c18fa6842ab5		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10041c00	60	xf86ServerIsOnlyDetecting	dynsym	1cdd48769028		out:13	undocumented		
@@ -376,7 +376,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10060dc0	128	xf86parseWarning	dynsy
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10060e40	120	xf86validationError	dynsym	a43876cf721d		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10060ec0	116	xf86setSection	dynsym	b4446635c5fa		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10060f40	64	xf86getStringToken	dynsym	f1fc4c85e4d8		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10061040	788	xf86nameCompare	dynsym	ad6341b257f5		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10061040	788	xf86nameCompare	dynsym	ad6341b257f5		out:13	named-only	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10061380	504	xf86addComment	dynsym	ed29f369e2ab		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10061580	752	xf86parseFlagsSection	dynsym	af81138d9500		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10061880	160	xf86printServerFlagsSection	dynsym	6c9595066ad3		out:13	undocumented		
@@ -574,7 +574,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074500	60	xf86strlen	dynsym	63be7
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074540	52	xf86strncat	dynsym	82a1e54af243		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074580	52	xf86strncmp	dynsym	eea111c77845		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100745c0	236	xf86strncasecmp	dynsym	019f34ffaf01		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100746c0	52	xf86strncpy	dynsym	8042110e3d90		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100746c0	52	xf86strncpy	dynsym	8042110e3d90		out:13	named-only	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074700	52	xf86strpbrk	dynsym	d7d0347e53a5		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074740	52	xf86strrchr	dynsym	4a0e38be1484		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074780	60	xf86strspn	dynsym	ae628b874025		out:13	undocumented		
@@ -582,8 +582,8 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x100747c0	52	xf86strstr	dynsym	37d9d
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074800	52	xf86strtok	dynsym	775c0801518f		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074840	52	xf86strdup	dynsym	268d82ee5d39		out:13	named-only	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074880	80	xf86sprintf	dynsym	c9e1ea9a3e0f		out:13	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074900	80	xf86snprintf	dynsym	3003dd4a2831		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074980	56	xf86bzero	dynsym	6015e73115b8		out:13	named-only	docs/x-driver-functions.md#image-sync-and-swap-barrier	Image sync and swap barrier
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074900	80	xf86snprintf	dynsym	3003dd4a2831		out:13	named-only	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074980	56	xf86bzero	dynsym	6015e73115b8		out:13	named-only	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100749c0	80	xf86sscanf	dynsym	730848e9d5f6		out:13	named-only	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074a80	184	xf86open	dynsym	2b7f2599ea94		out:13	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074b40	80	xf86close	dynsym	2d7e1b75e8c6		out:13	undocumented		
@@ -697,7 +697,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077ec0	44	xf86isxdigit	dynsym	568
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077f00	52	xf86tolower	dynsym	fe75b606e398		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077f40	52	xf86toupper	dynsym	a5b4e2bb114c		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077f80	68	xf86calloc	dynsym	20f1e345a42b		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10078000	52	xf86free	dynsym	ce72219f8c60		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10078000	52	xf86free	dynsym	ce72219f8c60		out:13	named-only	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10078040	52	xf86frexp	dynsym	3e76a9827807		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10078080	52	xf86malloc	dynsym	dcd227c9bd2a		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100780c0	52	xf86realloc	dynsym	bf2069ea3bb3		out:13	undocumented		
@@ -29268,7 +29268,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		getSymbolVal
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		is1BuildBoardList	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		is1CfgRead	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		is1GetBoardFromScreenNumber	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		is1Init	dwarf+funcnames			in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		is1Init	dwarf+funcnames			in	named-only	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		is1ListFramelockFormats	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		is1Open	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		is1SetupFormatData	dwarf+funcnames			in	undocumented		
@@ -29367,7 +29367,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e7c0	224	vDiv
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e940	44	ulRC6PllReadUlong	dynsym	db9aa1456da0		in	understood	docs/x-driver-functions.md#clock-pll-access	Clock PLL access
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e980	76	vRC6PllWriteUlong	dynsym	9d46c33ba5e9		in	understood	docs/x-driver-functions.md#clock-pll-access	Clock PLL access
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42ea00	164	vRC6ProgramHTOT_CNTL_EDGE	dynsym	6ef04c05b5ed		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42fd00	92	FGLRXAddExtension	dynsym	66d72642fa51		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42fd00	92	FGLRXAddExtension	dynsym	66d72642fa51		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42fe00	1700	FGLSetGammaData	dynsym	f603fc7251bd		in	understood	docs/x-driver-functions.md#gamma-and-palette	Gamma and palette
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x430740	492	SGIGLXSwapBarrierInit	dynsym	807c8bbe1738		in	understood	docs/x-driver-functions.md#image-sync-and-swap-barrier	Image sync and swap barrier
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x430c40	328	vCalcCRTCOffsetRegs	dynsym	8b01cee869f6		in	understood	docs/x-driver-functions.md#frame-offset-registers	Frame offset registers
@@ -29404,37 +29404,37 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x445480	580	R6TM
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x446400	92	ATITVoutAddExtension	dynsym	1ebdea3b4331		in	understood	docs/fglrx-drv-functions.md#sgi-extensions-and-pipe-control	SGI extensions and pipe control
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4467c0	92	ATIHPVAddExtension	dynsym	e75956208a8e		in	understood	docs/fglrx-drv-functions.md#sgi-extensions-and-pipe-control	SGI extensions and pipe control
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x446cc0	1040	R200SGIVCCopyModes	dynsym	cbb9a7f605a3		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x447c80	144	R200SGIVCDetach	dynsym	26e355d4a41b		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x447c80	144	R200SGIVCDetach	dynsym	26e355d4a41b		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x447d40	132	R200GetBoardNumberFromScreen	dynsym	0fba92301a04		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448300	200	R200CompositorConnected	dynsym	e44ed893795d		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448400	204	R200CompositorModeFlags	dynsym	d76134e9478d		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448780	600	R200LstComb	dynsym	ecbd81903343		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448f80	924	R200SetMonitorInfo	dynsym	9b6aa61201c6		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448300	200	R200CompositorConnected	dynsym	e44ed893795d		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448400	204	R200CompositorModeFlags	dynsym	d76134e9478d		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448780	600	R200LstComb	dynsym	ecbd81903343		in	named-only	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448f80	924	R200SetMonitorInfo	dynsym	9b6aa61201c6		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449540	60	R200GetCRTCResetState	dynsym	f4a553048662		in	understood	docs/x-video-driver.md#register-readback	Register readback
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449580	96	R200GetCursorScreen	dynsym	a00199fd559a		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449600	324	R200QryPltParam	dynsym	421c23c311fc		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449600	324	R200QryPltParam	dynsym	421c23c311fc		in	named-only	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449780	92	R200GetSGIInfoPtr	dynsym	f2a8319158a2		in	understood	docs/fglrx-drv-functions.md#sgi-extensions-and-pipe-control	SGI extensions and pipe control
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449800	500	R200SetPltParam	dynsym	64a78e2af36d		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449e40	84	R200LdCombination	dynsym	280a8eafacfe		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44a400	1340	R200SGIVCAttach	dynsym	35fd47965bad		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44a940	96	R200SGIVCUpdateGenlockInfo	dynsym	2a4d1c2d5a3d		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449800	500	R200SetPltParam	dynsym	64a78e2af36d		in	named-only	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449e40	84	R200LdCombination	dynsym	280a8eafacfe		in	named-only	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44a400	1340	R200SGIVCAttach	dynsym	35fd47965bad		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44a940	96	R200SGIVCUpdateGenlockInfo	dynsym	2a4d1c2d5a3d		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44a9c0	216	R200SGIVCGetDefMode	dynsym	9e72e344629c		in	understood	docs/fglrx-drv-functions.md#sgi-extensions-and-pipe-control	SGI extensions and pipe control
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44aac0	144	R200SGIVCSetDefGamma	dynsym	b37a02821fa7		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44be40	440	ConvertPixel	dynsym	253964bd12ba		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44c800	56	R200ReadDisplayRegisterInfo	dynsym	26923ecb59d2		in	understood	docs/fglrx-drv-functions.md#sgi-extensions-and-pipe-control	SGI extensions and pipe control
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44d340	252	SGIGLXHyperpipeInitPipe	dynsym	c39704c77439		in	understood	docs/fglrx-drv-functions.md#sgi-extensions-and-pipe-control	SGI extensions and pipe control
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44d440	232	SGIGLXHyperpipeInit	dynsym	6a100667affb		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44d440	232	SGIGLXHyperpipeInit	dynsym	6a100667affb		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44d540	872	R200_driLockInit	dynsym	d5c332db7f6b		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x451bc0	1276	is1Attach	dynsym	263b7fbaeb46		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x451bc0	1276	is1Attach	dynsym	263b7fbaeb46		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4520c0	296	is1Reset	dynsym	e03b5a068e42		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x452200	268	is1SyncPipes	dynsym	cee5ac7c9d75		in	understood	docs/fglrx-drv-functions.md#sgi-extensions-and-pipe-control	SGI extensions and pipe control
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x452fc0	500	is1UpdateVideoFormat	dynsym	e79710ef4733		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x452fc0	500	is1UpdateVideoFormat	dynsym	e79710ef4733		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4531c0	176	is1GetGenlockParams	dynsym	9d7e4a423055		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453280	296	is1SaveGenlockParams	dynsym	a19287aef63e		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4534c0	316	is1SetGenlock	dynsym	5e2ae6f619ca		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453600	280	is1GenlockAchieved	dynsym	f3f5721eb9ad		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453740	88	is1IsAvailable	dynsym	0756d3e5ba0f		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4537c0	408	is1HsyncDetect	dynsym	927dd4f56e4f		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4537c0	408	is1HsyncDetect	dynsym	927dd4f56e4f		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453980	56	is1WakeupHandler	dynsym	6233a795d0da		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4539c0	184	is1BlockHandler	dynsym	d46ceccd5930		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453a80	336	is1Unblank	dynsym	94b8894ce77a		in	undocumented		
@@ -46426,7 +46426,7 @@ usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44d980	264	__g
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32	.text	0x44dac0	252	PositionWindow	dwarf+funcnames	3fd07833c534		in	undocumented		
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32	.text	0x44dbc0	64	wrapPositionWindow	dwarf+funcnames	a1507f3f116f		in	undocumented		
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44dc00	204	__glXSwapBarrierInit	dwarf+dynsym	f6e92cbcf619		out:14	named-only	docs/x-driver-functions.md#image-sync-and-swap-barrier	Image sync and swap barrier
-usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44dd00	180	__glXHyperpipeInit	dwarf+dynsym	495040e08f6a		in	undocumented		
+usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44dd00	180	__glXHyperpipeInit	dwarf+dynsym	495040e08f6a		in	named-only	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44ddc0	1328	__glXScreenInit	dwarf+dynsym	6a9806fbd0e7		in	undocumented		
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44e300	216	__glXScreenReset	dwarf+dynsym	d9624943aef4		in	undocumented		
 usr/X11R6/lib/modules/extensions/libglx.so	shared-x-server	n32		0x44e400	8	__glXNop	dwarf+dynsym	78aa5094d5ec		in	undocumented		
