@@ -727,6 +727,77 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
   defines no bits for the offset). At 0x41d310 the routine at 0x41d2c0 loads the aperture word, and at 0x41d314 it
   stores the word to +44. The routine at 0x41bc00 loads +44 at 0x41bc60 and stores it to the aperture at 0x41bc64.
   The code does not test any bit in either direction. Established.
+- **0x250** in `fglrx_drv.so`: the public `FP_CRTC_H_TOTAL_DISP` (common, `radeon_reg.h`), with the horizontal
+  total in bits 9:0 (mask 0x3ff) and the horizontal displayed count in bits 24:16 (mask 0x01ff0000). Two
+  sites, one restore and one save. The restore at 0x41bf00 loads the word at +184 of its record in a1 at
+  0x41bf10 and stores it to this register at 0x41bf14, with the aperture taken from +48 of the driver record.
+  The save at 0x41d440 loads the register at 0x41d448 and stores it to +184 of its record at 0x41d44c.
+  Inferred.
+- **0x254** in `fglrx_drv.so`: the public `FP_CRTC_V_TOTAL_DISP` (common, `radeon_reg.h`), with the vertical
+  total in bits 11:0 (mask 0xfff) and the vertical displayed count in bits 27:16 (mask 0x0fff0000). The
+  restore at 0x41bf00 loads the word at +188 of its record at 0x41bf18 and stores it to this register at
+  0x41bf1c. The save at 0x41d440 loads it at 0x41d450 and stores it to +188 of its record at 0x41d454.
+  Inferred.
+- **0x28c** in `fglrx_drv.so`: the public `FP_HORZ_STRETCH` (common, `radeon_reg.h`), and the header defines a
+  ratio mask of 0xffff, a panel width field of 0x1ff << 16 and a stretch enable at bit 25. The routine
+  sub_41bf00 takes the word at +208 of its record (load at 0x41bf40) and writes it to this register at
+  0x41bf44. The routine sub_41d440 reads this register at 0x41d468 and copies it to +208 of its record,
+  storing at 0x41d46c. Inferred.
+- **0x290** in `fglrx_drv.so`: the public `FP_VERT_STRETCH` (common, `radeon_reg.h`), whose header field
+  VERT_PANEL_SIZE is bits 23:12 (mask 0xfff << 12). In sub_41bf00 the register is written at 0x41bf4c from the
+  record word at +224, loaded at 0x41bf48. In sub_41d440 the register is read at 0x41d478, and its value goes
+  to +224 at 0x41d47c. Inferred.
+- **0x2a4** in `fglrx_drv.so`: the public `TMDS_TRANSMITTER_CNTL` (common, `radeon_reg.h`), which defines the
+  PLL enable as value 1 and the PLL reset as value 2. The routine sub_41bf00 loads +240 of its record at
+  0x41bf38 and stores the value to this register at 0x41bf3c. the routine sub_41d440 loads this register at
+  0x41d498 and stores the value to +240 at 0x41d49c. Inferred.
+- **0x2a8** in `fglrx_drv.so`: the public `TMDS_PLL_CNTL` (common, `radeon_reg.h`). The header gives no field
+  masks for it, so the entry describes only the copy. The restore at 0x41bf00 loads the word at +236 of its
+  record at 0x41bf30 and stores it to this register at 0x41bf34. The save at 0x41d440 loads it at 0x41d490 and
+  stores it to +236 at 0x41d494. Inferred.
+- **0x2c4** in `fglrx_drv.so`: the public `FP_H_SYNC_STRT_WID` (common, `radeon_reg.h`). The header's
+  flat-panel horizontal sync masks, FP_H_SYNC_STRT_CHAR (0x00001ff8) and FP_H_SYNC_WID (0x003f0000), fit this
+  word. The restore at 0x41bf00 loads the word at +200 of its record at 0x41bf20 and stores it to this
+  register at 0x41bf24. The save at 0x41d440 loads it at 0x41d460 and stores it to +200 at 0x41d464. Inferred.
+- **0x2c8** in `fglrx_drv.so`: the public `FP_V_SYNC_STRT_WID` (common, `radeon_reg.h`). The header's
+  flat-panel vertical sync masks, FP_V_SYNC_STRT (0x00000fff) and FP_V_SYNC_WID (0x001f0000), fit this word.
+  The restore at 0x41bf00 loads the word at +216 of its record at 0x41bf28 and stores it to this register at
+  0x41bf2c. The save at 0x41d440 loads it at 0x41d470 and stores it to +216 at 0x41d474. Inferred.
+- **0x2d4** in `fglrx_drv.so`: the public `LVDS_PLL_CNTL` (common, `radeon_reg.h`), with HSYNC_DELAY in bits
+  31:28 (mask 0xf << 28), LVDS_PLL_EN at bit 16 and LVDS_PLL_RESET at bit 17. The one site is a read in the
+  save routine at 0x41d440: the word is loaded at 0x41d488 and stored to +232 of its record at 0x41d48c. The
+  replay lists no store to this register. Inferred.
+- **0x300** in `fglrx_drv.so`: the public `CRTC2_H_TOTAL_DISP` (common, `radeon_reg.h`), with the horizontal
+  total in bits 9:0 (mask 0x3ff) and the horizontal displayed count in bits 24:16 (mask 0x1ff << 16). Three
+  sites. The restore routine entered at 0x41be00 stores the word at +152 of its record in a1 to this register
+  at 0x41be68, after loading it at 0x41be64. The save routine entered at 0x41d4c0 loads the register at
+  0x41d4e8 and stores it to +152 at 0x41d4ec. The copy routine entered at 0x41da84 loads it at 0x41db18 and
+  stores it to +596 of the driver record at 0x41db1c, on the path taken when the driver record's word at +24
+  is zero and its byte at +90 is nonzero. Inferred.
+- **0x304** in `fglrx_drv.so`: the public `CRTC2_H_SYNC_STRT_WID` (common, `radeon_reg.h`), with
+  CRTC2_H_SYNC_STRT_PIX (mask 0x07), CRTC2_H_SYNC_STRT_CHAR (mask 0x3ff << 3), CRTC2_H_SYNC_WID (mask 0x3f <<
+  16) and CRTC2_H_SYNC_POL at bit 23. Three sites, the same pattern as 0x300: the restore at 0x41be70 takes
+  the word from +156 of its record (loaded at 0x41be6c), the save at 0x41d4f4 writes it to +156 (loaded at
+  0x41d4f0), and the copy routine at 0x41da84 reads it at 0x41db20 and stores it to +600 of the driver record
+  at 0x41db24. Inferred.
+- **0x308** in `fglrx_drv.so`: the public `CRTC2_V_TOTAL_DISP` (common, `radeon_reg.h`), with CRTC2_V_TOTAL in
+  bits 10:0 (mask 0x7ff). Three sites: the restore at 0x41be78 takes the word from +160 of its record (loaded
+  at 0x41be74), the save at 0x41d4fc writes it to +160 (loaded at 0x41d4f8), and the copy routine at 0x41da84
+  reads it at 0x41db28 and stores it to +604 of the driver record at 0x41db2c. Inferred.
+- **0x30c** in `fglrx_drv.so`: the public `CRTC2_V_SYNC_STRT_WID` (common, `radeon_reg.h`), with
+  CRTC2_V_SYNC_STRT in bits 10:0 (mask 0x7ff), CRTC2_V_SYNC_WID in bits 20:16 (mask 0x1f << 16) and
+  CRTC2_V_SYNC_POL at bit 23. Three sites: the restore at 0x41be80 takes the word from +164 of its record
+  (loaded at 0x41be7c), the save at 0x41d504 writes it to +164 (loaded at 0x41d500), and the copy routine at
+  0x41da84 reads it at 0x41db30 and stores it to +608 of the driver record at 0x41db34. Inferred.
+- **0x32c** in `fglrx_drv.so`: the public `CRTC2_PITCH` (common, `radeon_reg.h`). The header gives no field
+  masks for it. Three sites: the restore at 0x41be98 takes the word from +176 of its record (loaded at
+  0x41be94), the save at 0x41d51c writes it to +176 (loaded at 0x41d518), and the copy routine at 0x41da84
+  loads it at 0x41db4c and stores it to +620 of the driver record in the delay slot of the call at 0x41db54,
+  at 0x41db58. Inferred.
+- **0xd68** in `fglrx_drv.so`: the public `DISP2_MERGE_CNTL` (common, `radeon_reg.h`), whose header defines
+  DISP2_RGB_OFFSET_EN at bit 8. The restore at 0x41be00 loads the word at +140 of its record at 0x41be28 and
+  stores it to this register at 0x41be2c. The save routine entered at 0x41d3c0 loads it at 0x41d428 and stores
+  it to +140 at 0x41d430. Inferred.
 
 ## Not in the tables
 
