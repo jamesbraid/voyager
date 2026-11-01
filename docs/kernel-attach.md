@@ -167,7 +167,7 @@ So the card's BIOS runs once, under the kernel's own x86 emulator, during the ea
 The x86 emulator in `vga.a` runs the card's option ROM against an emulated PC.
 This member holds the routines that load the emulator's registers, push an interrupt frame and route its port and memory accesses to the kernel.
 All of them reach the active emulation record through the global `Int10Current`, and the emulator's register file through a pointer in `.srdata`.
-In the record, the doubleword at +24 points at a table of six function pointers (read byte, halfword and word at +0, +8 and +16, write byte, halfword and word at +24, +32 and +40), and the doubleword at +80 is a handle that every port access passes to the kernel's `inb`, `inw`, `inl`, `outb`, `outw` and `outl`.
+In the record, the doubleword at +24 points at a table of six function pointers (read byte, halfword and word at +0, +8 and +16, write byte, halfword and word at +24, +32 and +40), and the doubleword at +80 is the board record, which every port access passes to the `vga.a(helper_legacy.o)` routines `inb`, `inw`, `inl`, `outb`, `outw` and `outl`; those use the record's doubleword at +176, the legacy I/O window, as the base of the port space.
 That table layout is **inferred** from how `Mem_rb` to `Mem_wl` and the repeat-port routines index it; nothing in this member fills it, so which kernel routines it points at is not read here.
 
 - `setup_int` (`vga.a(helper_exec.o)`, address 0x0, 148 bytes): **established.**
@@ -191,41 +191,41 @@ That table layout is **inferred** from how `Mem_rb` to `Mem_wl` and the repeat-p
   It reads the vector's segment halfword at 4n + 2 through the record's read-halfword entry; when that is 0xf000 it logs "Card BIOS on non-PC like platform not loaded" through `cmn_err` with level 5 (0x238) and returns 0.
   Otherwise it calls `pushw` three times, with the register-file halfwords at +62, +64 and +58 (0x1c8, 0x1d4, 0x1e0), and then replaces the halfword at +64 with the vector's segment and the halfword at +58 with its offset.
   It returns 1.
-  **Inferred:** the three values are the flags, code segment and instruction pointer, which an interrupt pushes before it jumps through the vector.
+  **Inferred:** the three values are the flags (the halfword at +62, set to 0x3200 by `setup_int`), the code segment (+64) and the instruction pointer (+58), which an interrupt pushes before it jumps through the vector.
 - `x_inb` (`vga.a(helper_exec.o)`, address 0x698, 92 bytes): **established.**
   Takes a port number in a0 and returns a byte.
   Port 64 (0x40) is answered from a counter instead of hardware: it adds 1 to the halfword at +10 of the `Int10Current` record and returns its low byte when bit 0 of the new value is clear and its high byte when bit 0 is set.
-  Every other port is passed to `inb` (0x6d8) with the handle at record +80 and the result is masked to 0xff.
+  Every other port is passed to `inb` (0x6d8) with the board record at +80 and the result is masked to 0xff.
   **Inferred:** the alternating bytes imitate reads of the timer channel 0 counter that BIOS delay loops use.
 - `x_inw` (`vga.a(helper_exec.o)`, address 0x6f4, 84 bytes): **established.**
   Takes a port in a0 and returns a halfword.
   Port 92 (0x5c) calls `get_ust_nano` (0x728) with a stack slot and returns the 64-bit value in the slot divided by 3260, unsigned, masked to 16 bits.
-  Every other port is passed to `inw` (0x70c) with the handle at record +80 and the result is masked to 0xffff.
+  Every other port is passed to `inw` (0x70c) with the board record at +80 and the result is masked to 0xffff.
 - `x_inl` (`vga.a(helper_exec.o)`, address 0x7d4, 80 bytes): **established.**
   Takes a port in a0 and returns a word.
-  It calls `pciCfg1in` with the handle at record +80, the port and a stack slot (0x7ec); when that returns nonzero it returns the word it left in the slot.
-  Otherwise it returns the result of `inl` (0x814) on the same handle and port.
+  It calls `pciCfg1in` with the board record at +80, the port and a stack slot (0x7ec); when that returns nonzero it returns the word it left in the slot.
+  Otherwise it returns the result of `inl` (0x814) on the same board record and port.
 - `x_outb` (`vga.a(helper_exec.o)`, address 0x748, 96 bytes): **established.**
   Takes a port in a0 and a value in a1 and returns nothing of its own.
   A write of the value 0 to port 67 (0x43) calls `get_ust_nano` (0x780) with a stack slot, divides the 64-bit result by 838 (unsigned), ORs 1 and stores the result as the halfword at +10 of the record, which is the counter `x_inb` reads through port 64.
-  Every other port and value goes to `outb` (0x76c) with the handle at record +80.
+  Every other port and value goes to `outb` (0x76c) with the board record at +80.
   **Inferred:** port 67 with value 0 is the timer's counter-latch command.
 - `x_outw` (`vga.a(helper_exec.o)`, address 0x7a8, 44 bytes): **established.**
-  Takes a port in a0 and a value in a1 and passes both unchanged to `outw` (0x7c0) with the handle at record +80.
+  Takes a port in a0 and a value in a1 and passes both unchanged to `outw` (0x7c0) with the board record at +80.
   It special-cases no port.
 - `x_outl` (`vga.a(helper_exec.o)`, address 0x824, 84 bytes): **established.**
   Takes a port in a0 and a value in a1.
-  It first calls `pciCfg1out` with the handle at record +80, the port and the value (0x844) and returns when that result is nonzero.
-  Otherwise it calls `outl` (0x868) with the handle, port and value.
+  It first calls `pciCfg1out` with the board record at +80, the port and the value (0x844) and returns when that result is nonzero.
+  Otherwise it calls `outl` (0x868) with the board record, port and value.
 - `pciCfg1in` (`vga.a(helper_exec.o)`, address 0x98c, 92 bytes): **established.**
-  Takes the handle in a0, a port in a1 and a result pointer in a2, and returns 1 when it handled the port and 0 otherwise.
+  Takes the board record in a0, a port in a1 and a result pointer in a2, and returns 1 when it handled the port and 0 otherwise.
   Port 3320 (0xcf8) stores the static `.sdata` word that `pciCfg1out` fills (the address latch) through the pointer.
-  Port 3324 (0xcfc) calls `pciReadLong` with the handle and only the low byte of the latch, 0xff-masked (0x9cc), and stores its result through the pointer.
-  Bus, device and function bits of the latch are not used: the access always goes to the card whose handle was passed, at the register offset in the latch's low byte.
+  Port 3324 (0xcfc) calls `pciReadLong` with the board record and the latch's low byte (masked with 0xff, 0x9cc), and stores its result through the pointer.
+  Bus, device and function bits of the latch are not used: the access always goes to the card of the board record, at the register offset in the latch's low byte.
 - `pciCfg1out` (`vga.a(helper_exec.o)`, address 0x9e8, 72 bytes): **established.**
-  Takes the handle in a0, a port in a1 and a value in a2, and returns 1 when it handled the port and 0 otherwise.
+  Takes the board record in a0, a port in a1 and a value in a2, and returns 1 when it handled the port and 0 otherwise.
   Port 3320 (0xcf8) stores the value in the static `.sdata` latch.
-  Port 3324 (0xcfc) calls `pciWriteLong` with the handle, the latch's low byte (0xff-masked) and the value (0xa1c).
+  Port 3324 (0xcfc) calls `pciWriteLong` with the board record, the latch's low byte (masked with 0xff) and the value (0xa1c).
   As in `pciCfg1in`, the bus, device and function bits of the latch are ignored.
 - `Mem_rb` (`vga.a(helper_exec.o)`, address 0x878, 44 bytes): **established.**
   Takes an emulated address in a0 and returns a byte.
@@ -270,6 +270,61 @@ That table layout is **inferred** from how `Mem_rb` to `Mem_wl` and the repeat-p
   Takes a base address in a0 and a length in a1 and returns the sum of that many bytes, reduced to eight bits after every addition.
   A length of zero or less returns 0 without reading; the loop reads two bytes a pass and stops when the count goes negative after the first or the second.
   Nothing in this member calls it; whether the result is compared with zero is up to the caller.
+
+## The emulated PC's memory image and the legacy port space (`vga.a(helper_mem.o)`, `helper_legacy.o`, `junkcode.o`)
+
+- `setup_int_vect` (`vga.a(helper_mem.o)`, address 0x0, 440 bytes): **established.**
+  Takes the emulation record in a0 and builds the emulated interrupt vector table through the record's write-halfword entry (table +32 of the table at record +24).
+  First, 128 times, it writes the offset 0 at linear address 4n and the segment 0xf000 at 4n + 2 (the loop branch at 0x58 is branch-likely).
+  It then calls `reset_int_vect`, and sets the offset halfword of the vectors 0x1f, 0x11, 0x12, 0x15, 0x1a, 0x05, 0x08, 0x13, 0x0e, 0x17 and 0x1e to 0xfa6e, 0xf84d, 0xf841, 0xf859, 0xff6e, 0xff54, 0xfea5, 0xec59, 0xef57, 0xefd2 and 0xefc7, in that order, so each points into segment 0xf000.
+  Last it reads the byte at linear 0x410 through the read-byte entry (table +0) and writes it back with bits 5:4 cleared (AND 0xcf).
+  **Inferred:** address 0x410 is the BIOS data area's equipment-list byte, whose bits 5:4 give the initial video mode, so the emulated machine starts with no video type set.
+- `reset_int_vect` (`vga.a(helper_mem.o)`, address 0x21c, 296 bytes): **established.**
+  Takes the record in a0.
+  It copies 92 bytes from the table in `.data` that the `.srdata` pointer names to linear 0xfa4 through the write-byte entry, then writes halfwords: vector 0x1d (linear 116) gets offset 0xfa4 and segment 0, and the vectors 0x10, 0x42 and 0x6d (linear 64, 264, 436) get offset 0xf065 and segment 0xf000.
+  **Inferred:** the 92 bytes are the BIOS video parameter table that vector 0x1d points at, and the 0xf065 entries are the default video handler address.
+  It returns nothing.
+- `setup_system_bios` (`vga.a(helper_mem.o)`, address 0x1b8, 100 bytes): **established.**
+  Takes the base of the 64 KB buffer that stands for segment 0xf000 in a0, fills it with 0xf4 through `memset` (0x1cc), and writes three things at the top of it: the text "06/11/99" at offset 0xfff5 (the unaligned store pair at 0x1f4 and 0x1f8) with a zero byte at 0xfffd, the 8 bytes "PCI_ISA" plus its zero terminator at 0xffd9, and the byte 0xfc at 0xfffe.
+  It returns 1.
+  **Inferred:** these are the system BIOS date, an identification string and the model byte, which option ROMs read to decide what machine they run on; 0xf4 is the x86 halt opcode.
+- `set_return_trap` (`vga.a(helper_mem.o)`, address 0x344, 68 bytes): **established.**
+  Takes the record in a0, writes the byte 0xf4 at linear 0x600 through the write-byte entry (call at 0x360), then calls `xf86Int10AllocPages` with the record, a count of 1 and the address record +72 (call at 0x370), and returns its result.
+  The linear address 0x600 matches the instruction pointer `setup_int` stores at register-file +56 (its low halfword at +58 is 0x600, with the code segment at +64 zero), so emulated code that returns to its starting point lands on a halt.
+  What the allocation call writes through its third argument is in `xf86Int10AllocPages`, not here.
+- `outb` (`vga.a(helper_legacy.o)`, address 0x0, 52 bytes): **established.**
+  Takes the board record in a0, a port in a1 and a byte value in a2.
+  It stores the byte on the stack and calls `wbadaddr_val` with the address (port, zero-extended to 32 bits, plus the doubleword at record +176), a width of 1 and the stack address (call at 0x20), so a write that bus-errors is caught.
+  It returns that call's result.
+- `outw` (`vga.a(helper_legacy.o)`, address 0x34, 44 bytes): **established.**
+  Takes the board record, a port and a halfword, swaps the two bytes of the halfword and stores it as a halfword at the port address in the legacy window (record +176).
+  It does a plain store with no bus-error protection and returns nothing.
+- `outl` (`vga.a(helper_legacy.o)`, address 0x60, 60 bytes): **established.**
+  Takes the board record, a port and a word, reverses the four bytes and stores the word at the port address in the legacy window (record +176) with a plain store.
+  It returns nothing and has no bus-error protection.
+- `inb` (`vga.a(helper_legacy.o)`, address 0x9c, 64 bytes): **established.**
+  Takes the board record in a0 and a port in a1 and reads a byte from the port address in the legacy window (record +176) through `_badaddr_val` with width 1 (call at 0xb8).
+  When that call reports a fault it returns 0xff; otherwise it returns the byte.
+- `inw` (`vga.a(helper_legacy.o)`, address 0xdc, 96 bytes): **established.**
+  The halfword input: `_badaddr_val` with width 2 (call at 0xf8), 0xffff on a fault, and otherwise the halfword with its two bytes swapped.
+- `inl` (`vga.a(helper_legacy.o)`, address 0x13c, 120 bytes): **established.**
+  The word input: `_badaddr_val` with width 4 (call at 0x158), the value -1 on a fault, and otherwise the word with its four bytes reversed.
+- `pciReadByte` (`vga.a(junkcode.o)`, address 0x0, 44 bytes): **established.**
+  Takes the board record in a0 and a configuration offset in a1.
+  It loads the 32-bit word at that offset in the configuration window (the doubleword at record +120), shifts it right by 0, 8, 16 or 24 bits chosen from the offset's low two bits through a four-entry table in `.data`, and returns the low byte.
+  The word load is at the offset as given, not rounded down to a multiple of 4.
+- `pciReadWord` (`vga.a(junkcode.o)`, address 0x2c, 44 bytes): **established.**
+  The same routine with a halfword result: the same word load and table-driven right shift, returning the low 16 bits.
+- `pciReadLong` (`vga.a(junkcode.o)`, address 0x58, 48 bytes): **established.**
+  Takes the board record in a0 and a configuration offset in a1.
+  For a nonzero offset it returns the word loaded from that offset in the configuration window (record +120).
+  For offset 0 it returns the word at record +280 ORed with the word at record +284 shifted left by 16, the vendor word (the one `vga_map_board_regions` compares with 0x1002) and the word after it, with no access to the card.
+- `pciWriteByte` (`vga.a(junkcode.o)`, address 0x88, 16 bytes): **established.**
+  Stores a2 as a byte at offset a1 in the configuration window (record +120) of the board record in a0, with no read-modify-write of the word around it.
+- `pciWriteWord` (`vga.a(junkcode.o)`, address 0x98, 16 bytes): **established.**
+  Stores a2 as a halfword at offset a1 in the configuration window (record +120) of the board record in a0.
+- `pciWriteLong` (`vga.a(junkcode.o)`, address 0xa8, 16 bytes): **established.**
+  Stores a2 as a word at offset a1 in the configuration window (record +120) of the board record in a0.
 
 ## After attach: firegl_init_module
 
