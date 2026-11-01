@@ -29397,7 +29397,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4401c0	240	Rest
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4437c0	1176	Write_FIFO_Values	dynsym	34d6dec96ffa		in	understood	docs/x-video-driver.md#tv-timing	TV timing
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x443c80	416	LoadTimingCode	dynsym	5c2eda9a1783		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4441c0	540	Set_MV_Mode	dynsym	7cb40e430164		in	understood	docs/x-video-driver.md#tv-timing	TV timing
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x444400	1796	SetClk	dynsym	23ddf1f8de52		in	located	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x444400	1796	SetClk	dynsym	23ddf1f8de52		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x444b40	1256	SetCrtMN	dynsym	4ce9e0c30e61		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x445040	1036	VTMaster	dynsym	268c60de36aa		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x445480	580	R6TMDSTransmitLinux	dynsym	e1e5c02af224		in	understood	docs/x-video-driver.md#stereo-and-clock-set-up	Stereo and clock set-up
