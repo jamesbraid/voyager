@@ -47282,19 +47282,19 @@ usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32		0x4030c0	196	VBEGetVBEpmi	d
 usr/X11R6/lib/modules/libvbe.so	shared-x-server	n32	.text	0x4031c0	40	vbeSetup	dwarf+funcnames	d722cd87d9b8		in	understood	docs/x-helper-modules.md#libvbeso	libvbe.so
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64		0x0		find_fglrx_pipe	dwarf+symtab			in	understood	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x84	1172	fglrx_init	dwarf+symtab	c186615a00ed		in	understood	docs/kernel-object-functions.md#detach-initialisation-and-device-identity	Detach, initialisation and device identity
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x518	52	fglrx_reload_dev	dwarf	89adc03be8aa		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x518	52	fglrx_reload_dev	dwarf	89adc03be8aa		in	understood	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x54c	324	fglrx_reg	dwarf+symtab	226f56ff40ef		in	understood	docs/kernel-attach.md#which-cards-the-driver-claims	Which cards the driver claims
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x690	180	fglrx_unreg	dwarf+symtab	1a456581a9a8		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x744	372	fglrx_unload	dwarf+symtab	9d6c79f65937		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x8b8	172	fglrx_unload_dev	dwarf	dc39da34cfb1		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x690	180	fglrx_unreg	dwarf+symtab	1a456581a9a8		in	understood	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x744	372	fglrx_unload	dwarf+symtab	9d6c79f65937		in	understood	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x8b8	172	fglrx_unload_dev	dwarf	dc39da34cfb1		in	understood	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x964	372	fglrx_intr	dwarf+symtab	6d76ad1b7d26		in	understood	docs/kernel-ioctl-irq-functions.md#vertical-sync-wait-and-engine-reset	Vertical-sync wait and engine reset
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xad8	260	fglrx_intr_list	dwarf+symtab	bb305038951d		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xad8	260	fglrx_intr_list	dwarf+symtab	bb305038951d		in	understood	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xbdc	4888	fglrx_attach	dwarf+symtab	c3d8ba1a8b2d		in	understood	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ef4	1072	fglrx_detach	dwarf+symtab	0e07c08ebcd6		in	understood	docs/kernel-object-functions.md#detach-initialisation-and-device-identity	Detach, initialisation and device identity
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x2324	488	checkBoardPointers	dwarf	eaec308c3c7e		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x250c	192	freeBoardPointers	dwarf	08d58a6964fc		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x25cc	404	checkBoardPointer	dwarf	31b12aa6dad9		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x2760	496	freeBoardPointer	dwarf	70c751fb3219		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ef4	1072	fglrx_detach	dwarf+symtab	0e07c08ebcd6		in	understood	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x2324	488	checkBoardPointers	dwarf	eaec308c3c7e		in	understood	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x250c	192	freeBoardPointers	dwarf	08d58a6964fc		in	understood	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x25cc	404	checkBoardPointer	dwarf	31b12aa6dad9		in	understood	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x2760	496	freeBoardPointer	dwarf	70c751fb3219		in	understood	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x2950	1268	fglrx_open	dwarf+symtab	b5c45c039ee4		in	understood	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x2e44	920	fglrx_close	dwarf+symtab	7a83eb6e25c9		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x31dc	84	fglrx_invalid_ioctl	dwarf+symtab	ab2a3c3ca333		in	undocumented		
@@ -47305,7 +47305,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x336c	16	fglrx_drm_unmap
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x337c	108	fglrx_give_up_privdev	dwarf	75e479acf52d		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x33e8	128	fglrx_get_vsync_cnt	dwarf	0f081e41d2d6		in	understood	docs/kernel-ioctl-irq-functions.md#ioctl-handlers	Ioctl handlers
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3468	988	fglrx_wait_vsync	dwarf	42a3f7460a6c		in	understood	docs/kernel-ioctl-irq-functions.md#vertical-sync-wait-and-engine-reset	Vertical-sync wait and engine reset
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3844	428	fglrx_validate_vsync	dwarf	bf4bbb23a3ea		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3844	428	fglrx_validate_vsync	dwarf	bf4bbb23a3ea		in	named-only	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x39f0	84	fglrx_dma_flush	dwarf+symtab	933317d067ae		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3a44	240	fglrx_is_brdmanager	dwarf	89fa35c7f425		in	understood	docs/kernel-ioctl-irq-functions.md#ioctl-handlers	Ioctl handlers
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3b34	64	fglrx_swapbuf_stat	dwarf	3e4a470ac151		in	undocumented		
@@ -47350,7 +47350,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5ac0	800	fglrxProbeComp
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5de0	1416	fglrx_hpipe_discover	dwarf	d6703d69cc24		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6368	440	fglrx_hp_fire_swapready	dwarf+symtab	99ec4f4a3c85		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6520	1028	fglrx_program_compositor_tiling	dwarf	1d8d3f4d1b35		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6924	280	bdata_from_pipename	dwarf	e0144ebcfbea		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6924	280	bdata_from_pipename	dwarf	e0144ebcfbea		in	understood	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6a3c	292	fglrx_compositor_reg_acc	dwarf+symtab	3caa91370697		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6b60	712	fglrx_compositor_setnic	dwarf+symtab	6ed251a57968		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6e28	164	fglrx_hp_get_topology	dwarf+symtab	9775f497edde		in	undocumented		
@@ -47365,7 +47365,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x7b48	572	fglrx_hp_bind	
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x7d84	520	fglrx_hp_unbind	dwarf+symtab	8c821b0700bb		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x7f8c	1000	fglrx_hp_qry_attrib	dwarf+symtab	874acfda27b3		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x8374	12	fglrx_hp_qry_bestattrib	dwarf+symtab	dc27baee7d3e		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x8380	1200	fglrx_hp_set_attrib	dwarf+symtab	ac2f2d3cd4f4		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x8380	1200	fglrx_hp_set_attrib	dwarf+symtab	ac2f2d3cd4f4		in	named-only	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x8830	1764	fglrxReadCompositorNic	dwarf	b93f2f84100e		in	understood	docs/kernel-object-functions.md#detach-initialisation-and-device-identity	Detach, initialisation and device identity
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x8f14	172	set_showconfig	dwarf	5556673ed058		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x8fc0	128	fglrx_hpipe_add_log	dwarf+symtab	1a801ba1fdc5		in	undocumented		
@@ -47373,7 +47373,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9040	152	__KE_ERROR	dwa
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x90d8	44	__KE_INFO	dwarf	90ad92382957	multi-unit	in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9104	44	__KE_DEBUG	dwarf	90ad92382957	multi-unit	in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9130	568	firegl_init_module	dwarf+symtab	61193629e173		in	named-only	docs/kernel-attach.md#order-of-events	Order of events
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9368	172	firegl_cleanup_module	dwarf+symtab	a5a57b5d2928		in	named-only	docs/kernel-object-functions.md#detach-initialisation-and-device-identity	Detach, initialisation and device identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9368	172	firegl_cleanup_module	dwarf+symtab	a5a57b5d2928		in	understood	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9414	116	__ke_alloc_wait_queue_head_struct	dwarf+symtab	e1da83871bb9		in	understood	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9488	104	__ke_free_wait_queue_head_struct	dwarf+symtab	00171995f905		in	understood	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x94f0	52	__ke_wake_up_interruptible	dwarf+symtab	89adc03be8aa		in	understood	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
@@ -47531,7 +47531,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xe6a4	680	drm_free_pages
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xe94c	500	drm_ioremap	dwarf+symtab	1a3b9f115e25		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xeb40	400	drm_ioremapfree	dwarf+symtab	f8707a3468ee		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xedec	672	firegl_init	dwarf+symtab	2e6205596378		in	named-only	docs/kernel-attach.md#which-cards-the-driver-claims	Which cards the driver claims
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xf08c	136	firegl_cleanup	dwarf+symtab	179a46c805c1		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xf08c	136	firegl_cleanup	dwarf+symtab	179a46c805c1		in	understood	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xf114	940	firegl_open	dwarf+symtab	a41b5c627a12		in	understood	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xf4c0	856	firegl_release	dwarf+symtab	af6a139e2375		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xf818	696	firegl_ioctl	dwarf+symtab	40c4cefc5500		in	undocumented		
@@ -47678,10 +47678,10 @@ usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x470	156	hubspc_map	dw
 usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x50c	96	hubspc_unmap	dwarf+symtab	05a036caff72		in	undocumented		
 usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x56c	124	hubspc_ioctl	dwarf+symtab	714455264080		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64		0x0		fglrx_hpipe_init_idbg	dwarf			in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x8	468	checkBoardPointers	dwarf	104388feb140		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x1dc	344	freeBoardPointers	dwarf	b96d3ec07a9b		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x334	476	checkBoardPointer	dwarf	41292b578ff7		in	undocumented		
-usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x510	512	freeBoardPointer	dwarf	ea200a1a3b92		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x8	468	checkBoardPointers	dwarf	104388feb140		in	located	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x1dc	344	freeBoardPointers	dwarf	b96d3ec07a9b		in	located	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x334	476	checkBoardPointer	dwarf	41292b578ff7		in	located	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
+usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x510	512	freeBoardPointer	dwarf	ea200a1a3b92		in	located	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x710	504	is1_init	dwarf+symtab	e5fbad25da96		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x908	52	is1_reload_dev	dwarf	89adc03be8aa		in	undocumented		
 usr/cpu/sysgen/IP35boot/is1.o	board-kernel	n64	.text	0x93c	176	is1_reg	dwarf+symtab	8c141be2cf0e		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
@@ -47898,7 +47898,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x75e8	140	uzero	dwarf+
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7674	20	cerror	dwarf+symtab	0450a8508780		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7688	276	memset	dwarf+symtab	327dd5bf2d15		out:3	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x779c	60	blkclr	symtab	438bc6af403a	shared-address	out:3	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x779c	164	bzero	dwarf+symtab	62975b520d71	shared-address	out:3	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x779c	164	bzero	dwarf+symtab	62975b520d71	shared-address	out:3	named-only	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x77d8	104	bzero_pref	symtab	721fae2475d8		out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7840	8	bzero_end	symtab	78aa5094d5ec	shared-address	out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7840	8	bzerror	dwarf+symtab	78aa5094d5ec	shared-address	out:3	undocumented		
@@ -48358,7 +48358,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2179c	92	intr_thread_
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21800	56	tfi_save	dwarf+symtab	23e6f8986331		out:1	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21838	56	tfi_restore	dwarf+symtab	0a54feea6840		out:1	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21870	4	assbuffer	dwarf+symtab	df3f619804a9		out:3	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21874	1084	assfail	dwarf+symtab	5ab35cbbb27c		out:3	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21874	1084	assfail	dwarf+symtab	5ab35cbbb27c		out:3	named-only	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21cb0	12	getsr	dwarf+symtab	2ea7fc1f266e		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21cbc	16	setsr	dwarf+symtab	d5ed0e1e4ca1		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21ccc	8	getpc	dwarf+symtab	c343413c267a		out:4	undocumented		
@@ -49315,9 +49315,9 @@ usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x19184	620	pcireg_int_a
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x193f0	620	pcireg_int_ate_set	dwarf+symtab	9e39aa7ea7b3		out:12	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x1965c	596	pcireg_int_ate_addr	dwarf+symtab	e6ded06d5aa5		out:12	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64		0x0		pciio_piomap_alloc	dwarf+symtab			in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x1c	28	pciio_piomap_free	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x1c	28	pciio_piomap_free	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x38	40	pciio_piomap_addr	dwarf+symtab	852ec84c3a31		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x60	28	pciio_piomap_done	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x60	28	pciio_piomap_done	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x7c	28	pciio_piotrans_addr	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x98	300	pciio_pio_addr	dwarf+symtab	fc3e5cf6f91d		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x1c4	36	pciio_piospace_alloc	dwarf+symtab	34a53cf03dd2		in	undocumented		
@@ -49337,10 +49337,10 @@ usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x438	28	pciio_dmamap_dr
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x454	28	pciio_dmaaddr_drain	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x470	28	pciio_dmalist_drain	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x48c	104	pciio_intr_alloc	dwarf+symtab	597f5500f168		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x4f4	28	pciio_intr_free	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-object-functions.md#detach-initialisation-and-device-identity	Detach, initialisation and device identity
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x4f4	28	pciio_intr_free	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x510	28	pciio_intr_setmustrun	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x52c	28	pciio_intr_connect	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x548	28	pciio_intr_disconnect	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-object-functions.md#detach-initialisation-and-device-identity	Detach, initialisation and device identity
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x548	28	pciio_intr_disconnect	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x564	28	pciio_intr_cpu_get	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x580	100	pciio_slot_func_to_name	dwarf+symtab	a4baa723bf4b		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x5e4	160	pciio_cardinfo_get	dwarf+symtab	15a1d1b424ba		in	undocumented		
@@ -49397,7 +49397,7 @@ usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xd60	36	pciio_provider_
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xd84	36	pciio_provider_unregister	dwarf+symtab	ce5f7189bb97		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xda8	44	pciio_provider_fns_get	dwarf+symtab	58bb2461dee9		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xdd4	116	pciio_driver_register	dwarf+symtab	cf9c9d2c0804		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xe48	36	pciio_driver_unregister	dwarf+symtab	17c39a74e258		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xe48	36	pciio_driver_unregister	dwarf+symtab	17c39a74e258		in	named-only	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xe6c	28	pciio_driver_reg_callback	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xe88	28	pciio_driver_unreg_callback	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xea4	80	pciio_iterate	dwarf+symtab	4d48fba0640d		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects

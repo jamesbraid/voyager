@@ -61,6 +61,93 @@ The PCI bus clock and width the cards run at are neither read nor set by `fglrx.
 - `fglrx_init`: allocates the board tables, registers every pipe the VGA layer knows and then replays found devices to `fglrx_attach` with `pciio_iterate`; the step-by-step entry is in [kernel-object-functions.md](kernel-object-functions.md#detach-initialisation-and-device-identity).
 - `find_fglrx_pipe` (`fglrx.o`, address 0x0): **established.** Calls `find_vga_pipe(pipe)`; when that returns a record it copies the record's halfword at +80 and doubleword at +96 to the two pointers given and returns 1, otherwise -1. `find_vga_pipe` is not defined in any of the shipped IP35 objects read so far (`fglrx.o`, `vga.a`, `vgastubs.a`, `kernel.o`, `pcibr.o`, `pic.o`): **unknown** where it lives ([open questions](open-questions.md#host-attachment)).
 
+## Board bookkeeping and detach
+
+- `fglrx_detach` (`fglrx.o`, address 0x1ef4, 1072 bytes, 1088-byte frame):
+  **established.** The reverse of `fglrx_attach`, read in full.
+  Its argument (a0, kept in s2) is the card's connection vertex.
+  It reads the 3-byte class code at configuration offset 9 (`pciio_config_get(vertex, 9, 3)`, 0x1f24) and returns 5 unless bits 23:16 are 3 and bits 15:8 are 0, the display-controller and VGA-compatible class.
+  It looks the `fglrx` edge up below the vertex (`hwgraph_traverse`, 0x1f9c); when that fails it logs "%s: can't traverse to 'fglrx'" through `cmn_err(4, ...)` (0x22e0) and returns 6.
+  Otherwise the board record is the fast-info word of the vertex it found (`hwgraph_fastinfo_get`, 0x1fc4) and the board index is the word at record +428.
+  A failed assertion call (`assfail`, 0x2314, text `fglrx_boards[brd] == bdata`, line 1244 of the driver's init source) is made when the table slot for that index is not the record, and the routine goes on.
+  Teardown, in order:
+  `firegl_cleanup_module(record)` (0x2020); when the interrupt handle at +696 is nonzero, `pciio_intr_disconnect` (0x2048) and `pciio_intr_free` (0x2068), then +696 is cleared;
+  `bzero` of a 1024-byte stack buffer (0x2090) and `sprintf` (0x20bc) of `hint.%s%d` with `fglrx` and the index;
+  `hwgraph_edge_remove` of that name from the connection vertex (0x20e4);
+  `hwgraph_inventory_remove(+412, 7, 24, +432, +428, +436)` (0x2118), the same six values `fglrx_attach` gave `hwgraph_inventory_add`;
+  `hwgraph_edge_remove` of `fglrx` (0x2140);
+  `hwgraph_vertex_destroy` of the vertex whose handle is the word at +412 (0x2168), after which -1 is stored at +412; when +560 is nonzero, `kmem_free(+560, +568)` (0x2198) and +560 is cleared, which releases the ROM copy `fglrx_attach` made; when +544 is nonzero, `pciio_piomap_done` (0x21c4) and `pciio_piomap_free` (0x21e4) on it and +544 is cleared, which is the map handle that `fglrx_attach` passes as the sixth argument of its ROM `pciio_pio_addr` call.
+  It then takes `GfxBoardInitSema` (`psema(sema, 25)`, 0x2224), calls `freeBoardPointer(index)` (0x2244), stores zero in the index's slot of `fglrx_boards` (8-byte entries) and of `fglrx_binuse` (4-byte entries), releases the semaphore with `vsema` (0x22b0) and returns 0.
+  It makes no call that unmaps BARs 0 to 2 or the legacy windows.
+- `checkBoardPointers` (`fglrx.o`, address 0x2324, 488 bytes):
+  **established.** Every instruction of its two allocation blocks and three failure branches was followed against the relocation table.
+  Makes the two per-board tables on first use.
+  When the table pointer at `.data` +328 (`fglrx_boards`) is already nonzero it returns at once.
+  Otherwise it allocates `GfxBoardLimit` entries of 8 bytes (`kmem_zalloc(count << 3, 1)`, 0x2398) and clears them (`bzero`, 0x23c8); a failed allocation logs "fglrx: checkBoardPointers(fglrx_boards) failed" with `cmn_err(0, ...)` (0x2470) and still goes on to the `bzero`.
+  If the pointer at `.data` +312 (`fglrx_binuse`) is already nonzero it makes the failed-assertion call `assfail` (0x24b8, text `fglrx_binuse == NULL`, line 1338) and continues.
+  It then allocates `GfxBoardLimit` entries of 4 bytes (`kmem_zalloc(count << 2, 1)`, 0x23f8), clears them (0x2428), and logs "fglrx: checkBoardPointers(fglrx_binuse) failed" on a failed allocation (0x24fc).
+  `fglrx_init` (0x120) and `fglrx_attach` (0xd74) call it before they use either table.
+- `freeBoardPointers` (`fglrx.o`, address 0x250c, 192 bytes):
+  **established.** Both free calls and the early exit were traced through the disassembly of its 48 words.
+  Does nothing when `fglrx_boards` (`.data` +328) is null.
+  Otherwise it frees that table with `kmem_free(table, GfxBoardLimit << 3)` (0x256c), frees `fglrx_binuse` (`.data` +312) with `kmem_free(table, GfxBoardLimit << 2)` (0x25b0), and stores zero in both pointers, the first before the second call and the second after it.
+  It frees the tables only, not the board records that `freeBoardPointer` releases one at a time.
+- `checkBoardPointer` (`fglrx.o`, address 0x25cc, 404 bytes):
+  **established.** The disassembly of all 101 words was followed, including the three assertion tails.
+  Takes a board index (a0, kept in s1) and a node (a1, stored at 0(sp)), and creates the board record for that index when none exists.
+  Two assertions come first, each a call to `assfail` and each followed by the normal path:
+  `fglrx_boards` is not null (0x26c0, line 1403) and `fglrx_binuse` is not null (0x2708, line 1404).
+  When the table slot for the index is already nonzero it returns without a store.
+  Otherwise it allocates an 800-byte record with `kmem_zalloc_node_hint(800, 1, node)` (0x2650), stores the index at record +428 and -1 at +408 and +412, and puts the record in the slot, the index shifted left by 3 added to the table.
+  A null allocation calls `assfail` (0x2750, text `bdata != NULL`, line 1409) and the code after it goes on to store through the (null) result, so the routine itself does not handle the failed allocation.
+  It does not write `fglrx_binuse`.
+- `freeBoardPointer` (`fglrx.o`, address 0x2760, 496 bytes):
+  **established.** Its six assertion tails and the main path were decoded word by word from the 124-word body.
+  Takes a board index (a0, kept in s1) and releases that board's record.
+  Six assertion calls to `assfail` (0x28b8 to 0x2938, lines 1426 to 1431) check, in this order, that the index is below `GfxBoardLimit + 1`, that `fglrx_boards` is not null, that its slot for the index is not null, that the record's word at +428 equals the index, that `fglrx_binuse` is not null and that its entry for the index is nonzero; a failed check does not leave the routine.
+  It stores zero in the `fglrx_binuse` entry (0x2830), calls `kmem_free(record, 800)` (0x2854) and, after the call, stores zero in the `fglrx_boards` slot.
+  The caller's own stores of zero in `fglrx_detach` repeat this.
+
+- `fglrx_reload_dev` (`fglrx.o`, address 0x518, 52 bytes):
+  **established.** Its 13 words are a plain wrapper, confirmed against the single call relocation.
+  A one-call wrapper: it passes its argument unchanged to `fglrx_attach` (call at 0x538) and returns that call's result.
+  It is the callback `fglrx_init` hands to `pciio_iterate` to replay already-found cards into the attach routine.
+- `fglrx_unload_dev` (`fglrx.o`, address 0x8b8, 172 bytes):
+  **established.** The fetch, the assertion tail and the detach call were followed through all 43 words.
+  The callback `fglrx_unload` hands to `pciio_iterate`.
+  It takes the connection vertex in a0, fetches that vertex's fast-info word (`hwgraph_fastinfo_get`, 0x8e0) and, when it is null, calls `assfail` (0x954, text `bdata != NULL`, line 452) before going on.
+  It then calls `fglrx_detach` with the vertex itself (0x904) and returns that call's result.
+- `fglrx_unreg` (`fglrx.o`, address 0x690, 180 bytes):
+  **established.** Both exits of this 45-word routine were traced, with the message text taken from the read-only data.
+  Reads the word at `.data` +272, the count of open handles that `fglrx_unload` also tests.
+  When it is zero it calls `pciio_driver_unregister("fglrx_")` (0x6e8) and returns 0.
+  Otherwise it logs "fglrx: fglrx_unreg - driver still in use by %d boards" with `cmn_err(4, ...)` (0x734), passing the word as the number, and returns -1 without unregistering.
+- `fglrx_unload` (`fglrx.o`, address 0x744, 372 bytes):
+  **established.** The in-use refusal and the five-call teardown were decoded from its 93 words.
+  When the word at `.data` +272 is nonzero it logs "fglrx: fglrx_unload - fglrx_inuse ! - no unload!" with `cmn_err(4, ...)` (0x8a8) and returns 16.
+  Otherwise it calls `pciio_iterate("fglrx_", fglrx_unload_dev)` (0x7b4) so every attached card is detached, takes `GfxBoardInitSema` (`psema(sema, 25)`, 0x7ec), calls `freeBoardPointers` (0x80c), stores zero in the word at `.data` +320, the board count `fglrx_attach` increments (0x84c), releases the semaphore with `vsema` (0x85c) and returns 0.
+- `fglrx_intr_list` (`fglrx.o`, address 0xad8, 260 bytes):
+  **established.** The loop and its three per-board tests were decoded from the full 65-word body; `is1.o` imports this routine.
+  It takes a count n in a0 and the address of an array of 32-bit board indices in a1, and for each of the n entries in order: skips an index that is zero or negative (`blez`, 0xb48) and an empty slot of `fglrx_boards` (0xb5c), then reads the board record's word at +792.
+  A value of 0 is changed to 2 (store at 0xb78) and the board then counts as value 2; a value of 2 makes it increment the record's word at +128 (the count `fglrx_intr` keeps) and call the routine at 0x3844, `fglrx_validate_vsync`, with the record (call at 0xbbc); any other value (1 included) skips the board.
+  It sets no return value.
+  Board index 0 can therefore never be reached through this routine.
+- `bdata_from_pipename` (`fglrx.o`, address 0x6924, 280 bytes):
+  **established.** The search loop and the not-found message were decoded across all 70 words.
+  Takes a pipe name string in a0 and walks the first `GfxBoardLimit` slots of `fglrx_boards` in order, comparing the string at record +240 with it (`strcmp`, 0x69b0) and returning the first record that matches.
+  It does not test a slot for null before it reads the record. Its only callers in `fglrx.o` are two sites (0x8760 and 0x87dc) in the hyperpipe attribute routine `fglrx_hp_set_attrib`.
+  When the loop ends without a match it prints "bdata for pipe %s not found" with the name through `printf` (0x6a04) and returns 0.
+  A limit of zero or less skips the loop.
+- `firegl_cleanup_module` (`fglrx.o`, address 0x9368, 172 bytes):
+  **established.** The three calls and the pointer clear were matched to the allocation in `firegl_init_module`.
+  The reverse of `firegl_init_module`, called by `fglrx_detach`.
+  It makes a debug-print call with the text "module cleanup started" (the stub at 0x9104, which only spills its arguments and returns; call at 0x93b0), loads the pointer at record +200 (the 232-byte structure `firegl_init_module` stored there), calls `firegl_cleanup` with it (0x93d0), clears record +200 and frees the structure with `kmem_free(structure, 232)` (0x93f8).
+  Its return value is that of `kmem_free`.
+- `firegl_cleanup` (`fglrx.o`, address 0xf08c, 136 bytes):
+  **established.** Every store in these 34 words was matched to a store in `firegl_init`.
+  Takes the 232-byte structure in a0, makes a debug-print call through a routine in `.text` (0xf0cc), frees the 11680-byte private structure whose pointer is at +8 with `kmem_free(.., 11680)` (0xf0f0), then clears the doubleword at +208 of the object whose pointer is at +56 of the 232-byte structure (the back pointer `firegl_init` stored there) and the doubleword at +8.
+  It undoes the allocations of `firegl_init`, and nothing in it writes a register of the card.
+
 ## Interrupts
 
 - `fglrx_intr` (`fglrx.o`, 372 bytes at address 0x964): see [the kernel ioctl and interrupt routines](kernel-ioctl-irq-functions.md#vertical-sync-wait-and-engine-reset).
