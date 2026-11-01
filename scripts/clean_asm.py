@@ -1,5 +1,5 @@
 # Copyright (c) 2026, Dominik Behr. BSD 3-Clause; see scripts/LICENSE-gr4.
-# Adapted from scripts/clean_asm.py in https://github.com/techomancer/gr4 for the r300
+# Adapted from scripts/clean_asm.py in https://github.com/techomancer/gr4 for the voyager
 # workspace; board-specific tables were removed.
 import os
 import sys

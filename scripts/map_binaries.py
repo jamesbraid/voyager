@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Copyright (c) 2026, Dominik Behr. BSD 3-Clause; see scripts/LICENSE-gr4.
-# Adapted from scripts/map_binaries.py in https://github.com/techomancer/gr4 for the r300
+# Adapted from scripts/map_binaries.py in https://github.com/techomancer/gr4 for the voyager
 # workspace; board-specific tables were removed.
 """
 scripts/map_binaries.py - Map and inspect all binaries in this workspace.
@@ -105,7 +105,7 @@ def analyze_elf(path):
             
     return info
 
-BOARD_NAME = 'r300'
+BOARD_NAME = 'VOYAGER'
 # Directories of symlinks into root/ (see IRIX_FILES.md). Edit for new binaries.
 CATEGORIES = ['r300_kernel', 'libgl', 'xserver', 'dri', 'gfxtools', 'diags', 'ucode', 'firmware']
 

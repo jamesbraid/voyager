@@ -1,4 +1,4 @@
-# r300 coverage map
+# voyager coverage map
 
 Two views of what the R300 and R350 (Onyx4 FireGL X1 and X2) workspace has covered. The first is measured from the binaries: `scripts/inventory.py` lists every function in the in-scope files and greps the repository's docs and headers for each. The second is the list of areas to cover and where each stands.
 

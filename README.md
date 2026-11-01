@@ -1,7 +1,9 @@
-# r300
+# voyager
 
 Reverse-engineering workspace for the ATI R300 and R350 graphics processors as fitted in the
-SGI Onyx4 UltimateVision: the FireGL X1 (R300) and FireGL X2 (R350).
+SGI Onyx4 UltimateVision: the FireGL X1 (R300) and FireGL X2 (R350). VOYAGER is SGI's board name for them.
+
+This repository was named r300 until 2026-11-01.
 
 The layout and working style follow techomancer's [gr2](https://github.com/techomancer/gr2) and
 [gr4](https://github.com/techomancer/gr4). Proprietary IRIX and ATI binaries are not tracked. Copy them from
