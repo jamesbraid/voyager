@@ -218,40 +218,40 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10049640	204	xf86PruneDriverModes	d
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10049740	132	xf86SetCrtcForModes	dynsym	2a800c4febce		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10049b80	784	xf86PrintModes	dynsym	8601ad529b46		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1004d0c0	300	ResourceBrokerInitPci	dynsym	4a934496fe2e		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1004de40	96	xf86FixPciResource	dynsym	a867ae9f7860		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1004de40	96	xf86FixPciResource	dynsym	a867ae9f7860		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1004dec0	688	xf86ReallocatePciResources	dynsym	86a96179722e		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1004e180	1612	getValidBIOSBase	dynsym	9a03b34f3301		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1004e800	92	xf86PciProbe	dynsym	de19d23ee2e7		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1004e800	92	xf86PciProbe	dynsym	de19d23ee2e7		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1004ed00	2196	xf86GetPciBridgeInfo	dynsym	dd346d3a553e		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1004f700	4076	ValidatePci	dynsym	73eb07ca1ab6		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10050700	452	GetImplicitPciResources	dynsym	ac24c6c154a1		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10050900	500	initPciState	dynsym	c1013f860d2a		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10050b00	540	initPciBusState	dynsym	385ea3e7677c		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10050d40	208	PciStateEnter	dynsym	163eb9925435		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10050e40	112	PciBusStateEnter	dynsym	2870d1168790		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10050ec0	160	PciStateLeave	dynsym	5b9f39b60f50		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10050f80	112	PciBusStateLeave	dynsym	e079cd7eb391		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051000	156	DisablePciAccess	dynsym	f6d1e6f9704c		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100510c0	144	DisablePciBusAccess	dynsym	a9884a1f43ba		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051180	100	xf86IsPciDevPresent	dynsym	ae97afd9b430		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10050d40	208	PciStateEnter	dynsym	163eb9925435		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10050e40	112	PciBusStateEnter	dynsym	2870d1168790		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10050ec0	160	PciStateLeave	dynsym	5b9f39b60f50		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10050f80	112	PciBusStateLeave	dynsym	e079cd7eb391		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051000	156	DisablePciAccess	dynsym	f6d1e6f9704c		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100510c0	144	DisablePciBusAccess	dynsym	a9884a1f43ba		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051180	100	xf86IsPciDevPresent	dynsym	ae97afd9b430		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051200	684	xf86ClaimPciSlot	dynsym	58ae96e7beb2		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100514c0	24	xf86GetPciVideoInfo	dynsym	e3967eb6ea42		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051500	24	xf86GetPciConfigInfo	dynsym	3de7bff939a0		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100514c0	24	xf86GetPciVideoInfo	dynsym	e3967eb6ea42		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051500	24	xf86GetPciConfigInfo	dynsym	3de7bff939a0		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051540	644	xf86SetPciVideo	dynsym	0f206fcefd49		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051800	540	xf86ParsePciBusString	dynsym	5e9eadf7ee06		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051a40	152	xf86ComparePciBusString	dynsym	76ca6f736c12		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051b00	116	xf86IsPrimaryPci	dynsym	8b079b719325		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051800	540	xf86ParsePciBusString	dynsym	5e9eadf7ee06		in	named-only	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051a40	152	xf86ComparePciBusString	dynsym	76ca6f736c12		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051b00	116	xf86IsPrimaryPci	dynsym	8b079b719325		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051b80	200	xf86CheckPciGAType	dynsym	20fd683fcb14		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051c80	160	xf86GetPciInfoForEntity	dynsym	2797bdd89204		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051d40	128	xf86GetPciEntity	dynsym	4c76f8ca0b36		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051dc0	48	xf86CheckPciMemBase	dynsym	a1c84565d8a4		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051e00	124	xf86CheckPciSlot	dynsym	f823b31f9234		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051c80	160	xf86GetPciInfoForEntity	dynsym	2797bdd89204		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051d40	128	xf86GetPciEntity	dynsym	4c76f8ca0b36		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051dc0	48	xf86CheckPciMemBase	dynsym	a1c84565d8a4		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051e00	124	xf86CheckPciSlot	dynsym	f823b31f9234		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10051f80	164	xf86FindPciDeviceVendor	dynsym	7775c093bd8d		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10052040	188	xf86FindPciClass	dynsym	5548113c335d		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10052100	628	pciTestMultiDeviceCard	dynsym	a55e77a097a4		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10052580	112	pciConvertRange2Host	dynsym	2bfef4e58c06		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10052600	160	xf86EnablePciBusMaster	dynsym	029cebf7db47		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100526c0	52	xf86BusProbe	dynsym	1ce57ad0ed33		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10052580	112	pciConvertRange2Host	dynsym	2bfef4e58c06		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10052600	160	xf86EnablePciBusMaster	dynsym	029cebf7db47		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100526c0	52	xf86BusProbe	dynsym	1ce57ad0ed33		in	understood	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10052700	404	StringToBusType	dynsym	bce464c17fd1		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100528c0	380	xf86EntityInit	dynsym	ffd739ec1134		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10052a40	180	xf86AllocateEntity	dynsym	9cddcbbaadff		out:14	undocumented		
@@ -474,19 +474,19 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006d540	1996	xf86parsePointerSecti
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006dd80	104	pciInit	dynsym	cd299afa236f		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006de00	100	pciFindFirst	dynsym	03e2e8980a5a		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006de80	68	pciFindNext	dynsym	44e618a8962d		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006df00	164	pciReadLong	dynsym	1db383499a07		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006df00	164	pciReadLong	dynsym	1db383499a07		in	named-only	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006dfc0	136	pciReadWord	dynsym	cf7d04d6c586		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006e080	84	pciReadByte	dynsym	6c4d469067c3		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006e100	140	pciWriteLong	dynsym	7bbbdc16f64b		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006e100	140	pciWriteLong	dynsym	7bbbdc16f64b		in	named-only	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006e1c0	184	pciWriteWord	dynsym	fbf933aabf12		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006e280	136	pciWriteByte	dynsym	266a16dc9bbc		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006e340	160	pciSetBitsLong	dynsym	affb6d27a3df		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006e340	160	pciSetBitsLong	dynsym	affb6d27a3df		in	named-only	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006e400	72	pciSetBitsByte	dynsym	35f2449f2dbd		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006e480	252	pciLongFunc	dynsym	31e568b337d6		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006e580	164	pciBusAddrToHostAddr	dynsym	178ec843afad		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006e640	164	pciHostAddrToBusAddr	dynsym	8604f9e2f90a		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006e700	836	pciGetBaseSize	dynsym	a038a92832c2		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006ea80	36	pciTag	dynsym	eea2bfb61d11		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006ea80	36	pciTag	dynsym	eea2bfb61d11		in	named-only	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006eac0	288	pciMfDev	dynsym	f686abbf3876		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006ec00	1300	pciGenFindNext	dynsym	1f563e356a96		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006f140	60	pciGenFindFirst	dynsym	e7f3c22dd63c		in	undocumented		
@@ -730,7 +730,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10079700	2116	ARCHIVELoadModule	dyn
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10079f80	8	_LoaderGetRelocations	dynsym	90b2160e3af3		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10079fc0	1036	LoaderOpen	dynsym	9df00d5d3df7		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007a400	96	LoaderHandleOpen	dynsym	6516876c0737		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007a480	200	LoaderSymbol	dynsym	d1c100875ba4		out:14	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007a480	200	LoaderSymbol	dynsym	d1c100875ba4		out:14	named-only	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007a580	128	LoaderResolveSymbols	dynsym	6ec74226ed29		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007a600	284	LoaderCheckUnresolved	dynsym	96be4b6c9707		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007a740	8	xf86LoaderTrap	dynsym	78aa5094d5ec		out:14	undocumented		
@@ -47253,7 +47253,7 @@ usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x433480	112	X86EMU_setup
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x433500	112	X86EMU_setupPioFuncs	dwarf+dynsym	cd8a6af512c3		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x433580	160	X86EMU_setupIntrFuncs	dwarf+dynsym	231af84083c0		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x433640	236	X86EMU_prepareForInt	dwarf+dynsym	e6fa75c2370d		in	undocumented		
-usr/X11R6/lib/modules/libpcidata.so	shared-x-server	n32		0x401a00	48	xf86SetupPciData	dwarf+dynsym	19c4ae3336d1		in	undocumented		
+usr/X11R6/lib/modules/libpcidata.so	shared-x-server	n32		0x401a00	48	xf86SetupPciData	dwarf+dynsym	19c4ae3336d1		in	named-only	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
 usr/X11R6/lib/modules/libscanpci.so	shared-x-server	n32	.text	0x4022c0	44	_stub	dwarf			in	undocumented		
 usr/X11R6/lib/modules/libscanpci.so	shared-x-server	n32		0x402300	48	xf86SetupScanPci	dwarf+dynsym	6229e91bde13		in	undocumented		
 usr/X11R6/lib/modules/libscanpci.so	shared-x-server	n32		0x402340	1284	xf86DisplayPCICardInfo	dwarf+dynsym	db6573c730fc		in	undocumented		
@@ -49919,10 +49919,10 @@ usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)	board-kernel	n64	.text	0x21c	296	res
 usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)	board-kernel	n64	.text	0x344	68	set_return_trap	dwarf+symtab	d7b27e85fa5e		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(junkcode.o)	board-kernel	n64		0x0		pciReadByte	dwarf+symtab			in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(junkcode.o)	board-kernel	n64	.text	0x2c	44	pciReadWord	dwarf+symtab	003020b29062		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(junkcode.o)	board-kernel	n64	.text	0x58	48	pciReadLong	dwarf+symtab	c58971cd30e1		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(junkcode.o)	board-kernel	n64	.text	0x58	48	pciReadLong	dwarf+symtab	c58971cd30e1		in	named-only	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
 usr/cpu/sysgen/IP35boot/vga.a(junkcode.o)	board-kernel	n64	.text	0x88	16	pciWriteByte	dwarf+symtab	e05b3c467bc3		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(junkcode.o)	board-kernel	n64	.text	0x98	16	pciWriteWord	dwarf+symtab	b9d70910af85		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(junkcode.o)	board-kernel	n64	.text	0xa8	16	pciWriteLong	dwarf+symtab	f6e86e296ec7		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(junkcode.o)	board-kernel	n64	.text	0xa8	16	pciWriteLong	dwarf+symtab	f6e86e296ec7		in	named-only	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
 usr/cpu/sysgen/IP35boot/vga.a(xf86int10.o)	board-kernel	n64		0x0		int_handler	dwarf+symtab			in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(xf86int10.o)	board-kernel	n64	.text	0x108	2772	int42_handler	dwarf+symtab	f123bb4f4972		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(xf86int10.o)	board-kernel	n64	.text	0xbdc	760	int1A_handler	dwarf+symtab	d285f42c9004		in	undocumented		
@@ -50104,11 +50104,11 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ddc0	116	xf86getsecs	dynsym
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000de40	12	xf86GetVerbosity	dynsym	aac097777ef8		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000de50	140	pciReadByte	dynsym	7df01c8decda		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000dee0	140	pciReadWord	dynsym	4f1e55b8fdf9		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000df70	188	pciReadLong	dynsym	73171d1d5fdc		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000df70	188	pciReadLong	dynsym	73171d1d5fdc		in	named-only	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000e030	120	pciWriteByte	dynsym	906493a4962a		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000e0b0	120	pciWriteWord	dynsym	160251aff5ec		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000e130	144	pciWriteLong	dynsym	d7e7154ec5f7		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000e1c0	72	pciTag	dynsym	f68453c74b85		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000e130	144	pciWriteLong	dynsym	d7e7154ec5f7		in	named-only	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000e1c0	72	pciTag	dynsym	f68453c74b85		in	named-only	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000e210	3296	main	dynsym	96bf8dc479dd		in	named-only	docs/open-questions.md#open-questions	Open questions
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000eef0	284	setup_pvp	dynsym	8951010338d2		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000f010	436	pciba_scan	dynsym	a4e1d71728bc		in	undocumented		
