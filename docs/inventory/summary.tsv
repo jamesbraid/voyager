@@ -1,6 +1,6 @@
 table	rows	out_of_scope	understood	understood_with_open	understood_distinct	templated	located	named_only	undocumented	no_software_dependency	pct_understood	pct_located_or_better	pct_mentioned	pct_done	unresolved_sites	truncated	audited_real_pct	audited_sample	audited_date	computes	reused	multi_unit	shared_address	input
 binaries	84	0	0	0	0	0	0	57	27	0	0.0	0.0	67.9	0.0							0			
-functions	22294	45056	98	1	94	0	73	190	21933	0	0.4	0.8	1.6	0.4							0	503	17	
+functions	22294	45056	107	1	103	0	64	190	21933	0	0.5	0.8	1.6	0.5							0	503	17	
 functions (distinct names)	10713	19503	96	1	94	0	0	143	10474	0	0.9	0.9	2.2	0.9							0			
 mmio	201	0	14	0	14	0	187	0	0	0	7.0	100.0	100.0	7.0	37						0			
 tokens	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
@@ -14,7 +14,7 @@ functions in usr/X11R6/bin/XFree86	144	2780	10	0	10	0	0	3	131	0	6.9	6.9	9.0	6.9	
 functions in usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	112	0	0	0	0	0	0	1	111	0	0.0	0.0	0.9	0.0							0	0	0	
 functions in usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	112	0	0	0	0	0	0	1	111	0	0.0	0.0	0.9	0.0							0	0	0	
 functions in usr/X11R6/lib/modules/dri/fglrx_dri.so	5299	7555	37	0	37	0	0	5	5257	0	0.7	0.7	0.8	0.7							0	165	0	
-functions in usr/X11R6/lib/modules/dri/fglrx_dri64.so	5299	7555	1	0	1	0	36	5	5257	0	0.0	0.7	0.8	0.0							0	165	0	
+functions in usr/X11R6/lib/modules/dri/fglrx_dri64.so	5299	7555	10	0	10	0	27	5	5257	0	0.2	0.7	0.8	0.2							0	165	0	
 functions in usr/X11R6/lib/modules/drivers/fglrx_drv.so	623	0	2	0	2	0	0	42	579	0	0.3	0.3	7.1	0.3							0	0	0	
 functions in usr/X11R6/lib/modules/extensions/fglrx_glx.so	5258	7555	0	0	0	0	0	2	5256	0	0.0	0.0	0.0	0.0							0	165	0	
 functions in usr/X11R6/lib/modules/extensions/libGLcore.so	86	3217	0	0	0	0	0	0	86	0	0.0	0.0	0.0	0.0							0	0	0	

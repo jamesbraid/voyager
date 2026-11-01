@@ -7,7 +7,7 @@ usr/X11R6/bin/XFree86	x-shared	shared-x-server	executable	n32	2569788	bbb8ea8ee0
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	x-shared	shared-x-server	shared-object	n32	76372	7cb84a62015a7918		112	dynsym+dwarf	0	0	named-only	docs/open-questions.md#3d	3D
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	x-shared	shared-x-server	shared-object	n64	82088	a4550d9a8cfb30f2		112	dynsym+dwarf	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/X11R6/lib/modules/dri/fglrx_dri.so	x-module	board-x-module	shared-object	n32	12888480	f455f9d53d95b6e4		12854	dynsym+dwarf	0	0	named-only	docs/dri-driver.md#dri-driver-o32-and-n32-build	DRI driver, o32 and n32 build
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	x-module	board-x-module	shared-object	n64	14223320	f3342b4598e52433		12854	dynsym+dwarf	0	0	named-only	docs/open-questions.md#3d	3D
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	x-module	board-x-module	shared-object	n64	14223320	f3342b4598e52433		12854	dynsym+dwarf	0	0	named-only	docs/dri-driver-64.md#direct-rendering-driver-64-bit-build-fglrx_dri64so	Direct-rendering driver, 64-bit build (fglrx_dri64.so)
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	x-module	board-x-module	shared-object	n32	700708	4f9aef0ff9030121		623	dynsym (dwarf addresses stale, dropped)	1378	37	named-only	docs/coverage.md#areas	Areas
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	x-module	board-x-module	shared-object	n32	12841224	8cf774b6991de91a		12813	dynsym+dwarf	0	0	named-only	AGENTS.md#2-project-binaries-and-evidence	2. Project binaries and evidence
 usr/X11R6/lib/modules/extensions/libGLcore.so	x-shared	shared-x-server	shared-object	n32	2002584	ac2ece4de5c4f213		3303	dynsym+dwarf	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
@@ -20,7 +20,7 @@ usr/X11R6/lib/modules/libpcidata.so	x-shared	shared-x-server	shared-object	n32	8
 usr/X11R6/lib/modules/libscanpci.so	x-shared	shared-x-server	shared-object	n32	157684	521a797343e98636		5	dynsym+dwarf	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/X11R6/lib/modules/libvbe.so	x-shared	shared-x-server	shared-object	n32	26052	fa7400aa715f8fba		21	dynsym+dwarf	0	0	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
 usr/cpu/firmware/ip35prom.img	firmware	board-firmware	data	-	1480360	d74b4b7ef9c11c66		0	strings	0	0	named-only	docs/open-questions.md#host-attachment	Host attachment
-usr/cpu/sysgen/IP35boot/fglrx.o	kernel	board-kernel	object	n64	567504	072451083d188a26		384	symtab+dwarf	56	0	named-only	docs/kernel-attach.md#kernel-attach-path-ip35	Kernel attach path (IP35)
+usr/cpu/sysgen/IP35boot/fglrx.o	kernel	board-kernel	object	n64	567504	072451083d188a26		384	symtab+dwarf	56	0	named-only	docs/dri-driver-64.md#direct-rendering-driver-64-bit-build-fglrx_dri64so	Direct-rendering driver, 64-bit build (fglrx_dri64.so)
 usr/cpu/sysgen/IP35boot/hubspc.o	kernel-shared	shared-kernel	object	n64	13056	899394978cddc968		13	symtab	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/cpu/sysgen/IP35boot/is1.o	kernel	board-kernel	object	n64	88232	0a1a158cda310067		54	symtab+dwarf	0	0	named-only	docs/kernel-attach.md#kernel-attach-path-ip35	Kernel attach path (IP35)
 usr/cpu/sysgen/IP35boot/kernel.o	kernel-shared	shared-kernel	object	n64	1288752	2e847fdcadfdb958		1318	symtab+dwarf	0	0	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
