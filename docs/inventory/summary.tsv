@@ -1,6 +1,6 @@
 table	rows	out_of_scope	understood	understood_with_open	understood_distinct	templated	located	named_only	undocumented	no_software_dependency	pct_understood	pct_located_or_better	pct_mentioned	pct_done	unresolved_sites	truncated	audited_real_pct	audited_sample	audited_date	computes	reused	multi_unit	shared_address	input
 binaries	84	0	83	0	81	0	0	0	1	0	98.8	98.8	98.8	98.8							0			
-functions	28840	38510	619	19	602	0	138	460	27623	0	2.1	2.6	4.2	2.1			81.8	11	2026-11-02		0	503	17	
+functions	28840	38510	629	19	612	0	128	460	27623	0	2.2	2.6	4.2	2.2			81.8	11	2026-11-02		0	503	17	
 functions (distinct names)	12895	17321	504	19	502	0	1	335	12055	0	3.9	3.9	6.5	3.9							0			
 mmio	201	0	140	0	137	0	61	0	0	0	69.7	100.0	100.0	69.7	37		100.0	4	2026-11-02		0			
 tokens	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
@@ -21,7 +21,7 @@ functions in usr/X11R6/lib/modules/extensions/libGLcore.so	86	3217	0	0	0	0	0	0	8
 functions in usr/X11R6/lib/modules/extensions/libdri.so	101	0	0	0	0	0	1	11	89	0	0.0	1.0	11.9	0.0							0	0	0	
 functions in usr/X11R6/lib/modules/extensions/libglx.so	206	714	0	0	0	0	1	7	198	0	0.0	0.5	3.9	0.0							0	4	0	
 functions in usr/X11R6/lib/modules/irix/libdrm.so	105	0	0	0	0	0	1	7	97	0	0.0	1.0	7.6	0.0							0	0	0	
-functions in usr/X11R6/lib/modules/irix/libfglrxdrm.so	51	0	26	0	26	0	24	0	1	0	51.0	98.0	98.0	51.0							0	0	0	
+functions in usr/X11R6/lib/modules/irix/libfglrxdrm.so	51	0	36	0	36	0	14	0	1	0	70.6	98.0	98.0	70.6							0	0	0	
 functions in usr/X11R6/lib/modules/libint10.so	78	404	13	0	13	0	11	31	23	0	16.7	30.8	70.5	16.7							0	0	0	
 functions in usr/X11R6/lib/modules/libpcidata.so	1	0	1	0	1	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	
 functions in usr/X11R6/lib/modules/libscanpci.so	5	0	5	1	5	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	
