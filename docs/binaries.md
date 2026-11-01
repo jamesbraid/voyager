@@ -200,7 +200,7 @@ All objects in this section are 64-bit MIPS-IV relocatable files with DWARF debu
 
 ## VGA console and x86 emulator archive
 
-`usr/cpu/sysgen/IP35boot/vga.a` is an archive of 17 members, each a 64-bit MIPS-IV relocatable object with DWARF data. This section covers ten of them. The routines named were checked instruction by instruction from their disassembly.
+`usr/cpu/sysgen/IP35boot/vga.a` is an archive of 17 members, each a 64-bit MIPS-IV relocatable object with DWARF data. This section covers sixteen of them; `vga_init.o` is not described here. The routines named were checked instruction by instruction from their disassembly.
 
 - `usr/cpu/sysgen/IP35boot/vga.a(debug.o)` (9604 bytes): **established** that it defines two global functions, `x86emu_dump_regs` and `x86emu_dump_xregs`.
   It imports `_X86EMU_env`, `cmn_err`, `sprintf` and `strlen`.
@@ -290,3 +290,109 @@ All objects in this section are 64-bit MIPS-IV relocatable files with DWARF debu
   It passes the sum to `_badaddr_val` at 0xb8, with 1 as the second argument and a stack slot as the third.
   It returns from one of two paths, at 0xc0 and 0xcc.
   **Inferred** from the offset 176 that the first argument is the board's legacy I/O window record, the field `docs/kernel-attach.md` describes.
+
+- `usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)` (6980 bytes): **established** from the symbol table that it defines four global routines.
+  It defines `setup_int_vect` and `setup_system_bios`.
+  It defines `reset_int_vect` and `set_return_trap`.
+  It imports `memset` and `xf86Int10AllocPages`.
+  `setup_int_vect` at address 0x0 (440 bytes) loops 128 times.
+  On pass `i` it calls the function at offset 32 of the structure its first argument points to, reached through the pointer at offset 24.
+  It passes `a1` as 4 times `i` and `a2` as 0.
+  After the loop it calls `reset_int_vect` at 0x60.
+  It then makes more calls through the same two pointers, with fixed `a1` values.
+  **Inferred** from the call shape that each pass hands the callee a 4-byte index. The callees' bodies were not read.
+  `setup_system_bios` at 0x1b8 (100 bytes) calls `memset` at 0x1cc with byte 0xf4 and a count of 65536.
+  It stores an 8-byte word at offsets -11 to -4 from the end of that block.
+  It stores a byte at -3.
+  It stores an 8-byte word at -39 to -32.
+  It stores the byte 0xfc at -2, then returns 1.
+  **Inferred** from the stores that they write a fixed record into the top of the 64 KB block. The values come from a table at a gp-relative slot read at 0x1e0.
+  `reset_int_vect` at 0x21c (296 bytes) runs a 92-pass loop through the first 164 bytes read.
+  Each pass reads byte `i` of a table at the gp-relative slot -30712.
+  It calls the function at offset 24 of the structure at offset 24 of its first argument, with `a1` as 4004 plus `i`.
+  **Inferred** from the loop shape. The rest of the routine was not read.
+  `set_return_trap` at 0x344 (68 bytes) calls the function at offset 24 of the structure at offset 24 of its first argument.
+  That call passes `a1` as 1536 and `a2` as 244.
+  It then calls `xf86Int10AllocPages` at 0x370 with `a1` set to 1.
+  The third argument is the first argument plus 72.
+  **Inferred** from the callee name that it allocates a page for the context.
+
+- `usr/cpu/sysgen/IP35boot/vga.a(junkcode.o)` (6324 bytes): **established** from the symbol table that it defines six global routines.
+  It defines `pciReadByte`, `pciReadWord` and `pciReadLong`.
+  It defines `pciWriteByte`, `pciWriteWord` and `pciWriteLong`.
+  The member imports nothing, and none of the six routines calls out. The disassembly of all six was read to its last instruction.
+  `pciReadByte` at 0x0 (44 bytes) loads a 64-bit base from offset 120 of its first argument.
+  It adds `a1` to that base and reads the word at the sum.
+  It shifts the word right by a count taken from a table indexed by `a1` and 3.
+  It keeps the low 8 bits of the result.
+  `pciReadWord` at 0x2c (44 bytes) is the same with a 16-bit mask.
+  `pciReadLong` at 0x58 (48 bytes) returns the word at the base plus `a1` when `a1` is nonzero.
+  When `a1` is zero it returns the word at offset 280 of its first argument, ORed with the word at offset 284 shifted left 16.
+  `pciWriteByte` at 0x88 stores the low byte of `a2` at the base plus `a1`.
+  `pciWriteWord` at 0x98 stores a halfword.
+  `pciWriteLong` at 0xa8 stores a word.
+  **Inferred** from the names and the shift and mask pattern that these are PCI configuration accessors. The callers sit in other members, which were not read.
+
+- `usr/cpu/sysgen/IP35boot/vga.a(xf86int10.o)` (15364 bytes): **established** from the symbol table that it defines `int_handler` and `int42_handler`.
+  It also defines `int1A_handler` and `intE6_handler`.
+  It defines the data word `Int10Current`.
+  It imports `run_bios_int` and `getIntVect`.
+  It imports `cmn_err`, `pushw` and `outb`.
+  It also imports `_X86EMU_env` and the PCI accessors.
+  `int_handler` (264 bytes) reads the word at offset 32 of its first argument and branches on it.
+  The values 16, 66 and 109 take one path.
+  On that path it calls `getIntVect` with the first argument and the value.
+  When `getIntVect` returns 0xf065, it calls `int42_handler`.
+  The value 26 calls `int1A_handler`.
+  The value 230 calls `intE6_handler`.
+  The value 21 returns 1 with no call.
+  Any other value calls `run_bios_int`.
+  When a handler or `run_bios_int` returns zero, `int_handler` falls through to the next step.
+  When `run_bios_int` returns zero, `int_handler` logs through `cmn_err` at level 5 and returns 1.
+  **Inferred** from the dispatch shape that these are the emulator's software-interrupt hooks for the BIOS services. The three local handlers were not read.
+
+- `usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)` (8484 bytes): **established** from the symbol table that it defines `printk`, `xf86ExecX86int10` and `xf86Int10ExecSetup`.
+  It also defines the local `x86emu_do_int`.
+  It imports the emulator entry points `X86EMU_exec` and `X86EMU_halt_sys`.
+  It imports `X86EMU_setupMemFuncs`, `X86EMU_setupPioFuncs` and `X86EMU_setupIntrFuncs`.
+  It imports the memory and port accessors, `setup_int`, `finish_int` and `int_handler`.
+  `x86emu_do_int` at 0x0 (56 bytes) stores its first argument as a word at offset 32 of the `Int10Current` structure.
+  It calls `int_handler` on that structure.
+  It returns the result when that result is nonzero.
+  When the result is zero it calls `X86EMU_halt_sys`.
+  `xf86ExecX86int10` at 0x38 (120 bytes) calls `setup_int` first.
+  A negative result returns 1 with no further call.
+  Otherwise it calls `int_handler`.
+  A zero result calls `finish_int` and then `cmn_err`, and returns 1.
+  A nonzero result calls `X86EMU_exec` and `finish_int`, and returns 0.
+  Its return values are 1 and 0.
+  `xf86Int10ExecSetup` at 0xb0 (240 bytes) calls `X86EMU_setupMemFuncs` and `X86EMU_setupPioFuncs`.
+  It fills 256 eight-byte entries in its frame with one value read from a gp-relative slot.
+  It then calls `X86EMU_setupIntrFuncs` on that table, and returns 1.
+  `printk` at 0x1a0 (72 bytes) passes its arguments to `icmn_err` at level 5.
+  It sets no return value.
+  **Inferred** from the callee order (setup, run, finish) that these routines bracket each real-mode BIOS call. The emulator's own routines were not read.
+
+- `usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)` (13012 bytes): **established** from the symbol table that it defines `vga_tport_lock_init` and `vga_blankscreen`.
+  It also defines the local routines `vga_color` and `vga_pnt2i`, and six others.
+  It defines the words `vga_tport_mute` and `vga_tport_inuse`, and the lock `vga_tport_lock`.
+  It defines the table `vga_htp_fncs`.
+  It imports `mutex_spinlock` and `mutex_spinunlock`.
+  It imports `spinlock_init` and `wbflush`.
+  It imports three bridge-mode routines.
+  `vga_tport_lock_init` at 0x0 (48 bytes) sets `vga_tport_mute` to 1.
+  It calls `wbflush` and sets `vga_tport_inuse` to 0.
+  It calls `spinlock_init` on `vga_tport_lock`.
+  **Inferred** from the names that this initialises the TPort lock and its mute and in-use words. The whole body was read.
+  `vga_blankscreen` at 0x548 (68 bytes) returns at once when `vga_tport_mute` is nonzero.
+  Otherwise it takes `vga_tport_lock` with `mutex_spinlock`.
+  It stores `vga_tport_inuse` plus one, then stores zero back to `vga_tport_inuse`.
+  It releases the lock with `mutex_spinunlock`, passing the new count.
+  It makes no other call, so the body never reaches a drawing routine. The name suggests blanking, but the body only takes and releases the lock.
+  `vga_color` at 0x30 (84 bytes) follows the same mute check and lock pattern.
+  It then stores the low byte of its second argument at offset 8 of the pointer in the gp-relative slot -30712.
+  **Inferred** from the names and the lock pattern that the mute and in-use words gate the TPort access path.
+
+- `usr/cpu/sysgen/IP35boot/vga.a(vga_idbg.o)` (1220 bytes): **established** from its section table and symbol table that it has no code section and defines no symbol.
+  It holds only DWARF debug sections, with the `.debug_info` section at offset 0x1c8 in the file.
+  The unit it describes has one compile unit name. That name is not recorded here.

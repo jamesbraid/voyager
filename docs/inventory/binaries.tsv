@@ -39,13 +39,13 @@ usr/cpu/sysgen/IP35boot/vga.a(sys.o)	kernel	board-kernel	object	n64	11748	f86078
 usr/cpu/sysgen/IP35boot/vga.a(generic.o)	kernel	board-kernel	object	n64	12244	eb99fa6c1eb44833		11	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	kernel	board-kernel	object	n64	16260	784a30822d9da7a6		26	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	kernel	board-kernel	object	n64	6004	8eed8eff87c981fc		6	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
-usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)	kernel	board-kernel	object	n64	6980	3f71448ffb260753		4	symtab	0	0	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(junkcode.o)	kernel	board-kernel	object	n64	6324	03abcce4bdce0b4c		6	symtab	0	0	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(xf86int10.o)	kernel	board-kernel	object	n64	15364	799ee4277be0e0a0		4	symtab	0	0	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	kernel	board-kernel	object	n64	8484	f266f8569838391d		4	symtab	0	0	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	kernel	board-kernel	object	n64	31492	97e6d38797999733		24	symtab	0	0	named-only	docs/kernel-attach.md#order-of-events	Order of events
-usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	kernel	board-kernel	object	n64	13012	12e6ed1f380f5e3d		11	symtab	0	0	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_idbg.o)	kernel	board-kernel	object	n64	1220	75f91dc61018340c		0	none	0	0	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)	kernel	board-kernel	object	n64	6980	3f71448ffb260753		4	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(junkcode.o)	kernel	board-kernel	object	n64	6324	03abcce4bdce0b4c		6	symtab	0	0	located	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(xf86int10.o)	kernel	board-kernel	object	n64	15364	799ee4277be0e0a0		4	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	kernel	board-kernel	object	n64	8484	f266f8569838391d		4	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	kernel	board-kernel	object	n64	31492	97e6d38797999733		24	symtab	0	0	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	kernel	board-kernel	object	n64	13012	12e6ed1f380f5e3d		11	symtab	0	0	located	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(vga_idbg.o)	kernel	board-kernel	object	n64	1220	75f91dc61018340c		0	none	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vgastubs.a(vgastubs.o)	kernel	board-kernel	object	n64	2916	8d2cf5ad44349166		1	none	0	0	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/xbridge.o	kernel-shared	shared-kernel	object	n64	22768	c782e88889d3306a		2	symtab	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/cpu/sysgen/IP35boot/xswitch.o	kernel-shared	shared-kernel	object	n64	10304	2ac96f6287b076ad		13	symtab	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
