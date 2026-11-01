@@ -29440,27 +29440,27 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4539c0	184	is1B
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453a80	336	is1Unblank	dynsym	94b8894ce77a		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453c00	200	is1SwapReady	dynsym	54007add0bae		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453d00	196	is1Bind	dynsym	8f5cb256771c		in	understood	docs/fglrx-drv-functions.md#sgi-extensions-and-pipe-control	SGI extensions and pipe control
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4558a0	500	vfmtReadCmp1Format	dynsym	721cbdfd0ee2		in	named-only	docs/binaries.md#board-tools	Board tools
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x455aa0	292	vfmtReadCmp1OdyFormat	dynsym	606d95f70d0a		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4558a0	500	vfmtReadCmp1Format	dynsym	721cbdfd0ee2		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x455aa0	292	vfmtReadCmp1OdyFormat	dynsym	606d95f70d0a		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x455bd0	300	vfmtReadCmp1SG2Format	dynsym	f49bb3bd3b52		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x455da0	564	vfmtFindFormatFile	dynsym	b1f3b3776ae5		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x455fe0	76	vfmtFindKonaFormatFile	dynsym	6aa409c1c003		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x456030	144	vfmtFindCmpFormatFile	dynsym	47c7eed15b8c		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4560c0	76	vfmtFindOdyFormatFile	dynsym	346b55e9f6fe		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x456110	76	vfmtFindSG2FormatFile	dynsym	cedfe1706187		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x456030	144	vfmtFindCmpFormatFile	dynsym	47c7eed15b8c		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4560c0	76	vfmtFindOdyFormatFile	dynsym	346b55e9f6fe		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x456110	76	vfmtFindSG2FormatFile	dynsym	cedfe1706187		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x456160	292	vfmtFindKonaCombinationFile	dynsym	02e2880746f3		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x456290	584	vfmtFindCmpCombinationFile	dynsym	f95dcb192457		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4564e0	132	vfmtGetLastKonaFileStat	dynsym	167e5d6ee841		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4564e0	132	vfmtGetLastKonaFileStat	dynsym	167e5d6ee841		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4566d0	5956	vfmtReadCmp1Combination	dynsym	1a8552a17bf4		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x457e20	4948	vfmtWriteCmp1Combination	dynsym	b6a68bb571b8		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459434	56	SDBaddNewArraySymbol	dynsym	27dfa3818a85		in	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45946c	64	SDBaddNewScalarSymbol	dynsym	9c412e09a1a4		in	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4594ac	404	SDBcloseNewDatabase	dynsym	5a974545025d		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459640	356	SDBopenNewDatabase	dynsym	bb5c48c4318a		in	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459640	356	SDBopenNewDatabase	dynsym	bb5c48c4318a		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4597a4	120	SDBsetHeader	dynsym	88ff0b897a7a		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4599d4	104	SDBgetSymbolDataAddress	dynsym	e05dc58da509		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459a3c	88	SDBgetSymbolDatatype	dynsym	b329aa835666		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459a94	92	SDBgetSymbolElementCount	dynsym	8da3df670ecb		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459a94	92	SDBgetSymbolElementCount	dynsym	8da3df670ecb		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459af0	56	SDBgetSymbolValueArray	dynsym	a860043f8152		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459b28	56	SDBgetSymbolValueScalar	dynsym	031ceb77cc23		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459b60	184	SDBcloseReadDatabase	dynsym	6948f4e71394		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
@@ -29474,9 +29474,9 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a268	52	xdr_S
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a29c	340	xdr_typedData	dynsym	378163443e9d		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a3f0	320	xdr_SDBfileHeader	dynsym	fed9589e8da4		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a530	52	xdr_SDBdataType	dynsym	21ab4b35703d		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a564	112	xdr_SDBsymbolName	dynsym	09a59313e23a		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a564	112	xdr_SDBsymbolName	dynsym	09a59313e23a		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a5d4	200	xdr_SDBsymbolTableEntry	dynsym	8be0157f5b86		in	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a69c	104	xdr_SDBversionNumber	dynsym	0e083eead946		in	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a69c	104	xdr_SDBversionNumber	dynsym	0e083eead946		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a704	36	SDBsetupMemoryInterface	dynsym	0113f40c4011		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b8780	1424	_stub	dwarf			in	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b8d40	36	dummy_5	dwarf+dynsym	ac4bea52a409		in	located	docs/dri-driver-64.md#shared-word-helpers	Shared word helpers
@@ -67277,27 +67277,27 @@ usr/gfx/sgcombine	board-tool	n32		0x1001f280	136	vfcQueryGLXHyper	dynsym	744eeaa
 usr/gfx/sgcombine	board-tool	n32		0x1001f310	636	vfcQueryOdysseyTarget	dynsym	2d06c0382564		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x1001f590	808	vfmtIsCmpCombinationValidForTarget	dynsym	4319773b9144		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x1001f8c0	500	vfmtIsCombinationValidForDmxTarget	dynsym	41ae7cef9403		in	undocumented		
-usr/gfx/sgcombine	board-tool	n32		0x10021650	536	vfmtReadCmp1Format	dynsym	e3451176e694		in	named-only	docs/binaries.md#board-tools	Board tools
-usr/gfx/sgcombine	board-tool	n32		0x10021870	308	vfmtReadCmp1OdyFormat	dynsym	6fc18113f056		in	undocumented		
+usr/gfx/sgcombine	board-tool	n32		0x10021650	536	vfmtReadCmp1Format	dynsym	e3451176e694		in	located	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
+usr/gfx/sgcombine	board-tool	n32		0x10021870	308	vfmtReadCmp1OdyFormat	dynsym	6fc18113f056		in	located	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/gfx/sgcombine	board-tool	n32		0x100219b0	316	vfmtReadCmp1SG2Format	dynsym	1a8be8bc6c85		in	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x10021c20	6180	vfmtReadCmp1Combination	dynsym	0cfc9fb49b34		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10023450	5148	vfmtWriteCmp1Combination	dynsym	35d2d2407e53		in	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x10024930	592	vfmtFindFormatFile	dynsym	f7834fe8210a		in	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x10024b80	76	vfmtFindKonaFormatFile	dynsym	3dd1d695d4d3		in	undocumented		
-usr/gfx/sgcombine	board-tool	n32		0x10024bd0	156	vfmtFindCmpFormatFile	dynsym	acb4a0eec76f		in	undocumented		
-usr/gfx/sgcombine	board-tool	n32		0x10024c70	76	vfmtFindOdyFormatFile	dynsym	2b82398ff0ba		in	undocumented		
-usr/gfx/sgcombine	board-tool	n32		0x10024cc0	76	vfmtFindSG2FormatFile	dynsym	d82fe2dc98fd		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/gfx/sgcombine	board-tool	n32		0x10024bd0	156	vfmtFindCmpFormatFile	dynsym	acb4a0eec76f		in	located	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
+usr/gfx/sgcombine	board-tool	n32		0x10024c70	76	vfmtFindOdyFormatFile	dynsym	2b82398ff0ba		in	located	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
+usr/gfx/sgcombine	board-tool	n32		0x10024cc0	76	vfmtFindSG2FormatFile	dynsym	d82fe2dc98fd		in	located	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/gfx/sgcombine	board-tool	n32		0x10024d10	308	vfmtFindKonaCombinationFile	dynsym	72101929c774		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10024e50	616	vfmtFindCmpCombinationFile	dynsym	572a81121237		in	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
-usr/gfx/sgcombine	board-tool	n32		0x100250c0	132	vfmtGetLastKonaFileStat	dynsym	540a890a6f14		in	undocumented		
+usr/gfx/sgcombine	board-tool	n32		0x100250c0	132	vfmtGetLastKonaFileStat	dynsym	540a890a6f14		in	located	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/gfx/sgcombine	board-tool	n32		0x10025404	56	SDBaddNewArraySymbol	dynsym	649da118f4de		out:21	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x1002543c	64	SDBaddNewScalarSymbol	dynsym	256053e6ff3b		out:21	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x1002547c	404	SDBcloseNewDatabase	dynsym	e0b7a10442d2		out:21	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
-usr/gfx/sgcombine	board-tool	n32		0x10025610	356	SDBopenNewDatabase	dynsym	3b538149b0ff		out:21	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
+usr/gfx/sgcombine	board-tool	n32		0x10025610	356	SDBopenNewDatabase	dynsym	3b538149b0ff		out:21	located	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/gfx/sgcombine	board-tool	n32		0x10025774	120	SDBsetHeader	dynsym	0253b870c388		out:21	located	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/gfx/sgcombine	board-tool	n32		0x100259a4	104	SDBgetSymbolDataAddress	dynsym	d5838d606dc4		out:21	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10025a0c	88	SDBgetSymbolDatatype	dynsym	73f4a365f0a0		out:21	undocumented		
-usr/gfx/sgcombine	board-tool	n32		0x10025a64	92	SDBgetSymbolElementCount	dynsym	ea49ce29181e		out:21	undocumented		
+usr/gfx/sgcombine	board-tool	n32		0x10025a64	92	SDBgetSymbolElementCount	dynsym	ea49ce29181e		out:21	located	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/gfx/sgcombine	board-tool	n32		0x10025ac0	56	SDBgetSymbolValueArray	dynsym	010923e0e3c5		out:21	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x10025af8	56	SDBgetSymbolValueScalar	dynsym	b4262eaafcb5		out:21	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x10025b30	184	SDBcloseReadDatabase	dynsym	243e1b38859e		out:21	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
@@ -67311,9 +67311,9 @@ usr/gfx/sgcombine	board-tool	n32		0x10026238	52	xdr_SDBfileOffset	dynsym	d2eb655
 usr/gfx/sgcombine	board-tool	n32		0x1002626c	340	xdr_typedData	dynsym	6adee6ae893b		out:21	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x100263c0	320	xdr_SDBfileHeader	dynsym	e3a28aaf84d8		out:21	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x10026500	52	xdr_SDBdataType	dynsym	fa7ae80b6a6c		out:21	undocumented		
-usr/gfx/sgcombine	board-tool	n32		0x10026534	112	xdr_SDBsymbolName	dynsym	0c494cdced0f		out:21	undocumented		
+usr/gfx/sgcombine	board-tool	n32		0x10026534	112	xdr_SDBsymbolName	dynsym	0c494cdced0f		out:21	located	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/gfx/sgcombine	board-tool	n32		0x100265a4	200	xdr_SDBsymbolTableEntry	dynsym	ace7e711f7dc		out:21	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
-usr/gfx/sgcombine	board-tool	n32		0x1002666c	104	xdr_SDBversionNumber	dynsym	c190158499f4		out:21	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
+usr/gfx/sgcombine	board-tool	n32		0x1002666c	104	xdr_SDBversionNumber	dynsym	c190158499f4		out:21	located	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/gfx/sgcombine	board-tool	n32		0x100266d4	36	SDBsetupMemoryInterface	dynsym	cdebbd41f479		out:21	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10026700	32	InitEZ__Gv	dynsym	532a8cac44e1		out:21	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10026720	180	EZ__GP10_WidgetRec	dynsym	6fd75c78dd13		out:21	undocumented		
