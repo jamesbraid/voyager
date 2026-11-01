@@ -17,7 +17,7 @@
   **established.** The whole routine is read. It takes the PCI device vertex in a0 and returns 0 on success and 6 when the `is1` node is missing. It calls `hwgraph_traverse(dev, "is1", &vertex)`; a nonzero result logs "is1_detach can't traverse to 'is1'" through `printf` and returns 6. Otherwise `hwgraph_fastinfo_get(vertex)` gives the board and the word at board +0x1c gives n; if `is1_boards[n]` is not that board it calls `assfail` with the text "is1_boards[brd] == bdata" and line 716 and goes on. When the interrupt handle at board +0xd0 is nonzero it calls `pciio_intr_disconnect` and `pciio_intr_free` and zeroes the handle. It then calls `hwgraph_inventory_remove(vertex = word at +8, 7, 27, word at +0x20, word at +0x1c, word at +0x24)`, `is1_dbg_detach(board)`, `hwgraph_edge_remove(dev, "is1", 0)` and `hwgraph_vertex_destroy(word at +8)`, stores -1 in the word at +8, calls `freeBoardPointer(n)` and zeroes `is1_boards[n]` and word n of the use table. It returns 0.
 
 - `is1_open` (`is1.o`, address 0x1a7c, 620 bytes):
-  **established.** The whole routine is read. It records the opening process in the board's table of 64 process slots and returns 0, or 12 when all 64 are in use. It takes a pointer to the device number in a0, looks the board up with `hwgraph_fastinfo_get`, and takes the process id with `curproc` and `proc_pid`, calling the 8-byte stub `is1_dbg_reset` with it. A null board calls `assfail` with the text "bdata != NULL" and line 815 and then goes on to use the null pointer.
+  **established.** The whole routine is read. It records the opening process in the board's table of 64 process slots and returns 0, or 12 when all 64 are in use. It takes a pointer to the device number in a0, looks the board up with `hwgraph_fastinfo_get`, and takes the process id with `curproc` and `proc_pid`, then calls the 8-byte stub `is1_dbg_reset` at 0x1b08; the process id is kept in the stack slot at sp+0, not passed to the stub. A null board calls `assfail` with the text "bdata != NULL" and line 815 and then goes on to use the null pointer.
   With `mutex_spinlock(board +0x100)` held it scans the words at board +0x350 for a zero, stores the process id in the first one and, with all 64 occupied, unlocks and returns 12. Otherwise it increments the word at +0x104 (stored in the delay slot of the unlock call), atomically ORs 1 into the word at +0xdc, and, when that bit was clear, atomically adds 1 to the static word at `.data` +0x10. It then calls `add_exit_callback(pid, 0, is1_exit, board)`, so `is1_exit` runs when the process ends, and returns 0.
 
 - `is1_hsync_discovery` (`is1.o`, address 0x2df4, 944 bytes):
@@ -284,3 +284,18 @@
 - `is1_dbg_init` (`is1.o`, address 0x45d0, 8 bytes):
   **established.** It does nothing: it is a stub of one return and a `nop`, so `is1_init` calls an empty hook. Both words were read. `is1_init` calls it at 0x7e8. It takes no argument and sets no return value.
 
+
+- `is1_dbg_reset` (`is1.o`, address 0x45d8, 8 bytes):
+  **established.** It is a two-word body, `jr ra` and a `nop`, so it neither reads nor writes anything and leaves every register as it found it. `is1_open` reaches it through a `jalr` at 0x1b08 whose target is built from four relocations against `is1_dbg_reset` at 0x1af0 to 0x1afc. The process id that `proc_pid` returned goes to the stack slot at sp+0 in the delay slot of that call (0x1b0c), not into an argument register, so the hook never sees it. Both words were checked against the object's symbol table and the call site.
+
+- `is1_dbg_attach` (`is1.o`, address 0x45e0, 8 bytes):
+  **established.** The body is `jr ra` followed by a `nop`; it has no loads, stores or calls and sets no return value. The only caller is `is1_attach`, which builds the address from relocations at 0xf5c to 0xf6c and calls through register t9 at 0xf84. The delay slot of that call (0xf88) moves the board pointer, read from the table whose pointer is the doubleword at `.data` +72, indexed by the board number (the loads at 0xf60 to 0xf78), into a0, so the hook is invoked with the board record and the stub ignores it.
+
+- `is1_dbg_detach` (`is1.o`, address 0x45e8, 8 bytes):
+  **established.** Two instructions, a return and a `nop`, make up the whole routine, which therefore changes no state and sets no result. `is1_detach` calls it at 0x178c, after it has stored the unlinked board record's pointer in s1 from `hwgraph_fastinfo_get`; the delay slot at 0x1790 copies s1 into a0, an argument the stub discards. The call address is formed by the relocations at 0x1774 to 0x1780.
+
+- `is1_dbg_unload` (`is1.o`, address 0x45f0, 8 bytes):
+  **established.** The routine is a bare return with a `nop` in its delay slot and has no effect of its own. `is1_unload` calls it last, at 0xb20 (the relocations that form the address are at 0xb08 to 0xb14), after `pciio_iterate` and `freeBoardPointers`; the delay slot of that call is a `nop`, so no argument is set up, and execution continues at 0xb28, which reloads ra.
+
+- `fglrx_hpipe_init_idbg` (`is1.o`, address 0x0, 8 bytes):
+  **established.** This is the first routine of the object's `.text`: `jr ra` and a `nop`, with no loads, stores or calls. `is1_init` reaches it by a `jalr` through t9 at 0x7c4, whose address is built from four relocations against `.text` with a zero addend (0x7a0, 0x7a4, 0x7a8, 0x7ac). The object's DWARF gives the routine this name; the symbol table has no entry at address 0, so the fact sheet tool needs an explicit size to read it. Both words were read.
