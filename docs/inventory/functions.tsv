@@ -6625,14 +6625,14 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x6676c0	88	__glim_No
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x667740	108	__glim_Normal3sv	dwarf+dynsym	8c4bc321e044		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x6677c0	88	__glim_Normal3i	dwarf+dynsym	04d40f66a9b9		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x667840	108	__glim_Normal3iv	dwarf+dynsym	a4e23377623f		out:11	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x667900	68	glNewList	dwarf+dynsym	c529595eadc2		out:11	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x667900	68	glNewList	dwarf+dynsym	c529595eadc2		out:11	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x667980	68	glEndList	dwarf+dynsym	90a2f1364d35		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x667a00	68	glCallList	dwarf+dynsym	0edc0f0cdace		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x667a80	68	glCallLists	dwarf+dynsym	4e21d4a197d2		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x667b00	68	glDeleteLists	dwarf+dynsym	298176481eeb		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x667b80	68	glGenLists	dwarf+dynsym	b46ea26c65db		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x667c00	68	glListBase	dwarf+dynsym	8d933fe8919a		out:11	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x667c80	68	glBegin	dwarf+dynsym	062043f72ed9		out:11	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x667c80	68	glBegin	dwarf+dynsym	062043f72ed9		out:11	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x667d00	68	glBitmap	dwarf+dynsym	182ceb6e5f10		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x667d80	68	glEdgeFlag	dwarf+dynsym	29d0c9b012a9		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x667e00	68	glEdgeFlagv	dwarf+dynsym	817fa86b8a75		out:11	undocumented		
@@ -7079,7 +7079,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x675a00	68	glGetTexB
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x675a80	68	glGenFragmentShadersATI	dwarf+dynsym	1c4f9fd9df10		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x675b00	68	glBindFragmentShaderATI	dwarf+dynsym	1f25b889a721		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x675b80	68	glDeleteFragmentShaderATI	dwarf+dynsym	a470391760e1		out:11	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x675c00	68	glBeginFragmentShaderATI	dwarf+dynsym	af9d2b9af9a0		out:11	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x675c00	68	glBeginFragmentShaderATI	dwarf+dynsym	af9d2b9af9a0		out:11	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x675c80	68	glEndFragmentShaderATI	dwarf+dynsym	c04daaf68ecc		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x675d00	68	glPassTexCoordATI	dwarf+dynsym	580cf08bb350		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x675d80	68	glSampleMapATI	dwarf+dynsym	e2477ccbd3ca		out:11	undocumented		
@@ -19479,14 +19479,14 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6bb460	88	__glim_
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6bb4c0	108	__glim_Normal3sv	dwarf+dynsym	023d060b7fd7		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6bb530	88	__glim_Normal3i	dwarf+dynsym	5e57191864bb		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6bb590	108	__glim_Normal3iv	dwarf+dynsym	4bcfb6bcfbcc		out:11	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6bb600	68	glNewList	dwarf+dynsym	69d5d89460e9		out:11	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6bb600	68	glNewList	dwarf+dynsym	69d5d89460e9		out:11	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6bb650	68	glEndList	dwarf+dynsym	3e7f66610868		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6bb6a0	68	glCallList	dwarf+dynsym	1ee950131937		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6bb6f0	68	glCallLists	dwarf+dynsym	c82c7d4e6ad1		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6bb740	68	glDeleteLists	dwarf+dynsym	bc9698982433		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6bb790	68	glGenLists	dwarf+dynsym	464518b57190		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6bb7e0	68	glListBase	dwarf+dynsym	2da02b8795f5		out:11	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6bb830	68	glBegin	dwarf+dynsym	d94421c09ad5		out:11	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6bb830	68	glBegin	dwarf+dynsym	d94421c09ad5		out:11	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6bb880	68	glBitmap	dwarf+dynsym	97d644333202		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6bb8d0	68	glEdgeFlag	dwarf+dynsym	410348e123cf		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6bb920	68	glEdgeFlagv	dwarf+dynsym	55d816bf2726		out:11	undocumented		
@@ -19933,7 +19933,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6c4380	68	glGetTe
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6c43d0	68	glGenFragmentShadersATI	dwarf+dynsym	bb2b347e528c		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6c4420	68	glBindFragmentShaderATI	dwarf+dynsym	c5e93d467154		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6c4470	68	glDeleteFragmentShaderATI	dwarf+dynsym	f9179d3698ab		out:11	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6c44c0	68	glBeginFragmentShaderATI	dwarf+dynsym	13ec77c4c9c8		out:11	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6c44c0	68	glBeginFragmentShaderATI	dwarf+dynsym	13ec77c4c9c8		out:11	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6c4510	68	glEndFragmentShaderATI	dwarf+dynsym	0f871e913d4e		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6c4560	68	glPassTexCoordATI	dwarf+dynsym	f7dcd5e0baa1		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6c45b0	68	glSampleMapATI	dwarf+dynsym	4144eeddfbf0		out:11	undocumented		
@@ -32912,14 +32912,14 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x65f6c0	88	__
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x65f740	108	__glim_Normal3sv	dwarf+dynsym	433ac077dc12		out:11	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x65f7c0	88	__glim_Normal3i	dwarf+dynsym	3fec4c426369		out:11	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x65f840	108	__glim_Normal3iv	dwarf+dynsym	b4c65ceca963		out:11	undocumented		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x65f900	68	glNewList	dwarf+dynsym	b2ac9a89d915		out:11	undocumented		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x65f900	68	glNewList	dwarf+dynsym	b2ac9a89d915		out:11	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x65f980	68	glEndList	dwarf+dynsym	ed476969faf7		out:11	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x65fa00	68	glCallList	dwarf+dynsym	223a84d99a21		out:11	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x65fa80	68	glCallLists	dwarf+dynsym	68f10ab739b9		out:11	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x65fb00	68	glDeleteLists	dwarf+dynsym	2ade41c3c7d4		out:11	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x65fb80	68	glGenLists	dwarf+dynsym	4c025164507c		out:11	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x65fc00	68	glListBase	dwarf+dynsym	c2cf72ae5da6		out:11	undocumented		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x65fc80	68	glBegin	dwarf+dynsym	981418720eff		out:11	undocumented		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x65fc80	68	glBegin	dwarf+dynsym	981418720eff		out:11	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x65fd00	68	glBitmap	dwarf+dynsym	d7161e280682		out:11	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x65fd80	68	glEdgeFlag	dwarf+dynsym	a8a6d159e3b0		out:11	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x65fe00	68	glEdgeFlagv	dwarf+dynsym	bc0e4030ade0		out:11	undocumented		
@@ -33366,7 +33366,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x66da00	68	gl
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x66da80	68	glGenFragmentShadersATI	dwarf+dynsym	787d9bcd89ba		out:11	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x66db00	68	glBindFragmentShaderATI	dwarf+dynsym	83fe4211fc18		out:11	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x66db80	68	glDeleteFragmentShaderATI	dwarf+dynsym	62e4005af0b0		out:11	undocumented		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x66dc00	68	glBeginFragmentShaderATI	dwarf+dynsym	76ad80c95f6e		out:11	undocumented		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x66dc00	68	glBeginFragmentShaderATI	dwarf+dynsym	76ad80c95f6e		out:11	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x66dc80	68	glEndFragmentShaderATI	dwarf+dynsym	2508251f46b8		out:11	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x66dd00	68	glPassTexCoordATI	dwarf+dynsym	6f6680f9673c		out:11	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x66dd80	68	glSampleMapATI	dwarf+dynsym	d2d087d6457b		out:11	undocumented		
@@ -42408,14 +42408,14 @@ usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x437140	112	
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4371c0	172	__glim_GenLists	dwarf+dynsym	43b4258768d2		out:16	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x437280	96	__glim_ListBase	dwarf+dynsym	0ec4be101ae1		out:16	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x437300	132	__glim_DeleteLists	dwarf+dynsym	1fb3da4286c4		out:16	undocumented		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4373c0	52	glNewList	dwarf+dynsym	adcf4cf23322		out:16	undocumented		
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4373c0	52	glNewList	dwarf+dynsym	adcf4cf23322		out:16	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x437400	52	glEndList	dwarf+dynsym	5b214d746038		out:16	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x437440	52	glCallList	dwarf+dynsym	03f32b47e6b3		out:16	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x437480	52	glCallLists	dwarf+dynsym	c96ed06d4dc8		out:16	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4374c0	52	glDeleteLists	dwarf+dynsym	aff747d62339		out:16	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x437500	52	glGenLists	dwarf+dynsym	4c456b5cf55a		out:16	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x437540	52	glListBase	dwarf+dynsym	769345a048c6		out:16	undocumented		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x437580	52	glBegin	dwarf+dynsym	48787bed1afd		out:16	undocumented		
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x437580	52	glBegin	dwarf+dynsym	48787bed1afd		out:16	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4375c0	52	glBitmap	dwarf+dynsym	053607b9167f		out:16	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x437600	52	glColor3b	dwarf+dynsym	fa15b6410ecb		out:16	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x437640	52	glColor3bv	dwarf+dynsym	1a8f723c9bd7		out:16	undocumented		
@@ -53331,7 +53331,7 @@ usr/gfx/arch/IP35VOYAGER/libGL.so	board-library	o32	.text	0xd826008	1676	combine
 usr/gfx/arch/IP35VOYAGER/libGL.so	board-library	o32		0xd82628c	368	glXWaitX	dynsym+mdebug	ac4f5235978b		out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER/libGL.so	board-library	o32		0xd8263fc	360	glXWaitGL	dynsym+mdebug	961c470804d6		out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER/libGL.so	board-library	o32		0xd826564	132	glXQueryExtension	dynsym+mdebug	7ec24056eec0		out:18	undocumented		
-usr/gfx/arch/IP35VOYAGER/libGL.so	board-library	o32		0xd8265e8	116	glXQueryVersion	dynsym+mdebug	bc23e571a070		out:18	undocumented		
+usr/gfx/arch/IP35VOYAGER/libGL.so	board-library	o32		0xd8265e8	116	glXQueryVersion	dynsym+mdebug	bc23e571a070		out:18	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/gfx/arch/IP35VOYAGER/libGL.so	board-library	o32		0xd82665c	56	glXDestroyContext	dynsym+mdebug	65ca245c6124		out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER/libGL.so	board-library	o32	.text	0xd826694	1244	DestroyContext	mdebug	0030897598a6		in	undocumented		
 usr/gfx/arch/IP35VOYAGER/libGL.so	board-library	o32		0xd8267f8	480	__glXFreeContext	dynsym+mdebug	2ab796ebcb72		in	undocumented		
@@ -53624,14 +53624,14 @@ usr/gfx/arch/IP35VOYAGER/libGL.so	board-library	o32		0xd840050	372	__glx_GetInst
 usr/gfx/arch/IP35VOYAGER/libGL.so	board-library	o32		0xd8401c4	396	__glx_InstrumentsBufferSGIX	dynsym+mdebug	5a4789e034cb		in	undocumented		
 usr/gfx/arch/IP35VOYAGER/libGL.so	board-library	o32		0xd840350	388	__glx_PollInstrumentsSGIX	dynsym+mdebug	d694d4ba76c0		in	undocumented		
 usr/gfx/arch/IP35VOYAGER/libGL.so	board-library	o32		0xd8404d4	328	__glx_FlushRasterSGIX	dynsym+mdebug	c52a2faba1ef		in	undocumented		
-usr/gfx/arch/IP35VOYAGER/libGLcore.so	board-library	o32		0xd906e80	12	glNewList	dynsym+mdebug	b114468d8519		out:18	undocumented		
+usr/gfx/arch/IP35VOYAGER/libGLcore.so	board-library	o32		0xd906e80	12	glNewList	dynsym+mdebug	b114468d8519		out:18	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/gfx/arch/IP35VOYAGER/libGLcore.so	board-library	o32		0xd906e8c	12	glEndList	dynsym+mdebug	52740b0d9f0e		out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER/libGLcore.so	board-library	o32		0xd906e98	12	glCallList	dynsym+mdebug	1b0fb2e6dafb		out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER/libGLcore.so	board-library	o32		0xd906ea4	12	glCallLists	dynsym+mdebug	37bc441e61a3		out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER/libGLcore.so	board-library	o32		0xd906eb0	12	glDeleteLists	dynsym+mdebug	7b5c2904d6b4		out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER/libGLcore.so	board-library	o32		0xd906ebc	12	glGenLists	dynsym+mdebug	994317eb404b		out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER/libGLcore.so	board-library	o32		0xd906ec8	12	glListBase	dynsym+mdebug	3c277e72178b		out:18	undocumented		
-usr/gfx/arch/IP35VOYAGER/libGLcore.so	board-library	o32		0xd906ed4	12	glBegin	dynsym+mdebug	eecb5fd38d02		out:18	undocumented		
+usr/gfx/arch/IP35VOYAGER/libGLcore.so	board-library	o32		0xd906ed4	12	glBegin	dynsym+mdebug	eecb5fd38d02		out:18	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/gfx/arch/IP35VOYAGER/libGLcore.so	board-library	o32		0xd906ee0	12	glBitmap	dynsym+mdebug	34c71de73842		out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER/libGLcore.so	board-library	o32		0xd906eec	12	glColor3b	dynsym+mdebug	9d762ba92451		out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER/libGLcore.so	board-library	o32		0xd906ef8	12	glColor3bv	dynsym+mdebug	35763acdf9e8		out:18	undocumented		
@@ -58072,7 +58072,7 @@ usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d140	444	__glFillMap
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d300	400	__glFillMap2d	dynsym	d4cedcef53c9		in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d4c0	96	__glEvalComputeK	dynsym	79a11b8254b8		in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d520	12	__direct_glNewList	dynsym	b114468d8519	shared-address	out:18	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d520	12	glNewList	dynsym	b114468d8519	shared-address	out:18	undocumented		
+usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d520	12	glNewList	dynsym	b114468d8519	shared-address	out:18	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d52c	12	__direct_glEndList	dynsym	52740b0d9f0e	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d52c	12	glEndList	dynsym	52740b0d9f0e	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d538	12	__direct_glCallList	dynsym	1b0fb2e6dafb	shared-address	out:18	undocumented		
@@ -58086,7 +58086,7 @@ usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d55c	12	glGenLists	d
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d568	12	__direct_glListBase	dynsym	3c277e72178b	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d568	12	glListBase	dynsym	3c277e72178b	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d574	12	__direct_glBegin	dynsym	eecb5fd38d02	shared-address	out:18	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d574	12	glBegin	dynsym	eecb5fd38d02	shared-address	out:18	undocumented		
+usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d574	12	glBegin	dynsym	eecb5fd38d02	shared-address	out:18	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d580	12	__direct_glBitmap	dynsym	34c71de73842	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d580	12	glBitmap	dynsym	34c71de73842	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d58c	12	__direct_glColor3b	dynsym	dc0dd845d51b	shared-address	out:18	undocumented		
@@ -59602,7 +59602,7 @@ usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82f320	12	glBindFragme
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82f32c	12	__direct_glDeleteFragmentShaderATI	dynsym	581361a46919	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82f32c	12	glDeleteFragmentShaderATI	dynsym	581361a46919	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82f338	12	__direct_glBeginFragmentShaderATI	dynsym	86069cfbba39	shared-address	out:18	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82f338	12	glBeginFragmentShaderATI	dynsym	86069cfbba39	shared-address	out:18	undocumented		
+usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82f338	12	glBeginFragmentShaderATI	dynsym	86069cfbba39	shared-address	out:18	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82f344	12	__direct_glEndFragmentShaderATI	dynsym	840e4f32698a	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82f344	12	glEndFragmentShaderATI	dynsym	840e4f32698a	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82f350	12	__direct_glPassTexCoordATI	dynsym	1952c6ec253b	shared-address	out:18	undocumented		
@@ -60215,7 +60215,7 @@ usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd841fc0	388	__glXInitTh
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd842e40	76	glXCreateContext	dynsym	52d8e2aecd1f		out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd842ec0	240	__glXFreeContext	dynsym	343f9dda3bf1		in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd843180	56	glXDestroyContext	dynsym	a3b3c1adb616		out:18	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd8431c0	136	glXQueryVersion	dynsym	71f84023ce59		out:18	undocumented		
+usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd8431c0	136	glXQueryVersion	dynsym	71f84023ce59		out:18	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd843280	144	glXQueryExtension	dynsym	bbab867e165f		out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd843340	292	glXWaitGL	dynsym	00fceaaedc23		out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd843480	300	glXWaitX	dynsym	727e308edad7		out:18	undocumented		
@@ -60536,7 +60536,7 @@ usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd875900	432	DPMSInfo	dy
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd875b80	96	XeviQueryExtension	dynsym	0a02d7ab1384		in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd875c00	436	XeviQueryVersion	dynsym	212b9a6ac9a5		in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd875e00	2668	XeviGetVisualInfo	dynsym	9d1e0e21b6a8		in	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libGLcore.so	board-library	n32		0x4006c0	8	__glNotImplemented	dwarf+dynsym	78aa5094d5ec		in	undocumented		
+usr/gfx/arch/IP35VOYAGER32/libGLcore.so	board-library	n32		0x4006c0	8	__glNotImplemented	dwarf+dynsym	78aa5094d5ec		in	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		ArePopupsAvailable	dwarf+funcnames			out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		BadAuxWindow	dwarf+funcnames			out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		ByAllMeansGetOpenGLStrings	dwarf+funcnames			out:17	undocumented		
@@ -64482,7 +64482,7 @@ usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2167960	588	__glFillMap
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2167bb0	400	__glFillMap2d	dynsym	1f0ae7632606		in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2167d40	104	__glEvalComputeK	dynsym	5a53e0b164f6		in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168004	12	__direct_glNewList	dynsym	5a307160ad9e	shared-address	out:18	undocumented		
-usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168004	12	glNewList	dynsym	5a307160ad9e	shared-address	out:18	undocumented		
+usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168004	12	glNewList	dynsym	5a307160ad9e	shared-address	out:18	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168010	12	__direct_glEndList	dynsym	2a894bcac02e	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168010	12	glEndList	dynsym	2a894bcac02e	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x216801c	12	__direct_glCallList	dynsym	ce59899ea131	shared-address	out:18	undocumented		
@@ -64496,7 +64496,7 @@ usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168040	12	glGenLists	d
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x216804c	12	__direct_glListBase	dynsym	a52067c90489	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x216804c	12	glListBase	dynsym	a52067c90489	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168058	12	__direct_glBegin	dynsym	9d3afbe63a6c	shared-address	out:18	undocumented		
-usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168058	12	glBegin	dynsym	9d3afbe63a6c	shared-address	out:18	undocumented		
+usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168058	12	glBegin	dynsym	9d3afbe63a6c	shared-address	out:18	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168064	12	__direct_glBitmap	dynsym	b6a231cf9d2a	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168064	12	glBitmap	dynsym	b6a231cf9d2a	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168070	12	__direct_glColor3b	dynsym	e620894d22fa	shared-address	out:18	undocumented		
@@ -66012,7 +66012,7 @@ usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2169e04	12	glBindFragme
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2169e10	12	__direct_glDeleteFragmentShaderATI	dynsym	467bc0ccfb14	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2169e10	12	glDeleteFragmentShaderATI	dynsym	467bc0ccfb14	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2169e1c	12	__direct_glBeginFragmentShaderATI	dynsym	6738247136dd	shared-address	out:18	undocumented		
-usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2169e1c	12	glBeginFragmentShaderATI	dynsym	6738247136dd	shared-address	out:18	undocumented		
+usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2169e1c	12	glBeginFragmentShaderATI	dynsym	6738247136dd	shared-address	out:18	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2169e28	12	__direct_glEndFragmentShaderATI	dynsym	f7d26a6f6102	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2169e28	12	glEndFragmentShaderATI	dynsym	f7d26a6f6102	shared-address	out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2169e34	12	__direct_glPassTexCoordATI	dynsym	d3faba5a0939	shared-address	out:18	undocumented		
@@ -66625,7 +66625,7 @@ usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x217b230	408	__glXInitTh
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x217c0c0	80	glXCreateContext	dynsym	5320da4fc4d9		out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x217c110	240	__glXFreeContext	dynsym	683aadaa6936		in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x217c3a0	60	glXDestroyContext	dynsym	ee1f3d8f510d		out:18	undocumented		
-usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x217c3e0	136	glXQueryVersion	dynsym	40b4f7ea7473		out:18	undocumented		
+usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x217c3e0	136	glXQueryVersion	dynsym	40b4f7ea7473		out:18	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x217c470	152	glXQueryExtension	dynsym	20cd19482e2b		out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x217c510	304	glXWaitGL	dynsym	bd878da03537		out:18	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x217c640	316	glXWaitX	dynsym	e16d5adeb989		out:18	undocumented		
@@ -66946,7 +66946,7 @@ usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21adaa0	460	DPMSInfo	dy
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21add20	104	XeviQueryExtension	dynsym	e27b013519fa		in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21add90	448	XeviQueryVersion	dynsym	c0a570000950		in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21adf90	2720	XeviGetVisualInfo	dynsym	77fc82bbbdae		in	undocumented		
-usr/gfx/arch/IP35VOYAGER64/libGLcore.so	board-library	n64		0x4008a0	8	__glNotImplemented	dwarf+dynsym	78aa5094d5ec		in	undocumented		
+usr/gfx/arch/IP35VOYAGER64/libGLcore.so	board-library	n64		0x4008a0	8	__glNotImplemented	dwarf+dynsym	78aa5094d5ec		in	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/gfx/sgcombine	board-tool	n32		0x1000f870	268	__start	dynsym	97e564342a80		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x1000f97c	12	_mcount	dynsym	1c53f0b255e3		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x1000f990	180	_main	dynsym	978e7e7fde74		in	undocumented		

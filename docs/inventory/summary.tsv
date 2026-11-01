@@ -1,7 +1,7 @@
 table	rows	out_of_scope	understood	understood_with_open	understood_distinct	templated	located	named_only	undocumented	no_software_dependency	pct_understood	pct_located_or_better	pct_mentioned	pct_done	unresolved_sites	truncated	audited_real_pct	audited_sample	audited_date	computes	reused	multi_unit	shared_address	input
-binaries	84	0	73	0	73	0	0	8	3	0	86.9	86.9	96.4	86.9							0			
-functions	22294	45056	264	2	247	0	109	453	21468	0	1.2	1.7	3.7	1.2							0	503	17	
-functions (distinct names)	10713	19503	188	2	186	0	0	282	10243	0	1.8	1.8	4.4	1.8							0			
+binaries	84	0	83	0	81	0	0	0	1	0	98.8	98.8	98.8	98.8							0			
+functions	22294	45056	264	2	247	0	109	455	21466	0	1.2	1.7	3.7	1.2							0	503	17	
+functions (distinct names)	10713	19503	188	2	186	0	0	283	10242	0	1.8	1.8	4.4	1.8							0			
 mmio	201	0	69	0	66	0	132	0	0	0	34.3	100.0	100.0	34.3	37						0			
 tokens	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
 ioctls	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
@@ -64,8 +64,8 @@ functions in usr/gfx/arch/IP35VOYAGER/libGL.so	542	129	0	0	0	0	0	0	542	0	0.0	0.0
 functions in usr/gfx/arch/IP35VOYAGER/libGLcore.so	0	504	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
 functions in usr/gfx/arch/IP35VOYAGER/libgl.so	1	3811	0	0	0	0	0	1	0	0	0.0	0.0	100.0	0.0							0	0	0	
 functions in usr/gfx/arch/IP35VOYAGER32/libGL.so	314	2282	0	0	0	0	3	6	305	0	0.0	1.0	2.9	0.0							0	0	0	
-functions in usr/gfx/arch/IP35VOYAGER32/libGLcore.so	1	0	0	0	0	0	0	0	1	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/gfx/arch/IP35VOYAGER32/libGLcore.so	1	0	0	0	0	0	0	1	0	0	0.0	0.0	100.0	0.0							0	0	0	
 functions in usr/gfx/arch/IP35VOYAGER32/libgl.so	1	3812	0	0	0	0	0	1	0	0	0.0	0.0	100.0	0.0							0	0	0	
 functions in usr/gfx/arch/IP35VOYAGER64/libGL.so	314	2282	0	0	0	0	3	6	305	0	0.0	1.0	2.9	0.0							0	0	0	
-functions in usr/gfx/arch/IP35VOYAGER64/libGLcore.so	1	0	0	0	0	0	0	0	1	0	0.0	0.0	0.0	0.0							0	0	0	
+functions in usr/gfx/arch/IP35VOYAGER64/libGLcore.so	1	0	0	0	0	0	0	1	0	0	0.0	0.0	100.0	0.0							0	0	0	
 functions in usr/gfx/sgcombine	35	367	0	0	0	0	0	4	31	0	0.0	0.0	11.4	0.0							0	0	0	

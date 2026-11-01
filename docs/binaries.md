@@ -599,6 +599,16 @@ The 16-bit pointer at offset 0x18 gives the PCI data structure, which starts wit
   It has 1231 lines and nlev=2.
   It has 15 `TEX_IN` entries, 10 `TEX_INST` entries and 16 `RGB_INST` entries.
   It is a two-level multitexture program, larger than `mltiTex4.pps`.
+- `usr/diags/SG/data/mltiTex7.pps` (text, 16317 bytes): **inferred** from the header and the counts.
+  It has 1659 lines and nlev=2.
+  It has 21 `TEX_IN` entries, 14 `TEX_INST` entries and 22 `RGB_INST` entries.
+  It is the largest multitexture program in the set.
+- `usr/diags/SG/data/r3g3dprd1.tst` (text, 24095 bytes, 473 lines): **inferred** from the structure.
+  The file opens with a comment block, and its first test template starts at offset 0x7c.
+  It holds 63 `test` blocks, 13 of them templates and 50 tests.
+  The file has 50 `checksum` lines and seven `suite = gold` lines.
+  The first test, `polymode_cc4`, starts at offset 0x11d.
+  It is a list of test cases, each with argument lines and an expected checksum.
 
 ## OpenGL libraries
 
@@ -606,3 +616,56 @@ The o32 and N32 directories each hold `libGL.so`, `libGLcore.so` and `libgl.so`.
 The 64-bit directory holds `libGL.so` and `libGLcore.so` only.
 The export lists were compared as sorted name lists from the dynamic symbol tables.
 
+- `usr/gfx/arch/IP35VOYAGER/libGL.so` (o32 shared object, 486628 bytes): **established** from the dynamic symbol table that it defines 614 functions.
+  82 of them have names starting `gl`.
+  Its `NEEDED` entries are `libGLcore.so`, `libXsgivc.so`, `libXext.so`, `libX11.so.1` and `libc.so.1`.
+  It imports `glBegin`, so `glBegin` is defined in `libGLcore.so`.
+  It defines `glXQueryVersion` at address 0xd8265e8 (116 bytes).
+  Its export names include no ATI entry point.
+  **Inferred** that it is the GL and GLX entry layer, with the core routines in `libGLcore.so`.
+- `usr/gfx/arch/IP35VOYAGER/libGLcore.so` (o32 shared object, 155892 bytes): **established** from the dynamic symbol table and the disassembly.
+  It exports 504 names, which share 470 code addresses.
+  Each of the 470 addresses is a three-word stub.
+  The stub loads `t9` from a word at an absolute address.
+  Its code is `lw t9,N(zero)`, a `jr` and a `nop`.
+  For example, `glNewList` at address 0xd906e80 loads `t9` from the word at address 4176 (0x1050).
+  Its `NEEDED` entries are `libm.so` and `libc.so.1`, and it imports one name.
+  **Inferred** that these stubs are the GL core's dispatch entries, each jumping through the word it loads.
+- `usr/gfx/arch/IP35VOYAGER/libgl.so` (o32 shared object, 1749044 bytes): **established** from the dynamic symbol table that it defines 3438 functions.
+  It has 3545 distinct exported names, functions and objects together.
+  Its exports are identical, name for name, to those of `IP35VOYAGER32/libgl.so`.
+  Its `NEEDED` entries include `libGL.so`, `libGLU.so`, `libXmu.so` and `libXi.so`.
+  Its strings include "Iris GL is not supported on this platform".
+  **Inferred** that it is the IRIS GL compatibility library, whose soname is `libgl.so`.
+  **Inferred** that this build does not provide IRIS GL.
+- `usr/gfx/arch/IP35VOYAGER32/libGL.so` (N32 shared object, 858416 bytes): **established** from the dynamic symbol table that it defines 2500 functions.
+  967 of them have names starting `gl`.
+  Its `NEEDED` entries are `libXsgivc.so`, `libXext.so`, `libX11.so.1` and `libc.so.1`.
+  Its exported names are identical to those of `IP35VOYAGER64/libGL.so`.
+  They include 163 ATI entry points, such as `glBeginFragmentShaderATI`.
+  Against the o32 build, 521 names appear only in the o32 build.
+  2414 names appear only here.
+  **Inferred** that it is the N32 client OpenGL library.
+- `usr/gfx/arch/IP35VOYAGER32/libGLcore.so` (N32 shared object, 18404 bytes): **established** from the dynamic symbol table and the disassembly.
+  It defines one function, `__glNotImplemented`, at address 0x4006c0 (8 bytes).
+  That function is `jr ra` followed by `nop`, so it returns at once and leaves v0 unchanged.
+  Its only `NEEDED` entry is `libc.so.1`.
+  **Inferred** that this build carries no GL core code.
+  The N32 `libGL.so` does not list `libGLcore.so` in its `NEEDED` entries.
+- `usr/gfx/arch/IP35VOYAGER32/libgl.so` (N32 shared object, 1855224 bytes): **established** from the dynamic symbol table that its exported names are identical to those of the o32 `libgl.so`.
+  That is 3545 names in all.
+  Its `NEEDED` entries are `libGL.so`, `libGLU.so`, `libm.so`, `libXmu.so` and `libXsgivc.so`.
+  It also lists `libX11.so.1`, `libXi.so`, `libXext.so` and `libc.so.1`.
+  Its strings include the same "Iris GL is not supported on this platform" message.
+  **Inferred** that it is the same IRIS GL compatibility library in the N32 ABI.
+- `usr/gfx/arch/IP35VOYAGER64/libGL.so` (64-bit shared object, 977112 bytes): **established** from the dynamic symbol table that it defines 2500 functions.
+  Its exported names are identical to those of the N32 `libGL.so`.
+  It exports 163 names ending in `ATI`, among them `glBeginFragmentShaderATI` at address 0x2169e1c (12 bytes).
+  Its `glNewList` is at address 0x2168004, also 12 bytes long.
+  Its `NEEDED` entries are `libXsgivc.so`, `libXext.so`, `libX11.so.1` and `libc.so.1`.
+  **Inferred** that it is the 64-bit client OpenGL library with the ATI fragment-shader entry points.
+- `usr/gfx/arch/IP35VOYAGER64/libGLcore.so` (64-bit shared object, 19096 bytes): **established** from the dynamic symbol table and the disassembly.
+  It defines one function, `__glNotImplemented`, at address 0x4008a0 (8 bytes).
+  That function is `jr ra` followed by `nop`.
+  Its only `NEEDED` entry is `libc.so.1`.
+  **Inferred** that it is a placeholder with the same role as the N32 `libGLcore.so`.
