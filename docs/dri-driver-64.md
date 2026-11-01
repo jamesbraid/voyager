@@ -76,3 +76,56 @@ Labels follow `AGENTS.md` section 5. **Established** means the whole routine was
   Request 0x40046458 is output-only, with a 4-byte payload.
   On success the kernel's word is stored through the saved pointer (0x516674), and the return is 0.
   On failure the negated `errno` is returned.
+- `firegl_RestoreCap` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 100 bytes at 0x516680): **established.**
+  The word at block offset 0x0 holds the second argument (store at 0x5166a0).
+  ioctl receives 0x80046459, an input-only request with a four-byte payload.
+  A zero result returns 0; any other gives the negated `errno` (negation at 0x5166cc).
+- `firegl_SetBlockMode` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 100 bytes at 0x5166f0): **established.**
+  Block offset 0x0 receives the second argument as a 32-bit word (store at 0x516710).
+  The request, 0x8004645a, is input-only with four bytes.
+  Return 0 on a zero result, and the negated `errno` otherwise (negation at 0x516740).
+- `firegl_LockHardware` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 228 bytes at 0x516760): **established.**
+  The 57 instructions were read, including the retry loop.
+  The second argument is stored as the word at block offset 0x0 (store at 0x516798), and zero as the word at 0x4 (store at 0x51677c).
+  The first call is `ioctl` with request 0x8008642a, eight bytes of input (call at 0x5167a4).
+  A zero result passes through unchanged: the branch at 0x5167b8 leads to the return at 0x516808.
+  On failure `errno` is read; 12, 19 or 22 end the attempt by calling `exit` with the negated value (0x516838 to 0x51683c), and that call does not return.
+  Any other errno sends the same request again, repeating from 0x5167d4 until the call succeeds.
+- `firegl_UnlockHardware` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 84 bytes at 0x516850): **established.**
+  Its 21 instructions were read.
+  Offset 0x0 of the block takes the second argument (store at 0x516874), and offset 0x4 is zeroed (store at 0x516868).
+  The request is 0x8008642b, which takes eight bytes of input.
+  A zero result is returned unchanged, since the branch at 0x516884 leads to the return at 0x516894.
+  A failure calls `exit` with -1 (call at 0x51688c), which does not return.
+- `firegl_AllocMutex` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 116 bytes at 0x5168b0): **established.**
+  Each of the 29 instructions was read.
+  The word at the address in the second argument is zeroed before the call (store at 0x5168c8).
+  That pointer is saved at frame offset 0x8 (store at 0x5168d4).
+  Request 0x40046446 returns four bytes to the caller.
+  On success the block word is stored through the saved pointer (0x516914 to 0x516918), and the return is 0; on failure the negated `errno`.
+- `firegl_FreeMutex` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 100 bytes at 0x516930): **established.**
+  All 25 instructions were read.
+  A 32-bit store puts the second argument at block offset 0x0 (0x516950).
+  The call is `ioctl` with request 0x80046447, which carries a four-byte input.
+  The return is 0 on success and the negated `errno` on failure (negation at 0x51697c).
+- `firegl_AgpLockPages` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 96 bytes at 0x5169a0): **established.**
+  The 24 instructions were read in full.
+  The second argument passes unchanged as the third `ioctl` argument (move at 0x5169b8).
+  Request 0x80c86445 copies 200 bytes in from the caller's buffer.
+  Return 0 on success and the negated `errno` on failure (negation at 0x5169e8).
+- `firegl_EnableAuthentication` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 104 bytes at 0x516a00): **established.**
+  The 26 instructions were read end to end.
+  The word at block offset 0x0 is 1 when the second argument is non-zero and 0 otherwise (`sltu` at 0x516a18).
+  Request 0x8004644a takes four bytes of input.
+  The return is 0 on success and the negated `errno` on failure (negation at 0x516a50).
+- `firegl_RegisterTexture` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 100 bytes at 0x516a70): **established.**
+  Its 25 instructions were read.
+  The first word of the block takes the second argument (store at 0x516a90).
+  Request 0x80086448 carries eight bytes of input.
+  On success the return value is the word at block offset 0x4 (load at 0x516ac4).
+  On failure it is the negated `errno` (negation at 0x516abc).
+- `firegl_UnregisterTexture` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 104 bytes at 0x516ae0): **established.**
+  All 26 instructions were read.
+  Offset 0x0 of the block takes the second argument (store at 0x516b00).
+  ioctl gets request 0x80046449, four bytes of input.
+  The return is 0 on success (0x516b34) and the negated `errno` on failure (negation at 0x516b2c).

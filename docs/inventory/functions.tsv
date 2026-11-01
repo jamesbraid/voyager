@@ -3160,7 +3160,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bda80	116	firegl_G
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bdb00	112	firegl_SetCapIpcLock	dwarf+dynsym	5b9c5c765a55		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bdb80	100	firegl_RestoreCap	dwarf+dynsym	80db5b8e91a9		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bdc00	100	firegl_SetBlockMode	dwarf+dynsym	6ffe26960373		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bdc80	220	firegl_LockHardware	dwarf+dynsym	2e098bd7eabb		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bdc80	220	firegl_LockHardware	dwarf+dynsym	2e098bd7eabb		in	located	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bdd80	84	firegl_UnlockHardware	dwarf+dynsym	e89443ad68b7		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bde00	116	firegl_AllocMutex	dwarf+dynsym	d51add26b3af		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bde80	100	firegl_FreeMutex	dwarf+dynsym	feca9a465fd1		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
@@ -16012,16 +16012,16 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516490	132	firegl
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516520	104	firegl_ModifyBuffer	dwarf+dynsym	d359836f95f7		in	understood	docs/dri-driver-64.md#buffer-and-memory-requests	Buffer and memory requests
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516590	116	firegl_GetLockID	dwarf+dynsym	c10e2a7ba9e7		in	understood	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516610	112	firegl_SetCapIpcLock	dwarf+dynsym	64ae1d3329a5		in	understood	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516680	100	firegl_RestoreCap	dwarf+dynsym	c656d7bb8be9		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5166f0	100	firegl_SetBlockMode	dwarf+dynsym	b859084ce57b		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516760	228	firegl_LockHardware	dwarf+dynsym	6daf4ea3e9ed		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516850	84	firegl_UnlockHardware	dwarf+dynsym	3e981c059bd6		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5168b0	116	firegl_AllocMutex	dwarf+dynsym	7852d424c3ea		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516930	100	firegl_FreeMutex	dwarf+dynsym	a7aafbf802f3		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5169a0	96	firegl_AgpLockPages	dwarf+dynsym	5a93e765182c		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516a00	104	firegl_EnableAuthentication	dwarf+dynsym	312cb0d0c30e		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516a70	100	firegl_RegisterTexture	dwarf+dynsym	3bf0cd5f25fc		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516ae0	104	firegl_UnregisterTexture	dwarf+dynsym	c3f0265626e7		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516680	100	firegl_RestoreCap	dwarf+dynsym	c656d7bb8be9		in	understood	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5166f0	100	firegl_SetBlockMode	dwarf+dynsym	b859084ce57b		in	understood	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516760	228	firegl_LockHardware	dwarf+dynsym	6daf4ea3e9ed		in	understood	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516850	84	firegl_UnlockHardware	dwarf+dynsym	3e981c059bd6		in	understood	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5168b0	116	firegl_AllocMutex	dwarf+dynsym	7852d424c3ea		in	understood	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516930	100	firegl_FreeMutex	dwarf+dynsym	a7aafbf802f3		in	understood	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5169a0	96	firegl_AgpLockPages	dwarf+dynsym	5a93e765182c		in	understood	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516a00	104	firegl_EnableAuthentication	dwarf+dynsym	312cb0d0c30e		in	understood	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516a70	100	firegl_RegisterTexture	dwarf+dynsym	3bf0cd5f25fc		in	understood	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516ae0	104	firegl_UnregisterTexture	dwarf+dynsym	c3f0265626e7		in	understood	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516b50	352	firegl_LockPages	dwarf+dynsym	e34fe5fa8bb3		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516cb0	140	firegl_UnlockPages	dwarf+dynsym	7b728033804e		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516d40	96	firegl_FlushCache	dwarf+dynsym	ab7470ff5e1e		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
@@ -46731,16 +46731,16 @@ usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401880	144	fireg
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401940	104	firegl_ModifyBuffer	dwarf+dynsym	5eabf7e7e9aa		in	located	docs/dri-driver-64.md#buffer-and-memory-requests	Buffer and memory requests
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x4019c0	116	firegl_GetLockID	dwarf+dynsym	f8e5eea15333		in	located	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401a40	112	firegl_SetCapIpcLock	dwarf+dynsym	987a297e39b5		in	located	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401ac0	100	firegl_RestoreCap	dwarf+dynsym	3a15dacd94db		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401b40	100	firegl_SetBlockMode	dwarf+dynsym	83cb4af9a2b6		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401bc0	232	firegl_LockHardware	dwarf+dynsym	48e3a8d870f4		in	undocumented		
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401cc0	84	firegl_UnlockHardware	dwarf+dynsym	a62b9705205e		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401d40	116	firegl_AllocMutex	dwarf+dynsym	a16f6ec1a6db		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401dc0	100	firegl_FreeMutex	dwarf+dynsym	302fca57e067		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401e40	96	firegl_AgpLockPages	dwarf+dynsym	2b5fa7fcfc8d		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401ec0	104	firegl_EnableAuthentication	dwarf+dynsym	d7e2c0c2ed8d		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401f40	100	firegl_RegisterTexture	dwarf+dynsym	63629e564630		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401fc0	100	firegl_UnregisterTexture	dwarf+dynsym	b84d04898b4e		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401ac0	100	firegl_RestoreCap	dwarf+dynsym	3a15dacd94db		in	located	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401b40	100	firegl_SetBlockMode	dwarf+dynsym	83cb4af9a2b6		in	located	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401bc0	232	firegl_LockHardware	dwarf+dynsym	48e3a8d870f4		in	located	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401cc0	84	firegl_UnlockHardware	dwarf+dynsym	a62b9705205e		in	located	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401d40	116	firegl_AllocMutex	dwarf+dynsym	a16f6ec1a6db		in	located	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401dc0	100	firegl_FreeMutex	dwarf+dynsym	302fca57e067		in	located	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401e40	96	firegl_AgpLockPages	dwarf+dynsym	2b5fa7fcfc8d		in	located	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401ec0	104	firegl_EnableAuthentication	dwarf+dynsym	d7e2c0c2ed8d		in	located	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401f40	100	firegl_RegisterTexture	dwarf+dynsym	63629e564630		in	located	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x401fc0	100	firegl_UnregisterTexture	dwarf+dynsym	b84d04898b4e		in	located	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402040	328	firegl_LockPages	dwarf+dynsym	7a8e57f20c73		in	undocumented		
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x4021c0	136	firegl_UnlockPages	dwarf+dynsym	5ed9b796386e		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402280	96	firegl_FlushCache	dwarf+dynsym	1e65c6681ba3		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
