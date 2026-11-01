@@ -542,6 +542,7 @@ The 16-bit pointer at offset 0x18 gives the PCI data structure, which starts wit
   It has subtest routines such as `TEST_sync`, `TEST_swap` and `TEST_seq_ogl_dma`.
   Its strings include "Display %s is active, screen size %dx%d".
   **Inferred** that it is a test driver that opens an X display and runs the GL, DMA, video and swap subtests.
+  Its manual page (`usr/share/catman/u_man/cat1/olsgsys`, formatted text) calls it an online Scalable Graphics diagnostic for SN-MIPS systems with a CG or CGN brick: it discovers the SG2 cards and ImageSync1 boards, checks video checksums, the external swap-ready signal and sync with the ImageSync1 board.
 - `usr/diags/SG/bin/olsg` (ELF64 executable, 2726440 bytes): **established** from the dynamic symbol table and the strings.
   It defines 2221 functions and imports 186 names.
   Its `NEEDED` entries include `libX11.so.1`, `libpthread.so`, `libC.so.2` and `libc.so.1`.
@@ -550,6 +551,7 @@ The 16-bit pointer at offset 0x18 gives the PCI data structure, which starts wit
   `run_ram_test` returns 0 or 1 at its exit at address 0x100b3a98.
   Its strings include the test database names `LoadTestFile` and `CreateTestDefArray`.
   **Inferred** that the program loads a test database file and runs the tests listed in it.
+  Its manual page (`usr/share/catman/u_man/cat1/olsg`) describes it as an online Scalable Graphics diagnostic: configuration dumps, sequential and parallel register access, interrupt and ImageSync1 tests, then more than 40 graphics-pipeline tests on each AGP Pro50 card.
 - `usr/diags/SG/data/1280x1024_60.vmts` (text, 746 bytes): **established** from the whole file.
   It is a 36-line list of `name value` pairs for one mode, named `1280x1024`.
   The clock is 108000 kHz.
