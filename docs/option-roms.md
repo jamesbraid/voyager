@@ -118,6 +118,47 @@ All of these follow the public driver's layout (`radeon_combios.c`); every numbe
 
 - **inferred.** The MMIO tables write registers by offset; in the public headers the offsets used most are the indirect memory-controller index and data pair (0x1f8 and 0x1fc, in the R300 header) and the memory timing, framebuffer location, latency-timer and SDRAM mode registers at 0x140 to 0x158. The remaining offsets include bus control (0x30), CRTC and DAC control (0x50, 0x58, 0x7c), GPIO pad registers (0x198 to 0x1a0), display output (0xd00 to 0xd64) and the graphics buffer controls (0x2f0, 0x3f0). The names are the public header's; this chapter has not checked each against AMD's register reference.
 
+## Tables the public driver does not read
+
+Five slots of the ATI table header name tables that the public driver does not decode: DAC programming (+0x2a),
+maximum colour depth (+0x2c), CRTC info (+0x2e), hardware config (+0x36) and save mask (+0x4a). The pinned trees have
+no reader for them. Linux v6.12 `drivers/gpu/drm/radeon/radeon_combios.c` (fetched for this check) lists each slot
+in its table enum and its offset switch, and nothing else in the file reads the tables. Offsets are sg2's; sg3 and
+sg3a follow in the last paragraph.
+
+**established.** A search of each image for `ATOM` and `MOTA` finds nothing, and the word at header+4 is the
+revision word, not a magic value. An AtomDis run therefore has no input in these images. The tables below are in
+the older table format.
+
+- **hardware config (0x6b6).** **established.** Ten bytes: `$ATI`, then `02 0a 0f 00 00 02`. The connector table
+  begins at +10 in all three images. **inferred:** the pair `02 0a` is a revision and a length, the way the other
+  tables start. The last four bytes (`0f 00 00 02`) and the table's role are **unknown**. The table holds no
+  register script.
+- **DAC programming (0x6f40).** **established.** The first 28 bytes are `80 20 20 01 01 01 01 01 20 00 00 01 20 ff`,
+  eight `de` bytes, then `7f fe ff fe b4 0a`. At +28 (0x6f5c) the bytes `be 40 6f` load si with the table's own
+  address, and 16-bit code follows: an index through `ah`, a near call, then a byte written with 0xff and a byte read
+  through dl = 0x5b and 0x59. The code sets only dl, so the port's high byte comes from dh, which this sequence
+  does not set. So the block is partly code, its end is not known, and the routine that runs it is not read. Role **unknown**. The sg3 and sg3a copies load their own addresses,
+  0x7250 and 0x7240.
+- **maximum colour depth (0x661c).** **established.** Seven-byte records, the same in all three images for the first
+  16 bytes. The first records are `40 00 80 03 4b 00 06`, `50 00 80 03 5a 00 06`, `64 00 80 06 96 00 06`,
+  `64 00 80 04 96 00 05`, `64 00 80 03 96 00 04` and `80 00 80 09 dc 00 06`, and the records run past 0x667e. The
+  first word is 64, 80, 100, 128, 144 or 160 in the records read here. **inferred:** that word is a width in units
+  of 8 pixels (512, 640, 800, 1024, 1152 and 1280 pixels), and the last byte is a colour-depth code (2, 4, 5 or 6
+  in these records). The second word (896 to 3712, always a multiple of 128), the third (75 to 245) and the 0x82
+  flag in one record are **unknown**. The table writes no registers.
+- **CRTC info (0xd23).** **established.** Twenty-byte records. The first three begin with the index bytes e2, e3 and
+  e4; the bytes at +60 do not start another record of that kind. The fields inside the record are **unknown**. This
+  table is not decoded beyond the record boundary.
+- **save mask (0x75df).** **established.** The block is 36 bytes: `08 1f 00 58 f0 01 68 00 03 6c 00 03 e2 0f 00 00 42 70 00 00 1a 00 80 26 00 40 2a 10 40 4c ff ff 4e 1f 00 00`.
+  From 0x7603 the bytes are code (`push cx`, `push dx`, `push bx`, a near call), so the table is at most 36 bytes. Its
+  layout as 32-bit words is **unknown**.
+
+sg3 and sg3a: the hardware config table is the same ten bytes, and the first 16 bytes of the maximum colour depth
+table and the first records of the CRTC info table match sg2. The save mask block is the same 36 bytes in all
+three. The DAC programming block differs only in its own address, as above. The records and blocks are the same
+size in each image.
+
 ## VESA and protected-mode blocks
 
 - **established.** The image holds a VESA information block template (at 0x4ae4, 0x4abc and 0x4aac) whose fields match the layout of `struct vbe_ib` in `uvesafb.h`: signature `VESA`, version 0x0200, the OEM string pointer (0x1ac, 0x1ac, 0x19c, which does point at the OEM string), capabilities 1, a mode list pointer (0x486e, 0x4846, 0x4836), total memory 0 (filled at run time), software revision 0x0100, and pointers to the vendor name `ATI Technologies Inc.`, the product name (`FireGL X1-256p` or `FireGL X2-256p`) and the product revision `01.00`. All three pointers hit their strings in each image.
