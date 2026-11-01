@@ -560,6 +560,24 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
 - **0xb8** in `fglrx_drv.so`: the public `PALETTE_30_DATA` (common, `RADEON_PALETTE_30_DATA` in `radeon_reg.h`).
   `FGLSetGammaData` at 0x42fe00 stores a packed word to it at 0x4300c0, 0x430250, 0x430434 and 0x430448. The packed
   word at 0x4300c0 is three values combined at shifts 0, 10 and 20, which is a 10-bit-per-channel layout. Inferred.
+- **0x5c** in `fglrx_drv.so`: the public `CRTC_STATUS` (common; `RADEON_CRTC_STATUS` in `radeon_reg.h`, where bit 0 is
+  `RADEON_CRTC_VBLANK_CUR`). `FIREGL_ShowOverlay` at 0x43df00 reads the word at +92 of the aperture at 0x43e02c. If
+  bit 0 is set it goes on to store the value built at 0x43e094 to the register at 0x420. Otherwise it loops: each
+  pass reads the word at 0x43e03c, 0x43e04c, 0x43e05c, 0x43e06c and 0x43e07c, and the loop ends on the first read
+  with bit 0 set. The loop has no counter, so the code does not bound the wait. Established.
+- **0x230** in `fglrx_drv.so`: the public `OVR_CLR` (common, `RADEON_OVR_CLR` in `radeon_reg.h`). The static routine at
+  0x41bc00 loads the word at +0 of its argument record and stores it here at 0x41bc24. The same routine copies ten
+  record words to ten registers: +4 to 0x234 (0x41bc2c), +8 to 0x238 (0x41bc34), +12 to 0x420, +24 to 0x540, +28 to
+  0xc40, +32 to 0x94, +40 to 0x950, +44 to 0x9c0 and +48 to 0x30, in that order. Inferred.
+- **0x234** in `fglrx_drv.so`: the public `OVR_WID_LEFT_RIGHT` (common, `RADEON_OVR_WID_LEFT_RIGHT` in `radeon_reg.h`).
+  The static routine at 0x41bc00 copies the word at +4 of its argument record to it at 0x41bc2c, in the sequence
+  described under 0x230. Inferred.
+- **0x238** in `fglrx_drv.so`: the public `OVR_WID_TOP_BOTTOM` (common, `RADEON_OVR_WID_TOP_BOTTOM` in `radeon_reg.h`).
+  The static routine at 0x41bc00 copies the word at +8 of its argument record to it at 0x41bc34, in the sequence
+  described under 0x230. Inferred.
+- **0x30** in `fglrx_drv.so`: the public `BUS_CNTL` (`RADEON_BUS_CNTL` in `radeon_reg.h`; the PCI Express tables name
+  the same offset `PCIE_INDEX`). The static routine at 0x41bc00 copies the word at +48 of its argument record to it,
+  unchanged, at 0x41bc6c. The aperture pointer comes from the driver record's +48 at 0x41bc14. Inferred.
 
 ## Not in the tables
 
