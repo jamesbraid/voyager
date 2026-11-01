@@ -16,11 +16,11 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10031e40	268	InitExtensions	dynsym	
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10031f80	72	InitVisualWrap	dynsym	f4ed8d7827ea		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10032000	40	miHookInitVisuals	dynsym	edfe5bcfcc20		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100323c0	344	xf86ModulelistFromConfig	dynsym	e29c199ddfb4		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10032540	624	xf86DriverlistFromConfig	dynsym	7d09f59cbf40		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100327c0	84	xf86BuiltinInputDriver	dynsym	4d16d55e76c4		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10032840	476	xf86InputDriverlistFromConfig	dynsym	7e3f18abd2f9		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10032f00	96	xf86DriverlistFromCompile	dynsym	f7c445025d3c		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10032f80	96	xf86InputDriverlistFromCompile	dynsym	e8e2e4acabd1		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10032540	624	xf86DriverlistFromConfig	dynsym	7d09f59cbf40		in	understood	docs/xserver-functions.md#driver-lists	Driver lists
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100327c0	84	xf86BuiltinInputDriver	dynsym	4d16d55e76c4		in	understood	docs/xserver-functions.md#driver-lists	Driver lists
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10032840	476	xf86InputDriverlistFromConfig	dynsym	7e3f18abd2f9		in	understood	docs/xserver-functions.md#driver-lists	Driver lists
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10032f00	96	xf86DriverlistFromCompile	dynsym	f7c445025d3c		in	understood	docs/xserver-functions.md#driver-lists	Driver lists
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10032f80	96	xf86InputDriverlistFromCompile	dynsym	e8e2e4acabd1		in	understood	docs/xserver-functions.md#driver-lists	Driver lists
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10035d00	860	xf86HandleConfigFile	dynsym	924a7902df0b		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10036080	56	xf86PathIsAbsolute	dynsym	3e6155e64924		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100360c0	56	xf86PathIsSafe	dynsym	f31755f3018e		out:14	undocumented		
@@ -87,7 +87,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10039d40	104	xf86GetOptValReal	dyns
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10039dc0	384	xf86GetOptValFreq	dynsym	98e66a3c3826		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10039f40	104	xf86GetOptValBool	dynsym	05d165d2533b		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10039fc0	96	xf86ReturnOptValBool	dynsym	1763ead4c21f		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003a040	52	xf86NameCmp	dynsym	8e64a5413ca6		out:14	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003a040	52	xf86NameCmp	dynsym	8e64a5413ca6		out:14	named-only	docs/xserver-functions.md#driver-lists	Driver lists
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003a080	304	xf86NormalizeName	dynsym	258f9f1f0cb6		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003a200	32	xf86IsCorePointer	dynsym	0f62c79e22f4		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003a2c0	60	xf86IsCoreKeyboard	dynsym	be77f695c344		out:14	undocumented		
@@ -119,10 +119,10 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003c8c0	208	xf86ScaleAxis	dynsym	e
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003c9c0	172	xf86XInputSetScreen	dynsym	dc65c60be13a		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003ca80	112	xf86InitValuatorAxisStruct	dynsym	47df92800826		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003cb00	112	xf86InitValuatorDefaults	dynsym	99ca527d2f2b		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003cbc0	312	xf86AddDriver	dynsym	9eef0f35168e		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003cd00	196	xf86DeleteDriver	dynsym	fd19e57012db		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003ce00	312	xf86AddInputDriver	dynsym	270200a73aef		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003cf40	136	xf86DeleteInputDriver	dynsym	a88735c459d2		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003cbc0	312	xf86AddDriver	dynsym	9eef0f35168e		in	understood	docs/xserver-functions.md#driver-lists	Driver lists
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003cd00	196	xf86DeleteDriver	dynsym	fd19e57012db		in	understood	docs/xserver-functions.md#driver-lists	Driver lists
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003ce00	312	xf86AddInputDriver	dynsym	270200a73aef		in	understood	docs/xserver-functions.md#driver-lists	Driver lists
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003cf40	136	xf86DeleteInputDriver	dynsym	a88735c459d2		in	understood	docs/xserver-functions.md#driver-lists	Driver lists
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003d000	364	xf86AddModuleInfo	dynsym	bd75692d0977		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003d180	156	xf86DeleteModuleInfo	dynsym	446ce07d7deb		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003d240	360	xf86AllocateScreen	dynsym	b76fee0f6a31		out:14	undocumented		
@@ -138,12 +138,12 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003e380	480	xf86SetDefaultVisual	d
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003e580	700	xf86SetGamma	dynsym	78031bf0759c		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003e840	984	xf86SetDpi	dynsym	914ac5df5297		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003ec40	52	xf86SetBlackWhitePixels	dynsym	85b930674bfd		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f0c0	220	xf86EnableDisableFBAccess	dynsym	41cb1a973959		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f0c0	220	xf86EnableDisableFBAccess	dynsym	41cb1a973959		in	understood	docs/xserver-functions.md#driver-lists	Driver lists
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f400	372	xf86VDrvMsgVerb	dynsym	f8f842644eba		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f580	72	xf86DrvMsgVerb	dynsym	e218bc3d40ae		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f600	88	xf86DrvMsg	dynsym	1f01a0d5992e		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f680	104	xf86MsgVerb	dynsym	10230649df4c		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f700	100	xf86Msg	dynsym	514c6e7adbf7		out:14	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f700	100	xf86Msg	dynsym	514c6e7adbf7		out:14	named-only	docs/xserver-functions.md#driver-lists	Driver lists
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f780	120	xf86ErrorFVerb	dynsym	fea1a570c216		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f800	124	xf86ErrorF	dynsym	bdc691c4b554		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f880	68	OsVendorVErrorF	dynsym	62f796ae5902		out:14	undocumented		
@@ -257,7 +257,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x100528c0	380	xf86EntityInit	dynsym	
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10052a40	180	xf86AllocateEntity	dynsym	9cddcbbaadff		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10052e00	192	xf86IsEntityPrimary	dynsym	7402db7cb880		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10052ec0	116	xf86SetEntityFuncs	dynsym	b55b652310e2		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10052f40	84	xf86DriverHasEntities	dynsym	92b100590a9e		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10052f40	84	xf86DriverHasEntities	dynsym	92b100590a9e		in	named-only	docs/xserver-functions.md#driver-lists	Driver lists
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10052fc0	324	xf86AddEntityToScreen	dynsym	0c5c13182cc2		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10053140	120	xf86SetEntityInstanceForScreen	dynsym	2d1694c3d7d4		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100531c0	144	xf86FindScreenForEntity	dynsym	45e0bef34896		out:14	undocumented		
@@ -752,13 +752,13 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007cbc0	356	AOUTCheckForUnresolved
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007cd40	404	AOUTUnloadModule	dynsym	84762723b1c8		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007cf00	152	AOUTAddressToSection	dynsym	efe9d83ac0a5		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007d380	76	LoaderSetPath	dynsym	51b0140a0226		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007df00	1328	LoaderListDirs	dynsym	0626c2c81241		out:14	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007df00	1328	LoaderListDirs	dynsym	0626c2c81241		out:14	named-only	docs/xserver-functions.md#driver-lists	Driver lists
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007e440	56	LoaderFreeDirList	dynsym	5dcec5882350		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007ebc0	300	LoadSubModule	dynsym	94850f34a6cb		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007ed00	304	DuplicateModule	dynsym	c106cd398bc9		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007ee40	1372	LoadModule	dynsym	ba5083ad34cc		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007f3c0	76	LoadDriver	dynsym	71e371630f21		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007f440	56	UnloadModule	dynsym	b394274b2a38		out:14	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007f440	56	UnloadModule	dynsym	b394274b2a38		out:14	named-only	docs/xserver-functions.md#driver-lists	Driver lists
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007f480	56	UnloadDriver	dynsym	9f8d34787781		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007f5c0	236	UnloadSubModule	dynsym	8af19f562786		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1007f6c0	164	FreeModuleDesc	dynsym	6d899c8761e2		out:14	undocumented		
@@ -1524,12 +1524,12 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x100dcdc0	160	VerifyDisplayName	dyns
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100dce80	3296	ProcessCommandLine	dynsym	15db709ebaf9		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100ddb80	336	set_font_authorizations	dynsym	d1d731db04e4		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100ddd00	140	Xalloc	dynsym	0622d9886df5		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100dddc0	124	XNFalloc	dynsym	5c78384534de		out:14	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100dddc0	124	XNFalloc	dynsym	5c78384534de		out:14	named-only	docs/xserver-functions.md#driver-lists	Driver lists
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100dde40	100	Xcalloc	dynsym	9f65ffb37246		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100ddec0	132	XNFcalloc	dynsym	84ccece5a28e		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100ddf80	216	Xrealloc	dynsym	29a868eddbca		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100de080	92	XNFrealloc	dynsym	ef1393171dbd		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100de100	60	Xfree	dynsym	26b5c1e2ac52		out:14	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100de080	92	XNFrealloc	dynsym	ef1393171dbd		out:14	named-only	docs/xserver-functions.md#driver-lists	Driver lists
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100de100	60	Xfree	dynsym	26b5c1e2ac52		out:14	named-only	docs/xserver-functions.md#driver-lists	Driver lists
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100de140	8	OsInitAllocator	dynsym	78aa5094d5ec		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100de180	128	Xstrdup	dynsym	1cff836f2e47		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100de200	112	XNFstrdup	dynsym	038909d9dcf0		out:14	undocumented		

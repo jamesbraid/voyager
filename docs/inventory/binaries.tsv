@@ -3,7 +3,7 @@ etc/X11/gen-XF86Config	x-shared	shared-x-server	data	-	28551	59b7d07a3907a703		0
 etc/config/xf86config_autoconfig	x-shared	shared-x-server	data	-	3	b6ac5bc39377e44e		0		0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 etc/config/xf86config_autoreplace	x-shared	shared-x-server	data	-	4	b470b84cf0cd3189		0		0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 etc/init.d/xf86config	x-shared	shared-x-server	data	-	764	50dc6365a8f53d41		0		0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
-usr/X11R6/bin/XFree86	x-shared	shared-x-server	executable	n32	2569788	bbb8ea8ee0870c50		2924	dynsym	0	0	named-only	AGENTS.md#1-board-overview	1. Board overview
+usr/X11R6/bin/XFree86	x-shared	shared-x-server	executable	n32	2569788	bbb8ea8ee0870c50		2924	dynsym	0	0	named-only	docs/xserver-functions.md#the-xfree86-server-one-entry-per-routine	The XFree86 server: one entry per routine
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	x-shared	shared-x-server	shared-object	n32	76372	7cb84a62015a7918		112	dynsym+dwarf	0	0	named-only	docs/open-questions.md#3d	3D
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	x-shared	shared-x-server	shared-object	n64	82088	a4550d9a8cfb30f2		112	dynsym+dwarf	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/X11R6/lib/modules/dri/fglrx_dri.so	x-module	board-x-module	shared-object	n32	12888480	f455f9d53d95b6e4		12854	dynsym+dwarf	0	0	named-only	docs/dri-driver.md#dri-driver-o32-and-n32-build	DRI driver, o32 and n32 build
