@@ -798,6 +798,58 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
   DISP2_RGB_OFFSET_EN at bit 8. The restore at 0x41be00 loads the word at +140 of its record at 0x41be28 and
   stores it to this register at 0x41be2c. The save routine entered at 0x41d3c0 loads it at 0x41d428 and stores
   it to +140 at 0x41d430. Inferred.
+- **0x804** in `fglrx_drv.so`: the public `TV_RGB_CNTL` (common, `radeon_reg.h`), whose header fields are
+  SWITCH_TO_BLUE (bit 4), RGB_DITHER_EN (bit 5) and RGB_SRC_SEL (mask 0x3 << 8). Two sites. The restore
+  routine entered at 0x41c080 loads the word at +360 of its record in a7 at 0x41c290 and stores it to this
+  register at 0x41c294. There s0 holds the aperture, the base it also uses for the 0x8 index register at
+  0x41c11c. The save routine entered at 0x41d7c0 copies its words only when the word at +180 of the driver
+  record is 3 (the branch at 0x41d7dc). On that path it reads this register at 0x41d8cc and stores it to +360
+  of its record in t0 at 0x41d8d0. Inferred.
+- **0x80c** in `fglrx_drv.so`: the public `TV_HTOTAL` (common, `radeon_reg.h`). The header gives no field
+  masks. The restore loads +268 of the record at 0x41c21c, subtracts one at 0x41c220 and stores the result to
+  this register at 0x41c224, so the register takes the record value minus one. The save loads this register at
+  0x41d838, adds one at 0x41d83c and stores it to +268 of its record at 0x41d840. Inferred.
+- **0x810** in `fglrx_drv.so`: the public `TV_HDISP` (common, `radeon_reg.h`). The header gives no field
+  masks. The restore takes the word at +276 of its record (loaded at 0x41c228) and stores it to this register
+  at 0x41c22c. The save reads the register twice, at 0x41d844 and 0x41d84c, and copies both words to the
+  record: to +272 at 0x41d848 and to +276 at 0x41d850. Inferred.
+- **0x818** in `fglrx_drv.so`: the public `TV_HSTART` (common, `radeon_reg.h`). The header gives no field
+  masks. In the restore, the record word at +280 (loaded at 0x41c230) reaches this register through the store
+  at 0x41c234. In the save, the register is read at 0x41d854 and its value lands at +280 of the record with
+  the store at 0x41d858. Inferred.
+- **0x820** in `fglrx_drv.so`: the public `TV_VTOTAL` (common, `radeon_reg.h`). The header gives no field
+  masks. The restore loads +284 of the record at 0x41c238, subtracts one at 0x41c240 and stores the result to
+  this register at 0x41c244, so the register takes the record value minus one. The save reads the register at
+  0x41d85c, adds one at 0x41d864 and stores it to +284 at 0x41d868. Inferred.
+- **0x824** in `fglrx_drv.so`: the public `TV_VDISP` (common, `radeon_reg.h`). The header gives no field
+  masks. The restore writes this register at 0x41c24c with the record word from +288, loaded at 0x41c248. The
+  save side reads the register at 0x41d86c and writes the word to +288 at 0x41d870. Inferred.
+- **0x84c** in `fglrx_drv.so`: the public `TV_VSCALER_CNTL1` (common, `radeon_reg.h`), with UV_INC in bits
+  15:0 (mask 0xffff), Y_W_EN at bit 24, a Y_DEL_W_SIG shift of 26 and RESTART_FIELD at bit 29. Record word
+  +296 (loaded at 0x41c258) is written here at 0x41c25c. The register at 0x41d87c is copied into +296 by the
+  store at 0x41d880. Inferred.
+- **0x850** in `fglrx_drv.so`: the public `TV_TIMING_CNTL` (common, `radeon_reg.h`), with H_INC in bits 11:0
+  (mask 0xfff), REQ_Y_FIRST at bit 19, FORCE_BURST_ALWAYS at bit 21, UV_POST_SCALE_BYPASS at bit 23 and a
+  UV_OUTPUT_POST_SCALE shift of 24. The restore stores to it at 0x41c254, fed by the load of +292 at 0x41c250.
+  On the save side, the read at 0x41d874 feeds the store to +292 at 0x41d878. Inferred.
+- **0x854** in `fglrx_drv.so`: the public `TV_VSCALER_CNTL2` (common, `radeon_reg.h`), with DITHER_MODE (bit
+  0), Y_OUTPUT_DITHER_EN (bit 1), UV_OUTPUT_DITHER_EN (bit 2) and UV_TO_BUF_DITHER_EN (bit 3). The store at
+  0x41c264 writes the value loaded from +300 at 0x41c260. The save reads the register at 0x41d884 and writes
+  +300 at 0x41d888. Inferred.
+- **0x858** in `fglrx_drv.so`: the public `TV_Y_FALL_CNTL` (common, `radeon_reg.h`), with Y_FALL_PING_PONG at
+  bit 16 and Y_COEF_EN at bit 17. The restore fills it at 0x41c27c from record word +372 (load at 0x41c278).
+  The save reads it at 0x41d8e4 and copies the value into +372 with the store at 0x41d8e8. Inferred.
+- **0x860** in `fglrx_drv.so`: the public `TV_Y_SAW_TOOTH_CNTL` (common, `radeon_reg.h`). The header gives no
+  field masks. The store to it is at 0x41c26c, and the record word it takes is at +364 (load at 0x41c268). The
+  register read at 0x41d8d4 supplies the word stored to +364 at 0x41d8d8. Inferred.
+- **0x870** in `fglrx_drv.so`: the public `TV_MODULATOR_CNTL1` (common, `radeon_reg.h`), with YFLT_EN (bit 2),
+  UVFLT_EN (bit 3), ALT_PHASE_EN (bit 6), SYNC_TIP_LEVEL (bit 7), a BLANK_LEVEL shift of 8 and a SET_UP_LEVEL
+  shift of 16. The record word +344 (loaded at 0x41c280) is written here at 0x41c284. In the save path, this
+  register at 0x41d8b4 is copied into +344 at 0x41d8b8. Inferred.
+- **0x874** in `fglrx_drv.so`: the public `TV_MODULATOR_CNTL2` (common, `radeon_reg.h`), with U_BURST_LEVEL
+  (mask 0x1ff), V_BURST_LEVEL (mask 0x1ff) and a V_BURST_LEVEL shift of 16. Here the restore stores the value
+  at 0x41c28c after loading +348 at 0x41c288. The save reads the register at 0x41d8bc and copies it to +348 at
+  0x41d8c0. Inferred.
 
 ## Not in the tables
 
