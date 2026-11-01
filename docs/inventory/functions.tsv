@@ -55716,7 +55716,7 @@ usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec68f20	136	getdisplaymod
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec68fa8	136	__GLarcfs	dynsym+mdebug	35157e679b6f	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec68fa8	136	arcfs	dynsym	35157e679b6f	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec69030	136	__GLpatch	dynsym+mdebug	a4f73acdb21f	shared-address	out:17	undocumented		
-usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec69030	136	patch	dynsym	a4f73acdb21f	shared-address	out:17	undocumented		
+usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec69030	136	patch	dynsym	a4f73acdb21f	shared-address	out:17	named-only	mesa/include/renderdoc_app.h:448	
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec690b8	64	__GLgl_glx_unlink	dynsym+mdebug	a14cfbe5b480	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec690b8	64	gl_glx_unlink	dynsym	a14cfbe5b480	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec690f8	136	__GLnurbssurface	dynsym+mdebug	89bf29f426bc	shared-address	out:17	undocumented		
@@ -62443,7 +62443,7 @@ usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a768	180	getdisplaym
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a81c	180	__GLarcfs	dynsym	5a840efc4b95	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a81c	180	arcfs	dynsym	5a840efc4b95	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a8d0	180	__GLpatch	dynsym	9ab76b0e218a	shared-address	out:17	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a8d0	180	patch	dynsym	9ab76b0e218a	shared-address	out:17	undocumented		
+usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a8d0	180	patch	dynsym	9ab76b0e218a	shared-address	out:17	named-only	mesa/include/renderdoc_app.h:448	
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a984	68	__GLgl_glx_unlink	dynsym	1462e7a73928	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a984	68	gl_glx_unlink	dynsym	1462e7a73928	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a9c8	180	__GLnurbssurface	dynsym	fc7efe3462c9	shared-address	out:17	undocumented		

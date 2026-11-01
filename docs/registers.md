@@ -520,6 +520,46 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
 - **0x1724** in `fglrx_drv.so`: the cache control word, `CACHE_CNTL` (common).
   `FGLInitCP` stores the value 3 (the `li` at 0x42c660) to it at 0x42c664, with the base register s2.
   Inferred.
+- **0x7c** in `fglrx_drv.so`: the public `DAC_CNTL2` (common). `FGLSetGammaData` at 0x42fe00 sets bit 5 of the
+  word at +124 of the aperture on one path (`ori` with 0x20 at 0x4302cc, store at 0x4302d4) and clears it on the
+  common tail with the mask 0xffffffdf (`li` -33 at 0x43045c), storing the result at 0x430494. `radeon_reg.h` names
+  bit 5 `RADEON_DAC2_PALETTE_ACC_CTL`. The routine at 0x4195c0 also ORs 0x20 into the word at 0x419630 and 0x4196f0.
+  Inferred.
+- **0xf0** in `fglrx_drv.so`: the public `RBBM_SOFT_RESET` (exact). `R200EngineReset` at 0x40a5c0 writes 121
+  (0x79) to it at 0x40a66c, reads it back, writes zero at 0x40a674 and reads it again. In `r300d.h` the value 0x79
+  is bits 0, 3, 4, 5 and 6: the CP, RE, PP, E2 and RB soft resets. After the pulse the routine polls the word at
+  0xe40 (`RBBM_STATUS`) until bit 31 clears. Established.
+- **0x150** in `fglrx_drv.so`: the public `RADEON_MC_STATUS` (`radeon_reg.h`), read at 0x40a6f4 in the delay slot
+  of a branch in `R200EngineReset`. `radeon_reg.h` gives `RADEON_MC_IDLE` as bit 2 and `R300_MC_IDLE` as bit 4. The
+  routine loads the word at +160 of the driver record and waits for the idle bit: bit 4 when that value is 44, 45 or
+  52, bit 2 for any other value. Between polls it calls a delay helper with 500 (`li a0,500` at 0x40a75c), then
+  reloads the record and the register. Established.
+- **0x198** in `fglrx_drv.so`: the public `GPIOPAD_MASK` (common, `RADEON_GPIOPAD_MASK` in `radeon_reg.h`).
+  `SGIGLXSwapBarrierInit` at 0x430740 reads it at 0x430858, sets bit 0 with `ori` and stores it back at 0x430864 on
+  the common tail that both of its paths reach (0x430844). The symbol's name points to the swap barrier, and the
+  routine touches no other GPIO pad. Inferred.
+- **0x1a0** in `fglrx_drv.so`: the public `GPIOPAD_EN` (common, `RADEON_GPIOPAD_EN` in `radeon_reg.h`).
+  `SGIGLXSwapBarrierInit` reads it at 0x430844, clears bit 0 with the mask 0xfffffffe (`li` -2 at 0x43084c) and
+  stores it at 0x430854, on the same common tail as 0x198. The pair sets the mask bit and clears the enable bit of
+  one pad. Inferred.
+- **0x288** in `fglrx_drv.so`: the public `FP2_GEN_CNTL` (common). When the word at +160 of the driver record is 44,
+  `SGIGLXSwapBarrierInit` reads it at 0x4308f4, clears bit 25 with the mask 0xfdffffff (`lui` 0xfdff, `ori` 0xffff)
+  and stores it at 0x430908 in the delay slot of the branch to the common tail. `radeon_reg.h` names bit 25
+  `RADEON_FP2_DVO_EN`. Other values of the record skip this write. Established.
+- **0x58** in `fglrx_drv.so`: the public `DAC_CNTL` (common). `FGLSetGammaData` at 0x42fe00 reads the word at +88
+  of the aperture at 0x42fee8, ORs in 0x100 (bit 8, `RADEON_DAC_8BIT_EN` in `radeon_reg.h`), clears bit 14 with the
+  mask 0xffffbfff and stores the word back at 0x42fef8. The DAC_CNTL definitions in `radeon_reg.h` name no bit 14.
+  Inferred.
+- **0xb0** in `fglrx_drv.so`: the public `PALETTE_INDEX` (common, `RADEON_PALETTE_INDEX` in `radeon_reg.h`). In
+  `FGLSetGammaData` at 0x42fe00 the word is read at 0x43044c, ORed with 0xff and stored back at 0x430454, after the
+  30-bit palette writes to 0xb8 and before the DAC_CNTL2 bit is cleared. The byte stores to 0xb3 in the same routine
+  write this low byte as well. Inferred.
+- **0xb3** in `fglrx_drv.so`: the low byte of the word at 0xb0 (the lane of `PALETTE_INDEX`, byte 3 of the dword in
+  big-endian order). `FGLSetGammaData` at 0x42fe00 stores zero to it with `sb` at 0x43000c and 0x430198, and stores
+  a register value to it with `sb` at 0x4303ac. Inferred.
+- **0xb8** in `fglrx_drv.so`: the public `PALETTE_30_DATA` (common, `RADEON_PALETTE_30_DATA` in `radeon_reg.h`).
+  `FGLSetGammaData` at 0x42fe00 stores a packed word to it at 0x4300c0, 0x430250, 0x430434 and 0x430448. The packed
+  word at 0x4300c0 is three values combined at shifts 0, 10 and 20, which is a 10-bit-per-channel layout. Inferred.
 
 ## Not in the tables
 
