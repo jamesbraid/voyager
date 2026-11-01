@@ -456,6 +456,100 @@ The routines below are all in `vga.a(vga_init.o)`; every address is a `.text` of
 - `vga_init_board` (`vga.a(vga_init.o)`, address 0x11d0, 240 bytes):
   **established.** The whole routine is read. It runs the card's BIOS in the x86 emulator and optionally sets the boot video mode. It takes the board in a0 and a flag in a1, and returns 0 on success and 1 on any failure. It calls `xf86InitInt10` and stores the result in the doubleword at board +0x110; a zero result logs "xf86InitInt10 failed" and returns 1. It calls `xf86ExecX86int10` with that context; a nonzero result logs "BIOS init failed", calls `xf86FreeInt10`, zeroes +0x110 and returns 1. On success it calls `vga_enable_fb`; with a1 zero it returns 0. With a1 nonzero it stores 263, 1280, 1, 1024 at board +0xf8, +0xfc, +0x104 and +0x100 (in that order) and calls `vga_set_vesa_mode(board, 263)`; a zero result logs "VESA mode switch failed" and returns 1, otherwise it returns 0.
 
+## The x86 emulator core and its default accessors (`vga.a(decode.o)`, `vga.a(sys.o)`)
+
+The emulator keeps its register file and flags in one 96-byte object, `_X86EMU_env` (the first object in the `.bss` of `sys.o`; `_X86EMU_intrTab`, 256 doublewords, follows it at env +96).
+Every routine below reaches it through a pointer literal in `.srdata`.
+The fields these routines touch are the doubleword at env +0 (the base of the emulated memory), the doubleword at +8 (its size), the halfword at +58, the word at +60 (the halfword at +62 is its low half on this big-endian CPU), the halfword at +64, the word at +80 and the byte at +88.
+That these are the instruction pointer, the flags, the code segment, a pending-event mask and the pending interrupt number is **inferred** from how `X86EMU_exec` uses them (a linear address of segment times 16 plus offset, bit 0x200 of the flags tested the way x86 tests the interrupt-enable flag), in the loop shape of the public x86 emulator in the X.Org server.
+
+- `X86EMU_halt_sys` (`vga.a(decode.o)`, address 0x170, 20 bytes): **established.**
+  Takes no argument.
+  It loads the word at env +80, ORs in bit 2 (0x4) and stores it back (store at 0x180, in the delay slot of the return).
+  It makes no call and sets no return value.
+  **Inferred:** bit 2 of that word is the halt request that makes `X86EMU_exec` return, and the memory accessors in `sys.o` call this routine on an out-of-range address.
+- `X86EMU_exec` (`vga.a(decode.o)`, address 0xc0, 176 bytes): **established.**
+  The emulator's main loop, with no argument and no return value of its own.
+  It clears the word at env +80 on entry (0xd4), then each pass reads that word.
+  A nonzero word with bit 2 set returns (0xe8 to 0xf4).
+  Otherwise a nonzero word calls `x86emu_intr_handle` (0x160) when bit 0 is set and the byte at env +88 is 0 or 2, or when the 0x200 bit of the word at +60 is clear; with bit 0 set, any other interrupt number and 0x200 set it carries on.
+  A zero word goes straight to the fetch.
+  The fetch loads the halfword at +58 and the halfword at +64, stores the first plus 1 back at +58 (0x130, in the delay slot ahead of the call), and calls the function pointer in the global `sys_rdb` (call at 0x134) with the segment shifted left 4 plus the old +58 value.
+  The low byte of that result indexes the table `x86emu_optab` (eight bytes per entry, its address the literal at `.srdata` +16, loaded at 0x13c) and the entry is called (0x150) with the opcode byte as its only argument; the loop then reloads the word at +80 (0x15c) and starts again.
+  The halt exit is the only one, so the routine runs until `X86EMU_halt_sys` or a callee sets bit 2.
+  **Inferred:** this is the public emulator's main loop, including its odd test (interrupt number 0 or 2, or interrupts disabled), and the halfword at +58 is not masked when the segment is added.
+
+- `rdb` (`vga.a(sys.o)`, address 0x0, 84 bytes): **established.**
+  Takes an address in a0 and returns a byte.
+  The address is the low 32 bits of a0.
+  When the size at env +8 minus 1 is below the address (unsigned) it calls `X86EMU_halt_sys` (0x3c); it then reloads its registers and goes back to the load, so it still reads the byte.
+  The result is the byte at the address plus the base at env +0, zero-extended (`lbu` at 0x30).
+  It is the initial value of the global `sys_rdb`.
+- `rdw` (`vga.a(sys.o)`, address 0x54, 128 bytes): **established.**
+  Takes an address in a0 and returns a halfword.
+  The size test is size minus 2 below the address, with the `X86EMU_halt_sys` call at 0xb4 and the same fall back to the read.
+  An even address does one halfword load (`lhu`, 0xd0, host byte order, big-endian here); an odd address loads the bytes at +1 and +0 and combines them with the byte at +1 shifted left 8, so that path is little-endian and the two paths disagree about byte order for the same memory.
+  The result is masked to 16 bits.
+  It is the initial value of `sys_rdw`.
+- `rdl` (`vga.a(sys.o)`, address 0xd4, 148 bytes): **established.**
+  Takes an address in a0 and returns a word.
+  The size test is size minus 4, with the `X86EMU_halt_sys` call at 0x148 and the same fall back.
+  When the low two bits of the address are zero it does one `lw` (0x164); otherwise it loads the bytes at +1, +3, +2 and +0 (in that order) and ORs them into one word with shifts 8, 24, 16 and 0, little-endian.
+  It is the initial value of `sys_rdl`.
+- `wrb` (`vga.a(sys.o)`, address 0x168, 96 bytes): **established.**
+  Takes an address in a0 and a value in a1.
+  The size test is size minus 1, with the `X86EMU_halt_sys` call at 0x1b0 and the same fall back to the store.
+  It stores the low byte of the value at the base plus the address (`sb`, 0x1a0).
+  It sets no return value and is the initial value of `sys_wrb`.
+- `wrw` (`vga.a(sys.o)`, address 0x1c8, 140 bytes): **established.**
+  Takes an address in a0 and a value in a1.
+  The size test is size minus 2, with the call at 0x238 and the same fall back.
+  An even address does one `sh` of the value (0x250); an odd one stores the low byte at the address (0x218) and then the value shifted right 8 (arithmetic) at address plus 1 (0x224), reloading the base pointer between the two stores.
+  It sets no return value and is the initial value of `sys_wrw`.
+- `wrl` (`vga.a(sys.o)`, address 0x254, 172 bytes): **established.**
+  Takes an address in a0 and a value in a1.
+  The size test is size minus 4, with the call at 0x2e4 and the same fall back.
+  It tests only bit 0 of the address, where `rdl` tests bits 1 and 0: an even address, including one that is 2 modulo 4, does one `sw` (0x2fc); an odd address stores four bytes, the value shifted right by 0, 8, 16 and 24, at address +0, +1, +2 and +3 (stores at 0x2ac, 0x2b8, 0x2c4 and 0x2d0).
+  **Inferred:** an address that is 2 modulo 4 makes a misaligned `sw`, which MIPS treats as an address error.
+  It sets no return value and is the initial value of `sys_wrl`.
+- `p_inb` (`vga.a(sys.o)`, address 0x300, 8 bytes): **established.**
+  Ignores its port argument and returns 0 (`move v0,zero` in the delay slot of the return).
+  It is the initial value of `sys_inb`, so an emulated byte read from a port gives 0 until `X86EMU_setupPioFuncs` replaces it.
+- `p_inw` (`vga.a(sys.o)`, address 0x308, 8 bytes): **established.**
+  Ignores its port argument and returns 0, the same two instructions as `p_inb`.
+  It is the initial value of `sys_inw`.
+- `p_inl` (`vga.a(sys.o)`, address 0x310, 8 bytes): **established.**
+  Ignores its port argument and returns 0, the same two instructions as `p_inb`.
+  It is the initial value of `sys_inl`.
+- `p_outb` (`vga.a(sys.o)`, address 0x318, 8 bytes): **established.**
+  Returns at once, with a nop in its delay slot, and uses neither argument.
+  It is the initial value of `sys_outb`, so a byte write to a port is dropped until `X86EMU_setupPioFuncs` replaces it.
+- `p_outw` (`vga.a(sys.o)`, address 0x320, 8 bytes): **established.**
+  Returns at once and uses neither argument, the same two instructions as `p_outb`.
+  It is the initial value of `sys_outw`.
+- `p_outl` (`vga.a(sys.o)`, address 0x328, 8 bytes): **established.**
+  Returns at once and uses neither argument, the same two instructions as `p_outb`.
+  It is the initial value of `sys_outl`.
+- `X86EMU_setupMemFuncs` (`vga.a(sys.o)`, address 0x330, 52 bytes): **established.**
+  Takes a pointer to a table of six function pointers in a0 and copies them to the globals `sys_rdb`, `sys_rdw`, `sys_rdl`, `sys_wrb`, `sys_wrw` and `sys_wrl`, in that order, from table offsets 0, 8, 16, 24, 32 and 40.
+  It makes no call and sets no return value.
+  `xf86Int10ExecSetup` (`vga.a(xf86x86emu.o)`) calls it, with the memory accessors of [the emulator's glue](#the-emulators-glue-to-the-kernel-vgahelper_execo) among its arguments (call at 0x120).
+  The initial values of the six globals are the `rdb` to `wrl` routines above, which work on the flat memory described by env +0 and +8.
+- `X86EMU_setupPioFuncs` (`vga.a(sys.o)`, address 0x364, 52 bytes): **established.**
+  Takes a pointer to a table of six function pointers in a0 and copies them to `sys_inb`, `sys_inw`, `sys_inl`, `sys_outb`, `sys_outw` and `sys_outl` in that order, from table offsets 0, 8, 16, 24, 32 and 40.
+  It makes no call and sets no return value.
+- `X86EMU_setupIntrFuncs` (`vga.a(sys.o)`, address 0x398, 136 bytes): **established.**
+  Takes a pointer to a table of 256 doublewords in a0, or zero.
+  It first clears all 256 doublewords of `_X86EMU_intrTab` (env +96 on, a loop unrolled twice).
+  A zero argument then returns (the branch at 0x3d0).
+  Otherwise it copies the 256 doublewords of the table into `_X86EMU_intrTab` in index order, again unrolled twice.
+  It makes no call and sets no return value.
+- `X86EMU_prepareForInt` (`vga.a(sys.o)`, address 0x420, 124 bytes): **established.**
+  Takes an interrupt number n in a0 and sets up the emulated registers as a real-mode software interrupt would; it returns nothing.
+  It calls `push_word` with the halfword at env +62 (call at 0x438), loads the word at +60 and clears its bits 8 and 9 (mask 0xfffffcff), then calls `push_word` with the halfword at +64 while storing the cleared flags back at +60 from the delay slot (0x454).
+  It then calls `mem_access_word` with 4n + 2 (0x460) and stores the result as the halfword at +64 (0x474, in the delay slot of the next call), calls `push_word` with the halfword at +58, calls `mem_access_word` with 4n (0x478), stores the result as the halfword at +58 (0x488) and clears the word at +80.
+  **Inferred:** the pushes are flags, code segment and instruction pointer, the two `mem_access_word` calls read the segment and offset of the vector at 4n in the emulated interrupt table, and bits 8 and 9 are the trap and interrupt-enable flags.
+
 ## Image-sync driver
 
 - `is1.o` (`usr/cpu/sysgen/IP35boot/is1.o`): **established** from its symbol table. A separate PCI driver (`is1_reg`, `is1_attach`, its own `pciio_driver_register`) for the image-sync option; it depends on `fglrx` (its `master.d` file) and calls `FGLRXReadRegister`, `FGLRXWriteRegister` and `fglrx_intr_list`, but `fglrx.o` refers to nothing in `is1.o`, so it takes no part in the FireGL card's attach. Its attach, detach, open, ioctl, interrupt and resync routines are read in [image-sync-functions.md](image-sync-functions.md); its probe IDs are in the `is1_devids` table.
