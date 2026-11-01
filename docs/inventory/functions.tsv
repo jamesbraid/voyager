@@ -3194,7 +3194,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4bf340	244	__f
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4bf440	104	__fglDRMPM4Alloc	dwarf+funcnames	690f740e6e15	multi-unit	in	understood	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4bf4c0	488	__fglDRMPM4Queue	dwarf+funcnames	5a17c7340fcc	multi-unit	in	named-only	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4bf6c0	72	__fglDRMPM4Submit	dwarf+funcnames	473b035c8fd5	multi-unit	in	understood	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf740	992	firegl_PM4Alloc	dwarf+dynsym	2ea45614a49e		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf740	992	firegl_PM4Alloc	dwarf+dynsym	2ea45614a49e		in	located	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bfb40	552	firegl_PM4WaitForIdle	dwarf+dynsym	e8bee4e7744f		in	located	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bfd80	312	firegl_DRMPoll	dwarf+dynsym	02960fac3d34		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bfec0	36	dummy_5	dwarf+dynsym	a8a0de1b11cc		in	understood	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
@@ -16048,7 +16048,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517b40	248	_
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517c40	108	__fglDRMPM4Alloc	dwarf	f752cd4df052	multi-unit	in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517cb0	508	__fglDRMPM4Queue	dwarf	278196470b59	multi-unit	in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517eb0	76	__fglDRMPM4Submit	dwarf	21c73d2dc38b	multi-unit	in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517f00	972	firegl_PM4Alloc	dwarf+dynsym	fdfee9a21d90		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517f00	972	firegl_PM4Alloc	dwarf+dynsym	fdfee9a21d90		in	located	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5182d0	544	firegl_PM4WaitForIdle	dwarf+dynsym	5e19dd5a9d0c		in	located	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5184f0	320	firegl_DRMPoll	dwarf+dynsym	7d627340d8a4		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x518640	36	dummy_5	dwarf+dynsym	8b46f5dc933e		in	understood	docs/dri-driver-64.md#shared-word-helpers	Shared word helpers
@@ -46767,7 +46767,7 @@ usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403280	244	
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403380	104	__fglDRMPM4Alloc	dwarf+funcnames	7e9d44c579d6		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403400	488	__fglDRMPM4Queue	dwarf+funcnames	2c15eac533e8		in	named-only	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403600	72	__fglDRMPM4Submit	dwarf+funcnames	0b969f03327b		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403680	992	firegl_PM4Alloc	dwarf+dynsym	5b35fa673989		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403680	992	firegl_PM4Alloc	dwarf+dynsym	5b35fa673989		in	located	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403a80	552	firegl_PM4WaitForIdle	dwarf+dynsym	97b1efb30e8a		in	located	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403cc0	312	firegl_DRMPoll	dwarf+dynsym	617928c126aa		in	undocumented		
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403e00	8	setup	dwarf+funcnames	a7e7ca11a6b8		in	undocumented		
@@ -47409,7 +47409,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9968	32	__ke_atomic_add
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9988	36	__ke_atomic_sub	dwarf+symtab	8d0b4d3c1672		in	named-only	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x99ac	8	__ke_atomic_read	dwarf+symtab	b893f60251e4		in	named-only	docs/kernel-drm-functions.md#contexts-and-the-device-ioctl-entry	Contexts and the device ioctl entry
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x99b4	52	__ke_atomic_set	dwarf+symtab	89adc03be8aa		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x99e8	64	__ke_spin_lock	dwarf+symtab	53b3835685bf		in	named-only	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x99e8	64	__ke_spin_lock	dwarf+symtab	53b3835685bf		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9a28	60	__ke_spin_unlock	dwarf+symtab	c1445fac60a1		in	named-only	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9a64	56	__ke_sys_mlock	dwarf+symtab	2c0cdcbc0bc5		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9a9c	56	__ke_sys_munlock	dwarf+symtab	d0e322942d1c		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
@@ -47424,19 +47424,19 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9bc4	48	__ke_get_pci_de
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9bf4	180	__ke_check_pci	dwarf+symtab	fae186a4cffd		in	named-only	docs/kernel-compat-layer.md#pci-lookups-and-configuration-access	PCI lookups and configuration access
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9ca8	44	__ke_pci_get_irq	dwarf+symtab	dd0093c9b3d5		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9cd4	52	__ke_pci_find_device	dwarf+symtab	89adc03be8aa		in	named-only	docs/kernel-object-functions.md#detach-initialisation-and-device-identity	Detach, initialisation and device identity
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9d08	52	__ke_malloc	dwarf+symtab	e5c621742da5		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9d3c	52	__ke_free_s	dwarf+symtab	89adc03be8aa		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9d08	52	__ke_malloc	dwarf+symtab	e5c621742da5		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9d3c	52	__ke_free_s	dwarf+symtab	89adc03be8aa		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9d70	60	__ke_vmalloc	dwarf+symtab	49f47727c1e7		in	named-only	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9dac	52	__ke_vfree	dwarf+symtab	89adc03be8aa		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9dac	52	__ke_vfree	dwarf+symtab	89adc03be8aa		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9de0	8	__ke_get_free_page	dwarf+symtab	78aa5094d5ec		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9de8	8	__ke_get_free_pages	dwarf+symtab	78aa5094d5ec		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9df0	8	__ke_free_page	dwarf+symtab	78aa5094d5ec		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9df8	8	__ke_free_pages	dwarf+symtab	78aa5094d5ec		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9df8	8	__ke_free_pages	dwarf+symtab	78aa5094d5ec		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9e00	8	__ke_mem_map_reserve	dwarf+symtab	78aa5094d5ec		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9e08	8	__ke_mem_map_unreserve	dwarf+symtab	78aa5094d5ec		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9e08	8	__ke_mem_map_unreserve	dwarf+symtab	78aa5094d5ec		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9e10	8	__ke_virt_reserve	dwarf+symtab	78aa5094d5ec		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9e18	8	__ke_virt_unreserve	dwarf+symtab	78aa5094d5ec		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9e20	8	__ke_ioremap	dwarf+symtab	f211f0c174df		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9e20	8	__ke_ioremap	dwarf+symtab	f211f0c174df		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9e28	8	__ke_ioremap_nocache	dwarf+symtab	f211f0c174df		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9e30	8	__ke_iounmap	dwarf+symtab	78aa5094d5ec		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9e38	8	__ke_verify_read_access	dwarf+symtab	87506497337c		in	undocumented		
@@ -47500,14 +47500,14 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xac94	8	fglrx_avl_map_st
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xac9c	16	fglrx_avl_map_end	dwarf	60cfe98e5b0e		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xacac	188	fglrx_irix_avl_init	dwarf+symtab	af7abc73f133		in	named-only	docs/kernel-object-functions.md#detach-initialisation-and-device-identity	Detach, initialisation and device identity
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xad68	364	fglrx_irix_kmem_alloc	dwarf+symtab	fe4b1127745c		in	named-only	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xaed4	576	fglrx_irix_kern_malloc_node	dwarf+symtab	72f230c2329a		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xb114	500	fglrx_irix_kern_free	dwarf+symtab	34bae8637ca7		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xaed4	576	fglrx_irix_kern_malloc_node	dwarf+symtab	72f230c2329a		in	understood	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xb114	500	fglrx_irix_kern_free	dwarf+symtab	34bae8637ca7		in	understood	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xb308	364	fglrx_irix_kmem_free	dwarf+symtab	04c9f238e917		in	named-only	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xb474	432	fglrx_irix_kern_addmap	dwarf+symtab	01ddc62e1495		in	named-only	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xb624	176	fglrx_irix_kern_findmap	dwarf+symtab	111a49421355		in	named-only	docs/kernel-compat-layer.md#time-address-translation-and-error-codes	Time, address translation and error codes
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xb6d4	372	fglrx_irix_kern_freemap	dwarf+symtab	7a3123131541		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xb848	432	__ke_pci_alloc_consistent	dwarf+symtab	4523a09b7b06		in	named-only	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xb9f8	52	__ke_pci_free_consistent	dwarf+symtab	f25284b0cb3d		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xb9f8	52	__ke_pci_free_consistent	dwarf+symtab	f25284b0cb3d		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xbaec	44	__KE_DEBUG3	dwarf	90ad92382957	multi-unit	in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xbb18	804	drm_vm_open	dwarf+symtab	2524f9501e99		in	understood	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xbe3c	816	drm_vm_close	dwarf+symtab	5d3e0542e952		in	understood	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
@@ -47517,39 +47517,39 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xca74	196	drm_mem_max_in
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xcb38	928	drm_mem_init	dwarf+symtab	b47d1cab8b1c		in	understood	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xced8	348	drm_mem_inc_locked_pages	dwarf+symtab	7f3b7ffb995b		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xd034	184	drm_mem_dec_locked_pages	dwarf+symtab	6095d95bba19		in	named-only	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xd0ec	492	drm_alloc	dwarf+symtab	32e3458836f7		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xd0ec	492	drm_alloc	dwarf+symtab	32e3458836f7		in	understood	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xd2d8	924	drm_vmalloc	dwarf+symtab	0741a86a9443		in	understood	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xd674	524	drm_vfree	dwarf+symtab	80e09bf7d134		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xd674	524	drm_vfree	dwarf+symtab	80e09bf7d134		in	understood	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xd880	376	drm_realloc	dwarf+symtab	3271699ed4d9		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xd9f8	204	drm_strdup	dwarf+symtab	550236d4cfc0		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xdac4	136	drm_strfree	dwarf+symtab	ac453c60c80a		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xdb4c	508	drm_free	dwarf+symtab	4b3e943177d7		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xdb4c	508	drm_free	dwarf+symtab	4b3e943177d7		in	understood	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xdd48	844	drm_alloc_pages	dwarf+symtab	01243968bc06		in	understood	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xe094	864	drm_alloc_pages_consistent	dwarf+symtab	a2718ca2bea5		in	understood	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xe3f4	688	drm_free_pages_consistent	dwarf+symtab	7cec0dfc3981		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xe6a4	680	drm_free_pages	dwarf+symtab	eee6c4118b06		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xe94c	500	drm_ioremap	dwarf+symtab	1a3b9f115e25		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xe3f4	688	drm_free_pages_consistent	dwarf+symtab	7cec0dfc3981		in	understood	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xe6a4	680	drm_free_pages	dwarf+symtab	eee6c4118b06		in	understood	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xe94c	500	drm_ioremap	dwarf+symtab	1a3b9f115e25		in	understood	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xeb40	400	drm_ioremapfree	dwarf+symtab	f8707a3468ee		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xedec	672	firegl_init	dwarf+symtab	2e6205596378		in	named-only	docs/kernel-attach.md#which-cards-the-driver-claims	Which cards the driver claims
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xf08c	136	firegl_cleanup	dwarf+symtab	179a46c805c1		in	understood	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xf114	940	firegl_open	dwarf+symtab	a41b5c627a12		in	understood	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xf4c0	856	firegl_release	dwarf+symtab	af6a139e2375		in	understood	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xf818	696	firegl_ioctl	dwarf+symtab	40c4cefc5500		in	named-only	docs/kernel-drm-functions.md#contexts-and-the-device-ioctl-entry	Contexts and the device ioctl entry
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xfad0	624	firegl_version	dwarf	e20242bc625d		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xfd40	492	firegl_set_block_mode	dwarf	875a7d446044		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xff2c	600	firegl_kernel_info	dwarf	b93e0811cee5		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x10184	244	firegl_query_hw_caps	dwarf	50d104be5b1f		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xf818	696	firegl_ioctl	dwarf+symtab	40c4cefc5500		in	understood	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xfad0	624	firegl_version	dwarf	e20242bc625d		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xfd40	492	firegl_set_block_mode	dwarf	875a7d446044		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xff2c	600	firegl_kernel_info	dwarf	b93e0811cee5		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x10184	244	firegl_query_hw_caps	dwarf	50d104be5b1f		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x10278	8	firegl_modify_ldt	dwarf	87506497337c		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x10280	248	firegl_verify_area	dwarf	94114399eea0		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x10280	248	firegl_verify_area	dwarf	94114399eea0		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x10378	588	firegl_setup_dev	dwarf	b5c2e16f29ac		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x105c4	2376	firegl_takedown	dwarf	9d2ad7582c2b		in	understood	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x10f0c	344	firegl_enable_stereo_on_device	dwarf+symtab	1d6a96babf04		in	named-only	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11064	540	firegl_enable_stereo	dwarf	e68f2401ee2c		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11064	540	firegl_enable_stereo	dwarf	e68f2401ee2c		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11280	548	firegl_unlock_unbind_all_clients	dwarf+symtab	bc7f6f3f7457		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x114a4	464	firegl_killall_clients	dwarf+symtab	5661e3caa061		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11734	212	__fglQSQuietDown	dwarf	4b6c40d750ad		in	located	docs/dri-driver-64.md#startup-teardown-and-idle-wait	Startup, teardown and idle wait
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11808	152	__fglDRMPM4Alloc	dwarf	63e7b76442d5		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x118a0	504	firegl_PM4Alloc	dwarf+symtab	66d351f0247a		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x118a0	504	firegl_PM4Alloc	dwarf+symtab	66d351f0247a		in	understood	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11a98	752	firegl_PM4WaitForIdle	dwarf+symtab	ba9d335d74a6		in	understood	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11d88	312	firegl_DRMPoll	dwarf+symtab	ff3950fe152c		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11ec0	196	_r6x_WaitNotBusy	dwarf+symtab	d8a17d088c78		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
@@ -47572,29 +47572,29 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1505c	132	_firegl_find_
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x150e0	424	_firegl_add_mutex	dwarf	f82c3f404102		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15288	512	firegl_remove_mutex	dwarf+symtab	c142723e238b		in	named-only	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15488	496	firegl_new_mutex	dwarf+symtab	35adc29afa3f		in	named-only	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15678	216	firegl_alloc_mutex	dwarf+symtab	4637fbbca378		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15750	456	firegl_free_mutex	dwarf+symtab	5d8f9836ae30		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15678	216	firegl_alloc_mutex	dwarf+symtab	4637fbbca378		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15750	456	firegl_free_mutex	dwarf+symtab	5d8f9836ae30		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15918	216	firegl_valid_mutex	dwarf+symtab	c8fb4da1a430		in	named-only	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15a1c	640	firegl_register_texture	dwarf+symtab	b65fd9f68a0e		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15c9c	468	firegl_unregister_texture	dwarf+symtab	19bd4f780246		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15a1c	640	firegl_register_texture	dwarf+symtab	b65fd9f68a0e		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15c9c	468	firegl_unregister_texture	dwarf+symtab	19bd4f780246		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15e70	272	firegl_texture_died	dwarf+symtab	7928a5d391e1		in	named-only	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15f80	292	firegl_unregister_all_textures	dwarf+symtab	d19a38f2f1b9		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x16194	2656	firegl_lock_device	dwarf+symtab	ca3491e24150		in	understood	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x16bf4	1188	firegl_lock	dwarf+symtab	d3afa33f2d95		in	understood	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17098	424	firegl_lock_free	dwarf+symtab	fe2998834c9c		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17240	580	firegl_unlock	dwarf+symtab	d135fdd6b07f		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17484	188	firegl_get_lockid	dwarf+symtab	e62ab3c7d36b		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17240	580	firegl_unlock	dwarf+symtab	d135fdd6b07f		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17484	188	firegl_get_lockid	dwarf+symtab	e62ab3c7d36b		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17600	1232	firegl_cp_init	dwarf+symtab	58de51cd96b8		in	understood	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17ad0	272	firegl_unlock_drm_buffers	dwarf+symtab	a813b5f6beb5		in	named-only	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17be0	232	firegl_checklock_drm_buffers	dwarf+symtab	cb87971ae821		in	named-only	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17cc8	144	firegl_cp_resume	dwarf+symtab	bbd113e9eb0c		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17cc8	144	firegl_cp_resume	dwarf+symtab	bbd113e9eb0c		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17e18	8	drm_hash_magic	dwarf	a67fb3d4fe26		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17e20	244	drm_find_file	dwarf	63b269a6d72d		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x17f14	344	drm_add_magic	dwarf	175485d95765		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1806c	496	drm_remove_magic	dwarf+symtab	3d4d8301c80f		in	named-only	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1825c	552	drm_getmagic	dwarf+symtab	ef2c85f6a881		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x18484	484	drm_authmagic	dwarf+symtab	68726a7b6e24		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x18668	276	firegl_enable_auth	dwarf+symtab	915f3a543314		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1825c	552	drm_getmagic	dwarf+symtab	ef2c85f6a881		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x18484	484	drm_authmagic	dwarf+symtab	68726a7b6e24		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x18668	276	firegl_enable_auth	dwarf+symtab	915f3a543314		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1883c	44	__KE_DEBUG2	dwarf	90ad92382957		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x18894	228	_r6x_init_hw_ctx	dwarf+symtab	5a6a6c99fbe9		in	named-only	docs/kernel-drm-functions.md#contexts-and-the-device-ioctl-entry	Contexts and the device ioctl entry
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x18978	572	_r6x_switch_context	dwarf+symtab	5e00d9fdc767		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
@@ -47604,11 +47604,11 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x18e60	1120	create_buffe
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x192c0	804	alloc_cache_ram	dwarf	d9de86638dfd		in	understood	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x195e4	784	firegl_free_buffer_queue	dwarf+symtab	c2d6506d7634		in	understood	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x198f4	1540	firegl_alloc_bufs	dwarf+symtab	0ef5a87bf37e		in	understood	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x19ef8	512	firegl_free_bufs	dwarf+symtab	fea9948cb66c		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x19ef8	512	firegl_free_bufs	dwarf+symtab	fea9948cb66c		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1a0f8	548	_firegl_bufmeminfo	dwarf+symtab	9743352651a7		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1a31c	380	firegl_bufmeminfo	dwarf+symtab	9aa02e11726d		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1a31c	380	firegl_bufmeminfo	dwarf+symtab	9aa02e11726d		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1a498	292	modify_buffer	dwarf	a2272fa47567		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1a5bc	488	firegl_modify_buf	dwarf+symtab	85e423510d2a		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1a5bc	488	firegl_modify_buf	dwarf+symtab	85e423510d2a		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1a7d0	536	firegl_init_aperture	dwarf+symtab	c87e2b2f704d		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1a9e8	332	firegl_term_aperture	dwarf+symtab	d5109a09322b		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ab34	644	firegl_aperture_alloc	dwarf+symtab	ee6cd28ac64f		in	named-only	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
@@ -47625,37 +47625,37 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1bb6c	228	calc_offset	d
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1bc50	1684	firegl_addmap	dwarf+symtab	4fc2f33d8223		in	understood	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1c2e4	980	firegl_rmmap	dwarf+symtab	e78050ac0e9c		in	understood	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1c6b8	1280	drm_addmap	dwarf+symtab	72c4b6eaac37		in	understood	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1cbb8	228	drm_rmmap	dwarf+symtab	3599fda124c7		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1cd5c	272	drm_irq_busid	dwarf+symtab	2b4896a4679e		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ce6c	272	drm_getunique	dwarf+symtab	1785977a4a2c		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1cbb8	228	drm_rmmap	dwarf+symtab	3599fda124c7		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1cd5c	272	drm_irq_busid	dwarf+symtab	2b4896a4679e		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ce6c	272	drm_getunique	dwarf+symtab	1785977a4a2c		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1cf7c	760	drm_setunique	dwarf+symtab	cb33b3a1dd02		in	understood	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1d334	556	drm_adddraw	dwarf+symtab	75dd9bbe6893		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1d334	556	drm_adddraw	dwarf+symtab	75dd9bbe6893		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1d560	232	_firegl_remove_drawable	dwarf	ed5a2f6d5f99		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1d648	384	drm_rmdraw	dwarf+symtab	cd1eb54cf4e6		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1d648	384	drm_rmdraw	dwarf+symtab	cd1eb54cf4e6		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1d7c8	224	firegl_remove_all_drawables	dwarf+symtab	736e6ba3e340		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1d968	1400	_firegl_alloc_ctx	dwarf	97e44c69fa1e		in	understood	docs/kernel-drm-functions.md#contexts-and-the-device-ioctl-entry	Contexts and the device ioctl entry
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1dee0	984	firegl_addctx	dwarf+symtab	dc600bba4053		in	understood	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1e2b8	932	firegl_rmctx	dwarf+symtab	fc7826c2ef0e		in	understood	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1e65c	516	firegl_modctx	dwarf+symtab	8c6272ca8f7e		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1e860	484	firegl_getctx	dwarf+symtab	f2cdf48aa9e5		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ea44	396	firegl_resctx	dwarf+symtab	1c7688b5d62d		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1e65c	516	firegl_modctx	dwarf+symtab	8c6272ca8f7e		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1e860	484	firegl_getctx	dwarf+symtab	f2cdf48aa9e5		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ea44	396	firegl_resctx	dwarf+symtab	1c7688b5d62d		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ebd0	708	firegl_switch_context	dwarf+symtab	718b155ed96b		in	understood	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1eec0	76	firegl_noop	dwarf+symtab	9b93195cf637		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ef0c	280	firegl_wait_for_vertical_retrace	dwarf+symtab	f94f81f39d67		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1eec0	76	firegl_noop	dwarf+symtab	9b93195cf637		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ef0c	280	firegl_wait_for_vertical_retrace	dwarf+symtab	f94f81f39d67		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f024	52	firegl_irq_vsync	dwarf	895a9bd11999		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f058	52	firegl_irq_framelock	dwarf	895a9bd11999		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f08c	760	firegl_install_irq	dwarf+symtab	fb0777546574		in	understood	docs/kernel-attach.md#interrupts	Interrupts
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f384	272	firegl_vs_stereo_swap	dwarf+symtab	5fd2264fe2b3		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f494	340	firegl_vs_validate	dwarf+symtab	3783d6817cbe		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f384	272	firegl_vs_stereo_swap	dwarf+symtab	5fd2264fe2b3		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f494	340	firegl_vs_validate	dwarf+symtab	3783d6817cbe		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f5e8	264	firegl_sync_dacs	dwarf+symtab	6d5e07d12d96		in	understood	docs/kernel-ioctl-irq-functions.md#display-control	Display control
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f7dc	356	find_memlock	dwarf	2590f63047f2		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f940	176	add_memlock	dwarf	ad72c2520fa5		in	named-only	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f9f0	484	firegl_free_memlock	dwarf+symtab	216ec24dedd2		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1fbd4	1456	firegl_lock_memory	dwarf+symtab	4b95428bd818		in	understood	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20184	336	firegl_unlock_memory	dwarf+symtab	f7521fd13cac		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x202d4	112	firegl_flush_cache	dwarf+symtab	6a628a9e9594		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20344	196	firegl_set_cap_ipc_lock	dwarf+symtab	9c0ed95b68fa		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20408	108	firegl_restore_cap	dwarf+symtab	5cd0be64bfac		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20184	336	firegl_unlock_memory	dwarf+symtab	f7521fd13cac		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x202d4	112	firegl_flush_cache	dwarf+symtab	6a628a9e9594		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20344	196	firegl_set_cap_ipc_lock	dwarf+symtab	9c0ed95b68fa		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20408	108	firegl_restore_cap	dwarf+symtab	5cd0be64bfac		in	named-only	docs/kernel-drm-functions.md#ioctl-dispatch-and-kernel-memory-allocation	Ioctl dispatch and kernel memory allocation
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20534	1316	firegl_umm_init	dwarf+symtab	2f6229b0de0f		in	understood	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20a84	64	_r6x_vs_stereo_swap	dwarf+symtab	3e9b744eed43		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20ac4	68	_r6x_vs_validate	dwarf+symtab	b5335d2191a2		in	undocumented		
