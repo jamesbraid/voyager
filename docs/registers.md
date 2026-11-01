@@ -106,7 +106,7 @@ write) as reads.
 | 0xb | `CLOCK_CNTL_INDEX` | lane of 0x8 | write 1 | 75 | `QBS_FinishInit` at 0x43f1c0 | 4 | see below |
 | 0xc | `CLOCK_CNTL_DATA` | common | read 4, write 4 | 115 | `QBS_FinishInit` at 0x43f1c0 | 9 | see below |
 | 0x20 | `BIOS_4_SCRATCH` or `TV_PLL_FINE_CNTL` | conflict | read 4 | 2 | static code at 0x4112c0 | 1 | unknown |
-| 0x24 | `BIOS_5_SCRATCH` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
+| 0x24 | `BIOS_5_SCRATCH` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | see below |
 | 0x28 | `BIOS_6_SCRATCH` | common | read 4, write 4 | 3 | `R200EnterVT` at 0x422cc0 | 1 | see below |
 | 0x30 | `BUS_CNTL` or `PCIE_INDEX` | conflict | read 4, write 4 | 3 | static code at 0x4112c0 | 1 | unknown |
 | 0x40 | `GEN_INT_CNTL` | exact | read 4 | 1 | static code at 0x41bc00 | 0 | see below |
@@ -117,17 +117,17 @@ write) as reads.
 | 0x5c | `CRTC_STATUS` | common | read 4, write 4 | 8 | `FIREGL_ShowOverlay` at 0x43df00 | 1 | unknown |
 | 0x6c | `GPIO_MONIDB` or `GPIO_CRT2_DDC` | conflict | read 4, write 4 | 2 | static code at 0x4112c0 | 0 | unknown |
 | 0x7c | `DAC_CNTL2` | common | read 4, write 4 | 51 | `FGLSetGammaData` at 0x42fe00 | 5 | unknown |
-| 0x94 | `I2C_CNTL_1` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
+| 0x94 | `I2C_CNTL_1` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | see below |
 | 0xb0 | `PALETTE_INDEX` | common | read 4, write 4 | 6 | `FGLSetGammaData` at 0x42fe00 | 2 | unknown |
 | 0xb3 | `PALETTE_INDEX` | lane of 0xb0 | write 1 | 20 | `FGLSetGammaData` at 0x42fe00 | 4 | unknown |
 | 0xb4 | `PALETTE_DATA` | common | read 4, write 4 | 30 | static code at 0x4195c0 | 1 | unknown |
 | 0xb8 | `PALETTE_30_DATA` | common | write 4 | 9 | `FGLSetGammaData` at 0x42fe00 | 2 | unknown |
-| 0xe0 | `CONFIG_CNTL` | common | read 4 | 3 | `R200LinuxCailInitCail` at 0x43ea80 | 2 | unknown |
+| 0xe0 | `CONFIG_CNTL` | common | read 4 | 3 | `R200LinuxCailInitCail` at 0x43ea80 | 2 | see below |
 | 0xf0 | `RBBM_SOFT_RESET` | exact | read 4, write 4 | 6 | `R200EngineReset` at 0x40a5c0 | 1 | unknown |
-| 0xf8 | `CONFIG_MEMSIZE` | common | read 4 | 2 | static code at 0x4112c0 | 1 | unknown |
-| 0x148 | `MC_FB_LOCATION` or `MEM_ADDR_CONFIG` | conflict | write 4 | 2 | `R200EngineInit` at 0x40aa40 | 0 | unknown |
+| 0xf8 | `CONFIG_MEMSIZE` | common | read 4 | 2 | static code at 0x4112c0 | 1 | see below |
+| 0x148 | `MC_FB_LOCATION` or `MEM_ADDR_CONFIG` | conflict | write 4 | 2 | `R200EngineInit` at 0x40aa40 | 0 | see below |
 | 0x150 | `MEM_STR_CNTL` or `MC_STATUS` | conflict | read 4 | 1 | `R200EngineReset` at 0x40a5c0 | 0 | unknown |
-| 0x158 | `SDRAM_MODE_REG` | common | read 4 | 1 | static code at 0x4112c0 | 0 | unknown |
+| 0x158 | `SDRAM_MODE_REG` | common | read 4 | 1 | static code at 0x4112c0 | 0 | see below |
 | 0x194 | none | none | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
 | 0x198 | `GPIOPAD_MASK` | common | read 4, write 4 | 18 | `SGIGLXSwapBarrierInit` at 0x430740 | 2 | unknown |
 | 0x19c | `GPIOPAD_A` | common | read 4, write 4 | 10 | static code at 0x4112c0 | 1 | unknown |
@@ -140,8 +140,8 @@ write) as reads.
 | 0x204 | `CRTC_H_SYNC_STRT_WID` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
 | 0x208 | `CRTC_V_TOTAL_DISP` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
 | 0x20c | `CRTC_V_SYNC_STRT_WID` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
-| 0x214 | `CRTC_CRNT_FRAME` | common | read 4 | 4 | `R6TMDSTransmitLinux` at 0x445480 | 0 | unknown |
-| 0x218 | `CRTC_GUI_TRIG_VLINE` | common | write 4 | 1 | static code at 0x4195c0 | 0 | unknown |
+| 0x214 | `CRTC_CRNT_FRAME` | common | read 4 | 4 | `R6TMDSTransmitLinux` at 0x445480 | 0 | see below |
+| 0x218 | `CRTC_GUI_TRIG_VLINE` | common | write 4 | 1 | static code at 0x4195c0 | 0 | see below |
 | 0x220 | `CRTC_OFFSET_RIGHT` | common | read 4, write 4 | 4 | `R200AdjustFrame` at 0x422680 | 1 | unknown |
 | 0x224 | `CRTC_OFFSET` | common | read 4, write 4 | 6 | `R200AdjustFrame` at 0x422680 | 2 | unknown |
 | 0x228 | `CRTC_OFFSET_CNTL` | common | read 4, write 4 | 25 | `QBS_EnableStereo` at 0x43f440 | 7 | unknown |
@@ -149,7 +149,7 @@ write) as reads.
 | 0x230 | `OVR_CLR` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
 | 0x234 | `OVR_WID_LEFT_RIGHT` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
 | 0x238 | `OVR_WID_TOP_BOTTOM` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
-| 0x23c | `DISPLAY_BASE_ADDR` | exact | write 4 | 1 | `R200EngineInit` at 0x40aa40 | 0 | unknown |
+| 0x23c | `DISPLAY_BASE_ADDR` | exact | write 4 | 1 | `R200EngineInit` at 0x40aa40 | 0 | see below |
 | 0x250 | `FP_CRTC_H_TOTAL_DISP` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
 | 0x254 | `FP_CRTC_V_TOTAL_DISP` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
 | 0x260 | `CUR_OFFSET` | exact | write 4 | 2 | static code at 0x40d200 | 0 | unknown |
@@ -174,7 +174,7 @@ write) as reads.
 | 0x304 | `CRTC2_H_SYNC_STRT_WID` | common | read 4, write 4 | 3 | static code at 0x41bc00 | 0 | unknown |
 | 0x308 | `CRTC2_V_TOTAL_DISP` | common | read 4, write 4 | 3 | static code at 0x41bc00 | 0 | unknown |
 | 0x30c | `CRTC2_V_SYNC_STRT_WID` | common | read 4, write 4 | 3 | static code at 0x41bc00 | 0 | unknown |
-| 0x318 | `CRTC2_GUI_TRIG_VLINE` | common | write 4 | 1 | static code at 0x4195c0 | 0 | unknown |
+| 0x318 | `CRTC2_GUI_TRIG_VLINE` | common | write 4 | 1 | static code at 0x4195c0 | 0 | see below |
 | 0x324 | `CRTC2_OFFSET` | common | read 4, write 4 | 8 | `R200AdjustFrame` at 0x422680 | 2 | unknown |
 | 0x328 | `CRTC2_OFFSET_CNTL` | common | read 4, write 4 | 21 | `R200AdjustFrame` at 0x422680 | 4 | unknown |
 | 0x32c | `CRTC2_PITCH` | common | read 4, write 4 | 3 | static code at 0x41bc00 | 0 | unknown |
@@ -377,6 +377,45 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
   (`CMDFIFO_AVAIL` in `r300d.h`) and loops up to 2000000 times until the count reaches the requested number of
   entries; `R200WaitForIdle` at 0x40a3c0 loops up to 2000000 times until bit 31 (`GUI_ACTIVE`) clears.
   Established.
+
+- **0x24** in `fglrx_drv.so`: the scratch word the public tables call `BIOS_5_SCRATCH` (common).
+  The static code at 0x41bc00 stores the word at +2960 of its argument record into it, at the store at 0x41bf74 inside `R200ScreenInit`. The save path reads it back at 0x41d4a0 and writes it to +2960 of the record in a1 in the delay slot of the return at 0x41d4a4, so the two sites save and restore the word.
+  Inferred.
+- **0x94** in `fglrx_drv.so`: the I2C control word the public tables call `I2C_CNTL_1` (common).
+  It is one of three registers restored together in `R200ScreenInit`.
+  The words at +24, +28 and +32 of the argument record go to the registers at 0x540, 0xc40 and 0x94.
+  The stores are at 0x41bc44, 0x41bc4c and 0x41bc54.
+  The save path at 0x41d2e8 to 0x41d2fc copies the same three registers into the same offsets of the record, the reverse direction.
+  Inferred.
+- **0x158** in `fglrx_drv.so`: the SDRAM mode word, named `SDRAM_MODE_REG` in the public tables (common).
+  The static code at 0x4112c0 loads it at 0x414f0c and stores it unchanged to +60 of the record in s0 at 0x414f10.
+  The copy has no mask or shift.
+  Inferred.
+- **0xf8** in `fglrx_drv.so`: the memory-size word named `CONFIG_MEMSIZE` in the public tables (common).
+  The static code at 0x4112c0 loads it at 0x414f00, shifts it right by 10 bits and stores the result at +804 of the record in s1 (0x414f08).
+  A second read at 0x42eba8 keeps the high half (shift right by 16) and stores it as a halfword at 20(sp).
+  Inferred.
+- **0x148** in `fglrx_drv.so`: the frame-buffer location word, named `MC_FB_LOCATION` by the public tables, with `MEM_ADDR_CONFIG` at the same offset in the other table (conflict).
+  `R200EngineInit` writes it at 0x40ab88 with 0xffff0000 (the value of `lui` 0xffff), and again at 0x40abec with a word built from a doubleword by an and and an or.
+  Inferred.
+- **0xe0** in `fglrx_drv.so`: the configuration word named `CONFIG_CNTL` in the public tables (common).
+  Three sites read bits 19:16 of it (mask 0xf0000 or shift right by 16, then and 0xf): the static code at 0x4112c0 (0x414e74), `R200ScreenInit` (0x41aff8, stored as a byte at +8144 of s1 at 0x41b00c) and `R200LinuxCailInitCail` (0x43eb94, where the four-bit value is incremented by one at 0x43ebac).
+  Inferred.
+- **0x214** in `fglrx_drv.so`: the current frame counter, `CRTC_CRNT_FRAME` in the public tables (common).
+  `R6TMDSTransmitLinux` reads it four times.
+  They run from 0x445548 to 0x44563c, in code order.
+  Each read is ANDed with the mask in s0, and the code loops until the masked value passes a target held in s2, 3 above the first read.
+  The loop counts start at 2000 (0x445538) and 1000 (0x445640).
+  Inferred.
+- **0x218** in `fglrx_drv.so`: `CRTC_GUI_TRIG_VLINE` in the public tables (common), a trigger line for the first CRTC. The store at 0x41a6b0 in `R200PreInit` writes a word whose low half is the value in a4 and whose high half is a4 plus one.
+  The store is in the delay slot of the branch at 0x41a6ac, so it runs whether or not that branch is taken.
+  Inferred.
+- **0x318** in `fglrx_drv.so`: the second CRTC's trigger line, `CRTC2_GUI_TRIG_VLINE` in the public tables (common).
+  The store at 0x41a6c8 writes the same packed word (a4 in the low half, a4 plus one in the high half) and sits in the delay slot of the return at 0x41a6c4.
+  Inferred.
+- **0x23c** in `fglrx_drv.so`: the display base address, `DISPLAY_BASE_ADDR` (exact).
+  `R200EngineInit` loads the doubleword at +32 of s0 at 0x40ab94 and stores its low word to the register at 0x40ab98.
+  Inferred.
 
 ## Not in the tables
 
