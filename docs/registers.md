@@ -190,8 +190,8 @@ write) as reads.
 | 0x3c4 | `FP_H2_SYNC_STRT_WID` or `SEQ8_IDX` | conflict | read 4, write 4 | 3 | static code at 0x41bc00 | 0 | unknown |
 | 0x3c8 | `DAC_W_INDEX` or `FP_V2_SYNC_STRT_WID` | conflict | read 4, write 4 | 3 | static code at 0x41bc00 | 0 | unknown |
 | 0x3f8 | `CRTC2_GEN_CNTL` | exact | read 4, write 4 | 95 | `R6TMDSTransmitLinux` at 0x445480 | 6 | see below |
-| 0x400 | `OV0_Y_X_START` | common | write 4 | 2 | `FIREGL_ShowOverlay` at 0x43df00 | 1 | unknown |
-| 0x404 | `OV0_Y_X_END` | common | write 4 | 4 | `FIREGL_ShowOverlay` at 0x43df00 | 1 | unknown |
+| 0x400 | `OV0_Y_X_START` | common | write 4 | 2 | `FIREGL_ShowOverlay` at 0x43df00 | 1 | see below |
+| 0x404 | `OV0_Y_X_END` | common | write 4 | 4 | `FIREGL_ShowOverlay` at 0x43df00 | 1 | see below |
 | 0x410 | `OV0_REG_LOAD_CNTL` | common | read 4, write 4 | 6 | static code at 0x437c3c | 0 | unknown |
 | 0x420 | `OV0_SCALE_CNTL` | exact | read 4, write 4 | 12 | `FIREGL_HideOverlay` at 0x43db80 | 2 | see below |
 | 0x424 | `OV0_V_INC` | common | write 4 | 2 | `FIREGL_ShowOverlay` at 0x43df00 | 1 | unknown |
@@ -204,8 +204,8 @@ write) as reads.
 | 0x444 | `OV0_VID_BUF1_BASE_ADRS` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
 | 0x448 | `OV0_VID_BUF2_BASE_ADRS` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
 | 0x460 | `OV0_VID_BUF_PITCH0_VALUE` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
-| 0x470 | `OV0_AUTO_FLIP_CNTL` | common | read 4, write 4 | 4 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
-| 0x474 | `OV0_DEINTERLACE_PATTERN` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
+| 0x470 | `OV0_AUTO_FLIP_CNTL` | common | read 4, write 4 | 4 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | see below |
+| 0x474 | `OV0_DEINTERLACE_PATTERN` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | see below |
 | 0x480 | `OV0_H_INC` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
 | 0x484 | `OV0_STEP_BY` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
 | 0x488 | `OV0_P1_H_ACCUM_INIT` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
@@ -213,7 +213,7 @@ write) as reads.
 | 0x494 | `OV0_P1_X_START_END` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
 | 0x498 | `OV0_P2_X_START_END` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
 | 0x49c | `OV0_P3_X_START_END` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
-| 0x4a0 | `OV0_FILTER_CNTL` | common | read 4, write 4 | 2 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
+| 0x4a0 | `OV0_FILTER_CNTL` | common | read 4, write 4 | 2 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | see below |
 | 0x4e4 | `OV0_VIDEO_KEY_CLR_LOW` | common | write 4 | 2 | static code at 0x43d100 | 0 | unknown |
 | 0x4e8 | `OV0_VIDEO_KEY_CLR_HIGH` | common | write 4 | 2 | static code at 0x43d100 | 0 | unknown |
 | 0x4f4 | `OV0_KEY_CNTL` | common | read 4, write 4 | 12 | static code at 0x43d100 | 0 | unknown |
@@ -260,8 +260,8 @@ write) as reads.
 | 0xd24 | `OV0_LIN_TRANS_B` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | see below |
 | 0xd28 | `OV0_LIN_TRANS_C` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | see below |
 | 0xd2c | `OV0_LIN_TRANS_D` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | see below |
-| 0xd30 | `OV0_LIN_TRANS_E` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
-| 0xd34 | `OV0_LIN_TRANS_F` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
+| 0xd30 | `OV0_LIN_TRANS_E` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | see below |
+| 0xd34 | `OV0_LIN_TRANS_F` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | see below |
 | 0xd60 | `DISP_MERGE_CNTL` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
 | 0xd64 | `DISP_OUTPUT_CNTL` | common | read 4, write 4 | 9 | static code at 0x4112c0 | 1 | unknown |
 | 0xd68 | `DISP2_MERGE_CNTL` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
@@ -287,7 +287,7 @@ write) as reads.
 | 0x1600 | `DST_LINE_START` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | see below |
 | 0x1604 | `DST_LINE_END` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | see below |
 | 0x16c0 | `DP_CNTL` | exact | write 4 | 5 | static code at 0x40ac40 | 0 | unknown |
-| 0x16c4 | `DP_DATATYPE` | common | read 4, write 4 | 4 | `R200EngineRestore` at 0x40a780 | 1 | unknown |
+| 0x16c4 | `DP_DATATYPE` | common | read 4, write 4 | 4 | `R200EngineRestore` at 0x40a780 | 1 | see below |
 | 0x16cc | `DP_WRITE_MASK` | exact | write 4 | 5 | `R200EngineRestore` at 0x40a780 | 1 | see below |
 | 0x16e0 | `DEFAULT_OFFSET` | common | read 4, write 4 | 7 | `R200ScreenInit` at 0x41a700 | 2 | unknown |
 | 0x16e8 | `DEFAULT_SC_BOTTOM_RIGHT` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | see below |
@@ -619,6 +619,36 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
 - **0xd2c** in `fglrx_drv.so`: the public `OV0_LIN_TRANS_D` (common; `RADEON_OV0_LIN_TRANS_D`). It gets zero at
   0x43e000, the fourth of the six overlay constants that `FIREGL_ShowOverlay` writes before the `beq` at 0x43e020.
   Inferred.
+
+- **0x400** in `fglrx_drv.so`: the public `OV0_Y_X_START` (common; `RADEON_OV0_Y_X_START` in `radeon_reg.h`).
+  `FIREGL_ShowOverlay` at 0x43df00 (1900 bytes) writes zero to it at 0x43e62c, on the path the `beq` at 0x43e0e4 takes
+  when the word at +120 of the driver record (s2) is zero. `R200AdjustFrame` at 0x422680 (1048 bytes) also writes zero
+  to it, at 0x42283c. Inferred.
+- **0x404** in `fglrx_drv.so`: the public `OV0_Y_X_END` (common; `RADEON_OV0_Y_X_END` in `radeon_reg.h`). On the same
+  path `FIREGL_ShowOverlay` stores the value in a1 at 0x43e634. That value is formed at 0x43e0d0 to 0x43e0e0 as
+  (s5 - 1) in the low half and (s0 - 1) in the high half. `R200AdjustFrame` stores to it at 0x422884, 0x4228e8 and
+  0x4228f0 as well. Inferred.
+- **0x470** in `fglrx_drv.so`: the public `OV0_AUTO_FLIP_CNTL` (common; `RADEON_OV0_AUTO_FLIP_CNTL` in `radeon_reg.h`,
+  where bits 8 and 9 form the `VID_PORT_SELECT` field and bit 4 is `RADEON_OV0_AUTO_FLIP_CNTL_SOFT_BUF_ODD`).
+  `FIREGL_ShowOverlay` at 0x43df00 (1900 bytes) reads the word at 0x43e0a0 and ANDs it with the mask that the
+  `addiu` of -817 at 0x43e0a4 builds, which clears bits 4, 5, 8 and 9. It ORs in 0x200 at 0x43e0ac and stores the
+  result at 0x43e0b0, so the port select field becomes 2. Inferred.
+- **0x474** in `fglrx_drv.so`: the public `OV0_DEINTERLACE_PATTERN` (common; `RADEON_OV0_DEINTERLACE_PATTERN` in
+  `radeon_reg.h`). `FIREGL_ShowOverlay` at 0x43df00 (1900 bytes) stores 0xaaaaa to it at 0x43e0c8. The value comes
+  from a `lui` of 0xa at 0x43e0b8 and an `ori` of 0xaaaa at 0x43e0c4. Inferred.
+- **0x4a0** in `fglrx_drv.so`: the public `OV0_FILTER_CNTL` (common; `RADEON_OV0_FILTER_CNTL` in `radeon_reg.h`, where
+  the low four bits are `RADEON_FILTER_COEF_MASK` and 0xf is `RADEON_FILTER_HARDCODED_COEF`). `FIREGL_ShowOverlay` at
+  0x43df00 (1900 bytes) reads the word at 0x43e0b4, ORs in 0xf at 0x43e0bc and stores it at 0x43e0c0. Inferred.
+- **0x16c4** in `fglrx_drv.so`: the public `DP_DATATYPE` (common; `RADEON_DP_DATATYPE` in `radeon_reg.h`, where bit 29
+  is `RADEON_HOST_BIG_ENDIAN_EN`). `R200EngineRestore` at 0x40a780 (468 bytes) reads the word at 0x40a818, ANDs it
+  with a mask that clears bit 29 (`lui` of 0xdfff at 0x40a81c and `ori` of 0xffff at 0x40a820) and stores it at
+  0x40a828. Inferred.
+- **0xd30** in `fglrx_drv.so`: the public `OV0_LIN_TRANS_E` (common; `RADEON_OV0_LIN_TRANS_E`). `FIREGL_ShowOverlay` at
+  0x43df00 (1900 bytes) stores 0x1000 to it at 0x43e008. The value is the `addiu` of 4096 at 0x43e004, held in a0.
+  Inferred.
+- **0xd34** in `fglrx_drv.so`: the public `OV0_LIN_TRANS_F` (common; `RADEON_OV0_LIN_TRANS_F`). It is the last of the
+  six constants `FIREGL_ShowOverlay` stores before the `beq` at 0x43e020: `FIREGL_ShowOverlay` at 0x43df00 (1900
+  bytes) writes zero to it at 0x43e00c. Inferred.
 
 ## Not in the tables
 
