@@ -3175,7 +3175,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4be3c0	96	firegl_In
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4be440	140	firegl_ModuleParm	dwarf+dynsym	5aed3a1187f5		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4be500	100	firegl_RmMap	dwarf+dynsym	699fde3c5204		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4be580	88	firegl_FreeKernelInfo	dwarf+dynsym	f8412a4a47fc		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4be600	452	firegl_GetKernelInfo	dwarf+dynsym	5c0c8aba3a8d		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4be600	452	firegl_GetKernelInfo	dwarf+dynsym	5c0c8aba3a8d		in	located	docs/dri-driver-64.md#startup-teardown-and-idle-wait	Startup, teardown and idle wait
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4be800	156	firegl_VerifyArea	dwarf+dynsym	64af58d00422		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4be8c0	132	firegl_GetAGPCapPtr	dwarf+dynsym	b39e1726a084		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4be980	132	firegl_GetAGPStatus	dwarf+dynsym	9edd539d4307		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
@@ -3222,7 +3222,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4c1080	88	fglX
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4c1100	8	fglX11SetCoreClipRect	dwarf+funcnames	78aa5094d5ec		in	understood	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4c1140	40	fglX11DrawableGetSize	dwarf+funcnames	0aaa93209ab1		in	understood	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4c1180	36	fglX11DrawableGetScreenSize	dwarf+funcnames	06dc410e3678		in	understood	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4c11c0	8	fglX11DrawableUpdate	dwarf+funcnames	a7e7ca11a6b8		in	named-only	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4c11c0	8	fglX11DrawableUpdate	dwarf+funcnames	a7e7ca11a6b8		in	understood	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4c1200	8	fglX11InitPerformanceCounters	dwarf+funcnames	78aa5094d5ec		in	understood	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4c1240	56	fglx11Malloc	dwarf+dynsym	742f0f37677e		in	understood	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4c1280	68	fglx11Calloc	dwarf+dynsym	14ec1221740e		in	understood	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
@@ -16029,7 +16029,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516da0	96	firegl_
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516e00	140	firegl_ModuleParm	dwarf+dynsym	afb2a84276a3		in	understood	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516e90	100	firegl_RmMap	dwarf+dynsym	e351f6508e9c		in	understood	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516f00	92	firegl_FreeKernelInfo	dwarf+dynsym	fad3b95b9095		in	understood	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516f60	472	firegl_GetKernelInfo	dwarf+dynsym	c73ab1be6048		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516f60	472	firegl_GetKernelInfo	dwarf+dynsym	c73ab1be6048		in	understood	docs/dri-driver-64.md#startup-teardown-and-idle-wait	Startup, teardown and idle wait
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517140	156	firegl_VerifyArea	dwarf+dynsym	d275746281cd		in	understood	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5171e0	132	firegl_GetAGPCapPtr	dwarf+dynsym	db62b0fb5453		in	understood	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517270	132	firegl_GetAGPStatus	dwarf+dynsym	06c8d430b242		in	understood	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
@@ -16039,22 +16039,22 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5173f0	96	firegl_
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517450	108	firegl_modify_ldt	dwarf+dynsym	e7045e83da10		in	understood	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5174c0	112	firegl_QueryHwCaps	dwarf+dynsym	5be96502c1e0		in	understood	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517530	900	firegl_InitDRM	dwarf+dynsym	bc9e089b9674		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5178c0	216	firegl_TermDRM	dwarf+dynsym	b8f3f70374c7		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5178c0	216	firegl_TermDRM	dwarf+dynsym	b8f3f70374c7		in	understood	docs/dri-driver-64.md#startup-teardown-and-idle-wait	Startup, teardown and idle wait
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5179a0	96	firegl_SyncDacs	dwarf+dynsym	ee51944671a3		in	understood	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517a00	100	firegl_EnableStereo	dwarf+dynsym	97c83e64773c		in	understood	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517a70	100	firegl_AGPAcquire	dwarf+dynsym	143d830e3119		in	understood	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517ae0	96	firegl_CPResume	dwarf+dynsym	ab3cd46c93f3		in	understood	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517b40	248	__fglQSQuietDown	dwarf	81969256f59d		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517b40	248	__fglQSQuietDown	dwarf	81969256f59d		in	understood	docs/dri-driver-64.md#startup-teardown-and-idle-wait	Startup, teardown and idle wait
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517c40	108	__fglDRMPM4Alloc	dwarf	f752cd4df052	multi-unit	in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517cb0	508	__fglDRMPM4Queue	dwarf	278196470b59	multi-unit	in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517eb0	76	__fglDRMPM4Submit	dwarf	21c73d2dc38b	multi-unit	in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517f00	972	firegl_PM4Alloc	dwarf+dynsym	fdfee9a21d90		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5182d0	544	firegl_PM4WaitForIdle	dwarf+dynsym	5e19dd5a9d0c		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5184f0	320	firegl_DRMPoll	dwarf+dynsym	7d627340d8a4		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x518640	36	dummy_5	dwarf+dynsym	8b46f5dc933e		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x518670	36	dummy_6	dwarf+dynsym	cc7083e9f8e0		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5186c0	156	find_display	dwarf	b323a8abb007		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x518760	56	close_display	dwarf	9dd05ac7cebb		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x518640	36	dummy_5	dwarf+dynsym	8b46f5dc933e		in	understood	docs/dri-driver-64.md#shared-word-helpers	Shared word helpers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x518670	36	dummy_6	dwarf+dynsym	cc7083e9f8e0		in	understood	docs/dri-driver-64.md#shared-word-helpers	Shared word helpers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5186c0	156	find_display	dwarf	b323a8abb007		in	understood	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x518760	56	close_display	dwarf	9dd05ac7cebb		in	understood	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5187a0	452	fglX11DRICheckExtension	dwarf+dynsym	bcf120358be1		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x518970	708	getDrawableInfo	dwarf	905bc20159f7		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x518c40	564	updateDrawableInfo	dwarf	05845ad7b747		in	undocumented		
@@ -16069,14 +16069,14 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5194d0	60	fglX11D
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519510	60	fglX11DRMUnlock	dwarf+dynsym	2642014e417f		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x519550	160	fglx11Warning	dwarf	ef0a330b97c5		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5195f0	52	fglx11Fatal	dwarf	73460ebdbfb8		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x519630	36	fglx11GetDrawablePrivate	dwarf	ac4b4c69b00c		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x519660	44	fglx11GetReadDrawablePrivate	dwarf	dd915a718b5c		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x519630	36	fglx11GetDrawablePrivate	dwarf	ac4b4c69b00c		in	understood	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x519660	44	fglx11GetReadDrawablePrivate	dwarf	dd915a718b5c		in	understood	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x519690	184	fglX11GLLockDrawable	dwarf	ab738e50f1f8		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x519750	92	fglX11GLUnlockDrawable	dwarf	d8b114ead668		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5197b0	8	fglX11SetCoreClipRect	dwarf	78aa5094d5ec		in	understood	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5197c0	40	fglX11DrawableGetSize	dwarf	7baf27a65747		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5197f0	36	fglX11DrawableGetScreenSize	dwarf	c8f944caddf5		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x519820	8	fglX11DrawableUpdate	dwarf	a7e7ca11a6b8		in	named-only	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5197c0	40	fglX11DrawableGetSize	dwarf	7baf27a65747		in	understood	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5197f0	36	fglX11DrawableGetScreenSize	dwarf	c8f944caddf5		in	understood	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x519820	8	fglX11DrawableUpdate	dwarf	a7e7ca11a6b8		in	understood	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x519830	8	fglX11InitPerformanceCounters	dwarf	78aa5094d5ec		in	understood	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519840	56	fglx11Malloc	dwarf+dynsym	985bf7cc2caf		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519880	68	fglx11Calloc	dwarf+dynsym	372d9269e691		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
@@ -29239,7 +29239,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		__R300FlushZ
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		__fglDRMPM4Alloc	dwarf+funcnames			in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		__fglDRMPM4Queue	dwarf+funcnames			in	named-only	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		__fglDRMPM4Submit	dwarf+funcnames			in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		__fglQSQuietDown	dwarf+funcnames			in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		__fglQSQuietDown	dwarf+funcnames			in	located	docs/dri-driver-64.md#startup-teardown-and-idle-wait	Startup, teardown and idle wait
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		_stub	dwarf			in	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		addFormat	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		addMode	dwarf+funcnames			in	undocumented		
@@ -29479,8 +29479,8 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a5d4	200	xdr_
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a69c	104	xdr_SDBversionNumber	dynsym	0e083eead946		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a704	36	SDBsetupMemoryInterface	dynsym	0113f40c4011		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b8780	1424	_stub	dwarf			in	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b8d40	36	dummy_5	dwarf+dynsym	ac4bea52a409		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b8d80	36	dummy_6	dwarf+dynsym	c379e9d99159		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b8d40	36	dummy_5	dwarf+dynsym	ac4bea52a409		in	located	docs/dri-driver-64.md#shared-word-helpers	Shared word helpers
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b8d80	36	dummy_6	dwarf+dynsym	c379e9d99159		in	located	docs/dri-driver-64.md#shared-word-helpers	Shared word helpers
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b8dc0	8	fglrx_glxSetup	dwarf+funcnames	a7e7ca11a6b8		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b8e00	8	fglX11DRICheckExtension	dwarf+dynsym	87506497337c		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b8e40	176	getDrawableInfo	dwarf+funcnames	50d65c9a9e18		in	undocumented		
@@ -29503,7 +29503,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9ac0	
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9b40	8	fglX11SetCoreClipRect	dwarf+funcnames	78aa5094d5ec		in	understood	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9b80	40	fglX11DrawableGetSize	dwarf+funcnames	0aaa93209ab1		in	understood	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9bc0	36	fglX11DrawableGetScreenSize	dwarf+funcnames	06dc410e3678		in	understood	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9c00	8	fglX11DrawableUpdate	dwarf+funcnames	a7e7ca11a6b8		in	named-only	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9c00	8	fglX11DrawableUpdate	dwarf+funcnames	a7e7ca11a6b8		in	understood	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9c40	8	fglX11InitPerformanceCounters	dwarf+funcnames	78aa5094d5ec		in	understood	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9c80	56	fglx11Malloc	dwarf+dynsym	928a0819248a		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9cc0	68	fglx11Calloc	dwarf+dynsym	27293cb472bf		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
@@ -46748,7 +46748,7 @@ usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402300	96	firegl
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402380	140	firegl_ModuleParm	dwarf+dynsym	dfb32a63a120		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402440	100	firegl_RmMap	dwarf+dynsym	052f75665093		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x4024c0	88	firegl_FreeKernelInfo	dwarf+dynsym	48a7ff1f2c00		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402540	436	firegl_GetKernelInfo	dwarf+dynsym	4bb4273f515f		in	undocumented		
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402540	436	firegl_GetKernelInfo	dwarf+dynsym	4bb4273f515f		in	located	docs/dri-driver-64.md#startup-teardown-and-idle-wait	Startup, teardown and idle wait
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402700	156	firegl_VerifyArea	dwarf+dynsym	ca23c4bd66ef		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x4027c0	132	firegl_GetAGPCapPtr	dwarf+dynsym	becede1aea64		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402880	132	firegl_GetAGPStatus	dwarf+dynsym	0b29a95120aa		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
@@ -46758,12 +46758,12 @@ usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402a80	96	firegl
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402b00	108	firegl_modify_ldt	dwarf+dynsym	6bdb0dbdccc1		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402b80	140	firegl_QueryHwCaps	dwarf+dynsym	b7b843a1fba3		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402c40	832	firegl_InitDRM	dwarf+dynsym	503f98cd7d25		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402f80	204	firegl_TermDRM	dwarf+dynsym	16afac90cbbb		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402f80	204	firegl_TermDRM	dwarf+dynsym	16afac90cbbb		in	located	docs/dri-driver-64.md#startup-teardown-and-idle-wait	Startup, teardown and idle wait
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403080	96	firegl_SyncDacs	dwarf+dynsym	2ef3adad38d7		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403100	100	firegl_EnableStereo	dwarf+dynsym	54bfa19ebff3		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403180	100	firegl_AGPAcquire	dwarf+dynsym	da34a4d89053		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403200	96	firegl_CPResume	dwarf+dynsym	077888a55f2c		in	located	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403280	244	__fglQSQuietDown	dwarf+funcnames	5d3f767bf7a2		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403280	244	__fglQSQuietDown	dwarf+funcnames	5d3f767bf7a2		in	located	docs/dri-driver-64.md#startup-teardown-and-idle-wait	Startup, teardown and idle wait
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403380	104	__fglDRMPM4Alloc	dwarf+funcnames	7e9d44c579d6		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403400	488	__fglDRMPM4Queue	dwarf+funcnames	2c15eac533e8		in	named-only	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403600	72	__fglDRMPM4Submit	dwarf+funcnames	0b969f03327b		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
@@ -47547,7 +47547,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x10f0c	344	firegl_enable
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11064	540	firegl_enable_stereo	dwarf	e68f2401ee2c		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11280	548	firegl_unlock_unbind_all_clients	dwarf+symtab	bc7f6f3f7457		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x114a4	464	firegl_killall_clients	dwarf+symtab	5661e3caa061		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11734	212	__fglQSQuietDown	dwarf	4b6c40d750ad		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11734	212	__fglQSQuietDown	dwarf	4b6c40d750ad		in	located	docs/dri-driver-64.md#startup-teardown-and-idle-wait	Startup, teardown and idle wait
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11808	152	__fglDRMPM4Alloc	dwarf	63e7b76442d5		in	located	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x118a0	504	firegl_PM4Alloc	dwarf+symtab	66d351f0247a		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11a98	752	firegl_PM4WaitForIdle	dwarf+symtab	ba9d335d74a6		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
@@ -58009,13 +58009,13 @@ usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		_glapi_initialize	dw
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		_init	dwarf			in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		_stub	dwarf			in	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		checkExtension	dwarf+funcnames			in	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		close_display	dwarf+funcnames			in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
+usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		close_display	dwarf+funcnames			in	located	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		combine_strings	dwarf+funcnames			in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		driDestroyDisplay	dwarf+funcnames			in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		error_string	dwarf+funcnames			in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		event_to_wire	dwarf+funcnames			in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		fill_bitmap	dwarf+funcnames			in	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		find_display	dwarf+funcnames			in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
+usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		find_display	dwarf+funcnames			in	located	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		generate_entrypoint	dwarf+funcnames			in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		getBoardNumErrHandler	dwarf+funcnames			in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0x0		get_glx_proc_address	dwarf+funcnames			in	undocumented		
@@ -60412,11 +60412,11 @@ usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd866980	432	XF86DRIClos
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd867500	24	__driCreateDisplayErrorHandler	dynsym	16d3e2031715		in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd867540	624	driCreateDisplay	dynsym	ffc49d3afbef		in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd8677c0	8	__glXRegisterExtensions	dynsym	78aa5094d5ec		in	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd867800	84	XextCreateExtension	dynsym	60b5b1372557		in	named-only	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
+usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd867800	84	XextCreateExtension	dynsym	60b5b1372557		in	named-only	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd867880	60	XextDestroyExtension	dynsym	9c4d0969aecc		in	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd8678c0	756	XextAddDisplay	dynsym	f0a7000922ee		in	named-only	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd867bc0	288	XextRemoveDisplay	dynsym	98547ab95197		in	named-only	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd867d00	264	XextFindDisplay	dynsym	0322c0fa4a31		in	named-only	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
+usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd8678c0	756	XextAddDisplay	dynsym	f0a7000922ee		in	named-only	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
+usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd867bc0	288	XextRemoveDisplay	dynsym	98547ab95197		in	named-only	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
+usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd867d00	264	XextFindDisplay	dynsym	0322c0fa4a31		in	named-only	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd867ec0	48	XSetExtensionErrorHandler	dynsym	58a61a0232eb		in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd867f00	88	XMissingExtension	dynsym	210510582cf7		in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd868680	132	XmbufQueryExtension	dynsym	f7de73a3b46a		in	undocumented		
@@ -64419,13 +64419,13 @@ usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		_glapi_initialize	dw
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		_init	dwarf			in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		_stub	dwarf			in	located	docs/x-helper-modules.md#libscanpciso	libscanpci.so
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		checkExtension	dwarf			in	undocumented		
-usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		close_display	dwarf			in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
+usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		close_display	dwarf			in	located	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		combine_strings	dwarf			in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		driDestroyDisplay	dwarf			in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		error_string	dwarf			in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		event_to_wire	dwarf			in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		fill_bitmap	dwarf			in	undocumented		
-usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		find_display	dwarf			in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
+usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		find_display	dwarf			in	located	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		generate_entrypoint	dwarf			in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		getBoardNumErrHandler	dwarf			in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x0		get_glx_proc_address	dwarf			in	undocumented		
@@ -66822,11 +66822,11 @@ usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x219f5b0	448	XF86DRIClos
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a0190	24	__driCreateDisplayErrorHandler	dynsym	b5bb2e28e5f4		in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a01b0	636	driCreateDisplay	dynsym	41de1910b172		in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a0430	8	__glXRegisterExtensions	dynsym	78aa5094d5ec		in	undocumented		
-usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a0440	84	XextCreateExtension	dynsym	19f0e0ed4050		in	named-only	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
+usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a0440	84	XextCreateExtension	dynsym	19f0e0ed4050		in	named-only	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a04a0	60	XextDestroyExtension	dynsym	bff97f178018		in	undocumented		
-usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a04e0	740	XextAddDisplay	dynsym	959c6aa34110		in	named-only	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a07d0	288	XextRemoveDisplay	dynsym	f8ae5dc92787		in	named-only	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a08f0	260	XextFindDisplay	dynsym	c0bc7a95469c		in	named-only	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
+usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a04e0	740	XextAddDisplay	dynsym	959c6aa34110		in	named-only	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
+usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a07d0	288	XextRemoveDisplay	dynsym	f8ae5dc92787		in	named-only	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
+usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a08f0	260	XextFindDisplay	dynsym	c0bc7a95469c		in	named-only	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a0a60	52	XSetExtensionErrorHandler	dynsym	85027d8742be		in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a0aa0	100	XMissingExtension	dynsym	ac1a05fba2e6		in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a10e0	136	XmbufQueryExtension	dynsym	fb6ca7df288a		in	undocumented		

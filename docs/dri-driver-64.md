@@ -225,3 +225,55 @@ Labels follow `AGENTS.md` section 5. **Established** means the whole routine was
   The whole body was read; it makes one `ioctl` call at 0x517b04 with a zero third argument.
   Request 0x20006464 has no payload.
   The return is 0 on success and the negated `errno` on failure (negation at 0x517b28).
+
+## Startup, teardown and idle wait
+
+- `firegl_GetKernelInfo` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 472 bytes at 0x516f60): **established.** The routine was read in full.
+  A null second argument returns -22 (branch at 0x516f7c, value at 0x516f84).
+  Otherwise it stores a zero pointer through the second argument (0x516fa4) and allocates a 56-byte block with `drmMalloc` (call at 0x516fa8, GOT slot 7092). A null result returns -12.
+  The first `ioctl` (call at 0x516ff8, GOT slot 6757) sends request 0xc0286450, a 40-byte block read and written, zeroed beforehand. The kernel writes the count at block offset 8.
+  A failed first request frees the 56-byte block (`drmFree` at 0x517020) and returns the negated `errno`.
+  On success with a nonzero count, the routine allocates count+1 bytes (call at 0x517054), stores that buffer pointer at block offset 0 (0x517060), and repeats the same request (call at 0x517094).
+  A failed allocation sets -12 (0x5170c0 to 0x5170c4) and frees the block on the same path.
+  A successful repeat writes a zero byte at index count of the buffer (0x5170e4). It then copies the buffer pointer to offset 0 of the 56-byte block and the block words at offsets 12 to 32 to offsets 8 to 48 of it (0x5170f8 to 0x517128), stores that block's address through the second argument (0x517134), and returns 0.
+  With a zero count the buffer pointer stays null, so the repeat request runs with no buffer and the NUL store is skipped.
+- `firegl_TermDRM` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 216 bytes at 0x5178c0): **established.** The routine was read in full.
+  It returns -22 when its argument is null (branch at 0x5178dc), when the pointer at offset 40 is null (0x5178ec), when the pointer at offset 32 is null (0x5178f4), or when the doubleword at offset 24 is zero (0x5178fc).
+  Otherwise it calls `drmUnmap` (call at 0x517934, GOT slot 7102) on the address at offset 24 of the block at offset 40, with a size of the 32-bit word at that block's offset 0 times the doubleword at its offset 32.
+  A second `drmUnmap` (call at 0x51794c) releases the address at offset 24 of the argument, with 4 times the word at offset 8 of the block at its offset 16.
+  A third `drmUnmap` (call at 0x51795c) releases the address at offset 32 of the argument, with 16384 bytes.
+  It then frees the block at offset 40 (`drmFree` at 0x51796c, GOT slot 7093) and the argument itself (`drmFree` at 0x517978). It returns 0 at 0x517984.
+- `__fglQSQuietDown` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 248 bytes at 0x517b40): **established.** The whole body was read.
+  The routine polls the 32-bit word at offset 3648 (0xe40, the offset the open-questions note calls RBBM_STATUS) of its argument. Bit 31 is the busy flag here.
+  If that bit is clear at entry, it returns 0 at once (branch at 0x517b78).
+  Otherwise it reads the word again up to 2,000,000 times (loop from 0x517b84 to 0x517b98) and returns 0 as soon as the bit clears (0x517b90).
+  If the bit is still set after those polls, it runs rounds of 10,000 counts (0x517ba4 to 0x517bc4, 200 rounds). Each round checks the bit, then calls `sginap` with 0 (call at 0x517bb4, GOT slot 6795). A round that finds the bit clear returns 0 (0x517bac).
+  After the 200th round the routine returns 1 (0x517bd8).
+
+## Shared word helpers
+
+- `dummy_5` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 36 bytes at 0x518640): **established.** All eight instructions were read.
+  It loads the pointer in GOT entry gp+24160 and the word through it, subtracts 2, and stores the result through the pointer in GOT entry gp+24184 (0x51864c to 0x518660).
+- `dummy_6` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 36 bytes at 0x518670): **established.** All eight instructions were read.
+  It takes the word through the pointer in GOT entry gp+24168, subtracts 2, and stores it through the pointer in GOT entry gp+24160 (0x51867c to 0x518690).
+  Together with `dummy_5`, this is the same copy-minus-two pattern with the two GOT cells swapped.
+
+## Display and drawable helpers
+
+- `find_display` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 156 bytes at 0x5186c0): **established.** The whole routine was read.
+  The first argument is the display. The extension-info pointer is the doubleword at gp+24224.
+  When that pointer is set, it calls `XextFindDisplay` with the pointer and the display (call at 0x5186e0, loaded from gp+21664). A nonzero result is returned.
+  A null result calls `XextAddDisplay` (call at 0x518710, loaded from gp+21672) with the same pointer and display, the doubleword at gp+24232 as the third argument, and the value stored at gp-31784, plus 6904, as the fourth. Its value is returned.
+  When the extension-info pointer is null, the routine calls `XextCreateExtension` (call at 0x518734, loaded from gp+21680) and stores the result at gp+24224 (0x51873c). A nonzero result retries the lookup at 0x5186d8. A zero result returns 0.
+- `close_display` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 56 bytes at 0x518760): **established.** All ten instructions were read.
+  It calls `XextRemoveDisplay` (call at 0x518780, GOT slot 6805) with the extension-info doubleword from gp+24224 as the first argument and the display as the second, and returns the call's value.
+- `fglx11GetDrawablePrivate` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 36 bytes at 0x519630): **established.** All nine instructions were read.
+  It loads the pointer at offset 200 of its argument, then the doubleword at offset 136 of that. A zero value returns 0 (0x51964c). Otherwise it returns that value plus 17872 (0x45d0), at 0x519640.
+- `fglx11GetReadDrawablePrivate` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 44 bytes at 0x519660): **established.** All eleven instructions were read.
+  It follows the pointer at offset 200 of the argument, then the pointer at offset 8, then the pointer at offset 48. A null result returns 0 (0x519684). Otherwise it returns the doubleword at offset 8 of that pointer plus 17872 (0x519680).
+- `fglX11DrawableGetSize` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 40 bytes at 0x5197c0): **established.** All ten instructions were read.
+  The first argument's doubleword at offset 1128 points to a drawable record. The routine stores the words at record offsets 160, 164, 168 and 172 through the second, third, fourth and fifth arguments (0x5197c8 to 0x5197e4), each as a 32-bit store.
+- `fglX11DrawableGetScreenSize` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 36 bytes at 0x5197f0): **established.** All nine instructions were read.
+  It follows the record at offset 1128 of the first argument, then its doubleword at offset 32, then the doubleword at offset 88. The word at offset 200 of that record goes through the second argument (0x519800), and the word at offset 204 goes through the third (0x519810).
+- `fglX11DrawableUpdate` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 8 bytes at 0x519820): **established.** Both instructions were read. It returns 1 and touches no memory.
+
