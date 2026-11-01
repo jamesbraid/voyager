@@ -50118,7 +50118,7 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000f720	728	pciba_check_device
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fa00	184	path_concat	dynsym	29a3c53bad0a		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fac0	368	pciba_list_devs	dynsym	6196f3bdb38e		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fc30	196	pciba_find_dev	dynsym	0107dc055c2b		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fd00	132	pciba_enable_rom	dynsym	bc1f97e50dc8		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fd00	132	pciba_enable_rom	dynsym	bc1f97e50dc8		in	named-only	docs/binaries.md#diagnostics	Diagnostics
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fd90	160	pciba_disable_rom	dynsym	0d60a0a6e1b4		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ffa4	76	x86emu_intr_raise	dynsym	e55f497d1bc3		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fff0	380	X86EMU_exec	dynsym	f0d7633279cd		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
@@ -50541,7 +50541,7 @@ usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100b2b0c	504	_M_insert_aux__Q2_3st
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100b2d04	368	CheckTstOptions	dynsym	6b7718afd51a		in	undocumented		
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100b2e74	120	LoadTstFile	dynsym	ef7479ec13ff		in	undocumented		
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100b2eec	64	PadTestNames	dynsym	d0f87262a74d		in	undocumented		
-usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100b2f2c	72	CreateTestDefArray	dynsym	5fc6f37538c8		in	undocumented		
+usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100b2f2c	72	CreateTestDefArray	dynsym	5fc6f37538c8		in	named-only	docs/binaries.md#diagnostics	Diagnostics
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100b334c	56	rand_tri__GPv	dynsym	d8b4043b551f		in	undocumented		
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100b3384	56	zstri2_ztop__GPv	dynsym	d13ff360fa84		in	undocumented		
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100b33bc	56	render_vertex__GPv	dynsym	da891156739c		in	undocumented		
@@ -50552,7 +50552,7 @@ usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100b37fc	192	TakeChecksum	dynsym	0
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100b38bc	84	chip_rand	dynsym	8ea901c3c45c		in	undocumented		
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100b3910	28	chip_srand	dynsym	277e6376b315		in	undocumented		
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100b392c	20	chip_get_rand_seed	dynsym	ad745529e4ed		in	undocumented		
-usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100b3940	696	run_ram_test	dynsym	e4f730b7d64c		in	undocumented		
+usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100b3940	696	run_ram_test	dynsym	e4f730b7d64c		in	named-only	docs/binaries.md#diagnostics	Diagnostics
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100b3bf8	52	rand_dword	dynsym	bf8c00fa76b7		in	undocumented		
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100b3c2c	8	all_zeros	dynsym	78aa5094d5ec		in	undocumented		
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100b3c34	8	all_ones	dynsym	6319e0118090		in	undocumented		
@@ -52766,7 +52766,7 @@ usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x100090c0	532	printIS1	dynsym	8c
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x100092d4	100	sanityCheck	dynsym	69505f97ac6c		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x10009338	640	isSWcursor_on	dynsym	42432a9a45fb		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x100095b8	2004	pipeDraw	dynsym	e04dd64102d4		in	undocumented		
-usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x10009d8c	2864	TEST_video	dynsym	a8f20ebae711		in	undocumented		
+usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x10009d8c	2864	TEST_video	dynsym	a8f20ebae711		in	named-only	docs/binaries.md#diagnostics	Diagnostics
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000a8bc	196	readback	dynsym	9b874875d7a5		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000a980	500	print_retImage	dynsym	b0c300c2f317		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000ab74	432	diff_images	dynsym	e2292e5131e7		in	undocumented		
@@ -52775,14 +52775,14 @@ usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000adf8	312	vCalculateGammaCur
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000af30	848	dma_pipeSetup	dynsym	cf34dae41718		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000b280	2964	draw_dma_pattern	dynsym	b8da0da22096		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000be14	1048	draw_func	dynsym	5dc163140179		in	undocumented		
-usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000c22c	636	TEST_seq_ogl_dma	dynsym	524bf878b881		in	undocumented		
+usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000c22c	636	TEST_seq_ogl_dma	dynsym	524bf878b881		in	named-only	docs/binaries.md#diagnostics	Diagnostics
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000c4a8	8	TEST_sys_ogl_dma	dynsym	78aa5094d5ec		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000c4b0	160	draw_dma_rect	dynsym	b244c9d82cda		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000c550	508	dma_draw_thread	dynsym	c793d8f55ede		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000c74c	160	cleanup	dynsym	c4421512bf05		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000c7ec	228	swap_pipeDraw	dynsym	ae88a794794f		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000c8d0	632	swap_pipeSetup	dynsym	06119208469d		in	undocumented		
-usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000cb48	1504	TEST_swap	dynsym	48bf10a7d5a5		in	undocumented		
+usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000cb48	1504	TEST_swap	dynsym	48bf10a7d5a5		in	named-only	docs/binaries.md#diagnostics	Diagnostics
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000d128	872	check_swap_groups	dynsym	bbfddfa2d22f		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000d490	3308	TEST_swap2	dynsym	2c1b8bd0eb82		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000e17c	44	waitForNotify	dynsym	0c77149b07a9		in	undocumented		
@@ -52791,7 +52791,7 @@ usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000eafc	844	sync_createWindow	
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000ee48	696	sync_pipeSetup	dynsym	33c8aae57d57		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000f100	452	draw_thread	dynsym	1f8367485078		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000f2c4	116	start_alarm_handler	dynsym	f0fa0826c057		in	undocumented		
-usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000f338	340	TEST_sync	dynsym	8bc4eec60a06		in	undocumented		
+usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000f338	340	TEST_sync	dynsym	8bc4eec60a06		in	named-only	docs/binaries.md#diagnostics	Diagnostics
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000f48c	164	sync_thread	dynsym	c7a134a9fa89		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000f530	1072	TEST_sync2	dynsym	391d085a5546		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x1000f960	132	barrier	dynsym	5f9216bb0e7c		in	undocumented		

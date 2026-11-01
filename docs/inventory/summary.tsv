@@ -1,7 +1,7 @@
 table	rows	out_of_scope	understood	understood_with_open	understood_distinct	templated	located	named_only	undocumented	no_software_dependency	pct_understood	pct_located_or_better	pct_mentioned	pct_done	unresolved_sites	truncated	audited_real_pct	audited_sample	audited_date	computes	reused	multi_unit	shared_address	input
-binaries	84	0	62	0	62	0	0	11	11	0	73.8	73.8	86.9	73.8							0			
-functions	22294	45056	264	2	247	0	109	447	21474	0	1.2	1.7	3.7	1.2							0	503	17	
-functions (distinct names)	10713	19503	188	2	186	0	0	276	10249	0	1.8	1.8	4.3	1.8							0			
+binaries	84	0	73	0	73	0	0	8	3	0	86.9	86.9	96.4	86.9							0			
+functions	22294	45056	264	2	247	0	109	453	21468	0	1.2	1.7	3.7	1.2							0	503	17	
+functions (distinct names)	10713	19503	188	2	186	0	0	282	10243	0	1.8	1.8	4.4	1.8							0			
 mmio	201	0	69	0	66	0	132	0	0	0	34.3	100.0	100.0	34.3	37						0			
 tokens	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
 ioctls	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
@@ -56,8 +56,8 @@ functions in usr/cpu/sysgen/IP35boot/xbridge.o	2	0	0	0	0	0	0	2	0	0	0.0	0.0	100.0
 functions in usr/cpu/sysgen/IP35boot/xswitch.o	13	0	0	0	0	0	0	4	9	0	0.0	0.0	30.8	0.0							0	0	0	
 functions in usr/cpu/sysgen/IP35boot/xtalk.o	71	0	0	0	0	0	0	7	64	0	0.0	0.0	9.9	0.0							0	0	0	
 functions in usr/diags/SG/bin/biosemu	75	398	0	0	0	0	12	48	15	0	0.0	16.0	80.0	0.0							0	0	0	
-functions in usr/diags/SG/bin/olsg	2183	34	0	0	0	0	0	1	2182	0	0.0	0.0	0.0	0.0							0	0	0	
-functions in usr/diags/SG/bin/olsgsys	171	0	0	0	0	0	0	1	170	0	0.0	0.0	0.6	0.0							0	0	0	
+functions in usr/diags/SG/bin/olsg	2183	34	0	0	0	0	0	3	2180	0	0.0	0.0	0.1	0.0							0	0	0	
+functions in usr/diags/SG/bin/olsgsys	171	0	0	0	0	0	0	5	166	0	0.0	0.0	2.9	0.0							0	0	0	
 functions in usr/gfx/VOYAGER/bin/sg2flash	8	0	0	0	0	0	0	3	5	0	0.0	0.0	37.5	0.0							0	0	0	
 functions in usr/gfx/VOYAGER/bin/vpm	31	0	0	0	0	0	0	6	25	0	0.0	0.0	19.4	0.0							0	0	0	
 functions in usr/gfx/arch/IP35VOYAGER/libGL.so	542	129	0	0	0	0	0	0	542	0	0.0	0.0	0.0	0.0							0	0	0	

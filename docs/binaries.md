@@ -525,6 +525,81 @@ The 16-bit pointer at offset 0x18 gives the PCI data structure, which starts wit
 
 ## Diagnostics
 
+- `usr/diags/SG/bin/biosemu` (ELF64 executable, 303832 bytes): **established** from the dynamic symbol table and the strings.
+  It defines 473 functions and imports 36 names.
+  Its only `NEEDED` entry is `libc.so.1`.
+  `setup_system_bios` is at address 0x1000b520 (172 bytes).
+  `run_bios_int` is at 0x1000a360 (364 bytes).
+  `run_bios_int` returns 0 or 1 at its exit at address 0x1000a4c4.
+  `pciba_enable_rom` is at 0x1000fd00 (132 bytes).
+  Its strings include the usage format `%s - Usage: %s`.
+  They include the option text `[ -p ] --- use pciba`.
+  They also include "ROM SIGNATURE INVALID: 0x%x,0x%x" and "copied ROM into shadow...".
+  **Inferred** that the tool shadows a card's option ROM, checks its signature and runs it through the BIOS call routine.
+- `usr/diags/SG/bin/olsgsys` (N32 executable, 190372 bytes): **established** from the dynamic symbol table and the strings.
+  It defines 173 functions and imports 311 names.
+  Its `NEEDED` entries include `libX11.so.1`, `libXsgivc.so` and `libGL.so`.
+  `main` is at address 0x10008a5c (272 bytes), and `TEST_video` at 0x10009d8c (2864 bytes).
+  It has subtest routines such as `TEST_sync`, `TEST_swap` and `TEST_seq_ogl_dma`.
+  Its strings include "Display %s is active, screen size %dx%d".
+  **Inferred** that it is a test driver that opens an X display and runs the GL, DMA, video and swap subtests.
+- `usr/diags/SG/bin/olsg` (ELF64 executable, 2726440 bytes): **established** from the dynamic symbol table and the strings.
+  It defines 2221 functions and imports 187 names.
+  Its `NEEDED` entries include `libX11.so.1`, `libpthread.so`, `libC.so.2` and `libc.so.1`.
+  `main` is at address 0x100f7bb4 (1952 bytes).
+  `run_ram_test` is at 0x100b3940 (696 bytes).
+  `run_ram_test` returns 0 or 1 at its exit at address 0x100b3a98.
+  Its strings include the test database names `LoadTestFile` and `CreateTestDefArray`.
+  **Inferred** that the program loads a test database file and runs the tests listed in it.
+- `usr/diags/SG/data/1280x1024_60.vmts` (text, 746 bytes): **established** from the whole file.
+  It is a 36-line list of `name value` pairs for one mode, named `1280x1024`.
+  The clock is 108000 kHz.
+  The horizontal display is 1280 wide.
+  Horizontal sync runs from 1328 to 1440.
+  The horizontal total is 1688.
+  The vertical display is 1024 lines.
+  Vertical sync runs from 1025 to 1028.
+  The vertical total is 1066.
+  CRTC copies of these values follow.
+  The `HSync 63.981041` line at offset 0x2b6 and the `VRefresh 60.019741` line at offset 0x2d0 agree with the clock.
+  108000 kHz over 1688 columns and 1066 rows gives 60.02 Hz.
+  **Inferred** that it is a timing record for the diagnostic's display set-up.
+- `usr/diags/SG/data/decal.pps` (text, 987 bytes): **established** from the whole file.
+  It is a 35-line fragment program in the test tool's text format, headed `// decal texture`.
+  It holds two `TEX_IN` entries and one `TEX_INST` lookup at offset 0x1e4 on texture 0.
+  Its `RGB_INST` at offset 0x26b is a `mad`.
+  Its alpha instruction is also a `mad`, with clamp=true.
+  The output format is `c4_10` on target 0.
+  **Inferred** from the header that it is the decal case of the shader tests.
+- `usr/diags/SG/data/signed.pps` (text, 1107 bytes): **inferred** from the header comment and the counts.
+  The header says the program converts a signed range to an unsigned one with `(x * 0.5) + 0.5`.
+  It has 37 lines and nlev=1.
+  It has two `TEX_IN` entries, one `TEX_INST` at offset 0x20a and one `RGB_INST` at offset 0x2a5.
+- `usr/diags/SG/data/ttex.pps` (text, 1979 bytes): **inferred** from the header and the counts.
+  Its header names it as a texture program from a shader compiler.
+  It has 189 lines and nlev=1, with two `TEX_IN` entries.
+  Its `TEX_INST` is at offset 0x4da and its `RGB_INST` at offset 0x5d5.
+  It is the single-texture case of the shader tests.
+- `usr/diags/SG/data/ddiffuse.pps` (text, 1710 bytes): **inferred** from the header and the counts.
+  Its header names it as a diffuse program.
+  It has 164 lines, nlev=1 and first_tex_en=false.
+  It has no `TEX_IN` entry, and one `RGB_INST` at offset 0x4c8.
+  It is the untextured case of the shader tests.
+- `usr/diags/SG/data/mltiTex2.pps` (text, 5888 bytes): **inferred** from the header and the counts.
+  It has 589 lines and nlev=2.
+  It has six `TEX_IN` entries, four `TEX_INST` entries and seven `RGB_INST` entries.
+  Its first `TEX_INST` is at offset 0x6f2.
+  It is a two-level multitexture program.
+- `usr/diags/SG/data/mltiTex4.pps` (text, 10044 bytes): **inferred** from the header and the counts.
+  It has 1017 lines and nlev=2.
+  It has 12 `TEX_IN` entries, eight `TEX_INST` entries and 13 `RGB_INST` entries.
+  Its first `TEX_INST` is at offset 0xaa0.
+  It is a larger two-level multitexture program than `mltiTex2.pps`.
+- `usr/diags/SG/data/mltiTex5.pps` (text, 12129 bytes): **inferred** from the header and the counts.
+  It has 1231 lines and nlev=2.
+  It has 15 `TEX_IN` entries, 10 `TEX_INST` entries and 16 `RGB_INST` entries.
+  It is a two-level multitexture program, larger than `mltiTex4.pps`.
+
 ## OpenGL libraries
 
 The o32 and N32 directories each hold `libGL.so`, `libGLcore.so` and `libgl.so`.

@@ -50,19 +50,19 @@ usr/cpu/sysgen/IP35boot/vgastubs.a(vgastubs.o)	kernel	board-kernel	object	n64	29
 usr/cpu/sysgen/IP35boot/xbridge.o	kernel-shared	shared-kernel	object	n64	22768	c782e88889d3306a		2	symtab	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
 usr/cpu/sysgen/IP35boot/xswitch.o	kernel-shared	shared-kernel	object	n64	10304	2ac96f6287b076ad		13	symtab	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
 usr/cpu/sysgen/IP35boot/xtalk.o	kernel-shared	shared-kernel	object	n64	33624	7f6309db597c7480		71	symtab	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
-usr/diags/SG/bin/biosemu	diagnostics	board-diagnostic	executable	n64	303832	589569f016c63086		473	dynsym	0	0	named-only	docs/open-questions.md#what-irix-programs-at-attach	What IRIX programs at attach
-usr/diags/SG/bin/olsg	diagnostics	board-diagnostic	executable	n64	2726440	21d56f822203d9ae		2217	dynsym	0	0	named-only	docs/open-questions.md#identity	Identity
-usr/diags/SG/bin/olsgsys	diagnostics	board-diagnostic	executable	n32	190372	2e766e00fe126c9f		171	dynsym	0	0	named-only	docs/open-questions.md#identity	Identity
-usr/diags/SG/data/1280x1024_60.vmts	diagnostics	board-diagnostic	data	-	746	2041bf1c9fee8a33		0		0	0	undocumented		
-usr/diags/SG/data/ddiffuse.pps	diagnostics	board-diagnostic	data	-	1710	69af763437b4d7e8		0		0	0	undocumented		
-usr/diags/SG/data/decal.pps	diagnostics	board-diagnostic	data	-	987	8422cb76949ffaf3		0		0	0	undocumented		
-usr/diags/SG/data/mltiTex2.pps	diagnostics	board-diagnostic	data	-	5888	6864e11796feef0b		0		0	0	undocumented		
-usr/diags/SG/data/mltiTex4.pps	diagnostics	board-diagnostic	data	-	10044	69cd59d93b3ec8e4		0		0	0	undocumented		
-usr/diags/SG/data/mltiTex5.pps	diagnostics	board-diagnostic	data	-	12129	5de8bb4e5437bc10		0		0	0	undocumented		
+usr/diags/SG/bin/biosemu	diagnostics	board-diagnostic	executable	n64	303832	589569f016c63086		473	dynsym	0	0	understood	docs/binaries.md#diagnostics	Diagnostics
+usr/diags/SG/bin/olsg	diagnostics	board-diagnostic	executable	n64	2726440	21d56f822203d9ae		2217	dynsym	0	0	understood	docs/binaries.md#diagnostics	Diagnostics
+usr/diags/SG/bin/olsgsys	diagnostics	board-diagnostic	executable	n32	190372	2e766e00fe126c9f		171	dynsym	0	0	understood	docs/binaries.md#diagnostics	Diagnostics
+usr/diags/SG/data/1280x1024_60.vmts	diagnostics	board-diagnostic	data	-	746	2041bf1c9fee8a33		0		0	0	understood	docs/binaries.md#diagnostics	Diagnostics
+usr/diags/SG/data/ddiffuse.pps	diagnostics	board-diagnostic	data	-	1710	69af763437b4d7e8		0		0	0	understood	docs/binaries.md#diagnostics	Diagnostics
+usr/diags/SG/data/decal.pps	diagnostics	board-diagnostic	data	-	987	8422cb76949ffaf3		0		0	0	understood	docs/binaries.md#diagnostics	Diagnostics
+usr/diags/SG/data/mltiTex2.pps	diagnostics	board-diagnostic	data	-	5888	6864e11796feef0b		0		0	0	understood	docs/binaries.md#diagnostics	Diagnostics
+usr/diags/SG/data/mltiTex4.pps	diagnostics	board-diagnostic	data	-	10044	69cd59d93b3ec8e4		0		0	0	understood	docs/binaries.md#diagnostics	Diagnostics
+usr/diags/SG/data/mltiTex5.pps	diagnostics	board-diagnostic	data	-	12129	5de8bb4e5437bc10		0		0	0	understood	docs/binaries.md#diagnostics	Diagnostics
 usr/diags/SG/data/mltiTex7.pps	diagnostics	board-diagnostic	data	-	16317	db2d15c10efc297b		0		0	0	undocumented		
 usr/diags/SG/data/r3g3dprd1.tst	diagnostics	board-diagnostic	data	-	24095	62d58cdc1167e128		0		0	0	undocumented		
-usr/diags/SG/data/signed.pps	diagnostics	board-diagnostic	data	-	1107	1a8411e153e06d22		0		0	0	undocumented		
-usr/diags/SG/data/ttex.pps	diagnostics	board-diagnostic	data	-	1979	92ea933594b456a5		0		0	0	undocumented		
+usr/diags/SG/data/signed.pps	diagnostics	board-diagnostic	data	-	1107	1a8411e153e06d22		0		0	0	understood	docs/binaries.md#diagnostics	Diagnostics
+usr/diags/SG/data/ttex.pps	diagnostics	board-diagnostic	data	-	1979	92ea933594b456a5		0		0	0	understood	docs/binaries.md#diagnostics	Diagnostics
 usr/gfx/VOYAGER/bin/sg2flash	tools	board-tool	executable	n32	37560	e5b75230221c1d7e		8	dynsym	0	0	understood	docs/binaries.md#board-tools	Board tools
 usr/gfx/VOYAGER/bin/vpm	tools	board-tool	executable	n32	37740	ba0a41031ce56458		31	dynsym	0	0	understood	docs/binaries.md#board-tools	Board tools
 usr/gfx/arch/IP35VOYAGER/libGL.so	libraries	board-library	shared-object	o32	486628	40a08151e3b4a9a6		671	dynsym+mdebug	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
