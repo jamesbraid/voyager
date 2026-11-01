@@ -29,16 +29,16 @@ usr/cpu/sysgen/IP35boot/pciio.o	kernel-shared	shared-kernel	object	n64	47872	4d2
 usr/cpu/sysgen/IP35boot/pciio_ppb.o	kernel-shared	shared-kernel	object	n64	27528	aadca7cfd050b4f2		18	symtab	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
 usr/cpu/sysgen/IP35boot/pciiox.o	kernel-shared	shared-kernel	object	n64	6120	bc9406dffebc6428		2	symtab	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
 usr/cpu/sysgen/IP35boot/pic.o	kernel-shared	shared-kernel	object	n64	32656	4ccc69e42c0fde78		13	symtab	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
-usr/cpu/sysgen/IP35boot/vga.a(debug.o)	kernel	board-kernel	object	n64	9604	8475c1a982bd0f98		2	symtab	0	0	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(decode.o)	kernel	board-kernel	object	n64	21332	d99a13d4b4476842		28	symtab	0	0	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(fpu.o)	kernel	board-kernel	object	n64	10660	b5161db4060ccda1		8	symtab	0	0	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(ops.o)	kernel	board-kernel	object	n64	212628	ffcbe5d2a251c3ce		245	symtab	0	0	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	kernel	board-kernel	object	n64	52324	97ffd14fe415a149		26	symtab	0	0	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	kernel	board-kernel	object	n64	57316	fbb16cb3ccaef218		90	symtab	0	0	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(sys.o)	kernel	board-kernel	object	n64	11748	f8607803ebd47f32		16	symtab	0	0	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(generic.o)	kernel	board-kernel	object	n64	12244	eb99fa6c1eb44833		11	symtab	0	0	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	kernel	board-kernel	object	n64	16260	784a30822d9da7a6		26	symtab	0	0	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	kernel	board-kernel	object	n64	6004	8eed8eff87c981fc		6	symtab	0	0	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(debug.o)	kernel	board-kernel	object	n64	9604	8475c1a982bd0f98		2	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(decode.o)	kernel	board-kernel	object	n64	21332	d99a13d4b4476842		28	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(fpu.o)	kernel	board-kernel	object	n64	10660	b5161db4060ccda1		8	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(ops.o)	kernel	board-kernel	object	n64	212628	ffcbe5d2a251c3ce		245	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	kernel	board-kernel	object	n64	52324	97ffd14fe415a149		26	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	kernel	board-kernel	object	n64	57316	fbb16cb3ccaef218		90	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(sys.o)	kernel	board-kernel	object	n64	11748	f8607803ebd47f32		16	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(generic.o)	kernel	board-kernel	object	n64	12244	eb99fa6c1eb44833		11	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	kernel	board-kernel	object	n64	16260	784a30822d9da7a6		26	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	kernel	board-kernel	object	n64	6004	8eed8eff87c981fc		6	symtab	0	0	understood	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)	kernel	board-kernel	object	n64	6980	3f71448ffb260753		4	symtab	0	0	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(junkcode.o)	kernel	board-kernel	object	n64	6324	03abcce4bdce0b4c		6	symtab	0	0	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(xf86int10.o)	kernel	board-kernel	object	n64	15364	799ee4277be0e0a0		4	symtab	0	0	undocumented		

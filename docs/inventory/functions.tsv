@@ -505,12 +505,12 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070540	52	xf86ReadPciBIOS	dynsym	
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070580	92	xf86ReadPciBIOSByType	dynsym	8978e4fba3fb		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070600	64	xf86GetAvailablePciBIOSTypes	dynsym	776db4a18ee0		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070640	60	sigbusHandler	dynsym	125635985b7f		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070680	52	outb	dynsym	b31d03a6d564		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100706c0	72	outw	dynsym	fa3cba5cb7e0		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070740	96	outl	dynsym	eb9e7f6fa421		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100707c0	300	inb	dynsym	58ae120d3343		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070900	276	inw	dynsym	5184639920ed		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070a40	296	inl	dynsym	867d98e8783d		out:14	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070680	52	outb	dynsym	b31d03a6d564		out:14	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100706c0	72	outw	dynsym	fa3cba5cb7e0		out:14	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070740	96	outl	dynsym	eb9e7f6fa421		out:14	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100707c0	300	inb	dynsym	58ae120d3343		out:14	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070900	276	inw	dynsym	5184639920ed		out:14	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070a40	296	inl	dynsym	867d98e8783d		out:14	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070b80	152	irixInitVGAIOBase	dynsym	64b474c8ef34		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070c40	16	xf86EnableIO	dynsym	665e81ecd14d		out:14	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070c80	1308	irixOpenDevIO	dynsym	d168536dc75a		in	undocumented		
@@ -46774,23 +46774,23 @@ usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403e00	8	se
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x409190	764	_stub	dwarf			in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x4094c0	224	mapPciRom	dwarf+dynsym	de6331582dbf		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x4095c0	40	int10Setup	dwarf+funcnames	efb8ac2778ed		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409600	316	setup_int	dwarf+dynsym	cf2b31548852		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409740	248	finish_int	dwarf+dynsym	e3cacc28429b		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409600	316	setup_int	dwarf+dynsym	cf2b31548852		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409740	248	finish_int	dwarf+dynsym	e3cacc28429b		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409840	116	getIntVect	dwarf+dynsym	3abbbfb13b8e		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x4098c0	120	pushw	dwarf+dynsym	74540d7e19d7		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409940	300	run_bios_int	dwarf+dynsym	5c3e398ebb69		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x4098c0	120	pushw	dwarf+dynsym	74540d7e19d7		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409940	300	run_bios_int	dwarf+dynsym	5c3e398ebb69		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409a80	304	dump_code	dwarf+dynsym	8194d8a84456		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409bc0	372	dump_registers	dwarf+dynsym	757c73cb1c3b		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409d40	320	stack_trace	dwarf+dynsym	43a70f027c31		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409e80	200	port_rep_inb	dwarf+dynsym	fff916b0b074		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409e80	200	port_rep_inb	dwarf+dynsym	fff916b0b074		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x409f80	200	port_rep_inw	dwarf+dynsym	08d671d0a493		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a080	200	port_rep_inl	dwarf+dynsym	82ff1f087d11		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a180	200	port_rep_outb	dwarf+dynsym	d2ce3bc5b801		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a280	200	port_rep_outw	dwarf+dynsym	2ae2f978ebc2		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a380	200	port_rep_outl	dwarf+dynsym	fc21f5030d05		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a480	120	x_inb	dwarf+dynsym	eb5092f1c68e		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a380	200	port_rep_outl	dwarf+dynsym	fc21f5030d05		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a480	120	x_inb	dwarf+dynsym	eb5092f1c68e		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a500	160	x_inw	dwarf+dynsym	bd36e8f9aa9e		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a5c0	116	x_outb	dwarf+dynsym	a10e241f3261		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a5c0	116	x_outb	dwarf+dynsym	a10e241f3261		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a640	164	x_outw	dwarf+dynsym	3474d6e68e18		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a700	96	x_inl	dwarf+dynsym	2417eb7a45b2		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a780	88	x_outl	dwarf+dynsym	83d2b269b7c8		in	undocumented		
@@ -46800,13 +46800,13 @@ usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a900	68	Mem_rl	dwarf+
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40a980	72	Mem_wb	dwarf+dynsym	db902c0824dd		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40aa00	72	Mem_ww	dwarf+dynsym	d361f4b5223d		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40aa80	72	Mem_wl	dwarf+dynsym	3c27653aea81		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40ab00	120	pciCfg1in	dwarf+funcnames	071f4dbe3e69		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40ab80	112	pciCfg1out	dwarf+funcnames	1edea0f79f3a		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40ab00	120	pciCfg1in	dwarf+funcnames	071f4dbe3e69		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40ab80	112	pciCfg1out	dwarf+funcnames	1edea0f79f3a		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40ac00	264	bios_checksum	dwarf+dynsym	a73e897df874		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40ad40	296	LockLegacyVGA	dwarf+dynsym	ea227d11c5d3		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40ae80	196	UnlockLegacyVGA	dwarf+dynsym	af0fa3644184		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40af80	480	setup_int_vect	dwarf+dynsym	80f271a580cb		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40b180	136	setup_system_bios	dwarf+dynsym	14a467eb9921		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40af80	480	setup_int_vect	dwarf+dynsym	80f271a580cb		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40b180	136	setup_system_bios	dwarf+dynsym	14a467eb9921		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40b240	328	reset_int_vect	dwarf+dynsym	1113e0777a3f		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40b3c0	96	set_return_trap	dwarf+dynsym	493e906e5671		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40b440	280	xf86HandleInt10Options	dwarf+dynsym	e6ef61f8f070		in	undocumented		
@@ -46828,30 +46828,30 @@ usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40d740	1156	xf86InitInt
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40dc00	116	MapVRam	dwarf+funcnames	e654747aee5a		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40dc80	104	UnmapVRam	dwarf+funcnames	52eb3143085f		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40dd00	8	MapCurrentInt10	dwarf+dynsym	a7e7ca11a6b8		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40dd40	156	xf86FreeInt10	dwarf+dynsym	e95cc1d932eb		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40dd40	156	xf86FreeInt10	dwarf+dynsym	e95cc1d932eb		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40de00	480	xf86Int10AllocPages	dwarf+dynsym	47ab73fb886f		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40e000	212	xf86Int10FreePages	dwarf+dynsym	c4b5847295f8		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40e100	108	read_b	dwarf+funcnames	225f245e7dbd		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40e000	212	xf86Int10FreePages	dwarf+dynsym	c4b5847295f8		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40e100	108	read_b	dwarf+funcnames	225f245e7dbd		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40e180	236	read_w	dwarf+funcnames	b4929f8b73ef		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40e280	492	read_l	dwarf+funcnames	6504e4e38950		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40e480	108	write_b	dwarf+funcnames	68eb929ef5e7		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40e500	244	write_w	dwarf+funcnames	5996ea0aa975		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40e500	244	write_w	dwarf+funcnames	5996ea0aa975		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40e600	516	write_l	dwarf+funcnames	d0914be6fd48		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40e840	48	xf86int10Addr	dwarf+dynsym	414689ce017d		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40e880	880	x86emu_dump_regs	dwarf+dynsym	e34e56c9bffb		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40ec00	812	x86emu_dump_xregs	dwarf+dynsym	9e03b0d04b87		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40e840	48	xf86int10Addr	dwarf+dynsym	414689ce017d		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40e880	880	x86emu_dump_regs	dwarf+dynsym	e34e56c9bffb		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40ec00	812	x86emu_dump_xregs	dwarf+dynsym	9e03b0d04b87		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40ef40	272	x86emu_intr_handle	dwarf+funcnames	f2f2d4e1a7ac		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f080	44	x86emu_intr_raise	dwarf+dynsym	0ac9da113e82		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f080	44	x86emu_intr_raise	dwarf+dynsym	0ac9da113e82		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f0c0	300	X86EMU_exec	dwarf+dynsym	d395b4d3a686		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f200	40	X86EMU_halt_sys	dwarf+dynsym	0029996d68d9		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f240	172	fetch_decode_modrm	dwarf+dynsym	93f5a862b5b1		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f240	172	fetch_decode_modrm	dwarf+dynsym	93f5a862b5b1		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f300	116	fetch_byte_imm	dwarf+dynsym	cced3402cde9		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f380	136	fetch_word_imm	dwarf+dynsym	5d173904490b		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f440	136	fetch_long_imm	dwarf+dynsym	7c2440002227		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x40f500	276	get_data_segment	dwarf+funcnames	8219f12ac210		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f640	84	fetch_data_byte	dwarf+dynsym	9a24c8805ae6		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f6c0	84	fetch_data_word	dwarf+dynsym	00a35eda1223		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f740	84	fetch_data_long	dwarf+dynsym	d37ab5d4f52e		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f640	84	fetch_data_byte	dwarf+dynsym	9a24c8805ae6		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f6c0	84	fetch_data_word	dwarf+dynsym	00a35eda1223		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f740	84	fetch_data_long	dwarf+dynsym	d37ab5d4f52e		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f7c0	60	fetch_data_byte_abs	dwarf+dynsym	a5f318573f35		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f800	60	fetch_data_word_abs	dwarf+dynsym	7f5897bbe29a		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f840	60	fetch_data_long_abs	dwarf+dynsym	4076bbd658aa		out:19	undocumented		
@@ -46860,22 +46860,22 @@ usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f900	92	store_data_wo
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40f980	92	store_data_long	dwarf+dynsym	66c919e28d5a		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40fa00	64	store_data_byte_abs	dwarf+dynsym	d790c1d7f18f		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40fa40	64	store_data_word_abs	dwarf+dynsym	2b4afc544497		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40fa80	64	store_data_long_abs	dwarf+dynsym	5da9c9bbf6e3		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40fa80	64	store_data_long_abs	dwarf+dynsym	5da9c9bbf6e3		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40fac0	200	decode_rm_byte_register	dwarf+dynsym	9421284113be		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40fbc0	200	decode_rm_word_register	dwarf+dynsym	90231dcb0db3		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40fcc0	200	decode_rm_long_register	dwarf+dynsym	00fc97d2cdd4		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40fbc0	200	decode_rm_word_register	dwarf+dynsym	90231dcb0db3		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40fcc0	200	decode_rm_long_register	dwarf+dynsym	00fc97d2cdd4		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40fdc0	168	decode_rm_seg_register	dwarf+dynsym	3b41efd0cce3		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40fe80	568	decode_rm00_address	dwarf+dynsym	84e13e8193c0		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x40fe80	568	decode_rm00_address	dwarf+dynsym	84e13e8193c0		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x4100c0	588	decode_rm01_address	dwarf+dynsym	81541ecb1c91		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x410340	532	decode_rm10_address	dwarf+dynsym	746b3fba962e		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x410580	80	x86emuOp_esc_coprocess_d8	dwarf+dynsym	2c1f1b387018		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x410600	268	x86emuOp_esc_coprocess_d9	dwarf+dynsym	752804d8eaca		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x410580	80	x86emuOp_esc_coprocess_d8	dwarf+dynsym	2c1f1b387018		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x410600	268	x86emuOp_esc_coprocess_d9	dwarf+dynsym	752804d8eaca		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x410740	248	x86emuOp_esc_coprocess_da	dwarf+dynsym	a40ddae995ef		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x410840	172	x86emuOp_esc_coprocess_db	dwarf+dynsym	c4d531ee2f13		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x410900	248	x86emuOp_esc_coprocess_dc	dwarf+dynsym	b0b13e29a382		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x410a00	248	x86emuOp_esc_coprocess_dd	dwarf+dynsym	e87d7366d66b		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x410b00	248	x86emuOp_esc_coprocess_de	dwarf+dynsym	649f8488c9b8		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x410c00	248	x86emuOp_esc_coprocess_df	dwarf+dynsym	589c110385f1		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x410c00	248	x86emuOp_esc_coprocess_df	dwarf+dynsym	589c110385f1		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x410d40	112	x86emuOp_illegal_op	dwarf+dynsym	331255005f48		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x410dc0	472	x86emuOp_add_byte_RM_R	dwarf+dynsym	4a44dcbd5698		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x410fc0	936	x86emuOp_add_word_RM_R	dwarf+dynsym	b12fd7dd7f36		out:19	undocumented		
@@ -46932,7 +46932,7 @@ usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x416780	856	x86emuOp_xor
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x416b00	104	x86emuOp_xor_byte_AL_IMM	dwarf+dynsym	d7d8522cbb64		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x416b80	260	x86emuOp_xor_word_AX_IMM	dwarf+dynsym	6c09a137121c		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x416cc0	40	x86emuOp_segovr_SS	dwarf+dynsym	4041112645a1		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x416d00	108	x86emuOp_aaa	dwarf+dynsym	675fc40e482c		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x416d00	108	x86emuOp_aaa	dwarf+dynsym	675fc40e482c		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x416d80	380	x86emuOp_cmp_byte_RM_R	dwarf+dynsym	eac6482d3b99		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x416f00	768	x86emuOp_cmp_word_RM_R	dwarf+dynsym	4344f605e3dd		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x417200	388	x86emuOp_cmp_byte_R_RM	dwarf+dynsym	f295b7ad8279		out:19	undocumented		
@@ -47123,7 +47123,7 @@ usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x425780	656	x86emuOp_opc
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x425a40	2944	x86emuOp_opcFF_word_RM	dwarf+dynsym	37cb849111eb		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x4265c0	112	x86emuOp2_illegal_op	dwarf+dynsym	bd4e835f5775		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x426640	900	x86emuOp2_long_jump	dwarf+dynsym	87e8b2fcb392		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x426a00	1060	x86emuOp2_set_byte	dwarf+dynsym	cfe54c009027		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x426a00	1060	x86emuOp2_set_byte	dwarf+dynsym	cfe54c009027		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x426e40	96	x86emuOp2_push_FS	dwarf+dynsym	c5d6b82959c9		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x426ec0	92	x86emuOp2_pop_FS	dwarf+dynsym	f685bd90ac2e		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x426f40	1352	x86emuOp2_bt_R	dwarf+dynsym	180ba72cc949		out:19	undocumented		
@@ -47131,7 +47131,7 @@ usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x4274c0	1088	x86emuOp2_s
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x427900	1036	x86emuOp2_shld_CL	dwarf+dynsym	68bed9a5a6e7		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x427d40	96	x86emuOp2_push_GS	dwarf+dynsym	06ede45c7ed8		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x427dc0	92	x86emuOp2_pop_GS	dwarf+dynsym	d5cdacea7b35		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x427e40	1552	x86emuOp2_bts_R	dwarf+dynsym	b952e2855af1		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x427e40	1552	x86emuOp2_bts_R	dwarf+dynsym	b952e2855af1		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x428480	1088	x86emuOp2_shrd_IMM	dwarf+dynsym	7c68201ddf4a		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x4288c0	1036	x86emuOp2_shrd_CL	dwarf+dynsym	9ad886a5d94e		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x428d00	1344	x86emuOp2_imul_R_RM	dwarf+dynsym	ee1d9ba8dbed		out:19	undocumented		
@@ -47143,24 +47143,24 @@ usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x429dc0	696	x86emuOp2_mo
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42a080	360	x86emuOp2_movzx_word_R_RM	dwarf+dynsym	c2e07f8b5459		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42a200	2172	x86emuOp2_btX_I	dwarf+dynsym	0bc9c53e8aca		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42aa80	1552	x86emuOp2_btc_R	dwarf+dynsym	3e70a787777e		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42b0c0	1456	x86emuOp2_bsf	dwarf+dynsym	529023fe5497		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42b0c0	1456	x86emuOp2_bsf	dwarf+dynsym	529023fe5497		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42b680	1488	x86emuOp2_bsr	dwarf+dynsym	45106623f9da		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42bc80	740	x86emuOp2_movsx_byte_R_RM	dwarf+dynsym	2d87bde2deb0		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42bf80	384	x86emuOp2_movsx_word_R_RM	dwarf+dynsym	e4f2301088d7		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42c100	200	aaa_word	dwarf+dynsym	cdb7ed220eaf		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42c100	200	aaa_word	dwarf+dynsym	cdb7ed220eaf		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42c200	200	aas_word	dwarf+dynsym	7931319b71fc		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42c300	200	aad_word	dwarf+dynsym	82bbf250a789		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42c400	260	aam_word	dwarf+dynsym	c625a4b2b1a8		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42c540	284	adc_byte	dwarf+dynsym	aa5750cdba25		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42c680	312	adc_word	dwarf+dynsym	07fa529df96a		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42c7c0	356	adc_long	dwarf+dynsym	06da43579ea6		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42c940	268	add_byte	dwarf+dynsym	a70606a60c9d		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42c7c0	356	adc_long	dwarf+dynsym	06da43579ea6		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42c940	268	add_byte	dwarf+dynsym	a70606a60c9d		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42ca80	296	add_word	dwarf+dynsym	e9197428adb0		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42cbc0	304	add_long	dwarf+dynsym	f5846524c464		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42cd00	232	and_byte	dwarf+dynsym	418bf0b201ca		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42ce00	216	and_word	dwarf+dynsym	825147b000ea		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42cf00	196	and_long	dwarf+dynsym	2c4b271ed8e8		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42d000	276	cmp_byte	dwarf+dynsym	6cd35ee26a2a		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42d000	276	cmp_byte	dwarf+dynsym	6cd35ee26a2a		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42d140	272	cmp_word	dwarf+dynsym	ff5b46641179		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42d280	304	cmp_long	dwarf+dynsym	a78d890a4ed2		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x42d3c0	220	daa_byte	dwarf+dynsym	5b180a9d4708		out:19	undocumented		
@@ -47209,7 +47209,7 @@ usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x4308c0	304	sbb_byte	dwa
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x430a00	320	sbb_word	dwarf+dynsym	91ebf8f6a797		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x430b40	308	sbb_long	dwarf+dynsym	e39af0fd3a07		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x430c80	268	sub_byte	dwarf+dynsym	d21a173999b7		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x430dc0	272	sub_word	dwarf+dynsym	3ae437f873f4		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x430dc0	272	sub_word	dwarf+dynsym	3ae437f873f4		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x430f00	300	sub_long	dwarf+dynsym	761aa7f03fdf		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x431040	208	test_byte	dwarf+dynsym	f6239e60118c		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x431140	208	test_word	dwarf+dynsym	1c2cadcaf4f9		out:19	undocumented		
@@ -47226,30 +47226,30 @@ usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x431a40	116	mul_word	dwa
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x431ac0	192	mul_long	dwarf+dynsym	c0f4ba116eac		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x431b80	192	idiv_byte	dwarf+dynsym	6fbc48b749ee		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x431c40	388	idiv_word	dwarf+dynsym	7658611d31b9		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x431e00	468	idiv_long	dwarf+dynsym	d1af2db93d42		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x431e00	468	idiv_long	dwarf+dynsym	d1af2db93d42		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x432000	184	div_byte	dwarf+dynsym	b0d8b7160e76		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x4320c0	352	div_word	dwarf+dynsym	bf23fe300c2c		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x432240	484	div_long	dwarf+dynsym	a8e3c0dab484		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x432440	956	ins	dwarf+dynsym	6b8f48b6844b		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x432800	976	outs	dwarf+dynsym	fd7a18260f38		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x432440	956	ins	dwarf+dynsym	6b8f48b6844b		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x432800	976	outs	dwarf+dynsym	fd7a18260f38		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x432c00	56	mem_access_word	dwarf+dynsym	cc5a4f5d1ed0		out:19	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x432c40	120	push_word	dwarf+dynsym	1f7da40316a7		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x432cc0	120	push_long	dwarf+dynsym	206e439f0736		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x432d40	136	pop_word	dwarf+dynsym	a61e7e3eb6f1		out:19	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x432cc0	120	push_long	dwarf+dynsym	206e439f0736		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x432d40	136	pop_word	dwarf+dynsym	a61e7e3eb6f1		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x432e00	136	pop_long	dwarf+dynsym	7a496b6fbba2		out:19	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x432ec0	112	rdb	dwarf+dynsym	83a05e21953f		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x432f40	156	rdw	dwarf+dynsym	cf4c77e1e79b		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x433000	176	rdl	dwarf+dynsym	9d273ceb5078		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x4330c0	116	wrb	dwarf+dynsym	82c1fbeed5de		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x433140	164	wrw	dwarf+dynsym	d4ef24d200dc		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x433200	204	wrl	dwarf+dynsym	90847b30040a		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x433300	8	p_inb	dwarf+funcnames	87506497337c		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x432ec0	112	rdb	dwarf+dynsym	83a05e21953f		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x432f40	156	rdw	dwarf+dynsym	cf4c77e1e79b		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x433000	176	rdl	dwarf+dynsym	9d273ceb5078		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x4330c0	116	wrb	dwarf+dynsym	82c1fbeed5de		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x433140	164	wrw	dwarf+dynsym	d4ef24d200dc		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x433200	204	wrl	dwarf+dynsym	90847b30040a		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x433300	8	p_inb	dwarf+funcnames	87506497337c		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x433340	8	p_inw	dwarf+funcnames	87506497337c		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x433380	8	p_inl	dwarf+funcnames	87506497337c		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x4333c0	8	p_outb	dwarf+funcnames	78aa5094d5ec		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x433400	8	p_outw	dwarf+funcnames	78aa5094d5ec		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x433440	8	p_outl	dwarf+funcnames	78aa5094d5ec		in	undocumented		
-usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x433480	112	X86EMU_setupMemFuncs	dwarf+dynsym	95d191599714		in	undocumented		
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32	.text	0x433440	8	p_outl	dwarf+funcnames	78aa5094d5ec		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x433480	112	X86EMU_setupMemFuncs	dwarf+dynsym	95d191599714		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x433500	112	X86EMU_setupPioFuncs	dwarf+dynsym	cd8a6af512c3		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x433580	160	X86EMU_setupIntrFuncs	dwarf+dynsym	231af84083c0		in	undocumented		
 usr/X11R6/lib/modules/libint10.so	shared-x-server	n32		0x433640	236	X86EMU_prepareForInt	dwarf+dynsym	e6fa75c2370d		in	undocumented		
@@ -47924,7 +47924,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7c74	32	suhalf	dwarf+
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7c94	32	sulong	dwarf+symtab	ed22569adab5		out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7cb4	24	fkiword	dwarf+symtab	4b80c63cd9b6		out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7ccc	8	uerror	dwarf+symtab	6319e0118090		out:3	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7cd4	32	strlen	dwarf+symtab	488b560fdde5		out:3	named-only	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7cd4	32	strlen	dwarf+symtab	488b560fdde5		out:3	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7cf4	36	uload_word	dwarf+symtab	4482b3a61b8d		out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7d18	44	uload_half	dwarf+symtab	705408c0e449		out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7d44	44	uload_uhalf	dwarf+symtab	232f2a7f115a		out:3	undocumented		
@@ -47936,7 +47936,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e00	36	ustore_half	d
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e24	8	fixade_error	dwarf+symtab	4429c69e8a79		out:1	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e2c	1184	memcpy	dwarf+symtab	a6e4b004a38a	shared-address	out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e2c	12	memmove	symtab	28a29cd9f9c9	shared-address	out:3	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e38	116	bcopy	symtab	7c904a821cc2	shared-address	in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e38	116	bcopy	symtab	7c904a821cc2	shared-address	in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e38	116	ovbcopy	symtab	7c904a821cc2	shared-address	out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7eac	80	bcopy_pref1	symtab	c76e59900c0d		out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7efc	976	bcopy_pref2	symtab	355b16806386		out:3	undocumented		
@@ -48870,7 +48870,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x37458	12	_set_count	d
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x37464	84	resetcounter	dwarf+symtab	70c33a9c3f2b		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x374b8	32	initcounter	dwarf+symtab	ff403fc77859		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x374d8	36	delaycounter	dwarf+symtab	b0757c06a658		out:4	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x37500	276	_badaddr_val	dwarf+symtab	e4975ae6e345		in	undocumented		
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x37500	276	_badaddr_val	dwarf+symtab	e4975ae6e345		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x37614	296	_wbadaddr_val	dwarf+symtab	5bea1c849408		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3773c	224	earlybadaddr	dwarf+symtab	a3bafeae4557		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3781c	108	wbadmemaddr	dwarf+symtab	0f88c1093bf0		in	undocumented		
@@ -48957,7 +48957,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3eb24	120	dobuserr	dw
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3eb9c	48	badaddr	dwarf+symtab	cc1a7e544f7d		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3ebcc	48	badaddr_val	dwarf+symtab	c8106c886f1c		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3ebfc	56	wbadaddr	dwarf+symtab	96608a9f9775		in	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3ec34	48	wbadaddr_val	dwarf+symtab	97cd8050c7a5		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3ec34	48	wbadaddr_val	dwarf+symtab	97cd8050c7a5		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3ec64	8	is_buserror	dwarf+symtab	87506497337c		out:6	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3ec6c	288	probe_common	dwarf	b55e17bf8f0d		out:7	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x3ed8c	960	bte_error_handler	dwarf+symtab	8cbaa7b8b38c		out:6	undocumented		
@@ -49455,20 +49455,20 @@ usr/cpu/sysgen/IP35boot/pic.o	shared-kernel	n64	.text	0x14ac	60	pio_spin_wait	dw
 usr/cpu/sysgen/IP35boot/pic.o	shared-kernel	n64	.text	0x14e8	180	pcibr_pio_flush_read	dwarf+symtab	71ed9cc9abda		in	undocumented		
 usr/cpu/sysgen/IP35boot/pic.o	shared-kernel	n64	.text	0x159c	28	pcibr_pio_flush_del	dwarf+symtab	54bb35e07fb3		in	undocumented		
 usr/cpu/sysgen/IP35boot/pic.o	shared-kernel	n64	.text	0x15b8	104	pcibr_pio_flush_init	dwarf+symtab	03645e5614a9		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(debug.o)	board-kernel	n64		0x0		x86emu_dump_regs	dwarf+symtab			out:19	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(debug.o)	board-kernel	n64	.text	0x3d4	684	x86emu_dump_xregs	dwarf+symtab	7146b8405e48		out:19	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(debug.o)	board-kernel	n64		0x0		x86emu_dump_regs	dwarf+symtab			out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(debug.o)	board-kernel	n64	.text	0x3d4	684	x86emu_dump_xregs	dwarf+symtab	7146b8405e48		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64		0x0		x86emu_intr_handle	dwarf+symtab			out:20	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0xa8	24	x86emu_intr_raise	dwarf+symtab	0882cc896eff		out:20	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0xa8	24	x86emu_intr_raise	dwarf+symtab	0882cc896eff		out:20	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0xc0	176	X86EMU_exec	dwarf+symtab	8adcc0f5a5d1		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x170	20	X86EMU_halt_sys	dwarf+symtab	5a22cd8b281d		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
-usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x184	116	fetch_decode_modrm	dwarf+symtab	b8bf754f9d85		out:20	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x184	116	fetch_decode_modrm	dwarf+symtab	b8bf754f9d85		out:20	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x1f8	60	fetch_byte_imm	dwarf+symtab	8749a7f1b4ce		out:20	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x234	68	fetch_word_imm	dwarf+symtab	62c7c0018eb5		out:20	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x278	64	fetch_long_imm	dwarf+symtab	84a09136a717		out:20	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x2b8	132	get_data_segment	dwarf+symtab	9e3081737a73		out:20	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x33c	52	fetch_data_byte	dwarf+symtab	32ed94f38ea0		out:20	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x370	52	fetch_data_word	dwarf+symtab	32ed94f38ea0		out:20	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x3a4	52	fetch_data_long	dwarf+symtab	32ed94f38ea0		out:20	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x33c	52	fetch_data_byte	dwarf+symtab	32ed94f38ea0		out:20	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x370	52	fetch_data_word	dwarf+symtab	32ed94f38ea0		out:20	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x3a4	52	fetch_data_long	dwarf+symtab	32ed94f38ea0		out:20	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x3d8	36	fetch_data_byte_abs	dwarf+symtab	4a1587bf448b		out:20	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x3fc	36	fetch_data_word_abs	dwarf+symtab	4a1587bf448b		out:20	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x420	36	fetch_data_long_abs	dwarf+symtab	4a1587bf448b		out:20	undocumented		
@@ -49477,22 +49477,22 @@ usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x480	60	store_da
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x4bc	60	store_data_long	dwarf+symtab	36004f8d8392		out:20	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x4f8	40	store_data_byte_abs	dwarf+symtab	28630653e204		out:20	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x520	40	store_data_word_abs	dwarf+symtab	28630653e204		out:20	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x548	40	store_data_long_abs	dwarf+symtab	28630653e204		out:20	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x548	40	store_data_long_abs	dwarf+symtab	28630653e204		out:20	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x570	164	decode_rm_byte_register	dwarf+symtab	a6d9accfedbb		out:20	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x614	164	decode_rm_word_register	dwarf+symtab	084ac739fea1		out:20	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x6b8	164	decode_rm_long_register	dwarf+symtab	42dec3a3aced		out:20	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x614	164	decode_rm_word_register	dwarf+symtab	084ac739fea1		out:20	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x6b8	164	decode_rm_long_register	dwarf+symtab	42dec3a3aced		out:20	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x75c	116	decode_rm_seg_register	dwarf+symtab	f0d7863fe3e7		out:20	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x7d0	296	decode_rm00_address	dwarf+symtab	3b925c3bae8e		out:20	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x7d0	296	decode_rm00_address	dwarf+symtab	3b925c3bae8e		out:20	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0x8f8	348	decode_rm01_address	dwarf+symtab	03f8069acb1b		out:20	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	board-kernel	n64	.text	0xa54	284	decode_rm10_address	dwarf+symtab	2157d61970ed		out:20	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(fpu.o)	board-kernel	n64		0x0		x86emuOp_esc_coprocess_d8	dwarf+symtab			out:19	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(fpu.o)	board-kernel	n64	.text	0x34	248	x86emuOp_esc_coprocess_d9	dwarf+symtab	e24fefd900ae		out:19	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(fpu.o)	board-kernel	n64		0x0		x86emuOp_esc_coprocess_d8	dwarf+symtab			out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(fpu.o)	board-kernel	n64	.text	0x34	248	x86emuOp_esc_coprocess_d9	dwarf+symtab	e24fefd900ae		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(fpu.o)	board-kernel	n64	.text	0x12c	220	x86emuOp_esc_coprocess_da	dwarf+symtab	67c8ccf3a8d0		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(fpu.o)	board-kernel	n64	.text	0x208	132	x86emuOp_esc_coprocess_db	dwarf+symtab	721b0955e51e		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(fpu.o)	board-kernel	n64	.text	0x28c	220	x86emuOp_esc_coprocess_dc	dwarf+symtab	81c48d9aef14		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(fpu.o)	board-kernel	n64	.text	0x368	220	x86emuOp_esc_coprocess_dd	dwarf+symtab	67c8ccf3a8d0		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(fpu.o)	board-kernel	n64	.text	0x444	220	x86emuOp_esc_coprocess_de	dwarf+symtab	81c48d9aef14		out:19	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(fpu.o)	board-kernel	n64	.text	0x520	220	x86emuOp_esc_coprocess_df	dwarf+symtab	91c69dde7b70		out:19	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(fpu.o)	board-kernel	n64	.text	0x520	220	x86emuOp_esc_coprocess_df	dwarf+symtab	91c69dde7b70		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(ops.o)	board-kernel	n64		0x0		x86emuOp_illegal_op	dwarf+symtab			out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(ops.o)	board-kernel	n64	.text	0x38	348	x86emuOp_add_byte_RM_R	dwarf+symtab	12c96cab1ef9		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(ops.o)	board-kernel	n64	.text	0x194	660	x86emuOp_add_word_RM_R	dwarf+symtab	40514404a1e1		out:19	undocumented		
@@ -49549,7 +49549,7 @@ usr/cpu/sysgen/IP35boot/vga.a(ops.o)	board-kernel	n64	.text	0x3980	600	x86emuOp_
 usr/cpu/sysgen/IP35boot/vga.a(ops.o)	board-kernel	n64	.text	0x3bd8	68	x86emuOp_xor_byte_AL_IMM	dwarf+symtab	fc335e76076e		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(ops.o)	board-kernel	n64	.text	0x3c1c	136	x86emuOp_xor_word_AX_IMM	dwarf+symtab	f34f2e09f6c6		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(ops.o)	board-kernel	n64	.text	0x3ca4	20	x86emuOp_segovr_SS	dwarf+symtab	18011edd8f47		out:19	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(ops.o)	board-kernel	n64	.text	0x3cb8	56	x86emuOp_aaa	dwarf+symtab	1c2dec6d3b11		out:19	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(ops.o)	board-kernel	n64	.text	0x3cb8	56	x86emuOp_aaa	dwarf+symtab	1c2dec6d3b11		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(ops.o)	board-kernel	n64	.text	0x3cf0	296	x86emuOp_cmp_byte_RM_R	dwarf+symtab	a684be2653f5		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(ops.o)	board-kernel	n64	.text	0x3e18	556	x86emuOp_cmp_word_RM_R	dwarf+symtab	b1dcc46aba47		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(ops.o)	board-kernel	n64	.text	0x4044	296	x86emuOp_cmp_byte_R_RM	dwarf+symtab	41dcc3e6715b		out:19	undocumented		
@@ -49740,7 +49740,7 @@ usr/cpu/sysgen/IP35boot/vga.a(ops.o)	board-kernel	n64	.text	0xc504	472	x86emuOp_
 usr/cpu/sysgen/IP35boot/vga.a(ops.o)	board-kernel	n64	.text	0xc6dc	1852	x86emuOp_opcFF_word_RM	dwarf+symtab	1c1e68c40824		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64		0x0		x86emuOp2_illegal_op	dwarf+symtab			out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0x38	624	x86emuOp2_long_jump	dwarf+symtab	0387bf10daf7		out:19	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0x2a8	744	x86emuOp2_set_byte	dwarf+symtab	ac737c692a2e		out:19	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0x2a8	744	x86emuOp2_set_byte	dwarf+symtab	ac737c692a2e		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0x590	52	x86emuOp2_push_FS	dwarf+symtab	de30464c07a4		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0x5c4	52	x86emuOp2_pop_FS	dwarf+symtab	ccda2766661b		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0x5f8	928	x86emuOp2_bt_R	dwarf+symtab	32b04b38def4		out:19	undocumented		
@@ -49748,7 +49748,7 @@ usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0x998	800	x86emuOp2
 usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0xcb8	712	x86emuOp2_shld_CL	dwarf+symtab	28ea58a2843a		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0xf80	52	x86emuOp2_push_GS	dwarf+symtab	0fa7f1ca4e83		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0xfb4	52	x86emuOp2_pop_GS	dwarf+symtab	bd56e920e20b		out:19	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0xfe8	1104	x86emuOp2_bts_R	dwarf+symtab	eafe6e6159df		out:19	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0xfe8	1104	x86emuOp2_bts_R	dwarf+symtab	eafe6e6159df		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0x1438	800	x86emuOp2_shrd_IMM	dwarf+symtab	f9cb3b56f1ba		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0x1758	712	x86emuOp2_shrd_CL	dwarf+symtab	6ef78cbd93a3		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0x1a20	972	x86emuOp2_imul_R_RM	dwarf+symtab	9dfd1b8272c1		out:19	undocumented		
@@ -49760,24 +49760,24 @@ usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0x25a4	480	x86emuOp
 usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0x2784	252	x86emuOp2_movzx_word_R_RM	dwarf+symtab	311da6d2828a		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0x2880	1620	x86emuOp2_btX_I	dwarf+symtab	1971d696b1de		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0x2ed4	1104	x86emuOp2_btc_R	dwarf+symtab	cd13be2926c8		out:19	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0x3324	1132	x86emuOp2_bsf	dwarf+symtab	8d08d016c4d4		out:19	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0x3324	1132	x86emuOp2_bsf	dwarf+symtab	8d08d016c4d4		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0x3790	1116	x86emuOp2_bsr	dwarf+symtab	397a5e812da8		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0x3bec	528	x86emuOp2_movsx_byte_R_RM	dwarf+symtab	948235b4a0e8		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(ops2.o)	board-kernel	n64	.text	0x3dfc	276	x86emuOp2_movsx_word_R_RM	dwarf+symtab	57dd544d0f92		out:19	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64		0x0		aaa_word	dwarf+symtab			out:19	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64		0x0		aaa_word	dwarf+symtab			out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0xac	172	aas_word	dwarf+symtab	62f789c4166b		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x158	176	aad_word	dwarf+symtab	adab7a090f81		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x208	180	aam_word	dwarf+symtab	5a2baa6873fc		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x2bc	256	adc_byte	dwarf+symtab	9481232017f4		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x3bc	260	adc_word	dwarf+symtab	f44eb20c512c		out:19	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x4c0	296	adc_long	dwarf+symtab	69db9d346412		out:19	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x5e8	252	add_byte	dwarf+symtab	ecd649c71bba		out:19	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x4c0	296	adc_long	dwarf+symtab	69db9d346412		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x5e8	252	add_byte	dwarf+symtab	ecd649c71bba		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x6e4	240	add_word	dwarf+symtab	ef8a63dbd28c		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x7d4	276	add_long	dwarf+symtab	716217e68a6b		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x8e8	164	and_byte	dwarf+symtab	f9cb230e0786		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x98c	156	and_word	dwarf+symtab	2b72ccaa8784		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0xa28	140	and_long	dwarf+symtab	7a1499d608be		out:19	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0xab4	244	cmp_byte	dwarf+symtab	96e4f68e705d		out:19	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0xab4	244	cmp_byte	dwarf+symtab	96e4f68e705d		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0xba8	248	cmp_word	dwarf+symtab	86aa9b48f8bc		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0xca0	252	cmp_long	dwarf+symtab	7b20555406d3		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0xd9c	196	daa_byte	dwarf+symtab	688a5af5238b		out:19	undocumented		
@@ -49826,7 +49826,7 @@ usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x3460	260	sbb_
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x3564	264	sbb_word	dwarf+symtab	c6a77f39d313		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x366c	256	sbb_long	dwarf+symtab	01c65de1b4d3		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x376c	240	sub_byte	dwarf+symtab	be88ae13c972		out:19	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x385c	244	sub_word	dwarf+symtab	726e497fa3b7		out:19	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x385c	244	sub_word	dwarf+symtab	726e497fa3b7		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x3950	248	sub_long	dwarf+symtab	9bcd35c8b04b		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x3a48	136	test_byte	dwarf+symtab	f29cebaf5473		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x3ad0	136	test_word	dwarf+symtab	03a8bd031749		out:19	undocumented		
@@ -49843,58 +49843,58 @@ usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x4024	68	mul_w
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x4068	160	mul_long	dwarf+symtab	aa3f263ffe2c		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x4108	128	idiv_byte	dwarf+symtab	d6a4fc8aeb99		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x4188	252	idiv_word	dwarf+symtab	b78bb1ac1517		out:19	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x4284	344	idiv_long	dwarf+symtab	9e3351fec061		out:19	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x4284	344	idiv_long	dwarf+symtab	9e3351fec061		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x43dc	116	div_byte	dwarf+symtab	594215d808e8		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x4450	220	div_word	dwarf+symtab	85ae44441071		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x452c	288	div_long	dwarf+symtab	432808a02dc4		out:19	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x464c	532	ins	dwarf+symtab	d02808b7fbea		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x4860	540	outs	dwarf+symtab	a4a501f92d35		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x464c	532	ins	dwarf+symtab	d02808b7fbea		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x4860	540	outs	dwarf+symtab	a4a501f92d35		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x4a7c	32	mem_access_word	dwarf+symtab	e6cee3dc63e7		out:19	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x4a9c	64	push_word	dwarf+symtab	9f8e77cedaf2		out:19	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x4adc	64	push_long	dwarf+symtab	96705dc5db16		out:19	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x4b1c	68	pop_word	dwarf+symtab	add8c30dfc9a		out:19	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x4adc	64	push_long	dwarf+symtab	96705dc5db16		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x4b1c	68	pop_word	dwarf+symtab	add8c30dfc9a		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)	board-kernel	n64	.text	0x4b60	64	pop_long	dwarf+symtab	7cabf1bd3954		out:19	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64		0x0		rdb	dwarf+symtab			in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x54	128	rdw	dwarf+symtab	59e334696138		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0xd4	148	rdl	dwarf+symtab	6936e2526455		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x168	96	wrb	dwarf+symtab	b97d6f5a5ca0		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x1c8	140	wrw	dwarf+symtab	1029aa263299		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x254	172	wrl	dwarf+symtab	2651e0756f58		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x300	8	p_inb	dwarf+symtab	87506497337c		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64		0x0		rdb	dwarf+symtab			in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x54	128	rdw	dwarf+symtab	59e334696138		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0xd4	148	rdl	dwarf+symtab	6936e2526455		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x168	96	wrb	dwarf+symtab	b97d6f5a5ca0		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x1c8	140	wrw	dwarf+symtab	1029aa263299		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x254	172	wrl	dwarf+symtab	2651e0756f58		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x300	8	p_inb	dwarf+symtab	87506497337c		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x308	8	p_inw	dwarf+symtab	87506497337c		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x310	8	p_inl	dwarf+symtab	87506497337c		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x318	8	p_outb	dwarf+symtab	78aa5094d5ec		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x320	8	p_outw	dwarf+symtab	78aa5094d5ec		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x328	8	p_outl	dwarf+symtab	78aa5094d5ec		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x330	52	X86EMU_setupMemFuncs	dwarf+symtab	a3818bf90933		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x328	8	p_outl	dwarf+symtab	78aa5094d5ec		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x330	52	X86EMU_setupMemFuncs	dwarf+symtab	a3818bf90933		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x364	52	X86EMU_setupPioFuncs	dwarf+symtab	a3818bf90933		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x398	136	X86EMU_setupIntrFuncs	dwarf+symtab	dce863e1efd4		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(sys.o)	board-kernel	n64	.text	0x420	124	X86EMU_prepareForInt	dwarf+symtab	4e198c3a5d95		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64		0x0		xf86InitInt10	dwarf+symtab			in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
-usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x138	116	xf86FreeInt10	dwarf+symtab	9862ca66dac6		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x138	116	xf86FreeInt10	dwarf+symtab	9862ca66dac6		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x1ac	304	xf86Int10AllocPages	dwarf+symtab	2d8886669e2c		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
-usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x2dc	120	xf86Int10FreePages	dwarf+symtab	2c2afff70cbf		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x354	112	read_b	dwarf+symtab	5b08de73559d		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x2dc	120	xf86Int10FreePages	dwarf+symtab	2c2afff70cbf		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x354	112	read_b	dwarf+symtab	5b08de73559d		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x3c4	232	read_w	dwarf+symtab	2ee4469b6371		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x4ac	488	read_l	dwarf+symtab	2c159659cb08		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x694	112	write_b	dwarf+symtab	5cc25a5ec766		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x704	244	write_w	dwarf+symtab	cb8e69d2c584		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x704	244	write_w	dwarf+symtab	cb8e69d2c584		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x7f8	508	write_l	dwarf+symtab	c96a46aee97b		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x9f4	68	xf86int10Addr	dwarf+symtab	1df626e2fda2		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64		0x0		setup_int	dwarf+symtab			in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
-usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x94	80	finish_int	dwarf+symtab	0987b235b16e		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/cpu/sysgen/IP35boot/vga.a(generic.o)	board-kernel	n64	.text	0x9f4	68	xf86int10Addr	dwarf+symtab	1df626e2fda2		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64		0x0		setup_int	dwarf+symtab			in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x94	80	finish_int	dwarf+symtab	0987b235b16e		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0xe4	92	getIntVect	dwarf+symtab	65d01e5251cf		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x140	68	pushw	dwarf+symtab	8c3db09b20f1		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x184	196	run_bios_int	dwarf+symtab	c1e5603ede24		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
-usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x248	176	port_rep_inb	dwarf+symtab	15acf308f4e8		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x140	68	pushw	dwarf+symtab	8c3db09b20f1		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x184	196	run_bios_int	dwarf+symtab	c1e5603ede24		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x248	176	port_rep_inb	dwarf+symtab	15acf308f4e8		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x2f8	188	port_rep_inw	dwarf+symtab	3c8db63cd1b9		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x3b4	188	port_rep_inl	dwarf+symtab	8a5348c8a818		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x470	176	port_rep_outb	dwarf+symtab	3188d75b5ba2		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x520	188	port_rep_outw	dwarf+symtab	45df69543eef		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x5dc	188	port_rep_outl	dwarf+symtab	0c01dfa9015d		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x698	92	x_inb	dwarf+symtab	40ce2672a711		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x5dc	188	port_rep_outl	dwarf+symtab	0c01dfa9015d		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x698	92	x_inb	dwarf+symtab	40ce2672a711		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x6f4	84	x_inw	dwarf+symtab	ba402a4dce2a		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x748	96	x_outb	dwarf+symtab	ddea2ad39f5a		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x748	96	x_outb	dwarf+symtab	ddea2ad39f5a		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x7a8	44	x_outw	dwarf+symtab	5e28d59b6e84		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x7d4	80	x_inl	dwarf+symtab	bfcc0dedcfcf		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x824	84	x_outl	dwarf+symtab	17c8f489b07f		in	undocumented		
@@ -49904,17 +49904,17 @@ usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x8d0	44	Mem
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x8fc	48	Mem_wb	dwarf+symtab	ed6303fb84f1		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x92c	48	Mem_ww	dwarf+symtab	e04f42dbbf6b		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x95c	48	Mem_wl	dwarf+symtab	8122c13d9d09		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x98c	92	pciCfg1in	dwarf+symtab	bb6a8fa2a3bb		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x9e8	72	pciCfg1out	dwarf+symtab	6cf00c77b391		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x98c	92	pciCfg1in	dwarf+symtab	bb6a8fa2a3bb		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0x9e8	72	pciCfg1out	dwarf+symtab	6cf00c77b391		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)	board-kernel	n64	.text	0xa30	80	bios_checksum	dwarf+symtab	ac30d5992ccd		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
-usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64		0x0		outb	dwarf+symtab			in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64	.text	0x34	44	outw	dwarf+symtab	4a50624145ff		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64	.text	0x60	60	outl	dwarf+symtab	62e010450610		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64	.text	0x9c	64	inb	dwarf+symtab	6c1cbd6e78a3		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64	.text	0xdc	96	inw	dwarf+symtab	bf194b44712f		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64	.text	0x13c	120	inl	dwarf+symtab	5aeccbc4de58		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)	board-kernel	n64		0x0		setup_int_vect	dwarf+symtab			in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)	board-kernel	n64	.text	0x1b8	100	setup_system_bios	dwarf+symtab	8b6be552cecb		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
+usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64		0x0		outb	dwarf+symtab			in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64	.text	0x34	44	outw	dwarf+symtab	4a50624145ff		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64	.text	0x60	60	outl	dwarf+symtab	62e010450610		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64	.text	0x9c	64	inb	dwarf+symtab	6c1cbd6e78a3		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64	.text	0xdc	96	inw	dwarf+symtab	bf194b44712f		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)	board-kernel	n64	.text	0x13c	120	inl	dwarf+symtab	5aeccbc4de58		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)	board-kernel	n64		0x0		setup_int_vect	dwarf+symtab			in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)	board-kernel	n64	.text	0x1b8	100	setup_system_bios	dwarf+symtab	8b6be552cecb		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)	board-kernel	n64	.text	0x21c	296	reset_int_vect	dwarf+symtab	2943d7a18f27		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(helper_mem.o)	board-kernel	n64	.text	0x344	68	set_return_trap	dwarf+symtab	d7b27e85fa5e		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(junkcode.o)	board-kernel	n64		0x0		pciReadByte	dwarf+symtab			in	undocumented		
@@ -50057,24 +50057,24 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008be0	268	__start	dynsym	8d5
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008cec	12	_mcount	dynsym	1c53f0b255e3		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008d00	524	xf86InitInt10	dynsym	a2bed0a1383c		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008f10	24	MapCurrentInt10	dynsym	fc6a184bc473		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008f30	180	xf86FreeInt10	dynsym	3bd15d9d25f0		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008f30	180	xf86FreeInt10	dynsym	3bd15d9d25f0		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10008ff0	552	xf86Int10AllocPages	dynsym	6ab43af93a52		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10009220	216	xf86Int10FreePages	dynsym	1622b73d077f		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10009ef0	128	xf86int10Addr	dynsym	a3a2b891ce5f		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10009f70	440	setup_int	dynsym	84bd5c321bad		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a130	256	finish_int	dynsym	d1474dda95e3		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10009220	216	xf86Int10FreePages	dynsym	1622b73d077f		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10009ef0	128	xf86int10Addr	dynsym	a3a2b891ce5f		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10009f70	440	setup_int	dynsym	84bd5c321bad		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a130	256	finish_int	dynsym	d1474dda95e3		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a230	136	getIntVect	dynsym	1cb618545a1b		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a2c0	160	pushw	dynsym	362f4f3cf257		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a360	364	run_bios_int	dynsym	f9958d384373		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a4d0	252	port_rep_inb	dynsym	423bf115c992		out:19	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a2c0	160	pushw	dynsym	362f4f3cf257		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a360	364	run_bios_int	dynsym	f9958d384373		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a4d0	252	port_rep_inb	dynsym	423bf115c992		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a5d0	252	port_rep_inw	dynsym	ecd8e44b061f		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a6d0	252	port_rep_inl	dynsym	7c3e746e12e5		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a7d0	252	port_rep_outb	dynsym	b1ec7edc5686		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a8d0	252	port_rep_outw	dynsym	4b87ccaf9787		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a9d0	252	port_rep_outl	dynsym	e181406fbdd6		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000aad0	180	x_inb	dynsym	907bb1936a7a		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000a9d0	252	port_rep_outl	dynsym	e181406fbdd6		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000aad0	180	x_inb	dynsym	907bb1936a7a		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ab90	160	x_inw	dynsym	a3c9c7cf2306		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ac30	168	x_outb	dynsym	802e45e51e1b		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ac30	168	x_outb	dynsym	802e45e51e1b		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ace0	176	x_outw	dynsym	3dfc2ebc4ed2		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ad90	132	x_inl	dynsym	03e6fd8f7280		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ae20	132	x_outl	dynsym	a0222ddc8c43		in	undocumented		
@@ -50085,17 +50085,17 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000afd0	96	Mem_wb	dynsym	1b2e5
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b030	96	Mem_ww	dynsym	8123f2df1523		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b090	92	Mem_wl	dynsym	8fa70fa2b97a		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b230	128	bios_checksum	dynsym	ed3f8d90a5ea		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b2b0	612	setup_int_vect	dynsym	4b46daaf4e4d		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b520	172	setup_system_bios	dynsym	c47d54c5e6a3		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b2b0	612	setup_int_vect	dynsym	4b46daaf4e4d		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b520	172	setup_system_bios	dynsym	c47d54c5e6a3		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b5d0	408	reset_int_vect	dynsym	e36005f1921a		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b770	108	set_return_trap	dynsym	d4132778f8fd		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b7e0	68	sigbusHandler	dynsym	51fba2e7997d		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b830	56	outb	dynsym	ef6e79dae2ee		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b870	88	outw	dynsym	c6cdb786b2ba		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b8d0	108	outl	dynsym	60643c410565		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b940	336	inb	dynsym	d707bd83cefa		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ba90	364	inw	dynsym	0c43a536d865		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000bc00	428	inl	dynsym	753d6e90e044		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b830	56	outb	dynsym	ef6e79dae2ee		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b870	88	outw	dynsym	c6cdb786b2ba		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b8d0	108	outl	dynsym	60643c410565		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b940	336	inb	dynsym	d707bd83cefa		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ba90	364	inw	dynsym	0c43a536d865		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000bc00	428	inl	dynsym	753d6e90e044		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000bdb0	412	int_handler	dynsym	f128fb0ff66a		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000db60	144	xf86ExecX86int10	dynsym	8b3b54ddbffe		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000dbf0	340	xf86Int10ExecSetup	dynsym	12f29529e12b		in	undocumented		
@@ -50120,16 +50120,16 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fac0	368	pciba_list_devs	dy
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fc30	196	pciba_find_dev	dynsym	0107dc055c2b		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fd00	132	pciba_enable_rom	dynsym	bc1f97e50dc8		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fd90	160	pciba_disable_rom	dynsym	0d60a0a6e1b4		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ffa4	76	x86emu_intr_raise	dynsym	e55f497d1bc3		out:19	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ffa4	76	x86emu_intr_raise	dynsym	e55f497d1bc3		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000fff0	380	X86EMU_exec	dynsym	f0d7633279cd		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001016c	48	X86EMU_halt_sys	dynsym	f72f07d7a939		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001019c	200	fetch_decode_modrm	dynsym	5044470ea78b		out:19	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001019c	200	fetch_decode_modrm	dynsym	5044470ea78b		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10010264	136	fetch_byte_imm	dynsym	dd7ae6faca32		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100102ec	156	fetch_word_imm	dynsym	d7a202368950		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10010388	156	fetch_long_imm	dynsym	06200ff8d929		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10010584	92	fetch_data_byte	dynsym	4ca45e828429		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100105e0	92	fetch_data_word	dynsym	eed69fbb2745		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001063c	92	fetch_data_long	dynsym	3016c9dcb5b0		out:19	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10010584	92	fetch_data_byte	dynsym	4ca45e828429		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100105e0	92	fetch_data_word	dynsym	eed69fbb2745		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001063c	92	fetch_data_long	dynsym	3016c9dcb5b0		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10010698	84	fetch_data_byte_abs	dynsym	0e5176aeca44		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100106ec	84	fetch_data_word_abs	dynsym	ddb291817b1e		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10010740	84	fetch_data_long_abs	dynsym	9d5ba373a4e8		out:19	undocumented		
@@ -50138,28 +50138,28 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100107fc	104	store_data_word	dy
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10010864	100	store_data_long	dynsym	6f53b33d7e75		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100108c8	96	store_data_byte_abs	dynsym	507b9ffd28d6		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10010928	96	store_data_word_abs	dynsym	d4a893624e61		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10010988	92	store_data_long_abs	dynsym	4ca8f983ba19		out:19	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10010988	92	store_data_long_abs	dynsym	4ca8f983ba19		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100109e4	280	decode_rm_byte_register	dynsym	9bde127a3c02		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10010afc	280	decode_rm_word_register	dynsym	52f2498a1ef4		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10010c14	280	decode_rm_long_register	dynsym	08903134b998		out:19	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10010afc	280	decode_rm_word_register	dynsym	52f2498a1ef4		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10010c14	280	decode_rm_long_register	dynsym	08903134b998		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10010d2c	208	decode_rm_seg_register	dynsym	431fac12482f		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10010dfc	692	decode_rm00_address	dynsym	edd2c1f79dfd		out:19	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10010dfc	692	decode_rm00_address	dynsym	edd2c1f79dfd		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100110b0	644	decode_rm01_address	dynsym	789a6064a642		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10011334	636	decode_rm10_address	dynsym	6c2cc96f67d5		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100115b0	532	aaa_word	dynsym	dadbda367fc1		out:19	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100115b0	532	aaa_word	dynsym	dadbda367fc1		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100117c4	532	aas_word	dynsym	9f73c8783b44		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100119d8	524	aad_word	dynsym	6f673271eccc		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10011be4	540	aam_word	dynsym	717db81f8fcb		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10011e00	736	adc_byte	dynsym	02c1d1a860d7		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100120e0	740	adc_word	dynsym	e465b4c998c2		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100123c4	816	adc_long	dynsym	f4dc4bf4b5fa		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100126f4	684	add_byte	dynsym	70bdbbce4b0e		out:19	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100123c4	816	adc_long	dynsym	f4dc4bf4b5fa		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100126f4	684	add_byte	dynsym	70bdbbce4b0e		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100129a0	688	add_word	dynsym	709caed4cbf9		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10012c50	736	add_long	dynsym	785d31b0fbbd		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10012f30	488	and_byte	dynsym	a2ea49fe1ec4		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10013118	496	and_word	dynsym	42603b278899		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10013308	456	and_long	dynsym	c213c43a3113		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100134d0	716	cmp_byte	dynsym	83c0fd4f9e43		out:19	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100134d0	716	cmp_byte	dynsym	83c0fd4f9e43		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001379c	684	cmp_word	dynsym	46f75fca19ce		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10013a48	680	cmp_long	dynsym	ae94301dbe0d		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10013cf0	520	daa_byte	dynsym	661b2fe0b9f5		out:19	undocumented		
@@ -50208,7 +50208,7 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001a414	740	sbb_byte	dynsym	91
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001a6f8	740	sbb_word	dynsym	10a9f003bcc6		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001a9dc	732	sbb_long	dynsym	fb5ab0cde979		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001acb8	688	sub_byte	dynsym	9896b2a0ca64		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001af68	688	sub_word	dynsym	784fffb45ffc		out:19	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001af68	688	sub_word	dynsym	784fffb45ffc		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001b218	680	sub_long	dynsym	64ba1856d12b		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001b4c0	424	test_byte	dynsym	5aa19f095a15		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001b668	424	test_word	dynsym	51c8f2f4c12f		out:19	undocumented		
@@ -50225,24 +50225,24 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001c5e8	280	mul_word	dynsym	95
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001c700	404	mul_long	dynsym	9a46a493849e		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001c894	276	idiv_byte	dynsym	dbc58b5e386d		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001c9a8	608	idiv_word	dynsym	caf80b2046d9		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001cc08	832	idiv_long	dynsym	69966843460c		out:19	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001cc08	832	idiv_long	dynsym	69966843460c		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001cf48	236	div_byte	dynsym	0aa27af867a9		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001d034	556	div_word	dynsym	9978c06b3beb		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001d260	740	div_long	dynsym	1e7096e99a6e		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001d544	1332	ins	dynsym	3e1724cf48cb		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001da78	1332	outs	dynsym	d4a6e92a3fb1		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001d544	1332	ins	dynsym	3e1724cf48cb		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001da78	1332	outs	dynsym	d4a6e92a3fb1		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001dfac	68	mem_access_word	dynsym	ba1b48c7f753		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001dff0	160	push_word	dynsym	d98679ff4efc		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e090	156	push_long	dynsym	15b2ee0e3596		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e12c	156	pop_word	dynsym	2ee84ee65136		out:19	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e090	156	push_long	dynsym	15b2ee0e3596		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e12c	156	pop_word	dynsym	2ee84ee65136		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e1c8	156	pop_long	dynsym	0ba836c835d8		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e264	124	rdb	dynsym	662dfc8fac0d		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e2e0	212	rdw	dynsym	8bebf376b099		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e3b4	276	rdl	dynsym	d330a095a6f9		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e4c8	128	wrb	dynsym	04d805ddc2c0		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e548	212	wrw	dynsym	e048aa290ef8		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e61c	272	wrl	dynsym	06cc992e5838		in	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e7dc	152	X86EMU_setupMemFuncs	dynsym	29ec1ac0599a		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e264	124	rdb	dynsym	662dfc8fac0d		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e2e0	212	rdw	dynsym	8bebf376b099		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e3b4	276	rdl	dynsym	d330a095a6f9		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e4c8	128	wrb	dynsym	04d805ddc2c0		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e548	212	wrw	dynsym	e048aa290ef8		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e61c	272	wrl	dynsym	06cc992e5838		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e7dc	152	X86EMU_setupMemFuncs	dynsym	29ec1ac0599a		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e874	152	X86EMU_setupPioFuncs	dynsym	95ae01341c91		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e90c	208	X86EMU_setupIntrFuncs	dynsym	965f40ca9d96		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1001e9dc	292	X86EMU_prepareForInt	dynsym	78cb07f41ae0		in	undocumented		
@@ -50302,7 +50302,7 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10025214	1044	x86emuOp_xor_word
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10025628	132	x86emuOp_xor_byte_AL_IMM	dynsym	80dbcc5a3f8c		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100256ac	276	x86emuOp_xor_word_AX_IMM	dynsym	454fe7f06aa3		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100257c0	64	x86emuOp_segovr_SS	dynsym	a8ff85653b55		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10025800	132	x86emuOp_aaa	dynsym	a9d43907a104		out:19	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10025800	132	x86emuOp_aaa	dynsym	a9d43907a104		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10025884	532	x86emuOp_cmp_byte_RM_R	dynsym	ace8c04cf692		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10025a98	980	x86emuOp_cmp_word_RM_R	dynsym	427ee252c1f8		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10025e6c	532	x86emuOp_cmp_byte_R_RM	dynsym	6c151dee95d9		out:19	undocumented		
@@ -50491,17 +50491,17 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10036814	100	x86emuOp_cld	dynsy
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10036878	96	x86emuOp_std	dynsym	9e8e3e1ca167		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100368d8	932	x86emuOp_opcFE_byte_RM	dynsym	418dcee06977		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10036c7c	3492	x86emuOp_opcFF_word_RM	dynsym	4c717f7b7b6d		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10037a20	100	x86emuOp_esc_coprocess_d8	dynsym	6bcd1122814e		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10037a84	388	x86emuOp_esc_coprocess_d9	dynsym	bbb194e9f6b6		out:19	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10037a20	100	x86emuOp_esc_coprocess_d8	dynsym	6bcd1122814e		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10037a84	388	x86emuOp_esc_coprocess_d9	dynsym	bbb194e9f6b6		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10037c08	352	x86emuOp_esc_coprocess_da	dynsym	e480148ca9f9		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10037d68	272	x86emuOp_esc_coprocess_db	dynsym	dfda315adb6e		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10037e78	352	x86emuOp_esc_coprocess_dc	dynsym	78d066d84bd2		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10037fd8	352	x86emuOp_esc_coprocess_dd	dynsym	05c80a4ee113		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10038138	352	x86emuOp_esc_coprocess_de	dynsym	273171fd9b7c		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10038298	352	x86emuOp_esc_coprocess_df	dynsym	6e51b86b4ce0		out:19	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10038298	352	x86emuOp_esc_coprocess_df	dynsym	6e51b86b4ce0		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100383f8	132	x86emuOp2_illegal_op	dynsym	51db3d7dad16		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1003847c	1364	x86emuOp2_long_jump	dynsym	cb4541d8b6cc		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100389d0	1568	x86emuOp2_set_byte	dynsym	3fc7c1e58d6f		out:19	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100389d0	1568	x86emuOp2_set_byte	dynsym	3fc7c1e58d6f		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10038ff0	116	x86emuOp2_push_FS	dynsym	424641574ad0		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10039064	112	x86emuOp2_pop_FS	dynsym	beb13f154222		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x100390d4	1876	x86emuOp2_bt_R	dynsym	8c71b654446c		out:19	undocumented		
@@ -50509,7 +50509,7 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10039828	1300	x86emuOp2_shld_IM
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x10039d3c	1204	x86emuOp2_shld_CL	dynsym	038dd3dbd00b		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1003a1f0	116	x86emuOp2_push_GS	dynsym	4188879aa56e		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1003a264	112	x86emuOp2_pop_GS	dynsym	d56049f645ab		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1003a2d4	2216	x86emuOp2_bts_R	dynsym	7ecbd019e9f1		out:19	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1003a2d4	2216	x86emuOp2_bts_R	dynsym	7ecbd019e9f1		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1003ab7c	1300	x86emuOp2_shrd_IMM	dynsym	2ba9e5d19528		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1003b090	1204	x86emuOp2_shrd_CL	dynsym	0c11698833b2		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1003b544	2324	x86emuOp2_imul_R_RM	dynsym	5bd7a6bc7062		out:19	undocumented		
@@ -50521,7 +50521,7 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1003cd20	884	x86emuOp2_movzx_by
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1003d094	484	x86emuOp2_movzx_word_R_RM	dynsym	24baf48c334e		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1003d278	3360	x86emuOp2_btX_I	dynsym	935715a42a01		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1003df98	2216	x86emuOp2_btc_R	dynsym	282b3e7d0d36		out:19	undocumented		
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1003e840	2204	x86emuOp2_bsf	dynsym	629269f40f5d		out:19	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1003e840	2204	x86emuOp2_bsf	dynsym	629269f40f5d		out:19	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1003f0dc	2172	x86emuOp2_bsr	dynsym	401919796b8a		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1003f958	948	x86emuOp2_movsx_byte_R_RM	dynsym	9254613aa57c		out:19	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1003fd0c	516	x86emuOp2_movsx_word_R_RM	dynsym	7db2c0782f5d		out:19	undocumented		

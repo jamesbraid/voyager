@@ -2,7 +2,6 @@
 
 One entry per file in the install set, in the order of [the binaries table](inventory/binaries.tsv). Each entry names the file by its install path and says what the file is and what was read in it. Counts and section facts come from `readelf` on the file as shipped. "Defined" means a symbol with a value in the file; "undefined" means a name the file imports. A role built from names and from the calls listed here is **inferred**. A fact read from the whole file, or from a routine's whole body, is **established**. Routine addresses are `.text` offsets in the named object unless the entry says otherwise.
 
-
 ## X server and its modules
 
 - `etc/X11/gen-XF86Config` (Perl script, 889 lines, 28551 bytes): **inferred** from the lines read.
@@ -135,6 +134,8 @@ One entry per file in the install set, in the order of [the binaries table](inve
 
 ## Host and board kernel objects
 
+All objects in this section are 64-bit MIPS-IV relocatable files with DWARF debug sections and no `.mdebug` section, checked with `readelf -S` on each.
+
 - `usr/cpu/sysgen/IP35boot/fglrx.o` (REL, 567504 bytes): **established** that it defines 308 global functions and 25 objects, and imports 145 names.
   `fglrx_init` is the routine at address 0x84, 1172 bytes long.
   It calls `kmem_zalloc` at addresses 0xe8 and 0x114, and `find_fglrx_pipe` at 0x1e0.
@@ -196,3 +197,96 @@ One entry per file in the install set, in the order of [the binaries table](inve
   It calls `xwidget_driver_register` at 0x28, passing 0x24 (36) and a record at `.rodata` offset 16.
   It returns that call's result.
   **Inferred** that it is the PIC widget driver, the bus-side ASIC driver that sits above `pcibr.o`.
+
+## VGA console and x86 emulator archive
+
+`usr/cpu/sysgen/IP35boot/vga.a` is an archive of 17 members, each a 64-bit MIPS-IV relocatable object with DWARF data. This section covers ten of them. The routines named were checked instruction by instruction from their disassembly.
+
+- `usr/cpu/sysgen/IP35boot/vga.a(debug.o)` (9604 bytes): **established** that it defines two global functions, `x86emu_dump_regs` and `x86emu_dump_xregs`.
+  It imports `_X86EMU_env`, `cmn_err`, `sprintf` and `strlen`.
+  `x86emu_dump_regs` (980 bytes, frame 288) makes 59 calls.
+  Those are 29 `sprintf` calls, 29 `strlen` calls and one `cmn_err` call at 0x3c0.
+  It returns the value `cmn_err` returns.
+  The first four `sprintf` calls take halfwords at `_X86EMU_env` offsets 26, 30, 34 and 38.
+  **Inferred** that this prints the emulator's register state.
+
+- `usr/cpu/sysgen/IP35boot/vga.a(decode.o)` (21332 bytes): **established** that it defines 26 global functions.
+  They include `X86EMU_exec` and `X86EMU_halt_sys`.
+  They also include the operand decoders `decode_rm00_address` and `decode_rm_word_register`.
+  The fetch and store accessors run from `fetch_data_byte` to `store_data_long_abs`.
+  `fetch_decode_modrm` at address 0x184 (116 bytes) reads the byte at the instruction pointer.
+  That pointer is the halfword at `_X86EMU_env` offset 58, advanced by one.
+  It adds the segment base, the halfword at offset 64 shifted left four.
+  It then calls through the `sys_rdb` slot, loaded from `0(gp)`, at 0x1b8.
+  It stores bits 7:6 of the byte to its first pointer argument, bits 5:3 to the second and bits 2:0 to the third.
+  Those stores are at addresses 0x1c8, 0x1e8 and 0x1f4.
+
+- `usr/cpu/sysgen/IP35boot/vga.a(fpu.o)` (10660 bytes): **established** that it defines eight global routines, `x86emuOp_esc_coprocess_d8` through `x86emuOp_esc_coprocess_df`.
+  Each is the handler for one x87 escape opcode.
+  `x86emuOp_esc_coprocess_d9` at address 0x34 (248 bytes) calls `fetch_decode_modrm` at 0x44.
+  It calls the three memory-form decoders at 0xcc, 0xec and 0x10c.
+  It calls `cmn_err` at five sites: 0x90, 0xa4, 0xdc, 0xfc and 0x11c.
+  **Inferred** that the `cmn_err` sites are the escape forms the emulator leaves unimplemented.
+
+- `usr/cpu/sysgen/IP35boot/vga.a(ops.o)` (212628 bytes): **established** that it defines 245 global functions.
+  Every one is named `x86emuOp_*` after an x86 one-byte opcode, `x86emuOp_aaa` among them.
+  It imports 122 names, the primitives in `prim_ops.o` and the decoders in `decode.o`.
+  `x86emuOp_aaa` at address 0x3cb8 (56 bytes) calls `aaa_word` at 0x3cc4.
+  It passes the halfword at `_X86EMU_env` offset 26 and returns that result.
+  **Inferred** that this file is the one-byte opcode table of the emulator.
+
+- `usr/cpu/sysgen/IP35boot/vga.a(ops2.o)` (52324 bytes): **established** that it defines 26 global functions, every one named `x86emuOp2_*`.
+  Examples are `x86emuOp2_bsf`, `x86emuOp2_bts_R` and `x86emuOp2_set_byte`.
+  `x86emuOp2_bsf` at address 0x3324 (1132 bytes, 283 words) makes 23 calls.
+  Among them are `fetch_decode_modrm` at 0x3338 and five `decode_rm_long_register` calls.
+  It also makes five `decode_rm_word_register` calls, three `fetch_data_long` and three `fetch_data_word`.
+  Those calls show it handling both operand widths.
+  **Inferred** that each of the 26 handles one two-byte, 0F-prefixed opcode.
+
+- `usr/cpu/sysgen/IP35boot/vga.a(prim_ops.o)` (57316 bytes): **established** that it defines 90 global functions.
+  They are the arithmetic primitives for each operand width, such as `add_byte` and `adc_long`.
+  Others include `sub_word`, `cmp_byte` and `idiv_long`.
+  They also include `ins`, `outs`, `push_long` and `pop_word`.
+  It imports eight names: the `fetch_data_*_abs` and `store_data_*_abs` accessors, `x86emu_intr_raise` and `_X86EMU_env`.
+  **Inferred** that these routines compute each opcode's result and flags for the handlers in `ops.o` and `ops2.o` to store.
+
+- `usr/cpu/sysgen/IP35boot/vga.a(sys.o)` (11748 bytes): **established** that it defines ten global functions.
+  Four are setup routines, `X86EMU_setupMemFuncs` among them.
+  The other six are the accessors `rdb`, `rdw`, `rdl`, `wrb`, `wrw` and `wrl`.
+  It also defines six local port routines, `p_inb` through `p_outl`.
+  `X86EMU_setupMemFuncs` at address 0x330 (52 bytes) makes no calls.
+  It stores six 8-byte words through `gp` at addresses 0x334, 0x33c, 0x344, 0x34c, 0x354 and 0x360.
+  The symbol each store is attributed to is one of `sys_rdb`, `sys_rdw`, `sys_rdl`, `sys_wrb`, `sys_wrw` and `sys_wrl`.
+  **Inferred** that the caller passes the table of accessor pointers that the emulator then calls.
+
+- `usr/cpu/sysgen/IP35boot/vga.a(generic.o)` (12244 bytes): **established** that it defines five global functions.
+  They are `xf86InitInt10`, `xf86FreeInt10`, `xf86Int10AllocPages`, `xf86Int10FreePages` and `xf86int10Addr`.
+  It also defines six local accessors, `read_b` through `write_w`.
+  `xf86InitInt10` at address 0x0 (312 bytes) allocates an 88-byte context at address 0x18.
+  It then allocates a 983040-byte block (0xf0000) at 0x68 and a 65536-byte block (0x10000) at 0x98.
+  It calls `setup_system_bios` at 0xa8 and `setup_int_vect` at 0xbc.
+  It calls `bcopy` once and `kmem_free` once, and logs through `cmn_err`.
+
+- `usr/cpu/sysgen/IP35boot/vga.a(helper_exec.o)` (16260 bytes): **established** that it defines 24 global functions.
+  Among them are the memory accessors `Mem_rb` to `Mem_ww` and `run_bios_int`.
+  Others are `setup_int`, `finish_int` and `pushw`.
+  The string port loops run from `port_rep_inb` to `port_rep_outl`.
+  `run_bios_int` at address 0x184 (196 bytes) calls the function pointer at offset 24 of its second argument at 0x1ac.
+  When that call returns 0xf000 it logs through `cmn_err` at 0x238 with level 5, and returns 0.
+  Otherwise it pushes three words with `pushw` at 0x1c8, 0x1d4 and 0x1e0.
+  It then calls two function pointers at 0x1f4 and 0x20c, and returns 1.
+  `x_inb` at address 0x698 handles port 0x40 (decimal 64).
+  `x_outb` handles port 0x43 (decimal 67), the legacy 8254 timer ports.
+  `pciCfg1in` at 0x98c and `pciCfg1out` at 0x9e8 handle ports 0xcf8 and 0xcfc.
+  Those are the PCI configuration mechanism 1 address and data ports.
+  `bios_checksum` at address 0xa30 sums its buffer two bytes per pass.
+  It masks the running sum to eight bits after each byte, then returns the sum.
+
+- `usr/cpu/sysgen/IP35boot/vga.a(helper_legacy.o)` (6004 bytes): **established** that it defines six global functions.
+  They are `inb`, `inw` and `inl`.
+  The other three are `outb`, `outw` and `outl`.
+  It imports `_badaddr_val` and `wbadaddr_val`.
+  `inb` at address 0x9c (64 bytes) adds the 8-byte word at offset 176 of its first argument to that argument.
+  It passes the sum to `_badaddr_val` at 0xb8, with 1 as the second argument and a stack slot as the third.
+  It returns from one of two paths, at 0xc0 and 0xcc.
+  **Inferred** from the offset 176 that the first argument is the board's legacy I/O window record, the field `docs/kernel-attach.md` describes.
