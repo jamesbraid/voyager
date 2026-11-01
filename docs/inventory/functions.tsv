@@ -24,7 +24,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10032f80	96	xf86InputDriverlistFrom
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10035d00	860	xf86HandleConfigFile	dynsym	924a7902df0b		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10036080	56	xf86PathIsAbsolute	dynsym	3e6155e64924		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100360c0	56	xf86PathIsSafe	dynsym	f31755f3018e		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10036100	816	DGAInit	dynsym	f26b25ff2899		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10036100	816	DGAInit	dynsym	f26b25ff2899		out:13	named-only	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10036780	896	xf86SetDGAMode	dynsym	8a0335683923		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10036b00	76	DGASetInputMode	dynsym	a1d46fd3c362		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10036b80	384	DGAChangePixmapMode	dynsym	9b961a89f1b9		out:13	undocumented		
@@ -75,7 +75,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10039000	24	xf86MarkOptionUsed	dyns
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10039040	84	xf86MarkOptionUsedByName	dynsym	97b10813feb0		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100390c0	24	xf86CheckIfOptionUsed	dynsym	be56262644e7		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10039100	88	xf86CheckIfOptionUsedByName	dynsym	72550a8b29d0		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10039180	128	xf86ShowUnusedOptions	dynsym	60f2d63787dd		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10039180	128	xf86ShowUnusedOptions	dynsym	60f2d63787dd		out:13	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10039a00	136	xf86ProcessOptions	dynsym	e017c7567a9d		out:13	named-only	docs/x-helper-modules.md#libvbeso	libvbe.so
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10039ac0	64	xf86TokenToOptinfo	dynsym	0a0cc49bc7ee		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10039b00	56	xf86TokenToOptName	dynsym	599936608d5f		out:13	undocumented		
@@ -137,11 +137,11 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003e040	824	xf86SetWeight	dynsym	4
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003e380	480	xf86SetDefaultVisual	dynsym	18e469cca4fb		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003e580	700	xf86SetGamma	dynsym	78031bf0759c		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003e840	984	xf86SetDpi	dynsym	914ac5df5297		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003ec40	52	xf86SetBlackWhitePixels	dynsym	85b930674bfd		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003ec40	52	xf86SetBlackWhitePixels	dynsym	85b930674bfd		out:13	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f0c0	220	xf86EnableDisableFBAccess	dynsym	41cb1a973959		in	understood	docs/xserver-functions.md#driver-lists	Driver lists
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f400	372	xf86VDrvMsgVerb	dynsym	f8f842644eba		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f580	72	xf86DrvMsgVerb	dynsym	e218bc3d40ae		out:13	named-only	docs/x-helper-modules.md#libvbeso	libvbe.so
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f600	88	xf86DrvMsg	dynsym	1f01a0d5992e		out:13	named-only	docs/x-driver-functions.md#image-sync-and-swap-barrier	Image sync and swap barrier
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f600	88	xf86DrvMsg	dynsym	1f01a0d5992e		out:13	named-only	docs/fglrx-drv-functions.md#command-fifo-accounting-engine-reset-and-engine-restore	Command-FIFO accounting, engine reset and engine restore
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f680	104	xf86MsgVerb	dynsym	10230649df4c		out:13	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f700	100	xf86Msg	dynsym	514c6e7adbf7		out:13	named-only	docs/xserver-functions.md#driver-lists	Driver lists
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1003f780	120	xf86ErrorFVerb	dynsym	fea1a570c216		out:13	undocumented		
@@ -187,8 +187,8 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10042100	84	xf86LoaderReqSymLists	d
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10042180	84	xf86LoaderReqSymbols	dynsym	d798d87b8384		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10042200	84	xf86LoaderRefSymLists	dynsym	f3f31354a979		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10042280	84	xf86LoaderRefSymbols	dynsym	d3be38d52102		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10042300	364	xf86SetBackingStore	dynsym	a36704ba4c54		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10042480	440	xf86SetSilkenMouse	dynsym	c297f13bd8b5		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10042300	364	xf86SetBackingStore	dynsym	a36704ba4c54		out:13	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10042480	440	xf86SetSilkenMouse	dynsym	c297f13bd8b5		out:13	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10042640	332	xf86FindXvOptions	dynsym	8dc9484125b6		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100427c0	36	xf86GetOS	dynsym	19b3508c13f7		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10042800	432	xf86ConfigIsaEntity	dynsym	6d41ba69103c		in	undocumented		
@@ -314,7 +314,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10059500	84	xf86IsPrimInitDone	dyns
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10059580	72	xf86SetPrimInitDone	dynsym	2e53bbe8a406		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10059600	76	xf86ClearPrimInitDone	dynsym	8c8833a9674a		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10059680	220	xf86AllocateEntityPrivateIndex	dynsym	40763102a981		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10059780	84	xf86GetEntityPrivate	dynsym	43180219a30d		out:13	named-only	docs/x-driver-functions.md#tiling-frame-offsets-and-mode-switch	Tiling, frame offsets and mode switch
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10059780	84	xf86GetEntityPrivate	dynsym	43180219a30d		out:13	named-only	docs/fglrx-drv-functions.md#command-fifo-accounting-engine-reset-and-engine-restore	Command-FIFO accounting, engine reset and engine restore
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10059800	316	xf86ClaimIsaSlot	dynsym	8b3603fbc51c		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10059940	1716	xf86GetIsaInfoForScreen	dynsym	723024b2bd0f		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1005a000	60	xf86ParseIsaBusString	dynsym	dc1f62c8959c		in	undocumented		
@@ -344,7 +344,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x1005cc40	208	xf86RemoveInputHandler
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1005cd40	68	xf86DisableInputHandler	dynsym	9838e81b8994		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1005cdc0	72	xf86EnableInputHandler	dynsym	a38c97d2303f		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1005ce40	44	xf86EnableVTSwitch	dynsym	2d32300256a7		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1005ce80	512	xf86DPMSInit	dynsym	007b77b535c7		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1005ce80	512	xf86DPMSInit	dynsym	007b77b535c7		out:13	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1005d140	324	DPMSSet	dynsym	a11f305a2757		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1005d2c0	120	DPMSSupported	dynsym	31ea1b2d4cef		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1005d340	24	DPMSGet	dynsym	69040e1e47f3		out:13	undocumented		
@@ -570,7 +570,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074300	52	xf86strcmp	dynsym	e1f0b
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074340	292	xf86strcasecmp	dynsym	769aeb89136b		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074480	52	xf86strcpy	dynsym	a3339429f712		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100744c0	60	xf86strcspn	dynsym	0d3d8818dbcb		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074500	60	xf86strlen	dynsym	63be70420550		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074500	60	xf86strlen	dynsym	63be70420550		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074540	52	xf86strncat	dynsym	82a1e54af243		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074580	52	xf86strncmp	dynsym	eea111c77845		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100745c0	236	xf86strncasecmp	dynsym	019f34ffaf01		out:13	undocumented		
@@ -578,13 +578,13 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x100746c0	52	xf86strncpy	dynsym	8042
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074700	52	xf86strpbrk	dynsym	d7d0347e53a5		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074740	52	xf86strrchr	dynsym	4a0e38be1484		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074780	60	xf86strspn	dynsym	ae628b874025		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100747c0	52	xf86strstr	dynsym	37d9da266eff		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100747c0	52	xf86strstr	dynsym	37d9da266eff		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074800	52	xf86strtok	dynsym	775c0801518f		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074840	52	xf86strdup	dynsym	268d82ee5d39		out:13	named-only	docs/x-helper-modules.md#libvbeso	libvbe.so
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074880	80	xf86sprintf	dynsym	c9e1ea9a3e0f		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074880	80	xf86sprintf	dynsym	c9e1ea9a3e0f		out:13	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074900	80	xf86snprintf	dynsym	3003dd4a2831		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074980	56	xf86bzero	dynsym	6015e73115b8		out:13	named-only	docs/x-driver-functions.md#image-sync-and-swap-barrier	Image sync and swap barrier
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100749c0	80	xf86sscanf	dynsym	730848e9d5f6		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100749c0	80	xf86sscanf	dynsym	730848e9d5f6		out:13	named-only	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074a80	184	xf86open	dynsym	2b7f2599ea94		out:13	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074b40	80	xf86close	dynsym	2d7e1b75e8c6		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074bc0	104	xf86lseek	dynsym	7a46b6227808		out:13	undocumented		
@@ -597,30 +597,30 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074f40	96	xf86stat	dynsym	e0be413
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10074fc0	96	xf86fstat	dynsym	e213f8a3c801		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100750c0	108	xf86access	dynsym	49d19ad4fe08		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075140	116	xf86WrapperInit	dynsym	40fcc191b0c8		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100751c0	172	xf86fopen	dynsym	a74d5d9c4390		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075300	200	xf86fclose	dynsym	51938b8fff17		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100751c0	172	xf86fopen	dynsym	a74d5d9c4390		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075300	200	xf86fclose	dynsym	51938b8fff17		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075400	84	xf86printf	dynsym	054d1fd8a542		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075480	116	xf86fprintf	dynsym	a3a254d45164		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075500	100	xf86vfprintf	dynsym	98f905e44bf8		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075580	52	xf86vsprintf	dynsym	a307a5cfa4c2		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100755c0	52	xf86vsnprintf	dynsym	db6ad0cd75c7		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075600	172	xf86fscanf	dynsym	dbebb6c5ef28		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075600	172	xf86fscanf	dynsym	dbebb6c5ef28		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100756c0	108	xf86fgets	dynsym	cc1d2068336d		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075740	100	xf86fputs	dynsym	dedb84e3e64b		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100757c0	192	xf86getc	dynsym	3374bd4a8418		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075880	84	xf86fgetc	dynsym	362b81128769		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075900	100	xf86fputc	dynsym	21edb52c8025		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075880	84	xf86fgetc	dynsym	362b81128769		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075900	100	xf86fputc	dynsym	21edb52c8025		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075980	84	xf86fflush	dynsym	46b8a717b683		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075a00	132	xf86fread	dynsym	b71549ba9795		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075ac0	132	xf86fwrite	dynsym	229b55caa2ab		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075b80	152	xf86fseek	dynsym	0423e4254926		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075a00	132	xf86fread	dynsym	b71549ba9795		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075ac0	132	xf86fwrite	dynsym	229b55caa2ab		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075b80	152	xf86fseek	dynsym	0423e4254926		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075c40	84	xf86ftell	dynsym	1aca5c35d503		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075cc0	616	xf86strerror	dynsym	8aef516f43f3		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075f40	8	xf86fpossize	dynsym	a570f1b9ef7f		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075f80	92	xf86fgetpos	dynsym	9729423584e0		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10075f80	92	xf86fgetpos	dynsym	9729423584e0		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076000	92	xf86fsetpos	dynsym	ee52d17f7042		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076080	52	xf86perror	dynsym	88cb59d7bca4		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100760c0	52	xf86remove	dynsym	b934d6679390		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100760c0	52	xf86remove	dynsym	b934d6679390		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076100	128	xf86rename	dynsym	183e5529c5a2		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076180	84	xf86rewind	dynsym	8399a17e9a89		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076200	84	xf86clearerr	dynsym	d7926b1b5472		out:13	undocumented		
@@ -632,18 +632,18 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076500	192	xf86setvbuf	dynsym	6c0
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100765c0	172	xf86tmpfile	dynsym	34c4e4cdcb56		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076680	100	xf86ungetc	dynsym	1132fd19b157		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076700	84	xf86usleep	dynsym	8025424aad49		out:13	named-only	docs/x-helper-modules.md#libint10so	libint10.so
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076780	128	xf86getsecs	dynsym	0bf2d149ff0a		out:13	named-only	docs/x-helper-modules.md#libint10so	libint10.so
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076780	128	xf86getsecs	dynsym	0bf2d149ff0a		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076800	64	xf86ffs	dynsym	44bee6a5ce75		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076840	112	xf86getenv	dynsym	24ccc4a83fdf		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100768c0	56	xf86bsearch	dynsym	db6e9212f5ce		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076900	764	xf86execl	dynsym	eae5a56e7693		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076900	764	xf86execl	dynsym	eae5a56e7693		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076c00	68	xf86abort	dynsym	69f57c6f43a5		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076c80	60	xf86exit	dynsym	a19f521a93ae		out:13	named-only	docs/x-driver-functions.md#tiling-frame-offsets-and-mode-switch	Tiling, frame offsets and mode switch
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076c80	60	xf86exit	dynsym	a19f521a93ae		out:13	named-only	docs/fglrx-drv-functions.md#command-fifo-accounting-engine-reset-and-engine-restore	Command-FIFO accounting, engine reset and engine restore
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076d40	140	xf86opendir	dynsym	85dcd28241ec		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076e00	180	xf86readdir	dynsym	2a21ba69ca15		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076ec0	84	xf86rewinddir	dynsym	259d206be4cc		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10076f40	120	xf86closedir	dynsym	2a6ffd9badaa		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100770c0	108	xf86chmod	dynsym	6133843ad81e		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100770c0	108	xf86chmod	dynsym	6133843ad81e		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077140	80	xf86chown	dynsym	63155f3c82bd		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100771c0	52	xf86geteuid	dynsym	d3b56106cf86		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077200	52	xf86getegid	dynsym	56a6bc66e413		out:13	undocumented		
@@ -680,7 +680,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077a80	52	xf86strtoul	dynsym	316d
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077ac0	52	xf86tan	dynsym	6412dedc54ed		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077b00	52	xf86memchr	dynsym	4e486bb9d5dd		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077b40	52	xf86memcmp	dynsym	89d821596e6f		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077b80	52	xf86memcpy	dynsym	d8f331e356bd		out:13	named-only	docs/x-helper-modules.md#libvbeso	libvbe.so
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077b80	52	xf86memcpy	dynsym	d8f331e356bd		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077bc0	52	xf86memmove	dynsym	2bb258f84d44		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077c00	52	xf86memset	dynsym	e428708dd62a		out:13	named-only	docs/x-driver-functions.md#command-processor-initialisation	Command processor initialisation
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077c40	44	xf86isalnum	dynsym	29f8025dbf5b		in	undocumented		
@@ -699,7 +699,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077f40	52	xf86toupper	dynsym	a5b4
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10077f80	68	xf86calloc	dynsym	20f1e345a42b		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10078000	52	xf86free	dynsym	ce72219f8c60		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10078040	52	xf86frexp	dynsym	3e76a9827807		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10078080	52	xf86malloc	dynsym	dcd227c9bd2a		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10078080	52	xf86malloc	dynsym	dcd227c9bd2a		out:13	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100780c0	52	xf86realloc	dynsym	bf2069ea3bb3		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10078100	156	xf86getpagesize	dynsym	0b7f178e4ec0		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100781c0	256	xf86GetErrno	dynsym	151091ba8c07		out:13	undocumented		
@@ -839,11 +839,11 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x1008b240	132	xf86ResizeOffscreenLin
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1008b300	112	xf86QueryLargestOffscreenArea	dynsym	1bebf3854fc2		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1008b380	120	xf86QueryLargestOffscreenLinear	dynsym	f0172271ab29		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1008b400	116	xf86PurgeUnlockedOffscreenAreas	dynsym	a12e7be1c238		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1008cdc0	384	xf86InitFBManager	dynsym	c696e2d89d5e		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1008cdc0	384	xf86InitFBManager	dynsym	c696e2d89d5e		out:13	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1008cf40	768	xf86InitFBManagerArea	dynsym	240e9f5b05d6		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1008d240	396	xf86InitFBManagerRegion	dynsym	561805617de2		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1008d400	272	xf86AllocateLinearOffscreenArea	dynsym	b56a83e8278b		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1008d580	828	xf86HandleColormaps	dynsym	625ed74441e7		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1008d580	828	xf86HandleColormaps	dynsym	625ed74441e7		out:13	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1008fc00	540	xf86ChangeGammaRamp	dynsym	52e2626bf4b1		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1008fe40	80	xf86GetGammaRampSize	dynsym	322f1ecca504		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1008fec0	276	xf86GetGammaRamp	dynsym	a7fc4dee07cd		out:13	undocumented		
@@ -876,7 +876,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10091180	132	CompareTimeStamps	dyns
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10091240	144	ClientTimeToServerTime	dynsym	9ccc55aab545		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10091300	412	CopyISOLatin1Lowered	dynsym	ca81f676abf7		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100914c0	268	SecurityLookupWindow	dynsym	54203109c703		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10091600	196	SecurityLookupDrawable	dynsym	e8d96c14d333		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10091600	196	SecurityLookupDrawable	dynsym	e8d96c14d333		out:13	named-only	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10091700	52	LookupWindow	dynsym	0ff3241e02ad		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10091740	52	LookupDrawable	dynsym	a5062198b17a		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10091780	160	LookupClient	dynsym	e15851eee6f1		out:13	undocumented		
@@ -919,7 +919,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x10094e00	172	FreeAllResources	dynsy
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10094ec0	132	LegalNewID	dynsym	10bff86c9514		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10094f80	308	SecurityLookupIDByType	dynsym	216f44bb5528		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100950c0	308	SecurityLookupIDByClass	dynsym	8664b95f9436		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10095200	68	LookupIDByType	dynsym	2b9355bb06e2		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10095200	68	LookupIDByType	dynsym	2b9355bb06e2		out:13	named-only	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10095280	68	LookupIDByClass	dynsym	14ad06724633		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10095300	188	LookupResByID	dynsym	a6cc06f34aa7		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100953c0	884	CountClientResources	dynsym	d10667823689		out:13	undocumented		
@@ -1322,13 +1322,13 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x100c4980	88	ResetClientPrivates	dyn
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100c4a00	28	AllocateClientPrivateIndex	dynsym	bb4802041663		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100c4a40	280	AllocateClientPrivate	dynsym	0beb23f96487		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100c4b80	24	ResetScreenPrivates	dynsym	8922663abfdf		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100c4bc0	272	AllocateScreenPrivateIndex	dynsym	f16937723c18		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100c4bc0	272	AllocateScreenPrivateIndex	dynsym	f16937723c18		out:13	named-only	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100c4d00	20	ResetWindowPrivates	dynsym	68dbc75b7f44		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100c4d40	28	AllocateWindowPrivateIndex	dynsym	99e2d5b4ed46		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100c4d80	272	AllocateWindowPrivate	dynsym	0cbe0b96b4b7		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100c4ec0	20	ResetGCPrivates	dynsym	ef24ac5ba97c		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100c4f00	28	AllocateGCPrivateIndex	dynsym	623cf955a3b8		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100c4f40	272	AllocateGCPrivate	dynsym	210aed17276a		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100c4f00	28	AllocateGCPrivateIndex	dynsym	623cf955a3b8		out:13	named-only	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100c4f40	272	AllocateGCPrivate	dynsym	210aed17276a		out:13	named-only	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100c5080	20	ResetPixmapPrivates	dynsym	a25979c70d1e		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100c50c0	28	AllocatePixmapPrivateIndex	dynsym	9b490510ce2a		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100c5100	296	AllocatePixmapPrivate	dynsym	750047e93ad0		out:13	undocumented		
@@ -1523,13 +1523,13 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x100dca40	836	UseMsg	dynsym	8768ab04
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100dcdc0	160	VerifyDisplayName	dynsym	40de45a785da		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100dce80	3296	ProcessCommandLine	dynsym	15db709ebaf9		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100ddb80	336	set_font_authorizations	dynsym	d1d731db04e4		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100ddd00	140	Xalloc	dynsym	0622d9886df5		out:13	named-only	docs/x-helper-modules.md#libvbeso	libvbe.so
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100ddd00	140	Xalloc	dynsym	0622d9886df5		out:13	named-only	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100dddc0	124	XNFalloc	dynsym	5c78384534de		out:13	named-only	docs/x-helper-modules.md#libvbeso	libvbe.so
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100dde40	100	Xcalloc	dynsym	9f65ffb37246		out:13	named-only	docs/x-helper-modules.md#libvbeso	libvbe.so
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100ddec0	132	XNFcalloc	dynsym	84ccece5a28e		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100ddf80	216	Xrealloc	dynsym	29a868eddbca		out:13	named-only	docs/x-driver-functions.md#image-sync-and-swap-barrier	Image sync and swap barrier
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100de080	92	XNFrealloc	dynsym	ef1393171dbd		out:13	named-only	docs/xserver-functions.md#driver-lists	Driver lists
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100de100	60	Xfree	dynsym	26b5c1e2ac52		out:13	named-only	docs/x-helper-modules.md#libvbeso	libvbe.so
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100de100	60	Xfree	dynsym	26b5c1e2ac52		out:13	named-only	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100de140	8	OsInitAllocator	dynsym	78aa5094d5ec		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100de180	128	Xstrdup	dynsym	1cff836f2e47		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100de200	112	XNFstrdup	dynsym	038909d9dcf0		out:13	undocumented		
@@ -2648,11 +2648,11 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019a5c0	300	miChangeClip	dynsym	c9
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019a700	232	miCopyClip	dynsym	c1f0bdad5c6c		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019a800	8	miCopyGC	dynsym	78aa5094d5ec		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019a840	920	miComputeCompositeClip	dynsym	35d70cf82825		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019ac00	268	miRegionCreate	dynsym	3fa674359e37		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019ac00	268	miRegionCreate	dynsym	3fa674359e37		out:13	named-only	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019ad40	232	miRegionInit	dynsym	64c4c456cb23		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019ae40	108	miRegionDestroy	dynsym	638805fb29e1		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019aec0	68	miRegionUninit	dynsym	d0ab14162ada		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019af40	128	miRegionBreak	dynsym	7922b9c13293		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019af40	128	miRegionBreak	dynsym	7922b9c13293		in	located	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019afc0	384	miRectAlloc	dynsym	a367787999d0		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019b140	380	miRegionCopy	dynsym	7b83687de2f7		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019c040	328	miSetExtents	dynsym	67c2f32afda5		out:13	undocumented		
@@ -2680,12 +2680,12 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x101a0000	124	miUninstallColormap	dy
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101a0080	296	miResolveColor	dynsym	77ce283c4e70		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101a01c0	712	miInitializeColormap	dynsym	b65e3491021e		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101a04c0	1232	miExpandDirectColors	dynsym	6f01811e1848		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x101a09c0	440	miCreateDefColormap	dynsym	98ea132fb9ba		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x101a0b80	80	miClearVisualTypes	dynsym	f22c021804ac		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x101a09c0	440	miCreateDefColormap	dynsym	98ea132fb9ba		out:13	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x101a0b80	80	miClearVisualTypes	dynsym	f22c021804ac		out:13	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101a0c00	496	miSetVisualTypesAndMasks	dynsym	42e9cd1ee62e		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x101a0e00	60	miSetVisualTypes	dynsym	cdb65d81e6f4		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x101a0e40	68	miGetDefaultVisualMask	dynsym	9346344c8669		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x101a0f00	224	miSetPixmapDepths	dynsym	1cbdd8e21c15		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x101a0e00	60	miSetVisualTypes	dynsym	cdb65d81e6f4		out:13	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x101a0e40	68	miGetDefaultVisualMask	dynsym	9346344c8669		out:13	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x101a0f00	224	miSetPixmapDepths	dynsym	1cbdd8e21c15		out:13	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101a1000	84	miInitVisuals	dynsym	d8628691aeb1		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101a1740	32	miResetInitVisuals	dynsym	2f4b85dc194b		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101a1780	484	miClearToBackground	dynsym	738782559a79		out:13	undocumented		
@@ -2760,7 +2760,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x101b8a40	912	miCopyPlane	dynsym	50e
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101b8e00	796	miGetImage	dynsym	413b2cbca782		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101b9140	1124	miPutImage	dynsym	bae2b5c7c2b2		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101b95c0	1176	miPolyPoint	dynsym	9dffe3611b5e		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x101b9a80	304	miDCInitialize	dynsym	622a1a0a42fe		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x101b9a80	304	miDCInitialize	dynsym	622a1a0a42fe		out:13	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101bafc0	2380	miPolyFillRect	dynsym	611ed024c229		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101bb940	1108	miSpriteInitialize	dynsym	6a260c67e5e0		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101c1cc0	5028	miZeroArcSetup	dynsym	a2641f119f84		out:13	undocumented		
@@ -2776,7 +2776,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x101c6580	2360	miPaintWindow	dynsym	
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101c6ec0	212	miClearDrawable	dynsym	11026130d087		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101c7000	1240	miDashLine	dynsym	c417756af075		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101c75c0	876	miStepDash	dynsym	ca2560aaa65c		out:13	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x101c7980	396	miInitializeBackingStore	dynsym	edae176e9380		out:13	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x101c7980	396	miInitializeBackingStore	dynsym	edae176e9380		out:13	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101cfd40	1160	miFillPolygon	dynsym	9e1829555589		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101d0200	1964	miFillGeneralPoly	dynsym	03dbd53c8de5		out:13	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x101d09c0	456	miInsertEdgeInET	dynsym	1fb070101e1e		out:13	undocumented		
@@ -29301,56 +29301,56 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		versionWithi
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		vfmtDebugf	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		vfmtRamboSuffix	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		visualDepth	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a300	192	R200WaitForFifoFunction	dynsym	e0c0b7a5f334		in	named-only	docs/registers.md#registers-read-in-full	Registers read in full
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a3c0	200	R200WaitForIdle	dynsym	36b48e528180		in	named-only	docs/registers.md#registers-read-in-full	Registers read in full
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a540	92	R200EngineFlush	dynsym	057496d7e221		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a5c0	436	R200EngineReset	dynsym	07ddaf201951		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a780	468	R200EngineRestore	dynsym	dd62880c649c		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40aa40	452	R200EngineInit	dynsym	36898c231b2c		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a300	192	R200WaitForFifoFunction	dynsym	e0c0b7a5f334		in	understood	docs/fglrx-drv-functions.md#command-fifo-accounting-engine-reset-and-engine-restore	Command-FIFO accounting, engine reset and engine restore
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a3c0	200	R200WaitForIdle	dynsym	36b48e528180		in	understood	docs/fglrx-drv-functions.md#command-fifo-accounting-engine-reset-and-engine-restore	Command-FIFO accounting, engine reset and engine restore
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a540	92	R200EngineFlush	dynsym	057496d7e221		in	understood	docs/fglrx-drv-functions.md#command-fifo-accounting-engine-reset-and-engine-restore	Command-FIFO accounting, engine reset and engine restore
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a5c0	436	R200EngineReset	dynsym	07ddaf201951		in	understood	docs/fglrx-drv-functions.md#command-fifo-accounting-engine-reset-and-engine-restore	Command-FIFO accounting, engine reset and engine restore
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a780	468	R200EngineRestore	dynsym	dd62880c649c		in	understood	docs/fglrx-drv-functions.md#command-fifo-accounting-engine-reset-and-engine-restore	Command-FIFO accounting, engine reset and engine restore
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40aa40	452	R200EngineInit	dynsym	36898c231b2c		in	understood	docs/fglrx-drv-functions.md#command-fifo-accounting-engine-reset-and-engine-restore	Command-FIFO accounting, engine reset and engine restore
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40b480	448	R200CPSetupForSolidFill	dynsym	9cf734959e68		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40b640	168	R200CPSubsequentSolidFillRect	dynsym	ae8dffda40e6		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40b700	204	R200CPSetupForSolidFillOverlay	dynsym	de023209d8e8		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40b800	168	R200CPSubsequentSolidFillRectOverlay	dynsym	d9baa8e0ec99		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40b8c0	716	R200CPSetupForScreenToScreenCopy	dynsym	5ffd5babe4a3		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40bbc0	284	R200CPSubsequentScreenToScreenCopy	dynsym	ed2f6cdb01d8		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40ccc0	72	R200SelectBuffer	dynsym	d0aca22a34d7		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40ccc0	72	R200SelectBuffer	dynsym	d0aca22a34d7		in	understood	docs/fglrx-drv-functions.md#command-fifo-accounting-engine-reset-and-engine-restore	Command-FIFO accounting, engine reset and engine restore
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40cd40	128	R200SelectBufferCP	dynsym	4cac09d8ec67		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40ce80	272	R200CPAccelInitFuncs	dynsym	665ac3ada6e2		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40cfc0	548	R200AccelInit	dynsym	07ebf78206d4		in	named-only	docs/registers.md#registers-read-in-full	Registers read in full
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40e440	496	R200CursorInit	dynsym	ed201fc72259		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40e900	488	R200DGAInit	dynsym	01db7eb96030		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x410980	276	R200MapMMIO	dynsym	70f2047cfa79		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40cfc0	548	R200AccelInit	dynsym	07ebf78206d4		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40e440	496	R200CursorInit	dynsym	ed201fc72259		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40e900	488	R200DGAInit	dynsym	01db7eb96030		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x410980	276	R200MapMMIO	dynsym	70f2047cfa79		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x410ac0	204	R200UnmapMMIO	dynsym	b37ca11ae395		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x410dc0	24	R200INPLL	dynsym	aee0c36e3c32		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x410e00	140	R200WaitForVerticalSync	dynsym	c242f8131c98		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x410dc0	24	R200INPLL	dynsym	aee0c36e3c32		in	understood	docs/fglrx-drv-functions.md#command-fifo-accounting-engine-reset-and-engine-restore	Command-FIFO accounting, engine reset and engine restore
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x410e00	140	R200WaitForVerticalSync	dynsym	c242f8131c98		in	understood	docs/fglrx-drv-functions.md#command-fifo-accounting-engine-reset-and-engine-restore	Command-FIFO accounting, engine reset and engine restore
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x411280	48	R200MinBits	dynsym	ce3810795fe3		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4189c0	3016	R200PreInit	dynsym	2a5511d9be41		in	named-only	docs/registers.md#registers-read-in-full	Registers read in full
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x41a700	5328	R200ScreenInit	dynsym	4761de843c49		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x41a700	5328	R200ScreenInit	dynsym	4761de843c49		in	understood	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422200	728	R200SwitchMode	dynsym	f3fee3deafa8		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422500	8	R200ValidMode	dynsym	87506497337c		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422680	1048	R200AdjustFrame	dynsym	25ca6f6cc46a		in	named-only	docs/open-questions.md#register-accesses	Register accesses
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422680	1048	R200AdjustFrame	dynsym	25ca6f6cc46a		in	understood	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422ac0	504	R200CloneAdjustFrame	dynsym	9e7bee4160d3		in	understood	docs/x-driver-functions.md#tiling-frame-offsets-and-mode-switch	Tiling, frame offsets and mode switch
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422cc0	636	R200EnterVT	dynsym	545d51ae067b		in	understood	docs/x-driver-functions.md#tiling-frame-offsets-and-mode-switch	Tiling, frame offsets and mode switch
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422f40	284	R200LeaveVT	dynsym	df78da98f0af		in	understood	docs/x-driver-functions.md#tiling-frame-offsets-and-mode-switch	Tiling, frame offsets and mode switch
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x423440	116	R200FreeScreen	dynsym	1b23c4c9d2db		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x423b00	368	checkXF86Version	dynsym	05327bac63a1		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x423c80	544	getXF86ConfigFileName	dynsym	bb39293df7ee		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x423f80	1272	UpdateFile	dynsym	201f93500049		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424580	164	FGLCalculateCPUSpeed	dynsym	c5e7231ed109		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424640	188	FGLMDelay	dynsym	658fc3e2e920		in	named-only	docs/x-driver-functions.md#gamma-and-palette	Gamma and palette
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x423f80	1272	UpdateFile	dynsym	201f93500049		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424580	164	FGLCalculateCPUSpeed	dynsym	c5e7231ed109		in	named-only	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424640	188	FGLMDelay	dynsym	658fc3e2e920		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424700	88	R200AvailableOptions	dynsym	71612adc35dc		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424780	364	R200Identify	dynsym	2bd0ca3a79e5		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424900	816	R200Probe	dynsym	4fef7a013f28		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x429640	5168	R200DRIScreenInit	dynsym	1f9bc39ba488		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42aa80	652	R200DRIFinishScreenInit	dynsym	9919224d96ba		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x429640	5168	R200DRIScreenInit	dynsym	1f9bc39ba488		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42aa80	652	R200DRIFinishScreenInit	dynsym	9919224d96ba		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42ad40	996	R200DRICloseScreen	dynsym	66616c21539d		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42b680	504	XF86SerFGLDRIGetDrawableInfo	dynsym	f77f09d0c4f5		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42b680	504	XF86SerFGLDRIGetDrawableInfo	dynsym	f77f09d0c4f5		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42c300	140	FGLEnableCP	dynsym	d1dae4baf97d		in	understood	docs/kernel-attach.md#command-processor-start-up-x-server-module	Command processor start-up (X server module)
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42c3c0	216	FGLStartCP	dynsym	83c73800bcbb		in	named-only	docs/kernel-attach.md#command-processor-start-up-x-server-module	Command processor start-up (X server module)
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42c3c0	216	FGLStartCP	dynsym	83c73800bcbb		in	understood	docs/kernel-attach.md#command-processor-start-up-x-server-module	Command processor start-up (X server module)
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42c4c0	720	FGLInitCP	dynsym	c34f62e9dafd		in	understood	docs/x-driver-functions.md#command-processor-initialisation	Command processor initialisation
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42c7c0	648	GetErrorName	dynsym	1c4737dc608c		in	named-only	docs/x-driver-functions.md#command-processor-initialisation	Command processor initialisation
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42cb80	316	FGL_get_cpuflags	dynsym	9f517ac6ef30		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42ccc0	504	tryexcept	dynsym	4578ac0303fc		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42ccc0	504	tryexcept	dynsym	4578ac0303fc		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42d380	72	R200CPWriteBitmap	dynsym	dd9be65bd014		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42d400	1092	R200CPWritePixmap	dynsym	881d24bf2725		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42d880	768	R200CPReadPixmap	dynsym	a0d6d869ca9a		in	undocumented		
@@ -29367,7 +29367,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e7c0	224	vDiv
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e940	44	ulRC6PllReadUlong	dynsym	db9aa1456da0		in	understood	docs/x-driver-functions.md#clock-pll-access	Clock PLL access
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e980	76	vRC6PllWriteUlong	dynsym	9d46c33ba5e9		in	understood	docs/x-driver-functions.md#clock-pll-access	Clock PLL access
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42ea00	164	vRC6ProgramHTOT_CNTL_EDGE	dynsym	6ef04c05b5ed		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42fd00	92	FGLRXAddExtension	dynsym	66d72642fa51		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42fd00	92	FGLRXAddExtension	dynsym	66d72642fa51		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42fe00	1700	FGLSetGammaData	dynsym	f603fc7251bd		in	understood	docs/x-driver-functions.md#gamma-and-palette	Gamma and palette
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x430740	492	SGIGLXSwapBarrierInit	dynsym	807c8bbe1738		in	understood	docs/x-driver-functions.md#image-sync-and-swap-barrier	Image sync and swap barrier
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x430c40	328	vCalcCRTCOffsetRegs	dynsym	8b01cee869f6		in	understood	docs/x-driver-functions.md#frame-offset-registers	Frame offset registers
@@ -29375,20 +29375,20 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x430dc0	1616	bR2
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x431dc0	832	FIREGL_OverlayCopyWindow	dynsym	fa702e90f622		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x432100	2436	FIREGL_OverlayPaintWindow	dynsym	0098266a78e7		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x432ac0	232	FIREGL_OverlayBlockHandler	dynsym	e7affa0f0c02		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4357c0	820	FIREGL_OverlayHandleColormaps	dynsym	a19f926ec610		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x437bc0	124	miRegionBreak	dynsym	a22000b76bd8		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4357c0	820	FIREGL_OverlayHandleColormaps	dynsym	a19f926ec610		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x437bc0	124	miRegionBreak	dynsym	a22000b76bd8		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43aac0	1092	FIREGL_OverlayWindowExposures	dynsym	33e7166ab42a		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43af40	1008	FIREGL_WindowExposures	dynsym	d6110c3fd2e4		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43cd00	80	FIREGL_OverlayGetPrivateClips	dynsym	b5bb037f8bc4		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43d040	156	FIREGL_OverlayCollectUnderlayRegions	dynsym	5bb0c2f0234c		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43cd00	80	FIREGL_OverlayGetPrivateClips	dynsym	b5bb037f8bc4		in	named-only	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43d040	156	FIREGL_OverlayCollectUnderlayRegions	dynsym	5bb0c2f0234c		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43db80	136	FIREGL_HideOverlay	dynsym	230064a54682		in	understood	docs/x-video-driver.md#overlay-scaler	Overlay scaler
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43dc40	484	FIREGL_InitOverlay	dynsym	dcb9159b52d1		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43de40	184	FIREGL_FinishOverlayInit	dynsym	b099422dd956		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43df00	1900	FIREGL_ShowOverlay	dynsym	a217cd6b3ff4		in	understood	docs/x-video-driver.md#overlay-scaler	Overlay scaler
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43e680	244	FIREGL_EnableOverlay	dynsym	f8330a36886f		in	named-only	docs/x-driver-functions.md#tiling-frame-offsets-and-mode-switch	Tiling, frame offsets and mode switch
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43e780	636	FIREGL_OverlayLoadPalette	dynsym	bc5433e2b15e		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43e680	244	FIREGL_EnableOverlay	dynsym	f8330a36886f		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43e780	636	FIREGL_OverlayLoadPalette	dynsym	bc5433e2b15e		in	named-only	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43ea80	828	R200LinuxCailInitCail	dynsym	0ef1c488bdd8		in	understood	docs/x-video-driver.md#chip-library-start-up	Chip-library start-up
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f0c0	200	QBS_EnableOverlay	dynsym	a6c6f10c87c5		in	named-only	docs/x-driver-functions.md#tiling-frame-offsets-and-mode-switch	Tiling, frame offsets and mode switch
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f0c0	200	QBS_EnableOverlay	dynsym	a6c6f10c87c5		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f1c0	196	QBS_FinishInit	dynsym	513f7acef94e		in	understood	docs/x-video-driver.md#stereo-and-clock-set-up	Stereo and clock set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f2c0	328	QBS_MakeTrans	dynsym	2878d87e7e01		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f440	80	QBS_EnableStereo	dynsym	edb111640b3d		in	understood	docs/x-video-driver.md#stereo-and-clock-set-up	Stereo and clock set-up
@@ -29401,11 +29401,11 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x444400	1796	Set
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x444b40	1256	SetCrtMN	dynsym	4ce9e0c30e61		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x445040	1036	VTMaster	dynsym	268c60de36aa		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x445480	580	R6TMDSTransmitLinux	dynsym	e1e5c02af224		in	understood	docs/x-video-driver.md#stereo-and-clock-set-up	Stereo and clock set-up
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x446400	92	ATITVoutAddExtension	dynsym	1ebdea3b4331		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4467c0	92	ATIHPVAddExtension	dynsym	e75956208a8e		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x446400	92	ATITVoutAddExtension	dynsym	1ebdea3b4331		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4467c0	92	ATIHPVAddExtension	dynsym	e75956208a8e		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x446cc0	1040	R200SGIVCCopyModes	dynsym	cbb9a7f605a3		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x447c80	144	R200SGIVCDetach	dynsym	26e355d4a41b		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x447d40	132	R200GetBoardNumberFromScreen	dynsym	0fba92301a04		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x447d40	132	R200GetBoardNumberFromScreen	dynsym	0fba92301a04		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448300	200	R200CompositorConnected	dynsym	e44ed893795d		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448400	204	R200CompositorModeFlags	dynsym	d76134e9478d		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448780	600	R200LstComb	dynsym	ecbd81903343		in	undocumented		
@@ -29416,15 +29416,15 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449600	324	R200
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449780	92	R200GetSGIInfoPtr	dynsym	f2a8319158a2		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449800	500	R200SetPltParam	dynsym	64a78e2af36d		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449e40	84	R200LdCombination	dynsym	280a8eafacfe		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44a400	1340	R200SGIVCAttach	dynsym	35fd47965bad		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44a400	1340	R200SGIVCAttach	dynsym	35fd47965bad		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44a940	96	R200SGIVCUpdateGenlockInfo	dynsym	2a4d1c2d5a3d		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44a9c0	216	R200SGIVCGetDefMode	dynsym	9e72e344629c		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44aac0	144	R200SGIVCSetDefGamma	dynsym	b37a02821fa7		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44a9c0	216	R200SGIVCGetDefMode	dynsym	9e72e344629c		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44aac0	144	R200SGIVCSetDefGamma	dynsym	b37a02821fa7		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44be40	440	ConvertPixel	dynsym	253964bd12ba		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44c800	56	R200ReadDisplayRegisterInfo	dynsym	26923ecb59d2		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44c800	56	R200ReadDisplayRegisterInfo	dynsym	26923ecb59d2		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44d340	252	SGIGLXHyperpipeInitPipe	dynsym	c39704c77439		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44d440	232	SGIGLXHyperpipeInit	dynsym	6a100667affb		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44d540	872	R200_driLockInit	dynsym	d5c332db7f6b		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44d440	232	SGIGLXHyperpipeInit	dynsym	6a100667affb		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44d540	872	R200_driLockInit	dynsym	d5c332db7f6b		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x451bc0	1276	is1Attach	dynsym	263b7fbaeb46		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4520c0	296	is1Reset	dynsym	e03b5a068e42		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x452200	268	is1SyncPipes	dynsym	cee5ac7c9d75		in	undocumented		
@@ -29443,7 +29443,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453d00	196	is1B
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4558a0	500	vfmtReadCmp1Format	dynsym	721cbdfd0ee2		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x455aa0	292	vfmtReadCmp1OdyFormat	dynsym	606d95f70d0a		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x455bd0	300	vfmtReadCmp1SG2Format	dynsym	f49bb3bd3b52		in	named-only	docs/binaries.md#board-tools	Board tools
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x455da0	564	vfmtFindFormatFile	dynsym	b1f3b3776ae5		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x455da0	564	vfmtFindFormatFile	dynsym	b1f3b3776ae5		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x455fe0	76	vfmtFindKonaFormatFile	dynsym	6aa409c1c003		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x456030	144	vfmtFindCmpFormatFile	dynsym	47c7eed15b8c		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4560c0	76	vfmtFindOdyFormatFile	dynsym	346b55e9f6fe		in	undocumented		
@@ -29457,13 +29457,13 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459434	56	SDBad
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45946c	64	SDBaddNewScalarSymbol	dynsym	9c412e09a1a4		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4594ac	404	SDBcloseNewDatabase	dynsym	5a974545025d		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459640	356	SDBopenNewDatabase	dynsym	bb5c48c4318a		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4597a4	120	SDBsetHeader	dynsym	88ff0b897a7a		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4597a4	120	SDBsetHeader	dynsym	88ff0b897a7a		in	understood	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4599d4	104	SDBgetSymbolDataAddress	dynsym	e05dc58da509		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459a3c	88	SDBgetSymbolDatatype	dynsym	b329aa835666		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459a94	92	SDBgetSymbolElementCount	dynsym	8da3df670ecb		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459af0	56	SDBgetSymbolValueArray	dynsym	a860043f8152		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459b28	56	SDBgetSymbolValueScalar	dynsym	031ceb77cc23		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459b60	184	SDBcloseReadDatabase	dynsym	6948f4e71394		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459b60	184	SDBcloseReadDatabase	dynsym	6948f4e71394		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459c18	424	SDBreadOpenDatabase	dynsym	ee56f9ca176e		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459e18	420	SDBprocessOneUserMethod	dynsym	939a2438cc1b		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459fbc	56	compareSTEName	dynsym	302d27fc28e3		in	undocumented		
@@ -45659,7 +45659,7 @@ usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32	.text	0x4064c0	60
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x406500	436	DRICreateDrawable	dwarf+dynsym	e0e9886576ed		in	undocumented		
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x4066c0	156	DRIDestroyDrawable	dwarf+dynsym	2c2e52840de2		in	undocumented		
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x406780	480	DRIDrawablePrivDelete	dwarf+dynsym	2ecace9c9589		in	undocumented		
-usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x406980	1352	DRIGetDrawableInfo	dwarf+dynsym	87184620ff65		in	undocumented		
+usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x406980	1352	DRIGetDrawableInfo	dwarf+dynsym	87184620ff65		in	named-only	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x406f00	108	DRIGetDeviceInfo	dwarf+dynsym	891a46978125		in	undocumented		
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x406f80	164	DRICreateInfoRec	dwarf+dynsym	485aeb19f9bf		in	undocumented		
 usr/X11R6/lib/modules/extensions/libdri.so	shared-x-server	n32		0x407040	84	DRIDestroyInfoRec	dwarf+dynsym	ca4ffe7f8005		in	undocumented		
@@ -50100,7 +50100,7 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000bdb0	412	int_handler	dynsym
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000db60	144	xf86ExecX86int10	dynsym	8b3b54ddbffe		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000dbf0	340	xf86Int10ExecSetup	dynsym	12f29529e12b		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000dd50	112	printk	dynsym	969c7ef10421		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ddc0	116	xf86getsecs	dynsym	933325922660		in	named-only	docs/x-helper-modules.md#libint10so	libint10.so
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000ddc0	116	xf86getsecs	dynsym	933325922660		in	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000de40	12	xf86GetVerbosity	dynsym	aac097777ef8		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000de50	140	pciReadByte	dynsym	7df01c8decda		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000dee0	140	pciReadWord	dynsym	4f1e55b8fdf9		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
@@ -67282,7 +67282,7 @@ usr/gfx/sgcombine	board-tool	n32		0x10021870	308	vfmtReadCmp1OdyFormat	dynsym	6f
 usr/gfx/sgcombine	board-tool	n32		0x100219b0	316	vfmtReadCmp1SG2Format	dynsym	1a8be8bc6c85		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/gfx/sgcombine	board-tool	n32		0x10021c20	6180	vfmtReadCmp1Combination	dynsym	0cfc9fb49b34		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10023450	5148	vfmtWriteCmp1Combination	dynsym	35d2d2407e53		in	undocumented		
-usr/gfx/sgcombine	board-tool	n32		0x10024930	592	vfmtFindFormatFile	dynsym	f7834fe8210a		in	undocumented		
+usr/gfx/sgcombine	board-tool	n32		0x10024930	592	vfmtFindFormatFile	dynsym	f7834fe8210a		in	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x10024b80	76	vfmtFindKonaFormatFile	dynsym	3dd1d695d4d3		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10024bd0	156	vfmtFindCmpFormatFile	dynsym	acb4a0eec76f		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10024c70	76	vfmtFindOdyFormatFile	dynsym	2b82398ff0ba		in	undocumented		
@@ -67294,13 +67294,13 @@ usr/gfx/sgcombine	board-tool	n32		0x10025404	56	SDBaddNewArraySymbol	dynsym	649d
 usr/gfx/sgcombine	board-tool	n32		0x1002543c	64	SDBaddNewScalarSymbol	dynsym	256053e6ff3b		out:21	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x1002547c	404	SDBcloseNewDatabase	dynsym	e0b7a10442d2		out:21	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10025610	356	SDBopenNewDatabase	dynsym	3b538149b0ff		out:21	undocumented		
-usr/gfx/sgcombine	board-tool	n32		0x10025774	120	SDBsetHeader	dynsym	0253b870c388		out:21	undocumented		
+usr/gfx/sgcombine	board-tool	n32		0x10025774	120	SDBsetHeader	dynsym	0253b870c388		out:21	located	docs/fglrx-drv-functions.md#timing-board-lookup-and-small-helpers	Timing, board lookup and small helpers
 usr/gfx/sgcombine	board-tool	n32		0x100259a4	104	SDBgetSymbolDataAddress	dynsym	d5838d606dc4		out:21	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10025a0c	88	SDBgetSymbolDatatype	dynsym	73f4a365f0a0		out:21	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10025a64	92	SDBgetSymbolElementCount	dynsym	ea49ce29181e		out:21	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10025ac0	56	SDBgetSymbolValueArray	dynsym	010923e0e3c5		out:21	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10025af8	56	SDBgetSymbolValueScalar	dynsym	b4262eaafcb5		out:21	undocumented		
-usr/gfx/sgcombine	board-tool	n32		0x10025b30	184	SDBcloseReadDatabase	dynsym	243e1b38859e		out:21	undocumented		
+usr/gfx/sgcombine	board-tool	n32		0x10025b30	184	SDBcloseReadDatabase	dynsym	243e1b38859e		out:21	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x10025be8	424	SDBreadOpenDatabase	dynsym	2d0e08a91052		out:21	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10025de8	420	SDBprocessOneUserMethod	dynsym	f959e2444d5e		out:21	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10025f8c	56	compareSTEName	dynsym	07b537d5ff2b		out:21	undocumented		
