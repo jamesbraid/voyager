@@ -29247,20 +29247,20 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		addNewSymbol
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		addToIS1BoardList	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		asicHwRevID2chipRev	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		bindBarrier	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		cacheSymbolTableEntries	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		calc_H_INC_STEP_BY	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		checkdrmFD	dwarf+funcnames			in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		cacheSymbolTableEntries	dwarf+funcnames			in	understood	docs/fglrx-drv-functions.md#buffer-selection-screen-release-option-and-chip-tables-and-symbol-database-lookups	Buffer selection, screen release, option and chip tables, and symbol-database lookups
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		calc_H_INC_STEP_BY	dwarf+funcnames			in	understood	docs/fglrx-drv-functions.md#buffer-selection-screen-release-option-and-chip-tables-and-symbol-database-lookups	Buffer selection, screen release, option and chip tables, and symbol-database lookups
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		checkdrmFD	dwarf+funcnames			in	understood	docs/fglrx-drv-functions.md#buffer-selection-screen-release-option-and-chip-tables-and-symbol-database-lookups	Buffer selection, screen release, option and chip tables, and symbol-database lookups
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		cmp1ReadConfigFileFormatScalars	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		cmp1ReadEdgeTable	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		cmp1ReadFormatScalars	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		cmp1ReadLineTable	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		cmp1ReadPFD	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		cmp1ReadStateTable	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		compute_UV_ADR	dwarf+funcnames			in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		compute_UV_ADR	dwarf+funcnames			in	understood	docs/fglrx-drv-functions.md#buffer-selection-screen-release-option-and-chip-tables-and-symbol-database-lookups	Buffer selection, screen release, option and chip tables, and symbol-database lookups
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		doBitBlt	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		doCopyRegion	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		doNecessaryBuffersScreenToScreenCopy	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		filterInit	dwarf+funcnames			in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		filterInit	dwarf+funcnames			in	understood	docs/fglrx-drv-functions.md#buffer-selection-screen-release-option-and-chip-tables-and-symbol-database-lookups	Buffer selection, screen release, option and chip tables, and symbol-database lookups
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		fsize	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		getFreeSymbol	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		getSymbolDataAddress	dwarf+funcnames			in	named-only	docs/fglrx-drv-functions.md#buffer-selection-screen-release-option-and-chip-tables-and-symbol-database-lookups	Buffer selection, screen release, option and chip tables, and symbol-database lookups
@@ -29277,7 +29277,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		is1UpdateGen
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		is1_calc_525	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		is1_calc_rfp	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		msf_program_aperture	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		myfloor	dwarf+funcnames			in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		myfloor	dwarf+funcnames			in	understood	docs/fglrx-drv-functions.md#buffer-selection-screen-release-option-and-chip-tables-and-symbol-database-lookups	Buffer selection, screen release, option and chip tables, and symbol-database lookups
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		newIsBigger	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		newSDBfileHeader	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		queryMaxBarriers	dwarf+funcnames			in	undocumented		
@@ -29327,7 +29327,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x411280	48	R200M
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4189c0	3016	R200PreInit	dynsym	2a5511d9be41		in	understood	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x41a700	5328	R200ScreenInit	dynsym	4761de843c49		in	understood	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422200	728	R200SwitchMode	dynsym	f3fee3deafa8		in	understood	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422500	8	R200ValidMode	dynsym	87506497337c		in	named-only	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422500	8	R200ValidMode	dynsym	87506497337c		in	understood	docs/fglrx-drv-functions.md#buffer-selection-screen-release-option-and-chip-tables-and-symbol-database-lookups	Buffer selection, screen release, option and chip tables, and symbol-database lookups
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422680	1048	R200AdjustFrame	dynsym	25ca6f6cc46a		in	understood	docs/fglrx-drv-functions.md#screen-set-up	Screen set-up
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422ac0	504	R200CloneAdjustFrame	dynsym	9e7bee4160d3		in	understood	docs/x-driver-functions.md#tiling-frame-offsets-and-mode-switch	Tiling, frame offsets and mode switch
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422cc0	636	R200EnterVT	dynsym	545d51ae067b		in	understood	docs/x-driver-functions.md#tiling-frame-offsets-and-mode-switch	Tiling, frame offsets and mode switch
@@ -29355,14 +29355,14 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42d380	72	R200C
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42d400	1092	R200CPWritePixmap	dynsym	881d24bf2725		in	understood	docs/fglrx-drv-functions.md#pixmap-transfers-overlay-painting-and-combination-file-reading	Pixmap transfers, overlay painting and combination-file reading
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42d880	768	R200CPReadPixmap	dynsym	a0d6d869ca9a		in	understood	docs/fglrx-drv-functions.md#pixmap-transfers-overlay-painting-and-combination-file-reading	Pixmap transfers, overlay painting and combination-file reading
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42db80	1584	R200CPReadDisplay	dynsym	9a810b3e518a		in	understood	docs/fglrx-drv-functions.md#acceleration-hooks-overlay-cursor-and-read-back	Acceleration hooks, overlay, cursor and read-back
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e1c0	72	R200CPWriteBitmapOverlay	dynsym	5a0ebd72e371		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e1c0	72	R200CPWriteBitmapOverlay	dynsym	5a0ebd72e371		in	understood	docs/fglrx-drv-functions.md#buffer-selection-screen-release-option-and-chip-tables-and-symbol-database-lookups	Buffer selection, screen release, option and chip tables, and symbol-database lookups
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e240	72	R200CPWritePixmapOverlay	dynsym	65454224fc82		in	understood	docs/fglrx-drv-functions.md#mode-clocks-frame-position-exposures-and-fixed-point-helpers	Mode clocks, frame position, exposures and fixed-point helpers
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e2c0	72	R200CPReadPixmapOverlay	dynsym	c81dfbfbe45f		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e2c0	72	R200CPReadPixmapOverlay	dynsym	c81dfbfbe45f		in	understood	docs/fglrx-drv-functions.md#buffer-selection-screen-release-option-and-chip-tables-and-symbol-database-lookups	Buffer selection, screen release, option and chip tables, and symbol-database lookups
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e340	548	Rage6SetGamma16Correction	dynsym+funcnames	fdd674df203a		in	understood	docs/x-driver-functions.md#gamma-and-palette	Gamma and palette
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e580	60	vAddFixed	dynsym	3f8c4368439f		in	understood	docs/fglrx-drv-functions.md#fixed-point-arithmetic-and-symbol-database-writers	Fixed-point arithmetic and symbol-database writers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e600	168	vSubtractFixed	dynsym	7da63cddf9c5		in	understood	docs/fglrx-drv-functions.md#fixed-point-arithmetic-and-symbol-database-writers	Fixed-point arithmetic and symbol-database writers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e6c0	192	vMultiplyFixed	dynsym	9cebc3bab2b9		in	understood	docs/fglrx-drv-functions.md#fixed-point-arithmetic-and-symbol-database-writers	Fixed-point arithmetic and symbol-database writers
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e780	40	vCeilFixed	dynsym	7cd72567f5fc		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e780	40	vCeilFixed	dynsym	7cd72567f5fc		in	understood	docs/fglrx-drv-functions.md#buffer-selection-screen-release-option-and-chip-tables-and-symbol-database-lookups	Buffer selection, screen release, option and chip tables, and symbol-database lookups
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e7c0	224	vDivideFixed	dynsym	bd5b83c6e96a		in	understood	docs/fglrx-drv-functions.md#fixed-point-arithmetic-and-symbol-database-writers	Fixed-point arithmetic and symbol-database writers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e940	44	ulRC6PllReadUlong	dynsym	db9aa1456da0		in	understood	docs/x-driver-functions.md#clock-pll-access	Clock PLL access
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e980	76	vRC6PllWriteUlong	dynsym	9d46c33ba5e9		in	understood	docs/x-driver-functions.md#clock-pll-access	Clock PLL access
@@ -29435,7 +29435,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4534c0	316	is1S
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453600	280	is1GenlockAchieved	dynsym	f3f5721eb9ad		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453740	88	is1IsAvailable	dynsym	0756d3e5ba0f		in	understood	docs/fglrx-drv-functions.md#buffer-selection-screen-release-option-and-chip-tables-and-symbol-database-lookups	Buffer selection, screen release, option and chip tables, and symbol-database lookups
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4537c0	408	is1HsyncDetect	dynsym	927dd4f56e4f		in	understood	docs/fglrx-drv-functions.md#compositor-image-sync-and-extension-set-up	Compositor, image-sync and extension set-up
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453980	56	is1WakeupHandler	dynsym	6233a795d0da		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453980	56	is1WakeupHandler	dynsym	6233a795d0da		in	understood	docs/fglrx-drv-functions.md#buffer-selection-screen-release-option-and-chip-tables-and-symbol-database-lookups	Buffer selection, screen release, option and chip tables, and symbol-database lookups
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4539c0	184	is1BlockHandler	dynsym	d46ceccd5930		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453a80	336	is1Unblank	dynsym	94b8894ce77a		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453c00	200	is1SwapReady	dynsym	54007add0bae		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
@@ -29466,7 +29466,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459b28	56	SDBge
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459b60	184	SDBcloseReadDatabase	dynsym	6948f4e71394		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459c18	424	SDBreadOpenDatabase	dynsym	ee56f9ca176e		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459e18	420	SDBprocessOneUserMethod	dynsym	939a2438cc1b		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459fbc	56	compareSTEName	dynsym	302d27fc28e3		in	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459fbc	56	compareSTEName	dynsym	302d27fc28e3		in	understood	docs/fglrx-drv-functions.md#buffer-selection-screen-release-option-and-chip-tables-and-symbol-database-lookups	Buffer selection, screen release, option and chip tables, and symbol-database lookups
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x459ff4	524	mapTypeToXDRPROC	dynsym	b30f33032ba6		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a200	52	SDBinitializeSymbolTableEntries	dynsym	3ed45d9db855		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a234	52	xdr_SDBelementIndex	dynsym	4659cb157d73		in	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
@@ -29477,7 +29477,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a530	52	xdr_S
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a564	112	xdr_SDBsymbolName	dynsym	09a59313e23a		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a5d4	200	xdr_SDBsymbolTableEntry	dynsym	8be0157f5b86		in	understood	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a69c	104	xdr_SDBversionNumber	dynsym	0e083eead946		in	understood	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a704	36	SDBsetupMemoryInterface	dynsym	0113f40c4011		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x45a704	36	SDBsetupMemoryInterface	dynsym	0113f40c4011		in	understood	docs/fglrx-drv-functions.md#buffer-selection-screen-release-option-and-chip-tables-and-symbol-database-lookups	Buffer selection, screen release, option and chip tables, and symbol-database lookups
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b8780	1424	_stub	dwarf			in	located	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b8d40	36	dummy_5	dwarf+dynsym	ac4bea52a409		in	located	docs/dri-driver-64.md#shared-word-helpers	Shared word helpers
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b8d80	36	dummy_6	dwarf+dynsym	c379e9d99159		in	located	docs/dri-driver-64.md#shared-word-helpers	Shared word helpers
@@ -57659,7 +57659,7 @@ usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32	.text	0xecbbd48	684	makexmap
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32	.text	0xecbbff4	180	xscalebuf	mdebug	739d898ef5d6		out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32	.text	0xecbc0a8	288	addrow	mdebug	e9b654bcc0b2		out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32	.text	0xecbc1c8	540	divrow	mdebug	c31e19e8405a		out:16	undocumented		
-usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32	.text	0xecbc3e4	52	myfloor	mdebug	92d2c52a7c15		out:16	undocumented		
+usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32	.text	0xecbc3e4	52	myfloor	mdebug	92d2c52a7c15		out:16	located	docs/fglrx-drv-functions.md#buffer-selection-screen-release-option-and-chip-tables-and-symbol-database-lookups	Buffer selection, screen release, option and chip tables, and symbol-database lookups
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32	.text	0xecbc418	1280	makefilt	mdebug	467a679a860c		out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32	.text	0xecbc918	160	freefilt	mdebug	fda8b2624e60		out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32	.text	0xecbc9b8	188	applyxfilt	mdebug	90062af101bb		out:16	undocumented		
@@ -60859,7 +60859,7 @@ usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		mmodeToMatrixName	dw
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		mouse_map	dwarf+funcnames			out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		moveTo	dwarf+funcnames			out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		move_aMenuItem	dwarf+funcnames			out:16	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		myfloor	dwarf+funcnames			out:16	undocumented		
+usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		myfloor	dwarf+funcnames			out:16	located	docs/fglrx-drv-functions.md#buffer-selection-screen-release-option-and-chip-tables-and-symbol-database-lookups	Buffer selection, screen release, option and chip tables, and symbol-database lookups
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		newzoom	dwarf+funcnames			out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		open_device	dwarf+funcnames			out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0x0		opentty	dwarf+funcnames			out:16	undocumented		
@@ -67303,7 +67303,7 @@ usr/gfx/sgcombine	board-tool	n32		0x10025af8	56	SDBgetSymbolValueScalar	dynsym	b
 usr/gfx/sgcombine	board-tool	n32		0x10025b30	184	SDBcloseReadDatabase	dynsym	243e1b38859e		out:21	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x10025be8	424	SDBreadOpenDatabase	dynsym	2d0e08a91052		out:21	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x10025de8	420	SDBprocessOneUserMethod	dynsym	f959e2444d5e		out:21	located	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
-usr/gfx/sgcombine	board-tool	n32		0x10025f8c	56	compareSTEName	dynsym	07b537d5ff2b		out:21	named-only	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
+usr/gfx/sgcombine	board-tool	n32		0x10025f8c	56	compareSTEName	dynsym	07b537d5ff2b		out:21	located	docs/fglrx-drv-functions.md#buffer-selection-screen-release-option-and-chip-tables-and-symbol-database-lookups	Buffer selection, screen release, option and chip tables, and symbol-database lookups
 usr/gfx/sgcombine	board-tool	n32		0x10025fc4	524	mapTypeToXDRPROC	dynsym	2c33830f19c6		out:21	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x100261d0	52	SDBinitializeSymbolTableEntries	dynsym	3ed45d9db855		out:21	understood	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
 usr/gfx/sgcombine	board-tool	n32		0x10026204	52	xdr_SDBelementIndex	dynsym	fd1ed16c502b		out:21	located	docs/fglrx-drv-functions.md#gamma-database-and-file-helpers	Gamma, database and file helpers
@@ -67314,7 +67314,7 @@ usr/gfx/sgcombine	board-tool	n32		0x10026500	52	xdr_SDBdataType	dynsym	fa7ae80b6
 usr/gfx/sgcombine	board-tool	n32		0x10026534	112	xdr_SDBsymbolName	dynsym	0c494cdced0f		out:21	located	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
 usr/gfx/sgcombine	board-tool	n32		0x100265a4	200	xdr_SDBsymbolTableEntry	dynsym	ace7e711f7dc		out:21	located	docs/fglrx-drv-functions.md#symbol-database-readers-pipe-control-parameters-and-image-sync-card-calls	Symbol-database readers, pipe-control parameters and image-sync card calls
 usr/gfx/sgcombine	board-tool	n32		0x1002666c	104	xdr_SDBversionNumber	dynsym	c190158499f4		out:21	located	docs/fglrx-drv-functions.md#format-files-and-symbol-databases	Format files and symbol databases
-usr/gfx/sgcombine	board-tool	n32		0x100266d4	36	SDBsetupMemoryInterface	dynsym	cdebbd41f479		out:21	undocumented		
+usr/gfx/sgcombine	board-tool	n32		0x100266d4	36	SDBsetupMemoryInterface	dynsym	cdebbd41f479		out:21	located	docs/fglrx-drv-functions.md#buffer-selection-screen-release-option-and-chip-tables-and-symbol-database-lookups	Buffer selection, screen release, option and chip tables, and symbol-database lookups
 usr/gfx/sgcombine	board-tool	n32		0x10026700	32	InitEZ__Gv	dynsym	532a8cac44e1		out:21	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10026720	180	EZ__GP10_WidgetRec	dynsym	6fd75c78dd13		out:21	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x100267e0	468	CommaListToVkNameList__GPCc	dynsym	62c666a7637a		out:21	undocumented		
