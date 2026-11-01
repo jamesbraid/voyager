@@ -186,7 +186,7 @@ write) as reads.
 | 0x364 | `CUR2_HORZ_VERT_POSN` | common | write 4 | 2 | static code at 0x40d200 | 0 | see below |
 | 0x368 | `CUR2_HORZ_VERT_OFF` | common | write 4 | 2 | static code at 0x40d200 | 0 | see below |
 | 0x36c | `CUR2_CLR0` | common | write 4 | 2 | static code at 0x40d200 | 0 | see below |
-| 0x370 | `CUR2_CLR1` | common | write 4 | 2 | static code at 0x40d200 | 0 | unknown |
+| 0x370 | `CUR2_CLR1` | common | write 4 | 2 | static code at 0x40d200 | 0 | see below |
 | 0x3c4 | `FP_H2_SYNC_STRT_WID` or `SEQ8_IDX` | conflict | read 4, write 4 | 3 | static code at 0x41bc00 | 0 | unknown |
 | 0x3c8 | `DAC_W_INDEX` or `FP_V2_SYNC_STRT_WID` | conflict | read 4, write 4 | 3 | static code at 0x41bc00 | 0 | unknown |
 | 0x3f8 | `CRTC2_GEN_CNTL` | exact | read 4, write 4 | 95 | `R6TMDSTransmitLinux` at 0x445480 | 6 | see below |
@@ -268,18 +268,18 @@ write) as reads.
 | 0xd6c | `DISP_TV_OUT_CNTL` | common | read 4, write 4 | 4 | static code at 0x41bc00 | 0 | unknown |
 | 0xe40 | `RBBM_STATUS` | exact | read 4 | 22 | `R200EngineReset` at 0x40a5c0 | 6 | see below |
 | 0xf08 | `REVISION_ID` | common | read 4 | 1 | static code at 0x4112c0 | 0 | unknown |
-| 0x1404 | `DST_OFFSET` | common | write 4 | 1 | static code at 0x40ac40 | 0 | unknown |
-| 0x1408 | `DST_PITCH` | common | write 4 | 1 | static code at 0x40ac40 | 0 | unknown |
-| 0x1434 | `SRC_Y_X` | exact | write 4 | 1 | static code at 0x40ac40 | 0 | unknown |
-| 0x1438 | `DST_Y_X` | exact | write 4 | 3 | static code at 0x40ac40 | 0 | unknown |
-| 0x143c | `DST_HEIGHT_WIDTH` | exact | write 4 | 1 | static code at 0x40ac40 | 0 | unknown |
+| 0x1404 | `DST_OFFSET` | common | write 4 | 1 | static code at 0x40ac40 | 0 | see below |
+| 0x1408 | `DST_PITCH` | common | write 4 | 1 | static code at 0x40ac40 | 0 | see below |
+| 0x1434 | `SRC_Y_X` | exact | write 4 | 1 | static code at 0x40ac40 | 0 | see below |
+| 0x1438 | `DST_Y_X` | exact | write 4 | 3 | static code at 0x40ac40 | 0 | see below |
+| 0x143c | `DST_HEIGHT_WIDTH` | exact | write 4 | 1 | static code at 0x40ac40 | 0 | see below |
 | 0x146c | `DP_GUI_MASTER_CNTL` | exact | write 4 | 5 | `R200EngineRestore` at 0x40a780 | 1 | unknown |
 | 0x1478 | `DP_BRUSH_BKGD_CLR` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | unknown |
 | 0x147c | `DP_BRUSH_FRGD_CLR` | exact | write 4 | 3 | `R200EngineRestore` at 0x40a780 | 1 | unknown |
-| 0x1598 | `DST_WIDTH_HEIGHT` | exact | write 4 | 2 | static code at 0x40ac40 | 0 | unknown |
-| 0x15ac | `SRC_OFFSET` | common | write 4 | 1 | static code at 0x40ac40 | 0 | unknown |
-| 0x15b0 | `SRC_PITCH` | common | write 4 | 1 | static code at 0x40ac40 | 0 | unknown |
-| 0x15c0 | `CLR_CMP_CNTL` | exact | write 4 | 2 | static code at 0x40ac40 | 0 | unknown |
+| 0x1598 | `DST_WIDTH_HEIGHT` | exact | write 4 | 2 | static code at 0x40ac40 | 0 | see below |
+| 0x15ac | `SRC_OFFSET` | common | write 4 | 1 | static code at 0x40ac40 | 0 | see below |
+| 0x15b0 | `SRC_PITCH` | common | write 4 | 1 | static code at 0x40ac40 | 0 | see below |
+| 0x15c0 | `CLR_CMP_CNTL` | exact | write 4 | 2 | static code at 0x40ac40 | 0 | see below |
 | 0x15c4 | `CLR_CMP_CLR_SRC` | exact | write 4 | 2 | static code at 0x40ac40 | 0 | unknown |
 | 0x15cc | `CLR_CMP_MASK` | exact | write 4 | 2 | static code at 0x40ac40 | 0 | unknown |
 | 0x15d8 | `DP_SRC_FRGD_CLR` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | unknown |
@@ -450,6 +450,41 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
 - **0x36c** in `fglrx_drv.so`: the second cursor's colour 0, `CUR2_CLR0` (common).
   Two stores, at 0x40d210 and 0x40d224, write a1.
   The base register is a4.
+  Inferred.
+- **0x370** in `fglrx_drv.so`: the second cursor's colour 1, `CUR2_CLR1` (common).
+  Two stores, at 0x40d214 and 0x40d22c, write a2.
+  The base register is a4.
+  Inferred.
+- **0x1404** in `fglrx_drv.so`: the destination offset of the 2D engine, `DST_OFFSET` (common).
+  `R200EngineInit` loads the doubleword at +32 of s0 at 0x40b290 and stores its low word at 0x40b294.
+  Inferred.
+- **0x1408** in `fglrx_drv.so`: the destination pitch, `DST_PITCH` (common).
+  `R200EngineInit` shifts a value right by three at 0x40b2a4, multiplies it by ra (0x40b2a8), and stores the low word of the product at 0x40b2b0.
+  Inferred.
+- **0x1434** in `fglrx_drv.so`: the source origin, `SRC_Y_X` (exact).
+  `R200EngineInit` stores a2 to it at 0x40b3f4, with the base register s7.
+  Inferred.
+- **0x1438** in `fglrx_drv.so`: the destination origin, `DST_Y_X` (exact).
+  Three stores in `R200EngineInit` write it.
+  The store at 0x40ae0c writes an OR of a1 and t0.
+  The one at 0x40ae7c writes an OR of a4 and a5.
+  The store at 0x40b3f8 writes a1.
+  Inferred.
+- **0x143c** in `fglrx_drv.so`: the destination height and width, `DST_HEIGHT_WIDTH` (exact).
+  `R200EngineInit` stores a0 to it at 0x40b3fc, with the base register s7.
+  Inferred.
+- **0x1598** in `fglrx_drv.so`: the destination width and height in the other encoding, `DST_WIDTH_HEIGHT` (exact).
+  `R200EngineInit` stores v0 at 0x40ae14, an OR of a4 and v0.
+  It stores a1 at 0x40ae80.
+  Inferred.
+- **0x15ac** in `fglrx_drv.so`: the source offset, `SRC_OFFSET` (common).
+  `R200EngineInit` loads the doubleword at +32 of s0 into a6 at 0x40b26c and stores its low word to the register at 0x40b270.
+  Inferred.
+- **0x15b0** in `fglrx_drv.so`: the source pitch, `SRC_PITCH` (common).
+  `R200EngineInit` shifts a5 right by three at 0x40b27c, multiplies it by a4 at 0x40b280, and stores the low word of the product at 0x40b288.
+  Inferred.
+- **0x15c0** in `fglrx_drv.so`: the colour compare control, `CLR_CMP_CNTL` (exact).
+  `R200EngineInit` writes the constant 0x1000004 (the `lui` of 0x100 and `ori` of 4) at 0x40b198 and again at 0x40b2f8.
   Inferred.
 
 ## Not in the tables
