@@ -55,14 +55,14 @@ Where an entry reads `errno`, it does so through the GOT slot at `gp+1728`.
   On success it returns the dword at offset 0.
   On failure it returns 0 and does not read errno.
 
-- `firegl_FreeBuffer` (`fglrx_dri.so`, address 0x4bd8c0): **established.** The whole routine is read.
+- `firegl_FreeBuffer` (`fglrx_dri.so`, address 0x4bd8c0): **established.** Every word of the routine is read.
   It stores the caller's a1 as the dword at offset 0 of its request block.
   It calls `ioctl` with request 0x80186441, an in-only request declared at 24 bytes.
   No other word of the block is written.
   A successful call returns 0.
   On failure it returns the negated errno.
 
-- `firegl_FreeBufferAdvanced` (`fglrx_dri.so`, address 0x4bd940): **established.** Every instruction is read.
+- `firegl_FreeBufferAdvanced` (`fglrx_dri.so`, address 0x4bd940): **established.** The routine is read through its last word.
   It zero-extends a1 from 32 bits into the dword at offset 0 of its block.
   It saves a2 at sp+24 and calls `ioctl` with request 0x80186441.
   When ioctl succeeds the routine returns 0.
@@ -70,38 +70,38 @@ Where an entry reads `errno`, it does so through the GOT slot at `gp+1728`.
   Its low bit clear gives -16, and its low bit set gives 0.
   Any other errno returns that errno negated.
 
-- `firegl_ModifyBuffer` (`fglrx_dri.so`, address 0x4bda00): **established.** All of its words are read.
+- `firegl_ModifyBuffer` (`fglrx_dri.so`, address 0x4bda00): **established.** The body is read word by word.
   It writes the caller's a1 as the dword at offset 0 of a 16-byte block.
   It writes a2 as the word at offset 8.
   It calls `ioctl` with request 0x80106460, an in-only request of 16 bytes.
   On success it returns 0 and on failure the negated errno.
 
-- `firegl_GetLockID` (`fglrx_dri.so`, address 0x4bda80): **established.** Its full instruction list is read.
+- `firegl_GetLockID` (`fglrx_dri.so`, address 0x4bda80): **established.** The whole routine is read.
   It zeroes the word at offset 0 of its block.
   It keeps the caller's a1 in the dword at offset 8.
   It calls `ioctl` with request 0x40046457, an out-only request of 4 bytes.
   On success it loads the word at offset 0 and stores it as a word through the saved a1 pointer.
   It then returns 0; on failure it returns the negated errno and stores nothing.
 
-- `firegl_SetCapIpcLock` (`fglrx_dri.so`, address 0x4bdb00): **established.** Each of its instructions is read.
+- `firegl_SetCapIpcLock` (`fglrx_dri.so`, address 0x4bdb00): **established.** Every instruction is read.
   It keeps the caller's a1 in the dword at offset 8 of its block.
   It does not zero the word at offset 0 before the call.
   It calls `ioctl` with request 0x40046458, an out-only request of 4 bytes.
   On success the word the kernel left at offset 0 is stored through the saved a1 pointer, and the routine returns 0.
   On failure it returns the negated errno with no store.
 
-- `firegl_RestoreCap` (`fglrx_dri.so`, address 0x4bdb80): **established.** The whole routine is read.
+- `firegl_RestoreCap` (`fglrx_dri.so`, address 0x4bdb80): **established.** All of its words are read.
   It stores the caller's a1 as a word at offset 0 of a 4-byte block.
   The one kernel call is `ioctl` with request 0x80046459, data in only, 4 bytes.
   A zero ioctl result gives 0, and a non-zero one gives the negated errno.
 
-- `firegl_SetBlockMode` (`fglrx_dri.so`, address 0x4bdc00): **established.** Every instruction is read.
+- `firegl_SetBlockMode` (`fglrx_dri.so`, address 0x4bdc00): **established.** Its full instruction list is read.
   It stores the caller's a1 as a word at offset 0 of a 4-byte block.
   Request 0x8004645a goes to `ioctl` as an in-only block of 4 bytes.
   It returns 0 on success.
   A non-zero ioctl result becomes the negated errno.
 
-- `firegl_UnlockHardware` (`fglrx_dri.so`, address 0x4bdd80): **established.** All of its words are read.
+- `firegl_UnlockHardware` (`fglrx_dri.so`, address 0x4bdd80): **established.** Each of its instructions is read.
   It writes the caller's a1 as a word at offset 0 of an 8-byte block.
   It writes zero as a word at offset 4 of the same block.
   The `ioctl` request is 0x8008642b, declared in-only at 8 bytes.
@@ -109,61 +109,61 @@ Where an entry reads `errno`, it does so through the GOT slot at `gp+1728`.
   On failure it calls `exit` through the GOT slot at `gp+1768` with -1 as the argument.
   Nothing follows that call on the failure path.
 
-- `firegl_AllocMutex` (`fglrx_dri.so`, address 0x4bde00): **established.** Its full instruction list is read.
+- `firegl_AllocMutex` (`fglrx_dri.so`, address 0x4bde00): **established.** Every word of the routine is read.
   It zeroes the word at the caller's a1 pointer at 0x4bde18 before the call.
   It saves a1 at sp+8 and calls `ioctl` with request 0x40046446, an out-only request of 4 bytes.
   On success it copies the word at offset 0 of the block through the saved a1 pointer and returns 0.
   On failure it returns the negated errno and leaves the zeroed word in place.
 
-- `firegl_FreeMutex` (`fglrx_dri.so`, address 0x4bde80): **established.** Each of its instructions is read.
+- `firegl_FreeMutex` (`fglrx_dri.so`, address 0x4bde80): **established.** The routine is read through its last word.
   It stores the caller's a1 as a word at offset 0 of a 4-byte block.
   Its only `ioctl` call uses 0x80046447, an in-only request of 4 bytes.
   Success returns 0, and failure returns the errno value negated.
 
-- `firegl_AgpLockPages` (`fglrx_dri.so`, address 0x4bdf00): **established.** The whole routine is read.
+- `firegl_AgpLockPages` (`fglrx_dri.so`, address 0x4bdf00): **established.** The body is read word by word.
   It copies the caller's a1 into a2 at 0x4bdf18.
   The call is `ioctl` with request 0x806c6445.
   The data argument is the caller's a1 itself, and no request block is built.
   The request is in-only and declared at 108 bytes.
   The result is 0 when ioctl succeeds and the negated errno when it fails.
 
-- `firegl_EnableAuthentication` (`fglrx_dri.so`, address 0x4bdf80): **established.** Every instruction is read.
+- `firegl_EnableAuthentication` (`fglrx_dri.so`, address 0x4bdf80): **established.** The whole routine is read.
   It stores 1 as a word at offset 0 when a1 is non-zero and 0 when a1 is zero.
   The `sltu` at 0x4bdf98 computes that flag.
   It calls `ioctl` with request 0x8004644a, an in-only request of 4 bytes.
   It hands back 0 after a good call and the negated errno after a bad one.
 
-- `firegl_RegisterTexture` (`fglrx_dri.so`, address 0x4be000): **established.** All of its words are read.
+- `firegl_RegisterTexture` (`fglrx_dri.so`, address 0x4be000): **established.** Every instruction is read.
   It stores the caller's a1 as a word at offset 0 of an 8-byte block.
   The one kernel call is `ioctl` with request 0x80086448, data in only, 8 bytes.
   On success it returns the word the kernel left at offset 4.
   On failure it returns the negated errno.
 
-- `firegl_UnregisterTexture` (`fglrx_dri.so`, address 0x4be080): **established.** Its full instruction list is read.
+- `firegl_UnregisterTexture` (`fglrx_dri.so`, address 0x4be080): **established.** All of its words are read.
   It stores the caller's a1 as a word at offset 0 of a 4-byte block.
   Request 0x80046449 goes to `ioctl` as an in-only block of 4 bytes.
   ioctl success yields 0; failure yields the negated errno.
 
-- `firegl_UnlockPages` (`fglrx_dri.so`, address 0x4be280): **established.** Each of its instructions is read.
+- `firegl_UnlockPages` (`fglrx_dri.so`, address 0x4be280): **established.** Its full instruction list is read.
   It loads the dword at the caller's a1 and stores its low word at offset 0 of its request block.
   It keeps a1 at sp+24 and calls `ioctl` with request 0x8014644c, an in-only request of 20 bytes.
   On success it calls `drmFree` on the word at a1 plus 20.
   It then calls `drmFree` on a1 itself, and returns 0.
   On failure it returns the negated errno.
 
-- `firegl_FlushCache` (`fglrx_dri.so`, address 0x4be340): **established.** The whole routine is read.
+- `firegl_FlushCache` (`fglrx_dri.so`, address 0x4be340): **established.** Each of its instructions is read.
   It calls `ioctl` with request 0x2000644d and a zero data argument.
   The request is void, with a declared size of 0.
   The success path returns 0.
   On failure it returns the negated errno, read through `gp+1728`.
 
-- `firegl_InitIrq` (`fglrx_dri.so`, address 0x4be3c0): **established.** Every instruction is read.
+- `firegl_InitIrq` (`fglrx_dri.so`, address 0x4be3c0): **established.** Every word of the routine is read.
   It passes the caller's a1 unchanged as the data argument of `ioctl`.
   The request is 0xc008645d, in and out with 8 bytes.
   Success returns 0.
   On failure it returns the negated errno, read through `gp+1728`.
 
-- `firegl_ModuleParm` (`fglrx_dri.so`, address 0x4be440): **established.** All of its words are read.
+- `firegl_ModuleParm` (`fglrx_dri.so`, address 0x4be440): **established.** The routine is read through its last word.
   It returns -22 when a1 is zero, without calling anything.
   Otherwise it copies up to 256 bytes from a1 into a stack buffer with `strncpy`.
   It clears the byte at offset 255 of that buffer.
@@ -171,14 +171,97 @@ Where an entry reads `errno`, it does so through the GOT slot at `gp+1728`.
   The request is in-only with no declared size.
   On success it returns 0; on failure it returns the negated errno.
 
-- `firegl_RmMap` (`fglrx_dri.so`, address 0x4be500): **established.** Its full instruction list is read.
+- `firegl_RmMap` (`fglrx_dri.so`, address 0x4be500): **established.** The body is read word by word.
   It stores the caller's a1 as a dword at offset 24 of a 40-byte block.
   The other bytes of the block are not written.
   The `ioctl` request is 0x8028644f, declared in-only at 40 bytes.
   On success it returns 0; on failure it returns the negated errno.
 
-- `firegl_FreeKernelInfo` (`fglrx_dri.so`, address 0x4be580): **established.** Each of its instructions is read.
+- `firegl_FreeKernelInfo` (`fglrx_dri.so`, address 0x4be580): **established.** The whole routine is read.
   When its pointer argument a0 is zero, it returns the value v0 held on entry.
   Otherwise it calls `drmFree` on the word at offset 0 of the structure, if that word is non-zero.
   It then calls `drmFree` on the structure itself.
   A non-null pointer returns the value that the last `drmFree` returned.
+
+- `firegl_VerifyArea` (`fglrx_dri.so`, address 0x4be800): **established.** Every instruction is read.
+  When the word at 0xb9e390 is zero, the routine returns 0 without calling `ioctl`.
+  Otherwise it fills a 16-byte block with a1 as a dword at offset 0.
+  It puts a2 at offset 8 and a3 at offset 12, both as words.
+  The call is `ioctl` with request 0x80106451, an in-only request.
+  A zero result returns 0.
+  A failed call reads errno through `gp+1728`.
+  When that errno is 22, the routine clears the word at 0xb9e390 and returns 0.
+  Any other errno returns minus that errno.
+
+- `firegl_GetAGPCapPtr` (`fglrx_dri.so`, address 0x4be8c0): **established.** All of its words are read.
+  A zero a1 makes the routine return -22 at 0x4be8e4.
+  Otherwise it zeroes the word at offset 0 of its block.
+  It calls `ioctl` with request 0x400c6452, an out-only block of 12 bytes.
+  On success it stores word 0 through the saved a1 pointer and returns 0.
+  A failed call returns minus errno, read through `gp+1728`.
+
+- `firegl_GetAGPStatus` (`fglrx_dri.so`, address 0x4be980): **established.** Its full instruction list is read.
+  A zero a1 makes the routine return -22 at 0x4be9a4.
+  Otherwise it zeroes the word at offset 4 of its block.
+  Its one `ioctl` call uses request 0x400c6452, the request of `firegl_GetAGPCapPtr`.
+  On success it stores the word at offset 4 through the saved a1 pointer.
+  Success gives 0.
+  On failure the routine returns the errno from `gp+1728`, negated.
+
+- `firegl_GetAGPCommand` (`fglrx_dri.so`, address 0x4bea40): **established.** Each of its instructions is read.
+  A zero a1 makes the routine return -22 at 0x4bea64.
+  Otherwise it zeroes the word at offset 8 of its block.
+  It calls `ioctl` with request 0x400c6452, the request of `firegl_GetAGPStatus`.
+  On success it stores the word at offset 8 through the saved a1 pointer.
+  When ioctl succeeds the routine returns 0.
+  A non-zero ioctl result returns the errno at `gp+1728`, negated.
+
+- `firegl_InitCP` (`fglrx_dri.so`, address 0x4beb00): **established.** Every word of the routine is read.
+  The caller's a1 is copied into a2 at 0x4beb18 and passed as the data argument.
+  Its `ioctl` request is 0x80206453, declared in-only at 32 bytes.
+  The return is 0 after a good call.
+  Failure returns the negated errno, read through `gp+1728`.
+
+- `firegl_InitUMM` (`fglrx_dri.so`, address 0x4beb80): **established.** The routine is read through its last word.
+  The caller's a1 is the data argument, copied into a2 at 0x4beb98.
+  The request is 0x8018645b, in-only and 24 bytes.
+  A call that succeeds returns 0.
+  If ioctl fails, the negated errno comes back, read through `gp+1728`.
+
+- `firegl_modify_ldt` (`fglrx_dri.so`, address 0x4bec00): **established.** The body is read word by word.
+  It builds a 16-byte block with a1 at offset 0, a2 at offset 4 and a3 at offset 8.
+  Word 12 of the block is set to -1 before the call.
+  The call is `ioctl` with request 0xc0106455, an in-and-out request.
+  On success it returns the word at offset 12 that the kernel wrote.
+  On failure it returns -1 and does not read errno.
+
+- `firegl_QueryHwCaps` (`fglrx_dri.so`, address 0x4bec80): **established.** The whole routine is read.
+  It zeroes the four words at offsets 0 to 12 of the caller's a1 buffer.
+  The data argument is the same buffer, copied into a2 at 0x4beca4.
+  Its `ioctl` request is 0x40106454, declared out-only at 16 bytes.
+  A zero result returns 0.
+  A failed call returns minus errno, read through `gp+1728`.
+
+- `firegl_SyncDacs` (`fglrx_dri.so`, address 0x4bf140): **established.** Every instruction is read.
+  Its only `ioctl` call passes request 0x20006461 and a zero data argument.
+  The request is void, with a declared size of 0.
+  Success gives 0.
+  On failure the routine returns the errno from `gp+1728`, negated.
+
+- `firegl_EnableStereo` (`fglrx_dri.so`, address 0x4bf1c0): **established.** All of its words are read.
+  It stores the caller's a1 as a word at offset 0 of a 4-byte block.
+  Its request is 0x80046462, declared in-only at 4 bytes.
+  When ioctl succeeds the routine returns 0.
+  A non-zero ioctl result returns the errno at `gp+1728`, negated.
+
+- `firegl_AGPAcquire` (`fglrx_dri.so`, address 0x4bf240): **established.** Its full instruction list is read.
+  It writes the caller's a1 as a word at offset 0 of a 4-byte block.
+  Its one `ioctl` call uses request 0x80046463, in-only with 4 bytes.
+  The return is 0 after a good call.
+  Failure returns the negated errno, read through `gp+1728`.
+
+- `firegl_CPResume` (`fglrx_dri.so`, address 0x4bf2c0): **established.** Each of its instructions is read.
+  Its only `ioctl` call passes request 0x20006464 and a zero data argument.
+  The request is void, with a declared size of 0.
+  A call that succeeds returns 0.
+  If ioctl fails, the negated errno comes back, read through `gp+1728`.

@@ -3176,20 +3176,20 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4be440	140	firegl_M
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4be500	100	firegl_RmMap	dwarf+dynsym	699fde3c5204		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4be580	88	firegl_FreeKernelInfo	dwarf+dynsym	f8412a4a47fc		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4be600	452	firegl_GetKernelInfo	dwarf+dynsym	5c0c8aba3a8d		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4be800	156	firegl_VerifyArea	dwarf+dynsym	64af58d00422		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4be8c0	132	firegl_GetAGPCapPtr	dwarf+dynsym	b39e1726a084		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4be980	132	firegl_GetAGPStatus	dwarf+dynsym	9edd539d4307		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bea40	132	firegl_GetAGPCommand	dwarf+dynsym	a596ba773c0e		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4beb00	96	firegl_InitCP	dwarf+dynsym	b09cafb70959		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4beb80	96	firegl_InitUMM	dwarf+dynsym	3930947cc6bd		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bec00	108	firegl_modify_ldt	dwarf+dynsym	448e0ae82e70		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bec80	112	firegl_QueryHwCaps	dwarf+dynsym	6fa9ed5eebc3		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4be800	156	firegl_VerifyArea	dwarf+dynsym	64af58d00422		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4be8c0	132	firegl_GetAGPCapPtr	dwarf+dynsym	b39e1726a084		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4be980	132	firegl_GetAGPStatus	dwarf+dynsym	9edd539d4307		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bea40	132	firegl_GetAGPCommand	dwarf+dynsym	a596ba773c0e		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4beb00	96	firegl_InitCP	dwarf+dynsym	b09cafb70959		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4beb80	96	firegl_InitUMM	dwarf+dynsym	3930947cc6bd		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bec00	108	firegl_modify_ldt	dwarf+dynsym	448e0ae82e70		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bec80	112	firegl_QueryHwCaps	dwarf+dynsym	6fa9ed5eebc3		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bed00	832	firegl_InitDRM	dwarf+dynsym	34ea1c5c1dbf		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf040	204	firegl_TermDRM	dwarf+dynsym	c63f67eecc0d		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf140	96	firegl_SyncDacs	dwarf+dynsym	c165cd4d5dcb		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf1c0	100	firegl_EnableStereo	dwarf+dynsym	4686ba5ab1fd		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf240	100	firegl_AGPAcquire	dwarf+dynsym	698c9fc6271e		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf2c0	96	firegl_CPResume	dwarf+dynsym	c009068dd901		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf140	96	firegl_SyncDacs	dwarf+dynsym	c165cd4d5dcb		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf1c0	100	firegl_EnableStereo	dwarf+dynsym	4686ba5ab1fd		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf240	100	firegl_AGPAcquire	dwarf+dynsym	698c9fc6271e		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4bf2c0	96	firegl_CPResume	dwarf+dynsym	c009068dd901		in	understood	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4bf340	244	__fglQSQuietDown	dwarf+funcnames	514a4df8b108		in	named-only	docs/open-questions.md#command-processor-and-ring	Command processor and ring
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4bf440	104	__fglDRMPM4Alloc	dwarf+funcnames	690f740e6e15	multi-unit	in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4bf4c0	488	__fglDRMPM4Queue	dwarf+funcnames	5a17c7340fcc	multi-unit	in	undocumented		
@@ -16030,20 +16030,20 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516e00	140	firegl
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516e90	100	firegl_RmMap	dwarf+dynsym	e351f6508e9c		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516f00	92	firegl_FreeKernelInfo	dwarf+dynsym	fad3b95b9095		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x516f60	472	firegl_GetKernelInfo	dwarf+dynsym	c73ab1be6048		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517140	156	firegl_VerifyArea	dwarf+dynsym	d275746281cd		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5171e0	132	firegl_GetAGPCapPtr	dwarf+dynsym	db62b0fb5453		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517270	132	firegl_GetAGPStatus	dwarf+dynsym	06c8d430b242		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517300	132	firegl_GetAGPCommand	dwarf+dynsym	2630a580fee0		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517390	96	firegl_InitCP	dwarf+dynsym	fde271a9504a		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5173f0	96	firegl_InitUMM	dwarf+dynsym	d426acd23faa		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517450	108	firegl_modify_ldt	dwarf+dynsym	e7045e83da10		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5174c0	112	firegl_QueryHwCaps	dwarf+dynsym	5be96502c1e0		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517140	156	firegl_VerifyArea	dwarf+dynsym	d275746281cd		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5171e0	132	firegl_GetAGPCapPtr	dwarf+dynsym	db62b0fb5453		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517270	132	firegl_GetAGPStatus	dwarf+dynsym	06c8d430b242		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517300	132	firegl_GetAGPCommand	dwarf+dynsym	2630a580fee0		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517390	96	firegl_InitCP	dwarf+dynsym	fde271a9504a		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5173f0	96	firegl_InitUMM	dwarf+dynsym	d426acd23faa		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517450	108	firegl_modify_ldt	dwarf+dynsym	e7045e83da10		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5174c0	112	firegl_QueryHwCaps	dwarf+dynsym	5be96502c1e0		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517530	900	firegl_InitDRM	dwarf+dynsym	bc9e089b9674		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5178c0	216	firegl_TermDRM	dwarf+dynsym	b8f3f70374c7		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5179a0	96	firegl_SyncDacs	dwarf+dynsym	ee51944671a3		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517a00	100	firegl_EnableStereo	dwarf+dynsym	97c83e64773c		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517a70	100	firegl_AGPAcquire	dwarf+dynsym	143d830e3119		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517ae0	96	firegl_CPResume	dwarf+dynsym	ab3cd46c93f3		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5179a0	96	firegl_SyncDacs	dwarf+dynsym	ee51944671a3		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517a00	100	firegl_EnableStereo	dwarf+dynsym	97c83e64773c		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517a70	100	firegl_AGPAcquire	dwarf+dynsym	143d830e3119		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x517ae0	96	firegl_CPResume	dwarf+dynsym	ab3cd46c93f3		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517b40	248	__fglQSQuietDown	dwarf	81969256f59d		in	named-only	docs/open-questions.md#command-processor-and-ring	Command processor and ring
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517c40	108	__fglDRMPM4Alloc	dwarf	f752cd4df052	multi-unit	in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x517cb0	508	__fglDRMPM4Queue	dwarf	278196470b59	multi-unit	in	undocumented		
@@ -46749,20 +46749,20 @@ usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402380	140	fireg
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402440	100	firegl_RmMap	dwarf+dynsym	052f75665093		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x4024c0	88	firegl_FreeKernelInfo	dwarf+dynsym	48a7ff1f2c00		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402540	436	firegl_GetKernelInfo	dwarf+dynsym	4bb4273f515f		in	undocumented		
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402700	156	firegl_VerifyArea	dwarf+dynsym	ca23c4bd66ef		in	undocumented		
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x4027c0	132	firegl_GetAGPCapPtr	dwarf+dynsym	becede1aea64		in	undocumented		
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402880	132	firegl_GetAGPStatus	dwarf+dynsym	0b29a95120aa		in	undocumented		
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402940	132	firegl_GetAGPCommand	dwarf+dynsym	4f1966ed777e		in	undocumented		
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402a00	96	firegl_InitCP	dwarf+dynsym	670daf349ed4		in	undocumented		
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402a80	96	firegl_InitUMM	dwarf+dynsym	07844e90399e		in	undocumented		
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402b00	108	firegl_modify_ldt	dwarf+dynsym	6bdb0dbdccc1		in	undocumented		
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402b80	140	firegl_QueryHwCaps	dwarf+dynsym	b7b843a1fba3		in	undocumented		
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402700	156	firegl_VerifyArea	dwarf+dynsym	ca23c4bd66ef		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x4027c0	132	firegl_GetAGPCapPtr	dwarf+dynsym	becede1aea64		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402880	132	firegl_GetAGPStatus	dwarf+dynsym	0b29a95120aa		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402940	132	firegl_GetAGPCommand	dwarf+dynsym	4f1966ed777e		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402a00	96	firegl_InitCP	dwarf+dynsym	670daf349ed4		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402a80	96	firegl_InitUMM	dwarf+dynsym	07844e90399e		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402b00	108	firegl_modify_ldt	dwarf+dynsym	6bdb0dbdccc1		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402b80	140	firegl_QueryHwCaps	dwarf+dynsym	b7b843a1fba3		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402c40	832	firegl_InitDRM	dwarf+dynsym	503f98cd7d25		in	undocumented		
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x402f80	204	firegl_TermDRM	dwarf+dynsym	16afac90cbbb		in	undocumented		
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403080	96	firegl_SyncDacs	dwarf+dynsym	2ef3adad38d7		in	undocumented		
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403100	100	firegl_EnableStereo	dwarf+dynsym	54bfa19ebff3		in	undocumented		
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403180	100	firegl_AGPAcquire	dwarf+dynsym	da34a4d89053		in	undocumented		
-usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403200	96	firegl_CPResume	dwarf+dynsym	077888a55f2c		in	undocumented		
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403080	96	firegl_SyncDacs	dwarf+dynsym	2ef3adad38d7		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403100	100	firegl_EnableStereo	dwarf+dynsym	54bfa19ebff3		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403180	100	firegl_AGPAcquire	dwarf+dynsym	da34a4d89053		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32		0x403200	96	firegl_CPResume	dwarf+dynsym	077888a55f2c		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403280	244	__fglQSQuietDown	dwarf+funcnames	5d3f767bf7a2		in	named-only	docs/open-questions.md#command-processor-and-ring	Command processor and ring
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403380	104	__fglDRMPM4Alloc	dwarf+funcnames	7e9d44c579d6		in	undocumented		
 usr/X11R6/lib/modules/irix/libfglrxdrm.so	board-x-module	n32	.text	0x403400	488	__fglDRMPM4Queue	dwarf+funcnames	2c15eac533e8		in	undocumented		
@@ -47539,7 +47539,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xfad0	624	firegl_version
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xfd40	492	firegl_set_block_mode	dwarf	875a7d446044		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xff2c	600	firegl_kernel_info	dwarf	b93e0811cee5		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x10184	244	firegl_query_hw_caps	dwarf	50d104be5b1f		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x10278	8	firegl_modify_ldt	dwarf	87506497337c		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x10278	8	firegl_modify_ldt	dwarf	87506497337c		in	located	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x10280	248	firegl_verify_area	dwarf	94114399eea0		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x10378	588	firegl_setup_dev	dwarf	b5c2e16f29ac		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x105c4	2376	firegl_takedown	dwarf	9d2ad7582c2b		in	undocumented		
