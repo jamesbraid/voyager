@@ -47287,9 +47287,9 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x54c	324	fglrx_reg	dwarf
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x690	180	fglrx_unreg	dwarf+symtab	1a456581a9a8		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x744	372	fglrx_unload	dwarf+symtab	9d6c79f65937		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x8b8	172	fglrx_unload_dev	dwarf	dc39da34cfb1		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x964	372	fglrx_intr	dwarf+symtab	6d76ad1b7d26		in	named-only	docs/coverage.md#areas	Areas
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x964	372	fglrx_intr	dwarf+symtab	6d76ad1b7d26		in	understood	docs/kernel-ioctl-irq-functions.md#vertical-sync-wait-and-engine-reset	Vertical-sync wait and engine reset
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xad8	260	fglrx_intr_list	dwarf+symtab	bb305038951d		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xbdc	4888	fglrx_attach	dwarf+symtab	c3d8ba1a8b2d		in	named-only	docs/coverage.md#areas	Areas
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xbdc	4888	fglrx_attach	dwarf+symtab	c3d8ba1a8b2d		in	understood	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ef4	1072	fglrx_detach	dwarf+symtab	0e07c08ebcd6		in	understood	docs/kernel-object-functions.md#detach-initialisation-and-device-identity	Detach, initialisation and device identity
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x2324	488	checkBoardPointers	dwarf	eaec308c3c7e		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x250c	192	freeBoardPointers	dwarf	08d58a6964fc		in	undocumented		
@@ -47299,21 +47299,21 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x2950	1268	fglrx_open	dw
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x2e44	920	fglrx_close	dwarf+symtab	7a83eb6e25c9		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x31dc	84	fglrx_invalid_ioctl	dwarf+symtab	ab2a3c3ca333		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3230	8	fglrx_test_ioctl	dwarf+symtab	87506497337c		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3238	292	fglrx_managerID_from_bdata	dwarf	449fe8702e8a		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3238	292	fglrx_managerID_from_bdata	dwarf	449fe8702e8a		in	named-only	docs/kernel-ioctl-irq-functions.md#forced-exit	Forced exit
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x335c	16	fglrx_drm_map	dwarf	4b615bd6c342		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x336c	16	fglrx_drm_unmap	dwarf	4b615bd6c342		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x337c	108	fglrx_give_up_privdev	dwarf	75e479acf52d		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x33e8	128	fglrx_get_vsync_cnt	dwarf	0f081e41d2d6		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3468	988	fglrx_wait_vsync	dwarf	42a3f7460a6c		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x33e8	128	fglrx_get_vsync_cnt	dwarf	0f081e41d2d6		in	understood	docs/kernel-ioctl-irq-functions.md#ioctl-handlers	Ioctl handlers
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3468	988	fglrx_wait_vsync	dwarf	42a3f7460a6c		in	understood	docs/kernel-ioctl-irq-functions.md#vertical-sync-wait-and-engine-reset	Vertical-sync wait and engine reset
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3844	428	fglrx_validate_vsync	dwarf	bf4bbb23a3ea		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x39f0	84	fglrx_dma_flush	dwarf+symtab	933317d067ae		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3a44	240	fglrx_is_brdmanager	dwarf	89fa35c7f425		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3a44	240	fglrx_is_brdmanager	dwarf	89fa35c7f425		in	understood	docs/kernel-ioctl-irq-functions.md#ioctl-handlers	Ioctl handlers
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3b34	64	fglrx_swapbuf_stat	dwarf	3e4a470ac151		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3b74	1296	fglrx_ioctl	dwarf+symtab	86a0b82ffaaa		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4084	976	fglrx_map	dwarf+symtab	57c31792b667		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4454	336	fglrx_error_handler	dwarf+symtab	b151f54dbb95		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x45a4	180	fglrx_add_exit_callback	dwarf+symtab	c0827ca758a8		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4658	520	fglrx_exit	dwarf+symtab	1ab4e25eddf3		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x45a4	180	fglrx_add_exit_callback	dwarf+symtab	c0827ca758a8		in	named-only	docs/kernel-ioctl-irq-functions.md#ioctl-handlers	Ioctl handlers
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4658	520	fglrx_exit	dwarf+symtab	1ab4e25eddf3		in	understood	docs/kernel-ioctl-irq-functions.md#forced-exit	Forced exit
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4860	168	fglrx_thread_exit	dwarf+symtab	50d8a981f9b6		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4908	72	FGLRXReadRegister	dwarf+symtab	2ce669ea6e2c		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4950	80	FGLRXWriteRegister	dwarf+symtab	0fcb500bc216		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
@@ -47474,7 +47474,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa498	48	__ke_inl	dwarf+
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa4c8	8	__ke_enable_irq	dwarf+symtab	78aa5094d5ec		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa4d0	8	__ke_disable_irq	dwarf+symtab	78aa5094d5ec		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa4d8	8	__ke_request_irq	dwarf+symtab	a7e7ca11a6b8		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa4e0	8	__ke_free_irq	dwarf+symtab	78aa5094d5ec		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa4e0	8	__ke_free_irq	dwarf+symtab	78aa5094d5ec		in	named-only	docs/kernel-ioctl-irq-functions.md#interrupt-control	Interrupt control
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa4e8	8	vm_nopage	dwarf	87506497337c		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa4f0	8	vm_shm_nopage	dwarf	78aa5094d5ec		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa4f8	8	vm_dma_nopage	dwarf	78aa5094d5ec		in	undocumented		
@@ -47554,9 +47554,9 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11a98	752	firegl_PM4Wai
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11d88	312	firegl_DRMPoll	dwarf+symtab	ff3950fe152c		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11ec0	196	_r6x_WaitNotBusy	dwarf+symtab	d8a17d088c78		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11f84	5752	_r6x_IsDeviceSupported	dwarf+symtab	1ee9922955a4		in	understood	docs/kernel-object-functions.md#detach-initialisation-and-device-identity	Detach, initialisation and device identity
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x135fc	1196	_r6x_resetPM4	dwarf+symtab	a4e546c78411		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13aa8	164	_r6x_CheckWSBoard	dwarf+symtab	71c97dabb744		in	named-only	docs/kernel-object-functions.md#detach-initialisation-and-device-identity	Detach, initialisation and device identity
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13b4c	260	_r6x_EnableStereo	dwarf+symtab	06f06a4aa73d		in	named-only	docs/registers.md#fglrxo	`fglrx.o`
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x135fc	1196	_r6x_resetPM4	dwarf+symtab	a4e546c78411		in	understood	docs/kernel-ioctl-irq-functions.md#vertical-sync-wait-and-engine-reset	Vertical-sync wait and engine reset
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13aa8	164	_r6x_CheckWSBoard	dwarf+symtab	71c97dabb744		in	understood	docs/kernel-ioctl-irq-functions.md#display-control	Display control
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13b4c	260	_r6x_EnableStereo	dwarf+symtab	06f06a4aa73d		in	understood	docs/kernel-ioctl-irq-functions.md#display-control	Display control
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13c50	456	_r6x_InitMaskRamSize	dwarf+symtab	be67c904ff84		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13ed8	856	firegl_open_helper	dwarf+symtab	f55b5dde64c5		in	named-only	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x14230	128	firegl_release_swapready	dwarf+symtab	4dd91ed4c457	shared-address	in	undocumented		
@@ -47647,7 +47647,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f058	52	firegl_irq_fra
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f08c	760	firegl_install_irq	dwarf+symtab	fb0777546574		in	understood	docs/kernel-attach.md#interrupts	Interrupts
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f384	272	firegl_vs_stereo_swap	dwarf+symtab	5fd2264fe2b3		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f494	340	firegl_vs_validate	dwarf+symtab	3783d6817cbe		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f5e8	264	firegl_sync_dacs	dwarf+symtab	6d5e07d12d96		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f5e8	264	firegl_sync_dacs	dwarf+symtab	6d5e07d12d96		in	understood	docs/kernel-ioctl-irq-functions.md#display-control	Display control
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f7dc	356	find_memlock	dwarf	2590f63047f2		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f940	176	add_memlock	dwarf	ad72c2520fa5		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f9f0	484	firegl_free_memlock	dwarf+symtab	216ec24dedd2		in	undocumented		
@@ -47659,11 +47659,11 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20408	108	firegl_restor
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20534	1316	firegl_umm_init	dwarf+symtab	2f6229b0de0f		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20a84	64	_r6x_vs_stereo_swap	dwarf+symtab	3e9b744eed43		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20ac4	68	_r6x_vs_validate	dwarf+symtab	b5335d2191a2		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20b08	176	_r6x_service_irq_vsync_handler	dwarf+symtab	3cf4042c659f		in	named-only	docs/registers.md#registers-read-in-full	Registers read in full
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20bb8	248	_r6x_service_irq_framelock_handler	dwarf+symtab	c09a3ca33a85		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20cb0	220	_r6x_enable_vsync_irq	dwarf+symtab	1fb58d6db2c5		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20d8c	220	_r6x_enable_framelock_irq	dwarf+symtab	1fb58d6db2c5		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20e68	168	_r6x_close_irq	dwarf+symtab	103c57f249a8		in	named-only	docs/registers.md#fglrxo	`fglrx.o`
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20b08	176	_r6x_service_irq_vsync_handler	dwarf+symtab	3cf4042c659f		in	understood	docs/kernel-ioctl-irq-functions.md#interrupt-control	Interrupt control
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20bb8	248	_r6x_service_irq_framelock_handler	dwarf+symtab	c09a3ca33a85		in	understood	docs/kernel-ioctl-irq-functions.md#interrupt-control	Interrupt control
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20cb0	220	_r6x_enable_vsync_irq	dwarf+symtab	1fb58d6db2c5		in	understood	docs/kernel-ioctl-irq-functions.md#interrupt-control	Interrupt control
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20d8c	220	_r6x_enable_framelock_irq	dwarf+symtab	1fb58d6db2c5		in	understood	docs/kernel-ioctl-irq-functions.md#interrupt-control	Interrupt control
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20e68	168	_r6x_close_irq	dwarf+symtab	103c57f249a8		in	understood	docs/kernel-ioctl-irq-functions.md#interrupt-control	Interrupt control
 usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64		0x0		prominfo_add	dwarf+symtab			in	undocumented		
 usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x64	120	prominfo_del	dwarf+symtab	8fc1b1ddb91e		in	undocumented		
 usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0xdc	112	prominfo_nodeget	dwarf+symtab	7e9d4fd41e86		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
@@ -47890,8 +47890,8 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7184	56	vector_concat
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x71bc	132	net_errmsg	dwarf+symtab	e1628d0cf439		out:7	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7240	240	hub_vector_read	dwarf+symtab	9497d3d1a211		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7330	240	hub_vector_write	dwarf+symtab	96f4c258fca6		in	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7420	140	copyin	dwarf+symtab	fb3474ce3584		out:3	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x74ac	140	copyout	dwarf+symtab	c649c7e0caf4		out:3	undocumented		
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7420	140	copyin	dwarf+symtab	fb3474ce3584		out:3	named-only	docs/kernel-ioctl-irq-functions.md#ioctl-handlers	Ioctl handlers
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x74ac	140	copyout	dwarf+symtab	c649c7e0caf4		out:3	named-only	docs/kernel-ioctl-irq-functions.md#ioctl-handlers	Ioctl handlers
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7538	88	swcopyin	dwarf+symtab	bc3714125305		out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7590	88	swcopyout	dwarf+symtab	9061542da6f1		out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x75e8	140	uzero	dwarf+symtab	3e9c71c51a96		out:3	undocumented		
@@ -48389,7 +48389,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	spl6	symtab	
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splgio0	symtab	d20175b8aee2	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splgio1	symtab	d20175b8aee2	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splgio2	symtab	d20175b8aee2	shared-address	out:4	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splhi	dwarf+symtab	d20175b8aee2	shared-address	in	named-only	docs/kernel-attach.md#interrupts	Interrupts
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splhi	dwarf+symtab	d20175b8aee2	shared-address	in	named-only	docs/kernel-ioctl-irq-functions.md#vertical-sync-wait-and-engine-reset	Vertical-sync wait and engine reset
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splhi_relnet	symtab	d20175b8aee2	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splhintr	symtab	d20175b8aee2	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splimp	symtab	d20175b8aee2	shared-address	out:4	undocumented		
@@ -48405,7 +48405,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21e84	24	splprof	dwar
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21e9c	24	spl7	dwarf+symtab	16c7bb5d00be	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21e9c	24	splerr	symtab	16c7bb5d00be	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21eb4	32	splecc	dwarf+symtab	8a6f9bd0170c		out:4	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21ed4	28	splx	dwarf+symtab	50d1a155518b	shared-address	out:4	undocumented		
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21ed4	28	splx	dwarf+symtab	50d1a155518b	shared-address	out:4	named-only	docs/kernel-ioctl-irq-functions.md#vertical-sync-wait-and-engine-reset	Vertical-sync wait and engine reset
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21ed4	28	splxecc	symtab	50d1a155518b	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21ef0	32	isspl0	dwarf+symtab	9bdb1538e91c		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21f10	8	delay_for_intr	dwarf+symtab	78aa5094d5ec		out:4	undocumented		
