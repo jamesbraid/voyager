@@ -47898,7 +47898,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x75e8	140	uzero	dwarf+
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7674	20	cerror	dwarf+symtab	0450a8508780		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7688	276	memset	dwarf+symtab	327dd5bf2d15		out:3	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x779c	60	blkclr	symtab	438bc6af403a	shared-address	out:3	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x779c	164	bzero	dwarf+symtab	62975b520d71	shared-address	out:3	named-only	docs/kernel-object-functions.md#detach-initialisation-and-device-identity	Detach, initialisation and device identity
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x779c	164	bzero	dwarf+symtab	62975b520d71	shared-address	out:3	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x77d8	104	bzero_pref	symtab	721fae2475d8		out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7840	8	bzero_end	symtab	78aa5094d5ec	shared-address	out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7840	8	bzerror	dwarf+symtab	78aa5094d5ec	shared-address	out:3	undocumented		
@@ -48358,7 +48358,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2179c	92	intr_thread_
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21800	56	tfi_save	dwarf+symtab	23e6f8986331		out:1	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21838	56	tfi_restore	dwarf+symtab	0a54feea6840		out:1	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21870	4	assbuffer	dwarf+symtab	df3f619804a9		out:3	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21874	1084	assfail	dwarf+symtab	5ab35cbbb27c		out:3	named-only	docs/kernel-object-functions.md#detach-initialisation-and-device-identity	Detach, initialisation and device identity
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21874	1084	assfail	dwarf+symtab	5ab35cbbb27c		out:3	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21cb0	12	getsr	dwarf+symtab	2ea7fc1f266e		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21cbc	16	setsr	dwarf+symtab	d5ed0e1e4ca1		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21ccc	8	getpc	dwarf+symtab	c343413c267a		out:4	undocumented		
@@ -48629,7 +48629,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29c1c	36	bitlock_acqu
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29c40	84	bitlock_condacq	dwarf+symtab	ed5467f323cf		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29c94	84	bitlock_condacq_32bit	dwarf+symtab	85224154ec31		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29ce8	28	mutex_set_always	dwarf+symtab	a621ea59a77e		out:4	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29d04	28	test_and_set_int	dwarf+symtab	90adb65ce622		out:4	named-only	docs/kernel-object-functions.md#detach-initialisation-and-device-identity	Detach, initialisation and device identity
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29d04	28	test_and_set_int	dwarf+symtab	90adb65ce622		out:4	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29d20	28	test_and_set_int64	dwarf+symtab	d7bf6952a39d	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29d20	28	test_and_set_long	symtab	d7bf6952a39d	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29d20	28	test_and_set_ptr	symtab	d7bf6952a39d	shared-address	out:4	undocumented		
@@ -49201,8 +49201,8 @@ usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xe8b4	272	pcibr_is_slot
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xe9c4	32	pcibr_probe_slot	dwarf+symtab	0ff4248a2ff3		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xe9e4	80	pcibr_piomap_probe	dwarf+symtab	8a5165998120		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xea34	204	pcibr_probe_work	dwarf	6173137c4840		in	undocumented		
-usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xeb00	36	pcibr_disable_mst_timeout	dwarf+symtab	0ba45eeaa5a8		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
-usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xeb24	36	pcibr_enable_mst_timeout	dwarf+symtab	f6f176866461		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
+usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xeb00	36	pcibr_disable_mst_timeout	dwarf+symtab	0ba45eeaa5a8		in	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xeb24	36	pcibr_enable_mst_timeout	dwarf+symtab	f6f176866461		in	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xeb48	84	pcibr_disable_mst_timeout_work	dwarf	d5c341126c30		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xeb9c	84	pcibr_enable_mst_timeout_work	dwarf	d5c341126c30		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xebf0	568	pcibr_device_info_free	dwarf+symtab	b6e1bffe3fa3		in	undocumented		
@@ -49315,9 +49315,9 @@ usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x19184	620	pcireg_int_a
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x193f0	620	pcireg_int_ate_set	dwarf+symtab	9e39aa7ea7b3		out:12	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x1965c	596	pcireg_int_ate_addr	dwarf+symtab	e6ded06d5aa5		out:12	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64		0x0		pciio_piomap_alloc	dwarf+symtab			in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x1c	28	pciio_piomap_free	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-object-functions.md#detach-initialisation-and-device-identity	Detach, initialisation and device identity
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x1c	28	pciio_piomap_free	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x38	40	pciio_piomap_addr	dwarf+symtab	852ec84c3a31		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x60	28	pciio_piomap_done	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-object-functions.md#detach-initialisation-and-device-identity	Detach, initialisation and device identity
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x60	28	pciio_piomap_done	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x7c	28	pciio_piotrans_addr	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x98	300	pciio_pio_addr	dwarf+symtab	fc3e5cf6f91d		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x1c4	36	pciio_piospace_alloc	dwarf+symtab	34a53cf03dd2		in	undocumented		
@@ -49352,7 +49352,7 @@ usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x800	28	pciio_endian_se
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x81c	28	pciio_priority_set	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x838	184	pciio_config_get	dwarf+symtab	fb6bd4e7d9ea		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x8f0	184	pciio_config_get_safe	dwarf+symtab	fb6bd4e7d9ea		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x9a8	152	pciio_config_set	dwarf+symtab	ddf38d0cbe1b		in	named-only	docs/kernel-compat-layer.md#pci-lookups-and-configuration-access	PCI lookups and configuration access
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x9a8	152	pciio_config_set	dwarf+symtab	ddf38d0cbe1b		in	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xa40	28	pciio_error_extract	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xa5c	28	pciio_reset	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xa78	28	pciio_write_gather_flush	dwarf+symtab	a86de4a9d7a4		in	undocumented		
@@ -49366,25 +49366,25 @@ usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xac4	8	pciio_pio_kvaddr
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xacc	8	pciio_dma_dev_get	dwarf+symtab	f300cc2a20ca		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xad4	8	pciio_dma_slot_get	dwarf+symtab	2bc3072fa13b		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xadc	44	pciio_info_chk	dwarf+symtab	756b2e21dc21		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xb08	88	pciio_info_get	dwarf+symtab	3b609bd47efa		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xb08	88	pciio_info_get	dwarf+symtab	3b609bd47efa		in	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xb60	68	pciio_hostinfo_get	dwarf+symtab	ebc07ed6e434		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xba4	88	pciio_info_set	dwarf+symtab	1c934379f88d		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xbfc	8	pciio_info_dev_get	dwarf+symtab	2d3084abca7d		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc04	8	pciio_info_hostdev_get	dwarf+symtab	55470fa05862		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc0c	8	pciio_info_bus_get	dwarf+symtab	33a74c6e12a2		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc14	8	pciio_info_slot_get	dwarf+symtab	ebbd3bbc6e9f		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc14	8	pciio_info_slot_get	dwarf+symtab	ebbd3bbc6e9f		in	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc1c	44	pciio_info_hostslot_get	dwarf+symtab	bcd0285ba8c0		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc48	8	pciio_info_function_get	dwarf+symtab	1c97aa57fad9		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc48	8	pciio_info_function_get	dwarf+symtab	1c97aa57fad9		in	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc50	8	pciio_info_vendor_id_get	dwarf+symtab	036d45786ba3		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc58	8	pciio_info_device_id_get	dwarf+symtab	6f38a18c3cfd		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc60	8	pciio_info_master_get	dwarf+symtab	6e5e9cada2b9		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc60	8	pciio_info_master_get	dwarf+symtab	6e5e9cada2b9		in	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc68	8	pciio_info_mfast_get	dwarf+symtab	e7201485a58d		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc70	8	pciio_info_pops_get	dwarf+symtab	a3fbec8c3140		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc78	8	pciio_info_efunc_get	dwarf+symtab	1aafdc9edf9a		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc80	8	pciio_info_einfo_get	dwarf+symtab	af1dbd06960a		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xc88	24	pciio_info_bar_space_get	dwarf+symtab	83324a712bdb		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xca0	24	pciio_info_bar_base_get	dwarf+symtab	a4ae27d483b8		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xcb8	24	pciio_info_bar_size_get	dwarf+symtab	39744ebd0485		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xcb8	24	pciio_info_bar_size_get	dwarf+symtab	39744ebd0485		in	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xcd0	8	pciio_info_rom_base_get	dwarf+symtab	a127b1ae3c78		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xcd8	8	pciio_info_rom_size_get	dwarf+symtab	be69dc73eec3		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xce0	8	pciio_businfo_multi_master_get	dwarf+symtab	b893f60251e4		in	undocumented		
@@ -49931,29 +49931,29 @@ usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	board-kernel	n64		0x0		x86emu_do_int
 usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	board-kernel	n64	.text	0x38	120	xf86ExecX86int10	dwarf+symtab	81a9acb67a3c		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	board-kernel	n64	.text	0xb0	240	xf86Int10ExecSetup	dwarf+symtab	b1660e7a4a60		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	board-kernel	n64	.text	0x1a0	72	printk	dwarf+symtab	79ce8baad53b		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64		0x0		vga_earlyinit	dwarf+symtab			in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x314	348	vga_init	dwarf+symtab	0375a0309a54		in	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x470	260	vga_reg	dwarf+symtab	4beaee663b72		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x574	1252	vga_attach	dwarf+symtab	8c0a6b8f6561		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xa58	196	vga_checkBoardPointers	dwarf+symtab	a969d755957f		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xb1c	220	vga_checkBoardPointer	dwarf+symtab	17ed5180e9c9		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xbf8	336	vga_freeBoardPointer	dwarf+symtab	8a38f088d8a3		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xd48	76	vga_error_handler	dwarf+symtab	c57fcf146564		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xd94	136	vga_open	dwarf+symtab	f4fc25abde3a		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xe1c	244	vga_close	dwarf+symtab	2c4a23ebba1b		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64		0x0		vga_earlyinit	dwarf+symtab			in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x314	348	vga_init	dwarf+symtab	0375a0309a54		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x470	260	vga_reg	dwarf+symtab	4beaee663b72		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x574	1252	vga_attach	dwarf+symtab	8c0a6b8f6561		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xa58	196	vga_checkBoardPointers	dwarf+symtab	a969d755957f		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xb1c	220	vga_checkBoardPointer	dwarf+symtab	17ed5180e9c9		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xbf8	336	vga_freeBoardPointer	dwarf+symtab	8a38f088d8a3		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xd48	76	vga_error_handler	dwarf+symtab	c57fcf146564		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xd94	136	vga_open	dwarf+symtab	f4fc25abde3a		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xe1c	244	vga_close	dwarf+symtab	2c4a23ebba1b		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
 usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xf10	180	vga_set_vesa_mode	dwarf+symtab	344c114873c9		in	understood	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
 usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0xfc4	84	vga_enable_fb	dwarf+symtab	486705fc04b7		in	understood	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x1018	340	vga_shadow_bios	dwarf+symtab	779e6a408954		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x116c	100	vga_find_lfb_bar	dwarf+symtab	0cfb639dfbe3		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x11d0	240	vga_init_board	dwarf+symtab	cd28eea24520		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x12c0	172	vga_check_for_pic	dwarf+symtab	828be65f4a7c		in	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x136c	1024	vga_map_board_regions	dwarf+symtab	8971d9d4650b		in	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x176c	200	vga_unmap_board	dwarf+symtab	e29e7e581009		in	undocumented		
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x1834	120	vga_find_tport_pipe	dwarf+symtab	50885d303ff3		in	named-only	docs/kernel-attach.md#early-console-and-the-x86-emulator	Early console and the x86 emulator
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x18ac	64	vga_setbridge_to_legacy_io	dwarf+symtab	9a432895802c		in	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x18ec	64	vga_setbridge_to_lfb	dwarf+symtab	18642f588021		in	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x192c	48	vga_restore_bridge	dwarf+symtab	3cd7c6aaf67f		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
-usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x195c	308	vga_mk_tport_ctl_alias	dwarf+symtab	419dc090505e		in	undocumented		
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x1018	340	vga_shadow_bios	dwarf+symtab	779e6a408954		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x116c	100	vga_find_lfb_bar	dwarf+symtab	0cfb639dfbe3		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x11d0	240	vga_init_board	dwarf+symtab	cd28eea24520		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x12c0	172	vga_check_for_pic	dwarf+symtab	828be65f4a7c		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x136c	1024	vga_map_board_regions	dwarf+symtab	8971d9d4650b		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x176c	200	vga_unmap_board	dwarf+symtab	e29e7e581009		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x1834	120	vga_find_tport_pipe	dwarf+symtab	50885d303ff3		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x18ac	64	vga_setbridge_to_legacy_io	dwarf+symtab	9a432895802c		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x18ec	64	vga_setbridge_to_lfb	dwarf+symtab	18642f588021		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x192c	48	vga_restore_bridge	dwarf+symtab	3cd7c6aaf67f		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
+usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x195c	308	vga_mk_tport_ctl_alias	dwarf+symtab	419dc090505e		in	understood	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
 usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	board-kernel	n64	.text	0x1a90	116	vga_change_big_window	dwarf+symtab	03924af5c38a		in	understood	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
 usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	board-kernel	n64		0x0		vga_tport_lock_init	dwarf+symtab			in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	board-kernel	n64	.text	0x30	84	vga_color	dwarf+symtab	7484d2f33a00		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
@@ -49966,7 +49966,7 @@ usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	board-kernel	n64	.text	0x4a4	96	vga_t
 usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	board-kernel	n64	.text	0x504	68	vga_unblank	dwarf+symtab	fd3f17e9b0b0		in	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	board-kernel	n64	.text	0x548	68	vga_blankscreen	dwarf+symtab	fd3f17e9b0b0		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	board-kernel	n64	.text	0x58c	68	vga_pnt2i	dwarf+symtab	fd3f17e9b0b0		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
-usr/cpu/sysgen/IP35boot/vgastubs.a(vgastubs.o)	board-kernel	n64		0x0		vga_earlyinit	dwarf+symtab			in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/vgastubs.a(vgastubs.o)	board-kernel	n64		0x0		vga_earlyinit	dwarf+symtab			in	located	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
 usr/cpu/sysgen/IP35boot/xbridge.o	shared-kernel	n64		0x0		xbridge_init	dwarf+symtab			in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
 usr/cpu/sysgen/IP35boot/xbridge.o	shared-kernel	n64	.text	0x54	3484	xbridge_attach	dwarf+symtab	455732fd45da		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
 usr/cpu/sysgen/IP35boot/xswitch.o	shared-kernel	n64		0x0		xswitch_info_get	dwarf+symtab			in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
@@ -50028,7 +50028,7 @@ usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x52c	8	xtalk_pio_kvaddr
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x534	8	xtalk_dma_dev_get	dwarf+symtab	b893f60251e4		in	undocumented		
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x53c	8	xtalk_dma_target_get	dwarf+symtab	ee36d96101ba		in	undocumented		
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x544	44	xwidget_info_chk	dwarf+symtab	8c6627f03438		in	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
-usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x570	88	xwidget_info_get	dwarf+symtab	8a8109795078		in	undocumented		
+usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x570	88	xwidget_info_get	dwarf+symtab	8a8109795078		in	named-only	docs/kernel-attach.md#vga-console-driver-routines	VGA console driver routines
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x5c8	88	xwidget_info_set	dwarf+symtab	bcb335ef950e		in	undocumented		
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x620	52	xwidget_info_dev_get	dwarf+symtab	f7cb8ce786ae		in	undocumented		
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x654	52	xwidget_info_id_get	dwarf+symtab	c123f3f7a4af		in	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
