@@ -2,6 +2,60 @@
 
 Questions the binaries and published sources have not yet answered. One entry each: the question, every route already tried, and the next route. When an entry is answered, move the finding into the owning header or chapter and delete the entry. `AGENTS.md` section 5 gives the rules.
 
+## Triage
+
+Of the 31 entries below, 30 are `software-now` and 1 is `missing-release-or-binary`. Three of the software-now entries also carry a hardware-only residue, marked in the entry and recorded, not scheduled: the PCI bus clock, the display output and the ROM select.
+
+The tags:
+
+- `software-now`: a step the workspace can take now, from the shipped binaries in `root/`, the public references in [sources/INDEX.md](sources/INDEX.md) or public archives. Public trees that a fresh clone leaves empty need a shallow `git submodule update --init --depth 1 NAME`.
+- `missing-release-or-binary`: the answer needs a file or release that the install set in [IRIX_FILES.md](../IRIX_FILES.md) does not include.
+- `hardware-only`: no software or published source can settle it. Recorded, not scheduled. No entry is wholly in this class; the residues above are the parts that are.
+
+Checks made while triaging, against the files in this clone:
+
+- A string search of every file in `root/` finds `find_vga_pipe` only in `fglrx.o`, `vga.a` and `vga_init.o`, which call it. The definition is in an object the install set does not extract.
+- Linux 2.6.30 `radeon_drv.h` names bits 0, 9, 19, 25 and 26 of `GEN_INT_CNTL` and `GEN_INT_STATUS`, and neither bit 2 nor bit 6. The interrupt entry's claim holds for that header.
+- `radeon_microcode.h` in the same tree carries `R300_cp_microcode` and `R200_cp_microcode`, a public copy the microcode entry can compare against.
+- The symbols the routes name (`hub_setup_prb`, `FGLInitCP`, `firegl_cp_init`, `_r6x_resetPM4`, `__fglQSQuietDown`, `R200AdjustFrame`, `FIREGL_ShowOverlay`, `firegl_addmap`) occur in the objects the entries assign them to.
+
+### Software-now, in order
+
+Registers and interrupts come first, because they block the register headers. Then the CP, 3D and display entries. Then the attach path and the option ROM.
+
+1. Offsets with no public name, against the AMD R3xx, R5xx and M56 references.
+2. Roles of the matched registers, starting with `R200AdjustFrame`.
+3. Accesses the replay does not follow.
+4. The register at 0xf18 and the pointers at device record +400 and +992.
+5. Interrupt bits, with the Linux header checked.
+6. Memory controller and GART set-up.
+7. Video memory.
+8. Ring and CP start-up, starting with `FGLInitCP`.
+9. Microcode table and its chip-code writers.
+10. Fence, idle and reset.
+11. Vertex and fragment units.
+12. GL extensions and limits.
+13. Display output.
+14. Multipipe and compositor interplay.
+15. Byte swapping, in full.
+16. Byte lanes of the register aperture.
+17. PCI bus clock and width.
+18. What `hub_setup_prb` does.
+19. Bridge device-register values, bit layout only.
+20. Bridge and topology. If no published listing shows the Onyx4 layout, this falls to hardware-only.
+21. Whether the IP35 PROM runs the option ROM.
+22. Attach sequence and the card's BIOS run under an emulator.
+23. The x86 handlers of the images.
+24. ATI tables the public driver does not read.
+25. First header words and the signature block.
+26. The sg3 to sg3a changes.
+27. Which ROM a card gets, register 0x1a4.
+28. PCI device and subsystem IDs per card.
+29. What `sg`, `olsg` and `vpm` do.
+30. How the flash tool compares versions.
+
+The one `missing-release-or-binary` entry is `find_vga_pipe`. Three software-now entries also need a file that the install set lacks for part of their step: the install's release notes (the sg3 to sg3a entry), the flash tool's `9700.bin` (the ROM select entry) and the diagnostics' manual pages (the `sg`, `olsg` and `vpm` entry).
+
 **Routes tried so far, for every entry below:** a listing of the file names the IRIX 6.5.30 install media carry for the Onyx4 (the `VOYAGER` graphics-board tag, the IP35 kernel set, the X server modules), extraction of each file to confirm it exists, and `file(1)` on the main ones. Since then the kernel attach path (`fglrx.o`, `vga.a(vga_init.o)`) and the X module's command-processor start-up have been read ([kernel-attach.md](kernel-attach.md)); entries that say so list what that reading tried. The rest are unread, not exhausted.
 
 **Routes no entry has taken yet**, to try in this order unless an entry says otherwise:
@@ -35,41 +89,41 @@ The attach path read so far is in [kernel-attach.md](kernel-attach.md).
 ## Command processor and ring
 
 - [software-now] **Ring parameters and order of CP start-up.** The kernel never programs the ring base, size or microcode; the X server module does ([kernel-attach.md](kernel-attach.md#command-processor-start-up-x-server-module)): `PM4LoadMicroCode`, `r200_RegisterRingBufferLocation`, `r200_EnableCommonBusMaster`, `r200_SetPm4OperationMode` (mode 8, both queues bus-master), `r200_EnableRPTRwriteback`, `FGLEnableCP`, `FGLStartCP`. Still open: `FGLInitCP` (address 0x42c4c0), which computes the ring size and fetch settings; the routine at 0x42bc00 that `FGLStartCP` calls first; where the ring memory comes from (the kernel's `kmem_contig_reserve` pools are a candidate) and how its bus address is formed; and the order the callers impose. Next: read `FGLInitCP` (0x42c4c0, 720 bytes) and the routine at 0x42bc00 in full from `fglrx_drv.so` (in root), then the ioctls the module sends to `firegl_cp_init` in `fglrx.o`, and the `kmem_contig_reserve` call in `fglrx.o` for the ring memory.
-- **Microcode.** Answered in part: `fglrx_drv.so` carries two 2048-byte tables, `aPM4_Microcode_R6x` (identical to the public `R200_cp.bin`) and `aPM4_Microcode_R300` (66 of 256 pairs match the public `R300_cp.bin`), and loads one through `CP_ME_RAM_ADDR`, `CP_ME_RAM_DATAH` and `CP_ME_RAM_DATAL`. Still open: which chip codes (record +160 values 8, 47, 49 against 44, 45, 52) mean which part, and so which table an X1 and an X2 load; and how the R300 table differs from the public image (later or earlier revision). Next: the routine that sets the chip code (search `fglrx_drv.so` for stores to +160); compare the R300 table with other public R300 microcode copies.
-- **Fence, idle and reset.** How IRIX waits for the engine, flushes caches and resets a hung engine. `_r6x_resetPM4` and `firegl_killall_clients` poll `RBBM_STATUS` (0xe40); `fglrx_attach` pulses `GA_SOFT_RESET` once. Next: route 1 on `_r6x_resetPM4` and `__fglQSQuietDown` in full.
+- [software-now] **Microcode.** Answered in part: `fglrx_drv.so` carries two 2048-byte tables, `aPM4_Microcode_R6x` (identical to the public `R200_cp.bin`) and `aPM4_Microcode_R300` (66 of 256 pairs match the public `R300_cp.bin`), and loads one through `CP_ME_RAM_ADDR`, `CP_ME_RAM_DATAH` and `CP_ME_RAM_DATAL`. Still open: which chip codes (record +160 values 8, 47, 49 against 44, 45, 52) mean which part, and so which table an X1 and an X2 load; and how the R300 table differs from the public image (later or earlier revision). Next: the routine that stores the chip code at +160 (search `fglrx_drv.so` for stores to that offset). Compare `aPM4_Microcode_R300` with `R300_cp_microcode` in `radeon_microcode.h` (Linux 2.6.30 tree, checked out in this clone) and with the public `R300_cp.bin` (URL in sources/INDEX.md).
+- [software-now] **Fence, idle and reset.** How IRIX waits for the engine, flushes caches and resets a hung engine. `_r6x_resetPM4` and `firegl_killall_clients` poll `RBBM_STATUS` (0xe40); `fglrx_attach` pulses `GA_SOFT_RESET` once. Next: read `_r6x_resetPM4` (in `fglrx.o`) and `__fglQSQuietDown` (in `fglrx.o`, `fglrx_drv.so` and `fglrx_dri64.so`) in full, then name the `RBBM_STATUS` bits they test from the R3xx reference (route 2).
 
 ## 3D
 
-- **Vertex and fragment units.** The public R3xx and R5xx documents describe the programmable vertex stage and the fragment stage; what the IRIX driver programs for each and how its GL layer maps ATI extensions onto them. R300 and R350 differ in fragment capability; which differences IRIX exposes is not read. Next: route 1 on `fglrx_dri64.so`, then route 2.
-- **Which GL extensions and limits each card reports.** The library names ATI-specific extensions; the per-card limits (texture size, program length) are unread. Next: `libGL.so` strings; route 5 for published `glxinfo` output.
-- **Multipipe and compositor interplay.** What `SGIOMPdmx_dri.so`, `sgcombine` and the compositor data do to the cards' output. Next: strings and the DRI driver's entry points.
+- [software-now] **Vertex and fragment units.** The public R3xx and R5xx documents describe the programmable vertex stage and the fragment stage; what the IRIX driver programs for each and how its GL layer maps ATI extensions onto them. R300 and R350 differ in fragment capability; which differences IRIX exposes is not read. Next: route 1 on the vertex and fragment register writers of `fglrx_dri64.so`, then route 2 to name each register against the R3xx 3D reference (URL in sources/INDEX.md).
+- [software-now] **Which GL extensions and limits each card reports.** The library names ATI-specific extensions; the per-card limits (texture size, program length) are unread. Next: strings of `libGL.so` in each ABI directory. `libGLcore.so` is a stub per the binaries notes, so the extension names come from `libGL.so`. Also the limit-setting code in `fglrx_dri64.so`, and route 5 for published `glxinfo` output.
+- [software-now] **Multipipe and compositor interplay.** What `SGIOMPdmx_dri.so`, `sgcombine` and the compositor data do to the cards' output. Next: strings and entry points of `SGIOMPdmx_dri.so` and `SGIOMPdmx_dri64.so` (in root), and of `sgcombine` (stripped, so strings only). Then the public Scalable Graphics Compositor and OpenGL Multipipe user's guides (URLs in sources/INDEX.md, not read yet).
 
 ## Memory and display
 
-- **Video memory.** Size and type per card, local-memory versus system-memory use, aperture sizes. Next: route 1 for the driver's memory map ioctls; route 2.
-- **Memory controller and GART set-up.** Neither the kernel attach path nor any constant-offset access in `fglrx.o` touches `MC_FB_LOCATION`, `MC_AGP_LOCATION`, `AGP_BASE` or the PCI GART (`AIC_*`) registers. The X driver's `r200_EnableCommonBusMaster` writes `AGP_BASE` and `MC_AGP_LOCATION` from two driver words (+6676 and +6672). Still open: who writes `MC_FB_LOCATION`, whether the PCI GART is used at all on IRIX, and what bus addresses the aperture maps to through the PIC. Next: `fglrx_drv.so` stores to 0x148 and 0x1d0 to 0x1ec; accesses through computed offsets in `fglrx.o`.
-- **Interrupt bits.** `fglrx_intr` acknowledges bit 2 of `GEN_INT_STATUS` and clears bits 2 and 6 of `GEN_INT_CNTL`; Linux names neither bit. Next: X.Org radeon and the R3xx-era register lists for those bits; `_r6x_enable_vsync_irq` and `_r6x_enable_framelock_irq` in full.
-- **Display output.** Scan-out, DACs, DVI and the Onyx4's image-sync and genlock paths; how the X driver programs modes. Next: `fglrx_drv.so`, then `gen-XF86Config`.
+- [software-now] **Video memory.** Size and type per card, local-memory versus system-memory use, aperture sizes. Next: route 1 for the driver's memory-map ioctls, checked against the memory-size tables the option ROM carries (option-roms.md, "Memory size"); route 2 for the aperture registers.
+- [software-now] **Memory controller and GART set-up.** Neither the kernel attach path nor any constant-offset access in `fglrx.o` touches `MC_FB_LOCATION`, `MC_AGP_LOCATION`, `AGP_BASE` or the PCI GART (`AIC_*`) registers. The X driver's `r200_EnableCommonBusMaster` writes `AGP_BASE` and `MC_AGP_LOCATION` from two driver words (+6676 and +6672). Still open: who writes `MC_FB_LOCATION`, whether the PCI GART is used at all on IRIX, and what bus addresses the aperture maps to through the PIC. Next: `fglrx_drv.so` stores to 0x148 and 0x1d0 to 0x1ec; the AIC and MC field meanings in the R3xx reference (route 2); who writes the driver words at +6676 and +6672 that feed `AGP_BASE` and `MC_AGP_LOCATION`; accesses through computed offsets in `fglrx.o`.
+- [software-now] **Interrupt bits.** `fglrx_intr` acknowledges bit 2 of `GEN_INT_STATUS` and clears bits 2 and 6 of `GEN_INT_CNTL`; Linux names neither bit. Checked: Linux 2.6.30 `radeon_drv.h` names bits 0, 9, 19, 25 and 26 of `GEN_INT_CNTL` and `GEN_INT_STATUS`, and neither bit 2 nor bit 6, so the "Linux names neither bit" claim holds for that header. Next: the same two registers in the xf86-video-ati submodule (needs a shallow initialise) and in the R3xx reference (route 2); `_r6x_enable_vsync_irq` and `_r6x_enable_framelock_irq` in full.
+- [software-now] **Display output.** Scan-out, DACs, DVI and the Onyx4's image-sync and genlock paths; how the X driver programs modes. Next: the mode-set path of `fglrx_drv.so` (CRTC and DAC registers), then `gen-XF86Config` (in root), with the CRTC names from the R3xx reference (route 2). Residue, hardware-only and recorded, not scheduled: the physical genlock and sync connections, which no register read shows.
 
 ## Option ROM
 
-- **The x86 handlers of the images.** The init path (entry, register-script interpreters, set-up routines, external transmitter script) and the VBE handlers 0x00 to 0x0a, 0x10 and 0x15 with their mode-record table are read in [option-roms.md](option-roms.md#bios-code). Still unread: the handlers behind the video interrupt's function table (`0x1cac`) other than entry 00 in part, and the helpers the read handlers call: `0x0a11` (the mode-parameter block builder behind VBE function 0x01 and vendor function 0x09), `0x21e1` and `0x21fe` (mode set and its follow-up), `0x5dbb` (vendor function 0x0b), `0x7641` and `0x7674`, the state-routine callees `0x74e3`, `0x74ff`, `0x747b`, `0x74af`, `0x69a8`, `0x69f6`, `0x4133` to `0x42ff`, `0x71a7`, `0x71c3`, `0x6f5c` and similar beyond their first steps. Routes tried: disassembly of 16-bit code from the entry and from the dispatch tables, call-graph comparison of the three images. Next: read `0x0a11` and `0x21e1`, then `0x5dbb` and the state-routine callees.
-- **ATI tables the public driver does not read.** DAC programming, maximum colour depth, CRTC info, save mask and hardware config are present in all three images; their layouts are unknown. Next: the X driver's table readers in `fglrx_drv.so` (it prints "Connector Layout from BIOS"); public X.Org radeon driver sources for the legacy BIOS.
-- **First header words and the signature block.** The words at header+0x00, +0x02 and +0x1e and the 32-bit value block at header+0x0e. Next: the code that reads them (the X driver's BIOS parameter routine, `fglrx_attach`). The BIOS init code does not read header+0x00, +0x02 or the signature words (every table access in the init path goes through slot offsets); read so far: the init path only.
-- **The sg3 to sg3a changes.** Memory-controller and memory-timing values differ (register 0x178, 0x17c, the indirect set indexes 0x11a to 0x120 and 0x122 and 0x124, and register 0x144), plus one small x86 helper. The meaning of the fields, and why two X2 images exist, is not known. Next: AMD's R3xx register reference for the memory controller fields; the version strings in release notes of the install.
-- **Which ROM a card gets.** Bits 7:6 of the register at offset 0x1a4 select `sg3.bin` (01) or `sg3a.bin` (00) in the flash tool. The strap source is not known. Next: the same register in `fglrx.o` and `vga.a` attach code.
-- **How the flash tool compares versions, and what the serial flash is.** Next: disassemble `flash_rom` and the version routine in `sg2flash`.
+- [software-now] **The x86 handlers of the images.** The init path (entry, register-script interpreters, set-up routines, external transmitter script) and the VBE handlers 0x00 to 0x0a, 0x10 and 0x15 with their mode-record table are read in [option-roms.md](option-roms.md#bios-code). Still unread: the handlers behind the video interrupt's function table (`0x1cac`) other than entry 00 in part, and the helpers the read handlers call: `0x0a11` (the mode-parameter block builder behind VBE function 0x01 and vendor function 0x09), `0x21e1` and `0x21fe` (mode set and its follow-up), `0x5dbb` (vendor function 0x0b), `0x7641` and `0x7674`, the state-routine callees `0x74e3`, `0x74ff`, `0x747b`, `0x74af`, `0x69a8`, `0x69f6`, `0x4133` to `0x42ff`, `0x71a7`, `0x71c3`, `0x6f5c` and similar beyond their first steps. Routes tried: disassembly of 16-bit code from the entry and from the dispatch tables, call-graph comparison of the three images. Next: read `0x0a11` and `0x21e1`, then `0x5dbb` and the state-routine callees.
+- [software-now] **ATI tables the public driver does not read.** DAC programming, maximum colour depth, CRTC info, save mask and hardware config are present in all three images; their layouts are unknown. Next: the X driver's table readers in `fglrx_drv.so` (it prints "Connector Layout from BIOS"), then the legacy table layouts in `radeon_bios.c` of the xf86-video-ati submodule (needs a shallow initialise) and `radeon_combios.c` in the current Linux tree (URL in sources/INDEX.md; not in the 2.6.30 checkout).
+- [software-now] **First header words and the signature block.** The words at header+0x00, +0x02 and +0x1e and the 32-bit value block at header+0x0e. Next: the readers in `fglrx_drv.so` (its BIOS parameter routine) and in `fglrx_attach` in `fglrx.o`, then the public `radeon_combios.c` for what the ATI header words mean. The BIOS init code does not read header+0x00, +0x02 or the signature words (every table access in the init path goes through slot offsets); read so far: the init path only.
+- [software-now] **The sg3 to sg3a changes.** Memory-controller and memory-timing values differ (register 0x178, 0x17c, the indirect set indexes 0x11a to 0x120 and 0x122 and 0x124, and register 0x144), plus one small x86 helper. The meaning of the fields, and why two X2 images exist, is not known. Next: AMD's R3xx register reference for the memory-controller fields (route 2). The install's release notes are not in root, so the version-string part is missing-release-or-binary and does not hold up the first step.
+- [software-now] **Which ROM a card gets.** Bits 7:6 of the register at offset 0x1a4 select `sg3.bin` (01) or `sg3a.bin` (00) in the flash tool. The strap source is not known. Next: what the AMD R3xx reference says the register at 0x1a4 reads back (route 2), and whether `fglrx.o` or `vga.a` read it at attach. Residue, hardware-only and recorded, not scheduled: the board wiring behind those bits, which no software read shows. Separately, the flash tool's table names device 0x4e44 with a `9700.bin` that is not in the install (missing-release-or-binary).
+- [software-now] **How the flash tool compares versions, and what the serial flash is.** Next: disassemble `flash_rom` and the version routine in `sg2flash`.
 
 ## What IRIX programs at attach
 
-- **Attach sequence.** Answered for `fglrx_attach` and the early VGA path ([kernel-attach.md](kernel-attach.md)). Still open: what the card's own BIOS programs when `vga_init_board` runs it in the x86 emulator, which is the bulk of the chip's initial state. Next: run `vga.a`'s emulator path, or `biosemu` from the diagnostics, on the shipped option ROM images and log the register accesses (route 6, labelled as the BIOS's expectation).
+- [software-now] **Attach sequence.** Answered for `fglrx_attach` and the early VGA path ([kernel-attach.md](kernel-attach.md)). Still open: what the card's own BIOS programs when `vga_init_board` runs it in the x86 emulator, which is the bulk of the chip's initial state. Next: run `vga.a`'s emulator path, or `biosemu` from the diagnostics, on the shipped option ROM images and log the register accesses (route 6, labelled as the BIOS's expectation).
 
 ## Register accesses
 
 [registers.md](registers.md) lists the offsets the kernel object and the X module reach. These are not settled. Routes tried for each: the replay in `scripts/inventory.py`, the disassembly of the routine, and the Linux and Mesa register headers (AMD's R3xx 3D register reference was not read for this table).
 
-- **Byte lanes of the register aperture.** The kernel maps BAR 2 with the word-values flag ([kernel-attach.md](kernel-attach.md)), and the X module stores the PLL index as one byte at +11, the last byte of the dword at 0x8. Which byte lane of the chip's little-endian register that store reaches, and whether the X module's own mapping carries the same swap, is not read. Next: the bridge's byte-swap handling in `pcibr.o` and the public IRIX source, then the other narrow stores of `fglrx_drv.so` (0xb3 is one).
-- **Offsets with no public name.** `registers.md` lists them: 0x194, 0x294, 0x350, 0x354, 0x358, 0x878, 0x87c, 0x880, 0x884, 0x1700 and 0x26ac. The Linux and Mesa headers do not have them. Next: the AMD R3xx and R5xx references in `sources/INDEX.md`, then the bit tests and masks around each access in `fglrx_drv.so` (0x878 to 0x884 sit in `Set_MV_Mode`, next to 0x800 and 0x848).
-- **Roles of the matched registers beyond the bits read.** The 197 offsets of `fglrx_drv.so` are graded by offset only; the bit-level reading in `registers.md` covers the interrupt, PLL, engine-status, tile and CRTC-enable registers. Next: one routine at a time, starting with `R200AdjustFrame` at 0x422680 and `FIREGL_ShowOverlay`.
-- **Accesses the replay does not follow.** Calls through addresses built with `dsll32` and `dadd` (the kernel object's compositor I2C path, and every callee of `fglrx.o` reached that way) and the sites counted unresolved in `inventory/summary.tsv`. Next: read the unresolved sites of `fglrx_drv.so` by hand; the dword accessors' callers in `fglrx.o` are read in `registers.md`.
-- **The register at 0xf18 and the pointers at device record +400 and +992.** `firegl_addmap` reads one word and derives two pointers; their later use is not traced. Next: loads of device record +400, +992 and +1008 in `fglrx.o`.
+- [software-now] **Byte lanes of the register aperture.** The kernel maps BAR 2 with the word-values flag ([kernel-attach.md](kernel-attach.md)), and the X module stores the PLL index as one byte at +11, the last byte of the dword at 0x8. Which byte lane of the chip's little-endian register that store reaches, and whether the X module's own mapping carries the same swap, is not read.
+- [software-now] **Offsets with no public name.** `registers.md` lists them: 0x194, 0x294, 0x350, 0x354, 0x358, 0x878, 0x87c, 0x880, 0x884, 0x1700 and 0x26ac. The Linux and Mesa headers do not have them. Next: the AMD R3xx and R5xx references in `sources/INDEX.md`, then the bit tests and masks around each access in `fglrx_drv.so` (0x878 to 0x884 sit in `Set_MV_Mode`, next to 0x800 and 0x848).
+- [software-now] **Roles of the matched registers beyond the bits read.** The 197 offsets of `fglrx_drv.so` are graded by offset only; the bit-level reading in `registers.md` covers the interrupt, PLL, engine-status, tile and CRTC-enable registers. Next: one routine at a time, starting with `R200AdjustFrame` at 0x422680 and `FIREGL_ShowOverlay`.
+- [software-now] **Accesses the replay does not follow.** Calls through addresses built with `dsll32` and `dadd` (the kernel object's compositor I2C path, and every callee of `fglrx.o` reached that way) and the sites counted unresolved in `inventory/summary.tsv`. Next: read the unresolved sites of `fglrx_drv.so` by hand; the dword accessors' callers in `fglrx.o` are read in `registers.md`.
+- [software-now] **The register at 0xf18 and the pointers at device record +400 and +992.** `firegl_addmap` reads one word and derives two pointers; their later use is not traced. Next: loads of device record +400, +992 and +1008 in `fglrx.o`.
