@@ -608,6 +608,123 @@ The doubleword at record +80 is the board record, which `outb`, `pciReadLong` an
   It then calls `pushw` (0xf18) with the halfword at +64 and `pushw` (0xf28) with the halfword at +58, sets the word at +56 to 3, the halfword at +70 to 0 and the halfword at +64 to the halfword at record +8.
   **Inferred:** a call into the emulated ROM that returns the packed PCI location, with the new instruction pointer 3 in the segment kept at record +8; the same packing question as above is open.
 
+## The emulated PC's memory map and set-up (`vga.a(generic.o)`)
+
+`xf86InitInt10` builds the record the x86 emulator runs against; the other routines of this member are its memory accessors and page allocator.
+The record is 88 bytes (allocated zeroed): the halfword at +8 is the segment the ROM image sits in, the doubleword at +16 points at a 40-byte memory descriptor (called P below), the doubleword at +24 at the table of six accessors (`read_b`, `read_w`, `read_l`, `write_b`, `write_w`, `write_l`, the initialised `.data` of this member, offsets 0 to 40 in that order), the word at +32 holds the interrupt number and the doubleword at +80 the board record.
+P holds, at +8, a 0xf0000-byte memory image, at +16 a pointer copied from board +200 (the window the accessors use for 0xa0000 to 0xbffff), at +24 a pointer to a shared 0x10000-byte system BIOS image, and at +32 a 39-byte map of 16 KB pages.
+The accessors take the record in a0 and a linear address in a1.
+They send a byte at address x to one of three places: x from 0xa0000 up to but not including 0xc0000 to the window at P +16 (offset x minus 0xa0000), other x below 0xf0000 to the image at P +8 (offset x), and x of 0xf0000 and above to the BIOS image at P +24 (offset x minus 0xf0000).
+There is no check against 0x100000.
+
+- `xf86InitInt10` (`vga.a(generic.o)`, address 0x0, 312 bytes): **established.**
+  Takes the board record in a0 and returns the new emulation record, or 0 on failure.
+  It calls `kmem_zalloc` for 88 bytes (0x18) and stores the board at record +80, then `xf86Int10ExecSetup` (0x28) with the record; a zero result frees the record with `kmem_free` (0x114) and returns 0.
+  It does not test the first allocation.
+  Otherwise it stores the address of the accessor table at record +24 (store at 0x48) and allocates, with `kmem_zalloc`, P (40 bytes, stored at +16 at 0x50), the page map (39 bytes, P +32) and the image (0xf0000 bytes, P +8), then stores board +200 at P +16.
+  The shared BIOS image is a static pointer in `.sdata`: when it is still zero it allocates 0x10000 bytes, logs "kmem_zalloc of sysMem failed" through `cmn_err` at level 1 and returns 0 on failure (no frees of the other allocations), or stores the pointer and calls `setup_system_bios` (0xa8) on it.
+  P +24 gets that pointer (store at 0xc0, in the delay slot of the next call).
+  It then calls `setup_int_vect` (0xbc) and `set_return_trap` (0xc4) with the record, copies 0x10000 bytes with `bcopy` (0xdc) from the shadow ROM pointer at board +144 to the image at offset 0xc0000, stores 0xc000 as the halfword at record +8 and 230 as the word at +32, and returns the record.
+  **Inferred:** the shadow ROM is the card's option ROM copy that `vga_shadow_bios` made, so the card's ROM sits at C000:0 in the emulated PC, and the interrupt number 230 (0xe6) is the entry call the ROM's init is started through.
+- `xf86FreeInt10` (`vga.a(generic.o)`, address 0x138, 116 bytes): **established.**
+  Takes a record in a0 and returns nothing; a zero record returns at once.
+  It clears the global `Int10Current` when it equals the record, then frees with `kmem_free` the image (size 0xf0000, call at 0x174), the page map (39 bytes) and P (40 bytes), then the record itself with a size argument of 8 (0x19c), not the 88 bytes `xf86InitInt10` allocated.
+  The shared BIOS image is not freed.
+- `xf86Int10AllocPages` (`vga.a(generic.o)`, address 0x1ac, 304 bytes): **established.**
+  Takes the record in a0, a page count n in a1 and an output pointer in a2, and returns a pointer into the memory image or 0.
+  A count of 39 returns 0.
+  A count above 39 skips the search and goes to the marking step with start index 0.
+  Otherwise it searches the 39-byte map for n consecutive zero bytes, starting at index 0 with the limit 39 minus n: when the byte at the start is nonzero the start moves up by 1; when a later byte of the window is nonzero the start moves up by n plus 1 (so some windows are never tried); a window that is all zero is accepted.
+  When the start reaches or passes the limit the code tests only equality with the limit: equal returns 0 (so a window starting at the limit is never used), and a start beyond it is accepted.
+  The marking step sets n map bytes to 1 from the start (a zero or negative n marks none), stores (start times 16384) plus 16384 as a word through a2 (0x2b4) and returns the image pointer plus that value.
+  The map can be overrun when the start is past index 38 minus n.
+- `xf86Int10FreePages` (`vga.a(generic.o)`, address 0x2dc, 120 bytes): **established.**
+  Takes the record in a0, a pointer in a1 and a count in a2, and returns nothing.
+  It subtracts the image base (P +8) from the pointer, divides by 16384 (signed, rounding toward zero), subtracts 1 and clears that many map bytes, count of them, starting at the resulting index.
+  The loop is unrolled twice and has no bounds check.
+- `read_b` (`vga.a(generic.o)`, address 0x354, 112 bytes): **established.**
+  Takes the record in a0 and an address in a1 and returns the byte at that address under the three-way split above, zero-extended.
+- `read_w` (`vga.a(generic.o)`, address 0x3c4, 232 bytes): **established.**
+  Takes the record in a0 and an address in a1 and returns a halfword.
+  An address from 0xa0000 up to but not including 0xc0000 returns only the byte at that address (the path at 0x490), without reading the next byte, so the high byte is zero.
+  Any other address reads the byte at x and the byte at x plus 1, each routed by the split above for its own address (so a halfword can straddle two regions), and combines them with the second shifted left 8 (low byte first), masked to 16 bits.
+- `read_l` (`vga.a(generic.o)`, address 0x4ac, 488 bytes): **established.**
+  Takes the record in a0 and an address in a1 and returns a word.
+  An address from 0xa0000 up to but not including 0xc0000 returns only the byte (the path at 0x678), zero-extended.
+  Any other address reads four bytes at x to x plus 3, each routed for its own address, and combines them little-endian with shifts of 0, 8, 16 and 24.
+- `write_b` (`vga.a(generic.o)`, address 0x694, 112 bytes): **established.**
+  Takes the record in a0, an address in a1 and a value in a2, and stores the low byte at the routed location, including the BIOS image for addresses of 0xf0000 and above.
+  It returns nothing.
+- `write_w` (`vga.a(generic.o)`, address 0x704, 244 bytes): **established.**
+  Takes the record in a0, an address in a1 and a value in a2.
+  It stores the low byte at the routed location of x and the value shifted right 8 (arithmetic) at the routed location of x plus 1, each routed for its own address; unlike `read_w` it stores both bytes for an address in the window at 0xa0000.
+  It returns nothing.
+- `write_l` (`vga.a(generic.o)`, address 0x7f8, 508 bytes): **established.**
+  Takes the record in a0, an address in a1 and a value in a2.
+  It stores four bytes, the value shifted right by 0, 8, 16 and 24 (logical) at x to x plus 3, each routed for its own address, including the window at 0xa0000.
+  It returns nothing.
+- `xf86int10Addr` (`vga.a(generic.o)`, address 0x9f4, 68 bytes): **established.**
+  Takes the record in a0 and an address in a1 and returns a host pointer.
+  The address is taken as its low 32 bits.
+  Below 0xf0000 the result is the image at P +8 plus the address; from 0xf0000 up it is the BIOS image at P +24 plus the address minus 0xf0000.
+  It does not use the window at 0xa0000.
+
+## The console text-port routines (`vga.a(vga_tport.o)`)
+
+These are the drawing hooks the early console calls on a VGA board: `vga_htp_fncs` (`.data`) is a table of nine function pointers, in this order: `vga_tpinit`, `vga_mapcolor`, `vga_color`, `vga_sboxfi`, `vga_pnt2i`, `vga_drawbitmap`, `vga_cmov2i`, `vga_unblank` and `vga_getdesc`.
+`vga_blankscreen` is exported but is not in the table.
+Three words guard the port: `vga_tport_mute` and `vga_tport_inuse` (`.sbss`) and the lock `vga_tport_lock`.
+Every routine except `vga_tport_lock_init`, `vga_tpinit` and `vga_getdesc` returns at once when `vga_tport_mute` is nonzero; otherwise it adds 1 to `vga_tport_inuse` (the store is in the delay slot of the `mutex_spinlock` call, so it happens first), takes `vga_tport_lock`, does its work, sets `vga_tport_inuse` to 0 and calls `mutex_spinunlock` with the value `mutex_spinlock` returned.
+A 24-byte static record in `.bss` (called the state here) holds the text cursor and the drawing colour: the word at state +0 is the cursor x, the word at +4 the cursor y counted from the bottom, the byte at +8 the colour, the word at +12 the row stride and the word at +16 the height; `vga_tpinit` stores a pointer to it at board +40.
+The pixel routines write bytes, one per pixel, through the frame-buffer pointer at board +224 after `vga_setbridge_to_lfb`, and the palette routine writes through the legacy I/O window at board +176 after `vga_setbridge_to_legacy_io`; each restores the bridge with `vga_restore_bridge` before it unlocks.
+
+- `vga_tport_lock_init` (`vga.a(vga_tport.o)`, address 0x0, 48 bytes): **established.**
+  Takes no argument and returns nothing.
+  It sets `vga_tport_mute` to 1, calls `wbflush` (0x10) with the store that sets `vga_tport_inuse` to 0 in its delay slot, and calls `spinlock_init` (0x1c) on `vga_tport_lock` with the name string "vga_tport_lock".
+  It leaves the mute word at 1.
+- `vga_tpinit` (`vga.a(vga_tport.o)`, address 0x4a4, 96 bytes): **established.**
+  Takes the board in a0 and returns nothing.
+  It sets both `vga_tport_mute` and `vga_tport_inuse` to 1, calls `wbflush` (0x4bc), calls `vga_tport_lock_init` (0x4c4), then copies the word at board +252 to state +12 and the word at board +256 to state +16, clears the byte at state +8, stores the state's address at board +40, sets `vga_tport_mute` to 0 and calls `wbflush` again (0x4ec) with the store that clears `vga_tport_inuse` in its delay slot.
+  **Inferred** from how `vga_drawbitmap` and `vga_sboxfi` use them: the words at board +252 and +256 are the frame buffer's row stride and height in pixels.
+- `vga_color` (`vga.a(vga_tport.o)`, address 0x30, 84 bytes): **established.**
+  Takes the colour in a1 (a0 is not used).
+  With the port unmuted it stores the low byte of a1 at state +8, in the delay slot of the `mutex_spinunlock` call (0x78).
+  It returns nothing.
+- `vga_mapcolor` (`vga.a(vga_tport.o)`, address 0x84, 192 bytes): **established.**
+  Takes the board in a0, a palette index in a1 and three components in a2, a3 and a4.
+  With the port unmuted it calls `vga_setbridge_to_legacy_io` (0xc8) on the board and then writes bytes to offsets of the legacy window at board +176: 255 at +966 (port 0x3c6, the pixel mask), the index at +968 (0x3c8), then a2, a3 and a4 each masked to 8 bits and shifted right 2 at +969 (0x3c9), in that order (stores at 0x100, 0x114 and 0x128 after the 0xec index store).
+  It calls `vga_restore_bridge` (0x124), the last component store being in its delay slot, and unlocks.
+  It returns nothing.
+  **Inferred** from the standard VGA register layout that these are the DAC mask, write-index and data ports and that the three values are the 6-bit red, green and blue.
+- `vga_sboxfi` (`vga.a(vga_tport.o)`, address 0x144, 320 bytes): **established.**
+  Takes the board in a0, x1 in a1, y1 in a2, x2 in a3 and y2 in a4, and fills a rectangle with the colour byte at state +8; it returns nothing.
+  With the port unmuted it calls `vga_setbridge_to_lfb` (0x1a4), swaps x1 and x2 when x2 is below x1 (signed), turns each y into state +16 minus y minus 1, orders the two y values (unsigned) and fills every pixel from the lower x up to and including the higher x, for each row from the lower y up to and including the higher y.
+  A pixel's address is the frame-buffer pointer at board +224 plus, as a 32-bit value, x plus the stride at state +12 times y.
+  An empty range (a higher value below the lower one) fills nothing.
+  Then it calls `vga_restore_bridge` (0x264) and unlocks.
+- `vga_cmov2i` (`vga.a(vga_tport.o)`, address 0x284, 108 bytes): **established.**
+  Takes an x in a1 and a y in a2 (a0 is not used) and returns nothing.
+  With the port unmuted it stores a1 as the word at state +0 and state +16 minus a2 minus 1 as the word at state +4.
+  It touches no hardware.
+- `vga_drawbitmap` (`vga.a(vga_tport.o)`, address 0x2f0, 412 bytes): **established.**
+  Takes the board in a0 and a pointer to a descriptor in a1, and returns nothing.
+  The descriptor's doubleword at +0 points at the bitmap, and its halfwords at +10, +12, +14, +16, +18 and +20 are the row count, the x offset, the y offset, the x advance, the y advance and the number of 16-pixel words per row.
+  With the port unmuted it calls `vga_setbridge_to_lfb` (0x340); for each row r from 0 and each 16-bit word in the row it tests the bits of the halfword from bit 15 down to bit 0 and, for each set bit, stores the colour byte at state +8 at the frame-buffer pointer at board +224 plus, as a 32-bit value, (state +0 minus the x offset, plus the pixel number) plus the stride at state +12 times (state +4 plus the y offset minus r).
+  A clear bit stores nothing.
+  The pixel loop is unrolled twice.
+  A row count of zero or less skips the rows, a word count of zero or less skips one row; either way the cursor is then moved: the x advance is added to the word at state +0 and the y advance subtracted from the word at state +4 (the last store is in the delay slot of the `vga_restore_bridge` call at 0x46c).
+  It then unlocks.
+- `vga_getdesc` (`vga.a(vga_tport.o)`, address 0x48c, 24 bytes): **established.**
+  Takes a selector in a1 (a0 is not used) and returns 1 when it equals 1 and 0 otherwise; the `li v0,1` sits in the delay slot of the branch.
+  It touches neither the lock nor the state.
+- `vga_unblank` (`vga.a(vga_tport.o)`, address 0x504, 68 bytes): **established.**
+  With the port unmuted it only takes `vga_tport_lock` and releases it again, with `vga_tport_inuse` set to 1 and then 0 around it, and returns nothing; it reads no argument and writes no card register.
+- `vga_blankscreen` (`vga.a(vga_tport.o)`, address 0x548, 68 bytes): **established.**
+  The same instructions as `vga_unblank`: an unmuted lock and unlock and no other effect.
+  It is exported but is not in `vga_htp_fncs`.
+- `vga_pnt2i` (`vga.a(vga_tport.o)`, address 0x58c, 68 bytes): **established.**
+  The same instructions as `vga_unblank`: an unmuted lock and unlock and no other effect, so a point draw is ignored.
+
 ## Image-sync driver
 
 - `is1.o` (`usr/cpu/sysgen/IP35boot/is1.o`): **established** from its symbol table. A separate PCI driver (`is1_reg`, `is1_attach`, its own `pciio_driver_register`) for the image-sync option; it depends on `fglrx` (its `master.d` file) and calls `FGLRXReadRegister`, `FGLRXWriteRegister` and `fglrx_intr_list`, but `fglrx.o` refers to nothing in `is1.o`, so it takes no part in the FireGL card's attach. Its attach, detach, open, ioctl, interrupt and resync routines are read in [image-sync-functions.md](image-sync-functions.md); its probe IDs are in the `is1_devids` table.
