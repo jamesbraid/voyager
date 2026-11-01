@@ -129,3 +129,99 @@ Labels follow `AGENTS.md` section 5. **Established** means the whole routine was
   Offset 0x0 of the block takes the second argument (store at 0x516b00).
   ioctl gets request 0x80046449, four bytes of input.
   The return is 0 on success (0x516b34) and the negated `errno` on failure (negation at 0x516b2c).
+
+## Kernel-object, memory and AGP requests
+
+- `firegl_LockPages` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 352 bytes at 0x516b50): **established.**
+  The whole body was read, from the -22 preset at 0x516b50 to the return at 0x516cb0.
+  A zero second argument (branch at 0x516b64) or a zero third argument (branch at 0x516b78) returns -22.
+  Otherwise the routine allocates 32 bytes with `drmMalloc` (call at 0x516b8c, GOT slot 7092); a zero result returns -12.
+  It then computes a page count from the length (the low 32 bits of the third argument) plus the offset of the address within a 0x4000-byte unit, and allocates 8 bytes per unit with a second `drmMalloc` (call at 0x516c00).
+  A zero result there frees the first buffer with `drmFree` and returns -12.
+  The request is 0xc020644b, a 32-byte block in both directions at the frame base. It takes the address doubleword, the length word, the page count word and the second buffer pointer, and the kernel's first block doubleword is copied back into the first buffer.
+  On success the first buffer pointer is stored through the fourth argument (0x516cac), and the return is 0.
+  On ioctl failure the negated `errno` is stored as the return, the second buffer is freed (call at 0x516c68), and the first buffer is freed before the return (call at 0x516c20).
+- `firegl_UnlockPages` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 140 bytes at 0x516cb0): **established.**
+  Both `drmFree` calls and the ioctl call were read, and the whole body was read from the prologue to the return at 0x516d34.
+  The first argument goes through as the ioctl descriptor, and the second argument's doubleword at offset 0 is copied into a 32-byte block (store at 0x516ccc).
+  Request 0xc020644c covers that block in both directions.
+  On failure the negated `errno` is returned at 0x516d08.
+  On success the routine frees the pointer held at offset 24 of the caller's structure (`drmFree` call at 0x516d14, GOT slot 7093), then frees the structure itself (call at 0x516d20 with the second argument), and returns 0 (move at 0x516d2c).
+- `firegl_FlushCache` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 96 bytes at 0x516d40): **established.**
+  The whole body was read; the routine makes one `ioctl` call at 0x516d64 and no other.
+  The request is 0x2000644d with no payload (the size field is zero), and the third argument is zero (`move a2,zero` at 0x516d68, the delay slot of the call at 0x516d64).
+  The return is 0 when the call succeeds and the negated `errno` otherwise (negation at 0x516d88).
+- `firegl_InitIrq` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 96 bytes at 0x516da0): **established.**
+  The whole body was read in its single `ioctl` call at 0x516dc4.
+  The second argument goes unchanged to `ioctl` as its third argument (move at 0x516db8), with request 0xc010645d, a 16-byte block in both directions.
+  The return is 0 on success and the negated `errno` on failure (negation at 0x516de8).
+- `firegl_ModuleParm` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 140 bytes at 0x516e00): **established.**
+  Its whole body was read, with the `strncpy` call at 0x516e2c and the `ioctl` call at 0x516e48.
+  A zero second argument returns -22 (branch at 0x516e18).
+  Otherwise `strncpy` copies at most 256 bytes from the second argument into a 256-byte block on the stack, and the block's last byte (offset 255) is set to zero before the call (store at 0x516e44).
+  The request is 0x8000644e, copy-in with no size field, and the first argument goes through as the descriptor.
+  The return is 0 on success (0x516e84) and the negated `errno` on failure (negation at 0x516e6c).
+- `firegl_RmMap` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 100 bytes at 0x516e90): **established.**
+  The whole body was read. The second argument is stored as a doubleword at offset 24 of a 40-byte block (store at 0x516eb0).
+  The other bytes of that block are not written here, so the kernel receives whatever the stack held in them.
+  Request 0x8028644f copies 40 bytes in, and the return is 0 on success and the negated `errno` on failure (negation at 0x516edc).
+- `firegl_FreeKernelInfo` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 92 bytes at 0x516f00): **established.**
+  The whole body was read, through the two `drmFree` calls at 0x516f30 and 0x516f40.
+  A zero first argument returns at 0x516f18 with no call, and `v0` is not written on that path.
+  Otherwise the doubleword at offset 0 of the structure is loaded (0x516f20), and if it is non-zero it is freed (call at 0x516f30).
+  The structure pointer itself is then freed (call at 0x516f40), and the return is the value `drmFree` leaves in `v0`.
+- `firegl_VerifyArea` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 156 bytes at 0x517140): **established.**
+  The whole body was read, including the clear at 0x5171d0.
+  The routine tests a global word at gp+24216 (load at 0x517154). A zero word returns 0 at 0x5171c0 with no call.
+  Otherwise `ioctl` runs with request 0x80106451, a 16-byte input block: the second argument as a doubleword at offset 0 (store at 0x517174), the third argument as a word at offset 8 (store at 0x51716c), and the fourth as a word at offset 12 (store at 0x517168).
+  On success the return is 0 (move at 0x517188).
+  On failure the `errno` value is compared with 22 (branch at 0x5171a0). A match clears the global word (store at 0x5171d0) and returns 0; any other value returns the negated `errno` (negation at 0x5171a4).
+- `firegl_GetAGPCapPtr` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 132 bytes at 0x5171e0): **established.**
+  The whole body was read, with one `ioctl` call at 0x517220.
+  A zero second argument returns -22 (branch at 0x5171f8 falls through to the return at 0x517204).
+  Otherwise a zeroed 12-byte block is passed with request 0x400c6452, output only, and on success the word at offset 0 is stored through the second argument (store at 0x517258).
+  The return is 0 on success and the negated `errno` on failure (negation at 0x517244).
+- `firegl_GetAGPStatus` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 132 bytes at 0x517270): **established.**
+  The whole body was read; the routine is the same shape as `firegl_GetAGPCapPtr`.
+  A zero second argument returns -22 at 0x517294. The block is zeroed at offset 4 (store at 0x5172a4), the request is 0x400c6452, and on success the word at offset 4 is stored through the second argument (store at 0x5172e8).
+  The return is 0 on success and the negated `errno` on failure (negation at 0x5172d4).
+- `firegl_GetAGPCommand` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 132 bytes at 0x517300): **established.**
+  The whole body was read; the routine is the same shape as `firegl_GetAGPCapPtr`.
+  A zero second argument returns -22 at 0x517324. The block is zeroed at offset 8 (store at 0x517334), the request is 0x400c6452, and on success the word at offset 8 is stored through the second argument (store at 0x517378).
+  The return is 0 on success and the negated `errno` on failure (negation at 0x517364).
+- `firegl_InitCP` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 96 bytes at 0x517390): **established.**
+  The whole body was read; it makes one `ioctl` call at 0x5173b4.
+  The second argument goes unchanged to `ioctl` as its third argument (move at 0x5173a8), with request 0x80206453, a 32-byte copy-in block.
+  The return is 0 on success and the negated `errno` on failure (negation at 0x5173d8).
+- `firegl_InitUMM` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 96 bytes at 0x5173f0): **established.**
+  The whole body was read; it makes one `ioctl` call at 0x517414.
+  The second argument goes unchanged to `ioctl` as its third argument (move at 0x517408), with request 0x8018645b, a 24-byte copy-in block.
+  The return is 0 on success and the negated `errno` on failure (negation at 0x51743c).
+- `firegl_modify_ldt` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 108 bytes at 0x517450): **established.**
+  The whole body was read; it makes one `ioctl` call at 0x517488.
+  The 32-byte block takes the second argument as a word at offset 0 (store at 0x517480), the third as a doubleword at offset 8 (store at 0x517474), the fourth as a doubleword at offset 16 (store at 0x517468), and -1 as a word at offset 24 (store at 0x517470).
+  Request 0xc0206455 covers the block in both directions.
+  On success the return is the word at offset 24 (load at 0x5174ac), which the kernel may have overwritten.
+  On failure the return is -1 (`li` at 0x517498), not the negated `errno`.
+- `firegl_QueryHwCaps` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 112 bytes at 0x5174c0): **established.**
+  The whole body was read. Four zero words are written to the caller's 16-byte buffer at offsets 0, 4, 8 and 12 (stores from 0x5174d8 to 0x5174e8), and that buffer is the third `ioctl` argument.
+  Request 0x40106454 is output only, with a 16-byte payload.
+  The return is 0 on success and the negated `errno` on failure (negation at 0x517518).
+- `firegl_SyncDacs` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 96 bytes at 0x5179a0): **established.**
+  The whole body was read; it makes one `ioctl` call at 0x5179c4 with a zero third argument (move in the delay slot).
+  Request 0x20006461 has no payload.
+  The return is 0 on success and the negated `errno` on failure (negation at 0x5179ec).
+- `firegl_EnableStereo` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 100 bytes at 0x517a00): **established.**
+  The whole body was read; it makes one `ioctl` call at 0x517a28.
+  The second argument is stored as a word at block offset 0 (store at 0x517a20), and the block is passed as the third argument.
+  Request 0x80046462 takes four bytes of input.
+  The return is 0 on success and the negated `errno` on failure (negation at 0x517a4c).
+- `firegl_AGPAcquire` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 100 bytes at 0x517a70): **established.**
+  The whole body was read; it makes one `ioctl` call at 0x517a98.
+  The second argument is stored as a word at block offset 0 (store at 0x517a90), and the block is passed as the third argument.
+  Request 0x80046463 takes four bytes of input.
+  The return is 0 on success and the negated `errno` on failure (negation at 0x517abc).
+- `firegl_CPResume` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 96 bytes at 0x517ae0): **established.**
+  The whole body was read; it makes one `ioctl` call at 0x517b04 with a zero third argument.
+  Request 0x20006464 has no payload.
+  The return is 0 on success and the negated `errno` on failure (negation at 0x517b28).
