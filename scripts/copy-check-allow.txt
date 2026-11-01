@@ -1,0 +1,15 @@
+# Names present when the copy check was introduced on 2026-11-01, kept under this repository's dirty-room rules. The hook flags only names added after this list.
+GER
+MIPSpro
+XORs
+dynsym_index
+floc
+gf_OdsyMapGfx
+gfx_flow
+gfxs
+instigator
+isymMac
+odsy_init
+questions
+undocumented
+yields
