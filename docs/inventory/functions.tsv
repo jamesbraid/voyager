@@ -2940,13 +2940,13 @@ usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x4047c0	60
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x404800	60	OMPQueryDrawable	dwarf+funcnames	860c684386ff		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x404840	96	OMPGetVideoSyncSGI	dwarf+funcnames	9ee549f85165		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x4048c0	112	OMPWaitVideoSyncSGI	dwarf+funcnames	1167683941c1		in	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x404940	48	OMPGetCurrentReadDrawable	dwarf+dynsym	967ed67cebbe		in	undocumented		
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x404940	48	OMPGetCurrentReadDrawable	dwarf+dynsym	967ed67cebbe		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x404980	8	OMPGetAssociatedVisInfo	dwarf+dynsym	87506497337c		in	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x4049c0	508	__driCreateScreen	dwarf+dynsym	223126846081		in	undocumented		
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x4049c0	508	__driCreateScreen	dwarf+dynsym	223126846081		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x404bc0	84	gl_lib_name	dwarf+funcnames	a97a50f0b8b2		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x404c40	84	glx_lib_name	dwarf+funcnames	021f3c3509cf		in	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x404cc0	232	omp_initGLInterface	dwarf+dynsym	42ace47c91dd		in	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x404dc0	456	omp_initGLXInterface	dwarf+dynsym	0fe4c5a16475		in	undocumented		
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x404cc0	232	omp_initGLInterface	dwarf+dynsym	42ace47c91dd		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x404dc0	456	omp_initGLXInterface	dwarf+dynsym	0fe4c5a16475		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32	.text	0x404fc0	240	HashHash	dwarf+funcnames	7dbd4efbffa5		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x4050c0	200	drmHashCreate	dwarf+dynsym	bde636cb4153		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	shared-x-server	n32		0x4051c0	196	drmHashDestroy	dwarf+dynsym	3a13581dd9c5		in	undocumented		
@@ -3052,13 +3052,13 @@ usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x4052f0	
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x405330	60	OMPQueryDrawable	dwarf	4f3a0ed60aa7		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x405370	96	OMPGetVideoSyncSGI	dwarf	d21312767126		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x4053d0	112	OMPWaitVideoSyncSGI	dwarf	496c284d82a4		in	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x405440	40	OMPGetCurrentReadDrawable	dwarf+dynsym	e41a9b5398f7		in	undocumented		
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x405440	40	OMPGetCurrentReadDrawable	dwarf+dynsym	e41a9b5398f7		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x405470	8	OMPGetAssociatedVisInfo	dwarf+dynsym	87506497337c		in	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x405480	500	__driCreateScreen	dwarf+dynsym	3d03fd431fe1		in	undocumented		
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x405480	500	__driCreateScreen	dwarf+dynsym	3d03fd431fe1		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x405680	92	gl_lib_name	dwarf	5f669e0ff07c		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x4056e0	92	glx_lib_name	dwarf	4c811081dee0		in	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x405740	264	omp_initGLInterface	dwarf+dynsym	1e1b72557478		in	undocumented		
-usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x405850	512	omp_initGLXInterface	dwarf+dynsym	c2700fb328f7		in	undocumented		
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x405740	264	omp_initGLInterface	dwarf+dynsym	1e1b72557478		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x405850	512	omp_initGLXInterface	dwarf+dynsym	c2700fb328f7		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64	.text	0x405a80	252	HashHash	dwarf	c9baabf8a663		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x405b80	220	drmHashCreate	dwarf+dynsym	636ea1762502		in	undocumented		
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	shared-x-server	n64		0x405c60	200	drmHashDestroy	dwarf+dynsym	a315b076db15		in	undocumented		
@@ -3551,7 +3551,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4d9c00	8	XGLOpenFul
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4d9c40	8	XGLCloseFullScreen	dwarf+dynsym	a7e7ca11a6b8		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4d9c80	56	fglX11AquireProcessSpinlock	dwarf+dynsym	9dfb1d8b72bf		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4d9cc0	56	fglX11ReleaseProcessSpinlock	dwarf+dynsym	d87929105f29		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4d9d00	772	__driCreateScreen	dwarf+dynsym	c1df24617a80		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4d9d00	772	__driCreateScreen	dwarf+dynsym	c1df24617a80		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4da040	84	ENCODE_DEVICE_ID	dwarf+funcnames	55b001d1e36f	multi-unit	in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4da0c0	7000	DetermineAsicClass	dwarf+dynsym	ea02d8fb0e26		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4dbc40	184	DetermineAsicFamily	dwarf+dynsym	e53e4e826f55		in	undocumented		
@@ -16405,7 +16405,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x531d40	8	XGLOpenF
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x531d50	8	XGLCloseFullScreen	dwarf+dynsym	a7e7ca11a6b8		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x531d60	60	fglX11AquireProcessSpinlock	dwarf+dynsym	5c16db47d015		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x531da0	60	fglX11ReleaseProcessSpinlock	dwarf+dynsym	8689bd41fc89		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x531de0	812	__driCreateScreen	dwarf+dynsym	99873fd60359		in	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x531de0	812	__driCreateScreen	dwarf+dynsym	99873fd60359		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x532140	84	ENCODE_DEVICE_ID	dwarf	332b343b957d	multi-unit	in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5321a0	6992	DetermineAsicClass	dwarf+dynsym	283437dc09d5		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x533cf0	180	DetermineAsicFamily	dwarf+dynsym	a232a0b00dc1		in	undocumented		
@@ -29340,7 +29340,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424580	164	FGLC
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424640	188	FGLMDelay	dynsym	658fc3e2e920		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424700	88	R200AvailableOptions	dynsym	71612adc35dc		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424780	364	R200Identify	dynsym	2bd0ca3a79e5		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424900	816	R200Probe	dynsym	4fef7a013f28		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x424900	816	R200Probe	dynsym	4fef7a013f28		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x429640	5168	R200DRIScreenInit	dynsym	1f9bc39ba488		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42aa80	652	R200DRIFinishScreenInit	dynsym	9919224d96ba		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42ad40	996	R200DRICloseScreen	dynsym	66616c21539d		in	undocumented		
@@ -29382,7 +29382,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43af40	1008	FIR
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43cd00	80	FIREGL_OverlayGetPrivateClips	dynsym	b5bb037f8bc4		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43d040	156	FIREGL_OverlayCollectUnderlayRegions	dynsym	5bb0c2f0234c		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43db80	136	FIREGL_HideOverlay	dynsym	230064a54682		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43dc40	484	FIREGL_InitOverlay	dynsym	dcb9159b52d1		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43dc40	484	FIREGL_InitOverlay	dynsym	dcb9159b52d1		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43de40	184	FIREGL_FinishOverlayInit	dynsym	b099422dd956		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43df00	1900	FIREGL_ShowOverlay	dynsym	a217cd6b3ff4		in	named-only	docs/open-questions.md#register-accesses	Register accesses
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43e680	244	FIREGL_EnableOverlay	dynsym	f8330a36886f		in	undocumented		
@@ -29391,7 +29391,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43ea80	828	R200
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f0c0	200	QBS_EnableOverlay	dynsym	a6c6f10c87c5		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f1c0	196	QBS_FinishInit	dynsym	513f7acef94e		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f2c0	328	QBS_MakeTrans	dynsym	2878d87e7e01		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f440	80	QBS_EnableStereo	dynsym	edb111640b3d		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f440	80	QBS_EnableStereo	dynsym	edb111640b3d		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4400c0	208	SaveTimingCode	dynsym	af76ad6d4f0a		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4401c0	240	RestoreTimingCode	dynsym	9f99a1e79d6a		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4437c0	1176	Write_FIFO_Values	dynsym	34d6dec96ffa		in	undocumented		
@@ -29425,7 +29425,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44c800	56	R200R
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44d340	252	SGIGLXHyperpipeInitPipe	dynsym	c39704c77439		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44d440	232	SGIGLXHyperpipeInit	dynsym	6a100667affb		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x44d540	872	R200_driLockInit	dynsym	d5c332db7f6b		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x451bc0	1276	is1Attach	dynsym	263b7fbaeb46		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x451bc0	1276	is1Attach	dynsym	263b7fbaeb46		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4520c0	296	is1Reset	dynsym	e03b5a068e42		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x452200	268	is1SyncPipes	dynsym	cee5ac7c9d75		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x452fc0	500	is1UpdateVideoFormat	dynsym	e79710ef4733		in	undocumented		
@@ -29447,7 +29447,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x455da0	564	vfmt
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x455fe0	76	vfmtFindKonaFormatFile	dynsym	6aa409c1c003		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x456030	144	vfmtFindCmpFormatFile	dynsym	47c7eed15b8c		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4560c0	76	vfmtFindOdyFormatFile	dynsym	346b55e9f6fe		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x456110	76	vfmtFindSG2FormatFile	dynsym	cedfe1706187		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x456110	76	vfmtFindSG2FormatFile	dynsym	cedfe1706187		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x456160	292	vfmtFindKonaCombinationFile	dynsym	02e2880746f3		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x456290	584	vfmtFindCmpCombinationFile	dynsym	f95dcb192457		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4564e0	132	vfmtGetLastKonaFileStat	dynsym	167e5d6ee841		in	undocumented		
@@ -29838,7 +29838,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4d20c0	8	Ser
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4d2100	8	SerXMesaCloseFullScreen	dwarf+dynsym	a7e7ca11a6b8		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4d2140	56	fglX11AquireProcessSpinlock	dwarf+dynsym	075239edd4bd		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4d2180	56	fglX11ReleaseProcessSpinlock	dwarf+dynsym	c1cf296f82b3		in	undocumented		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4d21c0	772	__driCreateScreen	dwarf+dynsym	c0c5946faf56		in	undocumented		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4d21c0	772	__driCreateScreen	dwarf+dynsym	c0c5946faf56		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4d2500	84	ENCODE_DEVICE_ID	dwarf+funcnames	55b001d1e36f	multi-unit	in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4d2580	7000	DetermineAsicClass	dwarf+dynsym	ea02d8fb0e26		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4d4100	184	DetermineAsicFamily	dwarf+dynsym	aceb7aec64df		in	undocumented		
@@ -60449,7 +60449,7 @@ usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd86c0c0	444	XShmPixmapF
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd86c280	372	XShmAttach	dynsym	97f401ae0673		in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd86c400	320	XShmDetach	dynsym	e4de74ea1545		in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd86c580	412	XShmCreateImage	dynsym	6ee3dc3c9b1d		in	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd86c740	540	XShmPutImage	dynsym	087ac89cb9bc		in	undocumented		
+usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd86c740	540	XShmPutImage	dynsym	087ac89cb9bc		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd86c980	600	XShmGetImage	dynsym	7801679ff58d		in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd86cc00	428	XShmCreatePixmap	dynsym	093d0c3aecd1		in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd86cec0	132	XMITMiscQueryExtension	dynsym	c06492696d1f		in	undocumented		
@@ -60468,7 +60468,7 @@ usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd86ed40	132	XSyncQueryE
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd86ee00	440	XSyncInitialize	dynsym	0005ec40743b		in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd86efc0	656	XSyncListSystemCounters	dynsym	1968638483b2		in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd86f280	80	XSyncFreeSystemCounterList	dynsym	808f8d97bf0c		in	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd86f300	364	XSyncCreateCounter	dynsym	443d5f066600		in	undocumented		
+usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd86f300	364	XSyncCreateCounter	dynsym	443d5f066600		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd86f480	340	XSyncSetCounter	dynsym	c6ab88009f70		in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd86f600	336	XSyncChangeCounter	dynsym	94bf430d3454		in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd86f780	320	XSyncDestroyCounter	dynsym	b57a7772d7fc		in	undocumented		
@@ -66859,7 +66859,7 @@ usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a4800	456	XShmPixmapF
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a49d0	384	XShmAttach	dynsym	2b3920499bba		in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a4b50	348	XShmDetach	dynsym	0988cd4c253c		in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a4cf0	412	XShmCreateImage	dynsym	76ab91628604		in	undocumented		
-usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a4e90	556	XShmPutImage	dynsym	0d298de7d330		in	undocumented		
+usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a4e90	556	XShmPutImage	dynsym	0d298de7d330		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a50c0	620	XShmGetImage	dynsym	cd5ce54904fe		in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a5330	444	XShmCreatePixmap	dynsym	c1785c2b97de		in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a55e0	136	XMITMiscQueryExtension	dynsym	81c96908a6b2		in	undocumented		
@@ -66878,7 +66878,7 @@ usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a7330	136	XSyncQueryE
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a73c0	456	XSyncInitialize	dynsym	e44ffff947e7		in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a7590	708	XSyncListSystemCounters	dynsym	a8d23acbbb72		in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a7860	84	XSyncFreeSystemCounterList	dynsym	eb9beabe3ab0		in	undocumented		
-usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a78c0	372	XSyncCreateCounter	dynsym	3a7b812c7d9c		in	undocumented		
+usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a78c0	372	XSyncCreateCounter	dynsym	3a7b812c7d9c		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a7a40	364	XSyncSetCounter	dynsym	43ac875675da		in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a7bb0	352	XSyncChangeCounter	dynsym	4cd74458ee4a		in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x21a7d10	348	XSyncDestroyCounter	dynsym	83328930a903		in	undocumented		
@@ -67286,7 +67286,7 @@ usr/gfx/sgcombine	board-tool	n32		0x10024930	592	vfmtFindFormatFile	dynsym	f7834
 usr/gfx/sgcombine	board-tool	n32		0x10024b80	76	vfmtFindKonaFormatFile	dynsym	3dd1d695d4d3		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10024bd0	156	vfmtFindCmpFormatFile	dynsym	acb4a0eec76f		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10024c70	76	vfmtFindOdyFormatFile	dynsym	2b82398ff0ba		in	undocumented		
-usr/gfx/sgcombine	board-tool	n32		0x10024cc0	76	vfmtFindSG2FormatFile	dynsym	d82fe2dc98fd		in	undocumented		
+usr/gfx/sgcombine	board-tool	n32		0x10024cc0	76	vfmtFindSG2FormatFile	dynsym	d82fe2dc98fd		in	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/gfx/sgcombine	board-tool	n32		0x10024d10	308	vfmtFindKonaCombinationFile	dynsym	72101929c774		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10024e50	616	vfmtFindCmpCombinationFile	dynsym	572a81121237		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x100250c0	132	vfmtGetLastKonaFileStat	dynsym	540a890a6f14		in	undocumented		
