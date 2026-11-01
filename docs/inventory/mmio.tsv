@@ -91,7 +91,7 @@ mmio	0x3f8		r4,w4	102	2	R6TMDSTransmitLinux;fglrx_attach;firegl_sync_dacs;routin
 mmio	0x400		w4	2	1	FIREGL_ShowOverlay;R200AdjustFrame	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x404		w4	4	1	FIREGL_ShowOverlay;R200AdjustFrame	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x410		r4,w4	6	1	routine@0x437c3c	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x437c3c	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x420		r4,w4	12	1	FIREGL_HideOverlay;FIREGL_ShowOverlay;routine@0x41bc00	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_HideOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+mmio	0x420		r4,w4	12	1	FIREGL_HideOverlay;FIREGL_ShowOverlay;routine@0x41bc00	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_HideOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x424		w4	2	1	FIREGL_ShowOverlay;R200AdjustFrame	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x428		r4,w4	3	1	FIREGL_ShowOverlay;R200AdjustFrame	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x42c		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
@@ -155,10 +155,10 @@ mmio	0x9c0		r4,w4	2	1	routine@0x41bc00	driver record +48	usr/X11R6/lib/modules/d
 mmio	0xb00		r4,w4	12	1	R200ScreenInit;bR200SetTilingMode;routine@0x40d200;routine@0x41bc00	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200ScreenInit	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0xc40		r4,w4	2	1	routine@0x41bc00	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x41bc00	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0xd14		r4,w4	4	1	routine@0x4112c0;routine@0x41bc00	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x4112c0	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0xd20		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0xd24		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0xd28		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0xd2c		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+mmio	0xd20		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
+mmio	0xd24		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
+mmio	0xd28		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
+mmio	0xd2c		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0xd30		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0xd34		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0xd60		r4,w4	2	1	routine@0x41bc00	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x41bc00	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
@@ -172,7 +172,7 @@ mmio	0x1408		w4	1	1	routine@0x40ac40	driver record +48	usr/X11R6/lib/modules/dri
 mmio	0x1434		w4	1	1	routine@0x40ac40	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40ac40	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x1438		w4	3	1	routine@0x40ac40	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40ac40	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x143c		w4	1	1	routine@0x40ac40	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40ac40	understood	docs/registers.md#registers-read-in-full	Registers read in full
-mmio	0x146c		w4	5	1	R200EngineRestore;routine@0x40ac40	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineRestore	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+mmio	0x146c		w4	5	1	R200EngineRestore;routine@0x40ac40	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineRestore	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x1478		w4	1	1	R200EngineRestore	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineRestore	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x147c		w4	3	1	R200EngineRestore;routine@0x40ac40	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineRestore	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x1598		w4	2	1	routine@0x40ac40	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40ac40	understood	docs/registers.md#registers-read-in-full	Registers read in full
@@ -187,16 +187,16 @@ mmio	0x1600		w4	1	1	R200EngineRestore	driver record +48	usr/X11R6/lib/modules/dr
 mmio	0x1604		w4	1	1	R200EngineRestore	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineRestore	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x16c0		w4	5	1	routine@0x40ac40	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40ac40	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x16c4		r4,w4	4	1	R200EngineRestore;routine@0x41bc00	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineRestore	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x16cc		w4	5	1	R200EngineRestore;routine@0x40ac40	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineRestore	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+mmio	0x16cc		w4	5	1	R200EngineRestore;routine@0x40ac40	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineRestore	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x16e0		r4,w4	7	1	R200ScreenInit;R200SelectBuffer;bR200SetTilingMode	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200ScreenInit	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x16e8		w4	1	1	R200EngineRestore	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineRestore	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x1700		w4	1	1	routine@0x40ac40	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40ac40	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x1704		w4	1	1	routine@0x40ac40	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40ac40	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x1724		w4	1	1	FGLInitCP	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FGLInitCP	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x1c3c		w4	1	1	R200EngineInit	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineInit	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x2140		w4	1	1	FGLInitCP	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FGLInitCP	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+mmio	0x2140		w4	1	1	FGLInitCP	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FGLInitCP	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x26ac		r4,w4	2	1	FGLInitCP	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FGLInitCP	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x3428		w4	1	1	R200EngineRestore	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineRestore	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
-mmio	0x342c		r4,w4	4	1	R200EngineFlush	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineFlush	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+mmio	0x3428		w4	1	1	R200EngineRestore	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineRestore	understood	docs/registers.md#registers-read-in-full	Registers read in full
+mmio	0x342c		r4,w4	4	1	R200EngineFlush	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineFlush	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x4018		w4	2	1	fglrx_attach	board record +656	usr/cpu/sysgen/IP35boot/fglrx.o:fglrx_attach	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x429c		w4	1	1	fglrx_attach	board record +656	usr/cpu/sysgen/IP35boot/fglrx.o:fglrx_attach	understood	docs/registers.md#registers-read-in-full	Registers read in full

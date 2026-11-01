@@ -108,30 +108,30 @@ write) as reads.
 | 0x20 | `BIOS_4_SCRATCH` or `TV_PLL_FINE_CNTL` | conflict | read 4 | 2 | static code at 0x4112c0 | 1 | unknown |
 | 0x24 | `BIOS_5_SCRATCH` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | see below |
 | 0x28 | `BIOS_6_SCRATCH` | common | read 4, write 4 | 3 | `R200EnterVT` at 0x422cc0 | 1 | see below |
-| 0x30 | `BUS_CNTL` or `PCIE_INDEX` | conflict | read 4, write 4 | 3 | static code at 0x4112c0 | 1 | unknown |
+| 0x30 | `BUS_CNTL` or `PCIE_INDEX` | conflict | read 4, write 4 | 3 | static code at 0x4112c0 | 1 | see below |
 | 0x40 | `GEN_INT_CNTL` | exact | read 4 | 1 | static code at 0x41bc00 | 0 | see below |
 | 0x44 | `GEN_INT_STATUS` | exact | read 4, write 4 | 5 | `R200WaitForVerticalSync` at 0x410e00 | 0 | see below |
 | 0x50 | `CRTC_GEN_CNTL` | exact | read 4, write 4 | 45 | `R200GetCRTCResetState` at 0x449540 | 2 | see below |
 | 0x54 | `CRTC_EXT_CNTL` | exact | read 4, write 4 | 29 | static code at 0x40eb00 | 4 | unknown |
-| 0x58 | `DAC_CNTL` | common | read 4, write 4 | 16 | `FGLSetGammaData` at 0x42fe00 | 5 | unknown |
-| 0x5c | `CRTC_STATUS` | common | read 4, write 4 | 8 | `FIREGL_ShowOverlay` at 0x43df00 | 1 | unknown |
+| 0x58 | `DAC_CNTL` | common | read 4, write 4 | 16 | `FGLSetGammaData` at 0x42fe00 | 5 | see below |
+| 0x5c | `CRTC_STATUS` | common | read 4, write 4 | 8 | `FIREGL_ShowOverlay` at 0x43df00 | 1 | see below |
 | 0x6c | `GPIO_MONIDB` or `GPIO_CRT2_DDC` | conflict | read 4, write 4 | 2 | static code at 0x4112c0 | 0 | unknown |
-| 0x7c | `DAC_CNTL2` | common | read 4, write 4 | 51 | `FGLSetGammaData` at 0x42fe00 | 5 | unknown |
+| 0x7c | `DAC_CNTL2` | common | read 4, write 4 | 51 | `FGLSetGammaData` at 0x42fe00 | 5 | see below |
 | 0x94 | `I2C_CNTL_1` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | see below |
-| 0xb0 | `PALETTE_INDEX` | common | read 4, write 4 | 6 | `FGLSetGammaData` at 0x42fe00 | 2 | unknown |
-| 0xb3 | `PALETTE_INDEX` | lane of 0xb0 | write 1 | 20 | `FGLSetGammaData` at 0x42fe00 | 4 | unknown |
+| 0xb0 | `PALETTE_INDEX` | common | read 4, write 4 | 6 | `FGLSetGammaData` at 0x42fe00 | 2 | see below |
+| 0xb3 | `PALETTE_INDEX` | lane of 0xb0 | write 1 | 20 | `FGLSetGammaData` at 0x42fe00 | 4 | see below |
 | 0xb4 | `PALETTE_DATA` | common | read 4, write 4 | 30 | static code at 0x4195c0 | 1 | unknown |
-| 0xb8 | `PALETTE_30_DATA` | common | write 4 | 9 | `FGLSetGammaData` at 0x42fe00 | 2 | unknown |
+| 0xb8 | `PALETTE_30_DATA` | common | write 4 | 9 | `FGLSetGammaData` at 0x42fe00 | 2 | see below |
 | 0xe0 | `CONFIG_CNTL` | common | read 4 | 3 | `R200LinuxCailInitCail` at 0x43ea80 | 2 | see below |
-| 0xf0 | `RBBM_SOFT_RESET` | exact | read 4, write 4 | 6 | `R200EngineReset` at 0x40a5c0 | 1 | unknown |
+| 0xf0 | `RBBM_SOFT_RESET` | exact | read 4, write 4 | 6 | `R200EngineReset` at 0x40a5c0 | 1 | see below |
 | 0xf8 | `CONFIG_MEMSIZE` | common | read 4 | 2 | static code at 0x4112c0 | 1 | see below |
 | 0x148 | `MC_FB_LOCATION` or `MEM_ADDR_CONFIG` | conflict | write 4 | 2 | `R200EngineInit` at 0x40aa40 | 0 | see below |
-| 0x150 | `MEM_STR_CNTL` or `MC_STATUS` | conflict | read 4 | 1 | `R200EngineReset` at 0x40a5c0 | 0 | unknown |
+| 0x150 | `MEM_STR_CNTL` or `MC_STATUS` | conflict | read 4 | 1 | `R200EngineReset` at 0x40a5c0 | 0 | see below |
 | 0x158 | `SDRAM_MODE_REG` | common | read 4 | 1 | static code at 0x4112c0 | 0 | see below |
 | 0x194 | none | none | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
-| 0x198 | `GPIOPAD_MASK` | common | read 4, write 4 | 18 | `SGIGLXSwapBarrierInit` at 0x430740 | 2 | unknown |
+| 0x198 | `GPIOPAD_MASK` | common | read 4, write 4 | 18 | `SGIGLXSwapBarrierInit` at 0x430740 | 2 | see below |
 | 0x19c | `GPIOPAD_A` | common | read 4, write 4 | 10 | static code at 0x4112c0 | 1 | unknown |
-| 0x1a0 | `GPIOPAD_EN` | common | read 4, write 4 | 16 | `SGIGLXSwapBarrierInit` at 0x430740 | 2 | unknown |
+| 0x1a0 | `GPIOPAD_EN` | common | read 4, write 4 | 16 | `SGIGLXSwapBarrierInit` at 0x430740 | 2 | see below |
 | 0x1a4 | `GPIOPAD_Y` | common | read 4 | 11 | static code at 0x4112c0 | 1 | unknown |
 | 0x1a8 | `MDGPIO_MASK` | common | read 4, write 4 | 12 | static code at 0x4112c0 | 1 | unknown |
 | 0x1ac | `MDGPIO_A` | common | read 4, write 4 | 16 | static code at 0x4112c0 | 1 | unknown |
@@ -146,9 +146,9 @@ write) as reads.
 | 0x224 | `CRTC_OFFSET` | common | read 4, write 4 | 6 | `R200AdjustFrame` at 0x422680 | 2 | unknown |
 | 0x228 | `CRTC_OFFSET_CNTL` | common | read 4, write 4 | 25 | `QBS_EnableStereo` at 0x43f440 | 7 | unknown |
 | 0x22c | `CRTC_PITCH` | common | read 4, write 4 | 4 | `R6TMDSTransmitLinux` at 0x445480 | 1 | unknown |
-| 0x230 | `OVR_CLR` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
-| 0x234 | `OVR_WID_LEFT_RIGHT` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
-| 0x238 | `OVR_WID_TOP_BOTTOM` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
+| 0x230 | `OVR_CLR` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | see below |
+| 0x234 | `OVR_WID_LEFT_RIGHT` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | see below |
+| 0x238 | `OVR_WID_TOP_BOTTOM` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | see below |
 | 0x23c | `DISPLAY_BASE_ADDR` | exact | write 4 | 1 | `R200EngineInit` at 0x40aa40 | 0 | see below |
 | 0x250 | `FP_CRTC_H_TOTAL_DISP` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
 | 0x254 | `FP_CRTC_V_TOTAL_DISP` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
@@ -160,7 +160,7 @@ write) as reads.
 | 0x27c | `CRTC_MORE_CNTL` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
 | 0x280 | `DAC_EXT_CNTL` | common | read 4, write 4 | 9 | static code at 0x4112c0 | 0 | unknown |
 | 0x284 | `FP_GEN_CNTL` | common | read 4, write 4 | 11 | static code at 0x4112c0 | 2 | unknown |
-| 0x288 | `FP2_GEN_CNTL` | common | read 4, write 4 | 28 | `SGIGLXSwapBarrierInit` at 0x430740 | 2 | unknown |
+| 0x288 | `FP2_GEN_CNTL` | common | read 4, write 4 | 28 | `SGIGLXSwapBarrierInit` at 0x430740 | 2 | see below |
 | 0x28c | `FP_HORZ_STRETCH` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
 | 0x290 | `FP_VERT_STRETCH` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
 | 0x294 | none | none | read 4, write 4 | 3 | `R6TMDSTransmitLinux` at 0x445480 | 0 | see below |
@@ -193,7 +193,7 @@ write) as reads.
 | 0x400 | `OV0_Y_X_START` | common | write 4 | 2 | `FIREGL_ShowOverlay` at 0x43df00 | 1 | unknown |
 | 0x404 | `OV0_Y_X_END` | common | write 4 | 4 | `FIREGL_ShowOverlay` at 0x43df00 | 1 | unknown |
 | 0x410 | `OV0_REG_LOAD_CNTL` | common | read 4, write 4 | 6 | static code at 0x437c3c | 0 | unknown |
-| 0x420 | `OV0_SCALE_CNTL` | exact | read 4, write 4 | 12 | `FIREGL_HideOverlay` at 0x43db80 | 2 | unknown |
+| 0x420 | `OV0_SCALE_CNTL` | exact | read 4, write 4 | 12 | `FIREGL_HideOverlay` at 0x43db80 | 2 | see below |
 | 0x424 | `OV0_V_INC` | common | write 4 | 2 | `FIREGL_ShowOverlay` at 0x43df00 | 1 | unknown |
 | 0x428 | `OV0_P1_V_ACCUM_INIT` | common | read 4, write 4 | 3 | `FIREGL_ShowOverlay` at 0x43df00 | 1 | unknown |
 | 0x42c | `OV0_P23_V_ACCUM_INIT` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
@@ -256,10 +256,10 @@ write) as reads.
 | 0xb00 | `SURFACE_CNTL` | common | read 4, write 4 | 12 | `R200ScreenInit` at 0x41a700 | 3 | unknown |
 | 0xc40 | `VIPH_CONTROL` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
 | 0xd14 | `DISP_HW_DEBUG` | common | read 4, write 4 | 4 | static code at 0x4112c0 | 1 | unknown |
-| 0xd20 | `OV0_LIN_TRANS_A` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
-| 0xd24 | `OV0_LIN_TRANS_B` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
-| 0xd28 | `OV0_LIN_TRANS_C` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
-| 0xd2c | `OV0_LIN_TRANS_D` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
+| 0xd20 | `OV0_LIN_TRANS_A` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | see below |
+| 0xd24 | `OV0_LIN_TRANS_B` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | see below |
+| 0xd28 | `OV0_LIN_TRANS_C` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | see below |
+| 0xd2c | `OV0_LIN_TRANS_D` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | see below |
 | 0xd30 | `OV0_LIN_TRANS_E` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
 | 0xd34 | `OV0_LIN_TRANS_F` | common | write 4 | 1 | `FIREGL_ShowOverlay` at 0x43df00 | 0 | unknown |
 | 0xd60 | `DISP_MERGE_CNTL` | common | read 4, write 4 | 2 | static code at 0x41bc00 | 0 | unknown |
@@ -273,7 +273,7 @@ write) as reads.
 | 0x1434 | `SRC_Y_X` | exact | write 4 | 1 | static code at 0x40ac40 | 0 | see below |
 | 0x1438 | `DST_Y_X` | exact | write 4 | 3 | static code at 0x40ac40 | 0 | see below |
 | 0x143c | `DST_HEIGHT_WIDTH` | exact | write 4 | 1 | static code at 0x40ac40 | 0 | see below |
-| 0x146c | `DP_GUI_MASTER_CNTL` | exact | write 4 | 5 | `R200EngineRestore` at 0x40a780 | 1 | unknown |
+| 0x146c | `DP_GUI_MASTER_CNTL` | exact | write 4 | 5 | `R200EngineRestore` at 0x40a780 | 1 | see below |
 | 0x1478 | `DP_BRUSH_BKGD_CLR` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | see below |
 | 0x147c | `DP_BRUSH_FRGD_CLR` | exact | write 4 | 3 | `R200EngineRestore` at 0x40a780 | 1 | see below |
 | 0x1598 | `DST_WIDTH_HEIGHT` | exact | write 4 | 2 | static code at 0x40ac40 | 0 | see below |
@@ -288,17 +288,17 @@ write) as reads.
 | 0x1604 | `DST_LINE_END` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | see below |
 | 0x16c0 | `DP_CNTL` | exact | write 4 | 5 | static code at 0x40ac40 | 0 | unknown |
 | 0x16c4 | `DP_DATATYPE` | common | read 4, write 4 | 4 | `R200EngineRestore` at 0x40a780 | 1 | unknown |
-| 0x16cc | `DP_WRITE_MASK` | exact | write 4 | 5 | `R200EngineRestore` at 0x40a780 | 1 | unknown |
+| 0x16cc | `DP_WRITE_MASK` | exact | write 4 | 5 | `R200EngineRestore` at 0x40a780 | 1 | see below |
 | 0x16e0 | `DEFAULT_OFFSET` | common | read 4, write 4 | 7 | `R200ScreenInit` at 0x41a700 | 2 | unknown |
 | 0x16e8 | `DEFAULT_SC_BOTTOM_RIGHT` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | see below |
 | 0x1700 | none | none | write 4 | 1 | static code at 0x40ac40 | 0 | unknown |
 | 0x1704 | `FLUSH_1` | common | write 4 | 1 | static code at 0x40ac40 | 0 | unknown |
 | 0x1724 | `CACHE_CNTL` | common | write 4 | 1 | `FGLInitCP` at 0x42c4c0 | 0 | see below |
 | 0x1c3c | `RB3D_CNTL` | common | write 4 | 1 | `R200EngineInit` at 0x40aa40 | 0 | unknown |
-| 0x2140 | `VAP_CNTL_STATUS` or `SE_CNTL_STATUS` | conflict | write 4 | 1 | `FGLInitCP` at 0x42c4c0 | 0 | unknown |
+| 0x2140 | `VAP_CNTL_STATUS` or `SE_CNTL_STATUS` | conflict | write 4 | 1 | `FGLInitCP` at 0x42c4c0 | 0 | see below |
 | 0x26ac | none | none | read 4, write 4 | 2 | `FGLInitCP` at 0x42c4c0 | 0 | unknown |
-| 0x3428 | `RB2D_DSTCACHE_MODE` | common | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | unknown |
-| 0x342c | `RB2D_DSTCACHE_CTLSTAT` | exact | read 4, write 4 | 4 | `R200EngineFlush` at 0x40a540 | 0 | unknown |
+| 0x3428 | `RB2D_DSTCACHE_MODE` | common | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | see below |
+| 0x342c | `RB2D_DSTCACHE_CTLSTAT` | exact | read 4, write 4 | 4 | `R200EngineFlush` at 0x40a540 | 0 | see below |
 
 ### Offsets with no public name
 
@@ -580,6 +580,45 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
 - **0x30** in `fglrx_drv.so`: the public `BUS_CNTL` (`RADEON_BUS_CNTL` in `radeon_reg.h`; the PCI Express tables name
   the same offset `PCIE_INDEX`). The static routine at 0x41bc00 copies the word at +48 of its argument record to it,
   unchanged, at 0x41bc6c. The aperture pointer comes from the driver record's +48 at 0x41bc14. Inferred.
+- **0x342c** in `fglrx_drv.so`: the public `RB2D_DSTCACHE_CTLSTAT` (exact; `RADEON_RB2D_DSTCACHE_CTLSTAT` in
+  `radeon_reg.h`, where `RADEON_RB2D_DC_FLUSH_ALL` is 0xf and `RADEON_RB2D_DC_BUSY` is bit 31).
+  `R200EngineFlush` at 0x40a540 (92 bytes) reads it through the aperture in a5, ORs in 0xf and writes it back at
+  0x40a560. It then polls the word with two reads per pass until bit 31 clears. The count runs to 2000000
+  (0x1e8480), and the routine returns from the loop whether the bit cleared or the count ran out. The routine was
+  read in full. Established.
+- **0x3428** in `fglrx_drv.so`: the public `RB2D_DSTCACHE_MODE` (common; `RADEON_RB2D_DSTCACHE_MODE` in
+  `radeon_reg.h`, which gives no bits for it). `R200EngineRestore` at 0x40a780 (468 bytes) writes zero to it at 0x40a7e4,
+  through the aperture in s1. Inferred.
+- **0x16cc** in `fglrx_drv.so`: the public `DP_WRITE_MASK` (exact; `RADEON_DP_WRITE_MASK` in `radeon_reg.h`).
+  `R200EngineRestore` at 0x40a780 (468 bytes) stores all ones to it at 0x40a89c through the aperture in s1. The value is the
+  register t1, which the `addiu` at 0x40a888 sets to -1. Inferred.
+- **0x146c** in `fglrx_drv.so`: the public `DP_GUI_MASTER_CNTL` (exact; `RADEON_DP_GUI_MASTER_CNTL` in
+  `radeon_reg.h`). `R200EngineRestore` at 0x40a780 (468 bytes) loads the word at +6428 of the driver record (s0) at 0x40a854,
+  ORs in 0x30d0 at 0x40a860 and stores the result at 0x40a864. `radeon_reg.h` puts the solid-colour brush value
+  (13 << 4) in bits 4 to 7 and the colour source data type (3 << 12) in bits 12 and 13, which is what 0x30d0
+  sets. Inferred.
+- **0x420** in `fglrx_drv.so`: the public `OV0_SCALE_CNTL` (exact; `RADEON_OV0_SCALE_CNTL` in `radeon_reg.h`, where
+  bit 30 is `RADEON_SCALER_ENABLE`). `FIREGL_HideOverlay` at 0x43db80 (136 bytes) reads the word through the aperture pointer it
+  keeps at sp+24 (the `lw` at 0x43dbc4, base ra), ANDs it with 0xbfffffff (`lui` at 0x43dbc0, `ori` at 0x43dbcc)
+  and writes it back at 0x43dbdc. That clears the scaler enable bit. `FIREGL_ShowOverlay` at 0x43df00 (1900 bytes) reads and
+  writes the same register on several of its paths, with stores at 0x43e098, 0x43e100, 0x43e48c and 0x43e4fc.
+  Inferred.
+- **0x2140** in `fglrx_drv.so`: the public tables give two names for this offset, `VAP_CNTL_STATUS` (R300, in
+  `reg_srcs/r300`) and `SE_CNTL_STATUS` (`RADEON_SE_CNTL_STATUS` in `radeon_reg.h`, where R200 uses the same offset).
+  `FGLInitCP` at 0x42c4c0 (720 bytes) makes one access to it: a store of zero at 0x42c6b0 through the aperture in s2,
+  with no read before it. The store clears the whole word during the command-processor start-up that the routine
+  performs. Inferred.
+- **0xd20** in `fglrx_drv.so`: the public `OV0_LIN_TRANS_A` (common; `RADEON_OV0_LIN_TRANS_A` in `radeon_reg.h`,
+  which has no comment for it). `FIREGL_ShowOverlay` at 0x43df00 (1900 bytes) writes zero to it at 0x43dff0. That store sits in
+  the straight-line code before the `beq` at 0x43e020. Inferred.
+- **0xd24** in `fglrx_drv.so`: the public `OV0_LIN_TRANS_B` (common; `RADEON_OV0_LIN_TRANS_B`). `FIREGL_ShowOverlay`
+  writes 0x10000000 to it at 0x43dff8. The value is the `lui` of 0x1000 at 0x43dff4, held in a1 for the stores at
+  0xd24 and 0xd28. Inferred.
+- **0xd28** in `fglrx_drv.so`: the public `OV0_LIN_TRANS_C` (common; `RADEON_OV0_LIN_TRANS_C`). The store at 0x43dffc
+  puts the same a1 value, 0x10000000, into it, one instruction after the store to 0xd24. Inferred.
+- **0xd2c** in `fglrx_drv.so`: the public `OV0_LIN_TRANS_D` (common; `RADEON_OV0_LIN_TRANS_D`). It gets zero at
+  0x43e000, the fourth of the six overlay constants that `FIREGL_ShowOverlay` writes before the `beq` at 0x43e020.
+  Inferred.
 
 ## Not in the tables
 
