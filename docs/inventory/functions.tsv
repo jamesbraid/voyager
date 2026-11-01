@@ -2652,7 +2652,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019ac00	268	miRegionCreate	dynsym	
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019ad40	232	miRegionInit	dynsym	64c4c456cb23		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019ae40	108	miRegionDestroy	dynsym	638805fb29e1		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019aec0	68	miRegionUninit	dynsym	d0ab14162ada		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019af40	128	miRegionBreak	dynsym	7922b9c13293		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019af40	128	miRegionBreak	dynsym	7922b9c13293		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019afc0	384	miRectAlloc	dynsym	a367787999d0		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019b140	380	miRegionCopy	dynsym	7b83687de2f7		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x1019c040	328	miSetExtents	dynsym	67c2f32afda5		in	undocumented		
@@ -29301,12 +29301,12 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		versionWithi
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		vfmtDebugf	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		vfmtRamboSuffix	dwarf+funcnames			in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x0		visualDepth	dwarf+funcnames			in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a300	192	R200WaitForFifoFunction	dynsym	e0c0b7a5f334		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a3c0	200	R200WaitForIdle	dynsym	36b48e528180		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a540	92	R200EngineFlush	dynsym	057496d7e221		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a5c0	436	R200EngineReset	dynsym	07ddaf201951		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a780	468	R200EngineRestore	dynsym	dd62880c649c		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40aa40	452	R200EngineInit	dynsym	36898c231b2c		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a300	192	R200WaitForFifoFunction	dynsym	e0c0b7a5f334		in	named-only	docs/registers.md#registers-read-in-full	Registers read in full
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a3c0	200	R200WaitForIdle	dynsym	36b48e528180		in	named-only	docs/registers.md#registers-read-in-full	Registers read in full
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a540	92	R200EngineFlush	dynsym	057496d7e221		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a5c0	436	R200EngineReset	dynsym	07ddaf201951		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40a780	468	R200EngineRestore	dynsym	dd62880c649c		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40aa40	452	R200EngineInit	dynsym	36898c231b2c		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40b480	448	R200CPSetupForSolidFill	dynsym	9cf734959e68		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40b640	168	R200CPSubsequentSolidFillRect	dynsym	ae8dffda40e6		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40b700	204	R200CPSetupForSolidFillOverlay	dynsym	de023209d8e8		in	undocumented		
@@ -29316,21 +29316,21 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40bbc0	284	R200
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40ccc0	72	R200SelectBuffer	dynsym	d0aca22a34d7		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40cd40	128	R200SelectBufferCP	dynsym	4cac09d8ec67		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40ce80	272	R200CPAccelInitFuncs	dynsym	665ac3ada6e2		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40cfc0	548	R200AccelInit	dynsym	07ebf78206d4		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40cfc0	548	R200AccelInit	dynsym	07ebf78206d4		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40e440	496	R200CursorInit	dynsym	ed201fc72259		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40e900	488	R200DGAInit	dynsym	01db7eb96030		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40e900	488	R200DGAInit	dynsym	01db7eb96030		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x410980	276	R200MapMMIO	dynsym	70f2047cfa79		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x410ac0	204	R200UnmapMMIO	dynsym	b37ca11ae395		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x410dc0	24	R200INPLL	dynsym	aee0c36e3c32		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x410e00	140	R200WaitForVerticalSync	dynsym	c242f8131c98		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x411280	48	R200MinBits	dynsym	ce3810795fe3		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4189c0	3016	R200PreInit	dynsym	2a5511d9be41		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x41a700	5328	R200ScreenInit	dynsym	4761de843c49		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x410dc0	24	R200INPLL	dynsym	aee0c36e3c32		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x410e00	140	R200WaitForVerticalSync	dynsym	c242f8131c98		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x411280	48	R200MinBits	dynsym	ce3810795fe3		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4189c0	3016	R200PreInit	dynsym	2a5511d9be41		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x41a700	5328	R200ScreenInit	dynsym	4761de843c49		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422200	728	R200SwitchMode	dynsym	f3fee3deafa8		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422500	8	R200ValidMode	dynsym	87506497337c		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422680	1048	R200AdjustFrame	dynsym	25ca6f6cc46a		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422680	1048	R200AdjustFrame	dynsym	25ca6f6cc46a		in	named-only	docs/open-questions.md#register-accesses	Register accesses
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422ac0	504	R200CloneAdjustFrame	dynsym	9e7bee4160d3		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422cc0	636	R200EnterVT	dynsym	545d51ae067b		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422cc0	636	R200EnterVT	dynsym	545d51ae067b		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422f40	284	R200LeaveVT	dynsym	df78da98f0af		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x423440	116	R200FreeScreen	dynsym	1b23c4c9d2db		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x423b00	368	checkXF86Version	dynsym	05327bac63a1		in	undocumented		
@@ -29364,43 +29364,43 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e600	168	vSub
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e6c0	192	vMultiplyFixed	dynsym	9cebc3bab2b9		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e780	40	vCeilFixed	dynsym	7cd72567f5fc		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e7c0	224	vDivideFixed	dynsym	bd5b83c6e96a		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e940	44	ulRC6PllReadUlong	dynsym	db9aa1456da0		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e980	76	vRC6PllWriteUlong	dynsym	9d46c33ba5e9		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42ea00	164	vRC6ProgramHTOT_CNTL_EDGE	dynsym	6ef04c05b5ed		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e940	44	ulRC6PllReadUlong	dynsym	db9aa1456da0		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42e980	76	vRC6PllWriteUlong	dynsym	9d46c33ba5e9		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42ea00	164	vRC6ProgramHTOT_CNTL_EDGE	dynsym	6ef04c05b5ed		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42fd00	92	FGLRXAddExtension	dynsym	66d72642fa51		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42fe00	1700	FGLSetGammaData	dynsym	f603fc7251bd		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x430740	492	SGIGLXSwapBarrierInit	dynsym	807c8bbe1738		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x42fe00	1700	FGLSetGammaData	dynsym	f603fc7251bd		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x430740	492	SGIGLXSwapBarrierInit	dynsym	807c8bbe1738		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x430c40	328	vCalcCRTCOffsetRegs	dynsym	8b01cee869f6		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x430dc0	1616	bR200SetTilingMode	dynsym	f13350379b52		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x431dc0	832	FIREGL_OverlayCopyWindow	dynsym	fa702e90f622		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x432100	2436	FIREGL_OverlayPaintWindow	dynsym	0098266a78e7		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x432ac0	232	FIREGL_OverlayBlockHandler	dynsym	e7affa0f0c02		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4357c0	820	FIREGL_OverlayHandleColormaps	dynsym	a19f926ec610		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x437bc0	124	miRegionBreak	dynsym	a22000b76bd8		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x437bc0	124	miRegionBreak	dynsym	a22000b76bd8		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43aac0	1092	FIREGL_OverlayWindowExposures	dynsym	33e7166ab42a		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43af40	1008	FIREGL_WindowExposures	dynsym	d6110c3fd2e4		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43cd00	80	FIREGL_OverlayGetPrivateClips	dynsym	b5bb037f8bc4		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43d040	156	FIREGL_OverlayCollectUnderlayRegions	dynsym	5bb0c2f0234c		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43db80	136	FIREGL_HideOverlay	dynsym	230064a54682		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43d040	156	FIREGL_OverlayCollectUnderlayRegions	dynsym	5bb0c2f0234c		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43db80	136	FIREGL_HideOverlay	dynsym	230064a54682		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43dc40	484	FIREGL_InitOverlay	dynsym	dcb9159b52d1		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43de40	184	FIREGL_FinishOverlayInit	dynsym	b099422dd956		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43df00	1900	FIREGL_ShowOverlay	dynsym	a217cd6b3ff4		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43df00	1900	FIREGL_ShowOverlay	dynsym	a217cd6b3ff4		in	named-only	docs/open-questions.md#register-accesses	Register accesses
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43e680	244	FIREGL_EnableOverlay	dynsym	f8330a36886f		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43e780	636	FIREGL_OverlayLoadPalette	dynsym	bc5433e2b15e		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43ea80	828	R200LinuxCailInitCail	dynsym	0ef1c488bdd8		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43ea80	828	R200LinuxCailInitCail	dynsym	0ef1c488bdd8		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f0c0	200	QBS_EnableOverlay	dynsym	a6c6f10c87c5		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f1c0	196	QBS_FinishInit	dynsym	513f7acef94e		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f1c0	196	QBS_FinishInit	dynsym	513f7acef94e		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f2c0	328	QBS_MakeTrans	dynsym	2878d87e7e01		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f440	80	QBS_EnableStereo	dynsym	edb111640b3d		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x43f440	80	QBS_EnableStereo	dynsym	edb111640b3d		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4400c0	208	SaveTimingCode	dynsym	af76ad6d4f0a		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4401c0	240	RestoreTimingCode	dynsym	9f99a1e79d6a		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4401c0	240	RestoreTimingCode	dynsym	9f99a1e79d6a		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4437c0	1176	Write_FIFO_Values	dynsym	34d6dec96ffa		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x443c80	416	LoadTimingCode	dynsym	5c2eda9a1783		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4441c0	540	Set_MV_Mode	dynsym	7cb40e430164		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4441c0	540	Set_MV_Mode	dynsym	7cb40e430164		in	named-only	docs/open-questions.md#register-accesses	Register accesses
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x444400	1796	SetClk	dynsym	23ddf1f8de52		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x444b40	1256	SetCrtMN	dynsym	4ce9e0c30e61		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x445040	1036	VTMaster	dynsym	268c60de36aa		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x445480	580	R6TMDSTransmitLinux	dynsym	e1e5c02af224		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x445480	580	R6TMDSTransmitLinux	dynsym	e1e5c02af224		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x446400	92	ATITVoutAddExtension	dynsym	1ebdea3b4331		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4467c0	92	ATIHPVAddExtension	dynsym	e75956208a8e		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x446cc0	1040	R200SGIVCCopyModes	dynsym	cbb9a7f605a3		in	undocumented		
@@ -29410,7 +29410,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448300	200	R200
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448400	204	R200CompositorModeFlags	dynsym	d76134e9478d		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448780	600	R200LstComb	dynsym	ecbd81903343		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x448f80	924	R200SetMonitorInfo	dynsym	9b6aa61201c6		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449540	60	R200GetCRTCResetState	dynsym	f4a553048662		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449540	60	R200GetCRTCResetState	dynsym	f4a553048662		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449580	96	R200GetCursorScreen	dynsym	a00199fd559a		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449600	324	R200QryPltParam	dynsym	421c23c311fc		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x449780	92	R200GetSGIInfoPtr	dynsym	f2a8319158a2		in	undocumented		
@@ -47306,19 +47306,19 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x337c	108	fglrx_give_up_
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x33e8	128	fglrx_get_vsync_cnt	dwarf	0f081e41d2d6		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3468	988	fglrx_wait_vsync	dwarf	42a3f7460a6c		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3844	428	fglrx_validate_vsync	dwarf	bf4bbb23a3ea		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x39f0	84	fglrx_dma_flush	dwarf+symtab	933317d067ae		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x39f0	84	fglrx_dma_flush	dwarf+symtab	933317d067ae		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3a44	240	fglrx_is_brdmanager	dwarf	89fa35c7f425		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3b34	64	fglrx_swapbuf_stat	dwarf	3e4a470ac151		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x3b74	1296	fglrx_ioctl	dwarf+symtab	86a0b82ffaaa		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4084	976	fglrx_map	dwarf+symtab	57c31792b667		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4454	336	fglrx_error_handler	dwarf+symtab	b151f54dbb95		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x45a4	180	fglrx_add_exit_callback	dwarf+symtab	c0827ca758a8		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4658	520	fglrx_exit	dwarf+symtab	1ab4e25eddf3		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4658	520	fglrx_exit	dwarf+symtab	1ab4e25eddf3		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4860	168	fglrx_thread_exit	dwarf+symtab	50d8a981f9b6		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4908	72	FGLRXReadRegister	dwarf+symtab	2ce669ea6e2c		in	named-only	docs/kernel-attach.md#image-sync-driver	Image-sync driver
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4950	80	FGLRXWriteRegister	dwarf+symtab	0fcb500bc216		in	named-only	docs/kernel-attach.md#image-sync-driver	Image-sync driver
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x49a0	80	FGLRXWriteRegister8	dwarf+symtab	b68149dc6eb2		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x49f0	272	FGLRXINPLL	dwarf+symtab	2a283ef12413		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x49a0	80	FGLRXWriteRegister8	dwarf+symtab	b68149dc6eb2		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x49f0	272	FGLRXINPLL	dwarf+symtab	2a283ef12413		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4b00	104	FGLRXinfo	dwarf+symtab	fe036d438435		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4b68	8	FGLRXinit	dwarf+symtab	6319e0118090		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4b70	8	FGLRXattach	dwarf+symtab	6319e0118090		in	undocumented		
@@ -47342,10 +47342,10 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x53e4	76	fglrx_usb_comp_
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x53e4	76	usb_comp_update_tiles	symtab	2a82b8448280	shared-address	in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5430	80	fglrx_usb_comp_readwrite_register	dwarf+symtab	77d2e938cfa7	shared-address	in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5430	80	usb_comp_readwrite_register	symtab	77d2e938cfa7	shared-address	in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5480	204	fglrxReadMmRegister	dwarf+symtab	cc5a8cac371d		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x554c	200	fglrxWriteMmRegister	dwarf+symtab	70e6ff13564f		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5480	204	fglrxReadMmRegister	dwarf+symtab	cc5a8cac371d		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x554c	200	fglrxWriteMmRegister	dwarf+symtab	70e6ff13564f		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5614	292	fglrxCompositorUSBRegReadWrite	dwarf	240498251bd6		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5738	904	fglrxCompositorI2cRegRead	dwarf	a60a0353d3d8		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5738	904	fglrxCompositorI2cRegRead	dwarf	a60a0353d3d8		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5ac0	800	fglrxProbeCompositor	dwarf+symtab	db89eb2f86f6		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5de0	1416	fglrx_hpipe_discover	dwarf	d6703d69cc24		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x6368	440	fglrx_hp_fire_swapready	dwarf+symtab	99ec4f4a3c85		in	undocumented		
@@ -47555,8 +47555,8 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11d88	312	firegl_DRMPol
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11ec0	196	_r6x_WaitNotBusy	dwarf+symtab	d8a17d088c78		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x11f84	5752	_r6x_IsDeviceSupported	dwarf+symtab	1ee9922955a4		in	named-only	docs/kernel-attach.md#which-cards-the-driver-claims	Which cards the driver claims
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x135fc	1196	_r6x_resetPM4	dwarf+symtab	a4e546c78411		in	named-only	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13aa8	164	_r6x_CheckWSBoard	dwarf+symtab	71c97dabb744		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13b4c	260	_r6x_EnableStereo	dwarf+symtab	06f06a4aa73d		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13aa8	164	_r6x_CheckWSBoard	dwarf+symtab	71c97dabb744		in	named-only	docs/registers.md#fglrxo	`fglrx.o`
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13b4c	260	_r6x_EnableStereo	dwarf+symtab	06f06a4aa73d		in	named-only	docs/registers.md#fglrxo	`fglrx.o`
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13c50	456	_r6x_InitMaskRamSize	dwarf+symtab	be67c904ff84		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13ed8	856	firegl_open_helper	dwarf+symtab	f55b5dde64c5		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x14230	128	firegl_release_swapready	dwarf+symtab	4dd91ed4c457	shared-address	in	undocumented		
@@ -47622,7 +47622,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1b8f0	8	firegl_aperture
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1b9b8	224	drm_order	dwarf+symtab	56d9817519dc		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ba98	212	drm_pages_from_order	dwarf+symtab	8f6eb1880f2c		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1bb6c	228	calc_offset	dwarf	8df741849b1b		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1bc50	1684	firegl_addmap	dwarf+symtab	4fc2f33d8223		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1bc50	1684	firegl_addmap	dwarf+symtab	4fc2f33d8223		in	named-only	docs/open-questions.md#register-accesses	Register accesses
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1c2e4	980	firegl_rmmap	dwarf+symtab	e78050ac0e9c		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1c6b8	1280	drm_addmap	dwarf+symtab	72c4b6eaac37		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1cbb8	228	drm_rmmap	dwarf+symtab	3599fda124c7		in	undocumented		
@@ -47647,7 +47647,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f058	52	firegl_irq_fra
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f08c	760	firegl_install_irq	dwarf+symtab	fb0777546574		in	understood	docs/kernel-attach.md#interrupts	Interrupts
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f384	272	firegl_vs_stereo_swap	dwarf+symtab	5fd2264fe2b3		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f494	340	firegl_vs_validate	dwarf+symtab	3783d6817cbe		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f5e8	264	firegl_sync_dacs	dwarf+symtab	6d5e07d12d96		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f5e8	264	firegl_sync_dacs	dwarf+symtab	6d5e07d12d96		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f7dc	356	find_memlock	dwarf	2590f63047f2		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f940	176	add_memlock	dwarf	ad72c2520fa5		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1f9f0	484	firegl_free_memlock	dwarf+symtab	216ec24dedd2		in	undocumented		
@@ -47659,11 +47659,11 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20408	108	firegl_restor
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20534	1316	firegl_umm_init	dwarf+symtab	2f6229b0de0f		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20a84	64	_r6x_vs_stereo_swap	dwarf+symtab	3e9b744eed43		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20ac4	68	_r6x_vs_validate	dwarf+symtab	b5335d2191a2		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20b08	176	_r6x_service_irq_vsync_handler	dwarf+symtab	3cf4042c659f		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20b08	176	_r6x_service_irq_vsync_handler	dwarf+symtab	3cf4042c659f		in	named-only	docs/registers.md#registers-read-in-full	Registers read in full
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20bb8	248	_r6x_service_irq_framelock_handler	dwarf+symtab	c09a3ca33a85		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20cb0	220	_r6x_enable_vsync_irq	dwarf+symtab	1fb58d6db2c5		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20d8c	220	_r6x_enable_framelock_irq	dwarf+symtab	1fb58d6db2c5		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20e68	168	_r6x_close_irq	dwarf+symtab	103c57f249a8		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x20e68	168	_r6x_close_irq	dwarf+symtab	103c57f249a8		in	named-only	docs/registers.md#fglrxo	`fglrx.o`
 usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64		0x0		prominfo_add	dwarf+symtab			in	undocumented		
 usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0x64	120	prominfo_del	dwarf+symtab	8fc1b1ddb91e		in	undocumented		
 usr/cpu/sysgen/IP35boot/hubspc.o	shared-kernel	n64	.text	0xdc	112	prominfo_nodeget	dwarf+symtab	7e9d4fd41e86		in	undocumented		
