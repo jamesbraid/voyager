@@ -474,8 +474,7 @@ The 16-bit pointer at offset 0x18 gives the PCI data structure, which starts wit
 - `usr/gfx/ucode/VOYAGER/sg2.bin` (40960 bytes): **established** from the header bytes.
   The jump at offset 3 goes to 0x6c8.
   The pointer at offset 0x18 is 0x194, where vendor 0x1002 and device 0x4e47 sit.
-  **Inferred** from the device ID that this is the FireGL X1 (R300) ROM.
-  The public Mesa PCI ID table names that device FireGL X1.
+  **Inferred** from the device ID that this is the FireGL X1 (R300) ROM, the name `AGENTS.md` gives that ID.
 - `usr/gfx/ucode/VOYAGER/sg3.bin` (40960 bytes): **established** from the header bytes.
   The jump at offset 3 goes to 0x6d3.
   The pointer at offset 0x18 is 0x194, where vendor 0x1002 and device 0x4e4b sit.
