@@ -47628,7 +47628,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1c6b8	1280	drm_addmap	d
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1cbb8	228	drm_rmmap	dwarf+symtab	3599fda124c7		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1cd5c	272	drm_irq_busid	dwarf+symtab	2b4896a4679e		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ce6c	272	drm_getunique	dwarf+symtab	1785977a4a2c		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1cf7c	760	drm_setunique	dwarf+symtab	cb33b3a1dd02		in	located	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1cf7c	760	drm_setunique	dwarf+symtab	cb33b3a1dd02		in	understood	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1d334	556	drm_adddraw	dwarf+symtab	75dd9bbe6893		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1d560	232	_firegl_remove_drawable	dwarf	ed5a2f6d5f99		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1d648	384	drm_rmdraw	dwarf+symtab	cd1eb54cf4e6		in	undocumented		
