@@ -122,3 +122,77 @@ One entry per file in the install set, in the order of [the binaries table](inve
   It also exports `vbeDoEDID`.
   It imports 23 names from the emulator, among them `xf86InitInt10` and `xf86ExecX86int10`.
   Its other imports include `xf86Int10AllocPages` and `xf86InterpretEDID`.
+
+## Board firmware
+
+- `usr/cpu/firmware/ip35prom.img` (1480360 bytes, binary data): **established** that the eight bytes at offset 0x40 spell the ASCII text `JFKSWCSM`.
+  Its strings include `ip35prom` and `ip27conf`.
+  They also include `init_klcfg_vgagfx: Cannot add component. Node %d`.
+  Router messages include `Set up Router: index %d, nic 0x%lx, meta %d, floc %d`.
+  The router check prints `check_router_cfg: nasid %d is_voyager %d check_cfg = %d`.
+  **Inferred** that this is the IP35 PROM that builds the node and router configuration.
+  It also adds a VGA graphics component to the hardware graph, and its `is_voyager` flag tests for the VOYAGER board tag.
+
+## Host and board kernel objects
+
+- `usr/cpu/sysgen/IP35boot/fglrx.o` (REL, 567504 bytes): **established** that it defines 308 global functions and 25 objects, and imports 145 names.
+  `fglrx_init` is the routine at address 0x84, 1172 bytes long.
+  It calls `kmem_zalloc` at addresses 0xe8 and 0x114, and `find_fglrx_pipe` at 0x1e0.
+  It calls `GfxRegisterBoard` at 0x264 and `init_mutex` at 0x344.
+  It calls `mrlock_init` at 0x388 and 0x3b0, and `kmem_zone_init` at 0x420.
+  Its only branch-likely site is 0x3f4, and its return path from 0x4e0 leaves through `pciio_iterate` at 0x510.
+  **Inferred** that the object is ATI's FireGL kernel driver, the role `docs/kernel-attach.md` assigns it.
+
+- `usr/cpu/sysgen/IP35boot/hubspc.o` (REL, 13056 bytes): **established** that it defines 13 global functions and imports 24 names.
+  Its exports include `hubspc_open`, `hubspc_ioctl` and `hubspc_map`.
+  It also exports `cpuprom_attach` and `prominfo_nodeget`.
+  `hubspc_init` at address 0x354 (60 bytes) makes three `hubdev_register` calls.
+  Those calls pass `mem_refcnt_attach`, `cpuprom_attach` and `l1_attach`.
+  It then calls `spinlock_init` on `cpuprom_spinlock`.
+  **Inferred** that it is the hub-side PROM and memory-count driver, which publishes its device nodes through `hwgraph_char_device_add`.
+
+- `usr/cpu/sysgen/IP35boot/is1.o` (REL, 88232 bytes): **established** that it defines 40 global functions and imports 70 names.
+  The imports include `FGLRXReadRegister`, `FGLRXWriteRegister` and `fglrx_intr_list`.
+  Those are the register and interrupt entries of `fglrx.o`.
+  `is1_reg` at address 0x93c (176 bytes) makes one call, `pciio_driver_register` at 0x9b4.
+  It returns 0 from the path that leaves at 0x9e4.
+  **Inferred** that it is the image-sync driver, because its exports `is1_genlock_interrupt`, `is1_fire_swapready` and `is1_sync_pipes_request` name genlock and swap-ready work.
+
+- `usr/cpu/sysgen/IP35boot/kernel.o` (REL, 1288752 bytes): **established** that it defines 1177 global functions and imports 320 names.
+  It carries a full `.symtab` and DWARF data.
+  Its names include `ULIsystrap`, `utlbmiss` and `tlbmiss`.
+  **Inferred** from those names that it is the IP35 kernel core for exceptions and memory management.
+
+- `usr/cpu/sysgen/IP35boot/pcibr.o` (REL, 300848 bytes): **established** that it defines 253 global functions and 22 objects.
+  It imports 137 names, 29 of them `xtalk_*`.
+  Its names include `pcibr_dmamap_alloc` and `pcibr_piomap_alloc`.
+  They also include `pcibr_intr_connect` and `pcibr_error_intr_handler`.
+  **Inferred** that it is the PCI bridge provider, which sets up DMA maps, I/O maps and interrupts for each slot.
+  It sits on the crossbar's `xtalk` layer.
+
+- `usr/cpu/sysgen/IP35boot/pciio.o` (REL, 47872 bytes): **established** that it defines 105 global functions.
+  They include `pciio_device_attach` and `pciio_driver_register`.
+  They also include `pciio_dmamap_alloc` and `pciio_config_get`.
+  It imports 74 names.
+  **Inferred** that it is the generic PCI device layer, with the driver table and the config and DMA entry points that the bridge providers plug into.
+
+- `usr/cpu/sysgen/IP35boot/pciio_ppb.o` (REL, 27528 bytes): **established** that it defines five global functions, `pciio_ppb_init` among them.
+  It also defines 13 local functions, `ppb_bus_reserve` and `ppb_scan` among them.
+  `pciio_ppb_init` at address 0x1acc (116 bytes) calls `init_sema` at 0x1ae8.
+  It calls `ppb_bus_reserve` inside a loop with head 0x1af4 and back branch 0x1b08.
+  It calls `ppb_bus_reserve` once more with 255 at 0x1b10.
+  It then calls `pciio_driver_register` at 0x1b2c.
+  **Inferred** that it is the PCI-to-PCI bridge driver, the one that reserves bus numbers behind a bridge.
+
+- `usr/cpu/sysgen/IP35boot/pciiox.o` (REL, 6120 bytes): **established** that it defines one global function, `pciiox_init`, 32 bytes long at address 0x0.
+  It imports three names: `nic_vmc_add`, `pcibr_hints_fix_rrbs` and `xtalk_piotrans_addr`.
+  Its only call is `nic_vmc_add` at address 0xc, with the table `pciiox_vmc`.
+  It returns that call's result.
+  **Inferred** that it is the extended PCI-X bridge set-up that registers its table with the NIC layer at boot.
+
+- `usr/cpu/sysgen/IP35boot/pic.o` (REL, 32656 bytes): **established** that it defines 10 global functions, `pic_init` and `pic_attach` among them.
+  It imports 141 names, including `xwidget_driver_register` and `pcibr_dmamap_alloc`.
+  `pic_init` at address 0x0 (60 bytes) calls `pcibr_debug` at 0x10.
+  It calls `xwidget_driver_register` at 0x28, passing 0x24 (36) and a record at `.rodata` offset 16.
+  It returns that call's result.
+  **Inferred** that it is the PIC widget driver, the bus-side ASIC driver that sits above `pcibr.o`.

@@ -19,16 +19,16 @@ usr/X11R6/lib/modules/libint10.so	x-shared	shared-x-server	shared-object	n32	374
 usr/X11R6/lib/modules/libpcidata.so	x-shared	shared-x-server	shared-object	n32	86924	b1cf0b67c5d2beca		1	dynsym	0	0	understood	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/libscanpci.so	x-shared	shared-x-server	shared-object	n32	157684	521a797343e98636		5	dynsym+dwarf	0	0	understood	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/libvbe.so	x-shared	shared-x-server	shared-object	n32	26052	fa7400aa715f8fba		21	dynsym+dwarf	0	0	understood	docs/binaries.md#x-server-and-its-modules	X server and its modules
-usr/cpu/firmware/ip35prom.img	firmware	board-firmware	data	-	1480360	d74b4b7ef9c11c66		0	strings	0	0	named-only	docs/open-questions.md#host-attachment	Host attachment
-usr/cpu/sysgen/IP35boot/fglrx.o	kernel	board-kernel	object	n64	567504	072451083d188a26		384	symtab+dwarf	56	0	named-only	docs/dri-driver-64.md#direct-rendering-driver-64-bit-build-fglrx_dri64so	Direct-rendering driver, 64-bit build (fglrx_dri64.so)
-usr/cpu/sysgen/IP35boot/hubspc.o	kernel-shared	shared-kernel	object	n64	13056	899394978cddc968		13	symtab	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
-usr/cpu/sysgen/IP35boot/is1.o	kernel	board-kernel	object	n64	88232	0a1a158cda310067		54	symtab+dwarf	0	0	named-only	docs/kernel-attach.md#kernel-attach-path-ip35	Kernel attach path (IP35)
-usr/cpu/sysgen/IP35boot/kernel.o	kernel-shared	shared-kernel	object	n64	1288752	2e847fdcadfdb958		1318	symtab+dwarf	0	0	named-only	docs/kernel-attach.md#bus-and-bridge	Bus and bridge
-usr/cpu/sysgen/IP35boot/pcibr.o	kernel-shared	shared-kernel	object	n64	300848	5a79bfd6f2bf07f4		265	symtab+dwarf	0	0	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
-usr/cpu/sysgen/IP35boot/pciio.o	kernel-shared	shared-kernel	object	n64	47872	4d2e3ed5eac64973		108	symtab	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
-usr/cpu/sysgen/IP35boot/pciio_ppb.o	kernel-shared	shared-kernel	object	n64	27528	aadca7cfd050b4f2		18	symtab	0	0	named-only	docs/open-questions.md#host-attachment	Host attachment
-usr/cpu/sysgen/IP35boot/pciiox.o	kernel-shared	shared-kernel	object	n64	6120	bc9406dffebc6428		2	symtab	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
-usr/cpu/sysgen/IP35boot/pic.o	kernel-shared	shared-kernel	object	n64	32656	4ccc69e42c0fde78		13	symtab	0	0	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
+usr/cpu/firmware/ip35prom.img	firmware	board-firmware	data	-	1480360	d74b4b7ef9c11c66		0	strings	0	0	understood	docs/binaries.md#board-firmware	Board firmware
+usr/cpu/sysgen/IP35boot/fglrx.o	kernel	board-kernel	object	n64	567504	072451083d188a26		384	symtab+dwarf	56	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
+usr/cpu/sysgen/IP35boot/hubspc.o	kernel-shared	shared-kernel	object	n64	13056	899394978cddc968		13	symtab	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
+usr/cpu/sysgen/IP35boot/is1.o	kernel	board-kernel	object	n64	88232	0a1a158cda310067		54	symtab+dwarf	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
+usr/cpu/sysgen/IP35boot/kernel.o	kernel-shared	shared-kernel	object	n64	1288752	2e847fdcadfdb958		1318	symtab+dwarf	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
+usr/cpu/sysgen/IP35boot/pcibr.o	kernel-shared	shared-kernel	object	n64	300848	5a79bfd6f2bf07f4		265	symtab+dwarf	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
+usr/cpu/sysgen/IP35boot/pciio.o	kernel-shared	shared-kernel	object	n64	47872	4d2e3ed5eac64973		108	symtab	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
+usr/cpu/sysgen/IP35boot/pciio_ppb.o	kernel-shared	shared-kernel	object	n64	27528	aadca7cfd050b4f2		18	symtab	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
+usr/cpu/sysgen/IP35boot/pciiox.o	kernel-shared	shared-kernel	object	n64	6120	bc9406dffebc6428		2	symtab	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
+usr/cpu/sysgen/IP35boot/pic.o	kernel-shared	shared-kernel	object	n64	32656	4ccc69e42c0fde78		13	symtab	0	0	understood	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
 usr/cpu/sysgen/IP35boot/vga.a(debug.o)	kernel	board-kernel	object	n64	9604	8475c1a982bd0f98		2	symtab	0	0	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(decode.o)	kernel	board-kernel	object	n64	21332	d99a13d4b4476842		28	symtab	0	0	undocumented		
 usr/cpu/sysgen/IP35boot/vga.a(fpu.o)	kernel	board-kernel	object	n64	10660	b5161db4060ccda1		8	symtab	0	0	undocumented		
