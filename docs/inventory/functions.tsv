@@ -3205,7 +3205,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4c0040	440	fglX11DR
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4c0200	688	getDrawableInfo	dwarf+funcnames	b2614670590c		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4c04c0	528	updateDrawableInfo	dwarf+funcnames	05b150c56b2c		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4c0700	420	UPDATE_WINGEOM	dwarf+funcnames	de36b4138191		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4c08c0	600	FGLX11_DRM_LOCK_AND_UPDATE_WINGEOM	dwarf+funcnames	20bdcca205db		in	named-only	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4c08c0	600	FGLX11_DRM_LOCK_AND_UPDATE_WINGEOM	dwarf+funcnames	20bdcca205db		in	named-only	docs/dri-driver-64.md#drm-lock-wrappers	DRM lock wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x4c0b40	172	FGLX11_DRM_UNLOCK	dwarf+funcnames	9472290fff28		in	understood	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4c0c00	156	fglX11GLDRMLock	dwarf+dynsym	4a5fa22780e9		in	understood	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x4c0cc0	72	fglX11GLDRMUnlock	dwarf+dynsym	3a231dc45941		in	understood	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
@@ -16059,16 +16059,16 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5187a0	452	fglX11
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x518970	708	getDrawableInfo	dwarf	905bc20159f7		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x518c40	564	updateDrawableInfo	dwarf	05845ad7b747		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x518e80	420	UPDATE_WINGEOM	dwarf	f9f3721b5e19		in	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x519030	616	FGLX11_DRM_LOCK_AND_UPDATE_WINGEOM	dwarf	afac53bc4185		in	named-only	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5192a0	180	FGLX11_DRM_UNLOCK	dwarf	ec3c4dff752e		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519360	160	fglX11GLDRMLock	dwarf+dynsym	016e29ad39c5		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519400	76	fglX11GLDRMUnlock	dwarf+dynsym	73cbe725ea63		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519450	64	fglX11DRMLockScreen	dwarf+dynsym	56ae31063a84		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519490	60	fglX11DRMLock	dwarf+dynsym	0391a29813f4		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5194d0	60	fglX11DRMUnlockScreen	dwarf+dynsym	d8ff5e75ccd4		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519510	60	fglX11DRMUnlock	dwarf+dynsym	2642014e417f		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x519550	160	fglx11Warning	dwarf	ef0a330b97c5		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5195f0	52	fglx11Fatal	dwarf	73460ebdbfb8		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x519030	616	FGLX11_DRM_LOCK_AND_UPDATE_WINGEOM	dwarf	afac53bc4185		in	named-only	docs/dri-driver-64.md#drm-lock-wrappers	DRM lock wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5192a0	180	FGLX11_DRM_UNLOCK	dwarf	ec3c4dff752e		in	understood	docs/dri-driver-64.md#drm-lock-wrappers	DRM lock wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519360	160	fglX11GLDRMLock	dwarf+dynsym	016e29ad39c5		in	understood	docs/dri-driver-64.md#drm-lock-wrappers	DRM lock wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519400	76	fglX11GLDRMUnlock	dwarf+dynsym	73cbe725ea63		in	understood	docs/dri-driver-64.md#drm-lock-wrappers	DRM lock wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519450	64	fglX11DRMLockScreen	dwarf+dynsym	56ae31063a84		in	understood	docs/dri-driver-64.md#drm-lock-wrappers	DRM lock wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519490	60	fglX11DRMLock	dwarf+dynsym	0391a29813f4		in	understood	docs/dri-driver-64.md#drm-lock-wrappers	DRM lock wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5194d0	60	fglX11DRMUnlockScreen	dwarf+dynsym	d8ff5e75ccd4		in	understood	docs/dri-driver-64.md#drm-lock-wrappers	DRM lock wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519510	60	fglX11DRMUnlock	dwarf+dynsym	2642014e417f		in	understood	docs/dri-driver-64.md#drm-lock-wrappers	DRM lock wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x519550	160	fglx11Warning	dwarf	ef0a330b97c5		in	understood	docs/dri-driver-64.md#logging-and-memory-wrappers	Logging and memory wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5195f0	52	fglx11Fatal	dwarf	73460ebdbfb8		in	understood	docs/dri-driver-64.md#logging-and-memory-wrappers	Logging and memory wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x519630	36	fglx11GetDrawablePrivate	dwarf	ac4b4c69b00c		in	understood	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x519660	44	fglx11GetReadDrawablePrivate	dwarf	dd915a718b5c		in	understood	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x519690	184	fglX11GLLockDrawable	dwarf	ab738e50f1f8		in	undocumented		
@@ -16078,12 +16078,12 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5197c0	40	fg
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5197f0	36	fglX11DrawableGetScreenSize	dwarf	c8f944caddf5		in	understood	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x519820	8	fglX11DrawableUpdate	dwarf	a7e7ca11a6b8		in	understood	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x519830	8	fglX11InitPerformanceCounters	dwarf	78aa5094d5ec		in	understood	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519840	56	fglx11Malloc	dwarf+dynsym	985bf7cc2caf		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519880	68	fglx11Calloc	dwarf+dynsym	372d9269e691		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5198d0	68	fglx11Realloc	dwarf+dynsym	7122eff19e40		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519920	52	fglx11Free	dwarf+dynsym	38f68e8146ba		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519960	112	fglx11AlignedMalloc	dwarf+dynsym	840e86cf2441		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5199d0	52	fglx11AlignedFree	dwarf+dynsym	f63c91629eaa		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519840	56	fglx11Malloc	dwarf+dynsym	985bf7cc2caf		in	understood	docs/dri-driver-64.md#logging-and-memory-wrappers	Logging and memory wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519880	68	fglx11Calloc	dwarf+dynsym	372d9269e691		in	understood	docs/dri-driver-64.md#logging-and-memory-wrappers	Logging and memory wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5198d0	68	fglx11Realloc	dwarf+dynsym	7122eff19e40		in	understood	docs/dri-driver-64.md#logging-and-memory-wrappers	Logging and memory wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519920	52	fglx11Free	dwarf+dynsym	38f68e8146ba		in	understood	docs/dri-driver-64.md#logging-and-memory-wrappers	Logging and memory wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519960	112	fglx11AlignedMalloc	dwarf+dynsym	840e86cf2441		in	understood	docs/dri-driver-64.md#logging-and-memory-wrappers	Logging and memory wrappers
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5199d0	52	fglx11AlignedFree	dwarf+dynsym	f63c91629eaa		in	understood	docs/dri-driver-64.md#logging-and-memory-wrappers	Logging and memory wrappers
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519a10	80	fglX11CompareGLModes	dwarf+dynsym	c1399b239ab3		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519a60	588	fglX11FormatGLModes	dwarf+dynsym	31d20a16e7b7		in	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x519cb0	264	fglX11CreateHWContext	dwarf+dynsym	68aaec7bd29d		in	undocumented		
@@ -29486,16 +29486,16 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b8e00	8	fgl
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b8e40	176	getDrawableInfo	dwarf+funcnames	50d65c9a9e18		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b8f00	528	updateDrawableInfo	dwarf+funcnames	92b2189504b6		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9140	420	UPDATE_WINGEOM	dwarf+funcnames	3aec6cecaf8a		in	undocumented		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9300	600	FGLX11_DRM_LOCK_AND_UPDATE_WINGEOM	dwarf+funcnames	d3a5007a21ef		in	named-only	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9580	172	FGLX11_DRM_UNLOCK	dwarf+funcnames	ab406dd2161b		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9640	156	fglX11GLDRMLock	dwarf+dynsym	1e808108a8c5		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9700	72	fglX11GLDRMUnlock	dwarf+dynsym	1a9a0596b929		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9780	60	fglX11DRMLockScreen	dwarf+dynsym	88a02a4b3667		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b97c0	56	fglX11DRMLock	dwarf+dynsym	6bcaef6d63c5		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9800	56	fglX11DRMUnlockScreen	dwarf+dynsym	1253593119f0		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9840	56	fglX11DRMUnlock	dwarf+dynsym	9483ec0fa51f		in	located	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9880	148	fglx11Warning	dwarf+funcnames	1f2c1eb95810		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9940	48	fglx11Fatal	dwarf+funcnames	587833a21a03		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9300	600	FGLX11_DRM_LOCK_AND_UPDATE_WINGEOM	dwarf+funcnames	d3a5007a21ef		in	named-only	docs/dri-driver-64.md#drm-lock-wrappers	DRM lock wrappers
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9580	172	FGLX11_DRM_UNLOCK	dwarf+funcnames	ab406dd2161b		in	located	docs/dri-driver-64.md#drm-lock-wrappers	DRM lock wrappers
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9640	156	fglX11GLDRMLock	dwarf+dynsym	1e808108a8c5		in	located	docs/dri-driver-64.md#drm-lock-wrappers	DRM lock wrappers
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9700	72	fglX11GLDRMUnlock	dwarf+dynsym	1a9a0596b929		in	located	docs/dri-driver-64.md#drm-lock-wrappers	DRM lock wrappers
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9780	60	fglX11DRMLockScreen	dwarf+dynsym	88a02a4b3667		in	located	docs/dri-driver-64.md#drm-lock-wrappers	DRM lock wrappers
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b97c0	56	fglX11DRMLock	dwarf+dynsym	6bcaef6d63c5		in	located	docs/dri-driver-64.md#drm-lock-wrappers	DRM lock wrappers
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9800	56	fglX11DRMUnlockScreen	dwarf+dynsym	1253593119f0		in	located	docs/dri-driver-64.md#drm-lock-wrappers	DRM lock wrappers
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9840	56	fglX11DRMUnlock	dwarf+dynsym	9483ec0fa51f		in	located	docs/dri-driver-64.md#drm-lock-wrappers	DRM lock wrappers
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9880	148	fglx11Warning	dwarf+funcnames	1f2c1eb95810		in	located	docs/dri-driver-64.md#logging-and-memory-wrappers	Logging and memory wrappers
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9940	48	fglx11Fatal	dwarf+funcnames	587833a21a03		in	located	docs/dri-driver-64.md#logging-and-memory-wrappers	Logging and memory wrappers
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9980	32	fglx11GetDrawablePrivate	dwarf+funcnames	398c27575f51		in	understood	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b99c0	40	fglx11GetReadDrawablePrivate	dwarf+funcnames	027beb11545f		in	understood	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9a00	180	fglX11GLLockDrawable	dwarf+funcnames	f62078b88e4c		in	undocumented		
@@ -29505,12 +29505,12 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9b80	
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9bc0	36	fglX11DrawableGetScreenSize	dwarf+funcnames	06dc410e3678		in	understood	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9c00	8	fglX11DrawableUpdate	dwarf+funcnames	a7e7ca11a6b8		in	understood	docs/dri-driver-64.md#display-and-drawable-helpers	Display and drawable helpers
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x4b9c40	8	fglX11InitPerformanceCounters	dwarf+funcnames	78aa5094d5ec		in	understood	docs/dri-driver.md#display-and-drawable-helpers	Display and drawable helpers
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9c80	56	fglx11Malloc	dwarf+dynsym	928a0819248a		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9cc0	68	fglx11Calloc	dwarf+dynsym	27293cb472bf		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9d40	68	fglx11Realloc	dwarf+dynsym	02b4e770f79c		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9dc0	52	fglx11Free	dwarf+dynsym	e9f479d9e3b2		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9e00	100	fglx11AlignedMalloc	dwarf+dynsym	3569fb3b4a5b		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9e80	52	fglx11AlignedFree	dwarf+dynsym	8b2eb30daa80		in	located	docs/dri-driver.md#memory-and-logging-helpers	Memory and logging helpers
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9c80	56	fglx11Malloc	dwarf+dynsym	928a0819248a		in	located	docs/dri-driver-64.md#logging-and-memory-wrappers	Logging and memory wrappers
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9cc0	68	fglx11Calloc	dwarf+dynsym	27293cb472bf		in	located	docs/dri-driver-64.md#logging-and-memory-wrappers	Logging and memory wrappers
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9d40	68	fglx11Realloc	dwarf+dynsym	02b4e770f79c		in	located	docs/dri-driver-64.md#logging-and-memory-wrappers	Logging and memory wrappers
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9dc0	52	fglx11Free	dwarf+dynsym	e9f479d9e3b2		in	located	docs/dri-driver-64.md#logging-and-memory-wrappers	Logging and memory wrappers
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9e00	100	fglx11AlignedMalloc	dwarf+dynsym	3569fb3b4a5b		in	located	docs/dri-driver-64.md#logging-and-memory-wrappers	Logging and memory wrappers
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9e80	52	fglx11AlignedFree	dwarf+dynsym	8b2eb30daa80		in	located	docs/dri-driver-64.md#logging-and-memory-wrappers	Logging and memory wrappers
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9ec0	80	fglX11CompareGLModes	dwarf+dynsym	1b1d9b8d0f1f		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4b9f40	568	fglX11FormatGLModes	dwarf+dynsym	6732fd5fbbdc		in	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x4ba180	252	fglX11CreateHWContext	dwarf+dynsym	ef4e4d7954d4		in	undocumented		

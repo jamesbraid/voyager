@@ -277,3 +277,51 @@ Labels follow `AGENTS.md` section 5. **Established** means the whole routine was
   It follows the record at offset 1128 of the first argument, then its doubleword at offset 32, then the doubleword at offset 88. The word at offset 200 of that record goes through the second argument (0x519800), and the word at offset 204 goes through the third (0x519810).
 - `fglX11DrawableUpdate` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 8 bytes at 0x519820): **established.** Both instructions were read. It returns 1 and touches no memory.
 
+## DRM lock wrappers
+
+These routines pass the same lock-state structure to two helpers in the same object: the lock-and-update helper at 0x519030 (its symbol name is `FGLX11_DRM_LOCK_AND_UPDATE_WINGEOM`) and the unlock helper at 0x5192a0 (`FGLX11_DRM_UNLOCK`). Both are reached by `bgezall` with the zero register, which is always taken and links the return address.
+
+- `fglX11GLDRMLock` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 160 bytes at 0x519360): **established.** The whole body was read.
+  The first argument's record at offset 200 gives a second record. The lock helper gets the doubleword at offset 304 of the record whose address is the doubleword at offset 56 of the second record (0x5193a8), the word at offset 8 of the second record, and the doubleword at offset 136 of the record at offset 200 (0x519390).
+  After the helper returns, if bit 0 of the doubleword at offset 0 of the record at offset 200 is set, the routine clears that bit (0x5193c8).
+  It then tests bit 0 of the word at 0x54964 past the first argument (the `lw` at 0x5193cc, with the base 0x50000 added to the argument). If that bit is set, it calls the function pointer at offset 248 of the first argument with the argument as its first argument (0x5193dc to 0x5193e0).
+- `fglX11GLDRMUnlock` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 76 bytes at 0x519400): **established.** All nineteen instructions were read.
+  It takes the record at offset 200 of its argument, then the record at offset 8 of that. It passes the doubleword at offset 304 of the record whose address is the doubleword at offset 56 of that record, as the first argument of `FGLX11_DRM_UNLOCK` (0x519434 and 0x519438). The second argument is the 32-bit word at offset 8 of the second record, and the third is the constant 0x71f778.
+- `fglX11DRMLockScreen` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 64 bytes at 0x519450): **established.** All sixteen instructions were read.
+  It passes its first argument through and sets the second argument to the word at offset 392 of the first argument. The old second argument goes to the third slot. Then it calls the lock helper at 0x519030 (0x519478).
+- `fglX11DRMLock` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 60 bytes at 0x519490): **established.** All twelve instructions were read.
+  It calls the lock helper at 0x519030 with its three argument registers unchanged (0x5194b4), then returns.
+- `fglX11DRMUnlockScreen` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 60 bytes at 0x5194d0): **established.** All twelve instructions were read.
+  It passes the word at offset 392 of its first argument as the second argument, then calls `FGLX11_DRM_UNLOCK` at 0x5192a0 (0x5194f4).
+- `fglX11DRMUnlock` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 60 bytes at 0x519510): **established.** All twelve instructions were read.
+  It calls `FGLX11_DRM_UNLOCK` at 0x5192a0 with its argument registers unchanged (0x519534), then returns.
+- `FGLX11_DRM_UNLOCK` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 180 bytes at 0x5192a0): **established.** The whole body was read, including the atomic release.
+  The first argument is the lock-state record and the second is the owner id the caller holds.
+  A zero count at offset 212 sends the message path: it tail-calls `fprintf` on stderr (the `__iob` entry at +64) with the count and the file word as arguments (0x519334 to 0x51934c).
+  An owner mismatch with the record's owner at offset 208 takes the same path with a different message (0x5192b8 to 0x51932c). The `fprintf` pointer for this path is loaded at 0x5192bc, so the call at 0x51932c runs `fprintf`, not the hardware helper.
+  Otherwise it stores count minus 1 at offset 212 (0x5192c4). If the new count is nonzero, it returns.
+  At count zero it clears the owner at offset 208 (0x5192d4) and reads the shared lock word at the address at offset 168 of the record at offset 88 (0x5192dc).
+  It load-links that word and compares it with the owner id with bit 31 set. On a match it stores the owner id with `sc` and retries until the store succeeds (0x5192e4 to 0x5192f8, a branch-likely at 0x5192f8). On success it returns with no hardware call.
+  On a mismatch (the delay slot at 0x5192ec has already set the stored value to 0), it tail-calls `firegl_UnlockHardware` (call at 0x519310, GOT slot 6871) with the word at offset 0 of the record at offset 200 as the first argument and the owner id as the second.
+
+## Logging and memory wrappers
+
+- `fglx11Warning` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 160 bytes at 0x519550): **established.** The whole body was read.
+  It measures its message with `strlen` (call at 0x519574, GOT slot 6770). The copy length is the smaller of that length and 248 (0x51957c to 0x519588).
+  It builds a 288-byte stack buffer holding the eight bytes at gp+24696, which are the text `fglrx: ` and a NUL, then appends the message with `strncat` (call at 0x5195a8, GOT slot 6811).
+  It then calls `perror` on the buffer (call at 0x5195c0, GOT slot 6812). The message goes to standard error with the system error text after it.
+- `fglx11Fatal` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 52 bytes at 0x5195f0): **established.** All thirteen instructions were read.
+  It calls `fglx11Warning` with its argument unchanged (call at 0x519610), then calls `exit` with -1 (call at 0x51961c, GOT slot 6758). The `exit` call does not return.
+- `fglx11Malloc` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 56 bytes at 0x519840): **established.** All eight instructions were read.
+  It calls `calloc` with a count of 1 and the argument as the size (call at 0x519860, GOT slot 6769).
+- `fglx11Calloc` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 68 bytes at 0x519880): **established.** All thirteen instructions were read.
+  A zero count is replaced by 1 (0x5198b8). Then it calls `calloc` with the count and size (call at 0x5198a0, GOT slot 6769).
+- `fglx11Realloc` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 68 bytes at 0x5198d0): **established.** All thirteen instructions were read.
+  A zero size is replaced by 1 (0x519908). Then it calls `realloc` with the pointer and size (call at 0x5198f0, GOT slot 6771).
+- `fglx11Free` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 52 bytes at 0x519920): **established.** All nine instructions were read.
+  It passes its argument to `free` (call at 0x51993c, GOT slot 6809).
+- `fglx11AlignedMalloc` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 112 bytes at 0x519960): **established.** The whole body was read.
+  It calls `malloc` with the size plus the alignment plus 8 (call at 0x51998c, GOT slot 6810). It takes the pointer plus the alignment, subtracts the remainder of that sum plus 8 divided by the alignment (`ddivu` at 0x5199a0, `mfhi` at 0x5199a8), and returns that value plus 8, which is a multiple of the alignment (0x5199c0). The division traps when the alignment is zero (`teq` at 0x5199b8).
+  It stores the raw `malloc` pointer in the eight bytes below the aligned result (0x5199bc) and returns the aligned pointer (0x5199c0).
+- `fglx11AlignedFree` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 52 bytes at 0x5199d0): **established.** All nine instructions were read.
+  It frees the raw pointer that `fglx11AlignedMalloc` stored eight bytes below its argument (`free` call at 0x5199ec, GOT slot 6809, argument loaded from -8 at 0x5199f0).
