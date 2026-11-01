@@ -550,6 +550,64 @@ That these are the instruction pointer, the flags, the code segment, a pending-e
   It then calls `mem_access_word` with 4n + 2 (0x460) and stores the result as the halfword at +64 (0x474, in the delay slot of the next call), calls `push_word` with the halfword at +58, calls `mem_access_word` with 4n (0x478), stores the result as the halfword at +58 (0x488) and clears the word at +80.
   **Inferred:** the pushes are flags, code segment and instruction pointer, the two `mem_access_word` calls read the segment and offset of the vector at 4n in the emulated interrupt table, and bits 8 and 9 are the trap and interrupt-enable flags.
 
+## The emulated BIOS interrupt handlers (`vga.a(xf86int10.o)`)
+
+These routines answer software interrupts for the option ROM that runs in the x86 emulator.
+Each takes the emulation record in a0.
+The interrupt number is the word at record +32 (stored by `x86emu_do_int`); the emulated registers are in the register file that a `.srdata` literal points at (the 96-byte object described [above](#the-x86-emulator-core-and-its-default-accessors-vgadecodeo-vgasyso)), where, in the big-endian layout, the word at +24 is EAX (AH is the byte at +26, AL +27), +28 EBX (BH +30, BL +31), +32 ECX (CH +34, CL +35), +36 EDX (DH +38, DL +39), +48 ESI and +52 EDI, and the word at +60 is the flags (CF is bit 0).
+The record's table at +24 holds the memory accessors: read byte, halfword and word at offsets 0, 8 and 16, and write byte, halfword and word at 24, 32 and 40.
+The doubleword at record +80 is the board record, which `outb`, `pciReadLong` and the other PCI accessors take as their first argument.
+
+- `int_handler` (`vga.a(xf86int10.o)`, address 0x0, 264 bytes): **established.**
+  Takes the record in a0 and returns 1 when the interrupt was handled and 0 when it was not.
+  It dispatches on the word at record +32:
+  - 0x15 returns 1 with no call.
+  - 0x10, 0x42 and 0x6d first call `getIntVect` (0x9c) with the record and the number; only a result of 0xff065 (the linear address `lui 0xf` ORed with 0xf065, the stub in the 0xf0000 segment that `setup_int_vect` points the video vector at) calls `int42_handler` (0xb4), and a nonzero result of that is returned.
+  - 0x1a calls `int1A_handler` (0xd0) and 0xe6 calls `intE6_handler` (0xe0); a nonzero result of either is returned.
+  - Every other number, a zero result of `int42_handler`, `int1A_handler` or `intE6_handler`, and a `getIntVect` result other than 0xff065 go to `run_bios_int` (0x64) with the number and the record, and its result is returned unless it is zero.
+  A zero from `run_bios_int` calls `cmn_err` (0xf8) at level 5 with the message "Halting on int 0x%2.2x!" and the number, and returns 0.
+  Nothing in it writes a card register.
+- `int42_handler` (`vga.a(xf86int10.o)`, address 0x108, 2772 bytes): **established.**
+  Takes the record in a0 and returns 1 on every path.
+  It emulates the BIOS video services, dispatching on AH: a value of 20 or more returns at once, and otherwise the case is read from a 20-entry table of doublewords in `.rodata` at offset 968 (the `jr` at 0x144).
+  Case addresses by AH: 0x00 0x1e0, 0x01 0x89c, 0x02 0x76c, 0x03 0x6fc, 0x04 0xbb8, 0x05 0x530, 0x06 0xb78, 0x07 0xb38, 0x08 0xb0c, 0x09 0xad4, 0x0a 0xa9c, 0x0b 0x14c, 0x0c 0xa64, 0x0d 0xa30, 0x0e 0xa00, 0x0f 0x4e8, 0x10 to 0x12 0x1c4 (return 1 with nothing done) and 0x13 0x9b8.
+  The linear addresses below are those of the PC BIOS data area, written in hex, and every cursor and mode value is kept there.
+  "Out" means `outb` to the board record at record +80 (for example call at 0x1bc), with port, then value.
+  - AH 0x00, set mode (0x1e0): AL of 20 or more returns.
+    The byte at 0x410 is read and its bits 5:4 pick the port: 0x30 gives mode 7 and port 0x3b4 (948); 0x10, 0x20 and 0 give port 0x3d4 (980), with a mode of 7 or more replaced by 1 (for 0x10 and 0), or 3 (for 0x20).
+    It reads the halfword at 0x74 (the offset of a parameter table, called base here) and takes the entry at base plus (mode shifted right 1, signed) times 16, minus 16 for mode 6, and a color-select value of 0x30 (0x3f for mode 6).
+    It writes 0x449 (mode), 0x44a (a halfword write of the byte at base + mode + 72), 0x44c (the halfword at base + 64 + (mode and 6)), 0x44e (0), eight halfwords from 0x450 to 0x45e (0), 0x460 (byte 11 of the entry), 0x461 (byte 10), 0x462 (0), 0x463 (the port, halfword), 0x465 (the byte at base + mode + 80), 0x466 (the color-select value) and 0x484 (24).
+    It then writes the mode-control port (the port plus 4) with that byte masked by 0x37, writes CRTC index i and the table byte i to the port and the port plus 1 for i from 0 to 15, writes the color-select value to the port plus 5, and writes the mode-control byte unmasked to the port plus 4.
+  - AH 0x01, cursor shape (0x89c): reads the port from 0x463, writes CL to 0x460 and CH to 0x461, then CRTC index 10 with CH and index 11 with CL.
+  - AH 0x02, set cursor (0x76c): writes DL at 0x450 plus twice BH and DH at 0x451 plus twice BH; only when BH equals the byte at 0x462 it reads the halfwords at 0x44a, 0x44e and 0x463 and writes CRTC index 14 with the high byte and index 15 with the low byte of (the halfword at 0x44e shifted left 1) plus DL plus DH times the halfword at 0x44a.
+  - AH 0x03, get cursor (0x6fc): CL from 0x460, CH from 0x461, DL from 0x450 plus twice BH and DH from 0x451 plus twice BH.
+  - AH 0x04, light pen (0xbb8): logs "Get Light Pen Position" through `cmn_err` and clears AH, BX, CX and DX.
+  - AH 0x05, select page (0x530): writes AL at 0x462 and the AL times the halfword at 0x44c at 0x44e, writes that product shifted left 1 to CRTC index 12 and 13 (high byte then low byte), then writes CRTC index 14 and 15 with that value plus the byte at 0x451 plus twice AL plus the halfword at 0x44a times the byte at 0x450 plus twice AL (the two bytes appear in the opposite roles from AH 0x02).
+  - AH 0x06, 0x07, 0x09, 0x0a, 0x0c and 0x0e only log: through `cmn_err` at level 5 the name of the service ("Initialise or Scroll Window Up", "Scroll Window Down", "Write Character and Attribute at Cursor", "Write Character at Cursor", "Write Graphics Pixel", "Write Character in Teletype Mode") and the register values (AL, BH, BL, CX or CH, CL, DH, DL as that service uses them), and change no register.
+  - AH 0x08, 0x0d: log the service name and BH (0x08) or BH, CX and DX (0x0d); AH 0x08 clears AH and AL with one halfword store (0xb34) and 0x0d clears AL (0xa60).
+  - AH 0x0b, palette (0x14c): reads 0x463 and 0x466, and with BH zero keeps bits 7:5 of the old value and takes bits 4:0 of BL; with BH nonzero keeps all but bit 5 and takes bit 0 of BL as bit 5; it writes the result to 0x466 and to the port plus 5.
+  - AH 0x0f, get mode (0x4e8): AH from the halfword at 0x44a (low byte), AL from 0x449, BH from 0x462.
+  - AH 0x13, write string (0x9b8): logs the service name and AL, BL, CX, DH, DL, ES and BP.
+  **Inferred** from the data area addresses and the message strings: these are the standard PC BIOS int 10h services for a CGA or monochrome adapter, and the text output, scroll and pixel services are not performed, only logged.
+- `int1A_handler` (`vga.a(xf86int10.o)`, address 0xbdc, 760 bytes): **established.**
+  Takes the record in a0 and leaves 1 in the return register (a3, copied at 0xc98) when it handled the call and 0 (0xed0) when it did not.
+  It computes AX (the halfword at +26) minus 0xb101 and, when that is 13 or more, takes the unsupported path; otherwise it indexes a 13-entry doubleword table at `.rodata` +1152 (the `jr` at 0xc1c).
+  Targets: 0xb101 0xc24, 0xb102 0xe30, 0xb103 0xd98, 0xb104 to 0xb107 0xebc (unsupported), 0xb108 0xd68, 0xb109 0xd38, 0xb10a 0xc68, 0xb10b 0xd08, 0xb10c 0xcd8, 0xb10d 0xca8.
+  The unsupported path calls `cmn_err` (0xec4) at level 5 with "int 0x1a subfunction" and returns 0.
+  Every supported path clears CF (the flags word ANDed with 0xfffffffe) except the failure paths of 0xb102 and 0xb103, which set CF.
+  - 0xb101 (0xc24): EBX = 0x210, EDX = 0x20494350, EAX = EAX masked by 0xff00 (so AL becomes 0 and AH keeps its entry value) and ECX = (ECX masked by 0xff00) ORed with 0xff.
+  - 0xb108, 0xb109, 0xb10a (0xd68, 0xd38, 0xc68): read the PCI configuration register at the EDI value with `pciReadByte`, `pciReadWord` or `pciReadLong` on the board record (calls at 0xd6c, 0xd3c, 0xc6c) and store it in CL (+35), CX (+34) or ECX (+32); EAX becomes AL.
+  - 0xb10b, 0xb10c, 0xb10d (0xd08, 0xcd8, 0xca8): `pciWriteByte` with CL, `pciWriteWord` with CX, `pciWriteLong` with ECX, at register EDI (calls at 0xd10, 0xce0, 0xcb0); EAX becomes AL.
+  - 0xb102, find device (0xe30): the halfword at +38 (DX) must equal the word at board +280 and the halfword at +34 (CX) the word at board +284, and ESI must be 0; then EAX becomes AL with CF clear and EBX becomes the word at board +300 shifted left 8, ORed with the word at +304 shifted left 3 and the word at +308.
+    Any mismatch sets EAX to AL ORed with 0x8600 and sets CF.
+  - 0xb103, find class (0xd98): CL must equal the word at board +320, CH the word at +316 and ECX shifted right 16 the word at +312, with the same success result and EBX as 0xb102 (ESI is not read); a mismatch gives the same 0x8600 failure.
+  **Inferred** from the PCI BIOS convention for the 0xb1 services: the board words at +280 and +284 are the vendor and device IDs (the identity code in [VGA console driver routines](#vga-console-driver-routines) stores them there), and +312 to +320 the class code; the writer of +300, +304 and +308 is not in the routines read here, and the packing of EBX is a bus, device and function number only if they hold those.
+- `intE6_handler` (`vga.a(xf86int10.o)`, address 0xed4, 136 bytes): **established.**
+  Takes the record in a0 and returns 1.
+  It loads the words at board +304, +300 and +308 and sets AX (the halfword at +26) to (the word at +304 masked by 0xff, shifted left 8) ORed with (the word at +300 masked by 0x1f, shifted left 3) ORed with the word at +308 masked by 7, so +300 and +304 take the opposite roles from `int1A_handler`'s EBX.
+  It then calls `pushw` (0xf18) with the halfword at +64 and `pushw` (0xf28) with the halfword at +58, sets the word at +56 to 3, the halfword at +70 to 0 and the halfword at +64 to the halfword at record +8.
+  **Inferred:** a call into the emulated ROM that returns the packed PCI location, with the new instruction pointer 3 in the segment kept at record +8; the same packing question as above is open.
+
 ## Image-sync driver
 
 - `is1.o` (`usr/cpu/sysgen/IP35boot/is1.o`): **established** from its symbol table. A separate PCI driver (`is1_reg`, `is1_attach`, its own `pciio_driver_register`) for the image-sync option; it depends on `fglrx` (its `master.d` file) and calls `FGLRXReadRegister`, `FGLRXWriteRegister` and `fglrx_intr_list`, but `fglrx.o` refers to nothing in `is1.o`, so it takes no part in the FireGL card's attach. Its attach, detach, open, ioctl, interrupt and resync routines are read in [image-sync-functions.md](image-sync-functions.md); its probe IDs are in the `is1_devids` table.
