@@ -497,7 +497,7 @@ The 16-bit pointer at offset 0x18 gives the PCI data structure, which starts wit
 - `usr/gfx/VOYAGER/bin/sg2flash` (N32 executable, 37560 bytes): **established** from the dynamic symbol table and the strings.
   It defines eight functions, among them `flash_rom` at address 0x10002f18 (1832 bytes).
   `do_card` is at 0x1000397c (1976 bytes) and `main` at 0x100036d8 (676 bytes).
-  It imports 28 names from libc.
+  It imports 27 names from libc.
   Among them are `ioctl` and `mmap`.
   It also imports `open` and `sleep`.
   Its only `NEEDED` entry is `libc.so.1`.
@@ -510,13 +510,13 @@ The 16-bit pointer at offset 0x18 gives the PCI data structure, which starts wit
   `dump_board` is at 0x10004c00 (1324 bytes), and `dfCreateDumpFile` at 0x100026b0 (508 bytes).
   Its `df` routines create, write, list, read and mark named sections of a dump file.
   They include `dfNewSection`, `dfWriteSection` and `dfListSections`.
-  It imports 54 names.
+  It imports 53 names.
   Among them are `popen` and `pclose`.
   It also imports `fwrite` and `signal`.
   Its only `NEEDED` entry is `libc.so.1`.
   **Inferred** that the tool saves system information and board state into a dump file made of those sections.
 - `usr/gfx/sgcombine` (N32 executable, 230584 bytes, stripped): **established** from the dynamic symbol table and the strings.
-  It defines 403 functions and imports 252 names.
+  It defines 403 functions and imports 251 names.
   Its `NEEDED` list has 15 libraries, among them `libGL.so`, `libGLU.so` and `libXm.so.1`.
   Its strings name a Motif main frame with tiling, video and hardware-target dialogs.
   They also name a file browser for format files and the readers `vfmtReadCmp1Format` and `vfmtReadCmp1SG2Format`.
@@ -525,7 +525,7 @@ The 16-bit pointer at offset 0x18 gives the PCI data structure, which starts wit
 ## Diagnostics
 
 - `usr/diags/SG/bin/biosemu` (ELF64 executable, 303832 bytes): **established** from the dynamic symbol table and the strings.
-  It defines 473 functions and imports 36 names.
+  It defines 473 functions and imports 35 names.
   Its only `NEEDED` entry is `libc.so.1`.
   `setup_system_bios` is at address 0x1000b520 (172 bytes).
   `run_bios_int` is at 0x1000a360 (364 bytes).
@@ -536,14 +536,14 @@ The 16-bit pointer at offset 0x18 gives the PCI data structure, which starts wit
   They also include "ROM SIGNATURE INVALID: 0x%x,0x%x" and "copied ROM into shadow...".
   **Inferred** that the tool shadows a card's option ROM, checks its signature and runs it through the BIOS call routine.
 - `usr/diags/SG/bin/olsgsys` (N32 executable, 190372 bytes): **established** from the dynamic symbol table and the strings.
-  It defines 173 functions and imports 311 names.
+  It defines 173 functions and imports 310 names.
   Its `NEEDED` entries include `libX11.so.1`, `libXsgivc.so` and `libGL.so`.
   `main` is at address 0x10008a5c (272 bytes), and `TEST_video` at 0x10009d8c (2864 bytes).
   It has subtest routines such as `TEST_sync`, `TEST_swap` and `TEST_seq_ogl_dma`.
   Its strings include "Display %s is active, screen size %dx%d".
   **Inferred** that it is a test driver that opens an X display and runs the GL, DMA, video and swap subtests.
 - `usr/diags/SG/bin/olsg` (ELF64 executable, 2726440 bytes): **established** from the dynamic symbol table and the strings.
-  It defines 2221 functions and imports 187 names.
+  It defines 2221 functions and imports 186 names.
   Its `NEEDED` entries include `libX11.so.1`, `libpthread.so`, `libC.so.2` and `libc.so.1`.
   `main` is at address 0x100f7bb4 (1952 bytes).
   `run_ram_test` is at 0x100b3940 (696 bytes).
@@ -616,7 +616,7 @@ The 64-bit directory holds `libGL.so` and `libGLcore.so` only.
 The export lists were compared as sorted name lists from the dynamic symbol tables.
 
 - `usr/gfx/arch/IP35VOYAGER/libGL.so` (o32 shared object, 486628 bytes): **established** from the dynamic symbol table that it defines 614 functions.
-  82 of them have names starting `gl`.
+  83 of them have names starting `gl`.
   Its `NEEDED` entries are `libGLcore.so`, `libXsgivc.so`, `libXext.so`, `libX11.so.1` and `libc.so.1`.
   It imports `glBegin`, so `glBegin` is defined in `libGLcore.so`.
   It defines `glXQueryVersion` at address 0xd8265e8 (116 bytes).
@@ -638,12 +638,12 @@ The export lists were compared as sorted name lists from the dynamic symbol tabl
   **Inferred** that it is the IRIS GL compatibility library, whose soname is `libgl.so`.
   **Inferred** that this build does not provide IRIS GL.
 - `usr/gfx/arch/IP35VOYAGER32/libGL.so` (N32 shared object, 858416 bytes): **established** from the dynamic symbol table that it defines 2500 functions.
-  967 of them have names starting `gl`.
+  974 of them have names starting `gl`.
   Its `NEEDED` entries are `libXsgivc.so`, `libXext.so`, `libX11.so.1` and `libc.so.1`.
   Its exported names are identical to those of `IP35VOYAGER64/libGL.so`.
   They include 163 ATI entry points, such as `glBeginFragmentShaderATI`.
-  Against the o32 build, 521 names appear only in the o32 build.
-  2414 names appear only here.
+  Against the o32 build, 515 defined names appear only in the o32 build.
+  2414 defined names appear only here.
   **Inferred** that it is the N32 client OpenGL library.
 - `usr/gfx/arch/IP35VOYAGER32/libGLcore.so` (N32 shared object, 18404 bytes): **established** from the dynamic symbol table and the disassembly.
   It defines one function, `__glNotImplemented`, at address 0x4006c0 (8 bytes).

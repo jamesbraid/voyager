@@ -26,7 +26,7 @@ The Onyx4 installs a stock XFree86 4.x server, `usr/X11R6/bin/XFree86` (an N32 e
 - `xf86DriverlistFromCompile` (`XFree86`, 96 bytes at address 0x10032f00): **Established.**
   Returns a cached list of video driver module names, computed once.
   A static flag word (0x10240664) and result word (0x10240660) hold the cache.
-  On the first call it sets the flag and calls the static routine at 0x10032a40 with the subdirectory name "drivers" (0x10240d80) and the string "nv" (0x102404ec), the server's built-in preferred list, and stores the result.
+  On the first call it sets the flag and calls the static routine at 0x10032a40 with the subdirectory name "drivers" (0x10240d80) and the string "nv" (0x102404ec), the server's built-in preferred list, and a third argument of 1, and stores the result.
   Later calls return the stored array.
 - `xf86InputDriverlistFromCompile` (`XFree86`, 96 bytes at address 0x10032f80): **Established.**
   The same cached lookup for input drivers, with its own flag (0x1024066c) and result (0x10240668), the subdirectory name "input" (0x10240d88) and the built-in preferred list "mouse" (0x102404ef).

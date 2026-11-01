@@ -105,6 +105,8 @@ Addresses are virtual addresses in the named object. Callee names come from the 
   Otherwise it allocates the block with `Xcalloc(516)` and copies the signature bytes and the halfword at +4. It turns the far pointers at buffer +6 (OEM string), +14 (mode list) and, from the halfword at +4 shifted right by 8 being 2 or more, +22, +26 and +30 into host addresses with `xf86int10Addr`.
   The OEM string and the three later strings are duplicated with `xf86strdup` into the block's words at +8, +24, +28 and +32; the mode list is copied with `Xalloc` and `xf86memcpy`, scanning halfwords in the buffer until 0xffff, and ends with 0xffff in the copy.
   It copies the halfword at +18 to the block's +20 and the following fixed-size areas with `xf86memcpy` (236 bytes from buffer +20 to block +22 for a version below 2; 222 bytes from buffer +34 to block +36 and 256 bytes from buffer +256 to block +258 otherwise).
+  The mode-list copy is stored at block +16. It is allocated with `Xalloc` of the byte count plus one but the 0xffff terminator is a halfword written at the byte count, so the terminator's second byte lies one byte past the allocation (0x402010 to 0x40204c).
+  For a version of 2 or more the halfword at buffer +20 also goes to block +22 before the three strings are converted.
   **Inferred:** the version tests read the halfword unswapped, so which byte of the version they test is taken from the instructions, not from the VESA layout.
 - `VBESetVBEMode` (`libvbe.so`, 204 bytes at address 0x402280): **Established.**
   Takes a VBE record (a0), a mode number (a1) and an optional 64-byte block (a2) and returns 1 when the BIOS reports success.

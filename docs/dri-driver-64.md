@@ -179,7 +179,7 @@ Labels follow `AGENTS.md` section 5. **Established** means the whole routine was
 - `firegl_GetAGPCapPtr` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 132 bytes at 0x5171e0): **established.**
   The whole body was read, with one `ioctl` call at 0x517220.
   A zero second argument returns -22 (branch at 0x5171f8 falls through to the return at 0x517204).
-  Otherwise a zeroed 12-byte block is passed with request 0x400c6452, output only, and on success the word at offset 0 is stored through the second argument (store at 0x517258).
+  Otherwise a 12-byte stack block is passed with request 0x400c6452, output only; only its word at offset 0 is cleared (store at 0x517214), the other eight bytes are left as they were on the stack, and on success the word at offset 0 is stored through the second argument (store at 0x517258).
   The return is 0 on success and the negated `errno` on failure (negation at 0x517244).
 - `firegl_GetAGPStatus` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 132 bytes at 0x517270): **established.**
   The whole body was read; the routine is the same shape as `firegl_GetAGPCapPtr`.

@@ -446,6 +446,10 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
 - **0x368** in `fglrx_drv.so`: the second cursor's offset word, `CUR2_HORZ_VERT_OFF` (common).
   `R200AccelInit` stores a0 at 0x40d458 and a7 at 0x40d4d4.
   Both stores use the base register s2.
+  The word at 0x40d458 is built at 0x40d440 to 0x40d450 as the first value shifted left 16, ORed with the second and
+  with 0x80000000. Each value is first limited to one less than a limit read from words +8 and +12 of the record in s3
+  (0x40d414 to 0x40d438). Two clamped values and a set top bit fit an offset pair; the meaning of bit 31 is not
+  checked against a public source here.
   Inferred.
 - **0x36c** in `fglrx_drv.so`: the second cursor's colour 0, `CUR2_CLR0` (common).
   Two stores, at 0x40d210 and 0x40d224, write a1.
@@ -591,7 +595,10 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
   through the aperture in s1. Inferred.
 - **0x16cc** in `fglrx_drv.so`: the public `DP_WRITE_MASK` (exact; `RADEON_DP_WRITE_MASK` in `radeon_reg.h`).
   `R200EngineRestore` at 0x40a780 (468 bytes) stores all ones to it at 0x40a89c through the aperture in s1. The value is the
-  register t1, which the `addiu` at 0x40a888 sets to -1. Inferred.
+  register t1, which the `addiu` at 0x40a888 sets to -1.
+  Four more stores reach it: 0x40acf4 and 0x40ad78 in the routine at 0x40ac40 (the value is the third argument, a3,
+  spilled to the stack and reloaded; where the caller gets it is not traced) and 0x40b134 and 0x40b250 in
+  `R200EngineInit` at 0x40aa40 (the value is a4, also reloaded from the stack and not traced). Inferred.
 - **0x146c** in `fglrx_drv.so`: the public `DP_GUI_MASTER_CNTL` (exact; `RADEON_DP_GUI_MASTER_CNTL` in
   `radeon_reg.h`). `R200EngineRestore` at 0x40a780 (468 bytes) loads the word at +6428 of the driver record (s0) at 0x40a854,
   ORs in 0x30d0 at 0x40a860 and stores the result at 0x40a864. `radeon_reg.h` puts the solid-colour brush value
