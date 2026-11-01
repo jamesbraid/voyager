@@ -116,7 +116,7 @@ The attach path read so far is in [kernel-attach.md](kernel-attach.md).
 
 ## What IRIX programs at attach
 
-- [software-now] **Attach sequence.** Answered for `fglrx_attach` and the early VGA path ([kernel-attach.md](kernel-attach.md)). Still open: what the card's own BIOS programs when `vga_init_board` runs it in the x86 emulator, which is the bulk of the chip's initial state. Next: run `vga.a`'s emulator path, or `biosemu` from the diagnostics, on the shipped option ROM images and log the register accesses (route 6, labelled as the BIOS's expectation).
+- [software-now] **Attach sequence.** Answered for `fglrx_attach` and the early VGA path ([kernel-attach.md](kernel-attach.md)). Still open: what the card's own BIOS programs when `vga_init_board` runs it in the x86 emulator, which is the bulk of the chip's initial state. The emulator core, the emulated PC's memory map and the emulated BIOS interrupt handlers are now read statically in [kernel-attach.md](kernel-attach.md), so only the run remains. Next: run `vga.a`'s emulator path, or `biosemu` from the diagnostics, on the shipped option ROM images and log the register accesses (route 6, labelled as the BIOS's expectation).
 
 ## Register accesses
 
