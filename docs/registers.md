@@ -675,6 +675,58 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
 - **0x4f8** in `fglrx_drv.so`: the public `OV0_TEST` (common; `RADEON_OV0_TEST` in `radeon_reg.h`). `FIREGL_ShowOverlay`
   at 0x43df00 (1900 bytes) stores zero to it at 0x43e484, two instructions before the read-modify-write of 0x420 at
   0x43e48c. Inferred.
+- **0x200** in `fglrx_drv.so`: the public `CRTC_H_TOTAL_DISP` (common; `RADEON_CRTC_H_TOTAL_DISP` in `radeon_reg.h`,
+  where bits 9:0 are the horizontal total and bits 24:16 the horizontal displayed count). The save routine at 0x41d3c0
+  reads the word at 0x41d3e0 through the aperture and writes it to +84 of its record at 0x41d3e4. The restore routine
+  at 0x41bd00 reads +84 at 0x41bd38 and writes the word to the aperture at 0x41bd3c. Neither side masks or shifts it,
+  so every bit of the word round-trips. The replay finds only these two sites. Established.
+- **0x204** in `fglrx_drv.so`: the public `CRTC_H_SYNC_STRT_WID` (common; `RADEON_CRTC_H_SYNC_STRT_WID` in
+  `radeon_reg.h`, where bits 2:0 are `RADEON_CRTC_H_SYNC_STRT_PIX`, bits 12:3 `RADEON_CRTC_H_SYNC_STRT_CHAR`,
+  bits 21:16 `RADEON_CRTC_H_SYNC_WID` and bit 23 `RADEON_CRTC_H_SYNC_POL`). Save side: 0x41d3c0 copies the aperture
+  word at 0x41d3e8 into +88 with the store at 0x41d3ec. Restore side: 0x41bd00 takes +88 at 0x41bd40 and writes the
+  aperture at 0x41bd44 unmasked. The four fields come back exactly as saved, because neither side tests a bit. Both
+  bodies were read end to end, and the replay resolves no third site. Established.
+- **0x208** in `fglrx_drv.so`: the public `CRTC_V_TOTAL_DISP` (common; `RADEON_CRTC_V_TOTAL_DISP` in `radeon_reg.h`,
+  where bits 10:0 are `RADEON_CRTC_V_TOTAL` and bits 26:16 `RADEON_CRTC_V_DISP`). The leaf save at 0x41d3c0 loads the
+  aperture word at 0x41d3f0 and keeps it in +92 (store at 0x41d3f4). Later the code at 0x41bd00 fetches +92 at 0x41bd48
+  and stores it to the aperture at 0x41bd4c, copying all 32 bits. The vertical total and display count therefore pass
+  through this pair as one value. The replay lists these two sites and no others. Established.
+- **0x20c** in `fglrx_drv.so`: the public `CRTC_V_SYNC_STRT_WID` (common; `RADEON_CRTC_V_SYNC_STRT_WID` in `radeon_reg.h`,
+  where bits 10:0 are `RADEON_CRTC_V_SYNC_STRT`, bits 20:16 `RADEON_CRTC_V_SYNC_WID` and bit 23
+  `RADEON_CRTC_V_SYNC_POL`). At 0x41d3f8 the save body at 0x41d3c0 takes the aperture word and keeps it at +96 (store
+  at 0x41d3fc). The restore body at 0x41bd00 fetches +96 at 0x41bd50 and writes it back at 0x41bd54 in full. The sync
+  start, sync width and polarity bits go from the saved record to the register unchanged. Only these two sites reach
+  this offset in the binary. Established.
+- **0x27c** in `fglrx_drv.so`: the public `CRTC_MORE_CNTL` (common; `RADEON_CRTC_MORE_CNTL` in `radeon_reg.h`, where bit 2
+  is `RADEON_CRTC_AUTO_HORZ_CENTER_EN`, bit 3 `RADEON_CRTC_AUTO_VERT_CENTER_EN`, bit 4
+  `RADEON_CRTC_H_CUTOFF_ACTIVE_EN` and bit 5 `RADEON_CRTC_V_CUTOFF_ACTIVE_EN`). The save side moves the aperture word
+  at 0x41d418 into +116 through the store at 0x41d41c. The restore side pulls +116 at 0x41bd78 and stores it to the
+  aperture at 0x41bd7c, leaving the centring and cutoff enables as saved. Neither side tests a bit. Both bodies were
+  read to the return. Established.
+- **0xd60** in `fglrx_drv.so`: the public `DISP_MERGE_CNTL` (common; `RADEON_DISP_MERGE_CNTL` in `radeon_reg.h`, where
+  bits 1:0 are `RADEON_DISP_ALPHA_MODE_MASK`, bit 8 `RADEON_DISP_RGB_OFFSET_EN`, bit 9
+  `RADEON_DISP_LIN_TRANS_BYPASS`, bits 23:16 `RADEON_DISP_GRPH_ALPHA_MASK` and bits 31:24
+  `RADEON_DISP_OV0_ALPHA_MASK`). The routine at 0x41d3c0 reads the aperture word at 0x41d420 and writes it to +136 at
+  0x41d424. The restore at 0x41bd00 reads +136 at 0x41bd70 and writes the aperture at 0x41bd74, so the alpha-mode,
+  offset-enable and alpha-mask fields are copied as whole bits. The replay finds two sites. Established.
+- **0x540** in `fglrx_drv.so`: the public `SUBPIC_CNTL` (common; `RADEON_SUBPIC_CNTL` in `radeon_reg.h`, which carries a
+  `/* ? */` comment on the offset and defines no bits). The routine at 0x41d2c0 takes the aperture word at 0x41d2e8 and
+  writes it to +24 at 0x41d2ec. The routine at 0x41bc00 reads +24 at 0x41bc40 and writes the aperture at 0x41bc44 with
+  no change. The code only copies the word in each direction. The save body was read to its return and the restore
+  body through its tail jump. Established.
+- **0xc40** in `fglrx_drv.so`: the public `VIPH_CONTROL` (common; `RADEON_VIPH_CONTROL` in `radeon_reg.h`, where bit 21
+  is `RADEON_VIPH_EN` and the header also names the values 0, 1 and 2 as `RADEON_VIP_BUSY`, `RADEON_VIP_IDLE` and
+  `RADEON_VIP_RESET`, with no field width). Save at 0x41d2c0 reads the aperture word at 0x41d2f0 and stores it at +28
+  (0x41d2f4). Restore at 0x41bc00 reads +28 at 0x41bc48 and stores it to the aperture at 0x41bc4c, with no masking.
+  The code never compares the word with any of the three values the header names. Established.
+- **0x950** in `fglrx_drv.so`: the public `CAP0_TRIG_CNTL` (common; `RADEON_CAP0_TRIG_CNTL` in `radeon_reg.h`, which
+  defines no bits for the offset). The routine at 0x41d2c0 copies the aperture word at 0x41d308 into +40 through the
+  store at 0x41d30c. The routine at 0x41bc00 copies +40 back, loading at 0x41bc58 and storing at 0x41bc5c. Both copies
+  move the whole word, and no bit is tested. Established.
+- **0x9c0** in `fglrx_drv.so`: the public `CAP1_TRIG_CNTL` (common; `RADEON_CAP1_TRIG_CNTL` in `radeon_reg.h`, which
+  defines no bits for the offset). At 0x41d310 the routine at 0x41d2c0 loads the aperture word, and at 0x41d314 it
+  stores the word to +44. The routine at 0x41bc00 loads +44 at 0x41bc60 and stores it to the aperture at 0x41bc64.
+  The code does not test any bit in either direction. Established.
 
 ## Not in the tables
 
