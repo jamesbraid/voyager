@@ -775,9 +775,9 @@
         "usr/X11R6/lib/modules/dri/fglrx_dri64.so",
         "usr/X11R6/lib/modules/extensions/fglrx_glx.so"
       ],
-      "reason": "OpenGL API entry points and immediate-mode dispatch wrappers (glFoo, __glim_Foo for the non-R300 variants): thin argument-forwarding layer with no chip state of its own; the R300-named variants stay in scope",
+      "reason": "OpenGL API entry points and immediate-mode dispatch wrappers (glFoo, __glim_Foo for the variants other than R300): thin argument-forwarding layer with no chip state of its own; the R300-named variants and the R100- and R200-named variants stay in scope",
       "patterns": [
-        "__glim_(?!R300).*",
+        "__glim_(?!R300|R100|R200).*",
         "glim[A-Z]\\w*",
         "gl[A-Z]\\w*"
       ]

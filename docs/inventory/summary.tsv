@@ -1,7 +1,7 @@
 table	rows	out_of_scope	understood	understood_with_open	understood_distinct	templated	located	named_only	undocumented	no_software_dependency	pct_understood	pct_located_or_better	pct_mentioned	pct_done	unresolved_sites	truncated	audited_real_pct	audited_sample	audited_date	computes	reused	multi_unit	shared_address	input
 binaries	84	0	83	0	81	0	0	0	1	0	98.8	98.8	98.8	98.8							0			
-functions	26035	41315	264	2	247	0	109	455	25207	0	1.0	1.4	3.2	1.0							0	503	17	
-functions (distinct names)	11960	18256	188	2	186	0	0	283	11489	0	1.6	1.6	3.9	1.6							0			
+functions	28840	38510	264	2	247	0	109	455	28012	0	0.9	1.3	2.9	0.9							0	503	17	
+functions (distinct names)	12895	17321	188	2	186	0	0	283	12424	0	1.5	1.5	3.7	1.5							0			
 mmio	201	0	93	0	90	0	108	0	0	0	46.3	100.0	100.0	46.3	37						0			
 tokens	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
 ioctls	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
@@ -13,10 +13,10 @@ input sibling odsy																								a3d032f4c6526e5544896b9fdde48a87bd355e
 functions in usr/X11R6/bin/XFree86	144	2780	30	0	30	0	0	13	101	0	20.8	20.8	29.9	20.8							0	0	0	
 functions in usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	112	0	0	0	0	0	1	10	101	0	0.0	0.9	9.8	0.0							0	0	0	
 functions in usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	112	0	0	0	0	0	1	10	101	0	0.0	0.9	9.8	0.0							0	0	0	
-functions in usr/X11R6/lib/modules/dri/fglrx_dri.so	6546	6308	69	0	69	0	2	14	6461	0	1.1	1.1	1.3	1.1							0	165	0	
-functions in usr/X11R6/lib/modules/dri/fglrx_dri64.so	6546	6308	68	0	65	0	1	16	6461	0	1.0	1.1	1.3	1.0							0	165	0	
+functions in usr/X11R6/lib/modules/dri/fglrx_dri.so	7481	5373	69	0	69	0	2	14	7396	0	0.9	0.9	1.1	0.9							0	165	0	
+functions in usr/X11R6/lib/modules/dri/fglrx_dri64.so	7481	5373	68	0	65	0	1	16	7396	0	0.9	0.9	1.1	0.9							0	165	0	
 functions in usr/X11R6/lib/modules/drivers/fglrx_drv.so	623	0	2	0	2	0	4	48	569	0	0.3	1.0	8.7	0.3							0	0	0	
-functions in usr/X11R6/lib/modules/extensions/fglrx_glx.so	6505	6308	7	0	7	0	18	13	6467	0	0.1	0.4	0.6	0.1							0	165	0	
+functions in usr/X11R6/lib/modules/extensions/fglrx_glx.so	7440	5373	7	0	7	0	18	13	7402	0	0.1	0.3	0.5	0.1							0	165	0	
 functions in usr/X11R6/lib/modules/extensions/libGLcore.so	86	3217	0	0	0	0	0	0	86	0	0.0	0.0	0.0	0.0							0	0	0	
 functions in usr/X11R6/lib/modules/extensions/libdri.so	101	0	0	0	0	0	1	2	98	0	0.0	1.0	3.0	0.0							0	0	0	
 functions in usr/X11R6/lib/modules/extensions/libglx.so	206	714	0	0	0	0	1	6	199	0	0.0	0.5	3.4	0.0							0	4	0	
