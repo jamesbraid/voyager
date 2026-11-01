@@ -47323,19 +47323,19 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4b00	104	FGLRXinfo	dwar
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4b68	8	FGLRXinit	dwarf+symtab	6319e0118090		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4b70	8	FGLRXattach	dwarf+symtab	6319e0118090		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4b78	8	FGLRXmap	dwarf+symtab	6319e0118090		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4b80	260	pci_find_device	dwarf+symtab	d7edf6fea26f		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4c84	284	pci_find_subsys	dwarf+symtab	e5de345e06c6		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4da0	260	pci_find_class	dwarf+symtab	b51fd1fe6be8		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4ea4	8	pci_find_slot	dwarf+symtab	87506497337c		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4eac	8	pci_find_capability	dwarf+symtab	87506497337c		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4eb4	52	pci_read_config_byte	dwarf+symtab	deea0e3a1078		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4ee8	52	pci_read_config_word	dwarf+symtab	99a9c6df17d0		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4f1c	52	pci_read_config_dword	dwarf+symtab	53062f35257b		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4f50	488	irix_pci_read_config_by_size	dwarf	f355d7ad1711		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5138	52	pci_write_config_byte	dwarf+symtab	23d2c968d661		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x516c	52	pci_write_config_word	dwarf+symtab	393d29dd6e6b		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x51a0	60	pci_write_config_dword	dwarf+symtab	c1a89c1359cb		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x51dc	468	irix_pci_write_config_by_size	dwarf	eed78fd14f33		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4b80	260	pci_find_device	dwarf+symtab	d7edf6fea26f		in	understood	docs/kernel-compat-layer.md#pci-lookups-and-configuration-access	PCI lookups and configuration access
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4c84	284	pci_find_subsys	dwarf+symtab	e5de345e06c6		in	understood	docs/kernel-compat-layer.md#pci-lookups-and-configuration-access	PCI lookups and configuration access
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4da0	260	pci_find_class	dwarf+symtab	b51fd1fe6be8		in	understood	docs/kernel-compat-layer.md#pci-lookups-and-configuration-access	PCI lookups and configuration access
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4ea4	8	pci_find_slot	dwarf+symtab	87506497337c		in	understood	docs/kernel-compat-layer.md#pci-lookups-and-configuration-access	PCI lookups and configuration access
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4eac	8	pci_find_capability	dwarf+symtab	87506497337c		in	understood	docs/kernel-compat-layer.md#pci-lookups-and-configuration-access	PCI lookups and configuration access
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4eb4	52	pci_read_config_byte	dwarf+symtab	deea0e3a1078		in	understood	docs/kernel-compat-layer.md#pci-lookups-and-configuration-access	PCI lookups and configuration access
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4ee8	52	pci_read_config_word	dwarf+symtab	99a9c6df17d0		in	understood	docs/kernel-compat-layer.md#pci-lookups-and-configuration-access	PCI lookups and configuration access
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4f1c	52	pci_read_config_dword	dwarf+symtab	53062f35257b		in	understood	docs/kernel-compat-layer.md#pci-lookups-and-configuration-access	PCI lookups and configuration access
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x4f50	488	irix_pci_read_config_by_size	dwarf	f355d7ad1711		in	understood	docs/kernel-compat-layer.md#pci-lookups-and-configuration-access	PCI lookups and configuration access
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5138	52	pci_write_config_byte	dwarf+symtab	23d2c968d661		in	understood	docs/kernel-compat-layer.md#pci-lookups-and-configuration-access	PCI lookups and configuration access
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x516c	52	pci_write_config_word	dwarf+symtab	393d29dd6e6b		in	understood	docs/kernel-compat-layer.md#pci-lookups-and-configuration-access	PCI lookups and configuration access
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x51a0	60	pci_write_config_dword	dwarf+symtab	c1a89c1359cb		in	understood	docs/kernel-compat-layer.md#pci-lookups-and-configuration-access	PCI lookups and configuration access
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x51dc	468	irix_pci_write_config_by_size	dwarf	eed78fd14f33		in	understood	docs/kernel-compat-layer.md#pci-lookups-and-configuration-access	PCI lookups and configuration access
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x53b0	8	fglrx_hpipe_init_idbg	dwarf+symtab	78aa5094d5ec		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x53b8	44	fglrx_hpipe_log	dwarf+symtab	90ad92382957		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x53e4	76	fglrx_usb_comp_update_tiles	dwarf+symtab	2a82b8448280	shared-address	in	undocumented		
@@ -47374,33 +47374,33 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x90d8	44	__KE_INFO	dwarf
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9104	44	__KE_DEBUG	dwarf	90ad92382957	multi-unit	in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9130	568	firegl_init_module	dwarf+symtab	61193629e173		in	named-only	docs/kernel-attach.md#order-of-events	Order of events
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9368	172	firegl_cleanup_module	dwarf+symtab	a5a57b5d2928		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9414	116	__ke_alloc_wait_queue_head_struct	dwarf+symtab	e1da83871bb9		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9488	104	__ke_free_wait_queue_head_struct	dwarf+symtab	00171995f905		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x94f0	52	__ke_wake_up_interruptible	dwarf+symtab	89adc03be8aa		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9524	52	__ke_get_queue_mutex	dwarf+symtab	89adc03be8aa		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9558	52	__ke_sleep_on_queue	dwarf+symtab	89adc03be8aa		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x958c	8	__ke_getdevice	dwarf+symtab	445fdf1162fa		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9594	12	__ke_inode_rdev_minor	dwarf+symtab	f64bdd3bb950		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x95a0	8	__ke_get_file_priv	dwarf+symtab	371417cf96a1		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x95a8	8	__ke_set_file_priv	dwarf+symtab	4577810647d3		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x95b0	8	__ke_get_file_bdata	dwarf+symtab	12e1753b4086		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x95b8	16	__ke_file_rw_open	dwarf+symtab	ed829a1f9124		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x95c8	8	__ke_file_counter	dwarf+symtab	ed5a838876c9		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x95d0	52	__ke_getpid	dwarf+symtab	89adc03be8aa		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9604	56	__ke_geteuid	dwarf+symtab	ede5b151b6bd		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x963c	32	__ke_jiffies	dwarf+symtab	1044ade758a0		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x965c	52	__ke_udelay	dwarf+symtab	cd5eba17368d		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9690	72	__ke_mdelay	dwarf+symtab	bdeb15924d0b		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x96d8	52	__ke_virt_to_bus	dwarf+symtab	89adc03be8aa		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x970c	52	__ke_virt_to_phys	dwarf+symtab	89adc03be8aa		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9740	32	__ke_high_memory	dwarf+symtab	a9c72770e2f8		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9760	148	__ke_error_code	dwarf+symtab	b9f1176646ba		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x97f4	8	__ke_mod_inc_use_count	dwarf+symtab	78aa5094d5ec		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x97fc	8	__ke_mod_dec_use_count	dwarf+symtab	78aa5094d5ec		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9804	64	__ke_down_struct_sem	dwarf+symtab	db19e9822c1a		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9844	60	__ke_up_struct_sem	dwarf+symtab	8c06f5ba8d79		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9880	56	__ke_sema_init	dwarf+symtab	bee453a30b81		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x98b8	8	__ke_sema_size	dwarf+symtab	32295a3087c3		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9414	116	__ke_alloc_wait_queue_head_struct	dwarf+symtab	e1da83871bb9		in	understood	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9488	104	__ke_free_wait_queue_head_struct	dwarf+symtab	00171995f905		in	understood	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x94f0	52	__ke_wake_up_interruptible	dwarf+symtab	89adc03be8aa		in	understood	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9524	52	__ke_get_queue_mutex	dwarf+symtab	89adc03be8aa		in	understood	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9558	52	__ke_sleep_on_queue	dwarf+symtab	89adc03be8aa		in	understood	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x958c	8	__ke_getdevice	dwarf+symtab	445fdf1162fa		in	understood	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9594	12	__ke_inode_rdev_minor	dwarf+symtab	f64bdd3bb950		in	understood	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x95a0	8	__ke_get_file_priv	dwarf+symtab	371417cf96a1		in	understood	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x95a8	8	__ke_set_file_priv	dwarf+symtab	4577810647d3		in	understood	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x95b0	8	__ke_get_file_bdata	dwarf+symtab	12e1753b4086		in	understood	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x95b8	16	__ke_file_rw_open	dwarf+symtab	ed829a1f9124		in	understood	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x95c8	8	__ke_file_counter	dwarf+symtab	ed5a838876c9		in	understood	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x95d0	52	__ke_getpid	dwarf+symtab	89adc03be8aa		in	understood	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9604	56	__ke_geteuid	dwarf+symtab	ede5b151b6bd		in	understood	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x963c	32	__ke_jiffies	dwarf+symtab	1044ade758a0		in	understood	docs/kernel-compat-layer.md#time-address-translation-and-error-codes	Time, address translation and error codes
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x965c	52	__ke_udelay	dwarf+symtab	cd5eba17368d		in	understood	docs/kernel-compat-layer.md#time-address-translation-and-error-codes	Time, address translation and error codes
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9690	72	__ke_mdelay	dwarf+symtab	bdeb15924d0b		in	understood	docs/kernel-compat-layer.md#time-address-translation-and-error-codes	Time, address translation and error codes
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x96d8	52	__ke_virt_to_bus	dwarf+symtab	89adc03be8aa		in	understood	docs/kernel-compat-layer.md#time-address-translation-and-error-codes	Time, address translation and error codes
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x970c	52	__ke_virt_to_phys	dwarf+symtab	89adc03be8aa		in	understood	docs/kernel-compat-layer.md#time-address-translation-and-error-codes	Time, address translation and error codes
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9740	32	__ke_high_memory	dwarf+symtab	a9c72770e2f8		in	understood	docs/kernel-compat-layer.md#time-address-translation-and-error-codes	Time, address translation and error codes
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9760	148	__ke_error_code	dwarf+symtab	b9f1176646ba		in	understood	docs/kernel-compat-layer.md#time-address-translation-and-error-codes	Time, address translation and error codes
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x97f4	8	__ke_mod_inc_use_count	dwarf+symtab	78aa5094d5ec		in	understood	docs/kernel-compat-layer.md#time-address-translation-and-error-codes	Time, address translation and error codes
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x97fc	8	__ke_mod_dec_use_count	dwarf+symtab	78aa5094d5ec		in	understood	docs/kernel-compat-layer.md#time-address-translation-and-error-codes	Time, address translation and error codes
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9804	64	__ke_down_struct_sem	dwarf+symtab	db19e9822c1a		in	understood	docs/kernel-compat-layer.md#semaphores	Semaphores
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9844	60	__ke_up_struct_sem	dwarf+symtab	8c06f5ba8d79		in	understood	docs/kernel-compat-layer.md#semaphores	Semaphores
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9880	56	__ke_sema_init	dwarf+symtab	bee453a30b81		in	understood	docs/kernel-compat-layer.md#semaphores	Semaphores
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x98b8	8	__ke_sema_size	dwarf+symtab	32295a3087c3		in	understood	docs/kernel-compat-layer.md#semaphores	Semaphores
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x98c0	52	__ke_down	dwarf+symtab	ea3c620e6375		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x98f4	52	__ke_up	dwarf+symtab	89adc03be8aa		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9928	32	__ke_atomic_inc	dwarf+symtab	90586972b56e		in	undocumented		
@@ -47421,7 +47421,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9af4	64	__ke_copy_from_
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9b34	64	__ke_copy_to_user	dwarf+symtab	84431f2f1a92		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9b74	80	__ke_verify_area	dwarf+symtab	918b00152fd7		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9bc4	48	__ke_get_pci_device_info	dwarf+symtab	78f6eb26ee73		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9bf4	180	__ke_check_pci	dwarf+symtab	fae186a4cffd		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9bf4	180	__ke_check_pci	dwarf+symtab	fae186a4cffd		in	named-only	docs/kernel-compat-layer.md#pci-lookups-and-configuration-access	PCI lookups and configuration access
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9ca8	44	__ke_pci_get_irq	dwarf+symtab	dd0093c9b3d5		in	named-only	docs/kernel-attach.md#interrupts	Interrupts
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9cd4	52	__ke_pci_find_device	dwarf+symtab	89adc03be8aa		in	named-only	docs/kernel-attach.md#which-cards-the-driver-claims	Which cards the driver claims
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x9d08	52	__ke_malloc	dwarf+symtab	e5c621742da5		in	undocumented		
@@ -47487,24 +47487,24 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa5c8	12	__ke_vm_page_pr
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa5d4	8	__ke_vm_phys_addr_str	dwarf+symtab	78aa5094d5ec		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa5dc	324	__ke_vm_map	dwarf+symtab	307b8ca78e84		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa720	72	memcpy	dwarf	edcec4a1b6b0		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa768	8	get_queue_mutex	dwarf+symtab	9ee6b5e60ce3		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa770	148	wake_up_interruptible	dwarf+symtab	6c33bafd9d5a		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa804	148	init_waitqueue_head	dwarf+symtab	b8c2376c2efe		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa898	204	clear_waitqueue_head	dwarf+symtab	dd522408dd97		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa964	180	sleep_on_queue	dwarf+symtab	060c6e7568e3		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xaa18	444	irix_vtop	dwarf+symtab	e1cbe029d424		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa768	8	get_queue_mutex	dwarf+symtab	9ee6b5e60ce3		in	named-only	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa770	148	wake_up_interruptible	dwarf+symtab	6c33bafd9d5a		in	named-only	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa804	148	init_waitqueue_head	dwarf+symtab	b8c2376c2efe		in	named-only	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa898	204	clear_waitqueue_head	dwarf+symtab	dd522408dd97		in	named-only	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xa964	180	sleep_on_queue	dwarf+symtab	060c6e7568e3		in	named-only	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xaa18	444	irix_vtop	dwarf+symtab	e1cbe029d424		in	named-only	docs/kernel-compat-layer.md#time-address-translation-and-error-codes	Time, address translation and error codes
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xabd4	168	fglrx_add_thread_exit_callback	dwarf+symtab	2c48c3b42edd		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xac7c	8	fglrx_avl_mem_start	dwarf	e7201485a58d		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xac84	16	fglrx_avl_mem_end	dwarf	60cfe98e5b0e		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xac94	8	fglrx_avl_map_start	dwarf	e7201485a58d		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xac9c	16	fglrx_avl_map_end	dwarf	60cfe98e5b0e		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xacac	188	fglrx_irix_avl_init	dwarf+symtab	af7abc73f133		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xad68	364	fglrx_irix_kmem_alloc	dwarf+symtab	fe4b1127745c		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xad68	364	fglrx_irix_kmem_alloc	dwarf+symtab	fe4b1127745c		in	named-only	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xaed4	576	fglrx_irix_kern_malloc_node	dwarf+symtab	72f230c2329a		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xb114	500	fglrx_irix_kern_free	dwarf+symtab	34bae8637ca7		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xb308	364	fglrx_irix_kmem_free	dwarf+symtab	04c9f238e917		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xb308	364	fglrx_irix_kmem_free	dwarf+symtab	04c9f238e917		in	named-only	docs/kernel-compat-layer.md#wait-queues-files-and-process-identity	Wait queues, files and process identity
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xb474	432	fglrx_irix_kern_addmap	dwarf+symtab	01ddc62e1495		in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xb624	176	fglrx_irix_kern_findmap	dwarf+symtab	111a49421355		in	undocumented		
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xb624	176	fglrx_irix_kern_findmap	dwarf+symtab	111a49421355		in	named-only	docs/kernel-compat-layer.md#time-address-translation-and-error-codes	Time, address translation and error codes
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xb6d4	372	fglrx_irix_kern_freemap	dwarf+symtab	7a3123131541		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xb848	432	__ke_pci_alloc_consistent	dwarf+symtab	4523a09b7b06		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0xb9f8	52	__ke_pci_free_consistent	dwarf+symtab	f25284b0cb3d		in	undocumented		
@@ -48597,7 +48597,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29838	60	findcpufreq	
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29874	28	early_counter_intr	dwarf+symtab	264b54ee7fac		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29890	8	delay_calibrate	dwarf+symtab	78aa5094d5ec		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x29898	52	us_delaybus	dwarf+symtab	fa8dffc9ef68		out:4	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x298cc	216	us_delay	dwarf+symtab	c50f4e303444		out:4	undocumented		
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x298cc	216	us_delay	dwarf+symtab	c50f4e303444		out:4	named-only	docs/kernel-compat-layer.md#time-address-translation-and-error-codes	Time, address translation and error codes
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x299b0	28	atomicAddInt	dwarf+symtab	fc57e68455bd	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x299b0	28	atomicAddUint	symtab	fc57e68455bd	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x299cc	32	atomicAddIntHot2	dwarf+symtab	3b46ea096c3c	shared-address	out:4	undocumented		
@@ -48689,7 +48689,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2cdcc	128	groupintr	d
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2ce4c	264	sendgroupintr	dwarf+symtab	9468630c995a		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2cf60	12	VEC_breakpoint	dwarf+symtab	3614e4802762		out:1	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2cf68	4	kernelbp	symtab	cd09e81bee54		out:4	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2cf6c	120	debug	dwarf+symtab	920ba04ec3dd		in	undocumented		
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2cf6c	120	debug	dwarf+symtab	920ba04ec3dd		in	named-only	docs/kernel-compat-layer.md#pci-lookups-and-configuration-access	PCI lookups and configuration access
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2cfe4	4	sstepbp	dwarf+symtab	0df244da6067		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2cff0	736	ULIsystrap	dwarf+symtab	79f730b36b5e		out:1	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2d140	400	keruliframe	symtab	af8b3a046b4d		in	undocumented		
@@ -49352,7 +49352,7 @@ usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x800	28	pciio_endian_se
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x81c	28	pciio_priority_set	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x838	184	pciio_config_get	dwarf+symtab	fb6bd4e7d9ea		in	named-only	docs/kernel-attach.md#fglrx_attach-in-order	fglrx_attach in order
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x8f0	184	pciio_config_get_safe	dwarf+symtab	fb6bd4e7d9ea		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x9a8	152	pciio_config_set	dwarf+symtab	ddf38d0cbe1b		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x9a8	152	pciio_config_set	dwarf+symtab	ddf38d0cbe1b		in	named-only	docs/kernel-compat-layer.md#pci-lookups-and-configuration-access	PCI lookups and configuration access
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xa40	28	pciio_error_extract	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xa5c	28	pciio_reset	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0xa78	28	pciio_write_gather_flush	dwarf+symtab	a86de4a9d7a4		in	undocumented		
