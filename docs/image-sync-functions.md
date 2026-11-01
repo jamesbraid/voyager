@@ -243,3 +243,44 @@
 - `is1_get_sync_data` (`is1.o`, address 0x45f8, 48 bytes):
   **established.** It picks which of the board's two 16-byte sync-parameter blocks applies to the current sync source. All 12 words were read. The four word-builder routines (`is1_assemble_control`, `is1_assemble_video_format` and the two `is2_` versions) each call it. It takes the board in a0 and returns an address.
   It reads the word at board +0x98. A value of 1 or 2 returns board +0x214 (532); any other value, 0 and everything above 2 included, returns board +0x204 (516).
+
+- `is1_update_swap_sample` (`is1.o`, address 0x4754, 36 bytes):
+  **established.** It writes the swap-sample value to the card only when it differs from the cached copy at board +0x64. All 9 words were read. `is1_attach` stores its address at board +0x40 for type 0 cards and as the fallback. It takes the board in a0 and sets no return value.
+  The value is the word at board +0x1dc masked with 0xffff. When it differs from the word at +0x64 it is stored there and at register offset 0x7c (the register block is the doubleword at +0xc0).
+
+- `is2_update_swap_sample` (`is1.o`, address 0x48e0, 80 bytes):
+  **established.** It is the second card type's version of the swap-sample update: it packs three board fields into one value and writes it only when it changed. All 20 words were read. `is1_attach` stores its address at board +0x40 for type 1. It takes the board in a0 and sets no return value.
+  The value ORs three parts: the word at board +0x1dc masked with 0xffff (bits 15:0); bit 0 of the word at +0x1e0 as bit 16; and bit 17 set when the doubleword at +0x70 is nonzero. When it differs from the word at +0x64 it is stored there and at register offset 0x78.
+
+
+- `is1_pipe_bound` (`is1.o`, address 0x3b48, 144 bytes):
+  **established.** It reports whether a pipe's mask bits are set in its board's +0x70 mask, the mask `is1_unbind` clears. All 36 words were read, with the three return paths. `fglrx_hp_fire_swapready` in `fglrx.o` (address 0x6368) calls it at 0x6390 with the word at +428 of the record that the doubleword at its first argument +16 points to. It takes the pipe number in a0 and returns 0 or 1.
+  A negative number returns 0 (0x3b50). A number not below `GfxBoardLimit` returns 0 (the compare is `number < limit`, so it is stricter than the one in `is1_ioctl_getargs`). A zero first word in `is1_pipes[a0]` returns 0 (0x3ba0). Otherwise the board is `is1_boards[first word - 1]` and the result is 1 when the record's doubleword at +24 ANDed with the board's doubleword at +0x70 is nonzero (`sltu v0,zero,v0`, 0x3bbc), else 0.
+
+- `is1_unreg` (`is1.o`, address 0x9ec, 120 bytes):
+  **established.** It is the driver's unregister hook: it refuses while the open counter is nonzero and otherwise removes the PCI driver registration. The 30 words were read against the one relocated call. It takes no argument and returns -1 or 0. The object has no call site for it.
+  A nonzero word at `.data` +0x10 returns -1 (the `li v0,-1` in the branch's delay slot at 0xa14) and logs nothing. Otherwise it calls `pciio_driver_unregister("is1_")` (0xa50) and returns 0, ignoring that call's result.
+
+- `is1_genlock_interrupt` (`is1.o`, address 0x3cf4, 112 bytes):
+  **established.** It is an event hook that applies a sync source to the board: the requested one when a1 is 1, source 0 otherwise. The 28 words and the three exits were followed. The object has no call site for it. It takes the board in a0 and a state in a1 and sets no return value.
+  With a1 equal to 1 it loads the word at board +0x188 (the requested source); a zero value returns without a call, a nonzero value calls `is1_update_sync_source(board, that word)` (0x3d28). With any other a1 it calls `is1_update_sync_source(board, 0)` (0x3d50); entry 0 of `sync_types` is the text "Locked to Internal Clock".
+
+- `is1_error_handler` (`is1.o`, address 0xbdc, 76 bytes):
+  **established.** It is the PCI error callback that `is1_attach` registers, and it answers 0 for one narrow case and 9 for everything else. All 19 words were read. It takes a pointer in a3, its fourth argument, and returns 0 or 9.
+  It returns 0 only when all four tests pass, in this order: bit 23 of the word at a3 +0 is set (0xbe8); bit 22 of that word is set (0xbf0); the doubleword at +32 equals 2 (0xc08); the doubleword at +40 is below 1024, unsigned (0xc18). Any failing test returns 9, which is loaded before the first test (0xbe4).
+
+- `is1_clear_regs` (`is1.o`, address 0xcc4, 64 bytes):
+  **established.** It writes the board's mask word, with its low six bits set, to the card and clears two registers of the image-sync block. All 16 words were followed. `is1_attach` (call 0x1590) and `is1_close` call it. It takes the board in a0 and sets no return value.
+  The word at board +0xd8 is ORed with 0x3f and stored back. The value is written to register offset 0x34 (0xcd4) and the reloaded board word to offset 0x30 (0xcdc). Offset 0x2c is read twice (0xce4, 0xcec) and both values go to the same stack slot, which is never read back. Zero is written to offsets 0x1c (0xcf4) and 0x20 (0xcf8).
+
+- `is1_reload_dev` (`is1.o`, address 0x908, 52 bytes):
+  **established.** It is the `pciio_iterate` handler that `is1_init` supplies: it passes each already-found device straight to `is1_attach`. All 13 words were read. It takes the device vertex in a0 and returns the `is1_attach` result.
+  The only call is `is1_attach` at 0x928, with a0 unchanged.
+
+- `is1_attach_init` (`is1.o`, address 0x3d64, 20 bytes):
+  **established.** It clears the two control words of the image-sync block that the type routines later fill. All 5 words were read. `is1_attach` calls it at 0x15b0. It takes the board in a0 and returns 0.
+  It stores zero at register offset 0x28 (0x3d68) and, in the delay slot of the return, at offset 0x24 (0x3d74), through the register block pointer at board +0xc0.
+
+- `is1_dbg_init` (`is1.o`, address 0x45d0, 8 bytes):
+  **established.** It does nothing: it is a stub of one return and a `nop`, so `is1_init` calls an empty hook. Both words were read. `is1_init` calls it at 0x7e8. It takes no argument and sets no return value.
+
