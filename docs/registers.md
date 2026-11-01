@@ -274,26 +274,26 @@ write) as reads.
 | 0x1438 | `DST_Y_X` | exact | write 4 | 3 | static code at 0x40ac40 | 0 | see below |
 | 0x143c | `DST_HEIGHT_WIDTH` | exact | write 4 | 1 | static code at 0x40ac40 | 0 | see below |
 | 0x146c | `DP_GUI_MASTER_CNTL` | exact | write 4 | 5 | `R200EngineRestore` at 0x40a780 | 1 | unknown |
-| 0x1478 | `DP_BRUSH_BKGD_CLR` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | unknown |
-| 0x147c | `DP_BRUSH_FRGD_CLR` | exact | write 4 | 3 | `R200EngineRestore` at 0x40a780 | 1 | unknown |
+| 0x1478 | `DP_BRUSH_BKGD_CLR` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | see below |
+| 0x147c | `DP_BRUSH_FRGD_CLR` | exact | write 4 | 3 | `R200EngineRestore` at 0x40a780 | 1 | see below |
 | 0x1598 | `DST_WIDTH_HEIGHT` | exact | write 4 | 2 | static code at 0x40ac40 | 0 | see below |
 | 0x15ac | `SRC_OFFSET` | common | write 4 | 1 | static code at 0x40ac40 | 0 | see below |
 | 0x15b0 | `SRC_PITCH` | common | write 4 | 1 | static code at 0x40ac40 | 0 | see below |
 | 0x15c0 | `CLR_CMP_CNTL` | exact | write 4 | 2 | static code at 0x40ac40 | 0 | see below |
-| 0x15c4 | `CLR_CMP_CLR_SRC` | exact | write 4 | 2 | static code at 0x40ac40 | 0 | unknown |
-| 0x15cc | `CLR_CMP_MASK` | exact | write 4 | 2 | static code at 0x40ac40 | 0 | unknown |
-| 0x15d8 | `DP_SRC_FRGD_CLR` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | unknown |
-| 0x15dc | `DP_SRC_BKGD_CLR` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | unknown |
-| 0x1600 | `DST_LINE_START` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | unknown |
-| 0x1604 | `DST_LINE_END` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | unknown |
+| 0x15c4 | `CLR_CMP_CLR_SRC` | exact | write 4 | 2 | static code at 0x40ac40 | 0 | see below |
+| 0x15cc | `CLR_CMP_MASK` | exact | write 4 | 2 | static code at 0x40ac40 | 0 | see below |
+| 0x15d8 | `DP_SRC_FRGD_CLR` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | see below |
+| 0x15dc | `DP_SRC_BKGD_CLR` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | see below |
+| 0x1600 | `DST_LINE_START` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | see below |
+| 0x1604 | `DST_LINE_END` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | see below |
 | 0x16c0 | `DP_CNTL` | exact | write 4 | 5 | static code at 0x40ac40 | 0 | unknown |
 | 0x16c4 | `DP_DATATYPE` | common | read 4, write 4 | 4 | `R200EngineRestore` at 0x40a780 | 1 | unknown |
 | 0x16cc | `DP_WRITE_MASK` | exact | write 4 | 5 | `R200EngineRestore` at 0x40a780 | 1 | unknown |
 | 0x16e0 | `DEFAULT_OFFSET` | common | read 4, write 4 | 7 | `R200ScreenInit` at 0x41a700 | 2 | unknown |
-| 0x16e8 | `DEFAULT_SC_BOTTOM_RIGHT` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | unknown |
+| 0x16e8 | `DEFAULT_SC_BOTTOM_RIGHT` | exact | write 4 | 1 | `R200EngineRestore` at 0x40a780 | 0 | see below |
 | 0x1700 | none | none | write 4 | 1 | static code at 0x40ac40 | 0 | unknown |
 | 0x1704 | `FLUSH_1` | common | write 4 | 1 | static code at 0x40ac40 | 0 | unknown |
-| 0x1724 | `CACHE_CNTL` | common | write 4 | 1 | `FGLInitCP` at 0x42c4c0 | 0 | unknown |
+| 0x1724 | `CACHE_CNTL` | common | write 4 | 1 | `FGLInitCP` at 0x42c4c0 | 0 | see below |
 | 0x1c3c | `RB3D_CNTL` | common | write 4 | 1 | `R200EngineInit` at 0x40aa40 | 0 | unknown |
 | 0x2140 | `VAP_CNTL_STATUS` or `SE_CNTL_STATUS` | conflict | write 4 | 1 | `FGLInitCP` at 0x42c4c0 | 0 | unknown |
 | 0x26ac | none | none | read 4, write 4 | 2 | `FGLInitCP` at 0x42c4c0 | 0 | unknown |
@@ -485,6 +485,40 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
   Inferred.
 - **0x15c0** in `fglrx_drv.so`: the colour compare control, `CLR_CMP_CNTL` (exact).
   `R200EngineInit` writes the constant 0x1000004 (the `lui` of 0x100 and `ori` of 4) at 0x40b198 and again at 0x40b2f8.
+  Inferred.
+- **0x15c4** in `fglrx_drv.so`: the colour compare source colour, `CLR_CMP_CLR_SRC` (exact).
+  `R200EngineInit` stores s2 to it at 0x40b17c and again at 0x40b2e4, with the base register s1.
+  Inferred.
+- **0x15cc** in `fglrx_drv.so`: the colour compare mask, `CLR_CMP_MASK` (exact).
+  `R200EngineInit` stores a5 at 0x40b18c and s7 at 0x40b2e8.
+  Both stores use the base register s1.
+  Inferred.
+- **0x1478** in `fglrx_drv.so`: the brush background colour, `DP_BRUSH_BKGD_CLR` (exact).
+  `R200EngineRestore` writes zero to it at 0x40a890.
+  Inferred.
+- **0x147c** in `fglrx_drv.so`: the brush foreground colour, `DP_BRUSH_FRGD_CLR` (exact).
+  `R200EngineRestore` writes all-ones (the `li` of -1 at 0x40a888) at 0x40a88c.
+  `R200EngineInit` also writes s8 to it at 0x40acf0.
+  The same write repeats at 0x40ad74.
+  Inferred.
+- **0x15d8** in `fglrx_drv.so`: the source foreground colour, `DP_SRC_FRGD_CLR` (exact).
+  `R200EngineRestore` writes the all-ones value (t1 from the `li` at 0x40a888) at 0x40a894.
+  Inferred.
+- **0x15dc** in `fglrx_drv.so`: the source background colour, `DP_SRC_BKGD_CLR` (exact).
+  `R200EngineRestore` writes zero to it at 0x40a898.
+  Inferred.
+- **0x1600** in `fglrx_drv.so`: the line start point, `DST_LINE_START` (exact).
+  `R200EngineRestore` writes zero to it at 0x40a880.
+  Inferred.
+- **0x1604** in `fglrx_drv.so`: the line end point, `DST_LINE_END` (exact).
+  `R200EngineRestore` writes zero to it at 0x40a884.
+  Inferred.
+- **0x16e8** in `fglrx_drv.so`: the default scissor corner, `DEFAULT_SC_BOTTOM_RIGHT` (exact).
+  `R200EngineRestore` stores a3 at 0x40a844.
+  The word in a3 has two 16-bit fields, both set to 0x1fff, from a `lui` and `ori` pair that forms 0x1fff1fff.
+  Inferred.
+- **0x1724** in `fglrx_drv.so`: the cache control word, `CACHE_CNTL` (common).
+  `FGLInitCP` stores the value 3 (the `li` at 0x42c660) to it at 0x42c664, with the base register s2.
   Inferred.
 
 ## Not in the tables

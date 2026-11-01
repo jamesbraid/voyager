@@ -29316,7 +29316,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40bbc0	284	R200
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40ccc0	72	R200SelectBuffer	dynsym	d0aca22a34d7		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40cd40	128	R200SelectBufferCP	dynsym	4cac09d8ec67		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40ce80	272	R200CPAccelInitFuncs	dynsym	665ac3ada6e2		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40cfc0	548	R200AccelInit	dynsym	07ebf78206d4		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40cfc0	548	R200AccelInit	dynsym	07ebf78206d4		in	named-only	docs/registers.md#registers-read-in-full	Registers read in full
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40e440	496	R200CursorInit	dynsym	ed201fc72259		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x40e900	488	R200DGAInit	dynsym	01db7eb96030		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x410980	276	R200MapMMIO	dynsym	70f2047cfa79		in	undocumented		
@@ -29324,7 +29324,7 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x410ac0	204	R200
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x410dc0	24	R200INPLL	dynsym	aee0c36e3c32		in	named-only	docs/registers.md#how-the-code-reaches-the-registers	How the code reaches the registers
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x410e00	140	R200WaitForVerticalSync	dynsym	c242f8131c98		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x411280	48	R200MinBits	dynsym	ce3810795fe3		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4189c0	3016	R200PreInit	dynsym	2a5511d9be41		in	named-only	docs/registers.md#not-in-the-tables	Not in the tables
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4189c0	3016	R200PreInit	dynsym	2a5511d9be41		in	named-only	docs/registers.md#registers-read-in-full	Registers read in full
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x41a700	5328	R200ScreenInit	dynsym	4761de843c49		in	named-only	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422200	728	R200SwitchMode	dynsym	f3fee3deafa8		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x422500	8	R200ValidMode	dynsym	87506497337c		in	undocumented		

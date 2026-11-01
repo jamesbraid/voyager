@@ -2,7 +2,7 @@ table	rows	out_of_scope	understood	understood_with_open	understood_distinct	temp
 binaries	84	0	0	0	0	0	0	57	27	0	0.0	0.0	67.9	0.0							0			
 functions	22294	45056	156	1	144	0	113	220	21805	0	0.7	1.2	2.2	0.7							0	503	17	
 functions (distinct names)	10713	19503	127	1	125	0	0	151	10435	0	1.2	1.2	2.6	1.2							0			
-mmio	201	0	14	0	14	0	187	0	0	0	7.0	100.0	100.0	7.0	37						0			
+mmio	201	0	54	0	52	0	147	0	0	0	26.9	100.0	100.0	26.9	37						0			
 tokens	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
 ioctls	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
 ucode	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0						0	0			
