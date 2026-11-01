@@ -981,7 +981,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x100a4d00	3100	StoreColors	dynsym	e1
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100a5940	204	IsMapInstalled	dynsym	2452f028ff56		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100a5a40	56	NotImplemented	dynsym	74b2b50fb87c		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100a5a80	56	ReplyNotSwappd	dynsym	70634e0553ad		out:14	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x100a5ac0	2444	main	dynsym	b4433fd4e45e		in	named-only	docs/open-questions.md#open-questions	Open questions
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x100a5ac0	2444	main	dynsym	b4433fd4e45e		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100a6ac0	2124	AddScreen	dynsym	bd6c9c6587c7		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100a73c0	692	AddExtension	dynsym	4abcd30f53ea		out:14	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100a7680	232	AddExtensionAlias	dynsym	c34f6d2f0c01		out:14	undocumented		
@@ -29440,9 +29440,9 @@ usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4539c0	184	is1B
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453a80	336	is1Unblank	dynsym	94b8894ce77a		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453c00	200	is1SwapReady	dynsym	54007add0bae		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x453d00	196	is1Bind	dynsym	8f5cb256771c		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4558a0	500	vfmtReadCmp1Format	dynsym	721cbdfd0ee2		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x4558a0	500	vfmtReadCmp1Format	dynsym	721cbdfd0ee2		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x455aa0	292	vfmtReadCmp1OdyFormat	dynsym	606d95f70d0a		in	undocumented		
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x455bd0	300	vfmtReadCmp1SG2Format	dynsym	f49bb3bd3b52		in	undocumented		
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x455bd0	300	vfmtReadCmp1SG2Format	dynsym	f49bb3bd3b52		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x455da0	564	vfmtFindFormatFile	dynsym	b1f3b3776ae5		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x455fe0	76	vfmtFindKonaFormatFile	dynsym	6aa409c1c003		in	undocumented		
 usr/X11R6/lib/modules/drivers/fglrx_drv.so	board-x-module	n32		0x456030	144	vfmtFindCmpFormatFile	dynsym	47c7eed15b8c		in	undocumented		
@@ -50109,7 +50109,7 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000e030	120	pciWriteByte	dynsy
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000e0b0	120	pciWriteWord	dynsym	160251aff5ec		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000e130	144	pciWriteLong	dynsym	d7e7154ec5f7		in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000e1c0	72	pciTag	dynsym	f68453c74b85		in	named-only	docs/xserver-functions.md#pci-records-lookups-and-bus-access-hooks	PCI records, lookups and bus-access hooks
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000e210	3296	main	dynsym	96bf8dc479dd		in	named-only	docs/open-questions.md#open-questions	Open questions
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000e210	3296	main	dynsym	96bf8dc479dd		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000eef0	284	setup_pvp	dynsym	8951010338d2		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000f010	436	pciba_scan	dynsym	a4e1d71728bc		in	undocumented		
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000f290	832	get_pciba_dir	dynsym	ccb086170528		in	undocumented		
@@ -50789,7 +50789,7 @@ usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100f78a4	72	util_srand48	dynsym	a2
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100f78ec	148	util_srand48_r	dynsym	38ffb2974234		out:21	undocumented		
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100f7980	536	SelectTests	dynsym	128ad95720eb		in	undocumented		
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100f7b98	28	TestFile	dynsym	fd31aeb1e419		in	undocumented		
-usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100f7bb4	1952	main	dynsym	ad388a2227d8		in	named-only	docs/open-questions.md#open-questions	Open questions
+usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100f7bb4	1952	main	dynsym	ad388a2227d8		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100f8354	156	user_init	dynsym	946c04b167b3		in	undocumented		
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100f83f0	188	segv_handler	dynsym	3e937bd0ce02		in	undocumented		
 usr/diags/SG/bin/olsg	board-diagnostic	n64		0x100f84ac	188	ill_handler	dynsym	3d79d08acc6c		in	undocumented		
@@ -52750,7 +52750,7 @@ usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x10008910	84	_fini	dynsym	282f84
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x10008970	128	__process_needed_destructions__Gv	dynsym	2ce45624625c		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x100089f0	40	__record_needed_destruction	dynsym	672409cdfb19		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x10008a20	60	__std__needed_destruction_list	dynsym	068f7c9c2036		in	undocumented		
-usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x10008a5c	272	main	dynsym	a978a5466faa		in	named-only	docs/open-questions.md#open-questions	Open questions
+usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x10008a5c	272	main	dynsym	a978a5466faa		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x10008b6c	60	GetDumpfile	dynsym	529c78652d4f		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x10008ba8	56	GetDisplay	dynsym	5045900ac720		in	undocumented		
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x10008be0	60	GetVideoSubtests	dynsym	dfbc914daca0		in	undocumented		
@@ -52916,23 +52916,23 @@ usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x10020ad4	316	dl_output_banner	d
 usr/diags/SG/bin/olsgsys	board-diagnostic	n32		0x10020c1c	4	__istart	dynsym	df3f619804a9		in	undocumented		
 usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x10001270	268	__start	dynsym	e33cfdc38c4b		in	undocumented		
 usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x1000137c	12	_mcount	dynsym	1c53f0b255e3		in	undocumented		
-usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x10002f18	1832	flash_rom	dynsym	089055e236d4		in	named-only	docs/open-questions.md#option-rom	Option ROM
+usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x10002f18	1832	flash_rom	dynsym	089055e236d4		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x10003640	152	usage	dynsym	2c8005c29bf0		in	undocumented		
-usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x100036d8	676	main	dynsym	4414edd58046		in	named-only	docs/open-questions.md#open-questions	Open questions
-usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x1000397c	1976	do_card	dynsym	f8d148325694		in	named-only	docs/option-roms.md#what-the-irix-software-does-with-the-images-cross-reference	What the IRIX software does with the images (cross-reference)
+usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x100036d8	676	main	dynsym	4414edd58046		in	named-only	docs/binaries.md#board-tools	Board tools
+usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x1000397c	1976	do_card	dynsym	f8d148325694		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x10004134	168	message	dynsym	1e8923038a63		in	undocumented		
 usr/gfx/VOYAGER/bin/sg2flash	board-tool	n32		0x100041ec	4	__istart	dynsym	df3f619804a9		in	undocumented		
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10001fe0	268	__start	dynsym	389b480a338f		in	undocumented		
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x100020ec	12	_mcount	dynsym	1c53f0b255e3		in	undocumented		
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10002100	108	usage	dynsym	0f64e68ab620		in	undocumented		
-usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x100022e0	968	main	dynsym	bdd4b00a78cc		in	named-only	docs/open-questions.md#open-questions	Open questions
-usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x100026b0	508	dfCreateDumpFile	dynsym	c7f0a360efe8		in	undocumented		
-usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x100028b0	412	dfNewSection	dynsym	a6af85e7e7eb		in	undocumented		
-usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10002a50	308	dfWriteSection	dynsym	0db77b5beec6		in	undocumented		
+usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x100022e0	968	main	dynsym	bdd4b00a78cc		in	named-only	docs/binaries.md#board-tools	Board tools
+usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x100026b0	508	dfCreateDumpFile	dynsym	c7f0a360efe8		in	named-only	docs/binaries.md#board-tools	Board tools
+usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x100028b0	412	dfNewSection	dynsym	a6af85e7e7eb		in	named-only	docs/binaries.md#board-tools	Board tools
+usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10002a50	308	dfWriteSection	dynsym	0db77b5beec6		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10002b90	432	dfWriteNewSectionFromPipe	dynsym	06eaecc4e3b3		in	undocumented		
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10002d40	148	dfPrintf	dynsym	6bb5d79d987f		in	undocumented		
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10002de0	1020	dfOpenDumpFile	dynsym	a867aba7f381		in	undocumented		
-usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x100031e0	472	dfListSections	dynsym	4a13ea944198		in	undocumented		
+usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x100031e0	472	dfListSections	dynsym	4a13ea944198		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x100033c0	252	dfSeekSection	dynsym	85b309d4f810		in	undocumented		
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x100034c0	292	dfFindSection	dynsym	9eba0e334b2c		in	undocumented		
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x100035f0	212	dfReadSection	dynsym	826b7d898607		in	undocumented		
@@ -52951,7 +52951,7 @@ usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10004860	8	close_report	dynsym	78aa509
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10004870	248	save_system_info	dynsym	244ef9642221		in	undocumented		
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10004970	68	sigbusHandler	dynsym	4916d611fde4		in	undocumented		
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10004a80	140	clockRead	dynsym	5e9d25f1756b		in	undocumented		
-usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10004c00	1324	dump_board	dynsym	3b2da1548a09		in	undocumented		
+usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10004c00	1324	dump_board	dynsym	3b2da1548a09		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x1000513c	4	__istart	dynsym	df3f619804a9		in	undocumented		
 usr/gfx/arch/IP35VOYAGER/libGL.so	board-library	o32	.text	0xd80d940	1776	GetFBConfigs	mdebug	cff074284fd4		in	undocumented		
 usr/gfx/arch/IP35VOYAGER/libGL.so	board-library	o32	.text	0xd80e030	5608	GetVisualConfigs	mdebug	7fd9007cac50		in	undocumented		
@@ -66954,7 +66954,7 @@ usr/gfx/sgcombine	board-tool	n32		0x1000fa50	84	_fini	dynsym	1fce8159ad1f		in	un
 usr/gfx/sgcombine	board-tool	n32		0x1000fab0	128	__process_needed_destructions__Gv	dynsym	60633bdd6555		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x1000fb30	40	__record_needed_destruction	dynsym	f6dcabe2aeaf		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x1000fb60	60	__std__needed_destruction_list	dynsym	c7e485ac20ba		in	undocumented		
-usr/gfx/sgcombine	board-tool	n32		0x1000fba0	404	main	dynsym	f7c71e7a4161		in	named-only	docs/open-questions.md#open-questions	Open questions
+usr/gfx/sgcombine	board-tool	n32		0x1000fba0	404	main	dynsym	f7c71e7a4161		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/gfx/sgcombine	board-tool	n32		0x1000fd40	412	iGUIReadFormatFile__GPCcP11cmpFormat_t	dynsym	c26ceae1c60a		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x1000fee0	580	iGUIReadOdsyFormatFile__GPCcP11cmpFormat_t	dynsym	4d868c6c2fd1		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10010150	132	__ct__22SmallFormatFileBrowserGPCc	dynsym	784741060283		out:22	undocumented		
@@ -67277,9 +67277,9 @@ usr/gfx/sgcombine	board-tool	n32		0x1001f280	136	vfcQueryGLXHyper	dynsym	744eeaa
 usr/gfx/sgcombine	board-tool	n32		0x1001f310	636	vfcQueryOdysseyTarget	dynsym	2d06c0382564		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x1001f590	808	vfmtIsCmpCombinationValidForTarget	dynsym	4319773b9144		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x1001f8c0	500	vfmtIsCombinationValidForDmxTarget	dynsym	41ae7cef9403		in	undocumented		
-usr/gfx/sgcombine	board-tool	n32		0x10021650	536	vfmtReadCmp1Format	dynsym	e3451176e694		in	undocumented		
+usr/gfx/sgcombine	board-tool	n32		0x10021650	536	vfmtReadCmp1Format	dynsym	e3451176e694		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/gfx/sgcombine	board-tool	n32		0x10021870	308	vfmtReadCmp1OdyFormat	dynsym	6fc18113f056		in	undocumented		
-usr/gfx/sgcombine	board-tool	n32		0x100219b0	316	vfmtReadCmp1SG2Format	dynsym	1a8be8bc6c85		in	undocumented		
+usr/gfx/sgcombine	board-tool	n32		0x100219b0	316	vfmtReadCmp1SG2Format	dynsym	1a8be8bc6c85		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/gfx/sgcombine	board-tool	n32		0x10021c20	6180	vfmtReadCmp1Combination	dynsym	0cfc9fb49b34		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10023450	5148	vfmtWriteCmp1Combination	dynsym	35d2d2407e53		in	undocumented		
 usr/gfx/sgcombine	board-tool	n32		0x10024930	592	vfmtFindFormatFile	dynsym	f7834fe8210a		in	undocumented		

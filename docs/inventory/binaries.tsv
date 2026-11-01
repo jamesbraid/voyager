@@ -63,8 +63,8 @@ usr/diags/SG/data/mltiTex7.pps	diagnostics	board-diagnostic	data	-	16317	db2d15c
 usr/diags/SG/data/r3g3dprd1.tst	diagnostics	board-diagnostic	data	-	24095	62d58cdc1167e128		0		0	0	undocumented		
 usr/diags/SG/data/signed.pps	diagnostics	board-diagnostic	data	-	1107	1a8411e153e06d22		0		0	0	undocumented		
 usr/diags/SG/data/ttex.pps	diagnostics	board-diagnostic	data	-	1979	92ea933594b456a5		0		0	0	undocumented		
-usr/gfx/VOYAGER/bin/sg2flash	tools	board-tool	executable	n32	37560	e5b75230221c1d7e		8	dynsym	0	0	named-only	docs/open-questions.md#identity	Identity
-usr/gfx/VOYAGER/bin/vpm	tools	board-tool	executable	n32	37740	ba0a41031ce56458		31	dynsym	0	0	named-only	docs/open-questions.md#identity	Identity
+usr/gfx/VOYAGER/bin/sg2flash	tools	board-tool	executable	n32	37560	e5b75230221c1d7e		8	dynsym	0	0	understood	docs/binaries.md#board-tools	Board tools
+usr/gfx/VOYAGER/bin/vpm	tools	board-tool	executable	n32	37740	ba0a41031ce56458		31	dynsym	0	0	understood	docs/binaries.md#board-tools	Board tools
 usr/gfx/arch/IP35VOYAGER/libGL.so	libraries	board-library	shared-object	o32	486628	40a08151e3b4a9a6		671	dynsym+mdebug	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/gfx/arch/IP35VOYAGER/libGLcore.so	libraries	board-library	shared-object	o32	155892	99a04b88798ec64e		504	dynsym	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/gfx/arch/IP35VOYAGER/libgl.so	libraries	board-library	shared-object	o32	1749044	7c571b4b34f3b1a3		3812	dynsym+mdebug	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
@@ -73,13 +73,13 @@ usr/gfx/arch/IP35VOYAGER32/libGLcore.so	libraries	board-library	shared-object	n3
 usr/gfx/arch/IP35VOYAGER32/libgl.so	libraries	board-library	shared-object	n32	1855224	f565939da8984f63		3813	dynsym (dwarf addresses stale, dropped)	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/gfx/arch/IP35VOYAGER64/libGL.so	libraries	board-library	shared-object	n64	977112	7bda7352eb4f7a08		2596	dynsym (dwarf addresses stale, dropped)	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
 usr/gfx/arch/IP35VOYAGER64/libGLcore.so	libraries	board-library	shared-object	n64	19096	1a3be8b6fa285037		1	dynsym	0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
-usr/gfx/gfxtopology	tools	board-tool	data	-	6294	3ece1eb9e90ac3e6		0		0	0	named-only	AGENTS.md#2-project-binaries-and-evidence	2. Project binaries and evidence
-usr/gfx/sgcombine	tools	board-tool	executable	n32	230584	77d0273d5f4e91ec		402	dynsym	0	0	named-only	docs/open-questions.md#3d	3D
+usr/gfx/gfxtopology	tools	board-tool	data	-	6294	3ece1eb9e90ac3e6		0		0	0	understood	docs/binaries.md#board-tools	Board tools
+usr/gfx/sgcombine	tools	board-tool	executable	n32	230584	77d0273d5f4e91ec		402	dynsym	0	0	understood	docs/binaries.md#board-tools	Board tools
 usr/gfx/ucode/VOYAGER/sg2.bin	option-roms	board-microcode	data	-	40960	eb7c01d27867030b		0		0	0	understood	docs/binaries.md#option-rom-images	Option ROM images
 usr/gfx/ucode/VOYAGER/sg3.bin	option-roms	board-microcode	data	-	40960	3510a7f26b9cb928		0		0	0	understood	docs/binaries.md#option-rom-images	Option ROM images
 usr/gfx/ucode/VOYAGER/sg3a.bin	option-roms	board-microcode	data	-	40960	7d4520e8786024bc		0		0	0	understood	docs/binaries.md#option-rom-images	Option ROM images
-var/sysgen/master.d/fglrx	kernel-config	shared-data	data	-	392	2d037a2fefdfb967		0		0	0	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
-var/sysgen/master.d/is1	kernel-config	shared-data	data	-	397	da0b7c4587a48d55		0		0	0	named-only	docs/binaries.md#x-server-and-its-modules	X server and its modules
-var/sysgen/master.d/pciio_ppb	kernel-config	shared-data	data	-	119	aba64368a130a66e		0		0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
-var/sysgen/master.d/vga	kernel-config	shared-data	data	-	112	35b3438915ff6432		0		0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
-var/sysgen/master.d/vgastubs	kernel-config	shared-data	data	-	171	241618fa11527c4e		0		0	0	named-only	IRIX_FILES.md#1-irix-6530-primary	1. IRIX 6.5.30 (primary)
+var/sysgen/master.d/fglrx	kernel-config	shared-data	data	-	392	2d037a2fefdfb967		0		0	0	understood	docs/binaries.md#kernel-configuration-entries	Kernel configuration entries
+var/sysgen/master.d/is1	kernel-config	shared-data	data	-	397	da0b7c4587a48d55		0		0	0	understood	docs/binaries.md#kernel-configuration-entries	Kernel configuration entries
+var/sysgen/master.d/pciio_ppb	kernel-config	shared-data	data	-	119	aba64368a130a66e		0		0	0	understood	docs/binaries.md#kernel-configuration-entries	Kernel configuration entries
+var/sysgen/master.d/vga	kernel-config	shared-data	data	-	112	35b3438915ff6432		0		0	0	understood	docs/binaries.md#kernel-configuration-entries	Kernel configuration entries
+var/sysgen/master.d/vgastubs	kernel-config	shared-data	data	-	171	241618fa11527c4e		0		0	0	understood	docs/binaries.md#kernel-configuration-entries	Kernel configuration entries

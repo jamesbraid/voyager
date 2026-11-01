@@ -431,6 +431,39 @@ Every one is plain text.
 After the comment lines comes a data line with a flag, a routine prefix, a soft value, a device count and the dependencies.
 The file ends at a `$$$` line.
 
+- `var/sysgen/master.d/fglrx` (392 bytes, text): **established** from the whole file.
+  The comment block names the module path `/var/sysgen/boot/fglrx.o`.
+  It also gives the load command `lboot -L fglrx`.
+  The data line, at offset 0x162, has flag `sc` and prefix `fglrx_`.
+  It has soft value 145 and no device count or dependency.
+  The `$$$` terminator is at offset 0x183.
+  **Inferred** that the prefix is the one `usr/cpu/sysgen/IP35boot/fglrx.o` uses for its routines.
+  That object's `fglrx_init` sits at address 0x84 and is 1172 bytes long.
+- `var/sysgen/master.d/is1` (397 bytes, text): **established** from the whole file.
+  The data line, at offset 0x15b, has flag `sc` and prefix `is1_`.
+  It lists `fglrx` as its one dependency.
+  The `$$$` terminator is at offset 0x188.
+  **Inferred** that the dependency makes the image-sync module load after the FireGL module.
+  `usr/cpu/sysgen/IP35boot/is1.o` imports `FGLRXReadRegister`, which the FireGL module provides.
+- `var/sysgen/master.d/pciio_ppb` (119 bytes, text): **established** from the whole file.
+  The data line, at offset 0x59, has flag `nsc` and prefix `pciio_ppb_`.
+  Its dependency is `pciio`.
+  The `$$$` terminator is at offset 0x73.
+  **Inferred** that the module is the PCI-to-PCI bridge in `usr/cpu/sysgen/IP35boot/pciio_ppb.o`.
+  Its `pciio_ppb_init` sits at address 0x1acc and is 116 bytes long.
+- `var/sysgen/master.d/vga` (112 bytes, text): **established** from the whole file.
+  Its comment reads "VGA tport driver".
+  The data line, at offset 0x58, has flag `sc`, prefix `vga_` and dependency `tport`.
+  The `$$$` terminator is at offset 0x6b.
+  The `usr/cpu/sysgen/IP35boot` directory of this install has no `tport` object.
+  **Inferred** that the prefix covers the 24 function symbols of `vga.a(vga_init.o)`.
+  It covers the 11 of `vga.a(vga_tport.o)` too.
+- `var/sysgen/master.d/vgastubs` (171 bytes, text): **established** from the whole file.
+  The comment block carries a revision-control line dated 2003/07/22.
+  The data line, at offset 0x86, has flag `oxu` and no prefix, device count or dependency.
+  The `$$$` terminator is at offset 0xa7.
+  **Inferred** from the empty prefix that `vga_earlyinit` in `vgastubs.a(vgastubs.o)` keeps its own name.
+
 ## Option ROM images
 
 The three images are x86 PC option ROMs, each 40960 bytes long.
@@ -454,6 +487,41 @@ The 16-bit pointer at offset 0x18 gives the PCI data structure, which starts wit
   Its pointer and jump values differ from those of `sg3.bin`.
 
 ## Board tools
+
+- `usr/gfx/gfxtopology` (Perl script, 6294 bytes, 277 lines): **established** from the whole script.
+  It runs `/usr/bin/hinv -mv` and keeps the lines that begin `Graphics board:`.
+  It also keeps the `KTOWN`, `GE` and `ODY` entries.
+  It reads keyboard and mouse nodes from `/etc/ioconfig.conf`.
+  It prints one line per pipe.
+  It exits 1 with the text "gfxtopology not supported on this platform" when no graphics board is found.
+  **Inferred** that it is a read-only report of the graphics pipes for an administrator.
+- `usr/gfx/VOYAGER/bin/sg2flash` (N32 executable, 37560 bytes): **established** from the dynamic symbol table and the strings.
+  It defines eight functions, among them `flash_rom` at address 0x10002f18 (1832 bytes).
+  `do_card` is at 0x1000397c (1976 bytes) and `main` at 0x100036d8 (676 bytes).
+  It imports 28 names from libc.
+  Among them are `ioctl` and `mmap`.
+  It also imports `open` and `sleep`.
+  Its only `NEEDED` entry is `libc.so.1`.
+  Its strings include the flags `flag_rbase`, `flag_verbose` and `flag_force`.
+  It also has the flag `flag_query`.
+  They also include "READ_STATUS 2 not responding".
+  **Inferred** that `flash_rom` rewrites the card's flash ROM, the step [option-roms.md](option-roms.md) describes for loading the images.
+- `usr/gfx/VOYAGER/bin/vpm` (N32 executable, 37740 bytes): **established** from the dynamic symbol table and the strings.
+  It defines 31 functions, among them `main` at address 0x100022e0 (968 bytes).
+  `dump_board` is at 0x10004c00 (1324 bytes), and `dfCreateDumpFile` at 0x100026b0 (508 bytes).
+  Its `df` routines create, write, list, read and mark named sections of a dump file.
+  They include `dfNewSection`, `dfWriteSection` and `dfListSections`.
+  It imports 54 names.
+  Among them are `popen` and `pclose`.
+  It also imports `fwrite` and `signal`.
+  Its only `NEEDED` entry is `libc.so.1`.
+  **Inferred** that the tool saves system information and board state into a dump file made of those sections.
+- `usr/gfx/sgcombine` (N32 executable, 230584 bytes, stripped): **established** from the dynamic symbol table and the strings.
+  It defines 403 functions and imports 252 names.
+  Its `NEEDED` list has 15 libraries, among them `libGL.so`, `libGLU.so` and `libXm.so.1`.
+  Its strings name a Motif main frame with tiling, video and hardware-target dialogs.
+  They also name a file browser for format files and the readers `vfmtReadCmp1Format` and `vfmtReadCmp1SG2Format`.
+  **Inferred** that it is an interactive editor for the pipe-combination format files.
 
 ## Diagnostics
 
