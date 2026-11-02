@@ -504,7 +504,7 @@ usr/X11R6/bin/XFree86	shared-x-server	n32		0x1006f980	344	xf86MapPciMem	dynsym	9
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070540	52	xf86ReadPciBIOS	dynsym	2e131b986b53		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070580	92	xf86ReadPciBIOSByType	dynsym	8978e4fba3fb		in	undocumented		
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070600	64	xf86GetAvailablePciBIOSTypes	dynsym	776db4a18ee0		in	undocumented		
-usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070640	60	sigbusHandler	dynsym	125635985b7f		in	undocumented		
+usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070640	60	sigbusHandler	dynsym	125635985b7f		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070680	52	outb	dynsym	b31d03a6d564		out:13	located	docs/kernel-attach.md#the-emulated-pcs-memory-image-and-the-legacy-port-space-vgaahelper_memo-helper_legacyo-junkcodeo	The emulated PC's memory image and the legacy port space (`vga.a(helper_mem.o)`, `helper_legacy.o`, `junkcode.o`)
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x100706c0	72	outw	dynsym	fa3cba5cb7e0		out:13	located	docs/kernel-attach.md#the-emulated-pcs-memory-image-and-the-legacy-port-space-vgaahelper_memo-helper_legacyo-junkcodeo	The emulated PC's memory image and the legacy port space (`vga.a(helper_mem.o)`, `helper_legacy.o`, `junkcode.o`)
 usr/X11R6/bin/XFree86	shared-x-server	n32		0x10070740	96	outl	dynsym	eb9e7f6fa421		out:13	located	docs/kernel-attach.md#the-emulated-pcs-memory-image-and-the-legacy-port-space-vgaahelper_memo-helper_legacyo-junkcodeo	The emulated PC's memory image and the legacy port space (`vga.a(helper_mem.o)`, `helper_legacy.o`, `junkcode.o`)
@@ -47765,8 +47765,8 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0xf80	36	sthread_launch
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0xfa4	24	p0_launch	dwarf+symtab	07dd9bac3171		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0xfbc	68	resumeidle	dwarf+symtab	da960a29be23		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x1000	60	toidlestk	dwarf+symtab	d3354398d55b		out:4	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x103c	60	setjmp	dwarf+symtab	99dfa838538b		out:3	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x1078	60	longjmp	dwarf+symtab	925d6d0f3f0a		out:3	undocumented		
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x103c	60	setjmp	dwarf+symtab	99dfa838538b		out:3	named-only	docs/binaries.md#board-tools	Board tools
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x1078	60	longjmp	dwarf+symtab	925d6d0f3f0a		out:3	named-only	docs/binaries.md#board-tools	Board tools
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x10b4	12	he_arcs_set_vectors	dwarf+symtab	5fe1255fc6ac		out:7	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x10c0	376	restart	dwarf	d3518401de5c		out:7	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x1238	32	he_arcs_restart	dwarf+symtab	2888abd22c33		out:7	undocumented		
@@ -50089,7 +50089,7 @@ usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b2b0	612	setup_int_vect	dyn
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b520	172	setup_system_bios	dynsym	c47d54c5e6a3		in	located	docs/kernel-attach.md#the-emulated-pcs-memory-image-and-the-legacy-port-space-vgaahelper_memo-helper_legacyo-junkcodeo	The emulated PC's memory image and the legacy port space (`vga.a(helper_mem.o)`, `helper_legacy.o`, `junkcode.o`)
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b5d0	408	reset_int_vect	dynsym	e36005f1921a		in	located	docs/kernel-attach.md#the-emulated-pcs-memory-image-and-the-legacy-port-space-vgaahelper_memo-helper_legacyo-junkcodeo	The emulated PC's memory image and the legacy port space (`vga.a(helper_mem.o)`, `helper_legacy.o`, `junkcode.o`)
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b770	108	set_return_trap	dynsym	d4132778f8fd		in	located	docs/kernel-attach.md#the-emulated-pcs-memory-image-and-the-legacy-port-space-vgaahelper_memo-helper_legacyo-junkcodeo	The emulated PC's memory image and the legacy port space (`vga.a(helper_mem.o)`, `helper_legacy.o`, `junkcode.o`)
-usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b7e0	68	sigbusHandler	dynsym	51fba2e7997d		in	undocumented		
+usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b7e0	68	sigbusHandler	dynsym	51fba2e7997d		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b830	56	outb	dynsym	ef6e79dae2ee		in	located	docs/kernel-attach.md#the-emulated-pcs-memory-image-and-the-legacy-port-space-vgaahelper_memo-helper_legacyo-junkcodeo	The emulated PC's memory image and the legacy port space (`vga.a(helper_mem.o)`, `helper_legacy.o`, `junkcode.o`)
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b870	88	outw	dynsym	c6cdb786b2ba		in	located	docs/kernel-attach.md#the-emulated-pcs-memory-image-and-the-legacy-port-space-vgaahelper_memo-helper_legacyo-junkcodeo	The emulated PC's memory image and the legacy port space (`vga.a(helper_mem.o)`, `helper_legacy.o`, `junkcode.o`)
 usr/diags/SG/bin/biosemu	board-diagnostic	n64		0x1000b8d0	108	outl	dynsym	60643c410565		in	located	docs/kernel-attach.md#the-emulated-pcs-memory-image-and-the-legacy-port-space-vgaahelper_memo-helper_legacyo-junkcodeo	The emulated PC's memory image and the legacy port space (`vga.a(helper_mem.o)`, `helper_legacy.o`, `junkcode.o`)
@@ -52948,8 +52948,8 @@ usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x100041f0	288	findfile	dynsym	ae65f4ae9
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10004310	644	create_file	dynsym	52b37ac4d58c		in	undocumented		
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x100045a0	696	open_file	dynsym	e987648a96b0		in	undocumented		
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10004860	8	close_report	dynsym	78aa5094d5ec		in	undocumented		
-usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10004870	248	save_system_info	dynsym	244ef9642221		in	undocumented		
-usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10004970	68	sigbusHandler	dynsym	4916d611fde4		in	undocumented		
+usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10004870	248	save_system_info	dynsym	244ef9642221		in	named-only	docs/binaries.md#board-tools	Board tools
+usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10004970	68	sigbusHandler	dynsym	4916d611fde4		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10004a80	140	clockRead	dynsym	5e9d25f1756b		in	undocumented		
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x10004c00	1324	dump_board	dynsym	3b2da1548a09		in	named-only	docs/binaries.md#board-tools	Board tools
 usr/gfx/VOYAGER/bin/vpm	board-tool	n32		0x1000513c	4	__istart	dynsym	df3f619804a9		in	undocumented		
@@ -55716,7 +55716,7 @@ usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec68f20	136	getdisplaymod
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec68fa8	136	__GLarcfs	dynsym+mdebug	35157e679b6f	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec68fa8	136	arcfs	dynsym	35157e679b6f	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec69030	136	__GLpatch	dynsym+mdebug	a4f73acdb21f	shared-address	out:16	undocumented		
-usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec69030	136	patch	dynsym	a4f73acdb21f	shared-address	out:16	undocumented		
+usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec69030	136	patch	dynsym	a4f73acdb21f	shared-address	out:16	named-only	docs/binaries.md#board-tools	Board tools
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec690b8	64	__GLgl_glx_unlink	dynsym+mdebug	a14cfbe5b480	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec690b8	64	gl_glx_unlink	dynsym	a14cfbe5b480	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec690f8	136	__GLnurbssurface	dynsym+mdebug	89bf29f426bc	shared-address	out:16	undocumented		
@@ -62443,7 +62443,7 @@ usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a768	180	getdisplaym
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a81c	180	__GLarcfs	dynsym	5a840efc4b95	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a81c	180	arcfs	dynsym	5a840efc4b95	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a8d0	180	__GLpatch	dynsym	9ab76b0e218a	shared-address	out:16	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a8d0	180	patch	dynsym	9ab76b0e218a	shared-address	out:16	undocumented		
+usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a8d0	180	patch	dynsym	9ab76b0e218a	shared-address	out:16	named-only	docs/binaries.md#board-tools	Board tools
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a984	68	__GLgl_glx_unlink	dynsym	1462e7a73928	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a984	68	gl_glx_unlink	dynsym	1462e7a73928	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a9c8	180	__GLnurbssurface	dynsym	fc7efe3462c9	shared-address	out:16	undocumented		

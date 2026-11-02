@@ -359,7 +359,7 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
   (3 << 1) and the 16-pixel tile size (1 << 4). Established.
 - **0x429c** in `fglrx.o`: the Mesa name `GA_SOFT_RESET` (common). `fglrx_attach` at 0xbdc stores the value 1024,
   set earlier at 0x13f4, to it between its two stores to 0x4018; Mesa's comment says the register holds the number
-  of cycles to assert reset and also asserts the RB3D soft reset. Inferred from the Mesa comment.
+  of cycles to assert reset and also asserts the RB3D soft reset, and AMD's R3xx 3D register reference gives the same field (`SOFT_RESET_COUNT`, bits 15:0, default 256 cycles) and says a reset of the 3D pipe is a write of 0x200 or higher, so 0x400 is above that figure. Inferred from the Mesa comment and the R3xx reference.
 - **0x8** in `fglrx_drv.so`: the public `CLOCK_CNTL_INDEX` (common), the PLL index register. `R200INPLL` at
   0x410dc0 stores the index masked with 0x3f to it; `vRC6PllWriteUlong` at 0x42e980 writes the index with bit 7
   (`PLL_WR_EN` in `radeon_reg.h`) set, performs the data update, then clears bit 7 and the index bits again.
@@ -898,13 +898,7 @@ was checked. The pinned Linux 2.6.30 radeon headers, the Mesa 7.11.2 r300 header
 `radeon_reg.h` were searched for the offset in both spellings (`0x350` and `0x0350`). Where a name is found in
 one header only, the grade is `common`, not `none`.
 
-- **0x194** in `fglrx_drv.so`: no public name. The replay places its two read-and-write sites in the static code at
-  0x41bc00. A decode of the 2 KB from 0x41bc00 to 0x41c400 finds no load or store with displacement 0x194 at all,
-  so the two sites are not placed. The 0x194 word accesses elsewhere in the module that a full decode finds
-  (at 0x41dc08, 0x41de58, 0x42156c and 0x421a10 in `R200ScreenInit`, and at 0x4497c8 in `R200GetSGIInfoPtr`) use
-  bases that are not the aperture as far as traced: the sites at 0x41dc08 and 0x41de58 use pointers loaded from
-  the stack (8(sp) and 16(sp)), and the base of the other three was not traced. Unknown: no site is confirmed as a
-  register access, and the role is not read.
+- **0x194** in `fglrx_drv.so`: **inferred** to be the GPIO pad drive-strength register. In `R200ScreenInit` the load at 0x41dc08 and the store at 0x41de58 save and restore it with the registers around it: the saving block loads, from one base pointer that it also uses for the words at 0x16c4, 0xf0, 0x8, 0x1a8 (`MDGPIO_MASK`), 0x288 and 0x88c, and stores each into the driver's saved-state area (the load of 0x194 goes to saved-state +512, and the matching `lw` at 0x41de54 reads it back); the restore block does the same in reverse through a pointer from the stack. A base that serves 0x16c4 and 0x8 is the register aperture, so these two are register accesses, which the earlier trace did not establish. The store at 0x42156c stores the word at +4 of the record in a0 (loaded at 0x421568) to register 0x194 through base register a6, which was not traced further. AMD's M56 register reference (a later chip) lists 0x194 as `GPIO_STRENGTH`, with an NMOS drive field in bits 3:0 and a PMOS field in bits 7:4, directly before `GPIOPAD_MASK` (0x198), `GPIOPAD_A` (0x19c), `GPIOPAD_EN` (0x1a0) and `GPIOPAD_Y` (0x1a4), the neighbours this module also accesses. That layout is the basis for the name here; it is not proved for the R300 or R350. The accesses at 0x421a10 and 0x4497c8 use other bases and are not claimed. The replay's two sites in the code at 0x41bc00 remain unplaced.
 - **0x294** in `fglrx.o`: no public name. In `_r6x_EnableStereo` at 0x13b4c (260 bytes) the enable path ORs 0x3000
   into the word (the store at 0x13be8), and the disable path ANDs it with 0xffffcfff (the store at 0x13c40). Both
   use the aperture from device record +1000. So bits 13:12 form a field that stereo switches on and off as a unit.

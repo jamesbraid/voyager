@@ -505,6 +505,7 @@ The 16-bit pointer at offset 0x18 gives the PCI data structure, which starts wit
   It also has the flag `flag_query`.
   They also include "READ_STATUS 2 not responding".
   **Inferred** that `flash_rom` rewrites the card's flash ROM, the step [option-roms.md](option-roms.md) describes for loading the images.
+  **Established** from its table of device IDs ([option-roms.md](option-roms.md#what-the-irix-software-does-with-the-images-cross-reference)) that the tool is not limited to the FireGL X1: it serves vendor 0x1002 devices 0x4e44, 0x4e47 and 0x4e4b, with images for the X1 (`sg2.bin`) and both X2 revisions (`sg3.bin`, `sg3a.bin`), so the `sg2` in its name is the product family's name, not the X1's.
 - `usr/gfx/VOYAGER/bin/vpm` (N32 executable, 37740 bytes): **established** from the dynamic symbol table and the strings.
   It defines 31 functions, among them `main` at address 0x100022e0 (968 bytes).
   `dump_board` is at 0x10004c00 (1324 bytes), and `dfCreateDumpFile` at 0x100026b0 (508 bytes).
@@ -515,6 +516,7 @@ The 16-bit pointer at offset 0x18 gives the PCI data structure, which starts wit
   It also imports `fwrite` and `signal`.
   Its only `NEEDED` entry is `libc.so.1`.
   **Inferred** that the tool saves system information and board state into a dump file made of those sections.
+  **Established** from the strings and the call order in `main` (0x100022e0): the only option is `-h` (usage "Usage: %s [-h]"). It opens `/dev/opengl` and `/dev/dri/fglrx%d` (message "Couldn't get number of graphics boards" on failure), writes "vpm dump started at %s" to its log, creates the dump file `/usr/adm/crash/diags/gfx/SG/sg2.dump` through `dfCreateDumpFile` (the file's section header text is "konadump %d %d", the same dump-file layout a sibling graphics family's tool uses), runs `save_system_info` and then `dump_board` for each board. `save_system_info` runs `versions 'patch*'`, `hinv`, `date`, `uname -a`, `gfxinfo` and `gfxinfo -vv` into sections. `dump_board` writes the sections "clock-regs-board-%d" and "board-overview-%d"; the overview text lists the general interrupt status, ring read and write pointers, the last consumed and retired time stamps, a signature word, the tile configuration, the clock and PLL power-management words, the memory PLL and clock control, and both CRTCs' offset, offset control and tile registers. A bus fault while reading the board is caught by a `SIGBUS` handler (`sigbusHandler`, with `setjmp` and `longjmp`) and reported as "Error accessing board. Bus access timed out". **Inferred** from those strings that `vpm` reads the listed registers to write a diagnostic dump of an SG2 board (the register reads themselves were not traced); the strings do not expand the name `vpm`, and no shipped manual page covers it.
 - `usr/gfx/sgcombine` (N32 executable, 230584 bytes, stripped): **established** from the dynamic symbol table and the strings.
   It defines 403 functions and imports 251 names.
   Its `NEEDED` list has 15 libraries, among them `libGL.so`, `libGLU.so` and `libXm.so.1`.
