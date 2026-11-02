@@ -49086,11 +49086,11 @@ usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x31bc	164	pcibr_dmamap_
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x3260	64	pcibr_get_dmatrans_node	dwarf+symtab	3df3c5d68579		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x32a0	924	pcibr_dmatrans_addr	dwarf+symtab	1d98b475c6fd		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x363c	972	pcibr_dmatrans_list	dwarf+symtab	952ccf9bf3bd		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
-usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x3a08	28	pcibr_dmamap_drain	dwarf+symtab	f78050eeb67e		in	undocumented		
-usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x3a24	64	pcibr_dmaaddr_drain	dwarf+symtab	442a9a04f9d5		in	undocumented		
-usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x3a64	56	pcibr_dmalist_drain	dwarf+symtab	8ccefad68e35		in	undocumented		
+usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x3a08	28	pcibr_dmamap_drain	dwarf+symtab	f78050eeb67e		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x3a24	64	pcibr_dmaaddr_drain	dwarf+symtab	442a9a04f9d5		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x3a64	56	pcibr_dmalist_drain	dwarf+symtab	8ccefad68e35		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x3a9c	8	pcibr_dmamap_pciaddr_get	dwarf+symtab	1aafdc9edf9a		in	undocumented		
-usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x3aa4	8	pcibr_provider_startup	dwarf+symtab	78aa5094d5ec		in	undocumented		
+usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x3aa4	8	pcibr_provider_startup	dwarf+symtab	78aa5094d5ec		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x3aac	8	pcibr_provider_shutdown	dwarf+symtab	78aa5094d5ec		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x3ab4	700	pcibr_reset	dwarf+symtab	8cecaa21808b		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x3d70	232	pcibr_endian_set	dwarf+symtab	0258ea7afff5		in	undocumented		
@@ -49144,12 +49144,12 @@ usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x7760	120	pcibr_intrd	d
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x77d8	124	pcibr_intrd_start	dwarf	6489b3e56214		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x7854	120	pcibr_thread_setup	dwarf	416dd373cbf0		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x78cc	1552	pcibr_intr_alloc	dwarf+symtab	b65c1bc3abb7		in	undocumented		
-usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x7edc	68	pcibr_intr_setmustrun	dwarf+symtab	34c3e18ef44e		in	undocumented		
-usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x7f20	504	pcibr_intr_free	dwarf+symtab	92b1a449095f		in	undocumented		
+usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x7edc	68	pcibr_intr_setmustrun	dwarf+symtab	34c3e18ef44e		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x7f20	504	pcibr_intr_free	dwarf+symtab	92b1a449095f		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x8118	168	pcibr_setpciint	dwarf+symtab	1b2250c2594e		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x81c0	420	pcibr_intr_connect	dwarf+symtab	f4b5e1b88972		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
-usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x8364	476	pcibr_intr_disconnect	dwarf+symtab	57bfb3b6d799		in	undocumented		
-usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x8540	120	pcibr_intr_cpu_get	dwarf+symtab	035454ccc87a		in	undocumented		
+usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x8364	476	pcibr_intr_disconnect	dwarf+symtab	57bfb3b6d799		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x8540	120	pcibr_intr_cpu_get	dwarf+symtab	035454ccc87a		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x85b8	132	pcibr_setwidint	dwarf+symtab	4f42665b5f80		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x863c	592	pcibr_intr_func	dwarf+symtab	1fe27f24b475		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x888c	92	pcibr_show_dir_state	dwarf+symtab	8eea44ae4213		in	undocumented		
@@ -49167,7 +49167,7 @@ usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xb274	296	pcibr_dmard_e
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xb39c	72	pcibr_dmawr_error	dwarf+symtab	3f16d8d2d4a7		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xb3e4	200	pcibr_error_handler	dwarf+symtab	e8d4bccb89de		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xb4ac	584	pcibr_error_handler_wrapper	dwarf+symtab	ce2ce0b3c995		in	undocumented		
-usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xb6f4	124	pcibr_error_devenable	dwarf+symtab	0d4b3946771b		in	undocumented		
+usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xb6f4	124	pcibr_error_devenable	dwarf+symtab	0d4b3946771b		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xb770	132	pcibr_func_config_addr	dwarf+symtab	0f1f28569c08		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xb7f4	44	pcibr_slot_config_addr	dwarf+symtab	70d18b2ab7d4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0xb820	60	pcibr_slot_config_get	dwarf+symtab	67cdba97910b		in	undocumented		
@@ -49333,20 +49333,20 @@ usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x2c8	28	pciio_dmamap_do
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x2e4	28	pciio_dmatrans_addr	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x300	28	pciio_dmatrans_list	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x31c	284	pciio_dma_addr	dwarf+symtab	79d86430942f		in	named-only	docs/kernel-drm-functions.md#mutex-texture-dma-mapping-and-vsync-routines	Mutex, texture, DMA-mapping and vsync routines
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x438	28	pciio_dmamap_drain	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x454	28	pciio_dmaaddr_drain	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x470	28	pciio_dmalist_drain	dwarf+symtab	a86de4a9d7a4		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x438	28	pciio_dmamap_drain	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x454	28	pciio_dmaaddr_drain	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x470	28	pciio_dmalist_drain	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x48c	104	pciio_intr_alloc	dwarf+symtab	597f5500f168		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x4f4	28	pciio_intr_free	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x510	28	pciio_intr_setmustrun	dwarf+symtab	a86de4a9d7a4		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x510	28	pciio_intr_setmustrun	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x52c	28	pciio_intr_connect	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x548	28	pciio_intr_disconnect	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x564	28	pciio_intr_cpu_get	dwarf+symtab	a86de4a9d7a4		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x564	28	pciio_intr_cpu_get	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x580	100	pciio_slot_func_to_name	dwarf+symtab	a4baa723bf4b		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x5e4	160	pciio_cardinfo_get	dwarf+symtab	15a1d1b424ba		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x684	296	pciio_error_handler	dwarf+symtab	032bef18ab2e		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x7ac	28	pciio_error_devenable	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x7c8	28	pciio_provider_startup	dwarf+symtab	a86de4a9d7a4		in	undocumented		
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x7ac	28	pciio_error_devenable	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x7c8	28	pciio_provider_startup	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x7e4	28	pciio_provider_shutdown	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x800	28	pciio_endian_set	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/pciio.o	shared-kernel	n64	.text	0x81c	28	pciio_priority_set	dwarf+symtab	a86de4a9d7a4		in	undocumented		
