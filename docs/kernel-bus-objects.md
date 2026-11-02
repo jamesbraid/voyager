@@ -145,3 +145,19 @@ An xswitch record is a 152-byte heap block that hangs off a crossbar vertex as i
   It calls `pcibr_hints_fix_rrbs` on the vertex, then `xtalk_piotrans_addr` with the vertex, two zeros, size 0x01000000 and a fifth zero, and without testing the address returned stores 0x00999888 as a word at +644 (0x284) and 0x888 as a word at +652 (0x28c) of it.
 
 
+
+
+## Single-call forwards in the bus and kernel objects
+
+Each routine here saves the return address, calls one routine with its own arguments untouched, restores the return address and returns that routine's result. Its seven instruction words are the same as those of `xswitch_reset_link` (`xswitch.o`, address 0x228; code hash a86de4a9d7a4), so the same forward is in each object's copy; only the relocation of the call differs, and the callee named in each entry is that relocation's symbol.
+
+- `hubio_init` (`kernel.o`, address 0x21f18, 28 bytes): **established.** Calls `early_brl1_port_init` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `hub_provider_shutdown` (`kernel.o`, address 0x22bfc, 28 bytes): **established.** Calls `xtalk_provider_unregister` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `clkset` (`kernel.o`, address 0x295c0, 28 bytes): **established.** Calls `inittodr` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `pcibr_device_write_gather_flush` (`pcibr.o`, address 0x554, 28 bytes): **established.** Calls `pcireg_wrb_flush_get` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `pcibr_info_get` (`pcibr.o`, address 0x9b4, 28 bytes): **established.** Calls `pciio_hostinfo_get` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `pciio_piomap_alloc` (`pciio.o`, address 0x0, 28 bytes): **established.** Calls `pcibr_piomap_alloc` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `pciio_piomap_free` (`pciio.o`, address 0x1c, 28 bytes): **established.** Calls `pcibr_piomap_free` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `pciio_piomap_done` (`pciio.o`, address 0x60, 28 bytes): **established.** Calls `pcibr_piomap_done` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `pciio_piotrans_addr` (`pciio.o`, address 0x7c, 28 bytes): **established.** Calls `pcibr_piotrans_addr` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `pciio_piospace_free` (`pciio.o`, address 0x1e8, 28 bytes): **established.** Calls `pcibr_piospace_free` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
