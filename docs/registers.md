@@ -361,7 +361,7 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
   (3 << 1) and the 16-pixel tile size (1 << 4). Established. AMD's R3xx 3D register reference (page 30) agrees: ENABLE is bit 0, PIPE_COUNT bits 3:1 (3 is R300, 0 is RV350) and TILE_SIZE bits 5:4 (1 is 16 pixels).
 - **0x429c** in `fglrx.o`: the Mesa name `GA_SOFT_RESET` (common). `fglrx_attach` at 0xbdc stores the value 1024,
   set earlier at 0x13f4, to it between its two stores to 0x4018; Mesa's comment says the register holds the number
-  of cycles to assert reset and also asserts the RB3D soft reset, and AMD's R3xx 3D register reference gives the same field (`SOFT_RESET_COUNT`, bits 15:0, default 256 cycles) and says a reset of the 3D pipe is a write of 0x200 or higher, so 0x400 is above that figure. Inferred from the Mesa comment and the R3xx reference.
+  of cycles to assert reset and also asserts the RB3D soft reset, and AMD's R3xx 3D register reference gives the same field (`SOFT_RESET_COUNT`, bits 15:0, default 256 cycles) and AMD's R5xx acceleration guide (a later chip) says a reset of the 3D pipe is a write of 0x200 or higher to `GA_SOFT_RESET`, so 0x400 is above that figure; the R3xx reference gives only the field and its default. Inferred from the Mesa comment and the two references.
 - **0x8** in `fglrx_drv.so`: the public `CLOCK_CNTL_INDEX` (common), the PLL index register. `R200INPLL` at
   0x410dc0 stores the index masked with 0x3f to it; `vRC6PllWriteUlong` at 0x42e980 writes the index with bit 7
   (`PLL_WR_EN` in `radeon_reg.h`) set, performs the data update, then clears bit 7 and the index bits again.
