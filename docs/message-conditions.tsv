@@ -1,0 +1,11 @@
+# label	address	condition	grade
+# Written by hand after reading the instructions that reach each call. Each grade says how far the
+# reading went: inferred = the guarding branch and the value it tests were read; partial = the branch was
+# read but the value it tests was not traced to its source.
+fglrx.o	0x1b80	Reached on the branch-taken path of the compare at 0x1384 (`bne a4,a5`) or 0x138c (`bne a6,a3`). What the compared values hold was not traced.	partial
+fglrx.o	0x1c88	Reached when the PIO mapping returned by `pciio_pio_addr` with a2 = 7 (call at 0x10cc) is zero: `beqz v0` at 0x10d4 branches to the block that makes this call.	inferred
+fglrx.o	0x1cd0	Reached when the PIO mapping returned by `pciio_pio_addr` with a2 = 9 (call at 0x1120) is zero: `beqz v0` at 0x1128.	inferred
+fglrx.o	0x1d78	Reached when t9 is zero at the test `beqz t9` at 0x12bc. The write to t9 was not traced.	partial
+fglrx.o	0x1d90	Reached when the PIO mapping returned by `pciio_pio_addr` with a2 = 1 (call at 0x1360) is zero: `beqz v0` at 0x1368. Only the argument value suggests this is the expansion ROM window.	inferred
+fglrx.o	0x1dc0	Reached when `pciio_piomap_alloc` with a2 = 2 (call at 0x13fc) returns zero: `beqz v0` at 0x1404.	inferred
+fglrx.o	0x1dd8	Reached when the PIO mapping returned by `pciio_pio_addr` with a2 = 4 (call at 0x1458) is zero: `beqz v0` at 0x1460.	inferred

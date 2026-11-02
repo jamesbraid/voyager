@@ -1,0 +1,226 @@
+label	routine	address	kind	callee	level	format	other_strings	category	guard	condition	grade
+fglrx.o	fglrx_unreg	0x734	direct	cmn_err	4	fglrx: fglrx_unreg - driver still in use by %d boards\n	%d=?	other	taken branch `bnez a2` at 0x6b0	not yet read	unread
+fglrx.o	fglrx_unload	0x8a8	direct	cmn_err	4	fglrx: fglrx_unload - fglrx_inuse ! - no unload!\n		other	taken branch `bnez at` at 0x764	not yet read	unread
+fglrx.o	sub_8b8	0x954	direct	assfail	file ../graphics/FGLRX/fglrx/kernel/fglrx_init.c line 452	bdata != NULL		assert	taken branch `beqz v0` at 0x8e8	not yet read	unread
+fglrx.o	fglrx_attach	0x1b80	direct	cmn_err	5	fglrx%d:  ROM present - but sig NOT VALID 	%d=?	rom	taken branch from 2 places (first at 0x1384)	Reached on the branch-taken path of the compare at 0x1384 (`bne a4,a5`) or 0x138c (`bne a6,a3`). What the compared values hold was not traced.	partial
+fglrx.o	fglrx_attach	0x1ba8	direct	cmn_err	6	  ... IS endian swapped...\n		attach	fall-through of `bne a6,a7`	not yet read	unread
+fglrx.o	fglrx_attach	0x1bbc	direct	cmn_err	5	(format not recovered)		attach	taken branch `beqz ra` at 0x184c	not yet read	unread
+fglrx.o	fglrx_attach	0x1c00	direct	cmn_err	1	fglrx_attach: cfg map for check failed\n		attach	taken branch `beqz v0` at 0xdcc	not yet read	unread
+fglrx.o	fglrx_attach	0x1c88	direct	cmn_err	4	fglrx%d: cannot get to config space\n	%d=?	attach	taken branch `beqz v0` at 0x10d4	Reached when the PIO mapping returned by `pciio_pio_addr` with a2 = 7 (call at 0x10cc) is zero: `beqz v0` at 0x10d4 branches to the block that makes this call.	inferred
+fglrx.o	fglrx_attach	0x1cd0	direct	cmn_err	4	fglrx%d: cannot map mmio space\n	%d=?	attach	taken branch `beqz v0` at 0x1128	Reached when the PIO mapping returned by `pciio_pio_addr` with a2 = 9 (call at 0x1120) is zero: `beqz v0` at 0x1128.	inferred
+fglrx.o	fglrx_attach	0x1d18	direct	cmn_err	4	fglrx%d: cannot map mem(0) space\n	%d=?	attach	taken branch `beqz a6` at 0x11cc	not yet read	unread
+fglrx.o	fglrx_attach	0x1d60	direct	cmn_err	4	fglrx%d: cannot map reg(2) space\n	%d=?	attach	taken branch `beqz v0` at 0x123c	not yet read	unread
+fglrx.o	fglrx_attach	0x1d78	direct	cmn_err	4	fglrx%d:  ROM NOT VALID\n	%d=?	rom	taken branch `beqz t9` at 0x12bc	Reached when t9 is zero at the test `beqz t9` at 0x12bc. The write to t9 was not traced.	partial
+fglrx.o	fglrx_attach	0x1d90	direct	cmn_err	4	fglrx%d: cannot get to ROM space\n	%d=?	rom	taken branch `beqz v0` at 0x1368	Reached when the PIO mapping returned by `pciio_pio_addr` with a2 = 1 (call at 0x1360) is zero: `beqz v0` at 0x1368. Only the argument value suggests this is the expansion ROM window.	inferred
+fglrx.o	fglrx_attach	0x1da8	direct	cmn_err	6	(format not recovered)		attach	taken branch `bne a6,a7` at 0x1b98	not yet read	unread
+fglrx.o	fglrx_attach	0x1dc0	direct	cmn_err	4	fglrx%d:  cannot allocate Legacy PIO map\n	%d=?	attach	taken branch `beqz v0` at 0x1404	Reached when `pciio_piomap_alloc` with a2 = 2 (call at 0x13fc) returns zero: `beqz v0` at 0x1404.	inferred
+fglrx.o	fglrx_attach	0x1dd8	direct	cmn_err	4	fglrx%d: cannot get to vga-fb space\n	%d=?	attach	taken branch `beqz v0` at 0x1460	Reached when the PIO mapping returned by `pciio_pio_addr` with a2 = 4 (call at 0x1458) is zero: `beqz v0` at 0x1460.	inferred
+fglrx.o	fglrx_attach	0x1df4	direct	cmn_err	4	%s[%d]: cannot add char_dev vertex\n	%s='fglrx'; %d=?	attach	taken branch `bnez v0` at 0x15dc	not yet read	unread
+fglrx.o	fglrx_attach	0x1e10	direct	cmn_err	4	%s[%d]: cannot add hintdev vertex\n	%s='fglrx'; %d=?	attach	taken branch `bnez v0` at 0x1690	not yet read	unread
+fglrx.o	fglrx_attach	0x1e28	direct	cmn_err	7	fglrx_attach: hwgraph_inventory_add returned 0x%x\n	%x=?	attach	taken branch `bnez v0` at 0x177c	not yet read	unread
+fglrx.o	fglrx_attach	0x1e3c	direct	cmn_err	7	fglrx_attach: init_module failed\n		attach	taken branch `beqz s5` at 0x1854	not yet read	unread
+fglrx.o	fglrx_attach	0x1e50	direct	cmn_err	4	FGLRX: Failed to connect to hardware interrupt line\n		interrupt	taken branch `bnez v0` at 0x190c	not yet read	unread
+fglrx.o	fglrx_attach	0x1e98	direct	cmn_err	4	fglrx%d: cannot map mem(0) space\n	%d=?	attach	taken branch `beqz v0` at 0x1998	not yet read	unread
+fglrx.o	fglrx_attach	0x1ee0	direct	cmn_err	4	fglrx%d: cannot map mem(2) space\n	%d=?	attach	taken branch `beqz v0` at 0x19d8	not yet read	unread
+fglrx.o	fglrx_detach	0x22e0	direct	cmn_err	4	%s: can't traverse to 'fglrx'\n	%s='fglrx_detach'	attach	taken branch `bnez v0` at 0x1fa4	not yet read	unread
+fglrx.o	fglrx_detach	0x2314	direct	assfail	file ../graphics/FGLRX/fglrx/kernel/fglrx_init.c line 1244	fglrx_boards[brd] == bdata		assert	taken branch `bne a4,v0` at 0x2000	not yet read	unread
+fglrx.o	sub_2324	0x2470	direct	cmn_err	0	fglrx: checkBoardPointers(fglrx_boards) failed\n		other	taken branch `beqz v0` at 0x23a4	not yet read	unread
+fglrx.o	sub_2324	0x24b8	direct	assfail	file ../graphics/FGLRX/fglrx/kernel/fglrx_init.c line 1338	fglrx_binuse == NULL		assert	taken branch `bnez a4` at 0x23d4	not yet read	unread
+fglrx.o	sub_2324	0x24fc	direct	cmn_err	0	fglrx: checkBoardPointers(fglrx_binuse) failed\n		other	taken branch `beqz v0` at 0x2404	not yet read	unread
+fglrx.o	sub_25cc	0x26c0	direct	assfail	file ../graphics/FGLRX/fglrx/kernel/fglrx_init.c line 1403	fglrx_boards		assert	taken branch `beqz at` at 0x2608	not yet read	unread
+fglrx.o	sub_25cc	0x2708	direct	assfail	file ../graphics/FGLRX/fglrx/kernel/fglrx_init.c line 1404	fglrx_binuse		assert	taken branch `beqz t8` at 0x2614	not yet read	unread
+fglrx.o	sub_25cc	0x2750	direct	assfail	file ../graphics/FGLRX/fglrx/kernel/fglrx_init.c line 1409	bdata != NULL		assert	taken branch `beqz v0` at 0x2658	not yet read	unread
+fglrx.o	sub_2760	0x28b8	direct	assfail	file ../graphics/FGLRX/fglrx/kernel/fglrx_init.c line 1426	brd < (GfxBoardLimit + 1)		assert	taken branch `bnez at` at 0x27b8	not yet read	unread
+fglrx.o	fglrx_open	0x2c44	direct	cmn_err	4	%s: NO exclusive opens supported!\n	%s='fglrx_open'	other	taken branch `bnez at` at 0x2970	not yet read	unread
+fglrx.o	fglrx_open	0x2cb0	direct	cmn_err	4	%s[%d] hw-graph opens are not supported\n	%s='fglrx'; %d=?	other	straight-line from the previous instruction	not yet read	unread
+fglrx.o	fglrx_open	0x2cf4	direct	cmn_err	4	fglrx: illegal open for minor: 0x%x\n	%x=?	other	taken branch `beqz a1` at 0x29b4	not yet read	unread
+fglrx.o	fglrx_open	0x2d38	direct	cmn_err	4	fglrx: non existent board: 0x%x\n	%x=?	other	taken branch `beqz t8` at 0x29cc	not yet read	unread
+fglrx.o	fglrx_open	0x2db4	direct	cmn_err	4	fglrx: out of minors for now ...\n		other	straight-line from the previous instruction	not yet read	unread
+fglrx.o	fglrx_open	0x2e34	direct	cmn_err	4	alloc for minor %d failed\n	%d=?	other	straight-line from the previous instruction	not yet read	unread
+fglrx.o	fglrx_close	0x3118	direct	cmn_err	4	fglrx: confused close minor: 0x%x\n	%x=?	other	taken branch `bnez v1` at 0x2ed8	not yet read	unread
+fglrx.o	fglrx_close	0x3194	direct	cmn_err	4	fglrx: illegal bdata - minor: 0x%x\n	%x=?	other	taken branch `beqz s0` at 0x2efc	not yet read	unread
+fglrx.o	fglrx_invalid_ioctl	0x3218	direct	cmn_err	5	fglrx: Unknown ioctl\n		other	routine entry	not yet read	unread
+fglrx.o	fglrx_ioctl	0x4030	direct	cmn_err	4	fglrx: illegal ioctl minor: 0x%x\n	%x=?	other	taken branch from 2 places (first at 0x3c08)	not yet read	unread
+fglrx.o	fglrx_ioctl	0x4074	direct	cmn_err	4	fglrx_ioctl: illegal bdata - minor: 0x%x\n	%x=?	other	taken branch `beqz v0` at 0x3c44	not yet read	unread
+fglrx.o	fglrx_map	0x4394	direct	cmn_err	4	fglrx: illegal map minor: 0x%x\n	%x=?	other	taken branch from 2 places (first at 0x40d4)	not yet read	unread
+fglrx.o	fglrx_map	0x43fc	direct	cmn_err	4	fglrx%d: unsupported HWGRAPH fglrx_map called\n	%d=?	attach	straight-line from the previous instruction	not yet read	unread
+fglrx.o	fglrx_map	0x4444	direct	cmn_err	4	fglrx_map: illegal bdata - minor: 0x%x\n	%x=?	other	taken branch `beqz a0` at 0x4110	not yet read	unread
+fglrx.o	fglrx_error_handler	0x4590	direct	cmn_err	4	Handled interrupt io error\n		interrupt	taken branch `bnez a6` at 0x451c	not yet read	unread
+fglrx.o	fglrx_exit	0x47e0	direct	cmn_err	4	Forcing Exit on pipe %s\n	%s=?	other	taken branch `beq s5,v0` at 0x4734	not yet read	unread
+fglrx.o	FGLRXINPLL	0x4aec	direct	assfail	file ../graphics/FGLRX/fglrx/kernel/fglrx_init.c line 2641	bdata->reg_addr		assert	taken branch `beqz at` at 0x4a44	not yet read	unread
+fglrx.o	pci_find_device	0x4bf8	direct	cmn_err	1	%s: called with from=NULL !\n	%s='pci_find_device'	other	taken branch `beqz a2` at 0x4b88	not yet read	unread
+fglrx.o	pci_find_device	0x4c70	direct	debug		ring		trace	straight-line from the previous instruction	not yet read	unread
+fglrx.o	pci_find_subsys	0x4d14	direct	cmn_err	1	%s: called with from=NULL !\n	%s='pci_find_subsys'	other	taken branch `beqz a4` at 0x4c8c	not yet read	unread
+fglrx.o	pci_find_subsys	0x4d8c	direct	debug		ring		trace	straight-line from the previous instruction	not yet read	unread
+fglrx.o	pci_find_class	0x4e18	direct	cmn_err	1	%s: called with from=NULL !\n	%s='pci_find_class'	other	taken branch `beqz a1` at 0x4da4	not yet read	unread
+fglrx.o	pci_find_class	0x4e90	direct	debug		ring		trace	straight-line from the previous instruction	not yet read	unread
+fglrx.o	sub_4f50	0x5080	direct	debug		ring		trace	straight-line from the previous instruction	not yet read	unread
+fglrx.o	sub_4f50	0x50c8	direct	cmn_err	1	%s: bdata=NULL\n	%s='irix_pci_read_config_by_size'	other	taken branch `beqz v0` at 0x4f70	not yet read	unread
+fglrx.o	sub_4f50	0x5128	direct	debug		ring		trace	straight-line from the previous instruction	not yet read	unread
+fglrx.o	sub_51dc	0x5268	direct	cmn_err	1	%s: called with pcidev=NULL !\n	%s='irix_pci_write_config_by_size'	other	taken branch `beqz a0` at 0x51e8	not yet read	unread
+fglrx.o	sub_51dc	0x52e0	direct	debug		ring		trace	straight-line from the previous instruction	not yet read	unread
+fglrx.o	sub_51dc	0x5328	direct	cmn_err	1	%s: bdata=NULL\n	%s='irix_pci_write_config_by_size'	other	taken branch `beqz a7` at 0x51f4	not yet read	unread
+fglrx.o	sub_51dc	0x53a0	direct	debug		ring		trace	straight-line from the previous instruction	not yet read	unread
+fglrx.o	fglrx_usb_comp_update_tiles	0x5418	direct	printf		usb_comp driver not in kernel!\n		other	routine entry	not yet read	unread
+fglrx.o	fglrx_usb_comp_readwrite_register	0x5468	direct	printf		usb_comp driver not in kernel\n		other	routine entry	not yet read	unread
+fglrx.o	fglrxReadMmRegister	0x54f0	direct	printf		%s: illegal register requested 0x%x\n	%s='fglrxReadMmRegister'; %x=?	other	taken branch from 2 places (first at 0x548c)	not yet read	unread
+fglrx.o	fglrxReadMmRegister	0x553c	direct	printf		%s: zero base address!\n	%s='fglrxReadMmRegister'	other	taken branch `beqz a0` at 0x54a0	not yet read	unread
+fglrx.o	fglrxWriteMmRegister	0x55c0	direct	printf		%s: illegal register requested 0x%x\n	%s='fglrxWriteMmRegister'; %x=?	other	taken branch from 2 places (first at 0x5558)	not yet read	unread
+fglrx.o	fglrxWriteMmRegister	0x5604	direct	printf		%s: zero base address!\n	%s='fglrxWriteMmRegister'	other	taken branch `beqz a0` at 0x556c	not yet read	unread
+fglrx.o	sub_5614	0x5728	direct	printf		%s: pipe %d, compositor attached (0x%x), index is zero\n	%s='fglrxCompositorUSBRegReadWrite'; %d=?; %x=?	other	taken branch `beqz t8` at 0x5650	not yet read	unread
+fglrx.o	fglrxProbeCompositor	0x5dd0	direct	cmn_err	5	Compositor ID %x discovered\n	%x=?	attach	taken branch `beqz t2` at 0x5d8c	not yet read	unread
+fglrx.o	sub_5de0	0x62c4	direct	printf		%s: Error allocating %d bytes for Hyperpipe State\n	%s='fglrx_hpipe_discover'; %d=9744	other	fall-through of `bnez v0`	not yet read	unread
+fglrx.o	sub_6924	0x6a04	direct	printf		bdata for pipe %s not found\n	%s=?	other	taken branch `blez at` at 0x697c	not yet read	unread
+fglrx.o	fglrx_compositor_setnic	0x6bf8	direct	printf		%s: copyin fault\n	%s='fglrx_compositor_setnic'	other	fall-through of `beqz v0`	not yet read	unread
+fglrx.o	fglrx_compositor_setnic	0x6c6c	direct	printf		%s: invalid function %d\n	%s=?; %d=?	other	fall-through of `beq a1,a3`	not yet read	unread
+fglrx.o	fglrx_compositor_setnic	0x6d78	direct	printf		%s: copyout fault\n	%s='fglrx_compositor_setnic'	other	fall-through of `beqz v0`	not yet read	unread
+fglrx.o	sub_6ecc	0x6f60	direct	printf		fglrx_hp_%s: Invalid hpId %d (max %d)\n	%s=?; %d=?; %d=128	other	taken branch from 2 places (first at 0x6f0c)	not yet read	unread
+fglrx.o	fglrx_hp_config	0x726c	direct	printf		%s: network_id %d invalid (max %d)\n	%s='fglrx_hp_config'; %d=?; %d=?	other	taken branch from 2 places (first at 0x71c4)	not yet read	unread
+fglrx.o	fglrx_hp_config	0x72bc	direct	printf		%s: num_pipes %d too large (max %d)\n	%s='fglrx_hp_config'; %d=?; %d=4	other	taken branch `beqz v1` at 0x71ac	not yet read	unread
+fglrx.o	fglrx_hp_config	0x73b4	direct	printf		%s: network id %d (at hpId %d) in use, pipes_bound %d\n	%s='fglrx_hp_config'; %d=?; %d=?; %d=?	other	fall-through of `beqzl a4`	not yet read	unread
+fglrx.o	fglrx_hp_config	0x74fc	direct	printf		%s: all %d hpIds busy\n	%s='fglrx_hp_config'; %d=?	other	taken branch `beqz t3` at 0x7400	not yet read	unread
+fglrx.o	sub_7520	0x75b4	direct	printf		%s: attempt to destroy hpid %d with %d pipes still bound\n	%s='fglrx_hp_destroy_config_sub'; %d=?; %d=?	other	fall-through of `blez at`	not yet read	unread
+fglrx.o	sub_787c	0x79dc	direct	printf		%s: hpId %d already free\n	%s='fglrx_hp_unbind_pipe'; %d=?	other	taken branch `beqz t8` at 0x78c8	not yet read	unread
+fglrx.o	fglrx_hp_qry_attrib	0x81f8	direct	printf		%s: not enough space to copyout	%s='fglrx_hp_qry_attrib'	other	taken branch `bnez ra` at 0x8170	not yet read	unread
+fglrx.o	sub_8830	0x8c90	direct	printf		fglrx_hpipe: Failure reading NIC "board offset\\n"\n		other	taken branch `bltz v0` at 0x88a4	not yet read	unread
+fglrx.o	sub_8830	0x8cd4	direct	printf		fglrx_hpipe: Failure reading NIC "manufacturer"\n		other	taken branch `bltz v0` at 0x88cc	not yet read	unread
+fglrx.o	sub_8830	0x8d18	direct	printf		fglrx_hpipe: Failure reading NIC "product name"\n		other	taken branch `bltz v0` at 0x8968	not yet read	unread
+fglrx.o	sub_8830	0x8d5c	direct	printf		fglrx_hpipe: Failure reading NIC "serial number"\n		other	taken branch `bltz v0` at 0x8a30	not yet read	unread
+fglrx.o	sub_8830	0x8da0	direct	printf		fglrx_hpipe: Failure reading NIC "part number"\n		other	taken branch `bltz v0` at 0x8b0c	not yet read	unread
+fglrx.o	sub_8830	0x8de8	direct	printf		fglrx_hpipe: Failure reading NIC "dash level"\n		other	taken branch `bltz v0` at 0x8bd4	not yet read	unread
+fglrx.o	sub_8830	0x8e30	direct	printf		fglrx_hpipe: Failure reading NIC "product name"\n		other	taken branch `bltz v0` at 0x88f8	not yet read	unread
+fglrx.o	sub_8830	0x8e74	direct	printf		fglrx_hpipe: Failure reading NIC "serial number"\n		other	taken branch `bltz v0` at 0x89a4	not yet read	unread
+fglrx.o	sub_8830	0x8eb8	direct	printf		fglrx_hpipe: Failure reading NIC "part number"\n		other	taken branch `bltz v0` at 0x8a7c	not yet read	unread
+fglrx.o	sub_8830	0x8efc	direct	printf		fglrx_hpipe: Failure reading NIC "dash level"\n		other	taken branch `bltz v0` at 0x8b54	not yet read	unread
+fglrx.o	fglrx_hpipe_add_log	0x9030	direct	cmn_err	4	fglrx_hpipe_add_log called\n		other	taken branch `beq at,v0` at 0x8fec	not yet read	unread
+fglrx.o	sub_9040	0x909c	direct	cmn_err	4	frglx ERROR: 		other	routine entry	not yet read	unread
+fglrx.o	sub_9040	0x90c4	direct	icmn_err	6	(format not recovered)		other	straight-line from the previous instruction	not yet read	unread
+fglrx.o	firegl_init_module	0x9358	direct	cmn_err	1	firegl_init_module[%d]: kmem_alloc failed\n	%d=?	attach	taken branch `beqz v0` at 0x916c	not yet read	unread
+fglrx.o	__ke_verify_area	0x9bac	direct	printf		__ke_verify_area NOT IMPLEMENTED !!!!\n		other	routine entry	not yet read	unread
+fglrx.o	__ke_init_mm	0x9e88	direct	cmn_err	4	%s: faked return\n	%s='__ke_init_mm'	other	routine entry	not yet read	unread
+fglrx.o	__ke_current_mm	0x9ee0	direct	cmn_err	4	%s: faked return\n	%s='__ke_current_mm'	other	routine entry	not yet read	unread
+fglrx.o	__ke_flush_cache	0xa168	direct	printf		Cache Flush operation NOT IMPLEMENTED !!! \n		other	routine entry	not yet read	unread
+fglrx.o	__ke_vm_map	0xa648	wrapper	sub_9040			a0='__ke_vm_map: Unknown type %d\\n'	other	fall-through of `beq a2,at`	not yet read	unread
+fglrx.o	clear_waitqueue_head	0xa934	direct	cmn_err	4	clearing waitqueue with pending threads\n		other	taken branch `bnez at` at 0xa8a8	not yet read	unread
+fglrx.o	irix_vtop	0xab80	direct	cmn_err	4	voyager_vtop: unknown address type.\n		other	taken branch `bnez a2` at 0xaac8	not yet read	unread
+fglrx.o	irix_vtop	0xabc4	direct	cmn_err	4	voyager_vtop: vtop for user address failed...\n		other	taken branch `beqz v0` at 0xab0c	not yet read	unread
+fglrx.o	fglrx_irix_kern_free	0xb2f8	direct	cmn_err	4	fglrx_irix_kern_free: Memory type not valid\n		other	taken branch `bne v0,a1` at 0xb1f8	not yet read	unread
+fglrx.o	sub_ba2c	0xba84	direct	cmn_err	4	frglx ERROR: 		other	routine entry	not yet read	unread
+fglrx.o	drm_vm_open	0xbc94	wrapper	sub_ba2c			a0='map not found -> inconsistent kernel data!!!\\n'	other	taken branch `beqz s0` at 0xbcdc	not yet read	unread
+fglrx.o	drm_vm_close	0xbfb8	wrapper	sub_ba2c			a0='map not found -> inconsistent kernel data!!!\\n'	other	taken branch `beqz s0` at 0xc000	not yet read	unread
+fglrx.o	firegl_mmap	0xc560	wrapper	sub_ba2c			a0='Inconsistent kernel data!\\n'	other	fall-through of `beq s0,a6`	not yet read	unread
+fglrx.o	sub_c840	0xc898	direct	cmn_err	4	frglx ERROR: 		other	routine entry	not yet read	unread
+fglrx.o	drm_alloc	0xd2c8	wrapper	sub_c840			a0='[%s] Allocating 0 bytes\\n'; a3='frglx ERROR: '	other	taken branch `beqz a1` at 0xd114	not yet read	unread
+fglrx.o	drm_vmalloc	0xd664	wrapper	sub_c840			a0='[%s] Allocating 0 bytes\\n'	other	taken branch `beqz s1` at 0xd358	not yet read	unread
+fglrx.o	drm_vfree	0xd714	wrapper	sub_c840			a0='[%s] Attempt to free NULL pointer\\n'	other	fall-through of `bnez s3`	not yet read	unread
+fglrx.o	drm_vfree	0xd870	wrapper	sub_c840			a0='[%s] Excess frees: %d frees, %d allocs\\n'	other	taken branch `bnez at` at 0xd7fc	not yet read	unread
+fglrx.o	drm_free	0xdbf0	wrapper	sub_c840			a0='[%s] Attempt to free NULL pointer\\n'	other	fall-through of `bnez s3`	not yet read	unread
+fglrx.o	drm_free	0xdd38	wrapper	sub_c840			a0='[%s] Excess frees: %d frees, %d allocs\\n'	other	taken branch `bnez t9` at 0xdc98	not yet read	unread
+fglrx.o	drm_alloc_pages	0xdfc4	wrapper	sub_c840			a0='order value is to big\\n'	other	taken branch `beqz t8` at 0xdddc	not yet read	unread
+fglrx.o	drm_alloc_pages_consistent	0xe320	wrapper	sub_c840			a0='order value is to big\\n'	other	taken branch `beqz t8` at 0xe12c	not yet read	unread
+fglrx.o	drm_free_pages_consistent	0xe638	wrapper	sub_c840			a0='[%s] Excess frees: %d frees, %d allocs\\n'	other	taken branch `bnez t9` at 0xe5c0	not yet read	unread
+fglrx.o	drm_free_pages_consistent	0xe66c	wrapper	sub_c840			a0='[%s] Attempt to free address 0\\n'	other	taken branch `beqz s4` at 0xe49c	not yet read	unread
+fglrx.o	drm_free_pages_consistent	0xe694	wrapper	sub_c840			a0='order value is to big\\n'	other	taken branch `beqz t0` at 0xe48c	not yet read	unread
+fglrx.o	drm_free_pages	0xe8e0	wrapper	sub_c840			a0='[%s] Excess frees: %d frees, %d allocs\\n'	other	taken branch `bnez t9` at 0xe868	not yet read	unread
+fglrx.o	drm_free_pages	0xe914	wrapper	sub_c840			a0='[%s] Attempt to free address 0\\n'	other	taken branch `beqz s5` at 0xe748	not yet read	unread
+fglrx.o	drm_free_pages	0xe93c	wrapper	sub_c840			a0='order value is to big\\n'	other	taken branch `beqz a5` at 0xe734	not yet read	unread
+fglrx.o	drm_ioremap	0xeb30	wrapper	sub_c840			a0='[%s] Mapping 0 bytes at 0x%08lx\\n'	other	taken branch `beqz s0` at 0xe9a8	not yet read	unread
+fglrx.o	drm_ioremapfree	0xebc0	wrapper	sub_c840			a0='[%s] Attempt to free NULL pointer\\n'	other	fall-through of `bnez s2`	not yet read	unread
+fglrx.o	drm_ioremapfree	0xecc0	wrapper	sub_c840			a0='[%s] Excess frees: %d frees, %d allocs\\n'	other	taken branch `bnez a6` at 0xec44	not yet read	unread
+fglrx.o	sub_ecd0	0xed2c	direct	cmn_err	4	frglx ERROR: 		other	routine entry	not yet read	unread
+fglrx.o	sub_ecd0	0xed54	direct	icmn_err	6	(format not recovered)		other	straight-line from the previous instruction	not yet read	unread
+fglrx.o	firegl_init	0xee4c	direct	cmn_err	5	Initializing SG2 Driver Version = %d %d %d Build %s\n	%d=3; %d=4; %d=1; %s='Jun  2 2006'	other	routine entry	not yet read	unread
+fglrx.o	firegl_init	0xefe4	wrapper	sub_ecd0			a0='incompatible device\\n'	other	taken branch `bne a1,a2` at 0xeea8	not yet read	unread
+fglrx.o	firegl_init	0xf00c	wrapper	sub_ecd0			a0='Device not found!\\n'	other	taken branch `beqz v0` at 0xef80	not yet read	unread
+fglrx.o	firegl_init	0xf07c	direct	cmn_err	5	%s[%d]:  kmem_alloc failed\n	%s='firegl_init'; %d=?	other	taken branch `beqz v0` at 0xeed4	not yet read	unread
+fglrx.o	firegl_open	0xf418	wrapper	sub_ecd0			a0='device open failed with code %i on first instance\\n'	other	taken branch `bnez v0` at 0xf3e8	not yet read	unread
+fglrx.o	firegl_open	0xf448	wrapper	sub_ecd0			a0='device busy: %d %d\\n'	other	straight-line from the previous instruction	not yet read	unread
+fglrx.o	firegl_release	0xf72c	wrapper	sub_ecd0			a0='device busy: %d %d\\n'	other	straight-line from the previous instruction	not yet read	unread
+fglrx.o	sub_10378	0x10530	wrapper	sub_ecd0			a0='out of memory when allocating irq wait_queue!\\n'; a2='firegl_init'	interrupt	fall-through of `bnez v0`	not yet read	unread
+fglrx.o	sub_10378	0x105b0	wrapper	sub_ecd0			a0='out of memory when allocating lock wait_queue!\\n'; a2='firegl_init'	hang-recovery	taken branch `beqz v0` at 0x104cc	not yet read	unread
+fglrx.o	sub_105c4	0x1075c	wrapper	sub_ecd0			a0='dead buffer queue not empty!!\\n'	hang-recovery	fall-through of `beqz a0`	not yet read	unread
+fglrx.o	sub_11064	0x1114c	wrapper	sub_ecd0			a0='No IO register map found!\\n'	other	taken branch `beqz t8` at 0x110e4	not yet read	unread
+fglrx.o	firegl_killall_clients	0x11620	direct	cmn_err	4	privdev is already down or unmanaged.\n		other	taken branch from 2 places (first at 0x114c0)	not yet read	unread
+fglrx.o	firegl_killall_clients	0x11664	direct	cmn_err	5	no files - done !\n		other	taken branch `beqz a0` at 0x114dc	not yet read	unread
+fglrx.o	sub_11674	0x116cc	direct	cmn_err	4	frglx ERROR: 		other	routine entry	not yet read	unread
+fglrx.o	_r6x_resetPM4	0x136e4	wrapper	sub_11674			a0='adapter got hung at reset. Fatal!\\n'	hang-recovery	fall-through of `beqz v0`	not yet read	unread
+fglrx.o	_r6x_InitMaskRamSize	0x13cf0	wrapper	sub_11674			a0='maskram_type not detected\\n'; a2='frglx ERROR: '	other	fall-through of `beq a6,t1`	not yet read	unread
+fglrx.o	sub_13e18	0x13e70	direct	cmn_err	4	frglx ERROR: 		other	routine entry	not yet read	unread
+fglrx.o	firegl_release_swapready	0x142a0	direct	cmn_err	4	fops: is1_release_swapready not present in kernel?\n		other	taken branch `beq at,v0` at 0x1425c	not yet read	unread
+fglrx.o	firegl_fire_swapready	0x14320	direct	cmn_err	4	fops: is1_fire_swapready not present in kernel?\n		other	taken branch `beq at,v0` at 0x142dc	not yet read	unread
+fglrx.o	firegl_unbind	0x143a0	direct	cmn_err	4	fops: is1_unbind not present in kernel?\n		other	taken branch `beq at,v0` at 0x1435c	not yet read	unread
+fglrx.o	firegl_release_helper	0x14648	wrapper	sub_13e18			a0='process %d holds lock with another priv - unable to take kernel lock!\\n'	hang-recovery	fall-through of `bne ra,s6`	not yet read	unread
+fglrx.o	firegl_release_helper	0x14dd4	wrapper	sub_13e18			a0='kernel failed to free lock?\\n'	hang-recovery	fall-through of `beqz v0`	not yet read	unread
+fglrx.o	firegl_release_helper	0x14e28	wrapper	sub_13e18			a0='kernel failed to free lock?\\n'	hang-recovery	fall-through of `beqz v0`	not yet read	unread
+fglrx.o	fglrx_swap_ready	0x14f84	direct	cmn_err	4	fglrx_swap_ready called with arg not 0 or 1 (%d0\n	%d=?	other	taken branch `beq v1,s0` at 0x14ed4	not yet read	unread
+fglrx.o	sub_14f94	0x14fec	direct	cmn_err	4	frglx ERROR: 		other	routine entry	not yet read	unread
+fglrx.o	firegl_remove_mutex	0x153a0	wrapper	sub_14f94			a0='mutex id 0x%08x not found in mutex list\\n'	other	straight-line from the previous instruction	not yet read	unread
+fglrx.o	firegl_free_mutex	0x158b4	wrapper	sub_14f94			a0='mutex id 0x%08x not found in mutex list\\n'	other	straight-line from the previous instruction	not yet read	unread
+fglrx.o	sub_160a4	0x16100	direct	cmn_err	4	frglx ERROR: 		other	routine entry	not yet read	unread
+fglrx.o	sub_160a4	0x16128	direct	icmn_err	6	(format not recovered)		other	straight-line from the previous instruction	not yet read	unread
+fglrx.o	firegl_lock_device	0x1624c	wrapper	sub_160a4			a0='trying to lock without a valid SAREA setup!\\n'	hang-recovery	fall-through of `bnez t8`	not yet read	unread
+fglrx.o	firegl_lock_device	0x16ba4	wrapper	sub_160a4			a0='stale dev: %s lock held by pid: %d cleared by sentinel\\n'	hang-recovery	fall-through of `bnez v0`	not yet read	unread
+fglrx.o	firegl_lock	0x16d10	wrapper	sub_160a4			a0='Process %d is using illegal context/mutex 0x%08x\\n'	other	straight-line from the previous instruction	not yet read	unread
+fglrx.o	firegl_lock	0x16e50	wrapper	sub_160a4			a0='Process %d is using illegal context 0x%08x\\n'	other	straight-line from the previous instruction	not yet read	unread
+fglrx.o	firegl_lock	0x16f4c	wrapper	sub_160a4			a0='Process %d is using illegal context 0x%08x\\n'	other	straight-line from the previous instruction	not yet read	unread
+fglrx.o	firegl_lock	0x16fe8	wrapper	sub_160a4			a0='Process %d is using illegal mutex 0x%08x\\n'	other	straight-line from the previous instruction	not yet read	unread
+fglrx.o	firegl_lock	0x17038	wrapper	sub_160a4			a0='Process %d is using kernel context 0x%08x\\n'	other	straight-line from the previous instruction	not yet read	unread
+fglrx.o	firegl_unlock	0x17474	wrapper	sub_160a4			a0='Process %d using kernel context %d\\n'	other	straight-line from the previous instruction	not yet read	unread
+fglrx.o	sub_17540	0x17598	direct	cmn_err	4	frglx ERROR: 		other	routine entry	not yet read	unread
+fglrx.o	firegl_cp_init	0x176fc	wrapper	sub_17540			a0='No IO register map found!\\n'	other	taken branch `beqz t8` at 0x17688	not yet read	unread
+fglrx.o	firegl_cp_init	0x178d8	wrapper	sub_17540			a0='invalid DRM buffer mapping!\\n'	other	fall-through of `beqz a3`	not yet read	unread
+fglrx.o	firegl_cp_init	0x17a70	wrapper	sub_17540			a0='max. number of DRM buffers exceeded!\\n'	other	taken branch `beqz a1` at 0x17888	not yet read	unread
+fglrx.o	firegl_cp_init	0x17a98	wrapper	sub_17540			a0='PM4 mappings not found!\\n'	hang-recovery	taken branch from 3 places (first at 0x1785c)	not yet read	unread
+fglrx.o	firegl_cp_init	0x17ac0	wrapper	sub_17540			a0='Invalid DRM asic block size\\n'	hang-recovery	taken branch `bnez a0` at 0x1787c	not yet read	unread
+fglrx.o	sub_17d58	0x17db0	direct	cmn_err	4	frglx ERROR: 		other	routine entry	not yet read	unread
+fglrx.o	drm_getmagic	0x18474	wrapper	sub_17d58			a0='DRI authentication disabled!\\n'	other	taken branch `beqz v0` at 0x182f4	not yet read	unread
+fglrx.o	drm_authmagic	0x18618	wrapper	sub_17d58			a0='DRI authentication disabled!\\n'; a2='frglx ERROR: '	other	taken branch `beqz v0` at 0x184d8	not yet read	unread
+fglrx.o	sub_1877c	0x187d4	direct	cmn_err	4	frglx ERROR: 		other	routine entry	not yet read	unread
+fglrx.o	_r6x_init_hw_ctx	0x18904	wrapper	sub_1877c			a0='No IO register map found!\\n'	other	fall-through of `bnez v0`	not yet read	unread
+fglrx.o	_r6x_switch_context	0x18b54	wrapper	sub_1877c			a0='IO map missing!\\n'	other	taken branch `beqz v0` at 0x189e4	not yet read	unread
+fglrx.o	sub_18bb4	0x18c0c	direct	cmn_err	4	frglx ERROR: 		other	routine entry	not yet read	unread
+fglrx.o	sub_18e60	0x18fb8	wrapper	sub_18bb4			a0='Unknown buf type %d\\n'	other	fall-through of `beq s3,a1`	not yet read	unread
+fglrx.o	sub_18e60	0x19064	wrapper	sub_18bb4			a0='requested UMM address 0x%08lx is invalid!\\n'	other	taken branch `bnez a7` at 0x19030	not yet read	unread
+fglrx.o	sub_18e60	0x19284	wrapper	sub_18bb4			a0='UMM not initialized!\\n'	other	taken branch `beqz a5` at 0x18ff8	not yet read	unread
+fglrx.o	sub_192c0	0x195a8	wrapper	sub_18bb4			a0='UMM not initialized!\\n'	other	taken branch `beqz ra` at 0x193ac	not yet read	unread
+fglrx.o	firegl_free_buffer_queue	0x198e4	wrapper	sub_18bb4			a0='Unknown buf type %d\\n'	other	taken branch `beqz a0` at 0x196ac	not yet read	unread
+fglrx.o	firegl_alloc_bufs	0x19be8	wrapper	sub_18bb4			a0='Invalid buffer type!\\n'	other	taken branch `beqz a0` at 0x19a00	not yet read	unread
+fglrx.o	firegl_alloc_bufs	0x19d64	wrapper	sub_18bb4			a0='Unable to add buffer mapping -> inconsistent kernel data!!\\n'	other	fall-through of `beqz v0`	not yet read	unread
+fglrx.o	firegl_alloc_bufs	0x19e90	wrapper	sub_18bb4			a0='Inconsistent kernel data!\\n'	other	taken branch `beqz a0` at 0x19b84	not yet read	unread
+fglrx.o	firegl_free_bufs	0x1a0e8	wrapper	sub_18bb4			a0='unknown memory buffer handle 0x%08lx\\n'; a3='frglx ERROR: '	other	taken branch `beqz v0` at 0x19fd4	not yet read	unread
+fglrx.o	firegl_modify_buf	0x1a794	wrapper	sub_18bb4			a0='invalid buffer handle 0x%08lx\\n'; a3='frglx ERROR: '	other	taken branch `beqz s0` at 0x1a6e4	not yet read	unread
+fglrx.o	sub_1b8f8	0x1b950	direct	cmn_err	4	frglx ERROR: 		other	routine entry	not yet read	unread
+fglrx.o	firegl_addmap	0x1bcb8	wrapper	sub_1b8f8			a0='map offset 0x%lx - not page aligned\\n'; a4='frglx ERROR: '	other	fall-through of `beqz at`	not yet read	unread
+fglrx.o	firegl_addmap	0x1bd04	wrapper	sub_1b8f8			a0='map size %ld - not page aligned\\n'; a3='frglx ERROR: '	other	fall-through of `beqz a4`	not yet read	unread
+fglrx.o	firegl_rmmap	0x1c3a4	wrapper	sub_1b8f8			a0='map not found!\\n'	other	taken branch `beq v0,s0` at 0x1c370	not yet read	unread
+fglrx.o	drm_addmap	0x1c7b8	wrapper	sub_1b8f8			a0='invalid map type %d\\n'; a3='frglx ERROR: '	other	fall-through of `beq a1,a7`	not yet read	unread
+fglrx.o	drm_addmap	0x1c9a8	wrapper	sub_1b8f8			a0='EACCES!\\n'; a2='frglx ERROR: '	other	taken branch `beqz v0` at 0x1c718	not yet read	unread
+fglrx.o	drm_addmap	0x1cac0	wrapper	sub_1b8f8			a0='invalid context %d\\n'	other	taken branch `beqz a6` at 0x1c85c	not yet read	unread
+fglrx.o	drm_addmap	0x1cb28	wrapper	sub_1b8f8			a0='ENOMEM!\\n'; a2='frglx ERROR: '	other	taken branch `beqz v0` at 0x1c9e4	not yet read	unread
+fglrx.o	sub_1cc9c	0x1ccf4	direct	cmn_err	4	frglx ERROR: 		other	routine entry	not yet read	unread
+fglrx.o	sub_1d274	0x1d2cc	direct	cmn_err	4	frglx ERROR: 		other	routine entry	not yet read	unread
+fglrx.o	drm_rmdraw	0x1d770	wrapper	sub_1d274			a0='invalid drawable!\\n'	other	taken branch `beqz a1` at 0x1d73c	not yet read	unread
+fglrx.o	sub_1d8a8	0x1d900	direct	cmn_err	4	frglx ERROR: 		other	routine entry	not yet read	unread
+fglrx.o	sub_1d968	0x1dc28	wrapper	sub_1d8a8			a0='Failed to initialize hw context %d (%d)\\n'	other	fall-through of `beqz v0`	not yet read	unread
+fglrx.o	firegl_addctx	0x1df78	wrapper	sub_1d8a8			a0='Invalid or missing SAREA setup!\\n'	other	fall-through of `bnez a0`	not yet read	unread
+fglrx.o	firegl_addctx	0x1e0bc	wrapper	sub_1d8a8			a0='Unable to add ctx mapping -> inconsistent kernel data!!\\n'	other	fall-through of `beqz v0`	not yet read	unread
+fglrx.o	firegl_addctx	0x1e1d4	wrapper	sub_1d8a8			a0='Unable to access user request buffer!!\\n'	other	fall-through of `beqz v0`	not yet read	unread
+fglrx.o	firegl_rmctx	0x1e490	wrapper	sub_1d8a8			a0='failed to remove context handle %d\\n'; a3='frglx ERROR: '	other	taken branch `beqz a6` at 0x1e430	not yet read	unread
+fglrx.o	firegl_modctx	0x1e824	wrapper	sub_1d8a8			a0='invalid context handle %d\\n'	other	taken branch from 2 places (first at 0x1e740)	not yet read	unread
+fglrx.o	firegl_switch_context	0x1ed58	wrapper	sub_1d8a8			a0='invalid context handle\\n'	other	straight-line from the previous instruction	not yet read	unread
+fglrx.o	firegl_switch_context	0x1ee84	wrapper	sub_1d8a8			a0='invalid context handle\\n'	other	taken branch `beqz t9` at 0x1ecd8	not yet read	unread
+fglrx.o	sub_1f6f0	0x1f748	direct	cmn_err	4	frglx ERROR: 		other	routine entry	not yet read	unread
+fglrx.o	sub_1f7dc	0x1f8c0	wrapper	sub_1f6f0			a0='memlock for 0x%08lx not found in this file!\\n'	hang-recovery	straight-line from the previous instruction	not yet read	unread
+fglrx.o	firegl_free_memlock	0x1fb7c	wrapper	sub_1f6f0			a0='firegl_sys_munlock: error = %i\\n'; a3='frglx ERROR: '	hang-recovery	taken branch `bltz v0` at 0x1fab4	not yet read	unread
+fglrx.o	firegl_lock_memory	0x20100	wrapper	sub_1f6f0			a0='firegl_sys_mlock: error = %i\\n'	hang-recovery	taken branch `bltz v0` at 0x1fe64	not yet read	unread
+fglrx.o	sub_20474	0x204cc	direct	cmn_err	4	frglx ERROR: 		other	routine entry	not yet read	unread
+fglrx.o	firegl_umm_init	0x20638	wrapper	sub_20474			a0='invalid UMM alignment!\\n'	other	fall-through of `beqz ra`	not yet read	unread
+fglrx.o	firegl_umm_init	0x206d0	wrapper	sub_20474			a0='framebuffer map not found!\\n'	other	taken branch `beqz s3` at 0x20704	not yet read	unread
+fglrx.o	firegl_umm_init	0x207c4	wrapper	sub_20474			a0='dev 0x%08lx UMM area already initialized!\\n'	other	fall-through of `beqz a4`	not yet read	unread
+fglrx.o	firegl_umm_init	0x207e0	wrapper	sub_20474			a0='total_open = 0x%lx, total_close = 0x%lx, open_count = 0x%lx\\n'	other	straight-line from the previous instruction	not yet read	unread
+fglrx.o	firegl_umm_init	0x20814	wrapper	sub_20474			a0='Invalid UMM setup!\\n'	other	taken branch from 3 places (first at 0x2075c)	not yet read	unread
+fglrx.o	firegl_umm_init	0x20998	wrapper	sub_20474			a0='Failed to initialize UMM aperture.\\n'	other	taken branch `beqz v0` at 0x20850	not yet read	unread
+fglrx.o	firegl_umm_init	0x209cc	wrapper	sub_20474			a0='Failed to initialize invisible UMM aperture.\\n'	other	taken branch `beqz v0` at 0x208c0	not yet read	unread
+fglrx.o	firegl_umm_init	0x20a10	wrapper	sub_20474			a0='Failed to initialize UMM CMask aperture.\\n'	other	taken branch `beqz v0` at 0x2095c	not yet read	unread
+fglrx.o	firegl_umm_init	0x20a38	wrapper	sub_20474			a0='Failed to initialize UMM ZMask aperture.\\n'	other	taken branch `beqz v0` at 0x20910	not yet read	unread
+fglrx.o	firegl_umm_init	0x20a48	wrapper	sub_20474			a0='Failed to initialize UMM HiZ aperture.\\n'	other	taken branch `beqz v0` at 0x20940	not yet read	unread
