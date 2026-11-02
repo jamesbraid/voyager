@@ -4,9 +4,15 @@ Public documents and code this workspace reads, by title and public URL only. No
 
 ## AMD register and acceleration references
 
+<<<<<<< Updated upstream
 - Radeon R3xx 3D Register Reference Guide, revision 1.0, 25 February 2008 (AMD, for the R300 family; file R3xx_3D_Registers.pdf): https://xorg.freedesktop.org/docs/AMD/old/R3xx_3D_Registers.pdf
 - Radeon R5xx Acceleration, revision 1.5, 8 June 2010 (AMD; the 2D and command-processor chapters describe the R5xx generation, a later chip than the R300 and R350): https://xorg.freedesktop.org/docs/AMD/old/R5xx_Acceleration_v1.5.pdf
 - M56 Register Reference Guide, revision 0.03o, part RRG-216M56-03oOEM, 2007 (AMD; an R5xx-generation register reference including the 3D block, a later chip than the R300 and R350): https://xorg.freedesktop.org/docs/AMD/old/RRG-216M56-03oOEM.pdf
+=======
+- Radeon R3xx 3D Register Reference Guide, revision 1.0, 25 February 2008 (AMD, for the R300 family; file R3xx_3D_Registers.pdf; 99 pages, no part number on the title page; 207 registers of the 3D block with offset, width, access and field tables; matched in [../amd-register-match.md](../amd-register-match.md)): https://www.x.org/docs/AMD/old/R3xx_3D_Registers.pdf
+- Radeon R5xx Acceleration, revision 1.5, 8 June 2010 (AMD; the 2D and command-processor chapters describe the R5xx generation, a later chip than the R300 and R350): https://www.x.org/docs/AMD/old/R5xx_Acceleration_v1.5.pdf
+- M56 Register Reference Guide, revision 0.03o, part RRG-216M56-03oOEM, 2007 (AMD; an R5xx-generation register reference including the 3D block, a later chip than the R300 and R350; 460 pages, registers given as aperture and offset; matched in [../amd-register-match.md](../amd-register-match.md)): https://www.x.org/docs/AMD/old/RRG-216M56-03oOEM.pdf
+>>>>>>> Stashed changes
 
 ## Open-source trees (git submodules)
 

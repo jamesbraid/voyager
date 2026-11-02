@@ -342,7 +342,7 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
   `firegl_sync_dacs` at 0x1f5e8 reads and writes it too, with a mask that is not read. Established for
   `fglrx_attach`.
 - **0xe4** in `fglrx.o`: a read of the public `CONFIG_XSTRAP` (common). `_r6x_CheckWSBoard` at 0x13aa8 tests bit 27
-  of it and sets flag 0x10 in the board record at +16 when it is set. Established.
+  of it and sets flag 0x10 in the board record at +16 when it is set. Established. The M56 Register Reference Guide (RRG-216M56-03oOEM, a later part) lists `CONFIG_XSTRAP` at VIPDEC 0xe4 (page 2-144) with fields only in bits 9:1; it defines no bit 27, so it neither confirms nor contradicts the test.
 - **0x294** in `fglrx.o`: no public table has it. `_r6x_EnableStereo` at 0x13b4c sets bits 13 and 12 (0x3000)
   with a read-modify-write when its second argument is nonzero and board record flag 0x20 at +16 is set, clears
   them with the mask 0xffffcfff when the argument is zero, and issues a `sync` after each store. Established. The register's name is open.
@@ -356,10 +356,17 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
   other four reads are not decoded.
 - **0x4018** in `fglrx.o`: the public `GB_TILE_CONFIG` (exact). `fglrx_attach` at 0xbdc stores 23 (0x17) to it
   twice, before and after another store; in `r300_reg.h` that value is the enable bit, the R300 pipe count
-  (3 << 1) and the 16-pixel tile size (1 << 4). Established.
+  (3 << 1) and the 16-pixel tile size (1 << 4). Established. AMD's R3xx 3D register reference (page 30) agrees: ENABLE is bit 0, PIPE_COUNT bits 3:1 (3 is R300, 0 is RV350) and TILE_SIZE bits 5:4 (1 is 16 pixels).
 - **0x429c** in `fglrx.o`: the Mesa name `GA_SOFT_RESET` (common). `fglrx_attach` at 0xbdc stores the value 1024,
   set earlier at 0x13f4, to it between its two stores to 0x4018; Mesa's comment says the register holds the number
+<<<<<<< Updated upstream
   of cycles to assert reset and also asserts the RB3D soft reset, and AMD's R3xx 3D register reference gives the same field (`SOFT_RESET_COUNT`, bits 15:0, default 256 cycles) and says a reset of the 3D pipe is a write of 0x200 or higher, so 0x400 is above that figure. Inferred from the Mesa comment and the R3xx reference.
+=======
+  of cycles to assert reset and also asserts the RB3D soft reset. AMD's R3xx 3D register reference (page 24) lists
+  the register as `GA:GA_SOFT_RESET`, with one field, SOFT_RESET_COUNT in bits 15:0, the cycles reset is asserted
+  (default 256), so the store of 1024 asks for 1024 cycles. Established for the register and field (AMD
+  document); the routine's purpose for the reset is inferred.
+>>>>>>> Stashed changes
 - **0x8** in `fglrx_drv.so`: the public `CLOCK_CNTL_INDEX` (common), the PLL index register. `R200INPLL` at
   0x410dc0 stores the index masked with 0x3f to it; `vRC6PllWriteUlong` at 0x42e980 writes the index with bit 7
   (`PLL_WR_EN` in `radeon_reg.h`) set, performs the data update, then clears bit 7 and the index bits again.
@@ -386,7 +393,7 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
   The words at +24, +28 and +32 of the argument record go to the registers at 0x540, 0xc40 and 0x94.
   The stores are at 0x41bc44, 0x41bc4c and 0x41bc54.
   The save path at 0x41d2e8 to 0x41d2fc copies the same three registers into the same offsets of the record, the reverse direction.
-  Inferred.
+  Inferred. The M56 Register Reference Guide (RRG-216M56-03oOEM, a later part) lists `I2C_CNTL_1` at VIPDEC 0x94 (page 2-118: data and address byte counts, delay, enable at bit 17, time limit); the word is moved whole, so no field is tested. Agrees; the layout is that part's.
 - **0x158** in `fglrx_drv.so`: the SDRAM mode word, named `SDRAM_MODE_REG` in the public tables (common).
   The static code at 0x4112c0 loads it at 0x414f0c and stores it unchanged to +60 of the record in s0 at 0x414f10.
   The copy has no mask or shift.
@@ -394,13 +401,13 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
 - **0xf8** in `fglrx_drv.so`: the memory-size word named `CONFIG_MEMSIZE` in the public tables (common).
   The static code at 0x4112c0 loads it at 0x414f00, shifts it right by 10 bits and stores the result at +804 of the record in s1 (0x414f08).
   A second read at 0x42eba8 keeps the high half (shift right by 16) and stores it as a halfword at 20(sp).
-  Inferred.
+  Inferred. The M56 Register Reference Guide (RRG-216M56-03oOEM, a later part) lists `CONFIG_MEMSIZE` at HIDEC 0xf8 (page 2-59) as a 32-bit size with bits 19:0 hardwired to zero, a scratch the BIOS leaves for the driver; the shift by 10 fits a byte count.
 - **0x148** in `fglrx_drv.so`: the frame-buffer location word, named `MC_FB_LOCATION` by the public tables, with `MEM_ADDR_CONFIG` at the same offset in the other table (conflict).
   `R200EngineInit` writes it at 0x40ab88 with 0xffff0000 (the value of `lui` 0xffff), and again at 0x40abec with a word built from a doubleword by an and and an or.
   Inferred.
 - **0xe0** in `fglrx_drv.so`: the configuration word named `CONFIG_CNTL` in the public tables (common).
   Three sites read bits 19:16 of it (mask 0xf0000 or shift right by 16, then and 0xf): the static code at 0x4112c0 (0x414e74), `R200ScreenInit` (0x41aff8, stored as a byte at +8144 of s1 at 0x41b00c) and `R200LinuxCailInitCail` (0x43eb94, where the four-bit value is incremented by one at 0x43ebac).
-  Inferred.
+  Inferred. The M56 Register Reference Guide (RRG-216M56-03oOEM, a later part) lists `CONFIG_CNTL` at HIDEC 0xe0 (page 2-59) but marks bits 19:16 reserved, so it gives no meaning to the four-bit value read here.
 - **0x214** in `fglrx_drv.so`: the current frame counter, `CRTC_CRNT_FRAME` in the public tables (common).
   `R6TMDSTransmitLinux` reads it four times.
   They run from 0x445548 to 0x44563c, in code order.
@@ -549,11 +556,27 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
   These pad writes run only when the branch at 0x4307dc is not taken, that is when the word at +9340 of the driver
   record is nonzero. When it is zero, the branch goes to 0x43090c, which calls a helper and then branches to the
   epilogue at 0x4308a4 without touching either pad. The symbol's name points to the swap barrier, and the code shows
-  no other use of this pad. Inferred.
+  no other use of this pad. Inferred. The M56 Register Reference Guide (RRG-216M56-03oOEM, a later part) lists `GPIOPAD_MASK` at VIPDEC 0x198 (page 2-147): GPIO_MASK in bits 17:0, GENERICD_MASK at 18, set to give a pad to GPIO use. Bit 0 set means pad 0 becomes a GPIO.
 - **0x1a0** in `fglrx_drv.so`: the public `GPIOPAD_EN` (common, `RADEON_GPIOPAD_EN` in `radeon_reg.h`).
   `SGIGLXSwapBarrierInit` reads it at 0x430844, clears bit 0 with the mask 0xfffffffe (`li` -2 at 0x43084c) and
   stores it at 0x430854, on the same path as the 0x198 write above. Those two writes set bit 0 of 0x198 and clear
-  bit 0 of 0x1a0. Inferred.
+  bit 0 of 0x1a0. Inferred. The M56 Register Reference Guide (RRG-216M56-03oOEM, a later part) lists `GPIOPAD_EN` at VIPDEC 0x1a0 (page 2-147): GPIO_EN in bits 17:0, 1 enables the pad's output. Bit 0 cleared makes pad 0 an input.
+- **0x19c** in `fglrx_drv.so`: the public `GPIOPAD_A` (common). AMD's M56 Register Reference Guide (RRG-216M56-03oOEM, a later part) lists it at VIPDEC 0x19c (page 2-147) as the
+  output level of the GPIO pads: GPIO_A in bits 17:0 and GENERICD_A at bit 18, driven only where the mask (0x198) and
+  enable (0x1a0) bits are set. The routine at 0x420f00 reads and writes it back with bit 12 cleared and bit 13 set
+  (the `and` with 0xffffefff and the `ori` 0x2000 at 0x420f28 to 0x420f2c), or with bit 12 set and bit 13 cleared on
+  the other path (0x420f84 to 0x420f94); it sets bits 13:12 of 0x198 and updates the same two bits of 0x1a0 beside it.
+  The routine at 0x421000 sets bits 13:12 of 0x198, clears them in 0x19c and 0x1a0, and then clears them in 0x198
+  again. Bits 13:12 are inside the 18-bit field. They drive pads 12 and 13. Inferred.
+- **0x1a4** in `fglrx_drv.so`: the public `GPIOPAD_Y` (common). AMD's M56 Register Reference Guide (RRG-216M56-03oOEM, a later part) lists it at VIPDEC 0x1a4 (page 2-147) as the
+  level read back from the GPIO pads, GPIO_Y in bits 17:0, read-only. The routine at 0x421080 clears bit 25 of
+  `CRTC_GEN_CNTL` (0x50), reads 0x1a4 in repeated passes of five reads and tests bit 16 (the mask 0x10000 from `lui`
+  at 0x42108c), waits for it to read clear and then set, and stores bit 25 back to 0x50 at 0x42116c: the CRTC is
+  restarted on a rising edge of pad 16. The routine at 0x411d40 sets 0x198 to 4 and 0x1a0 to 0, reads 0x1a4 and tests
+  bit 2 (`andi` 4 at 0x411dc0), then restores the two words it changed. `sg2flash` tests bits 7:6 of the same register
+  to choose the ROM image
+  ([option-roms.md](option-roms.md#what-the-irix-software-does-with-the-images-cross-reference)). All of these bits
+  are inside the document's input field. Inferred, taking bit i as pad i. Unknown: the board wiring behind the pads.
 - **0x288** in `fglrx_drv.so`: the public `FP2_GEN_CNTL` (common). When the word at +160 of the driver record is 44,
   `SGIGLXSwapBarrierInit` reads it at 0x4308f4, clears bit 25 with the mask 0xfdffffff (`lui` 0xfdff, `ori` 0xffff)
   and stores it at 0x430908 in the delay slot of the branch to the common tail. `radeon_reg.h` names bit 25
@@ -589,7 +612,7 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
   described under 0x230. Inferred.
 - **0x30** in `fglrx_drv.so`: the public `BUS_CNTL` (`RADEON_BUS_CNTL` in `radeon_reg.h`; the PCI Express tables name
   the same offset `PCIE_INDEX`). The static routine at 0x41bc00 copies the word at +48 of its argument record to it,
-  unchanged, at 0x41bc6c. The aperture pointer comes from the driver record's +48 at 0x41bc14. Inferred.
+  unchanged, at 0x41bc6c. The aperture pointer comes from the driver record's +48 at 0x41bc14. Inferred. The M56 Register Reference Guide (RRG-216M56-03oOEM, a later part) lists `PCIE_INDEX` at HIDEC 0x30 (page 2-106, 10:0) and `BUS_CNTL` at HIDEC 0x4c; it is a PCI Express part and cannot choose between the names for an R300 or R350.
 - **0x342c** in `fglrx_drv.so`: the public `RB2D_DSTCACHE_CTLSTAT` (exact; `RADEON_RB2D_DSTCACHE_CTLSTAT` in
   `radeon_reg.h`, where `RADEON_RB2D_DC_FLUSH_ALL` is 0xf and `RADEON_RB2D_DC_BUSY` is bit 31).
   `R200EngineFlush` at 0x40a540 (92 bytes) reads it through the aperture in a5, ORs in 0xf and writes it back at
@@ -620,7 +643,11 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
   `reg_srcs/r300`) and `SE_CNTL_STATUS` (`RADEON_SE_CNTL_STATUS` in `radeon_reg.h`, where R200 uses the same offset).
   `FGLInitCP` at 0x42c4c0 (720 bytes) makes one access to it: a store of zero at 0x42c6b0 through the aperture in s2,
   with no read before it. The store clears the whole word during the command-processor start-up that the routine
-  performs. Inferred.
+  performs. AMD's R3xx 3D register reference (page 72) lists the register only as `VAP:VAP_CNTL_STATUS` (32 bits,
+  read/write): VC_SWAP in bits 1:0 (the endian swap, 0 is none), PVS_BYPASS in bit 8 and read-only busy bits at 11 and
+  24 to 31. The R200 name `SE_CNTL_STATUS` is not the R3xx register's name and is dropped for this chip. The store
+  of zero therefore selects no swap and the vertex engine in use, and leaves the busy bits alone. Inferred (the
+  routine's intent); the name and layout are established from the AMD document.
 - **0xd20** in `fglrx_drv.so`: the public `OV0_LIN_TRANS_A` (common; `RADEON_OV0_LIN_TRANS_A` in `radeon_reg.h`,
   which has no comment for it). `FIREGL_ShowOverlay` at 0x43df00 (1900 bytes) writes zero to it at 0x43dff0. That store sits in
   the straight-line code before the `beq` at 0x43e020. Inferred.
@@ -898,7 +925,17 @@ was checked. The pinned Linux 2.6.30 radeon headers, the Mesa 7.11.2 r300 header
 `radeon_reg.h` were searched for the offset in both spellings (`0x350` and `0x0350`). Where a name is found in
 one header only, the grade is `common`, not `none`.
 
+<<<<<<< Updated upstream
 - **0x194** in `fglrx_drv.so`: **inferred** to be the GPIO pad drive-strength register. In `R200ScreenInit` the load at 0x41dc08 and the store at 0x41de58 save and restore it with the registers around it: the saving block loads, from one base pointer that it also uses for the words at 0x16c4, 0xf0, 0x8, 0x1a8 (`MDGPIO_MASK`), 0x288 and 0x88c, and stores each into the driver's saved-state area (the load of 0x194 goes to saved-state +512, and the matching `lw` at 0x41de54 reads it back); the restore block does the same in reverse through a pointer from the stack. A base that serves 0x16c4 and 0x8 is the register aperture, so these two are register accesses, which the earlier trace did not establish. The store at 0x42156c stores the word at +4 of the record in a0 (loaded at 0x421568) to register 0x194 through base register a6, which was not traced further. AMD's M56 register reference (a later chip) lists 0x194 as `GPIO_STRENGTH`, with an NMOS drive field in bits 3:0 and a PMOS field in bits 7:4, directly before `GPIOPAD_MASK` (0x198), `GPIOPAD_A` (0x19c), `GPIOPAD_EN` (0x1a0) and `GPIOPAD_Y` (0x1a4), the neighbours this module also accesses. That layout is the basis for the name here; it is not proved for the R300 or R350. The accesses at 0x421a10 and 0x4497c8 use other bases and are not claimed. The replay's two sites in the code at 0x41bc00 remain unplaced.
+=======
+- **0x194** in `fglrx_drv.so`: no public name. The replay places its two read-and-write sites in the static code at
+  0x41bc00. A decode of the 2 KB from 0x41bc00 to 0x41c400 finds no load or store with displacement 0x194 at all,
+  so the two sites are not placed. The 0x194 word accesses elsewhere in the module that a full decode finds
+  (at 0x41dc08, 0x41de58, 0x42156c and 0x421a10 in `R200ScreenInit`, and at 0x4497c8 in `R200GetSGIInfoPtr`) use
+  bases that are not the aperture as far as traced: the sites at 0x41dc08 and 0x41de58 use pointers loaded from
+  the stack (8(sp) and 16(sp)), and the base of the other three was not traced. Unknown: no site is confirmed as a
+  register access, and the role is not read. The M56 Register Reference Guide (RRG-216M56-03oOEM, a later part) lists `GPIO_STRENGTH` at VIPDEC 0x194 (page 2-147: SN bits 3:0, SP bits 7:4, the pad drive strength). The sites found in the decode are structure fields, not the aperture, so the name is not applied.
+>>>>>>> Stashed changes
 - **0x294** in `fglrx.o`: no public name. In `_r6x_EnableStereo` at 0x13b4c (260 bytes) the enable path ORs 0x3000
   into the word (the store at 0x13be8), and the disable path ANDs it with 0xffffcfff (the store at 0x13c40). Both
   use the aperture from device record +1000. So bits 13:12 form a field that stereo switches on and off as a unit.

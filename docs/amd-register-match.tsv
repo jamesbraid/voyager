@@ -1,0 +1,202 @@
+offset	earlier_name	document	amd_register	amd_offset	width	access	page	fields	verdict	note
+0x8	CLOCK_CNTL_INDEX	M56 Register Reference Manual	CLOCK_CNTL_INDEX	CGDEC:0xE008	32	RW	2-155		name found at a different offset	the document places the clock index and data registers at CGDEC:0xE008 and 0xE00C, not at 0x8 and 0xC; IRIX uses 0x8 and 0xC, so the layout differs in the later part
+0xb	CLOCK_CNTL_INDEX	M56 Register Reference Manual	CLOCK_CNTL_INDEX	CGDEC:0xE008	32	RW	2-155		name found at a different offset	the document places the clock index and data registers at CGDEC:0xE008 and 0xE00C, not at 0x8 and 0xC; IRIX uses 0x8 and 0xC, so the layout differs in the later part
+0xc	CLOCK_CNTL_DATA	M56 Register Reference Manual	CLOCK_CNTL_DATA	CGDEC:0xE00C	32	RW	2-155		name found at a different offset	the document places the clock index and data registers at CGDEC:0xE008 and 0xE00C, not at 0x8 and 0xC; IRIX uses 0x8 and 0xC, so the layout differs in the later part
+0x20	BIOS_4_SCRATCH or TV_PLL_FINE_CNTL								not listed	neither document lists this offset
+0x24	BIOS_5_SCRATCH								not listed	neither document lists this offset
+0x28	BIOS_6_SCRATCH								not listed	neither document lists this offset
+0x30	BUS_CNTL or PCIE_INDEX	M56 Register Reference Manual	PCIE_INDEX	HIDEC:0x30	32	RW	2-106	PCIE_INDEX [10:0]	not promoted	the document names this offset PCIE_INDEX (10:0, a PCI Express indirect index); the earlier BUS_CNTL name is the AGP-era register at the same offset. The document is for a PCI Express part and cannot choose for an R300 or R350 board
+0x40	GEN_INT_CNTL	M56 Register Reference Manual	GEN_INT_CNTL	VIPDEC:0x100	32	RW	2-116		name found at a different offset	the document puts GEN_INT_CNTL in the VIP block at VIPDEC:0x100; IRIX writes the interrupt registers at 0x40 (r100d.h names), so the layout differs in the later part
+0x44	GEN_INT_STATUS	M56 Register Reference Manual	GEN_INT_STATUS	VIPDEC:0x104	32	RW	2-116		name found at a different offset	the document puts GEN_INT_STATUS in the VIP block at VIPDEC:0x104; IRIX writes the interrupt registers at 0x44 (r100d.h names), so the layout differs in the later part
+0x50	CRTC_GEN_CNTL								not listed	neither document lists this offset
+0x54	CRTC_EXT_CNTL	M56 Register Reference Manual	CRTC_EXT_CNTL	DISPDEC:0xE054	32	RW	2-196		name found at a different offset	the document places CRTC_EXT_CNTL at DISPDEC:0xE054; the earlier name is kept because the document is for a later part with a different aperture layout
+0x58	DAC_CNTL								not listed	neither document lists this offset
+0x5c	CRTC_STATUS								not listed	neither document lists this offset
+0x6c	GPIO_MONIDB or GPIO_CRT2_DDC								not listed	neither document lists this offset
+0x7c	DAC_CNTL2								not listed	neither document lists this offset
+0x94	I2C_CNTL_1	M56 Register Reference Manual	I2C_CNTL_1	VIPDEC:0x94	32	RW	2-118	I2C_DATA_COUNT [3:0]; I2C_ADDR_COUNT [6:4]; I2C_INTRA_BYTE_DELAY [15:8]; I2C_SEL [16]; I2C_EN [17]; I2C_TIME_LIMIT [31:24]	promoted	32-bit whole-word save and restore of the control word; width and direction agree; no field is tested
+0xb0	PALETTE_INDEX								not listed	neither document lists this offset
+0xb3	PALETTE_INDEX								not listed	neither document lists this offset
+0xb4	PALETTE_DATA								not listed	neither document lists this offset
+0xb8	PALETTE_30_DATA								not listed	neither document lists this offset
+0xe0	CONFIG_CNTL	M56 Register Reference Manual	CONFIG_CNTL	HIDEC:0xE0	32	RW	2-59	APER_REG_ENDIAN [5:4]; CFG_VGA_RAM_EN (R) [8]; VGA_DIS [9]; Reserved [19:16]	not promoted	IRIX reads bits 19:16 (a four-digit value it increments); the document lists 19:16 as Reserved in this later part, while radeon_reg.h gives them as the chip revision of the R3xx. The document cannot confirm an R300 read
+0xe4	CONFIG_XSTRAP	M56 Register Reference Manual	CONFIG_XSTRAP	VIPDEC:0xE4	32	RW	2-144	BLANK_ROM (R) [1]; VIP_DEVICE (R) [2]; Reserved [3]; ROMIDCFG (R) [7:4]; HDCP_DISABLE (R) [8]; MV_DISABLE (R) [9]	not promoted	fglrx.o tests bit 27; the document defines only bits 9:1 of CONFIG_XSTRAP in this later part
+0xf0	RBBM_SOFT_RESET								not listed	neither document lists this offset
+0xf8	CONFIG_MEMSIZE	M56 Register Reference Manual	CONFIG_MEMSIZE	HIDEC:0xF8	32	RW	2-59	CONFIG_MEMSIZE [31:0]	promoted	read, shifted right 10: the word is a byte count whose low 20 bits are zero, as the document says (bits 19:0 hardwired zero)
+0x148	MC_FB_LOCATION or MEM_ADDR_CONFIG	M56 Register Reference Manual	MC_FB_LOCATION	MCIND:0x4	32	RW	2-3		name found at a different offset	the document places MC_FB_LOCATION at MCIND:0x4; the earlier name is kept because the document is for a later part with a different aperture layout
+0x150	MEM_STR_CNTL or MC_STATUS	M56 Register Reference Manual	MC_STATUS	MCIND:0x0	8	RW	2-2		name found at a different offset	the document places MC_STATUS at MCIND:0x0; the earlier name is kept because the document is for a later part with a different aperture layout
+0x158	SDRAM_MODE_REG								not listed	neither document lists this offset
+0x194	none	M56 Register Reference Manual	GPIO_STRENGTH	VIPDEC:0x194	32	RW	2-147	GPIO_STRENGTH_SN [3:0]; GPIO_STRENGTH_SP [7:4]	name only	document names GPIO_STRENGTH (SN 3:0, SP 7:4); no access site of this offset is confirmed, so the earlier lane could not place it and this does not either
+0x198	GPIOPAD_MASK	M56 Register Reference Manual	GPIOPAD_MASK	VIPDEC:0x198	32	RW	2-147	GPIO_MASK [17:0]; GENERICD_MASK [18]	promoted	SGIGLXSwapBarrierInit sets bit 0: GPIO pad 0 is switched to GPIO use (GPIO_MASK[0])
+0x19c	GPIOPAD_A	M56 Register Reference Manual	GPIOPAD_A	VIPDEC:0x19C	32	RW	2-147	GPIO_A [17:0]; GENERICD_A [18]	promoted	the routine at 0x420f00 read-modify-writes bits 13:12 (GPIO_A[13:12], pad output levels), inside the 18-bit field
+0x1a0	GPIOPAD_EN	M56 Register Reference Manual	GPIOPAD_EN	VIPDEC:0x1A0	32	RW	2-147	GPIO_EN [17:0]; GENERICD_EN [18]	promoted	SGIGLXSwapBarrierInit clears bit 0: GPIO pad 0 output disabled, so it is an input (GPIO_EN[0])
+0x1a4	GPIOPAD_Y	M56 Register Reference Manual	GPIOPAD_Y	VIPDEC:0x1A4	32	RW	2-147	GPIO_Y (R) [17:0]	promoted	read-only pad levels: the routine at 0x421080 waits on bit 16 (GPIO_Y[16], inside 17:0) and sg2flash tests bits 7:6 (GPIO_Y[7:6])
+0x1a8	MDGPIO_MASK								not listed	neither document lists this offset
+0x1ac	MDGPIO_A								not listed	neither document lists this offset
+0x1b0	MDGPIO_EN								not listed	neither document lists this offset
+0x200	CRTC_H_TOTAL_DISP								not listed	neither document lists this offset
+0x204	CRTC_H_SYNC_STRT_WID								not listed	neither document lists this offset
+0x208	CRTC_V_TOTAL_DISP								not listed	neither document lists this offset
+0x20c	CRTC_V_SYNC_STRT_WID								not listed	neither document lists this offset
+0x214	CRTC_CRNT_FRAME								not listed	neither document lists this offset
+0x218	CRTC_GUI_TRIG_VLINE								not listed	neither document lists this offset
+0x220	CRTC_OFFSET_RIGHT								not listed	neither document lists this offset
+0x224	CRTC_OFFSET								not listed	neither document lists this offset
+0x228	CRTC_OFFSET_CNTL								not listed	neither document lists this offset
+0x22c	CRTC_PITCH								not listed	neither document lists this offset
+0x230	OVR_CLR								not listed	neither document lists this offset
+0x234	OVR_WID_LEFT_RIGHT								not listed	neither document lists this offset
+0x238	OVR_WID_TOP_BOTTOM								not listed	neither document lists this offset
+0x23c	DISPLAY_BASE_ADDR								not listed	neither document lists this offset
+0x250	FP_CRTC_H_TOTAL_DISP								not listed	neither document lists this offset
+0x254	FP_CRTC_V_TOTAL_DISP								not listed	neither document lists this offset
+0x260	CUR_OFFSET								not listed	neither document lists this offset
+0x264	CUR_HORZ_VERT_POSN								not listed	neither document lists this offset
+0x268	CUR_HORZ_VERT_OFF								not listed	neither document lists this offset
+0x26c	CUR_CLR0								not listed	neither document lists this offset
+0x270	CUR_CLR1								not listed	neither document lists this offset
+0x27c	CRTC_MORE_CNTL								not listed	neither document lists this offset
+0x280	DAC_EXT_CNTL								not listed	neither document lists this offset
+0x284	FP_GEN_CNTL								not listed	neither document lists this offset
+0x288	FP2_GEN_CNTL								not listed	neither document lists this offset
+0x28c	FP_HORZ_STRETCH								not listed	neither document lists this offset
+0x290	FP_VERT_STRETCH								not listed	neither document lists this offset
+0x294	none								not listed	neither document lists this offset
+0x2a4	TMDS_TRANSMITTER_CNTL								not listed	neither document lists this offset
+0x2a8	TMDS_PLL_CNTL								not listed	neither document lists this offset
+0x2c4	FP_H_SYNC_STRT_WID								not listed	neither document lists this offset
+0x2c8	FP_V_SYNC_STRT_WID								not listed	neither document lists this offset
+0x2d0	LVDS_GEN_CNTL								not listed	neither document lists this offset
+0x2d4	LVDS_PLL_CNTL								not listed	neither document lists this offset
+0x300	CRTC2_H_TOTAL_DISP	M56 Register Reference Manual	VGA_RENDER_CONTROL	DISPDEC:0x300	32	RW	2-186	VGA_BLINK_RATE [4:0]; VGA_BLINK_MODE [6:5]; VGA_CURSOR_BLINK_INVERT [7]; VGA_EXTD_ADDR_COUNT_ENABLE [8]; VGA_VSTATUS_CNTL [17:16]; VGA_LOCK_8DOT [24]; VGAREG_LINECMP_COMPATIBILITY_SEL [25]	other register at this offset in a later generation	the earlier name is kept; the document is for a different chip generation
+0x304	CRTC2_H_SYNC_STRT_WID	M56 Register Reference Manual	VGA_SEQUENCER_RESET_CONTROL	DISPDEC:0x304	32	RW	2-187	ESET [0]; ESET [4]; ENCER_RESET [8]; ENCER_RESET [12]; VGA_MODE_AUTO_TRIGGER_ENABLE [16]; LECT [17]; T [23:18]	other register at this offset in a later generation	the earlier name is kept; the document is for a different chip generation
+0x308	CRTC2_V_TOTAL_DISP	M56 Register Reference Manual	VGA_MODE_CONTROL	DISPDEC:0x308	32	RW	2-187	VGA_ATI_LINEAR [0]; VGA_128K_APERTURE_PAGING [8]; VGA_TEXT_132_COLUMNS_EN [16]	other register at this offset in a later generation	the earlier name is kept; the document is for a different chip generation
+0x30c	CRTC2_V_SYNC_STRT_WID	M56 Register Reference Manual	VGA_SURFACE_PITCH_SELECT	DISPDEC:0x30C	32	RW	2-187	VGA_SURFACE_PITCH_SELECT [1:0]; VGA_SURFACE_HEIGHT_SELECT [9:8]	other register at this offset in a later generation	the earlier name is kept; the document is for a different chip generation
+0x318	CRTC2_GUI_TRIG_VLINE	M56 Register Reference Manual	VGA_DISPBUF1_SURFACE_ADDR	DISPDEC:0x318	32	RW	2-188	VGA_DISPBUF1_SURFACE_ADDR [24:0]	other register at this offset in a later generation	the earlier name is kept; the document is for a different chip generation
+0x324	CRTC2_OFFSET								not listed	neither document lists this offset
+0x328	CRTC2_OFFSET_CNTL	M56 Register Reference Manual	VGA_HDP_CONTROL	DISPDEC:0x328	32	RW	2-188	VGA_MEM_PAGE_SELECT_EN [0]; VGA_RBBM_LOCK_DISABLE [8]; VGA_SOFT_RESET [16]; VGA_TEST_RESET_CONTROL [24]	other register at this offset in a later generation	the earlier name is kept; the document is for a different chip generation
+0x32c	CRTC2_PITCH	M56 Register Reference Manual	VGA_CACHE_CONTROL	DISPDEC:0x32C	32	RW	2-188	VGA_WRITE_THROUGH_CACHE_DIS [0]; VGA_READ_CACHE_DISABLE [8]; VGA_READ_BUFFER_INVALIDATE [16]; VGA_DCCIF_W256ONLY [20]; VGA_DCCIF_WC_TIMEOUT [29:24]	other register at this offset in a later generation	the earlier name is kept; the document is for a different chip generation
+0x33c	CRTC2_DISPLAY_BASE_ADDR								not listed	neither document lists this offset
+0x350	none	M56 Register Reference Manual	VGA_MAIN_CONTROL	DISPDEC:0x350	32	RW	2-192	VGA_CRTC_TIMEOUT [1:0]; VGA_RENDER_TIMEOUT_COUNT [4:3]; ON [7:5]; ELECT [9:8]; LECT [17:16]; CT [25:24]; VGA_READBACK_SENSE_SWITCH_SELECT [26]; RTC_TIMEOUT [31]	other register at this offset in a later generation	the earlier name is kept; the document is for a different chip generation
+0x354	none	M56 Register Reference Manual	VGA_TEST_CONTROL	DISPDEC:0x354	32	RW	2-193	VGA_TEST_ENABLE [0]; VGA_TEST_RENDER_START [8]; VGA_TEST_RENDER_DONE (R) [16]; VGA_TEST_RENDER_DISPBUF_SELECT [24]	other register at this offset in a later generation	the earlier name is kept; the document is for a different chip generation
+0x358	none	M56 Register Reference Manual	VGA_DEBUG_READBACK_INDEX	DISPDEC:0x358	32	RW	2-193	VGA_DEBUG_READBACK_INDEX [7:0]	other register at this offset in a later generation	the earlier name is kept; the document is for a different chip generation
+0x360	CUR2_OFFSET								not listed	neither document lists this offset
+0x364	CUR2_HORZ_VERT_POSN								not listed	neither document lists this offset
+0x368	CUR2_HORZ_VERT_OFF								not listed	neither document lists this offset
+0x36c	CUR2_CLR0								not listed	neither document lists this offset
+0x370	CUR2_CLR1								not listed	neither document lists this offset
+0x3c4	FP_H2_SYNC_STRT_WID or SEQ8_IDX	M56 Register Reference Manual	SEQ8_IDX	DISPDEC:0x3C4	8	RW	2-170	SEQ_IDX [2:0]	not promoted	the document has SEQ8_IDX, a VGA sequencer index port (8 bits, SEQ_IDX 2:0); IRIX moves the word as 32 bits in the same save and restore group as FP2_GEN_CNTL (0x288) and CRTC2_GEN_CNTL (0x3f8), which reads as the second flat-panel sync register of radeon_reg.h. The document does not decide
+0x3c8	DAC_W_INDEX or FP_V2_SYNC_STRT_WID	M56 Register Reference Manual	DAC_W_INDEX	DISPDEC:0x3C8	8	RW	2-168	DAC_W_INDEX [7:0]	not promoted	the document has DAC_W_INDEX, a VGA palette write-index port (8 bits); IRIX moves a 32-bit word in the same group as 0x3c4. The document does not decide
+0x3f8	CRTC2_GEN_CNTL								not listed	neither document lists this offset
+0x400	OV0_Y_X_START								not listed	neither document lists this offset
+0x404	OV0_Y_X_END								not listed	neither document lists this offset
+0x410	OV0_REG_LOAD_CNTL								not listed	neither document lists this offset
+0x420	OV0_SCALE_CNTL								not listed	neither document lists this offset
+0x424	OV0_V_INC								not listed	neither document lists this offset
+0x428	OV0_P1_V_ACCUM_INIT								not listed	neither document lists this offset
+0x42c	OV0_P23_V_ACCUM_INIT								not listed	neither document lists this offset
+0x430	OV0_P1_BLANK_LINES_AT_TOP								not listed	neither document lists this offset
+0x434	OV0_P23_BLANK_LINES_AT_TOP								not listed	neither document lists this offset
+0x43c	OV0_BASE_ADDR								not listed	neither document lists this offset
+0x440	OV0_VID_BUF0_BASE_ADRS								not listed	neither document lists this offset
+0x444	OV0_VID_BUF1_BASE_ADRS								not listed	neither document lists this offset
+0x448	OV0_VID_BUF2_BASE_ADRS								not listed	neither document lists this offset
+0x460	OV0_VID_BUF_PITCH0_VALUE								not listed	neither document lists this offset
+0x470	OV0_AUTO_FLIP_CNTL								not listed	neither document lists this offset
+0x474	OV0_DEINTERLACE_PATTERN								not listed	neither document lists this offset
+0x480	OV0_H_INC								not listed	neither document lists this offset
+0x484	OV0_STEP_BY								not listed	neither document lists this offset
+0x488	OV0_P1_H_ACCUM_INIT								not listed	neither document lists this offset
+0x48c	OV0_P23_H_ACCUM_INIT								not listed	neither document lists this offset
+0x494	OV0_P1_X_START_END								not listed	neither document lists this offset
+0x498	OV0_P2_X_START_END								not listed	neither document lists this offset
+0x49c	OV0_P3_X_START_END								not listed	neither document lists this offset
+0x4a0	OV0_FILTER_CNTL								not listed	neither document lists this offset
+0x4e4	OV0_VIDEO_KEY_CLR_LOW								not listed	neither document lists this offset
+0x4e8	OV0_VIDEO_KEY_CLR_HIGH								not listed	neither document lists this offset
+0x4f4	OV0_KEY_CNTL								not listed	neither document lists this offset
+0x4f8	OV0_TEST								not listed	neither document lists this offset
+0x540	SUBPIC_CNTL								not listed	neither document lists this offset
+0x600	OV1_Y_X_START								not listed	neither document lists this offset
+0x604	OV1_Y_X_END								not listed	neither document lists this offset
+0x740	CP_CSQ_CNTL or CRC_CMDFIFO_ADDR								not listed	neither document lists this offset
+0x7c0	CP_STAT								not listed	neither document lists this offset
+0x800	TV_MASTER_CNTL								not listed	neither document lists this offset
+0x804	TV_RGB_CNTL								not listed	neither document lists this offset
+0x80c	TV_HTOTAL								not listed	neither document lists this offset
+0x810	TV_HDISP								not listed	neither document lists this offset
+0x818	TV_HSTART								not listed	neither document lists this offset
+0x820	TV_VTOTAL								not listed	neither document lists this offset
+0x824	TV_VDISP								not listed	neither document lists this offset
+0x82c	TV_FTOTAL								not listed	neither document lists this offset
+0x834	TV_FRESTART								not listed	neither document lists this offset
+0x838	TV_HRESTART								not listed	neither document lists this offset
+0x83c	TV_VRESTART								not listed	neither document lists this offset
+0x840	TV_HOST_READ_DATA								not listed	neither document lists this offset
+0x844	TV_HOST_WRITE_DATA								not listed	neither document lists this offset
+0x848	TV_HOST_RD_WT_CNTL								not listed	neither document lists this offset
+0x84c	TV_VSCALER_CNTL1								not listed	neither document lists this offset
+0x850	TV_TIMING_CNTL								not listed	neither document lists this offset
+0x854	TV_VSCALER_CNTL2								not listed	neither document lists this offset
+0x858	TV_Y_FALL_CNTL								not listed	neither document lists this offset
+0x85c	TV_Y_RISE_CNTL								not listed	neither document lists this offset
+0x860	TV_Y_SAW_TOOTH_CNTL								not listed	neither document lists this offset
+0x870	TV_MODULATOR_CNTL1								not listed	neither document lists this offset
+0x874	TV_MODULATOR_CNTL2								not listed	neither document lists this offset
+0x878	none								not listed	neither document lists this offset
+0x87c	none								not listed	neither document lists this offset
+0x880	none								not listed	neither document lists this offset
+0x884	none								not listed	neither document lists this offset
+0x888	TV_PRE_DAC_MUX_CNTL								not listed	neither document lists this offset
+0x88c	TV_DAC_CNTL								not listed	neither document lists this offset
+0x8ac	TV_UV_ADR								not listed	neither document lists this offset
+0x950	CAP0_TRIG_CNTL	M56 Register Reference Manual	CAP0_TRIG_CNTL	VIPDEC:0x950	32	RW	2-129	CAP_TRIGGER_R (R) [1:0]; CAP_TRIGGER_W (W) [0]; CAP_EN [4]; CAP_VSYNC_CNT (R) [15:8]; CAP_VSYNC_CLR [16]	promoted	whole-word save and restore; width and direction agree; no field is tested
+0x9c0	CAP1_TRIG_CNTL								not listed	neither document lists this offset
+0xb00	SURFACE_CNTL								not listed	neither document lists this offset
+0xc40	VIPH_CONTROL	M56 Register Reference Manual	VIPH_CONTROL	VIPDEC:0xC40	32	RW	2-122	VIPH_CLK_SEL [7:0]; VIPH_REG_RDY (R) [13]; VIPH_MAX_WAIT [19:16]; VIPH_DMA_MODE [20]; VIPH_EN [21]; VIPH_DV0_WID [24]; VIPH_DV1_WID [25]; VIPH_DV2_WID [26]; VIPH_DV3_WID [27]; VIPH_PWR_DOWN (R) [28]; VIPH_PWR_DOWN_AK (W) [28]; VIPH_VIPCLK_DIS [29]	promoted	whole-word save and restore; VIPH_EN is bit 21 in both the document and radeon_reg.h
+0xd14	DISP_HW_DEBUG								not listed	neither document lists this offset
+0xd20	OV0_LIN_TRANS_A								not listed	neither document lists this offset
+0xd24	OV0_LIN_TRANS_B								not listed	neither document lists this offset
+0xd28	OV0_LIN_TRANS_C								not listed	neither document lists this offset
+0xd2c	OV0_LIN_TRANS_D								not listed	neither document lists this offset
+0xd30	OV0_LIN_TRANS_E								not listed	neither document lists this offset
+0xd34	OV0_LIN_TRANS_F								not listed	neither document lists this offset
+0xd60	DISP_MERGE_CNTL								not listed	neither document lists this offset
+0xd64	DISP_OUTPUT_CNTL								not listed	neither document lists this offset
+0xd68	DISP2_MERGE_CNTL								not listed	neither document lists this offset
+0xd6c	DISP_TV_OUT_CNTL								not listed	neither document lists this offset
+0xe40	RBBM_STATUS								not listed	neither document lists this offset
+0xf08	REVISION_ID	M56 Register Reference Manual	REVISION_ID	CFGF0_DEC:0x8	8	R	2-62		name found at a different offset	the document lists REVISION_ID at configuration-space offset 0x8 (CFGF0_DEC); the offset here is that plus 0xf00, the PCI configuration mirror, which the document does not state
+0x1404	DST_OFFSET								not listed	neither document lists this offset
+0x1408	DST_PITCH								not listed	neither document lists this offset
+0x1434	SRC_Y_X								not listed	neither document lists this offset
+0x1438	DST_Y_X								not listed	neither document lists this offset
+0x143c	DST_HEIGHT_WIDTH								not listed	neither document lists this offset
+0x146c	DP_GUI_MASTER_CNTL								not listed	neither document lists this offset
+0x1478	DP_BRUSH_BKGD_CLR								not listed	neither document lists this offset
+0x147c	DP_BRUSH_FRGD_CLR								not listed	neither document lists this offset
+0x1598	DST_WIDTH_HEIGHT								not listed	neither document lists this offset
+0x15ac	SRC_OFFSET								not listed	neither document lists this offset
+0x15b0	SRC_PITCH								not listed	neither document lists this offset
+0x15c0	CLR_CMP_CNTL								not listed	neither document lists this offset
+0x15c4	CLR_CMP_CLR_SRC								not listed	neither document lists this offset
+0x15cc	CLR_CMP_MASK								not listed	neither document lists this offset
+0x15d8	DP_SRC_FRGD_CLR								not listed	neither document lists this offset
+0x15dc	DP_SRC_BKGD_CLR								not listed	neither document lists this offset
+0x1600	DST_LINE_START								not listed	neither document lists this offset
+0x1604	DST_LINE_END								not listed	neither document lists this offset
+0x16c0	DP_CNTL								not listed	neither document lists this offset
+0x16c4	DP_DATATYPE								not listed	neither document lists this offset
+0x16cc	DP_WRITE_MASK								not listed	neither document lists this offset
+0x16e0	DEFAULT_OFFSET								not listed	neither document lists this offset
+0x16e8	DEFAULT_SC_BOTTOM_RIGHT								not listed	neither document lists this offset
+0x1700	none								not listed	neither document lists this offset
+0x1704	FLUSH_1								not listed	neither document lists this offset
+0x1724	CACHE_CNTL								not listed	neither document lists this offset
+0x1c3c	RB3D_CNTL								not listed	neither document lists this offset
+0x2140	VAP_CNTL_STATUS or SE_CNTL_STATUS	Radeon R3xx 3D Register Reference Guide	VAP:VAP_CNTL_STATUS	MMReg:0x2140	32	R/W	72	VC_SWAP [1:0]; PVS_BYPASS [8]; PVS_BUSY (Access: R) [11]; VS_BUSY (Access: R) [24]; RCP_BUSY (Access: R) [25]; VTE_BUSY (Access: R) [26]; MIU_BUSY (Access: R) [27]; VC_BUSY (Access: R) [28]; VF_BUSY (Access: R) [29]; REGPIPE_BUSY (Access: R) [30]; VAP_BUSY (Access: R) [31]	promoted	store of zero clears VC_SWAP[1:0] and PVS_BYPASS[8], both read/write fields; the busy bits are read-only and unaffected
+0x26ac	none								not listed	neither document lists this offset
+0x3428	RB2D_DSTCACHE_MODE								not listed	neither document lists this offset
+0x342c	RB2D_DSTCACHE_CTLSTAT								not listed	neither document lists this offset
+0x4018	GB_TILE_CONFIG	Radeon R3xx 3D Register Reference Guide	GB:GB_TILE_CONFIG	MMReg:0x4018	32	R/W	30	ENABLE [0]; PIPE_COUNT [3:1]; TILE_SIZE [5:4]; SUPER_SIZE [8:6]; SUPER_X [11:9]; SUPER_Y [14:12]; SUPER_TILE [15]; SUBPIXEL [16]; QUADS_PER_RAS [18:17]; BB_SCAN [19]	promoted	the stored 0x17 decodes to ENABLE=1, PIPE_COUNT=3 (the document lists 3 as R300), TILE_SIZE=1 (16 pixels)
+0x429c	GA_SOFT_RESET	Radeon R3xx 3D Register Reference Guide	GA:GA_SOFT_RESET	MMReg:0x429c	32	R/W	24	SOFT_RESET_COUNT [15:0]	promoted	the stored 1024 fits SOFT_RESET_COUNT[15:0]: reset asserted for 1024 cycles (default 256)
