@@ -64,7 +64,7 @@ Local driver headers capture internal driver structures: `r300_kernel/include/fg
 
 ## 4. Reverse engineering toolchain
 
-The host needs Podman, git and python3. Everything else runs in the container [tools/Containerfile](tools/Containerfile) builds: `tools/re-run COMMAND`. [tools/setup-clone.sh](tools/setup-clone.sh) prepares a fresh clone. `tools/check-shared` verifies that the shared toolchain files are byte-identical to the sibling repositories' copies.
+The host needs Podman, git and python3. Everything else runs in the container [tools/Containerfile](tools/Containerfile) builds: `tools/re-run COMMAND`. [tools/setup-clone.sh](tools/setup-clone.sh) prepares a fresh clone. The shared tooling (container definitions, wrappers, Ghidra scripts, the inventory, fact sheet and claim checker, and the device extractors) is the `retools/` submodule (sgi-retools); the files under `tools/`, `scripts/` and `ghidra/` are links into it, so a change to them is made there and the pin here moves with a commit. `tools/check-shared` verifies the pin.
 
 Scripts (`scripts/`, run from the repository root, inside `tools/re-run`):
 
@@ -75,7 +75,7 @@ Scripts (`scripts/`, run from the repository root, inside `tools/re-run`):
 - `facts.py`, `check_claims.py`, `test_facts.py`: build facts for a routine and check the claims in the docs against the binaries.
 - `check-leaks.sh`, `pre-push`: the leak check and the pre-push hook. Install the hook with `ln -s ../../scripts/pre-push .git/hooks/pre-push`.
 
-The scripts descend from gr4's and carry its BSD-3 notice ([scripts/LICENSE-gr4](scripts/LICENSE-gr4)). The shared files (`tools/` and the scripts named in `tools/check-shared`) are edited in one repository, then copied byte for byte to the others.
+The scripts descend from gr4's and carry its BSD-3 notice ([scripts/LICENSE-gr4](scripts/LICENSE-gr4)). The shared files are the `retools/` submodule (sgi-retools); the paths under `tools/`, `scripts/` and `ghidra/` link into it.
 
 ---
 

@@ -69,3 +69,6 @@
 	path = haiku
 	url = https://github.com/haiku/haiku.git
 	shallow = true
+[submodule "retools"]
+	path = retools
+	url = ../sgi-retools.git

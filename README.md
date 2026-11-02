@@ -57,8 +57,7 @@ included; with no command it opens a shell. Fill `root/` from your install or me
 - Generated tables under `docs/inventory/` come from `tools/re-run python3 scripts/inventory.py`.
 - A claim an entry marks as established by execution is reproduced by the script in `scripts/` that the entry
   names, always as `tools/re-run python3 scripts/NAME.py ...`.
-- `tools/check-shared` verifies that the toolchain files are byte-identical to the copies in the sibling
-  repositories. `scripts/check-leaks.sh` is the leak check the pre-push hook runs.
+- The shared tooling (container definitions, wrappers, Ghidra scripts, the inventory, fact sheet and claim checker, and the device extractors) is the `retools/` submodule (sgi-retools); the files under `tools/`, `scripts/` and `ghidra/` are links into it, so a change to them is made there and the pin here moves with a commit. `tools/check-shared` verifies the pin. `scripts/check-leaks.sh` is the leak check the pre-push hook runs.
 
 ## Rules
 

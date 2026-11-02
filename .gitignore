@@ -30,3 +30,4 @@ __pycache__/
 /firmware/
 
 /.cache/
+.re-leak-terms
