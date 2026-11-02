@@ -52,7 +52,7 @@ The share of understood rows that an independent audit found real when it re-der
 
 | Table | Audited real | Sample | Date |
 |---|---:|---:|---|
-| functions | 87.5% | 16 | 2026-11-02 |
+| functions | 85.0% | 20 | 2026-11-02 |
 | mmio | 100.0% | 4 | 2026-11-02 |
 
 Cross-workspace role check: compared 122 entries with the entries of kona and odsy for the same function and capped 0 at located (the role text is the sibling's, at least 90% alike, and states no offset, immediate value or callee address of its own build).
