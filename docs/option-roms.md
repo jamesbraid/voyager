@@ -147,17 +147,21 @@ the older table format.
   of 8 pixels (512, 640, 800, 1024, 1152 and 1280 pixels), and the last byte is a colour-depth code (2, 4, 5 or 6
   in these records). The second word (896 to 3712, always a multiple of 128), the third (75 to 245) and the 0x82
   flag in one record are **unknown**. The table writes no registers.
-- **CRTC info (0xd23).** **established.** Twenty-byte records. The first three begin with the index bytes e2, e3 and
-  e4; the bytes at +60 do not start another record of that kind. The fields inside the record are **unknown**. This
-  table is not decoded beyond the record boundary.
+- **CRTC info (0xd23).** **established.** Twenty-byte records, 25 of them (0xd23 to 0xf16), the same in all three
+  images. Bytes 1 and 3 of every record are zero and byte 2 has bit 7 set (0x80, 0x81, 0x82, 0x84, 0x88, 0x90 or 0xa0).
+  Byte 0 takes the values 0xe2, 0xe3, 0xe4, 0xe6 and 0xe1 in the first five records, then 0x12 (four records), 0x6a
+  (five), 0x55 (five) and 0x83 (six). The bytes from 0xf17 do not fit the pattern and look like code. The fields
+  inside the record are **unknown**.
 - **save mask (0x75df).** **established.** The block is 36 bytes: `08 1f 00 58 f0 01 68 00 03 6c 00 03 e2 0f 00 00 42 70 00 00 1a 00 80 26 00 40 2a 10 40 4c ff ff 4e 1f 00 00`.
   From 0x7603 the bytes are code (`push cx`, `push dx`, `push bx`, a near call), so the table is at most 36 bytes. Its
   layout as 32-bit words is **unknown**.
 
 sg3 and sg3a: the hardware config table is the same ten bytes, and the first 16 bytes of the maximum colour depth
 table and the first records of the CRTC info table match sg2. The save mask block is the same 36 bytes in all
-three. The DAC programming block differs only in its own address, as above. The records and blocks are the same
-size in each image.
+three. The DAC programming block differs in its own address (the `mov si` operand at +28 and the `cmp si` operand
+at its end) and in the displacement of the near call at +37, which reaches 0x5743 in sg2, 0x571b in sg3 and 0x570b in sg3a (sg3
+and sg3a share the displacement); the sg3 and sg3a blocks are otherwise identical. The first 238 bytes of the maximum colour
+depth table (34 records) and the first 500 bytes of the CRTC info table (25 records) match sg2 byte for byte.
 
 ## VESA and protected-mode blocks
 

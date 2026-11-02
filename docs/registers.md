@@ -916,9 +916,9 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
   access shows whether it means the CRC address.
 
 The entries below cover the offsets in the "no public name" list above. Each one says which public header
-was checked. The pinned Linux 2.6.30 radeon headers, the Mesa 7.11.2 r300 headers and the xf86-video-ati 6.14.6
-`radeon_reg.h` were searched for the offset in both spellings (`0x350` and `0x0350`). Where a name is found in
-one header only, the grade is `common`, not `none`.
+was checked. The pinned Linux radeon headers (the Linux 2.6.30 tree has no `radeon_reg.h`), the Mesa 7.11.2
+r300 headers and the xf86-video-ati 6.14.6 `radeon_reg.h` were searched for the offset in both spellings (`0x350` and
+`0x0350`). A name found in `radeon_reg.h` or Mesa's header alone grades `common`, not `none`.
 
 - **0x194** in `fglrx_drv.so`: **inferred** to be the GPIO pad drive-strength register. In `R200ScreenInit` the load at 0x41dc08 and the store at 0x41de58 save and restore it with the registers around it: the saving block loads, from one base pointer that it also uses for the words at 0x16c4, 0xf0, 0x8, 0x1a8 (`MDGPIO_MASK`), 0x288 and 0x88c, and stores each into the driver's saved-state area (the load of 0x194 goes to saved-state +512, and the matching `lw` at 0x41de54 reads it back); the restore block does the same in reverse through a pointer from the stack. A base that serves 0x16c4 and 0x8 is the register aperture, so these two are register accesses, which the earlier trace did not establish. The store at 0x42156c stores the word at +4 of the record in a0 (loaded at 0x421568) to register 0x194 through base register a6, which was not traced further. AMD's M56 register reference (a later chip) lists 0x194 as `GPIO_STRENGTH`, with an NMOS drive field in bits 3:0 and a PMOS field in bits 7:4, directly before `GPIOPAD_MASK` (0x198), `GPIOPAD_A` (0x19c), `GPIOPAD_EN` (0x1a0) and `GPIOPAD_Y` (0x1a4), the neighbours this module also accesses. That layout is the basis for the name here; it is not proved for the R300 or R350. The accesses at 0x421a10 and 0x4497c8 use other bases and are not claimed. The replay's two sites in the code at 0x41bc00 remain unplaced.
 - **0x294** in `fglrx.o`: no public name. In `_r6x_EnableStereo` at 0x13b4c (260 bytes) the enable path ORs 0x3000
@@ -926,18 +926,20 @@ one header only, the grade is `common`, not `none`.
   use the aperture from device record +1000. So bits 13:12 form a field that stereo switches on and off as a unit.
   Inferred: the field's meaning is not read. Established for the two stores and their masks.
 - **0x294** in `fglrx_drv.so`: no public name. `R6TMDSTransmitLinux` at 0x445480 (580 bytes) reads the word at 0x4454c0
-  and writes it at 0x4454e8 or 0x445618. The value keeps bits 15:14 and 11:4, takes bits 3:0 from the low nibble of
+  and writes it at 0x4454e8 or 0x445618. The value keeps every bit except 13:12 and 3:0 (the mask is 0xffffcff0), takes bits 3:0 from the low nibble of
   a3 (`andi`, 0xf), and on the path that the branch at 0x4454d4 takes when a1 is -1 (store at 0x445618) clears
   bits 13:12. On the other path bits 13:12 come from bits 1:0 of a4 shifted left 12 (store at 0x4454e8). The bits
   13:12 field is the one `_r6x_EnableStereo` switches. Inferred: the same field as the entry above; the
   meaning of a3 and a4 is not traced.
-- **0x350** in `fglrx_drv.so`: the public `R300_CRTC_TILE_X0_Y0` (common: `radeon_reg.h` of xf86-video-ati 6.14.6,
-  line 486). `R200AdjustFrame` at 0x422680 (1048 bytes) writes it at 0x4229f4 on the path that the branch at 0x422768
+- **0x350** in `fglrx_drv.so`: the public `R300_CRTC_TILE_X0_Y0` (common: `radeon_reg.h` of the pinned Linux tree, line 532, and of
+  xf86-video-ati 6.14.6, line 486). `R200AdjustFrame` at 0x422680 (1048 bytes) writes it at 0x4229f4 on the path that the branch at 0x422768
   takes when the byte at +90 of the record in s0 is zero, after a dummy read at 0x4229ec. The value is a0, which the
   code forms as (s3 << 16) | s4 at 0x422760 and 0x42276c. The second instruction is the delay slot of the branch at
   0x422768, so the value is set on both paths. The public driver writes `x | (y << 16)` to the same register under
   tiling on R300 (`radeon_driver.c`, around line 6125), so the IRIX word has the same shape. Inferred: the tile
-  origin of the first CRTC. Not traced: which of s3 and s4 holds x.
+  origin of the first CRTC. s4 is the routine's second argument and s3 its third (`move s4,a1` at 0x4226d0, `move s3,a2`
+  at 0x4226c8), so with the public `AdjustFrame(scrnIndex, x, y, flags)` order the word is `x | (y << 16)`; the
+  argument order is inferred from the routine's name.
 - **0x354** in `fglrx_drv.so`: no public name in the pinned headers. In `R200AdjustFrame` the same value a0 is stored
   at 0x422a18, after the 0x350 store on the same path, and only when the word at +9208 of the record in s0 is
   nonzero (the branch at 0x4229fc skips it otherwise). **Inferred** role: the right-eye counterpart of 0x350. The
@@ -949,8 +951,8 @@ one header only, the grade is `common`, not `none`.
   each of the tile-mode controls of 0x228 and one register, 0x350, for the left origin; no public header names 0x354,
   AMD's R3xx and R5xx references do not list it, and the M56 reference's use of 0x350 to 0x358 is a different layout.
   The pairing and the guard are the evidence; no other read shows the field layout.
-- **0x358** in `fglrx_drv.so`: the public `R300_CRTC2_TILE_X0_Y0` (common: `radeon_reg.h` of xf86-video-ati 6.14.6,
-  line 487). `R200AdjustFrame` writes a0 to it at 0x422788, after a dummy read at 0x422780, on the path the branch at
+- **0x358** in `fglrx_drv.so`: the public `R300_CRTC2_TILE_X0_Y0` (common: `radeon_reg.h` of the pinned Linux tree, line 533, and of
+  xf86-video-ati 6.14.6, line 487). `R200AdjustFrame` writes a0 to it at 0x422788, after a dummy read at 0x422780, on the path the branch at
   0x422768 takes when the byte at +90 is nonzero. The public driver uses the same register for the second CRTC's tile
   origin. Inferred. `R200CloneAdjustFrame` also writes 0x358 (at 0x422c10); that routine is not read here.
 - **0x878** in `fglrx_drv.so`: no public name. `Set_MV_Mode` at 0x4441c0 (540 bytes) stores at 0x4442cc the value
@@ -971,13 +973,15 @@ one header only, the grade is `common`, not `none`.
 - **0x1700** in `fglrx_drv.so`: no public name. The replay attributes its one site to static code at 0x40ac40, but
   the store is at 0x40b2bc inside `R200EngineInit` (at 0x40aa40). `sw t3,5888(s1)` writes the word that
   `lw t3,8236(s0)` loads from the driver record at 0x40b2b4. The store sits in the delay slot of the branch at
-  0x40b2b8 (`beq s2,-1`), so it runs whether or not the branch is taken. s1 is the aperture pointer that
-  0x40b0b4 loads from +48 of the driver record. The name `extSECAM_K` at 0x1700 in `theatre_reg.h` belongs to the
+  0x40b2b8 (`beq s2,s7`, which compares the routine's sixth and third arguments: `move s2,a5` at 0x40b0c4, `move s7,a2`
+  at 0x40b0b8), so it runs whether or not the branch is taken. s1 is the aperture pointer that 0x40b0b4 loads from +48
+  of the driver record. The name `extSECAM_K` at 0x1700 in `theatre_reg.h` belongs to the
   video-input register set, not this aperture, so it is not a match. Unknown: the role is not read.
 - **0x26ac** in `fglrx_drv.so`: no public name. `FGLInitCP` at 0x42c4c0 (720 bytes) reads the word at 0x42c640,
   ORs 0x110 into it (bits 8 and 4) and writes it back at 0x42c648, then runs a sync. The access is reached when
-  the compares at 0x42c620, 0x42c628 and 0x42c638 send control to 0x42c640 (the word in v0 equals ra, 47 or a2). Unknown:
-  the bits are constants and their meaning is not read.
+  the compares at 0x42c620, 0x42c628 and 0x42c638 send control to 0x42c640: the word at +160 of the record in s3
+  (v0) equals 8, 47 or 49 (the `li` at 0x42c618, 0x42c624 and 0x42c61c). Unknown: the bits are constants and their
+  meaning is not read.
 
 ## Not in the tables
 
