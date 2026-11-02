@@ -330,13 +330,11 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
   bit 13 for this register. Inferred.
 - **0x40** in `fglrx.o`: the public `GEN_INT_CNTL` (exact). `fglrx_attach` at 0xbdc stores zero to it after
   programming the tile configuration, `fglrx_intr` at 0x964 clears bits 2 and 6 with the mask 0xffffffbb on the
-  path taken when board record +792 or the board table slot is zero, and `_r6x_enable_vsync_irq` at 0x20cb0 ORs a constant from a table in
-  `.rodata` into it. Bits 2 and 6 are the vertical-sync enables of the first and second CRTC in `r100d.h`.
-  Established.
+  path taken when board record +792 or the board table slot is zero, and `_r6x_enable_vsync_irq` at 0x20cb0 ORs a word from the global `irq_table` (`.data` at 0x9b8, 624 bytes, 26 entries of 24 bytes, three words each) into it: the third word of entry 0, which is 1, so it sets bit 0. Bits 2 and 6 are the vertical-sync enables of the first and second CRTC in `r100d.h`, and bit 0 is `CRTC_VBLANK`; Linux's R300 code path uses the same layout (its R300 interrupt-set routine is the R100 one, which sets `CRTC_VBLANK` and `CRTC2_VBLANK`, bits 0 and 9, for a vertical-blank interrupt). AMD's R3xx 3D reference and R5xx acceleration guide do not list this register, and the M56 reference lists a `GEN_INT_CNTL` only in the video-input block at 0x100, without these display bits, so the names rest on the Linux and X.Org headers. Established for the offsets and bits read; the bit names are the public ones.
 - **0x44** in `fglrx.o`: the public `GEN_INT_STATUS` (exact). `fglrx_intr` at 0x964 reads it, tests bit 2 (the
   first CRTC's vertical-sync status in `r100d.h`) and acknowledges by writing 4. `_r6x_service_irq_vsync_handler`
-  at 0x20b08 reads it, ANDs the value with a mask from a `.rodata` table and, when any bit remains, writes the
-  value ORed with the table's next word back. Established.
+  at 0x20b08 reads it, ANDs the value with the first word of `irq_table` entry 0 (1) and, when that is nonzero, writes the
+  value ORed with the entry's second word (1) back, so it tests and acknowledges bit 0 only (`CRTC_VBLANK_STAT` and its acknowledge in `r100d.h`). Established.
 - **0x50** in `fglrx.o`: the public `CRTC_GEN_CNTL` (exact). `fglrx_attach` at 0xbdc reads it, ANDs it with
   0xfdfeffff and writes it back, which clears bit 25 (the CRTC enable) and bit 16 (the cursor enable) in `r100d.h`.
   `firegl_sync_dacs` at 0x1f5e8 reads and writes it too, with a mask that is not read. Established for
@@ -352,8 +350,12 @@ public headers it names. The entries for `fglrx.o` come first, then those for `f
 - **0x7c0** in `fglrx.o`: the public `CP_STAT` (exact). `_r6x_resetPM4` at 0x135fc re-reads it until bit 30
   clears (`CMDSTRM_BUSY` in `r300d.h`) before it touches the engine. Established.
 - **0xe40** in `fglrx.o`: the public `RBBM_STATUS` (exact). `_r6x_resetPM4` at 0x135fc reads it five times and
-  tests bit 31 (`GUI_ACTIVE` in `r300d.h`) after the command stream drains. Inferred from the bit test; the
-  other four reads are not decoded.
+  tests bit 31 (`GUI_ACTIVE` in `r300d.h`) after the command stream drains. All five reads use the same mask,
+  0x80000000 (`lui a1,0x8000`, set at 0x136f4): the first read at 0x136f0 leaves the wait when the bit is clear,
+  and the four reads at 0x13704, 0x13714, 0x13724 and 0x13734 are one loop unrolled four times, which repeats
+  while the bit is set. No other bit of the register is tested in this routine. `__fglQSQuietDown` (0x11734,
+  the callee at 0x136b8) tests the same bit. Established; the name of bit 31 is the public one, the mask is read
+  from the code.
 - **0x4018** in `fglrx.o`: the public `GB_TILE_CONFIG` (exact). `fglrx_attach` at 0xbdc stores 23 (0x17) to it
   twice, before and after another store; in `r300_reg.h` that value is the enable bit, the R300 pipe count
   (3 << 1) and the 16-pixel tile size (1 << 4). Established. AMD's R3xx 3D register reference (page 30) agrees: ENABLE is bit 0, PIPE_COUNT bits 3:1 (3 is R300, 0 is RV350) and TILE_SIZE bits 5:4 (1 is 16 pixels).
@@ -938,7 +940,15 @@ one header only, the grade is `common`, not `none`.
   origin of the first CRTC. Not traced: which of s3 and s4 holds x.
 - **0x354** in `fglrx_drv.so`: no public name in the pinned headers. In `R200AdjustFrame` the same value a0 is stored
   at 0x422a18, after the 0x350 store on the same path, and only when the word at +9208 of the record in s0 is
-  nonzero (the branch at 0x4229fc skips it otherwise). Unknown: the register's role is not read.
+  nonzero (the branch at 0x4229fc skips it otherwise). **Inferred** role: the right-eye counterpart of 0x350. The
+  same stereo word (+9208) guards three stores that treat the right eye separately: the word a0 goes to 0x354 (0x422a18);
+  0x220 (`CRTC_OFFSET_RIGHT`, public) takes the frame start plus the difference of two driver doublewords (+7336 minus
+  +7048, the stores at 0x422a14 and 0x4229b8); and the final `CRTC_OFFSET_CNTL` (0x228) update ORs 0x40 at 0x4229e4
+  (bit 6, `R300_CRTC_X_Y_MODE_EN_RIGHT` in xf86-video-ati `radeon_reg.h`) when that word is nonzero, besides 0x200
+  (bit 9, `R300_CRTC_X_Y_MODE_EN`), which the delay slot at 0x4229e0 sets every time. The public header has a left and a right bit for
+  each of the tile-mode controls of 0x228 and one register, 0x350, for the left origin; no public header names 0x354,
+  AMD's R3xx and R5xx references do not list it, and the M56 reference's use of 0x350 to 0x358 is a different layout.
+  The pairing and the guard are the evidence; no other read shows the field layout.
 - **0x358** in `fglrx_drv.so`: the public `R300_CRTC2_TILE_X0_Y0` (common: `radeon_reg.h` of xf86-video-ati 6.14.6,
   line 487). `R200AdjustFrame` writes a0 to it at 0x422788, after a dummy read at 0x422780, on the path the branch at
   0x422768 takes when the byte at +90 is nonzero. The public driver uses the same register for the second CRTC's tile

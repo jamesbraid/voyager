@@ -78,7 +78,7 @@ mmio	0x328		r4,w4	21	1	R200AdjustFrame;R200CloneAdjustFrame;bR200SetTilingMode;r
 mmio	0x32c		r4,w4	3	1	routine@0x41bc00	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x41bc00	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x33c		w4	1	1	R200EngineInit	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineInit	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x350		r4,w4	2	1	R200AdjustFrame	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200AdjustFrame	understood	docs/registers.md#registers-read-in-full	Registers read in full
-mmio	0x354		r4,w4	2	1	R200AdjustFrame	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200AdjustFrame	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+mmio	0x354		r4,w4	2	1	R200AdjustFrame	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200AdjustFrame	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x358		r4,w4	4	1	R200AdjustFrame;R200CloneAdjustFrame	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200AdjustFrame	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x360		w4	2	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x364		w4	2	1	routine@0x40d200	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:routine@0x40d200	understood	docs/registers.md#registers-read-in-full	Registers read in full
