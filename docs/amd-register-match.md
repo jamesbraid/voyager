@@ -89,8 +89,9 @@ them. It does not show the R300 or R350 has identical reset values or reserved b
   save and restore group as `FP2_GEN_CNTL` (0x288) and `CRTC2_GEN_CNTL` (0x3f8). The earlier conflict between
   these and `FP_H2_SYNC_STRT_WID`, `FP_V2_SYNC_STRT_WID` stays open. The 8-bit and 3-bit fields fit poorly with whole-word
   moves, so M56's names are less likely here; the row stays `located`.
-- **0x194** has `GPIO_STRENGTH` in M56 (SN 3:0, SP 7:4, page 2-147). No access site of the offset is confirmed, so the
-  name is recorded in the table and the row stays `located` at best.
+- **0x194** has `GPIO_STRENGTH` in M56 (SN 3:0, SP 7:4, page 2-147). [registers.md](registers.md) infers that name from the
+  neighbouring GPIO pad registers and two access sites it traces to the aperture; the layout is a later part's, so the
+  name is not proved for the R300 or R350. The row is not counted as promoted here.
 
 ## Differences between generations
 

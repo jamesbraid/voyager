@@ -2,11 +2,11 @@ table	rows	out_of_scope	understood	understood_with_open	understood_distinct	temp
 binaries	84	0	83	0	81	0	0	0	1	0	98.8	98.8	98.8	98.8							0			
 functions	28840	38510	895	29	869	0	158	325	27462	0	3.1	3.7	4.8	3.1			85.0	20	2026-11-02		0	503	17	
 functions (distinct names)	12895	17321	747	29	743	0	0	237	11911	0	5.8	5.8	7.6	5.8							0			
-mmio	201	0	142	0	139	0	59	0	0	0	70.6	100.0	100.0	70.6	37		100.0	4	2026-11-02		0			
+mmio	201	0	144	1	141	0	57	0	0	0	71.6	100.0	100.0	71.6	37		100.0	4	2026-11-02		0			
 tokens	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
 ioctls	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
 ucode	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0						0	0			
-spec-registers	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
+spec-registers	207	0	3	0	3	0	0	1	203	0	1.4	1.4	1.9	1.4							0			
 input root manifest	68																							f460183ba5ef2e0d3a51a38138fa0887c0ebf7a929b85a4ef7380976fad2b88a
 input sibling kona																								5dc6e9d883985b4573b634de9d4d0a80f54d3d56
 input sibling odsy																								a3d032f4c6526e5544896b9fdde48a87bd355ea6
