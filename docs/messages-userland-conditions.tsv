@@ -1,0 +1,16 @@
+# label	address	condition	grade
+# Written by hand from the disassembly around each call, for the attach, hang-recovery and option ROM rows of the X driver and the option ROM diagnostic. Each grade says how far the reading went: inferred = the guarding branch and the value it tests were read and match the message; partial = the branch was read but the value or the second path was not fully traced.
+fglrx_drv.so	0x40a374	The FIFO poll loop just above (`bne a3,s0` at 0x40a360) ends with the free-count test still failing: the low seven bits of the word at 3648(s1) stay below the count in s3.	inferred
+fglrx_drv.so	0x40a434	The idle poll loop (`bne a2,s1` at 0x40a420) ends with bit 31 of the word at 3648(s2) still set, so the engine still reports busy. The loop count in s1 is 0x1e8480, which is 2,000,000 polls.	inferred
+fglrx_drv.so	0x40a61c	The helper called at 0x40a600 (address 0x409e40, which the table does not name) returns nonzero. The message names __fglQSQuietDown; the binary does not link that name to 0x409e40.	partial
+fglrx_drv.so	0x40e620	xf86AllocateOffscreenArea, called at 0x40e570, returns zero, and `beq v0,zero` at 0x40e578 jumps to the block that prints this warning.	inferred
+fglrx_drv.so	0x4109fc	On entry the word at 48(s0) is already nonzero, so `bne at,zero` at 0x4109a8 skips the mapping and jumps to this message.	inferred
+fglrx_drv.so	0x410a6c	The mapping returns zero. Its result reaches a3 at 0x4109c8 (or from the second mapping path at 0x410a48, which rejoins at 0x4109cc), and `beq a3,zero` at 0x4109cc jumps here. The second path was not traced to its end.	partial
+fglrx_drv.so	0x410b70	The word at 48(s0) is zero when the mapping is released, and `beq at,zero` at 0x410ae8 jumps to this message.	inferred
+biosemu	0x1000e8ac	pciba_enable_rom (called at 0x1000e890) returns nonzero, so `beq v0,zero` at 0x1000e898 falls through to this message.	inferred
+biosemu	0x1000e8c8	pciba_enable_rom returns zero, and `beq v0,zero` at 0x1000e898 jumps to the block that prints this message.	inferred
+biosemu	0x1000e56c	The ROM mmap result (stored at 112(sp)) equals -1 (the constant in a7 set at 0x1000e554), so `bne a6,a7` at 0x1000e558 falls through here.	inferred
+biosemu	0x1000eb08	The second ROM mmap result (a5, loaded from 112(sp)) equals -1 (the constant in a6 at 0x1000eaf0), so `bne a5,a6` at 0x1000eaf4 falls through here.	inferred
+biosemu	0x1000ed9c	The byte loaded at 0x1000ecf4 (lbu a4,0(a4)) differs from 0xAA (the constant in a5 at 0x1000ecf8), so `bne a4,a5` at 0x1000ecfc jumps here. The message prints the two values it compared.	inferred
+biosemu	0x1000ed1c	The stack word at 0(sp), loaded at 0x1000ed04, is nonzero, so `beq a5,zero` at 0x1000ed08 falls through to this message. What the word holds is not traced here.	partial
+biosemu	0x1000ed60	The stack word at 0(sp), loaded at 0x1000ed48, is nonzero, so `beq a2,zero` at 0x1000ed4c falls through to the shadow copy message. What the word holds is not traced here.	partial
