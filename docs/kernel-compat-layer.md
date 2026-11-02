@@ -138,3 +138,26 @@ Where a routine below takes a file or inode argument, the offsets are the ones i
 - `__ke_sema_size` (`fglrx.o`, address 0x98b8, 8 bytes):
   **established.** Returns the constant 16, the byte size ATI's code allocates for one semaphore.
   It reads no memory.
+
+
+## Forwards to kernel library routines (fglrx.o)
+
+Each routine here saves the return address, calls one kernel library routine with its own arguments untouched, restores the return address and returns that routine's result. The thirteen instruction words of each match `__ke_wake_up_interruptible` at 0x94f0 (code hash 89adc03be8aa); only the relocation of the call differs, and the callee named below is that relocation's symbol.
+
+- `__ke_up` (`fglrx.o`, address 0x98f4, 52 bytes): **established.** Calls `vsema` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `__ke_atomic_set` (`fglrx.o`, address 0x99b4, 52 bytes): **established.** Calls `test_and_set_int` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `__ke_pci_find_device` (`fglrx.o`, address 0x9cd4, 52 bytes): **established.** Calls `pci_find_device` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `__ke_free_s` (`fglrx.o`, address 0x9d3c, 52 bytes): **established.** Calls `fglrx_irix_kmem_free` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `__ke_vfree` (`fglrx.o`, address 0x9dac, 52 bytes): **established.** Calls `fglrx_irix_kern_free` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `__ke_memset` (`fglrx.o`, address 0x9f08, 52 bytes): **established.** Calls `memset` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `__ke_strlen` (`fglrx.o`, address 0x9f84, 52 bytes): **established.** Calls `strlen` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `__ke_strcpy` (`fglrx.o`, address 0x9fb8, 52 bytes): **established.** Calls `strcpy` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `__ke_strncpy` (`fglrx.o`, address 0x9fec, 52 bytes): **established.** Calls `strncpy` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `__ke_strcmp` (`fglrx.o`, address 0xa020, 52 bytes): **established.** Calls `strcmp` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `__ke_strncmp` (`fglrx.o`, address 0xa054, 52 bytes): **established.** Calls `strncmp` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `__ke_pci_read_config_byte` (`fglrx.o`, address 0xa198, 52 bytes): **established.** Calls `pci_read_config_byte` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `__ke_pci_read_config_word` (`fglrx.o`, address 0xa1cc, 52 bytes): **established.** Calls `pci_read_config_word` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `__ke_pci_read_config_dword` (`fglrx.o`, address 0xa200, 52 bytes): **established.** Calls `pci_read_config_dword` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `__ke_pci_write_config_byte` (`fglrx.o`, address 0xa234, 52 bytes): **established.** Calls `pci_write_config_byte` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `__ke_pci_write_config_word` (`fglrx.o`, address 0xa268, 52 bytes): **established.** Calls `pci_write_config_word` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
+- `__ke_pci_write_config_dword` (`fglrx.o`, address 0xa29c, 52 bytes): **established.** Calls `pci_write_config_dword` with the caller's arguments untouched and returns its result. It touches no register or memory of its own.
