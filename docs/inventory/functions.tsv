@@ -48422,19 +48422,19 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2264c	40	hub_dmamap_f
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22674	92	hub_dmamap_addr	dwarf+symtab	e8f8f950baa9		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x226d0	92	hub_dmamap_list	dwarf+symtab	ba9718ded9f1		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2272c	80	hub_dmamap_done	dwarf+symtab	7ed5233ba631		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2277c	8	hub_dmatrans_addr	dwarf+symtab	0e2e26765928		in	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22784	8	hub_dmatrans_list	dwarf+symtab	0e2e26765928		in	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2278c	8	hub_dmamap_drain	dwarf+symtab	78aa5094d5ec		in	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22794	8	hub_dmaaddr_drain	dwarf+symtab	78aa5094d5ec		in	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2279c	8	hub_dmalist_drain	dwarf+symtab	78aa5094d5ec		in	undocumented		
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2277c	8	hub_dmatrans_addr	dwarf+symtab	0e2e26765928		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22784	8	hub_dmatrans_list	dwarf+symtab	0e2e26765928		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2278c	8	hub_dmamap_drain	dwarf+symtab	78aa5094d5ec		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22794	8	hub_dmaaddr_drain	dwarf+symtab	78aa5094d5ec		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x2279c	8	hub_dmalist_drain	dwarf+symtab	78aa5094d5ec		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x227a4	8	hub_intr_init	dwarf	78aa5094d5ec		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x227ac	84	hub_device_desc_update	dwarf	f6628cc385e2		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22800	520	do_hub_intr_alloc	dwarf	1480836470f1		in	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22a08	28	hub_intr_alloc	dwarf+symtab	97bd00796017		in	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22a24	28	hub_intr_alloc_nothd	dwarf+symtab	466f294539fd		in	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22a40	120	hub_intr_free	dwarf+symtab	9e17ed08705b		in	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22ab8	136	hub_intr_connect	dwarf+symtab	e86305b03f13		in	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22b40	100	hub_intr_disconnect	dwarf+symtab	fbb587b4ad7a		in	undocumented		
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22a08	28	hub_intr_alloc	dwarf+symtab	97bd00796017		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22a24	28	hub_intr_alloc_nothd	dwarf+symtab	466f294539fd		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22a40	120	hub_intr_free	dwarf+symtab	9e17ed08705b		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22ab8	136	hub_intr_connect	dwarf+symtab	e86305b03f13		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22b40	100	hub_intr_disconnect	dwarf+symtab	fbb587b4ad7a		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22ba4	28	hub_intr_cpu_get	dwarf+symtab	61c74e6169ed		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22bc0	8	hub_intr_cpuid_get	dwarf+symtab	acb766709b99		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x22bc8	52	hub_provider_startup	dwarf+symtab	7986267a335f		in	undocumented		
@@ -49996,16 +49996,16 @@ usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x1d0	28	xtalk_dmamap_fr
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x1ec	28	xtalk_dmamap_addr	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x208	28	xtalk_dmamap_list	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x224	28	xtalk_dmamap_done	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
-usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x240	28	xtalk_dmatrans_addr	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x25c	28	xtalk_dmatrans_list	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x278	28	xtalk_dmamap_drain	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x294	28	xtalk_dmaaddr_drain	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x2b0	28	xtalk_dmalist_drain	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x2cc	28	xtalk_intr_alloc	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x2e8	28	xtalk_intr_alloc_nothd	dwarf+symtab	a86de4a9d7a4		in	undocumented		
-usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x304	28	xtalk_intr_free	dwarf+symtab	a86de4a9d7a4		in	undocumented		
+usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x240	28	xtalk_dmatrans_addr	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x25c	28	xtalk_dmatrans_list	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x278	28	xtalk_dmamap_drain	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x294	28	xtalk_dmaaddr_drain	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x2b0	28	xtalk_dmalist_drain	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x2cc	28	xtalk_intr_alloc	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x2e8	28	xtalk_intr_alloc_nothd	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
+usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x304	28	xtalk_intr_free	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x320	28	xtalk_intr_connect	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/binaries.md#host-and-board-kernel-objects	Host and board kernel objects
-usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x33c	28	xtalk_intr_disconnect	dwarf+symtab	a86de4a9d7a4		in	undocumented		
+usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x33c	28	xtalk_intr_disconnect	dwarf+symtab	a86de4a9d7a4		in	named-only	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x358	28	xtalk_intr_cpu_get	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x374	28	xtalk_intr_cpuid_get	dwarf+symtab	a86de4a9d7a4		in	undocumented		
 usr/cpu/sysgen/IP35boot/xtalk.o	shared-kernel	n64	.text	0x390	172	xtalk_error_handler	dwarf+symtab	7d511f75d55f		in	undocumented		
