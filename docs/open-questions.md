@@ -4,7 +4,7 @@ Questions the binaries and published sources have not yet answered. One entry ea
 
 ## Triage
 
-Of the 31 entries below, 30 are `software-now` and 1 is `missing-release-or-binary`. Three of the software-now entries also carry a hardware-only residue, marked in the entry and recorded, not scheduled: the PCI bus clock, the display output and the ROM select.
+Of the 29 entries below, 28 are `software-now` and 1 is `missing-release-or-binary`. Three of the software-now entries also carry a hardware-only residue, marked in the entry and recorded, not scheduled: the PCI bus clock, the display output and the ROM select.
 
 The tags:
 
@@ -40,19 +40,17 @@ Registers and interrupts come first, because they block the register headers. Th
 15. Byte swapping, in full.
 16. Byte lanes of the register aperture.
 17. PCI bus clock and width.
-18. What `hub_setup_prb` does.
-19. Bridge device-register values, bit layout only.
-20. Bridge and topology. If no published listing shows the Onyx4 layout, this falls to hardware-only.
-21. Whether the IP35 PROM runs the option ROM.
-22. Attach sequence and the card's BIOS run under an emulator.
-23. The x86 handlers of the images.
-24. ATI tables the public driver does not read.
-25. First header words and the signature block.
-26. The sg3 to sg3a changes.
-27. Which ROM a card gets, register 0x1a4.
-28. PCI device and subsystem IDs per card.
-29. What `sg`, `olsg` and `vpm` do.
-30. How the flash tool compares versions.
+18. Bridge device-register values, bit layout only.
+19. Bridge and topology. If no published listing shows the Onyx4 layout, this falls to hardware-only.
+20. Whether the IP35 PROM runs the option ROM.
+21. Attach sequence and the card's BIOS run under an emulator.
+22. The x86 handlers of the images.
+23. ATI tables the public driver does not read.
+24. First header words and the signature block.
+25. The sg3 to sg3a changes.
+26. Which ROM a card gets, register 0x1a4.
+27. PCI device and subsystem IDs per card.
+28. What `sg`, `olsg` and `vpm` do.
 
 The one `missing-release-or-binary` entry is `find_vga_pipe`. Two software-now entries also need a file that the install set lacks for part of their step: the install's release notes (the sg3 to sg3a entry) and the flash tool's `9700.bin` (the ROM select entry). The diagnostics' manual pages are in root, already unpacked, and the `sg`, `olsg` and `vpm` entry reads them.
 
@@ -60,12 +58,12 @@ The one `missing-release-or-binary` entry is `find_vga_pipe`. Two software-now e
 
 **Routes no entry has taken yet**, to try in this order unless an entry says otherwise:
 
-1. **The shipped objects.** `fglrx.o`, `is1.o` and the `vga.a` members are unstripped MIPS-IV relocatable objects reported with debug information; the X and DRI modules likewise. Function and variable names, line tables and strings come first.
-2. **Public references.** AMD's R3xx register reference and R5xx acceleration guide, Linux `drm/radeon` r300 and Mesa's r300 driver ([docs/sources/INDEX.md](sources/INDEX.md)). They describe the public chips; use them to read the binaries, not to fill gaps.
-3. It predates the Onyx4.
-4. **Other IRIX releases** of the same files: a diff of code between releases often names a field.
-5. **Published output from real machines**: `hinv -v`, `gfxinfo`, X server logs and PCI listings of Onyx4 systems in newsgroup and mailing-list archives.
-6. **The shipped driver under an emulator.** Run it and log what it reads back and waits for. This shows the driver's expectation, not the board's behaviour, and is labelled so.
+29. **The shipped objects.** `fglrx.o`, `is1.o` and the `vga.a` members are unstripped MIPS-IV relocatable objects reported with debug information; the X and DRI modules likewise. Function and variable names, line tables and strings come first.
+30. **Public references.** AMD's R3xx register reference and R5xx acceleration guide, Linux `drm/radeon` r300 and Mesa's r300 driver ([docs/sources/INDEX.md](sources/INDEX.md)). They describe the public chips; use them to read the binaries, not to fill gaps.
+31. It predates the Onyx4.
+32. **Other IRIX releases** of the same files: a diff of code between releases often names a field.
+33. **Published output from real machines**: `hinv -v`, `gfxinfo`, X server logs and PCI listings of Onyx4 systems in newsgroup and mailing-list archives.
+34. **The shipped driver under an emulator.** Run it and log what it reads back and waits for. This shows the driver's expectation, not the board's behaviour, and is labelled so.
 
 An entry that exhausts all routes is relabelled "unknown: no shipped software or published source depends on it" in its owning file, with the routes listed, and removed here.
 
@@ -78,7 +76,6 @@ The attach path read so far is in [kernel-attach.md](kernel-attach.md).
 - [missing-release-or-binary] **Where `find_vga_pipe` is defined.** `fglrx.o` and `vga.a(vga_init.o)` both call it and both depend on the record it returns (the halfword at +80 and doubleword at +96 that `find_fglrx_pipe` copies, and the bridge-related words `vga_init` derives from +64, +82 and +84). No shipped IP35 object read so far defines it: tried `fglrx.o`, every `vga.a` member, `vgastubs.a`, `kernel.o`, `pcibr.o`, `pic.o`. Checked: a string search of every file in root finds the name only in `fglrx.o`, `vga.a` and `vga_init.o`, which call it, so no file in root defines it. Next: the rest of the IP35 kernel set from the 6.5.30 media, which root lacks, or the same objects from another IRIX release (route 4). The `system` file that names the graphics pipe modules is also absent from root.
 - [software-now] **Bridge device-register values for legacy I/O and frame-buffer access.** `vga_setbridge_to_legacy_io` and `vga_setbridge_to_lfb` write two values (VGA record +64 and +72) to the slot's Device(n) register. `vga_earlyinit` copies them unchanged from the `find_vga_pipe` record (pipe +112 and +128); `vga_init` does not store them, so their bits are set by whoever builds that record. Their bits against the Bridge/PIC Device(n) field layout are not decoded. Next: decode the two values against the bit layout of `bridge.h` and `pic.h` in the Linux 2.6.5 SN2 headers (URL in sources/INDEX.md). Decoding settles the layout only. The routine that fills the pipe record is the one the `find_vga_pipe` entry lacks, so who sets the bits stays open.
 - [software-now] **Byte swapping, in full.** Established: BAR 1, the ROM, the legacy I/O window and the VGA memory window are mapped with `PCIIO_BYTE_STREAM`, BARs 0 and 2 with `PCIIO_WORD_VALUES`, and the VGA layer sets the bridge's `BRIDGE_CTRL_MEM_SWAP`. Still open: what the bridge does for DMA from the card (the X driver's `CP_RB_CNTL` `BUF_SWAP` field is preserved from a value set elsewhere), and whether `fglrx.o` ever undoes the memory swap bit the VGA layer set. Next: the byte-swap handling of `pcibr.o` and `pic.o` (in root) for the streams the kernel maps; `fglrx_drv.so` writers of `CP_RB_CNTL` and of the surface swap controls; `pciio_dma_addr` callers in `fglrx.o`.
-- [software-now] **What the `hub_setup_prb(nasid, widget, 3, 2)` call does.** Both `fglrx_attach` and `vga_earlyinit` make it. Next: read `hub_setup_prb` in `kernel.o` (route 1). The name occurs in `kernel.o` (three times), `fglrx.o` and `vga.a`; read the copy in `kernel.o` first.
 - [software-now] **Whether the IP35 PROM runs the option ROM.** The kernel runs it itself in `vga_init_board` (`xf86ExecX86int10`), which suggests the PROM does not, but that is an inference. Checked: a string search of `ip35prom.img` finds `init_klcfg_vgagfx` and no string naming x86 emulation, a BIOS interrupt or an option ROM, but the image is not plain text throughout (entropy about 7 bits a byte), so that does not exclude the PROM. Next: decide whether the image has compressed parts and read the graphics-component set-up around `init_klcfg_vgagfx`; route 5 for published PROM console output on an Onyx4.
 
 ## Identity
@@ -88,8 +85,8 @@ The attach path read so far is in [kernel-attach.md](kernel-attach.md).
 
 ## Command processor and ring
 
-- [software-now] **Ring parameters and order of CP start-up.** The kernel never programs the ring base, size or microcode; the X server module does ([kernel-attach.md](kernel-attach.md#command-processor-start-up-x-server-module)): `PM4LoadMicroCode`, `r200_RegisterRingBufferLocation`, `r200_EnableCommonBusMaster`, `r200_SetPm4OperationMode` (mode 8, both queues bus-master), `r200_EnableRPTRwriteback`, `FGLEnableCP`, `FGLStartCP`. Still open: `FGLInitCP` (address 0x42c4c0), which computes the ring size and fetch settings; the routine at 0x42bc00 that `FGLStartCP` calls first; where the ring memory comes from (the kernel's `kmem_contig_reserve` pools are a candidate) and how its bus address is formed; and the order the callers impose. Next: read `FGLInitCP` (0x42c4c0, 720 bytes) and the routine at 0x42bc00 in full from `fglrx_drv.so` (in root), then the ioctls the module sends to `firegl_cp_init` in `fglrx.o`, and the `kmem_contig_reserve` call in `fglrx.o` for the ring memory.
-- [software-now] **Microcode.** Answered in part: `fglrx_drv.so` carries two 2048-byte tables, `aPM4_Microcode_R6x` (identical to the public `R200_cp.bin`) and `aPM4_Microcode_R300` (66 of 256 pairs match the public `R300_cp.bin`), and loads one through `CP_ME_RAM_ADDR`, `CP_ME_RAM_DATAH` and `CP_ME_RAM_DATAL`. Still open: which chip codes (record +160 values 8, 47, 49 against 44, 45, 52) mean which part, and so which table an X1 and an X2 load; and how the R300 table differs from the public image (later or earlier revision). Next: the routine that stores the chip code at +160 (search `fglrx_drv.so` for stores to that offset). Compare `aPM4_Microcode_R300` with `R300_cp_microcode` in `radeon_microcode.h` (Linux 2.6.30 tree, checked out in this clone) and with the public `R300_cp.bin` (URL in sources/INDEX.md).
+- [software-now] **Ring parameters and order of CP start-up.** The kernel never programs the ring base, size or microcode; the X server module does ([kernel-attach.md](kernel-attach.md#command-processor-start-up-x-server-module)): `PM4LoadMicroCode`, `r200_RegisterRingBufferLocation`, `r200_EnableCommonBusMaster`, `r200_SetPm4OperationMode` (mode 8, both queues bus-master), `r200_EnableRPTRwriteback`, `FGLEnableCP`, `FGLStartCP`. Answered since: `FGLInitCP` and the routine at 0x42bc00 are read ([x-driver-functions.md](x-driver-functions.md#command-processor-initialisation), [kernel-attach.md](kernel-attach.md#command-processor-start-up-x-server-module)), and `firegl_cp_init` takes the ring from a map the X module created earlier, named by handle, not from `kmem_contig_reserve`. Still open: how the X module creates that ring map and forms the bus address it keeps at E +0x48, and what the E fields at +0x18, +0x38 and +0x58 are before `FGLInitCP`. Next: the writers of those entity-record fields in `fglrx_drv.so`, and the map-creating calls (`firegl_AllocBuffer`) that precede the start-up.
+- [software-now] **Microcode.** Answered in part: `fglrx_drv.so` carries two 2048-byte tables, `aPM4_Microcode_R6x` (identical to the public `R200_cp.bin`) and `aPM4_Microcode_R300` (66 of 256 pairs match the public `R300_cp.bin`), and loads one through `CP_ME_RAM_ADDR`, `CP_ME_RAM_DATAH` and `CP_ME_RAM_DATAL`. Answered since: the chip codes are the result of a PCI device ID tree ([x-video-driver.md](x-video-driver.md#chip-code-from-the-pci-device-id)): an X1 (0x4e47) is code 44 and an X2 (0x4e4b) is code 52, and both load `aPM4_Microcode_R300`. Still open: how the R300 table differs from the public image (later or earlier revision). Next: Compare `aPM4_Microcode_R300` with `R300_cp_microcode` in `radeon_microcode.h` (Linux 2.6.30 tree, checked out in this clone) and with the public `R300_cp.bin` (URL in sources/INDEX.md).
 - [software-now] **Fence, idle and reset.** How IRIX waits for the engine, flushes caches and resets a hung engine. `_r6x_resetPM4` and `firegl_killall_clients` poll `RBBM_STATUS` (0xe40); `fglrx_attach` stores 0x400 to `GA_SOFT_RESET` once, between two stores to `GB_TILE_CONFIG`. Next: read `_r6x_resetPM4` (in `fglrx.o`) and `__fglQSQuietDown` (in `fglrx.o`, `fglrx_drv.so` and `fglrx_dri64.so`) in full, then name the `RBBM_STATUS` bits they test from the R3xx reference (route 2).
 
 ## 3D
@@ -111,8 +108,7 @@ The attach path read so far is in [kernel-attach.md](kernel-attach.md).
 - [software-now] **ATI tables the public driver does not read.** DAC programming, maximum colour depth, CRTC info, save mask and hardware config are present in all three images. Byte-level facts and the open fields are in [option-roms.md](option-roms.md#tables-the-public-driver-does-not-read). Checked: Linux v6.12 `radeon_combios.c` names all five slots and never reads them, so no public reader gives a layout. Still open: the field meanings, the DAC block's extent (code follows it at +28), and the routine that runs the DAC code. Next: the X driver's table readers in `fglrx_drv.so` (it prints "Connector Layout from BIOS"), and the x86 code after the DAC block, read with the init path's routine list.
 - [software-now] **First header words and the signature block.** The words at header+0x00, +0x02 and +0x1e and the 32-bit value block at header+0x0e. Next: the readers in `fglrx_drv.so` (its BIOS parameter routine) and in `fglrx_attach` in `fglrx.o`, then the public `radeon_combios.c` for what the ATI header words mean. The BIOS init code does not read header+0x00, +0x02 or the signature words (every table access in the init path goes through slot offsets). The BIOS does read one byte of that word, header+0x01 (0xa0 in all three images; `cs:[0x129]` in sg3, `cs:[0x119]` in sg3a), at three sites: the second entry of the vendor-function dispatcher loads it into ah, a vendor handler returns its low nibble in cx, and a third routine makes an `int 0x10` call with ah set to it plus 0x10. Read so far: the init path and the vendor handlers.
 - [software-now] **The sg3 to sg3a changes.** Memory-controller and memory-timing values differ (register 0x178, 0x17c, the indirect set indexes 0x11a to 0x120 and 0x122 and 0x124, and register 0x144), plus one small x86 helper. The meaning of the fields, and why two X2 images exist, is not known. Next: AMD's R3xx register reference for the memory-controller fields (route 2). The install's release notes are not in root, so the version-string part is missing-release-or-binary and does not hold up the first step.
-- [software-now] **Which ROM a card gets.** Bits 7:6 of the register at offset 0x1a4 select `sg3.bin` (01) or `sg3a.bin` (00) in the flash tool. The strap source is not known. Next: what the AMD R3xx reference says the register at 0x1a4 reads back (route 2), and whether `fglrx.o` or `vga.a` read it at attach. Residue, hardware-only and recorded, not scheduled: the board wiring behind those bits, which no software read shows. Separately, the flash tool's table names device 0x4e44 with a `9700.bin` that is not in the install (missing-release-or-binary).
-- [software-now] **How the flash tool compares versions, and what the serial flash is.** Next: disassemble `flash_rom` and the version routine in `sg2flash`.
+- [software-now] **Which ROM a card gets.** Bits 7:6 of the register at offset 0x1a4 select `sg3.bin` (01) or `sg3a.bin` (00) in the flash tool. Read since: no kernel object reads 0x1a4 through a constant offset, and the X module uses other bits of it for a TV-dongle line and a CRTC restart ([option-roms.md](option-roms.md#what-the-irix-software-does-with-the-images-cross-reference)), so no shipped software but the flash tool uses bits 7:6. Still open: what the register reads back (the AMD R3xx reference returned HTTP 403 on 2026-11-01; Linux names it `GPIOPAD_Y` only) and the strap source. Next: the R3xx reference if a mirror is found. Residue, hardware-only and recorded, not scheduled: the board wiring behind those bits, which no software read shows. Separately, the flash tool's table names device 0x4e44 with a `9700.bin` that is not in the install (missing-release-or-binary).
 
 ## What IRIX programs at attach
 

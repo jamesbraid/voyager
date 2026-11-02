@@ -75,6 +75,20 @@ The overlay lock helpers are `sub_43a4c0` and `sub_43a540` (both take a0 screen)
   It calls `CAILInitialize` (the slot at gp-31140) with the block's address. A nonzero result logs two errors (level 5), the second saying initialisation failed, and returns 0. A zero result logs the library version (level 7, the word at +8384), calls `xf86EnablePciBusMaster` with the entity record at +4 and 1, and calls `CAIL_ASICSetup` with the block. If that returns nonzero it logs an error with the code (level 5) and returns 0; otherwise it calls `CAILQueryVideoBiosInfo` with the block and the word at +8548 and returns 1.
   The meanings of the ROM offsets 72 and the +6 field, and of the individual block words, are unknown; they belong to the closed chip library.
 
+## Chip code from the PCI device ID
+
+- The device-identification code at 0x414ce4 to 0x414d88 in `fglrx_drv.so` (the dispatch tree through 0x415564 and the stubs it branches to; the debug names place it only by distance inside `R200MinBits`, so it is named here by address): **established** for the table, **inferred** for the chip-family names.
+  It starts from the 16-bit PCI device ID, the word at driver record +12, and picks one leaf of a compare tree. Each leaf stores, relative to the driver record: the chip code at +160, a small integer at +180 (0, 2 or 3), a flag byte at +88 (1 for every recognised ID), a flag byte at +89 (set only for the IDs below marked mobile; the byte at +89 is cleared at 0x414cf0 before the tree) and a word at +7800 (64, 128 or 256). An ID that no leaf matches keeps code 0, +180 = 0, +88 = 0 and +7800 = 64 (0x4154d0 to 0x4154e4), and `FGLInitCP` then logs "unsupported ASIC".
+  I derived the table by stepping the instructions of the tree for every device ID from 0 to 0xffff (a script over the disassembly, with the register at 0x414ce0 clear; the one branch on a later test, at 0x4155b0, needs that register nonzero and so was not exercised). The leaves, by code, with the family the public PCI ID list gives each ID (inferred from the ID alone):
+  - code 8: 0x4242, 0x5148, 0x514c, 0x514d, 0x516c, 0x516d (R200: All-in-Wonder 8500 DV, FireGL 8800, Radeon 8500 and 9100);
+  - code 44: 0x4144 to 0x4147, 0x4149, 0x414a, 0x4e44 to 0x4e47 (R300, including the FireGL X1 ID 0x4e47 and FireGL Z1 0x4147);
+  - code 45: 0x4150 to 0x4152, 0x4154 to 0x4157, and 0x4e50 with the mobile flag (RV350, RV360);
+  - code 47: 0x4964 to 0x4967, and 0x4c64 to 0x4c67 with the mobile flag (RV250);
+  - code 49: 0x5960, 0x5961, 0x5964, and 0x5c61, 0x5c63 with the mobile flag (RV280);
+  - code 52: 0x4148, 0x414b, 0x4e48 to 0x4e4b (R350 and R360, including the FireGL X2 ID 0x4e4b).
+  IDs not named in any leaf, among them 0x4153 (RV350 Radeon 9550), fall through to code 0. The word at +7800 is 256 for the code-52 IDs and for 0x4147, 0x4149, 0x414a, 0x4e44, 0x4e45 and 0x4e47; 128 for 0x4144 to 0x4146, 0x4e46 and every code-45 ID; 64 for the codes 8, 47 and 49. The word at +180 is 2 for code 8 and 3 for every other recognised code. What +180 and +7800 mean is unknown. The mobile flag matches the remap in `R200LinuxCailInitCail` above (47 to 48, 49 to 51, 45 to 46).
+  So the two cards of the Onyx4 map as follows: a FireGL X1 (0x4e47) gets code 44 and a FireGL X2 (0x4e4b) gets code 52; both are in the group that `PM4LoadMicroCode` serves with `aPM4_Microcode_R300` and that `FGLInitCP` serves with the 0x42bec0 filler. Codes 8, 47 and 49 are the R200, RV250 and RV280 parts and take `aPM4_Microcode_R6x`.
+
 ## Register readback
 
 - `R200GetCRTCResetState` (`fglrx_drv.so`, 60 bytes at address 0x449540): **Established.**

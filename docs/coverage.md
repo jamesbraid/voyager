@@ -55,7 +55,7 @@ The share of understood rows that an independent audit found real when it re-der
 | functions | 87.5% | 16 | 2026-11-02 |
 | mmio | 100.0% | 4 | 2026-11-02 |
 
-Cross-workspace role check: compared 121 entries with the entries of kona and odsy for the same function and capped 0 at located (the role text is the sibling's, at least 90% alike, and states no offset, immediate value or callee address of its own build).
+Cross-workspace role check: compared 122 entries with the entries of kona and odsy for the same function and capped 0 at located (the role text is the sibling's, at least 90% alike, and states no offset, immediate value or callee address of its own build).
 
 Inputs (also in [summary.tsv](inventory/summary.tsv)): root manifest f460183ba5ef2e0d, 68 files; sibling kona 5dc6e9d88398; sibling odsy a3d032f4c652.
 
