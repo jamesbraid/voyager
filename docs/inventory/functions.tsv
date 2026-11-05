@@ -47339,9 +47339,9 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x51dc	468	irix_pci_write
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x53b0	8	fglrx_hpipe_init_idbg	dwarf+symtab	78aa5094d5ec		in	understood	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x53b8	44	fglrx_hpipe_log	dwarf+symtab	90ad92382957		in	undocumented		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x53e4	76	fglrx_usb_comp_update_tiles	dwarf+symtab	2a82b8448280	shared-address	in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x53e4	76	usb_comp_update_tiles	symtab	2a82b8448280	shared-address	in	named-only	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x53e4	76	usb_comp_update_tiles	symtab	2a82b8448280	shared-address	in	named-only		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5430	80	fglrx_usb_comp_readwrite_register	dwarf+symtab	77d2e938cfa7	shared-address	in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5430	80	usb_comp_readwrite_register	symtab	77d2e938cfa7	shared-address	in	named-only	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5430	80	usb_comp_readwrite_register	symtab	77d2e938cfa7	shared-address	in	named-only		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5480	204	fglrxReadMmRegister	dwarf+symtab	cc5a8cac371d		in	understood	docs/kernel-drm-functions.md#file-lookup-drawable-removal-map-offsets-and-order-helpers	File lookup, drawable removal, map offsets and order helpers
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x554c	200	fglrxWriteMmRegister	dwarf+symtab	70e6ff13564f		in	understood	docs/kernel-drm-functions.md#file-lookup-drawable-removal-map-offsets-and-order-helpers	File lookup, drawable removal, map offsets and order helpers
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x5614	292	fglrxCompositorUSBRegReadWrite	dwarf	240498251bd6		in	understood	docs/kernel-drm-functions.md#hyperpipe-teardown-swap-ready-compositor-access-and-buffer-queues	Hyperpipe teardown, swap-ready, compositor access and buffer queues
@@ -47560,11 +47560,11 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13b4c	260	_r6x_EnableSt
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13c50	456	_r6x_InitMaskRamSize	dwarf+symtab	be67c904ff84		in	understood	docs/kernel-drm-functions.md#mutex-texture-dma-mapping-and-vsync-routines	Mutex, texture, DMA-mapping and vsync routines
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x13ed8	856	firegl_open_helper	dwarf+symtab	f55b5dde64c5		in	understood	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x14230	128	firegl_release_swapready	dwarf+symtab	4dd91ed4c457	shared-address	in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x14230	128	is1_release_swapready	symtab	4dd91ed4c457	shared-address	in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x14230	128	is1_release_swapready	symtab	4dd91ed4c457	shared-address	in	named-only		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x142b0	128	firegl_fire_swapready	dwarf+symtab	b1c12a349699	shared-address	in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x142b0	128	is1_fire_swapready	symtab	b1c12a349699	shared-address	in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x142b0	128	is1_fire_swapready	symtab	b1c12a349699	shared-address	in	named-only		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x14330	128	firegl_unbind	dwarf+symtab	640acca81da0	shared-address	in	undocumented		
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x14330	128	is1_unbind	symtab	640acca81da0	shared-address	in	named-only	docs/image-sync-functions.md#image-sync-driver-one-entry-per-routine	Image-sync driver: one entry per routine
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x14330	128	is1_unbind	symtab	640acca81da0	shared-address	in	named-only		
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x143b0	2736	firegl_release_helper	dwarf+symtab	6a8b8897e1a1		in	understood	docs/kernel-object-functions.md#opening-and-releasing-the-device	Opening and releasing the device
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x14e60	308	fglrx_swap_ready	dwarf+symtab	82c0ce4fefe2		in	understood	docs/kernel-drm-functions.md#hyperpipe-teardown-swap-ready-compositor-access-and-buffer-queues	Hyperpipe teardown, swap-ready, compositor access and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x15054	8	firegl_hash_mutex	dwarf	a67fb3d4fe26		in	named-only	docs/kernel-drm-functions.md#aperture-pools-buffer-ioctls-and-device-set-up	Aperture pools, buffer ioctls and device set-up
@@ -47898,7 +47898,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x75e8	140	uzero	dwarf+
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7674	20	cerror	dwarf+symtab	0450a8508780		in	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7688	276	memset	dwarf+symtab	327dd5bf2d15		out:3	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x779c	60	blkclr	symtab	438bc6af403a	shared-address	out:3	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x779c	164	bzero	dwarf+symtab	62975b520d71	shared-address	out:3	named-only	docs/kernel-attach.md#board-bookkeeping-and-detach	Board bookkeeping and detach
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x779c	164	bzero	dwarf+symtab	62975b520d71	shared-address	out:3	named-only		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x77d8	104	bzero_pref	symtab	721fae2475d8		out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7840	8	bzero_end	symtab	78aa5094d5ec	shared-address	out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7840	8	bzerror	dwarf+symtab	78aa5094d5ec	shared-address	out:3	undocumented		
@@ -47936,7 +47936,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e00	36	ustore_half	d
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e24	8	fixade_error	dwarf+symtab	4429c69e8a79		out:1	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e2c	1184	memcpy	dwarf+symtab	a6e4b004a38a	shared-address	out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e2c	12	memmove	symtab	28a29cd9f9c9	shared-address	out:3	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e38	116	bcopy	symtab	7c904a821cc2	shared-address	in	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e38	116	bcopy	symtab	7c904a821cc2	shared-address	in	named-only		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7e38	116	ovbcopy	symtab	7c904a821cc2	shared-address	out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7eac	80	bcopy_pref1	symtab	c76e59900c0d		out:3	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x7efc	976	bcopy_pref2	symtab	355b16806386		out:3	undocumented		
@@ -48389,7 +48389,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	spl6	symtab	
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splgio0	symtab	d20175b8aee2	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splgio1	symtab	d20175b8aee2	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splgio2	symtab	d20175b8aee2	shared-address	out:4	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splhi	dwarf+symtab	d20175b8aee2	shared-address	in	named-only	docs/kernel-ioctl-irq-functions.md#vertical-sync-wait-and-engine-reset	Vertical-sync wait and engine reset
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splhi	dwarf+symtab	d20175b8aee2	shared-address	in	named-only		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splhi_relnet	symtab	d20175b8aee2	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splhintr	symtab	d20175b8aee2	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21dec	24	splimp	symtab	d20175b8aee2	shared-address	out:4	undocumented		
@@ -48405,7 +48405,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21e84	24	splprof	dwar
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21e9c	24	spl7	dwarf+symtab	16c7bb5d00be	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21e9c	24	splerr	symtab	16c7bb5d00be	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21eb4	32	splecc	dwarf+symtab	8a6f9bd0170c		out:4	undocumented		
-usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21ed4	28	splx	dwarf+symtab	50d1a155518b	shared-address	out:4	named-only	docs/kernel-ioctl-irq-functions.md#vertical-sync-wait-and-engine-reset	Vertical-sync wait and engine reset
+usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21ed4	28	splx	dwarf+symtab	50d1a155518b	shared-address	out:4	named-only		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21ed4	28	splxecc	symtab	50d1a155518b	shared-address	out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21ef0	32	isspl0	dwarf+symtab	9bdb1538e91c		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x21f10	8	delay_for_intr	dwarf+symtab	78aa5094d5ec		out:4	undocumented		
@@ -55716,7 +55716,7 @@ usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec68f20	136	getdisplaymod
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec68fa8	136	__GLarcfs	dynsym+mdebug	35157e679b6f	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec68fa8	136	arcfs	dynsym	35157e679b6f	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec69030	136	__GLpatch	dynsym+mdebug	a4f73acdb21f	shared-address	out:16	undocumented		
-usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec69030	136	patch	dynsym	a4f73acdb21f	shared-address	out:16	named-only	docs/binaries.md#board-tools	Board tools
+usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec69030	136	patch	dynsym	a4f73acdb21f	shared-address	out:16	named-only		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec690b8	64	__GLgl_glx_unlink	dynsym+mdebug	a14cfbe5b480	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec690b8	64	gl_glx_unlink	dynsym	a14cfbe5b480	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec690f8	136	__GLnurbssurface	dynsym+mdebug	89bf29f426bc	shared-address	out:16	undocumented		
@@ -55998,7 +55998,7 @@ usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec6d1e0	136	polf2i	dynsym
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec6d268	136	__GLdisplacepolygon	dynsym+mdebug	f396f28593e1	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec6d268	136	displacepolygon	dynsym	f396f28593e1	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec6d2f0	136	__GLmove	dynsym+mdebug	81eb489f4354	shared-address	out:16	undocumented		
-usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec6d2f0	136	move	dynsym	81eb489f4354	shared-address	out:16	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec6d2f0	136	move	dynsym	81eb489f4354	shared-address	out:16	named-only		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec6d378	136	__GLpmv2	dynsym+mdebug	458d76c969a0	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec6d378	136	pmv2	dynsym	458d76c969a0	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec6d400	64	__GLv2f	dynsym+mdebug	2efb12c15675	shared-address	out:16	undocumented		
@@ -56358,7 +56358,7 @@ usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec72250	136	zbuffer	dynsy
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec722d8	64	__GLt4d	dynsym+mdebug	34a0349dd353	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec722d8	64	t4d	dynsym	34a0349dd353	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec72318	136	__GLclear	dynsym+mdebug	ff3f47402b18	shared-address	out:16	undocumented		
-usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec72318	136	clear	dynsym	ff3f47402b18	shared-address	out:16	named-only	docs/kernel-drm-functions.md#file-lookup-drawable-removal-map-offsets-and-order-helpers	File lookup, drawable removal, map offsets and order helpers
+usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec72318	136	clear	dynsym	ff3f47402b18	shared-address	out:16	named-only		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec723a0	64	__GLt4f	dynsym+mdebug	3bfc51568d84	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec723a0	64	t4f	dynsym	3bfc51568d84	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER/libgl.so	board-library	o32		0xec723e0	136	__GLbgnqstrip	dynsym+mdebug	538c994184ab	shared-address	out:16	undocumented		
@@ -58072,7 +58072,7 @@ usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d140	444	__glFillMap
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d300	400	__glFillMap2d	dynsym	d4cedcef53c9		in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d4c0	96	__glEvalComputeK	dynsym	79a11b8254b8		in	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d520	12	__direct_glNewList	dynsym	b114468d8519	shared-address	out:17	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d520	12	glNewList	dynsym	b114468d8519	shared-address	out:17	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
+usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d520	12	glNewList	dynsym	b114468d8519	shared-address	out:17	named-only		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d52c	12	__direct_glEndList	dynsym	52740b0d9f0e	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d52c	12	glEndList	dynsym	52740b0d9f0e	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d538	12	__direct_glCallList	dynsym	1b0fb2e6dafb	shared-address	out:17	undocumented		
@@ -58086,7 +58086,7 @@ usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d55c	12	glGenLists	d
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d568	12	__direct_glListBase	dynsym	3c277e72178b	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d568	12	glListBase	dynsym	3c277e72178b	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d574	12	__direct_glBegin	dynsym	eecb5fd38d02	shared-address	out:17	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d574	12	glBegin	dynsym	eecb5fd38d02	shared-address	out:17	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
+usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d574	12	glBegin	dynsym	eecb5fd38d02	shared-address	out:17	named-only		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d580	12	__direct_glBitmap	dynsym	34c71de73842	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d580	12	glBitmap	dynsym	34c71de73842	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82d58c	12	__direct_glColor3b	dynsym	dc0dd845d51b	shared-address	out:17	undocumented		
@@ -59602,7 +59602,7 @@ usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82f320	12	glBindFragme
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82f32c	12	__direct_glDeleteFragmentShaderATI	dynsym	581361a46919	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82f32c	12	glDeleteFragmentShaderATI	dynsym	581361a46919	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82f338	12	__direct_glBeginFragmentShaderATI	dynsym	86069cfbba39	shared-address	out:17	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82f338	12	glBeginFragmentShaderATI	dynsym	86069cfbba39	shared-address	out:17	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
+usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82f338	12	glBeginFragmentShaderATI	dynsym	86069cfbba39	shared-address	out:17	named-only		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82f344	12	__direct_glEndFragmentShaderATI	dynsym	840e4f32698a	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82f344	12	glEndFragmentShaderATI	dynsym	840e4f32698a	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libGL.so	board-library	n32		0xd82f350	12	__direct_glPassTexCoordATI	dynsym	1952c6ec253b	shared-address	out:17	undocumented		
@@ -62443,7 +62443,7 @@ usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a768	180	getdisplaym
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a81c	180	__GLarcfs	dynsym	5a840efc4b95	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a81c	180	arcfs	dynsym	5a840efc4b95	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a8d0	180	__GLpatch	dynsym	9ab76b0e218a	shared-address	out:16	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a8d0	180	patch	dynsym	9ab76b0e218a	shared-address	out:16	named-only	docs/binaries.md#board-tools	Board tools
+usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a8d0	180	patch	dynsym	9ab76b0e218a	shared-address	out:16	named-only		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a984	68	__GLgl_glx_unlink	dynsym	1462e7a73928	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a984	68	gl_glx_unlink	dynsym	1462e7a73928	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6a9c8	180	__GLnurbssurface	dynsym	fc7efe3462c9	shared-address	out:16	undocumented		
@@ -62725,7 +62725,7 @@ usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6fddc	180	polf2i	dyns
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6fe90	180	__GLdisplacepolygon	dynsym	8a2328845925	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6fe90	180	displacepolygon	dynsym	8a2328845925	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6ff44	180	__GLmove	dynsym	819dd5896339	shared-address	out:16	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6ff44	180	move	dynsym	819dd5896339	shared-address	out:16	named-only	docs/binaries.md#vga-console-and-x86-emulator-archive	VGA console and x86 emulator archive
+usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6ff44	180	move	dynsym	819dd5896339	shared-address	out:16	named-only		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6fff8	180	__GLpmv2	dynsym	fee7b169f342	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec6fff8	180	pmv2	dynsym	fee7b169f342	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec700ac	68	__GLv2f	dynsym	50cc72f4ae32	shared-address	out:16	undocumented		
@@ -63085,7 +63085,7 @@ usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec764cc	180	zbuffer	dyn
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec76580	68	__GLt4d	dynsym	07d4f03cec06	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec76580	68	t4d	dynsym	07d4f03cec06	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec765c4	180	__GLclear	dynsym	0df4dedfb6f5	shared-address	out:16	undocumented		
-usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec765c4	180	clear	dynsym	0df4dedfb6f5	shared-address	out:16	named-only	docs/kernel-drm-functions.md#file-lookup-drawable-removal-map-offsets-and-order-helpers	File lookup, drawable removal, map offsets and order helpers
+usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec765c4	180	clear	dynsym	0df4dedfb6f5	shared-address	out:16	named-only		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec76678	68	__GLt4f	dynsym	50115054f7e4	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec76678	68	t4f	dynsym	50115054f7e4	shared-address	out:16	undocumented		
 usr/gfx/arch/IP35VOYAGER32/libgl.so	board-library	n32		0xec766bc	180	__GLbgnqstrip	dynsym	ec3020f004e1	shared-address	out:16	undocumented		
@@ -64482,7 +64482,7 @@ usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2167960	588	__glFillMap
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2167bb0	400	__glFillMap2d	dynsym	1f0ae7632606		in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2167d40	104	__glEvalComputeK	dynsym	5a53e0b164f6		in	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168004	12	__direct_glNewList	dynsym	5a307160ad9e	shared-address	out:17	undocumented		
-usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168004	12	glNewList	dynsym	5a307160ad9e	shared-address	out:17	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
+usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168004	12	glNewList	dynsym	5a307160ad9e	shared-address	out:17	named-only		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168010	12	__direct_glEndList	dynsym	2a894bcac02e	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168010	12	glEndList	dynsym	2a894bcac02e	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x216801c	12	__direct_glCallList	dynsym	ce59899ea131	shared-address	out:17	undocumented		
@@ -64496,7 +64496,7 @@ usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168040	12	glGenLists	d
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x216804c	12	__direct_glListBase	dynsym	a52067c90489	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x216804c	12	glListBase	dynsym	a52067c90489	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168058	12	__direct_glBegin	dynsym	9d3afbe63a6c	shared-address	out:17	undocumented		
-usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168058	12	glBegin	dynsym	9d3afbe63a6c	shared-address	out:17	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
+usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168058	12	glBegin	dynsym	9d3afbe63a6c	shared-address	out:17	named-only		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168064	12	__direct_glBitmap	dynsym	b6a231cf9d2a	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168064	12	glBitmap	dynsym	b6a231cf9d2a	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2168070	12	__direct_glColor3b	dynsym	e620894d22fa	shared-address	out:17	undocumented		
@@ -66012,7 +66012,7 @@ usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2169e04	12	glBindFragme
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2169e10	12	__direct_glDeleteFragmentShaderATI	dynsym	467bc0ccfb14	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2169e10	12	glDeleteFragmentShaderATI	dynsym	467bc0ccfb14	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2169e1c	12	__direct_glBeginFragmentShaderATI	dynsym	6738247136dd	shared-address	out:17	undocumented		
-usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2169e1c	12	glBeginFragmentShaderATI	dynsym	6738247136dd	shared-address	out:17	named-only	docs/binaries.md#opengl-libraries	OpenGL libraries
+usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2169e1c	12	glBeginFragmentShaderATI	dynsym	6738247136dd	shared-address	out:17	named-only		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2169e28	12	__direct_glEndFragmentShaderATI	dynsym	f7d26a6f6102	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2169e28	12	glEndFragmentShaderATI	dynsym	f7d26a6f6102	shared-address	out:17	undocumented		
 usr/gfx/arch/IP35VOYAGER64/libGL.so	board-library	n64		0x2169e34	12	__direct_glPassTexCoordATI	dynsym	d3faba5a0939	shared-address	out:17	undocumented		
