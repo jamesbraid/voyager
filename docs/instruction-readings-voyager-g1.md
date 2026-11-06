@@ -151,14 +151,14 @@ These entries record instruction facts rendered from the routines below. They de
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0x53e4-0x5430 (76 bytes).
   It occupies 76 bytes.
-  The `jalr` at 0x5418 calls printf with a0=sym(.rodata)+3408, a1=sym(.rodata)+6816, a2=sym(printf), a3=sym(printf).
+  The `jalr` at 0x5418 calls printf with a0=sym(.rodata)+3408, a1=sym(.rodata)+3408, a2=sym(printf), a3=sym(printf).
   The return at 0x5428 has v0 = -0x1.
 - `fglrx_usb_comp_readwrite_register` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x5430 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0x5430-0x5480 (80 bytes).
   It occupies 80 bytes.
-  The `jalr` at 0x5468 calls printf with a0=sym(.rodata)+3408, a1=sym(printf), a2=sym(.rodata)+6816, a3=sym(printf).
+  The `jalr` at 0x5468 calls printf with a0=sym(.rodata)+3408, a1=sym(printf), a2=sym(.rodata)+3408, a3=sym(printf).
   The return at 0x5478 has v0 = -0x1.
 - `fglrx_hp_get_topology` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x6e28 (n64).
   Evidence grade: inferred.
@@ -179,7 +179,7 @@ These entries record instruction facts rendered from the routines below. They de
   It occupies 172 bytes.
   The `ld` at 0x6ee4 loads 8 bytes from sym(.data) +0x248.
   The `lw` at 0x6efc loads 4 bytes from [sym(.data)+584]:8 +0x0.
-  The `jalr` at 0x6f60 calls printf with a0=sym(.rodata)+3408, a1=a0 at entry (arg0), a2=a1 at entry (arg1), a3=0x80, a4=sym(printf), a5=sym(.rodata)+6816, a6=a0 at entry (arg0).
+  The `jalr` at 0x6f60 calls printf with a0=sym(.rodata)+3408, a1=a0 at entry (arg0), a2=a1 at entry (arg1), a3=0x80, a4=sym(printf), a5=sym(.rodata)+3408, a6=a0 at entry (arg0).
   The `beq` branch at 0x6ef4 targets 0x6f70, is taken when v0(=[sym(.data)+584]:8) == 0, and falls through when v0(=[sym(.data)+584]:8) != 0.
   The `beq` branch at 0x6f04 targets 0x6f70, is taken when v1(=[[sym(.data)+584]:8]) == 0, and falls through when v1(=[[sym(.data)+584]:8]) != 0.
   The `bltz` branch at 0x6f0c targets 0x6f2c, is taken when a1 < 0 (signed), and falls through when a1 >= 0 (signed).
@@ -213,7 +213,7 @@ These entries record instruction facts rendered from the routines below. They de
   It occupies 128 bytes.
   The `lw` at 0x8fd8 loads 4 bytes from sym(.data) +0x260.
   The `sw` at 0x8ff0 stores 4 bytes to sym(.data) +0x260.
-  The `jalr` at 0x9030 calls cmn_err with a0=0x4, a1=sym(.rodata)+3408, a2=sym(cmn_err), a3=sym(.rodata)+6816.
+  The `jalr` at 0x9030 calls cmn_err with a0=0x4, a1=sym(.rodata)+3408, a2=sym(cmn_err), a3=sym(.rodata)+3408.
   The `beq` branch at 0x8fec targets 0x8ffc, is taken when at(=[sym(.data)+608]+1) == v0(=0x1), and falls through when at(=[sym(.data)+608]+1) != v0(=0x1).
   The `beq` branch at 0x9038 targets 0x8ff4 and is always taken.
   The return at 0x8ff4 has v0 = one of 0x1, ret(cmn_err).
@@ -358,7 +358,7 @@ These entries record instruction facts rendered from the routines below. They de
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0x9b74-0x9bc4 (80 bytes).
   It occupies 80 bytes.
-  The `jalr` at 0x9bac calls printf with a0=sym(__ke_LINUX_VERSION_CODE), a1=sym(printf), a2=sym(.rodata)+10928, a3=sym(printf).
+  The `jalr` at 0x9bac calls printf with a0=sym(__ke_LINUX_VERSION_CODE), a1=sym(printf), a2=sym(__ke_LINUX_VERSION_CODE), a3=sym(printf).
   The return at 0x9bbc has v0 = 0x0.
 - `__ke_get_pci_device_info` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9bc4 (n64).
   Evidence grade: inferred.
@@ -504,14 +504,14 @@ These entries record instruction facts rendered from the routines below. They de
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0x9e48-0x9ea0 (88 bytes).
   It occupies 88 bytes.
-  The `jalr` at 0x9e88 calls cmn_err with a0=0x4, a1=sym(__ke_LINUX_VERSION_CODE), a2=sym(__ke_LINUX_VERSION_CODE), a3=sym(cmn_err), a4=sym(.rodata)+10928, a5=sym(cmn_err).
+  The `jalr` at 0x9e88 calls cmn_err with a0=0x4, a1=sym(__ke_LINUX_VERSION_CODE), a2=sym(__ke_LINUX_VERSION_CODE), a3=sym(cmn_err), a4=sym(__ke_LINUX_VERSION_CODE), a5=sym(cmn_err).
   The return at 0x9e98 has v0 = 0x0.
 - `__ke_current_mm` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9ea0 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0x9ea0-0x9ef8 (88 bytes).
   It occupies 88 bytes.
-  The `jalr` at 0x9ee0 calls cmn_err with a0=0x4, a1=sym(__ke_LINUX_VERSION_CODE), a2=sym(__ke_LINUX_VERSION_CODE), a3=sym(cmn_err), a4=sym(.rodata)+10928, a5=sym(cmn_err).
+  The `jalr` at 0x9ee0 calls cmn_err with a0=0x4, a1=sym(__ke_LINUX_VERSION_CODE), a2=sym(__ke_LINUX_VERSION_CODE), a3=sym(cmn_err), a4=sym(__ke_LINUX_VERSION_CODE), a5=sym(cmn_err).
   The return at 0x9ef0 has v0 = 0x0.
 - `__ke_get_vm_phys_addr` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9ef8 (n64).
   Evidence grade: inferred.
@@ -557,7 +557,7 @@ These entries record instruction facts rendered from the routines below. They de
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0xa130-0xa180 (80 bytes).
   It occupies 80 bytes.
-  The `jalr` at 0xa168 calls printf with a0=sym(__ke_LINUX_VERSION_CODE), a1=sym(printf), a2=sym(.rodata)+10928, a3=sym(printf).
+  The `jalr` at 0xa168 calls printf with a0=sym(__ke_LINUX_VERSION_CODE), a1=sym(printf), a2=sym(__ke_LINUX_VERSION_CODE), a3=sym(printf).
   The return at 0xa178 has v0 = 0x0.
 - `__ke_config_mtrr` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa180 (n64).
   Evidence grade: inferred.
@@ -774,7 +774,7 @@ These entries record instruction facts rendered from the routines below. They de
   The `sd` at 0xa870 stores 8 bytes to a0 (arg0 at entry) +0x0.
   The `sw` at 0xa87c stores 4 bytes to a0 (arg0 at entry) +0x10.
   The `jalr` at 0xa834 calls sv_alloc with a0=0x0, a1=0x0, a2=[a0+8]:8, a3=a3 at entry (arg3).
-  The `jalr` at 0xa880 calls init_mutex with a0=a0+24, a1=0x0, a2=sym(.rodata)+6416, a3=-0x1, a4=sym(init_mutex), a5=sym(.rodata)+12832.
+  The `jalr` at 0xa880 calls init_mutex with a0=a0+24, a1=0x0, a2=sym(.rodata)+6416, a3=-0x1, a4=sym(init_mutex), a5=sym(.rodata)+6416.
   The return at 0xa890 has v0 = ret(init_mutex).
 - `sleep_on_queue` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa964 (n64).
   Evidence grade: inferred.
@@ -835,8 +835,8 @@ These entries record instruction facts rendered from the routines below. They de
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0xacac-0xad68 (188 bytes).
   It occupies 188 bytes.
-  The `jalr` at 0xad00 calls avl_init_tree with a0=sym(fglrx_irixMapLock), a1=sym(fglrx_QCL_zone), a2=sym(avl_init_tree), a3=sym(.data)+1568.
-  The `jalr` at 0xad54 calls avl_init_tree with a0=sym(fglrx_irixMapLock), a1=sym(fglrx_QCL_zone), a2=sym(avl_init_tree), a3=sym(.data)+1568.
+  The `jalr` at 0xad00 calls avl_init_tree with a0=sym(fglrx_irixMapLock), a1=sym(fglrx_QCL_zone), a2=sym(avl_init_tree), a3=sym(fglrx_QCL_zone).
+  The `jalr` at 0xad54 calls avl_init_tree with a0=sym(fglrx_irixMapLock), a1=sym(fglrx_QCL_zone), a2=sym(avl_init_tree), a3=sym(fglrx_QCL_zone).
   The return at 0xad60 has v0 = ret(avl_init_tree).
 - `fglrx_irix_kern_findmap` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xb624 (n64).
   Evidence grade: inferred.
@@ -893,7 +893,7 @@ These entries record instruction facts rendered from the routines below. They de
   It occupies 128 bytes.
   The `lw` at 0x14248 loads 4 bytes from sym(.data) +0x99c.
   The `sw` at 0x14260 stores 4 bytes to sym(.data) +0x99c.
-  The `jalr` at 0x142a0 calls cmn_err with a0=0x4, a1=sym(.rodata)+13048, a2=sym(cmn_err), a3=sym(.rodata)+26096.
+  The `jalr` at 0x142a0 calls cmn_err with a0=0x4, a1=sym(.rodata)+13048, a2=sym(cmn_err), a3=sym(.rodata)+13048.
   The `beq` branch at 0x1425c targets 0x1426c, is taken when at(=[sym(.data)+2460]+1) == v0(=0x1), and falls through when at(=[sym(.data)+2460]+1) != v0(=0x1).
   The `beq` branch at 0x142a8 targets 0x14264 and is always taken.
   The return at 0x14264 has v0 = one of 0x1, ret(cmn_err).
@@ -904,7 +904,7 @@ These entries record instruction facts rendered from the routines below. They de
   It occupies 128 bytes.
   The `lw` at 0x142c8 loads 4 bytes from sym(.data) +0x9a0.
   The `sw` at 0x142e0 stores 4 bytes to sym(.data) +0x9a0.
-  The `jalr` at 0x14320 calls cmn_err with a0=0x4, a1=sym(.rodata)+13048, a2=sym(cmn_err), a3=sym(.rodata)+26096.
+  The `jalr` at 0x14320 calls cmn_err with a0=0x4, a1=sym(.rodata)+13048, a2=sym(cmn_err), a3=sym(.rodata)+13048.
   The `beq` branch at 0x142dc targets 0x142ec, is taken when at(=[sym(.data)+2464]+1) == v0(=0x1), and falls through when at(=[sym(.data)+2464]+1) != v0(=0x1).
   The `beq` branch at 0x14328 targets 0x142e4 and is always taken.
   The return at 0x142e4 has v0 = one of 0x1, ret(cmn_err).
@@ -915,7 +915,7 @@ These entries record instruction facts rendered from the routines below. They de
   It occupies 128 bytes.
   The `lw` at 0x14348 loads 4 bytes from sym(.data) +0x9a4.
   The `sw` at 0x14360 stores 4 bytes to sym(.data) +0x9a4.
-  The `jalr` at 0x143a0 calls cmn_err with a0=0x4, a1=sym(.rodata)+13048, a2=sym(cmn_err), a3=sym(.rodata)+26096.
+  The `jalr` at 0x143a0 calls cmn_err with a0=0x4, a1=sym(.rodata)+13048, a2=sym(cmn_err), a3=sym(.rodata)+13048.
   The `beq` branch at 0x1435c targets 0x1436c, is taken when at(=[sym(.data)+2468]+1) == v0(=0x1), and falls through when at(=[sym(.data)+2468]+1) != v0(=0x1).
   The `beq` branch at 0x143a8 targets 0x14364 and is always taken.
   The return at 0x14364 has v0 = one of 0x1, ret(cmn_err).
@@ -946,7 +946,7 @@ These entries record instruction facts rendered from the routines below. They de
   It occupies 188 bytes.
   The `lw` at 0x174e4 loads 4 bytes from ret(__ke_get_file_priv) +0x1c.
   The `jalr` at 0x174ac calls __ke_get_file_priv with a0=a1 at entry (arg1), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3).
-  The `jalr` at 0x174f0 calls .text+90428 with a0=sym(.rodata)+15136, a1=[ret(__ke_get_file_priv)+28], a2=sym(.text)+90428, a3=[ret(__ke_get_file_priv)+28], a4=sym(.rodata)+30272.
+  The `jalr` at 0x174f0 calls .text+90428 with a0=sym(.rodata)+15136, a1=[ret(__ke_get_file_priv)+28], a2=sym(.text)+90428, a3=[ret(__ke_get_file_priv)+28], a4=sym(.rodata)+15136.
   The `jalr` at 0x17518 calls __ke_copy_to_user with a0=a3 at entry (arg3), a1=sp-32, a2=0x4, a3=sym(__ke_copy_to_user), a4=sym(__ke_copy_to_user).
   The `beq` branch at 0x17520 targets 0x17538, is taken when v0(=ret(__ke_copy_to_user)) == 0, and falls through when v0(=ret(__ke_copy_to_user)) != 0.
   The `beq` branch at 0x17538 targets 0x1752c and is always taken.
@@ -996,7 +996,7 @@ These entries record instruction facts rendered from the routines below. They de
   It occupies 172 bytes.
   2 such `ld` accesses load 8 bytes from a0 (arg0 at entry) +0x0, including `ld` at 0x1b0a0, `ld` at 0x1b0c4.
   The `lw` at 0x1b0bc loads 4 bytes from a0 (arg0 at entry) +0x18.
-  The `jalr` at 0x1b07c calls .text+108452 with a0=sym(.rodata)+20600, a1=a0 at entry (arg0), a2=sym(.text)+108452, a3=sym(.rodata)+20600, a4=sym(.rodata)+41200.
+  The `jalr` at 0x1b07c calls .text+108452 with a0=sym(.rodata)+20600, a1=a0 at entry (arg0), a2=sym(.text)+108452, a3=sym(.rodata)+20600, a4=sym(.rodata)+20600.
   The `jalr` at 0x1b09c calls __ke_down with a0=[a0]:8, a1=?, a2=?, a3=sym(__ke_down), a4=sym(__ke_down).
   The `jalr` at 0x1b0c0 calls __ke_up with a0=[a0]:8, a1=?, a2=?, a3=?, a4=sym(__ke_up), a5=sym(__ke_up).
   The return at 0x1b0d8 has v0 = [a0+24].
@@ -1012,7 +1012,7 @@ These entries record instruction facts rendered from the routines below. They de
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0x1eec0-0x1ef0c (76 bytes).
   It occupies 76 bytes.
-  The `jalr` at 0x1eef4 calls .text+126612 with a0=sym(.rodata)+26112, a1=sym(.rodata)+52224, a2=sym(.text)+126612, a3=sym(_firegl_alloc_ctx+960).
+  The `jalr` at 0x1eef4 calls .text+126612 with a0=sym(.rodata)+26112, a1=sym(.rodata)+26112, a2=sym(.text)+126612, a3=sym(.text)+126612.
   The return at 0x1ef04 has v0 = 0x0.
 - `firegl_irq_vsync` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x1f024 (n64).
   Evidence grade: inferred.
@@ -1046,7 +1046,7 @@ These entries record instruction facts rendered from the routines below. They de
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0x202d4-0x20344 (112 bytes).
   It occupies 112 bytes.
-  The `jalr` at 0x2030c calls .text+128900 with a0=sym(.rodata)+26400, a1=sym(.text)+128900, a2=sym(.rodata)+52800, a3=sym(firegl_noop+72).
+  The `jalr` at 0x2030c calls .text+128900 with a0=sym(.rodata)+26400, a1=sym(.text)+128900, a2=sym(.rodata)+26400, a3=sym(.text)+128900.
   The `jalr` at 0x2032c calls __ke_flush_cache with a0=?, a1=?, a2=sym(__ke_flush_cache), a3=sym(__ke_flush_cache).
   The return at 0x2033c has v0 = 0x0.
 - `firegl_set_cap_ipc_lock` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x20344 (n64).
@@ -1708,8 +1708,8 @@ These entries record instruction facts rendered from the routines below. They de
   Exact binary: `usr/cpu/sysgen/IP35boot/kernel.o`.
   Range: 0x10d94-0x10e14 (128 bytes).
   It occupies 128 bytes.
-  The `lwu` at 0x10dd4 loads 4 bytes from sym(.data) +0xdf0.
-  The `beq` branch at 0x10dc8 targets 0x10e0c, is taken when a1(=sym(pi_err_status_cmd+1728)) == a2(=sym(pi_err_status_cmd+1840)), and falls through when a1(=sym(pi_err_status_cmd+1728)) != a2(=sym(pi_err_status_cmd+1840)).
+  The `lwu` at 0x10dd4 loads 4 bytes from sym(.data) +0x6f8.
+  The `beq` branch at 0x10dc8 targets 0x10e0c, is taken when a1(=sym(.data)+1784) == a2(=sym(pi_err_status_cmd)), and falls through when a1(=sym(.data)+1784) != a2(=sym(pi_err_status_cmd)).
   The `beq` branch at 0x10ddc targets 0x10df4, is taken when a2(?) == 0, and falls through when a2(?) != 0.
   The `beq` branch at 0x10dec targets 0x10ddc and is always taken.
   The `beq` branch at 0x10e04 targets 0x10db0 and is always taken.
@@ -3599,7 +3599,7 @@ These entries record instruction facts rendered from the routines below. They de
   Range: 0x2d5f4-0x2d770 (380 bytes).
   It occupies 380 bytes.
   The `ld` at 0x2d5f8 loads 8 bytes from abs 0xffffffffffffc448.
-  Calls assfail via direct with a0=sym(diagval_map+1592), a1=sym(diagval_map+1618), a2=0x0, a3=a3 at entry (arg3) (`j` at 0x2d628).
+  Calls assfail via direct with a0=sym(.data)+9672, a1=sym(.data)+9685, a2=0x0, a3=a3 at entry (arg3) (`j` at 0x2d628).
   The instructions from 0x2d630 to 0x2d76c are not reached by any path from the entry, and their branches are not listed.
 - `_hook_exceptions` in `usr/cpu/sysgen/IP35boot/kernel.o` at 0x2db7c (n64).
   Evidence grade: inferred.
@@ -3694,7 +3694,7 @@ These entries record instruction facts rendered from the routines below. They de
   The `sw` at 0x37584 stores 4 bytes to a2 (arg2 at entry) +0x0.
   The `ld` at 0x3759c loads 8 bytes from a0 (arg0 at entry) +0x0.
   The `sd` at 0x375a4 stores 8 bytes to a2 (arg2 at entry) +0x0.
-  The `jal` at 0x375c8 calls cmn_err with a0=0x0, a1=sym(.data)+41056, a2=a2 at entry (arg2), a3=a3 at entry (arg3).
+  The `jal` at 0x375c8 calls cmn_err with a0=0x0, a1=sym(.data)+20528, a2=a2 at entry (arg2), a3=a3 at entry (arg3).
   The `beq` branch at 0x37518 targets 0x3752c, is taken when t2(=[-0x3fe0]:8) == 0, and falls through when t2(=[-0x3fe0]:8) != 0.
   The `beq` branch at 0x37524 targets 0x37530 and is always taken.
   The `bne` branch at 0x37534 targets 0x37550, is taken when a1 != at(=0x1), and falls through when a1 == at(=0x1).
@@ -3726,7 +3726,7 @@ These entries record instruction facts rendered from the routines below. They de
   The `ld` at 0x376b4 loads 8 bytes from a2 (arg2 at entry) +0x0.
   The `sd` at 0x376bc stores 8 bytes to a0 (arg0 at entry) +0x0.
   The `lw` at 0x376f8 loads 4 bytes from abs 0x9600000000000000.
-  The `jal` at 0x376e0 calls cmn_err with a0=0x0, a1=sym(.data)+41082, a2=a2 at entry (arg2), a3=a3 at entry (arg3).
+  The `jal` at 0x376e0 calls cmn_err with a0=0x0, a1=sym(.data)+20541, a2=a2 at entry (arg2), a3=a3 at entry (arg3).
   The `bne` branch at 0x37630 targets 0x37644, is taken when t2(=[-0x3fe0]:8) != 0, and falls through when t2(=[-0x3fe0]:8) == 0.
   The `beq` branch at 0x3763c targets 0x37648 and is always taken.
   The `bne` branch at 0x3764c targets 0x37668, is taken when a1 != at(=0x1), and falls through when a1 == at(=0x1).
@@ -3750,7 +3750,7 @@ These entries record instruction facts rendered from the routines below. They de
   The `lb` at 0x3777c loads 1 byte from a0 (arg0 at entry) +0x0.
   The `lh` at 0x37794 loads 2 bytes from a0 (arg0 at entry) +0x0.
   The `lw` at 0x377ac loads 4 bytes from a0 (arg0 at entry) +0x0.
-  The `jal` at 0x377d0 calls cmn_err with a0=0x0, a1=sym(.data)+41110, a2=a2 at entry (arg2), a3=a3 at entry (arg3).
+  The `jal` at 0x377d0 calls cmn_err with a0=0x0, a1=sym(.data)+20555, a2=a2 at entry (arg2), a3=a3 at entry (arg3).
   The `bne` branch at 0x37774 targets 0x37788, is taken when a1 != at(=0x1), and falls through when a1 == at(=0x1).
   The `beq` branch at 0x37780 targets 0x377d8 and is always taken.
   The `bne` branch at 0x3778c targets 0x377a0, is taken when a1 != at(=0x2), and falls through when a1 == at(=0x2).
