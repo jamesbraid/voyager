@@ -49049,7 +49049,7 @@ usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x439fc	8	btool_getinfo
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x43a04	8	btool_reinit	dwarf+symtab	78aa5094d5ec		out:7	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x43a10	28	other_prda	dwarf+symtab	37061ed32ce9		out:4	undocumented		
 usr/cpu/sysgen/IP35boot/kernel.o	shared-kernel	n64	.text	0x43a2c	68	otherprda	dwarf+symtab	b5834940448c		out:4	undocumented		
-usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x0	1188	pcibr_try_set_device	dwarf	359ecbd2f483		in	undocumented		
+usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x0	1188	pcibr_try_set_device	dwarf	359ecbd2f483		in	located	docs/instruction-readings-voyager-g3.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x4a4	176	pcibr_release_device	dwarf+symtab	b37b0f9951ec		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x554	28	pcibr_device_write_gather_flush	dwarf	a86de4a9d7a4		in	located	docs/kernel-bus-objects.md#single-call-forwards-in-the-bus-and-kernel-objects	Single-call forwards in the bus and kernel objects
 usr/cpu/sysgen/IP35boot/pcibr.o	shared-kernel	n64	.text	0x570	52	pcibr_open	dwarf+symtab	35d319e54c3b		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts

@@ -1,7 +1,7 @@
 table	rows	out_of_scope	understood	understood_with_open	understood_distinct	templated	located	named_only	undocumented	no_software_dependency	pct_understood	pct_located_or_better	pct_mentioned	pct_done	unresolved_sites	truncated	audited_real_pct	audited_sample	audited_date	computes	reused	multi_unit	shared_address	input
 binaries	84	0	83	0	81	0	0	0	1	0	98.8	98.8	98.8	98.8							0			
-functions	28840	38510	934	29	904	27247	27411	12	483	0	3.2	98.3	98.3	3.2			100.0	1	2026-11-02		0	503	17	
-functions (distinct names)	12895	17321	782	29	777	11658	11658	12	443	0	6.1	96.5	96.6	6.1							0			
+functions	28840	38510	934	29	904	27248	27412	12	482	0	3.2	98.3	98.3	3.2			100.0	1	2026-11-02		0	503	17	
+functions (distinct names)	12895	17321	782	29	777	11659	11659	12	442	0	6.1	96.5	96.6	6.1							0			
 mmio	201	0	145	1	142	0	56	0	0	0	72.1	100.0	100.0	72.1	37		86.7	15	2026-11-02		0			
 tokens	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
 ioctls	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0			
@@ -30,7 +30,7 @@ functions in usr/cpu/sysgen/IP35boot/fglrx.o	384	0	236	14	234	146	148	0	0	0	61.5
 functions in usr/cpu/sysgen/IP35boot/hubspc.o	13	0	13	2	13	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	
 functions in usr/cpu/sysgen/IP35boot/is1.o	54	0	54	1	54	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	
 functions in usr/cpu/sysgen/IP35boot/kernel.o	161	1157	3	0	3	158	158	0	0	0	1.9	100.0	100.0	1.9							0	0	7	
-functions in usr/cpu/sysgen/IP35boot/pcibr.o	160	105	1	0	1	158	158	0	1	0	0.6	99.4	99.4	0.6							0	0	0	
+functions in usr/cpu/sysgen/IP35boot/pcibr.o	160	105	1	0	1	159	159	0	0	0	0.6	100.0	100.0	0.6							0	0	0	
 functions in usr/cpu/sysgen/IP35boot/pciio.o	108	0	2	0	2	106	106	0	0	0	1.9	100.0	100.0	1.9							0	0	0	
 functions in usr/cpu/sysgen/IP35boot/pciio_ppb.o	18	0	2	0	1	16	16	0	0	0	11.1	100.0	100.0	11.1							0	0	0	
 functions in usr/cpu/sysgen/IP35boot/pciiox.o	2	0	2	0	2	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	
