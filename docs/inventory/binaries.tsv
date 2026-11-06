@@ -8,7 +8,7 @@ usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	x-shared	shared-x-server	shared-objec
 usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	x-shared	shared-x-server	shared-object	n64	82088	a4550d9a8cfb30f2		112	dynsym+dwarf	0	0	understood	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/fglrx_dri.so	x-module	board-x-module	shared-object	n32	12888480	f455f9d53d95b6e4		12854	dynsym+dwarf	0	0	understood	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	x-module	board-x-module	shared-object	n64	14223320	f3342b4598e52433		12854	dynsym+dwarf	0	0	understood	docs/binaries.md#x-server-and-its-modules	X server and its modules
-usr/X11R6/lib/modules/drivers/fglrx_drv.so	x-module	board-x-module	shared-object	n32	700708	4f9aef0ff9030121		623	dynsym (dwarf addresses stale, dropped)	1378	37	understood	docs/binaries.md#x-server-and-its-modules	X server and its modules
+usr/X11R6/lib/modules/drivers/fglrx_drv.so	x-module	board-x-module	shared-object	n32	700708	4f9aef0ff9030121		623	dynsym+dwarf	1395	37	understood	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	x-module	board-x-module	shared-object	n32	12841224	8cf774b6991de91a		12813	dynsym+dwarf	0	0	understood	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/extensions/libGLcore.so	x-shared	shared-x-server	shared-object	n32	2002584	ac2ece4de5c4f213		3303	dynsym+dwarf	0	0	understood	docs/binaries.md#x-server-and-its-modules	X server and its modules
 usr/X11R6/lib/modules/extensions/libdri.so	x-shared	shared-x-server	shared-object	n32	78616	7f4d3fb3f01906c1		101	dynsym+dwarf	0	0	understood	docs/binaries.md#x-server-and-its-modules	X server and its modules
@@ -68,10 +68,10 @@ usr/gfx/VOYAGER/bin/vpm	tools	board-tool	executable	n32	37740	ba0a41031ce56458		
 usr/gfx/arch/IP35VOYAGER/libGL.so	libraries	board-library	shared-object	o32	486628	40a08151e3b4a9a6		671	dynsym+mdebug	0	0	understood	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/gfx/arch/IP35VOYAGER/libGLcore.so	libraries	board-library	shared-object	o32	155892	99a04b88798ec64e		504	dynsym	0	0	understood	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/gfx/arch/IP35VOYAGER/libgl.so	libraries	board-library	shared-object	o32	1749044	7c571b4b34f3b1a3		3812	dynsym+mdebug	0	0	understood	docs/binaries.md#opengl-libraries	OpenGL libraries
-usr/gfx/arch/IP35VOYAGER32/libGL.so	libraries	board-library	shared-object	n32	858416	ec241dfd201cb205		2596	dynsym (dwarf addresses stale, dropped)	0	0	understood	docs/binaries.md#opengl-libraries	OpenGL libraries
+usr/gfx/arch/IP35VOYAGER32/libGL.so	libraries	board-library	shared-object	n32	858416	ec241dfd201cb205		2596	dynsym+dwarf	0	0	understood	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/gfx/arch/IP35VOYAGER32/libGLcore.so	libraries	board-library	shared-object	n32	18404	63784449df7d848f		1	dynsym	0	0	understood	docs/binaries.md#opengl-libraries	OpenGL libraries
-usr/gfx/arch/IP35VOYAGER32/libgl.so	libraries	board-library	shared-object	n32	1855224	f565939da8984f63		3813	dynsym (dwarf addresses stale, dropped)	0	0	understood	docs/binaries.md#opengl-libraries	OpenGL libraries
-usr/gfx/arch/IP35VOYAGER64/libGL.so	libraries	board-library	shared-object	n64	977112	7bda7352eb4f7a08		2596	dynsym (dwarf addresses stale, dropped)	0	0	understood	docs/binaries.md#opengl-libraries	OpenGL libraries
+usr/gfx/arch/IP35VOYAGER32/libgl.so	libraries	board-library	shared-object	n32	1855224	f565939da8984f63		3813	dynsym+dwarf	0	0	understood	docs/binaries.md#opengl-libraries	OpenGL libraries
+usr/gfx/arch/IP35VOYAGER64/libGL.so	libraries	board-library	shared-object	n64	977112	7bda7352eb4f7a08		2596	dynsym+dwarf	0	0	understood	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/gfx/arch/IP35VOYAGER64/libGLcore.so	libraries	board-library	shared-object	n64	19096	1a3be8b6fa285037		1	dynsym	0	0	understood	docs/binaries.md#opengl-libraries	OpenGL libraries
 usr/gfx/gfxtopology	tools	board-tool	data	-	6294	3ece1eb9e90ac3e6		0		0	0	understood	docs/binaries.md#board-tools	Board tools
 usr/gfx/sgcombine	tools	board-tool	executable	n32	230584	77d0273d5f4e91ec		402	dynsym	0	0	understood	docs/binaries.md#board-tools	Board tools
