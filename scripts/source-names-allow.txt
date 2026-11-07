@@ -19,3 +19,6 @@ radeon_reg.h	name in published Linux or OpenBSD source
 report.c	name in published Linux or OpenBSD source
 uapi/video/uvesafb.h	name in published Linux source
 uvesafb.h	name in published Linux or OpenBSD source
+Pci22.h	name in published EDK II source (MdePkg/Include/IndustryStandard)
+radeon_driver.c	name in published X.Org xf86-video-ati source
+theatre_reg.h	name in published X.Org xf86-video-ati source

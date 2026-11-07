@@ -38,7 +38,7 @@ The PCI bus clock and width the cards run at are neither read nor set by `fglrx.
   - replaces bits 7:0 with the low byte of the credit count (`andi` 0xff);
   - stores the doubleword back (the `sd` at 0x22dec, in the delay slot of the `jr ra` at 0x22de8). The routine returns nothing it computed.
   Both attach paths call it as (node, widget, 3, 2), so each sets bit 42 and puts 3 in bits 7:0 of that widget's entry.
-- **established** as a match of behaviour, **inferred** for the field names on this hub. The routine there is the same register in the binary.
+- What the register's fields are is **unknown** from the binary alone. The routine reads the bit positions above from its masks, and the symbol names `force_fire_and_forget` and `ignore_conveyor_override` suggest that bit 42 and the mode word select a fire-and-forget PIO mode, but no field name, width or meaning of the credit count is established here. The read that would settle it is a published hub register reference, or the other readers and writers of the same register in `kernel.o`.
 
 ## fglrx_attach in order
 
