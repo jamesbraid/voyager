@@ -975,7 +975,7 @@ r300 headers and the xf86-video-ati 6.14.6 `radeon_reg.h` were searched for the 
   `lw t3,8236(s0)` loads from the driver record at 0x40b2b4. The store sits in the delay slot of the branch at
   0x40b2b8 (`beq s2,s7`, which compares the routine's sixth and third arguments: `move s2,a5` at 0x40b0c4, `move s7,a2`
   at 0x40b0b8), so it runs whether or not the branch is taken. s1 is the aperture pointer that 0x40b0b4 loads from +48
-  of the driver record. The name `extSECAM_K` at 0x1700 in `theatre_reg.h` belongs to the
+  of the driver record. The name `extSECAM_K` at 0x1700 in the Radeon driver stack header 6 belongs to the
   video-input register set, not this aperture, so it is not a match. Unknown: the role is not read.
 - **0x26ac** in `fglrx_drv.so`: no public name. `FGLInitCP` at 0x42c4c0 (720 bytes) reads the word at 0x42c640,
   ORs 0x110 into it (bits 8 and 4) and writes it back at 0x42c648, then runs a sync. The access is reached when

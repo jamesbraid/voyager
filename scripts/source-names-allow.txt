@@ -1,0 +1,21 @@
+# Source-file names and request names the reference docs may carry: each one is a name that a published source holds,
+# a file shipped in the installed system, or a file in this workspace. Anything else is described in words.
+# NAME<TAB>REASON; checked by retools/scripts/check-leaks.py.
+bridge.h	name in published Linux or OpenBSD source
+drivers/gpu/drm/radeon/radeon_combios.c	name in published Linux source
+drivers/gpu/drm/radeon/radeon_reg.h	name in published Linux source
+drm_pciids.h	name in published Linux or OpenBSD source
+ioerror.h	name in published Linux or OpenBSD source
+libglcore/asm/ODYSSEY/x.s	path to a file in this workspace
+pciio.h	name in published Linux or OpenBSD source
+pic.h	name in published Linux or OpenBSD source
+r100d.h	name in published Linux or OpenBSD source
+r300_reg.h	name in published Linux or OpenBSD source
+r300d.h	name in published Linux or OpenBSD source
+radeon_bios.c	name in published Linux or OpenBSD source
+radeon_combios.c	name in published Linux or OpenBSD source
+radeon_drv.h	name in published Linux or OpenBSD source
+radeon_reg.h	name in published Linux or OpenBSD source
+report.c	name in published Linux or OpenBSD source
+uapi/video/uvesafb.h	name in published Linux source
+uvesafb.h	name in published Linux or OpenBSD source

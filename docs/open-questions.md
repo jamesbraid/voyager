@@ -16,7 +16,7 @@ Checks made while triaging, against the files in this clone:
 
 - A string search of every file in `root/` finds `find_vga_pipe` only in `fglrx.o`, `vga.a` and `vga_init.o`, which call it. The definition is in an object the install set does not extract.
 - Linux 2.6.30 `radeon_drv.h` names bits 0, 9, 19, 25 and 26 of `GEN_INT_CNTL` and `GEN_INT_STATUS`, and neither bit 2 nor bit 6. The current Linux `r100d.h` does name them, as the first and second CRTC's vertical-sync bits, so the interrupt entry's "Linux names neither bit" held only for the older header and is corrected below.
-- `radeon_microcode.h` in the same tree carries `R300_cp_microcode` and `R200_cp_microcode`, a public copy the microcode entry can compare against.
+- the Radeon driver header 1 in the same tree carries `R300_cp_microcode` and `R200_cp_microcode`, a public copy the microcode entry can compare against.
 - The symbols the routes name (`hub_setup_prb`, `FGLInitCP`, `firegl_cp_init`, `_r6x_resetPM4`, `__fglQSQuietDown`, `R200AdjustFrame`, `FIREGL_ShowOverlay`, `firegl_addmap`) occur in the objects the entries assign them to.
 
 ### Software-now, in order

@@ -1,7 +1,7 @@
 label	routine	address	kind	callee	level	format	other_strings	category	guard	condition	grade
 fglrx.o	fglrx_unreg	0x734	direct	cmn_err	4	fglrx: fglrx_unreg - driver still in use by %d boards\n	%d=?	other	taken branch `bnez a2` at 0x6b0	not yet read	unread
 fglrx.o	fglrx_unload	0x8a8	direct	cmn_err	4	fglrx: fglrx_unload - fglrx_inuse ! - no unload!\n		other	taken branch `bnez at` at 0x764	not yet read	unread
-fglrx.o	sub_8b8	0x954	direct	assfail	file ../graphics/FGLRX/fglrx/kernel/fglrx_init.c line 452	bdata != NULL		assert	taken branch `beqz v0` at 0x8e8	not yet read	unread
+fglrx.o	sub_8b8	0x954	direct	assfail	file the fglrx driver initialization source unit line 452	bdata != NULL		assert	taken branch `beqz v0` at 0x8e8	not yet read	unread
 fglrx.o	fglrx_attach	0x1b80	direct	cmn_err	5	fglrx%d:  ROM present - but sig NOT VALID 	%d=?	rom	taken branch from 2 places (first at 0x1384)	Reached on the branch-taken path of the compare at 0x1384 (`bne a4,a5`) or 0x138c (`bne a6,a3`). What the compared values hold was not traced.	partial
 fglrx.o	fglrx_attach	0x1ba8	direct	cmn_err	6	  ... IS endian swapped...\n		attach	fall-through of `bne a6,a7`	not yet read	unread
 fglrx.o	fglrx_attach	0x1bbc	direct	cmn_err	5	(format not recovered)		attach	taken branch `beqz ra` at 0x184c	not yet read	unread
@@ -23,14 +23,14 @@ fglrx.o	fglrx_attach	0x1e50	direct	cmn_err	4	FGLRX: Failed to connect to hardwar
 fglrx.o	fglrx_attach	0x1e98	direct	cmn_err	4	fglrx%d: cannot map mem(0) space\n	%d=?	attach	taken branch `beqz v0` at 0x1998	not yet read	unread
 fglrx.o	fglrx_attach	0x1ee0	direct	cmn_err	4	fglrx%d: cannot map mem(2) space\n	%d=?	attach	taken branch `beqz v0` at 0x19d8	not yet read	unread
 fglrx.o	fglrx_detach	0x22e0	direct	cmn_err	4	%s: can't traverse to 'fglrx'\n	%s='fglrx_detach'	attach	taken branch `bnez v0` at 0x1fa4	not yet read	unread
-fglrx.o	fglrx_detach	0x2314	direct	assfail	file ../graphics/FGLRX/fglrx/kernel/fglrx_init.c line 1244	fglrx_boards[brd] == bdata		assert	taken branch `bne a4,v0` at 0x2000	not yet read	unread
+fglrx.o	fglrx_detach	0x2314	direct	assfail	file the fglrx driver initialization source unit line 1244	fglrx_boards[brd] == bdata		assert	taken branch `bne a4,v0` at 0x2000	not yet read	unread
 fglrx.o	sub_2324	0x2470	direct	cmn_err	0	fglrx: checkBoardPointers(fglrx_boards) failed\n		other	taken branch `beqz v0` at 0x23a4	not yet read	unread
-fglrx.o	sub_2324	0x24b8	direct	assfail	file ../graphics/FGLRX/fglrx/kernel/fglrx_init.c line 1338	fglrx_binuse == NULL		assert	taken branch `bnez a4` at 0x23d4	not yet read	unread
+fglrx.o	sub_2324	0x24b8	direct	assfail	file the fglrx driver initialization source unit line 1338	fglrx_binuse == NULL		assert	taken branch `bnez a4` at 0x23d4	not yet read	unread
 fglrx.o	sub_2324	0x24fc	direct	cmn_err	0	fglrx: checkBoardPointers(fglrx_binuse) failed\n		other	taken branch `beqz v0` at 0x2404	not yet read	unread
-fglrx.o	sub_25cc	0x26c0	direct	assfail	file ../graphics/FGLRX/fglrx/kernel/fglrx_init.c line 1403	fglrx_boards		assert	taken branch `beqz at` at 0x2608	not yet read	unread
-fglrx.o	sub_25cc	0x2708	direct	assfail	file ../graphics/FGLRX/fglrx/kernel/fglrx_init.c line 1404	fglrx_binuse		assert	taken branch `beqz t8` at 0x2614	not yet read	unread
-fglrx.o	sub_25cc	0x2750	direct	assfail	file ../graphics/FGLRX/fglrx/kernel/fglrx_init.c line 1409	bdata != NULL		assert	taken branch `beqz v0` at 0x2658	not yet read	unread
-fglrx.o	sub_2760	0x28b8	direct	assfail	file ../graphics/FGLRX/fglrx/kernel/fglrx_init.c line 1426	brd < (GfxBoardLimit + 1)		assert	taken branch `bnez at` at 0x27b8	not yet read	unread
+fglrx.o	sub_25cc	0x26c0	direct	assfail	file the fglrx driver initialization source unit line 1403	fglrx_boards		assert	taken branch `beqz at` at 0x2608	not yet read	unread
+fglrx.o	sub_25cc	0x2708	direct	assfail	file the fglrx driver initialization source unit line 1404	fglrx_binuse		assert	taken branch `beqz t8` at 0x2614	not yet read	unread
+fglrx.o	sub_25cc	0x2750	direct	assfail	file the fglrx driver initialization source unit line 1409	bdata != NULL		assert	taken branch `beqz v0` at 0x2658	not yet read	unread
+fglrx.o	sub_2760	0x28b8	direct	assfail	file the fglrx driver initialization source unit line 1426	brd < (GfxBoardLimit + 1)		assert	taken branch `bnez at` at 0x27b8	not yet read	unread
 fglrx.o	fglrx_open	0x2c44	direct	cmn_err	4	%s: NO exclusive opens supported!\n	%s='fglrx_open'	other	taken branch `bnez at` at 0x2970	not yet read	unread
 fglrx.o	fglrx_open	0x2cb0	direct	cmn_err	4	%s[%d] hw-graph opens are not supported\n	%s='fglrx'; %d=?	other	straight-line from the previous instruction	not yet read	unread
 fglrx.o	fglrx_open	0x2cf4	direct	cmn_err	4	fglrx: illegal open for minor: 0x%x\n	%x=?	other	taken branch `beqz a1` at 0x29b4	not yet read	unread
@@ -47,7 +47,7 @@ fglrx.o	fglrx_map	0x43fc	direct	cmn_err	4	fglrx%d: unsupported HWGRAPH fglrx_map
 fglrx.o	fglrx_map	0x4444	direct	cmn_err	4	fglrx_map: illegal bdata - minor: 0x%x\n	%x=?	other	taken branch `beqz a0` at 0x4110	not yet read	unread
 fglrx.o	fglrx_error_handler	0x4590	direct	cmn_err	4	Handled interrupt io error\n		interrupt	taken branch `bnez a6` at 0x451c	not yet read	unread
 fglrx.o	fglrx_exit	0x47e0	direct	cmn_err	4	Forcing Exit on pipe %s\n	%s=?	other	taken branch `beq s5,v0` at 0x4734	not yet read	unread
-fglrx.o	FGLRXINPLL	0x4aec	direct	assfail	file ../graphics/FGLRX/fglrx/kernel/fglrx_init.c line 2641	bdata->reg_addr		assert	taken branch `beqz at` at 0x4a44	not yet read	unread
+fglrx.o	FGLRXINPLL	0x4aec	direct	assfail	file the fglrx driver initialization source unit line 2641	bdata->reg_addr		assert	taken branch `beqz at` at 0x4a44	not yet read	unread
 fglrx.o	pci_find_device	0x4bf8	direct	cmn_err	1	%s: called with from=NULL !\n	%s='pci_find_device'	other	taken branch `beqz a2` at 0x4b88	not yet read	unread
 fglrx.o	pci_find_device	0x4c70	direct	debug		ring		trace	straight-line from the previous instruction	not yet read	unread
 fglrx.o	pci_find_subsys	0x4d14	direct	cmn_err	1	%s: called with from=NULL !\n	%s='pci_find_subsys'	other	taken branch `beqz a4` at 0x4c8c	not yet read	unread

@@ -4,7 +4,7 @@ Three kernel objects under `usr/cpu/sysgen/IP35boot/` sit between the host and t
 
 Each of the three is an unstripped 64-bit big-endian MIPS relocatable file. Addresses are `.text` offsets inside the object. Calls to other objects show as unresolved relocations in the disassembly, so callees below are named from the relocation entries, and `.srdata` words (reached with `$gp` minus 30720 and up) are named from their `.rel.srdata` relocations.
 
-That tree predates this board. Each entry says what the shipped body does and relocations alone.
+Each entry says what the shipped body does, read from its disassembly and relocations alone.
 
 ## Crossbar switch records (`xswitch.o`)
 
@@ -15,7 +15,6 @@ An xswitch record is a 152-byte heap block that hangs off a crossbar vertex as i
   It calls `hwgraph_fastinfo_get` on its argument and, when the result is not null, compares the doubleword at record +0 with the doubleword at `.srdata`+0 (a relocation to `.data`+0, the string "xswitch_info"); it compares pointers, not text.
   On a mismatch it calls `cmn_err` with level 0 (the highest severity), the message at `.rodata`+0 ("%v xswitch_info_get bad fingerprint", reached through `.srdata`+8) and the vertex argument it saved at sp+0.
   If `cmn_err` ever returns, the routine still returns the record pointer; a null result from `hwgraph_fastinfo_get` returns 0 without any check.
-
 - `xswitch_info_vhdl_set` (`xswitch.o`, address 0x54, 28 bytes): **established.**
   Records the vertex handle of a widget in a port slot: when the port in a1 is below 16 (signed compare, `slti`) it stores the word in a2 at record +12 plus four times the port, and otherwise does nothing.
   There is no lower bound test, so a negative port would store below +12.
@@ -24,7 +23,6 @@ An xswitch record is a 152-byte heap block that hangs off a crossbar vertex as i
   Reads back the widget vertex for a port.
   A null record in a0 sends it to a `cmn_err` call (level 0, the message at `.rodata`+0x28, "xswitch_info_vhdl_get: null xswitch_info") and then back into the normal path with a0 and the port reloaded from sp+0 and sp+8.
   A port below 16 (signed) returns the word at record +12 plus four times the port; any other port returns -1.
-
 - `xswitch_info_master_assignment_set` (`xswitch.o`, address 0xd0, 28 bytes): **established.**
   The same guarded store as the widget setter aimed at the second table: for a port below 16 it writes the word in a2 at record +76 plus four times the port, and a larger port returns with nothing written.
   It is the writer of the sixteen master handles that `xswitch_info_new` fills with -1.
@@ -41,7 +39,6 @@ An xswitch record is a 152-byte heap block that hangs off a crossbar vertex as i
   Otherwise it calls `kmem_alloc` with size 152 and flag 0 and does not test the result, stores a zero word at +8, then runs a loop of 16 passes with the port number masked to a byte (`andi 0xff`): `xswitch_info_vhdl_set` with -1 first, then `xswitch_info_master_assignment_set` with -1.
   After the loop it calls `xswitch_info_set` with the original vertex and the new record and returns the record.
   Neither the fingerprint (written by `xswitch_info_set`) nor the provider pointer at +144 is written here, so +144 keeps whatever `kmem_alloc` returned until `xswitch_provider_register` runs.
-
 - `xswitch_provider_register` (`xswitch.o`, address 0x1c4, 40 bytes): **established.**
   Attaches a switch driver's function table to a crossbar vertex.
   It calls `xswitch_info_get` on a0, keeping a1 in s8 across the call, and stores a1 as the doubleword at the record's +144.
@@ -74,7 +71,6 @@ An xswitch record is a 152-byte heap block that hangs off a crossbar vertex as i
   Pushes a new PROM record on the front of the list.
   It calls `kmem_alloc` for 16 bytes with flag 0, stores a1 (the PROM device) at +0 and a0 (the node) at +4, takes `cpuprom_spinlock` with `mutex_spinlock`, copies the old list head into +8, and in the delay slot of the `mutex_spinunlock` call stores the new record as the head.
   The allocation is not tested for failure.
-
 - `prominfo_del` (`hubspc.o`, address 0x64, 120 bytes): **established.**
   Unlinks the record whose PROM device equals its argument.
   It holds `cpuprom_spinlock`, walks from the head keeping the address of the previous link, and on a match overwrites that link with the record's +8 pointer before calling `mutex_spinunlock`.
@@ -88,14 +84,12 @@ An xswitch record is a 152-byte heap block that hangs off a crossbar vertex as i
   Attaches a version record to the PROM vertex in a0.
   It calls `hubdev_cnodeid_get` on the node (a1), truncates the result to 16 bits, calls `klhwg_invent_alloc` with that node number, class 21 and size 32, and fills the new record without checking it: a byte 1 at +4, a word 2 at +20, at +12 the word read from address 0x90000000180000a4 and at +16 the word read from 0x90000000180000a0.
   It then calls `hwgraph_info_add_LBL` with the vertex, the label at `.rodata`+0 ("_detail_invent") and the record, and `hwgraph_info_export_LBL` with the same label and size 32.
-
-
+  What the two words read from 0x90000000180000a4 and 0x90000000180000a0 are: unknown. Nothing in this object names them. The next read is the IP35 PROM image's use of the boot window at 0x9000000018000000.
 - `cpuprom_attach` (`hubspc.o`, address 0x1d0, 192 bytes): **established.**
   Creates the PROM device of a node (a0) and records it.
   It calls `hubdev_cnodeid_get`, then `hwgraph_char_device_add` with the node, the edge name "prom" (`.rodata`+0x10), the driver prefix "hubspc_" (`.rodata`+0x18) and a stack address (sp plus 0) to receive the vertex.
   It reads a halfword from the `compact_to_nasid_node` array at twice the node number and then the doubleword at 0x9000000034000000 plus the NASID shifted left 33; if bits 15:12 of that doubleword equal 0xc it skips the inventory calls, otherwise it calls `device_inventory_add` (class 21, type 2, three zero arguments) and `cpuprom_detailed_inventory_info_add`.
   It then calls `device_info_set` with the vertex and 1 (the PROM sub-type), calls `prominfo_add` with the node and vertex, and returns 0.
-
   What the doubleword at offset 0x34000000 of the node's address space is: unknown. The next read is the IP35 PROM image's use of the same address.
 - `cpuprom_map` (`hubspc.o`, address 0x290, 188 bytes): **established.**
   Maps a node's PROM space into a process and then tunes the PROM bus timing.
@@ -103,15 +97,13 @@ An xswitch record is a 152-byte heap block that hangs off a crossbar vertex as i
   Otherwise it calls `hubdev_prombase_get` for the node's PROM base and `hubdev_cnodeid_get`, then `v_mapphys` with the caller's mapping handle, the base plus the offset argument, and the length clamped to 0x08000000.
   A nonzero `v_mapphys` result is returned as is.
   On success it reads the doubleword at 0x9200000001fa0008 plus the NASID shifted left 33, replaces its low 16 bits with 0x1010 and writes it back, then returns 0.
-
-  What the register at node offset 0x01fa0008 is: unknown.
+  What the register at node offset 0x01fa0008 is: unknown. The next read is the IP35 PROM image's use of the same address.
 - `cpuprom_unmap` (`hubspc.o`, address 0x34c, 8 bytes): **established.**
   Does nothing: it returns 0 in the delay slot of `jr ra` and touches no argument or memory, so unmapping a PROM mapping needs no undo work.
   `hubspc_unmap` calls it for sub-type 1.
 - `hubspc_init` (`hubspc.o`, address 0x354, 60 bytes): **established.**
   Registers the object's attach routines with the hub manager and starts the PROM list lock.
   It calls `hubdev_register` three times, with `mem_refcnt_attach`, the local `cpuprom_attach` and `l1_attach`, loading each argument in the delay slot of the previous call, and then `spinlock_init` on `cpuprom_spinlock` with the name at `.rodata`+0x20 ("promlist").
-
 - `hubspc_open` (`hubspc.o`, address 0x390, 116 bytes): **established.**
   Opens a hub-space device after reading its sub-type with `device_info_get` on the device number the first argument points to.
   Sub-type 0 returns the result of `mem_refcnt_open` with all four arguments; sub-type 1 calls `cap_able` with 1 shifted left 37 and returns 1 (`EPERM`) when it reports no capability, else 0.
@@ -139,12 +131,10 @@ An xswitch record is a 152-byte heap block that hangs off a crossbar vertex as i
 - `pciiox_init` (`pciiox.o`, address 0x0, 32 bytes): **established.**
   Registers the chassis hook with the NIC-identity layer by calling `nic_vmc_add` with the part-number prefix "030-1062-" (`.rodata`+0, via `.srdata`+0) and the address of `pciiox_vmc` (`.srdata`+8, a relocation to text offset 0x20).
   The layer then runs `pciiox_vmc` for a vertex whose identity string starts with that prefix.
-
 - `pciiox_vmc` (`pciiox.o`, address 0x20, 80 bytes): **established.**
   Fixes the bridge's read-response buffer split for the chassis.
   It calls `pcibr_hints_fix_rrbs` on the vertex, then `xtalk_piotrans_addr` with the vertex, two zeros, size 0x01000000 and a fifth zero, and without testing the address returned stores 0x00999888 as a word at +644 (0x284) and 0x888 as a word at +652 (0x28c) of it.
-
-
+  What the registers at bridge offsets 0x284 and 0x28c are, and what the values 0x00999888 and 0x888 set, is unknown. The next read is the accesses `pcibr.o` makes at those two offsets.
 
 
 ## Single-call forwards in the bus and kernel objects

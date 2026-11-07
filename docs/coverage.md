@@ -69,12 +69,12 @@ Register access sites: 1488 found, 1451 resolved to an offset and 37 (2.5%) unre
 
 | Area | Status | Owner | Notes |
 |---|---|---|---|
-| Host attachment (crossbar, PCI bridge, interrupts) | started | `ONYX4.h` | attach path, BAR mapping and swaps, interrupt hookup read: [kernel-attach.md](kernel-attach.md); topology and bus rate open |
-| PCI identity and option ROM | images decoded | `ONYX4.h` | [option-roms.md](option-roms.md): headers, ATI tables, differences; BIOS code and subsystem IDs open |
-| Command processor and ring | started | `R300.h` | X module CP start-up read at register level: [kernel-attach.md](kernel-attach.md#command-processor-start-up-x-server-module) |
-| Microcode | started | `R300.h` | two 2048-byte tables in `fglrx_drv.so`, upload registers read; chip-code mapping open |
-| Vertex and fragment units | not started | `R300.h`, `R350.h` | |
-| Memory and display | started | `R300.h` | X module tiling, surface windows, frame offsets, gamma palette and PLL access read routine by routine: [x-driver-functions.md](x-driver-functions.md); memory controller and scan-out timing open |
+| Host attachment (crossbar, PCI bridge, interrupts) | started | the Radeon driver stack header 2 | attach path, BAR mapping and swaps, interrupt hookup read: [kernel-attach.md](kernel-attach.md); topology and bus rate open |
+| PCI identity and option ROM | images decoded | the Radeon driver stack header 2 | [option-roms.md](option-roms.md): headers, ATI tables, differences; BIOS code and subsystem IDs open |
+| Command processor and ring | started | the Radeon driver stack header 7 | X module CP start-up read at register level: [kernel-attach.md](kernel-attach.md#command-processor-start-up-x-server-module) |
+| Microcode | started | the Radeon driver stack header 7 | two 2048-byte tables in `fglrx_drv.so`, upload registers read; chip-code mapping open |
+| Vertex and fragment units | not started | the Radeon driver stack header 7, the Radeon driver stack header 8 | |
+| Memory and display | started | the Radeon driver stack header 7 | X module tiling, surface windows, frame offsets, gamma palette and PLL access read routine by routine: [x-driver-functions.md](x-driver-functions.md); memory controller and scan-out timing open |
 | Register accesses of the kernel object and X module | started | [registers.md](registers.md) | 201 offsets listed and graded against the public names; 11 have none; 13 read at bit level (interrupt, PLL, tile, CRTC enable, engine status) |
-| Kernel driver (attach, ioctls, reset) | started | `r300_kernel/include/fglrx_kern.h` | `fglrx_attach`, `fglrx_init`, `fglrx_reg`, `fglrx_intr` and the VGA early path read: [kernel-attach.md](kernel-attach.md); open, release, detach, init and board-identity routines: [kernel-object-functions.md](kernel-object-functions.md) |
-| X module and direct-rendering driver | started | `xserver/include/fglrx_ddx.h` | overlay, TV-timing, stereo and BIOS-interface routines of the X module read: [x-video-driver.md](x-video-driver.md) |
+| Kernel driver (attach, ioctls, reset) | started | the fglrx driver header 2 | `fglrx_attach`, `fglrx_init`, `fglrx_reg`, `fglrx_intr` and the VGA early path read: [kernel-attach.md](kernel-attach.md); open, release, detach, init and board-identity routines: [kernel-object-functions.md](kernel-object-functions.md) |
+| X module and direct-rendering driver | started | the fglrx driver header 1 | overlay, TV-timing, stereo and BIOS-interface routines of the X module read: [x-video-driver.md](x-video-driver.md) |

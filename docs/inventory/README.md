@@ -198,7 +198,7 @@ A derivation citation must tie the entry to its own item. Each of these counts, 
 
 - an offset (`+0x1a4`, "offset 0x40"), or a hex address after "address", "at", "entry", "record" or `@`. A table row's own address, slot or index cell is its identity, not a derivation: a number that is the row's own cell (or its low 20 bits) does not count, only a different location does;
 - a callee or caller written in code (`calls`, `calling`, `called from` or `called by` followed by a backticked name; every name of a list such as ``calls `a`, `b` and `c` `` counts, and none of them is an extra item on the line);
-- a source file or a path with at least two slashes (`odsy_init.c`, `libglcore/asm/ODYSSEY/x.s`);
+- a source file or a path with at least two slashes (the Odyssey kernel driver initialization source unit, `libglcore/asm/ODYSSEY/x.s`);
 - a binary or object file name (`odsy.o`, `libGLcore.so`) together with a backticked routine of it other than the subject.
 
 A release or patch number (`6.5.30m`, `patch 4103`), a binary name alone, and a link to another page are not citations: every item of a build shares them.
@@ -414,11 +414,11 @@ A load or store through a window base is a site. When its offset is a constant i
 ## This workspace: VPro
 
 - Scope: the `binaries` groups of the config, which follow `IRIX_FILES.md` and add the older builds under `root/builds/` (the 6.5.30 media and VPro patches 4103 and 4104). `copies` in `binaries.tsv` says where a binary repeats.
-- `board` is the 0x401000-byte PIO window the kernel reaches through the base at board record +824. libGLcore reaches it through the client mapping at fixed addresses (`gf_OdsyMapGfx`'s pages, `BUZZ.h` section 5); the page at address 0 is left out so that null-pointer accesses do not count.
+- `board` is the 0x401000-byte PIO window the kernel reaches through the base at board record +824. libGLcore reaches it through the client mapping at fixed addresses (`gf_OdsyMapGfx`'s pages, the Radeon driver stack header 1 section 5); the page at address 0 is left out so that null-pointer accesses do not count.
 - `display` holds display addresses: those in type 3 and 7 header words stored to the display FIFO port (board +0x400000), and those read through the read-back window at board +0x220000, one address per 8 bytes.
-- Tokens are constants the kernel driver, libGLcore and the X module store, kept when they match a word family of `BUZZ.h`: class-1 (bits 31:16 equal 1), attribute or sequencer-register. Each class-1 word's block id is also a `block` row.
+- Tokens are constants the kernel driver, libGLcore and the X module store, kept when they match a word family of the Radeon driver stack header 1: class-1 (bits 31:16 equal 1), attribute or sequencer-register. Each class-1 word's block id is also a `block` row.
 - Ioctls: the private dispatch table of `odsy.o` (53 entries from 0x6f640000), the resource-manager table of `rrm.o` (from 1000), 0x6f64xxxx constants in user code, and constant arguments of `ioctl` calls in 100-199, 1000-1999 and the private range.
 - `ucode.tsv` holds each distinct BUZZ microcode image's routines: one at record 0, one five records after each end mark, and libGLcore's entry list from `scripts/buzz_ucode_disasm.py`, shifted for the records the kernel copy inserts.
 - `spec-registers.tsv` is empty: no register specification for this family is public.
-- Tokens and registers do not share chapters: `tokens.docs` in the config names the token chapters (`docs/tokens.md`, `docs/buzz.md`, `docs/kernel.md`, `docs/opengl.md`, `BUZZ.h`, `ucode/buzz_isa.md`), which the `board` window ignores, and the `display` window lists its own. A block id or command word in a token chapter does not describe a board register at the same number.
+- Tokens and registers do not share chapters: `tokens.docs` in the config names the token chapters (`docs/tokens.md`, `docs/buzz.md`, `docs/kernel.md`, `docs/opengl.md`, the Radeon driver stack header 1, `ucode/buzz_isa.md`), which the `board` window ignores, and the `display` window lists its own. A block id or command word in a token chapter does not describe a board register at the same number.
 - Not seen: the X module's stores through the command FIFO pointer in its screen record.

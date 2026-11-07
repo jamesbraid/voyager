@@ -2,7 +2,7 @@
 
 The three video option ROM images of the IRIX 6.5.30 Onyx4 install: `sg2.bin` (FireGL X1, R300), `sg3.bin` and `sg3a.bin` (FireGL X2, R350). All offsets are byte offsets into the image. `scripts/option_rom.py` reproduces every table below from the images alone (`dump`, `walk`, `diff`).
 
-Labels: **established** (read in the image, or in the whole body of a routine), **inferred** (a reading, with its reasoning), **unknown**. The layouts come from public sources, so a decoded meaning is a cross-check from the public chips, not proof of what the board or the IRIX driver does: the PCI Local Bus Specification's expansion ROM structures as written in EDK2 `Pci22.h`, the Linux radeon driver's `radeon_combios.c` and `radeon_bios.c` (the ATI table header and tables), and Linux `uapi/video/uvesafb.h` (the VESA information block); see [sources/INDEX.md](sources/INDEX.md). No part of an image is copied into this repository.
+Labels: **established** (read in the image, or in the whole body of a routine), **inferred** (a reading, with its reasoning), **unknown**. The layouts come from public sources, so a decoded meaning is a cross-check from the public chips, not proof of what the board or the IRIX driver does: the PCI Local Bus Specification's expansion ROM structures as written in EDK2 the Radeon driver stack header 3, the Linux radeon driver's `radeon_combios.c` and `radeon_bios.c` (the ATI table header and tables), and Linux `uapi/video/uvesafb.h` (the VESA information block); see [sources/INDEX.md](sources/INDEX.md). No part of an image is copied into this repository.
 
 ## The three images
 
