@@ -64,7 +64,7 @@ Local driver headers capture internal driver structures: `r300_kernel/include/fg
 
 ## 4. Reverse engineering toolchain
 
-The host needs Podman, git and python3. Everything else runs in the container [tools/Containerfile](tools/Containerfile) builds: `tools/re-run COMMAND`. [tools/setup-clone.sh](tools/setup-clone.sh) prepares a fresh clone. The shared tooling (container definitions, wrappers, Ghidra scripts, the inventory, fact sheet and claim checker, and the device extractors) is the `retools/` submodule (sgi-retools); the files under `tools/`, `scripts/` and `ghidra/` are links into it, so a change to them is made there and the pin here moves with a commit. `tools/check-shared` verifies the pin.
+The host needs Podman, git and python3. Everything else runs in the container [tools/Containerfile](tools/Containerfile) builds: `tools/re-run COMMAND`. [tools/setup-clone.sh](tools/setup-clone.sh) prepares a fresh clone. The shared tooling (container definitions, wrappers, Ghidra scripts, the inventory, fact sheet and claim checker, and the device extractors) is the `retools/` submodule (sgi-retools); the files under `tools/` and `scripts/` are links into it, so a change to them is made there and the pin here moves with a commit. `tools/check-shared` verifies the pin.
 
 Scripts (`scripts/`, run from the repository root, inside `tools/re-run`):
 
@@ -75,7 +75,7 @@ Scripts (`scripts/`, run from the repository root, inside `tools/re-run`):
 - `facts.py`, `check_claims.py`, `test_facts.py`: build facts for a routine and check the claims in the docs against the binaries.
 - `check-leaks.sh`, `pre-push`: the leak check and the pre-push hook. Install the hook with `ln -s ../../scripts/pre-push .git/hooks/pre-push`.
 
-The scripts descend from gr4's and carry its BSD-3 notice ([scripts/LICENSE-gr4](scripts/LICENSE-gr4)). The shared files are the `retools/` submodule (sgi-retools); the paths under `tools/`, `scripts/` and `ghidra/` link into it.
+The scripts descend from gr4's and carry its BSD-3 notice ([scripts/LICENSE-gr4](scripts/LICENSE-gr4)). The shared files are the `retools/` submodule (sgi-retools); the paths under `tools/` and `scripts/` link into it.
 
 ---
 
@@ -121,4 +121,4 @@ A coverage row is done when every inventory entry in its area (`docs/inventory/`
 - Findings go in headers at the repository root and `docs/` chapters, in your own words, each labelled with its derivation. Update `docs/coverage.md` and the inventory in the same commit as the finding.
 - Commit disassembly, decompiled C and traces you produce as data; keep the proprietary binaries in `root/`.
 
-Commit small and often, straight to `main`. Subjects are lowercase, component-prefixed imperatives (`r300_kernel: label the ring base register`); bodies say why. This repository will be made public: write everything for a stranger.
+Commit small and often, straight to `main`. Subjects are lowercase, component-prefixed imperatives (`r300_kernel: label the ring base register`); bodies say why. Write everything for a stranger.

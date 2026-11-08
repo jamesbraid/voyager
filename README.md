@@ -57,7 +57,7 @@ included; with no command it opens a shell. Fill `root/` from your install or me
 - Generated tables under `docs/inventory/` come from `tools/re-run python3 scripts/inventory.py`.
 - A claim an entry marks as established by execution is reproduced by the script in `scripts/` that the entry
   names, always as `tools/re-run python3 scripts/NAME.py ...`.
-- The shared tooling (container definitions, wrappers, Ghidra scripts, the inventory, fact sheet and claim checker, and the device extractors) is the `retools/` submodule (sgi-retools); the files under `tools/`, `scripts/` and `ghidra/` are links into it, so a change to them is made there and the pin here moves with a commit. `tools/check-shared` verifies the pin. `scripts/check-leaks.sh` is the leak check the pre-push hook runs.
+- The shared tooling (container definitions, wrappers, Ghidra scripts, the inventory, fact sheet and claim checker, and the device extractors) is the `retools/` submodule (sgi-retools); the files under `tools/` and `scripts/` are links into it, so a change to them is made there and the pin here moves with a commit. `tools/check-shared` verifies the pin. `scripts/check-leaks.sh` is the leak check the pre-push hook runs.
 
 ## Rules
 
@@ -66,8 +66,6 @@ included; with no command it opens a shell. Fill `root/` from your install or me
 - No local paths, hashes of private copies, library details, nicknames, internal quotes, or names of other
   projects, hosts or people behind the work.
 - No trailers in commit messages.
-
-The repository is private for now and will be made public.
 
 Licence: BSD-3-Clause, see [LICENSE](LICENSE). The scripts descend from gr4's and keep its notice in
 [scripts/LICENSE-gr4](scripts/LICENSE-gr4).
