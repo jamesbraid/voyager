@@ -1,1 +1,0 @@
-../retools/scripts/voyager/option_rom.py

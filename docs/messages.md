@@ -52,5 +52,5 @@ The attach and ROM rows in `fglrx_attach` are the ones read first. The seven wri
 
 To regenerate the table, from the repository root inside the toolchain environment:
 
-    tools/re-run python3 scripts/message_sites.py root/usr/cpu/sysgen/IP35boot/fglrx.o fglrx.o \
+    retools/tools/re-run python3 scripts/message_sites.py root/usr/cpu/sysgen/IP35boot/fglrx.o fglrx.o \
         --conditions docs/message-conditions.tsv --tsv docs/messages.tsv

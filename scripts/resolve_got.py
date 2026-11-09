@@ -1,1 +1,0 @@
-../retools/scripts/voyager/resolve_got.py

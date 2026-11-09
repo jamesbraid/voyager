@@ -1,1 +1,0 @@
-../retools/scripts/voyager/map_binaries.py

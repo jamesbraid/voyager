@@ -1,1 +1,0 @@
-../retools/scripts/voyager/clean_asm.py

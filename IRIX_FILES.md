@@ -6,8 +6,7 @@ control. Paths only: this repository holds no file contents.
 
 `root/` mirrors the IRIX filesystem. The directories `r300_kernel/`, `libgl/`,
 `xserver/`, `dri/`, `gfxtools/`, `diags/`, `ucode/` and `firmware/` hold relative
-symlinks into `root/`; `scripts/populate-root` makes them from the blocks in
-section 3. They are created on your machine and are not committed.
+symlinks into `root/`; section 3 is the map to make them from. They are created on your machine and are not committed.
 
 ## 1. IRIX 6.5.30 (primary)
 
@@ -105,11 +104,11 @@ Copy a file from a disc with `instigator extract --unpack --path <install path> 
 From media: extract each path in the block above with the command just given, into one output
 directory, then `mkdir -p root` and copy or link the extracted tree there, keeping the layout.
 From a running install: tar the paths and unpack them under `root/` on your workstation.
-`scripts/populate-root --check` lists what is missing.
+Compare the blocks in section 3 against `root/` to see what is missing.
 
 ## 3. Symlinks
 
-`scripts/populate-root` reads these blocks. `archives` lines are `ARCHIVE LINKDIR`: the
+These blocks are the link map. `archives` lines are `ARCHIVE LINKDIR`: the
 archive's members are unpacked inside `root/` and linked into `LINKDIR`. `links`
 lines are `LINK TARGET`, relative to the repository root.
 

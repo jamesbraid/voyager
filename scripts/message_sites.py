@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Catalogue the console message call sites of one MIPS64 relocatable object.
 
-    tools/re-run python3 scripts/message_sites.py BINARY LABEL [--conditions FILE] [--tsv FILE]
+    retools/tools/re-run python3 scripts/message_sites.py BINARY LABEL [--conditions FILE] [--tsv FILE]
 
 BINARY is an ELF relocatable object (big-endian MIPS64). The script reads `objdump -dr` and
 `objdump -s` of its .rodata and .data, so the calls and the string references come from the

@@ -3,7 +3,7 @@
 
 Usage: scripts/message_sites_elf.py BINARY LABEL [--conditions FILE] [--tsv FILE] [--only ROUTINE_REGEX]
 
-Every function symbol of BINARY gets a fact sheet from scripts/facts.py (in one process, so the image
+Every function symbol of BINARY gets a fact sheet from retools/tools/facts.py (in one process, so the image
 is parsed once). A call is a site when its callee is a known printer (PRINTERS below) and the format
 argument has a value the fact sheet resolves. The row carries:
 
@@ -34,9 +34,9 @@ import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.join(HERE, '..', 'retools', 'tools'))
 
-import facts  # noqa: E402  the same file in every workspace
+import facts  # noqa: E402  the shared fact sheet in the retools submodule
 
 # callee -> (kind, format argument index, extra fields). Argument index counts a0 as 0.
 PRINTERS = {

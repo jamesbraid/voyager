@@ -19,7 +19,7 @@ __pycache__/
 /root
 /root/
 
-# Symlinks into root/ made by scripts/populate-root, and the archive members unpacked for them
+# Symlinks into root/ made from IRIX_FILES.md, and the archive members unpacked for them
 /r300_kernel/
 /libgl/
 /xserver/

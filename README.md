@@ -8,7 +8,7 @@ This repository was named r300 until 2026-11-01.
 The layout and working style follow techomancer's [gr2](https://github.com/techomancer/gr2) and
 [gr4](https://github.com/techomancer/gr4). Proprietary IRIX and ATI binaries are not tracked. Copy them from
 your own IRIX install or media into the ignored `root/` directory as [IRIX_FILES.md](IRIX_FILES.md)
-describes, then run `scripts/populate-root`. [AGENTS.md](AGENTS.md) has the project goal, the binaries and
+describes, then link the convenience directories as that file describes. [AGENTS.md](AGENTS.md) has the project goal, the binaries and
 evidence, the toolchain and the working rules; [docs/coverage.md](docs/coverage.md) is the map of what is
 covered and what is next; [docs/open-questions.md](docs/open-questions.md) holds what is not known yet.
 
@@ -34,30 +34,30 @@ There is no GL sample-implementation pipeline: the Onyx4 GL stack is ATI's drive
     IRIX_FILES.md        the shipped files expected in root/, and the symlink map
     root/                your copy of those files (ignored)
     r300_kernel/ libgl/ xserver/ dri/ gfxtools/ diags/ ucode/ firmware/
-                         symlinks into root/ made by scripts/populate-root (ignored)
+                         symlinks into root/ you make yourself (ignored)
     docs/                open-questions.md, coverage.md, inventory/, sources/INDEX.md, chapters as they land
-    scripts/             the inventory, the fact and claim checkers, helpers
-    tools/               the container definitions and wrappers
+    scripts/             this workspace's inventory configuration and message-site extractors
+    tools/               setup-clone.sh, the stub that fetches the shared tooling
+    retools/             the shared tooling submodule (sgi-retools): retools/tools/ and retools/tools/voyager/
     m2c spimdisasm libdwarf-code linux mesa
                          public-source submodules, fetched on demand
 
 ## Running the tools and reproducing a result
 
 The host needs Podman, git and python3. Everything else runs in a container built from
-[tools/Containerfile](tools/Containerfile): MIPS binutils, dwarfdump, pyelftools, capstone, unicorn,
+[retools/tools/Containerfile](retools/tools/Containerfile): MIPS binutils, dwarfdump, pyelftools, capstone, unicorn,
 numpy, pycparser and spimdisasm, at pinned versions on a pinned Debian base.
 
     tools/setup-clone.sh --root /path/to/filled/root   # siblings at their pins, submodules, root/
-    tools/re-run python3 scripts/inventory.py          # the first run builds the image
+    retools/tools/re-run python3 retools/tools/inventory.py   # the first run builds the image
 
-`tools/re-run COMMAND` runs `COMMAND` in the image with this repository mounted at `/work`, `root/`
-included; with no command it opens a shell. Fill `root/` from your install or media, then run
-`scripts/populate-root` on the host to make the links the tools expect (`--check` lists what is missing).
+`retools/tools/re-run COMMAND` runs `COMMAND` in the image with this repository mounted at `/work`, `root/`
+included; with no command it opens a shell. Fill `root/` from your install or media as IRIX_FILES.md describes.
 
-- Generated tables under `docs/inventory/` come from `tools/re-run python3 scripts/inventory.py`.
-- A claim an entry marks as established by execution is reproduced by the script in `scripts/` that the entry
-  names, always as `tools/re-run python3 scripts/NAME.py ...`.
-- The shared tooling (container definitions, wrappers, Ghidra scripts, the inventory, fact sheet and claim checker, and the device extractors) is the `retools/` submodule (sgi-retools); the files under `tools/` and `scripts/` are links into it, so a change to them is made there and the pin here moves with a commit. `tools/check-shared` verifies the pin. `scripts/check-leaks.sh` is the leak check the pre-push hook runs.
+- Generated tables under `docs/inventory/` come from `retools/tools/re-run python3 retools/tools/inventory.py`.
+- A claim an entry marks as established by execution is reproduced by the script that the entry
+  names, always as `retools/tools/re-run python3 retools/tools/NAME.py ...` (or `scripts/NAME.py` for this workspace's own).
+- The shared tooling (container definitions, the `re-run` wrapper, Ghidra scripts, the inventory, fact sheet, the device extractors) is the `retools/` submodule (sgi-retools). Run a tool by its submodule path from the repository root: `retools/tools/<name>` for the shared ones, `retools/tools/voyager/<name>` for this device's. A tool finds this repository from the current directory, so there are no local links or wrappers; a change to a tool is made in retools and the pin here moves with a commit.
 
 ## Rules
 
@@ -68,4 +68,4 @@ included; with no command it opens a shell. Fill `root/` from your install or me
 - No trailers in commit messages.
 
 Licence: BSD-3-Clause, see [LICENSE](LICENSE). The scripts descend from gr4's and keep its notice in
-[scripts/LICENSE-gr4](scripts/LICENSE-gr4).
+[retools/tools/LICENSE-gr4](retools/tools/LICENSE-gr4).

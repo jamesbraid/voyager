@@ -28,7 +28,7 @@ Every role above is a name from a source, not a finding. Replace each with a lab
 
 ## 2. Project binaries and evidence
 
-For licensing reasons proprietary SGI and ATI binaries are **not checked into source control**. The local `root/` tree is gitignored. Copy the files [IRIX_FILES.md](IRIX_FILES.md) lists from your own IRIX 6.5.30 install or media into `root/`, then run `scripts/populate-root`; it makes the relative symlinks below, which are also not committed. Disassembly, decompiled C, headers and notes derived from the files are committed.
+For licensing reasons proprietary SGI and ATI binaries are **not checked into source control**. The local `root/` tree is gitignored. Copy the files [IRIX_FILES.md](IRIX_FILES.md) lists from your own IRIX 6.5.30 install or media into `root/`, then make the relative symlinks below from the map in IRIX_FILES.md, which are also not committed. Disassembly, decompiled C, headers and notes derived from the files are committed.
 
 | Directory | Contents | Target in `root/` |
 |---|---|---|
@@ -64,18 +64,16 @@ Local driver headers capture internal driver structures: `r300_kernel/include/fg
 
 ## 4. Reverse engineering toolchain
 
-The host needs Podman, git and python3. Everything else runs in the container [tools/Containerfile](tools/Containerfile) builds: `tools/re-run COMMAND`. [tools/setup-clone.sh](tools/setup-clone.sh) prepares a fresh clone. The shared tooling (container definitions, wrappers, Ghidra scripts, the inventory, fact sheet and claim checker, and the device extractors) is the `retools/` submodule (sgi-retools); the files under `tools/` and `scripts/` are links into it, so a change to them is made there and the pin here moves with a commit. `tools/check-shared` verifies the pin.
+The host needs Podman, git and python3. Everything else runs in the container [retools/tools/Containerfile](retools/tools/Containerfile) builds: `retools/tools/re-run COMMAND`. [tools/setup-clone.sh](tools/setup-clone.sh) prepares a fresh clone. The shared tooling (container definitions, the `re-run` wrapper, Ghidra scripts, the inventory, fact sheet, the device extractors) is the `retools/` submodule (sgi-retools). Run a tool by its submodule path from the repository root: `retools/tools/<name>` for the shared ones, `retools/tools/voyager/<name>` for this device's. A tool finds this repository from the current directory, so there are no local links or wrappers; a change to a tool is made in retools and the pin here moves with a commit.
 
-Scripts (`scripts/`, run from the repository root, inside `tools/re-run`):
+Tools (run from the repository root, inside `retools/tools/re-run`; `scripts/` here keeps only this workspace's configuration, data and its message-site extractors):
 
-- `populate-root`: create the symlinks listed in IRIX_FILES.md once `root/` is filled (run on the host).
-- `map_binaries.py`: catalogue every linked binary (sections, functions, DWARF compilation units) into `binaries_manifest.json`.
-- `disasm_kernel.py`, `resolve_got.py`, `clean_asm.py`: disassemble kernel objects for m2c and resolve `$gp`-relative loads.
-- `inventory.py` (config `inventory-config.json`): measure coverage from the binaries; output is `docs/inventory/*.tsv` (see `docs/inventory/README.md`).
-- `facts.py`, `check_claims.py`, `test_facts.py`: build facts for a routine and check the claims in the docs against the binaries.
-- `check-leaks.sh`, `pre-push`: the leak check and the pre-push hook. Install the hook with `ln -s ../../scripts/pre-push .git/hooks/pre-push`.
+- `retools/tools/voyager/map_binaries.py`: catalogue every linked binary (sections, functions, DWARF compilation units) into `binaries_manifest.json`.
+- `retools/tools/voyager/disasm_kernel.py`, `resolve_got.py`, `clean_asm.py`: disassemble kernel objects for m2c and resolve `$gp`-relative loads.
+- `retools/tools/inventory.py` (config `scripts/inventory-config.json`): measure coverage from the binaries; output is `docs/inventory/*.tsv` (see `docs/inventory/README.md`).
+- `retools/tools/facts.py`: build facts for a routine from the binaries.
 
-The scripts descend from gr4's and carry its BSD-3 notice ([scripts/LICENSE-gr4](scripts/LICENSE-gr4)). The shared files are the `retools/` submodule (sgi-retools); the paths under `tools/` and `scripts/` link into it.
+The tools descend from gr4's and carry its BSD-3 notice ([retools/tools/LICENSE-gr4](retools/tools/LICENSE-gr4)).
 
 ---
 

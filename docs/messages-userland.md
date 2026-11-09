@@ -21,7 +21,7 @@ Status: partial. See [what is missing](#what-is-missing).
 
 ## How the rows are found
 
-`scripts/message_sites_elf.py` runs [scripts/facts.py](../scripts/facts.py) on every function symbol of a file, in one process. For each call it reads the callee and the argument registers from the fact sheet. A call is a site when its callee is one of the printers in the script, the format argument is a constant address, and the address is a string in the file.
+`scripts/message_sites_elf.py` runs `retools/tools/facts.py` on every function symbol of a file, in one process. For each call it reads the callee and the argument registers from the fact sheet. A call is a site when its callee is one of the printers in the script, the format argument is a constant address, and the address is a string in the file.
 
 The guard is picked in this order:
 

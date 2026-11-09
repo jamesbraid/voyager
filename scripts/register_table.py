@@ -1,1 +1,0 @@
-../retools/scripts/voyager/register_table.py

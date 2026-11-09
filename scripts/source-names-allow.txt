@@ -1,6 +1,6 @@
 # Source-file names and request names the reference docs may carry: each one is a name that a published source holds,
 # a file shipped in the installed system, or a file in this workspace. Anything else is described in words.
-# NAME<TAB>REASON; checked by retools/scripts/check-leaks.py.
+# NAME<TAB>REASON; checked by the retools leak check.
 bridge.h	name in published Linux or OpenBSD source
 drivers/gpu/drm/radeon/radeon_combios.c	name in published Linux source
 drivers/gpu/drm/radeon/radeon_reg.h	name in published Linux source
