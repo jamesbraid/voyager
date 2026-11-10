@@ -568,7 +568,7 @@ That these are the instruction pointer, the flags, the code segment, a pending-e
 - `X86EMU_setupMemFuncs` (`vga.a(sys.o)`, address 0x330, 52 bytes): **established.**
   Takes a pointer to a table of six function pointers in a0 and copies them to the globals `sys_rdb`, `sys_rdw`, `sys_rdl`, `sys_wrb`, `sys_wrw` and `sys_wrl`, in that order, from table offsets 0, 8, 16, 24, 32 and 40.
   It makes no call and sets no return value.
-  `xf86Int10ExecSetup` (`vga.a(xf86x86emu.o)`) calls it, with the memory accessors of [the emulator's glue](#the-emulators-glue-to-the-kernel-vgahelper_execo) among its arguments (call at 0x120).
+  `xf86Int10ExecSetup` (`vga.a(xf86x86emu.o)`) calls it, with the memory accessors of [the emulator's glue](#the-emulators-glue-to-the-kernel-vgaahelper_execo) among its arguments (call at 0x120).
   The initial values of the six globals are the `rdb` to `wrl` routines above, which work on the flat memory described by env +0 and +8.
 - `X86EMU_setupPioFuncs` (`vga.a(sys.o)`, address 0x364, 52 bytes): **established.**
   Takes a pointer to a table of six function pointers in a0 and copies them to `sys_inb`, `sys_inw`, `sys_inl`, `sys_outb`, `sys_outw` and `sys_outl` in that order, from table offsets 0, 8, 16, 24, 32 and 40.
@@ -589,7 +589,7 @@ That these are the instruction pointer, the flags, the code segment, a pending-e
 
 These routines answer software interrupts for the option ROM that runs in the x86 emulator.
 Each takes the emulation record in a0.
-The interrupt number is the word at record +32 (stored by `x86emu_do_int`); the emulated registers are in the register file that a `.srdata` literal points at (the 96-byte object described [above](#the-x86-emulator-core-and-its-default-accessors-vgadecodeo-vgasyso)), where, in the big-endian layout, the word at +24 is EAX (AH is the byte at +26, AL +27), +28 EBX (BH +30, BL +31), +32 ECX (CH +34, CL +35), +36 EDX (DH +38, DL +39), +48 ESI and +52 EDI, and the word at +60 is the flags (CF is bit 0).
+The interrupt number is the word at record +32 (stored by `x86emu_do_int`); the emulated registers are in the register file that a `.srdata` literal points at (the 96-byte object described [above](#the-x86-emulator-core-and-its-default-accessors-vgaadecodeo-vgaasyso)), where, in the big-endian layout, the word at +24 is EAX (AH is the byte at +26, AL +27), +28 EBX (BH +30, BL +31), +32 ECX (CH +34, CL +35), +36 EDX (DH +38, DL +39), +48 ESI and +52 EDI, and the word at +60 is the flags (CF is bit 0).
 The record's table at +24 holds the memory accessors: read byte, halfword and word at offsets 0, 8 and 16, and write byte, halfword and word at 24, 32 and 40.
 The doubleword at record +80 is the board record, which `outb`, `pciReadLong` and the other PCI accessors take as their first argument.
 
