@@ -4,7 +4,7 @@ Questions the binaries and published sources have not yet answered. One entry ea
 
 ## Triage
 
-Of the 26 entries below, all are `software-now`. Three of them also carry a hardware-only residue, marked in the entry and recorded, not scheduled: the PCI bus clock, the display output and the ROM select.
+Of the 25 entries below, all are `software-now`. Three of them also carry a hardware-only residue, marked in the entry and recorded, not scheduled: the PCI bus clock, the display output and the ROM select.
 
 The tags:
 
@@ -38,19 +38,18 @@ Registers and interrupts come first, because they block the register headers. Th
 13. Display output.
 14. Multipipe and compositor interplay.
 15. Byte swapping, in full.
-16. Byte lanes of the register aperture.
-17. PCI bus clock and width.
-18. Bridge device-register values, bit layout only.
-19. Bridge and topology. If no published listing shows the Onyx4 layout, this falls to hardware-only.
-20. Whether the IP35 PROM runs the option ROM.
-21. Attach sequence and the card's BIOS run under an emulator.
-22. The x86 handlers of the images.
-23. ATI tables the public driver does not read.
-24. First header words and the signature block.
-25. The sg3 to sg3a changes.
-26. Which ROM a card gets, register 0x1a4.
-27. PCI device and subsystem IDs per card.
-28. What `vpm` stands for.
+16. PCI bus clock and width.
+17. Bridge device-register values, bit layout only.
+18. Bridge and topology. If no published listing shows the Onyx4 layout, this falls to hardware-only.
+19. Whether the IP35 PROM runs the option ROM.
+20. Attach sequence and the card's BIOS run under an emulator.
+21. The x86 handlers of the images.
+22. ATI tables the public driver does not read.
+23. First header words and the signature block.
+24. The sg3 to sg3a changes.
+25. Which ROM a card gets, register 0x1a4.
+26. PCI device and subsystem IDs per card.
+27. What `vpm` stands for.
 
 No entry is wholly `missing-release-or-binary` now. Two software-now entries need a file that the install set lacks for part of their step: the install's release notes (the sg3 to sg3a entry) and the flash tool's `9700.bin` (the ROM select entry). The diagnostics' manual pages are in root, already unpacked, and the `sg`, `olsg` and `vpm` entry reads them.
 
@@ -58,12 +57,12 @@ No entry is wholly `missing-release-or-binary` now. Two software-now entries nee
 
 **Routes no entry has taken yet**, to try in this order unless an entry says otherwise:
 
-29. **The shipped objects.** `fglrx.o`, `is1.o` and the `vga.a` members are unstripped MIPS-IV relocatable objects reported with debug information; the X and DRI modules likewise. Function and variable names, line tables and strings come first.
-30. **Public references.** AMD's R3xx register reference and R5xx acceleration guide, Linux `drm/radeon` r300 and Mesa's r300 driver ([docs/sources/INDEX.md](sources/INDEX.md)). They describe the public chips; use them to read the binaries, not to fill gaps.
-31. It predates the Onyx4.
-32. **Other IRIX releases** of the same files: a diff of code between releases often names a field.
-33. **Published output from real machines**: `hinv -v`, `gfxinfo`, X server logs and PCI listings of Onyx4 systems in newsgroup and mailing-list archives.
-34. **The shipped driver under an emulator.** Run it and log what it reads back and waits for. This shows the driver's expectation, not the board's behaviour, and is labelled so.
+28. **The shipped objects.** `fglrx.o`, `is1.o` and the `vga.a` members are unstripped MIPS-IV relocatable objects reported with debug information; the X and DRI modules likewise. Function and variable names, line tables and strings come first.
+29. **Public references.** AMD's R3xx register reference and R5xx acceleration guide, Linux `drm/radeon` r300 and Mesa's r300 driver ([docs/sources/INDEX.md](sources/INDEX.md)). They describe the public chips; use them to read the binaries, not to fill gaps.
+
+31. **Other IRIX releases** of the same files: a diff of code between releases often names a field.
+32. **Published output from real machines**: `hinv -v`, `gfxinfo`, X server logs and PCI listings of Onyx4 systems in newsgroup and mailing-list archives.
+33. **The shipped driver under an emulator.** Run it and log what it reads back and waits for. This shows the driver's expectation, not the board's behaviour, and is labelled so.
 
 An entry that exhausts all routes is relabelled "unknown: no shipped software or published source depends on it" in its owning file, with the routes listed, and removed here.
 
@@ -114,7 +113,6 @@ The attach path read so far is in [kernel-attach.md](kernel-attach.md).
 
 [registers.md](registers.md) lists the offsets the kernel object and the X module reach. These are not settled. Routes tried for each: the replay in `retools/tools/inventory.py`, the disassembly of the routine, and the Linux and Mesa register headers (AMD's R3xx 3D register reference was not read for this table).
 
-- [software-now] **Byte lanes of the register aperture.** The kernel maps BAR 2 with the word-values flag ([kernel-attach.md](kernel-attach.md)), and the X module stores the PLL index as one byte at +11, the last byte of the dword at 0x8. Which byte lane of the chip's little-endian register that store reaches, and whether the X module's own mapping carries the same swap, is not read.
 - [software-now] **Offsets with no public name.** `registers.md` lists them: 0x194, 0x294, 0x350, 0x354, 0x358, 0x878, 0x87c, 0x880, 0x884, 0x1700 and 0x26ac. Done: each has an entry in `registers.md` ("Registers read in full"). 0x350 and 0x358 are named in xf86-video-ati 6.14.6 `radeon_reg.h` (`R300_CRTC_TILE_X0_Y0`, `R300_CRTC2_TILE_X0_Y0`), so Mesa's r300 header and the Linux 2.6.30 tree lack them, though the pinned Linux tree has them (lines 532 and 533 of `drivers/gpu/drm/radeon/radeon_reg.h`) and the X driver does too. Since: 0x354 is inferred to be the right-eye counterpart of 0x350 ([registers.md](registers.md)). Still open: the roles of 0x87c, 0x880, 0x884, 0x1700 and 0x26ac; and the field meaning of 0x878 and the bits 13:12 of 0x294. The register table in `registers.md` still grades 0x350 and 0x358 `none` because the table generator reads only the Linux and Mesa headers. Routes tried: the Linux 2.6.30, Mesa 7.11.2 and xf86 6.14.6 headers (all three searched), the fact sheets of the routines, and a full decode of the X module text. Next: the AMD R3xx register reference (its PDF in `sources/INDEX.md` is not read yet) for 0x878 to 0x884 and 0x294, and a base trace for the 0x194 sites.
   Checked since: the Linux submodule at its pin (d89e1d1) names 0x350 and 0x358 as `R300_CRTC_TILE_X0_Y0` and `R300_CRTC2_TILE_X0_Y0` in `drivers/gpu/drm/radeon/radeon_reg.h` (lines 532 and 533), so the "Linux lacks them" wording above is stale for that pin. The table generator still grades them `none`. Offset 0x354 appears in the pinned xf86 tree only as `VIP_UPSAMP_COEFF1_2` in `theatre_reg.h`, a video-input register set, which does not fit this aperture. 0x194, 0x294, 0x878, 0x87c, 0x880, 0x884 and 0x26ac have no name in the pinned radeon headers. The AMD R3xx 3D register reference and the R5xx acceleration guide were fetched from the mirror at xorg.freedesktop.org/docs/AMD/old and searched on 2026-11-01: neither lists any of 0x294, 0x878, 0x87c, 0x880, 0x884, 0x1700 or 0x26ac (they cover the 3D block and acceleration, not display and TV). AMD's M56 reference lists 0x194 as `GPIO_STRENGTH` (now recorded in `registers.md`), but names 0x350, 0x354 and 0x358 as VGA control registers, which is the later generation's layout and does not fit the R300 names above. Still to try: the 2D, CRTC and TV register chapters of any R3xx-generation reference, and the Mesa r300 headers at a pin (the mesa submodule is not initialised).
 - [software-now] **Roles of the matched registers beyond the bits read.** The 197 offsets of `fglrx_drv.so` are graded by offset only; the bit-level reading in `registers.md` covers the interrupt, PLL, engine-status, tile and CRTC-enable registers. Next: one routine at a time, starting with `R200AdjustFrame` at 0x422680 and `FIREGL_ShowOverlay`.
