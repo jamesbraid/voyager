@@ -959,10 +959,12 @@ r300 headers and the xf86-video-ati 6.14.6 `radeon_reg.h` were searched for the 
   (a5 << 6) | (a3 << 2). The two fields come from the word at +184 of the driver record (a2): a2 of 0, 2 or 5 gives
   a3 = 7 and a5 = 0 (value 0x1c); a2 of 1, 3 or 4 gives a3 = 6 and a5 = 1 (value 0x58); any other value gives 0. For a2 = 5
   the store of a3 = 7 sits in the delay slot of the branch at 0x44428c, so it runs before the branch lands. Unknown.
+  Settling test: find every writer of the driver word at +184 and the configuration option that feeds it (the multi-view mode), then search the AMD R3xx and R5xx references and the Linux and X.Org register tables for offset 0x878 under any name; a match gives the fields a name and grades them inferred, and the mode-to-value table above becomes the evidence for each field.
 - **0x87c** in `fglrx_drv.so`: no public name. `Set_MV_Mode` stores at 0x444260 the value w0 | (w1 << 2) |
   (w2 << 4) | (w3 << 6) | (w4 << 8), where w0 to w4 are the words at 0x469180, +4, +8, +12 and +16 (in
   the `.bss` table that the routine addresses through gp). The routine does not write those words, so their
   values come from elsewhere; not traced. Unknown.
+  Settling test: list the writers of the five `.bss` words at 0x469180 to 0x469190 (a cross-reference read of the X module), record what each writer stores for each multi-view mode, and search the same public register tables for offset 0x87c; the five two-bit lanes then get a meaning from the values the modes write.
 - **0x880** in `fglrx_drv.so`: no public name. `Set_MV_Mode` stores at 0x444300 one of four constants, chosen by the
   word at +184 of the driver record: 0x3f7f382d for most values; 0x4d8d3030 for 1 and 4; for 0 and 2, 0x4d8d382d when
   the byte at +188 is zero and 0x4d8d2d2d when it is not. Unknown: the constants are fixed in the code, and their
