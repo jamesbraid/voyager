@@ -1,5 +1,5 @@
 [project]
-name = "voyager"
+name = "onyx4-r300"
 
 [checks]
 address_bits = 16
@@ -13,6 +13,10 @@ copy = "scripts/copy-check-allow.txt"
 file = "VOYAGER_DECODE.h"
 block = "VOYAGER"
 notes_corpus = ["docs/registers.md"]
+module = "display"
+rust_prefix = "VOYAGER_"
+register_doc = "Register-aperture register"
+description = ["Display, interrupt and engine registers of the R3xx-class", "FireGL boards."]
 
 [[claims]]
 group = "VOYAGER_DECODE.h"

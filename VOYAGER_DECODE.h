@@ -350,6 +350,51 @@
 #define VOYAGER_MC_STATUS_MC_IDLE_R300_SHIFT 4
 #define VOYAGER_MC_STATUS_MC_IDLE_R300_MASK  0x1u
 
+/* CRTC horizontal total and displayed width. */
+/* REG: VOYAGER.crtc_h_total_disp 0x200 rw32 reset=unknown established */
+/* FIELD: VOYAGER.crtc_h_total_disp.crtc_h_total 9:0 inferred */
+#define VOYAGER_CRTC_H_TOTAL_DISP_CRTC_H_TOTAL_SHIFT 0
+#define VOYAGER_CRTC_H_TOTAL_DISP_CRTC_H_TOTAL_MASK  0x3ffu
+/* FIELD: VOYAGER.crtc_h_total_disp.crtc_h_disp 24:16 inferred */
+#define VOYAGER_CRTC_H_TOTAL_DISP_CRTC_H_DISP_SHIFT 16
+#define VOYAGER_CRTC_H_TOTAL_DISP_CRTC_H_DISP_MASK  0x1ffu
+
+/* CRTC horizontal sync start, width and polarity. */
+/* REG: VOYAGER.crtc_h_sync_strt_wid 0x204 rw32 reset=unknown established */
+/* FIELD: VOYAGER.crtc_h_sync_strt_wid.crtc_h_sync_strt_pix 2:0 inferred */
+#define VOYAGER_CRTC_H_SYNC_STRT_WID_CRTC_H_SYNC_STRT_PIX_SHIFT 0
+#define VOYAGER_CRTC_H_SYNC_STRT_WID_CRTC_H_SYNC_STRT_PIX_MASK  0x7u
+/* FIELD: VOYAGER.crtc_h_sync_strt_wid.crtc_h_sync_strt_char 12:3 inferred */
+#define VOYAGER_CRTC_H_SYNC_STRT_WID_CRTC_H_SYNC_STRT_CHAR_SHIFT 3
+#define VOYAGER_CRTC_H_SYNC_STRT_WID_CRTC_H_SYNC_STRT_CHAR_MASK  0x3ffu
+/* FIELD: VOYAGER.crtc_h_sync_strt_wid.crtc_h_sync_wid 21:16 inferred */
+#define VOYAGER_CRTC_H_SYNC_STRT_WID_CRTC_H_SYNC_WID_SHIFT 16
+#define VOYAGER_CRTC_H_SYNC_STRT_WID_CRTC_H_SYNC_WID_MASK  0x3fu
+/* FIELD: VOYAGER.crtc_h_sync_strt_wid.crtc_h_sync_pol 23:23 inferred */
+#define VOYAGER_CRTC_H_SYNC_STRT_WID_CRTC_H_SYNC_POL_SHIFT 23
+#define VOYAGER_CRTC_H_SYNC_STRT_WID_CRTC_H_SYNC_POL_MASK  0x1u
+
+/* CRTC vertical total and displayed height. */
+/* REG: VOYAGER.crtc_v_total_disp 0x208 rw32 reset=unknown established */
+/* FIELD: VOYAGER.crtc_v_total_disp.crtc_v_total 10:0 inferred */
+#define VOYAGER_CRTC_V_TOTAL_DISP_CRTC_V_TOTAL_SHIFT 0
+#define VOYAGER_CRTC_V_TOTAL_DISP_CRTC_V_TOTAL_MASK  0x7ffu
+/* FIELD: VOYAGER.crtc_v_total_disp.crtc_v_disp 26:16 inferred */
+#define VOYAGER_CRTC_V_TOTAL_DISP_CRTC_V_DISP_SHIFT 16
+#define VOYAGER_CRTC_V_TOTAL_DISP_CRTC_V_DISP_MASK  0x7ffu
+
+/* CRTC vertical sync start, width and polarity. */
+/* REG: VOYAGER.crtc_v_sync_strt_wid 0x20c rw32 reset=unknown established */
+/* FIELD: VOYAGER.crtc_v_sync_strt_wid.crtc_v_sync_strt 10:0 inferred */
+#define VOYAGER_CRTC_V_SYNC_STRT_WID_CRTC_V_SYNC_STRT_SHIFT 0
+#define VOYAGER_CRTC_V_SYNC_STRT_WID_CRTC_V_SYNC_STRT_MASK  0x7ffu
+/* FIELD: VOYAGER.crtc_v_sync_strt_wid.crtc_v_sync_wid 20:16 inferred */
+#define VOYAGER_CRTC_V_SYNC_STRT_WID_CRTC_V_SYNC_WID_SHIFT 16
+#define VOYAGER_CRTC_V_SYNC_STRT_WID_CRTC_V_SYNC_WID_MASK  0x1fu
+/* FIELD: VOYAGER.crtc_v_sync_strt_wid.crtc_v_sync_pol 23:23 inferred */
+#define VOYAGER_CRTC_V_SYNC_STRT_WID_CRTC_V_SYNC_POL_SHIFT 23
+#define VOYAGER_CRTC_V_SYNC_STRT_WID_CRTC_V_SYNC_POL_MASK  0x1u
+
 /* First CRTC offset control. */
 /* REG: VOYAGER.crtc_offset_cntl 0x228 rw32 reset=unknown inferred */
 /* FIELD: VOYAGER.crtc_offset_cntl.crtc_tile_en 15:15 inferred */
@@ -364,6 +409,21 @@
 /* FIELD: VOYAGER.crtc_offset_cntl.stereo_aux 20:20 inferred */
 #define VOYAGER_CRTC_OFFSET_CNTL_STEREO_AUX_SHIFT 20
 #define VOYAGER_CRTC_OFFSET_CNTL_STEREO_AUX_MASK  0x1u
+
+/* CRTC centring and cutoff enables. */
+/* REG: VOYAGER.crtc_more_cntl 0x27c rw32 reset=unknown established */
+/* FIELD: VOYAGER.crtc_more_cntl.crtc_auto_horz_center_en 2:2 inferred */
+#define VOYAGER_CRTC_MORE_CNTL_CRTC_AUTO_HORZ_CENTER_EN_SHIFT 2
+#define VOYAGER_CRTC_MORE_CNTL_CRTC_AUTO_HORZ_CENTER_EN_MASK  0x1u
+/* FIELD: VOYAGER.crtc_more_cntl.crtc_auto_vert_center_en 3:3 inferred */
+#define VOYAGER_CRTC_MORE_CNTL_CRTC_AUTO_VERT_CENTER_EN_SHIFT 3
+#define VOYAGER_CRTC_MORE_CNTL_CRTC_AUTO_VERT_CENTER_EN_MASK  0x1u
+/* FIELD: VOYAGER.crtc_more_cntl.crtc_h_cutoff_active_en 4:4 inferred */
+#define VOYAGER_CRTC_MORE_CNTL_CRTC_H_CUTOFF_ACTIVE_EN_SHIFT 4
+#define VOYAGER_CRTC_MORE_CNTL_CRTC_H_CUTOFF_ACTIVE_EN_MASK  0x1u
+/* FIELD: VOYAGER.crtc_more_cntl.crtc_v_cutoff_active_en 5:5 inferred */
+#define VOYAGER_CRTC_MORE_CNTL_CRTC_V_CUTOFF_ACTIVE_EN_SHIFT 5
+#define VOYAGER_CRTC_MORE_CNTL_CRTC_V_CUTOFF_ACTIVE_EN_MASK  0x1u
 
 /* Second flat-panel and DVO control. */
 /* REG: VOYAGER.fp2_gen_cntl 0x288 rw32 reset=unknown inferred */
@@ -479,6 +539,9 @@
 #define VOYAGER_OV0_SCALE_CNTL_OV0_SOFT_RESET_SHIFT 31
 #define VOYAGER_OV0_SCALE_CNTL_OV0_SOFT_RESET_MASK  0x1u
 
+/* Sub-picture control (the public header defines no bits). */
+/* REG: VOYAGER.subpic_cntl 0x540 rw32 reset=unknown established */
+
 /* Command processor status. */
 /* REG: VOYAGER.cp_stat 0x7c0 r32 reset=unknown inferred */
 /* FIELD: VOYAGER.cp_stat.mru_busy 0:0 inferred */
@@ -526,6 +589,36 @@
 /* FIELD: VOYAGER.cp_stat.cp_busy 31:31 inferred */
 #define VOYAGER_CP_STAT_CP_BUSY_SHIFT 31
 #define VOYAGER_CP_STAT_CP_BUSY_MASK  0x1u
+
+/* Capture unit 0 trigger control (the public header defines no bits). */
+/* REG: VOYAGER.cap0_trig_cntl 0x950 rw32 reset=unknown established */
+
+/* Capture unit 1 trigger control (the public header defines no bits). */
+/* REG: VOYAGER.cap1_trig_cntl 0x9c0 rw32 reset=unknown established */
+
+/* Video input port host interface control. */
+/* REG: VOYAGER.viph_control 0xc40 rw32 reset=unknown established */
+/* FIELD: VOYAGER.viph_control.viph_en 21:21 inferred */
+#define VOYAGER_VIPH_CONTROL_VIPH_EN_SHIFT 21
+#define VOYAGER_VIPH_CONTROL_VIPH_EN_MASK  0x1u
+
+/* Display merge and alpha control. */
+/* REG: VOYAGER.disp_merge_cntl 0xd60 rw32 reset=unknown established */
+/* FIELD: VOYAGER.disp_merge_cntl.disp_alpha_mode 1:0 inferred */
+#define VOYAGER_DISP_MERGE_CNTL_DISP_ALPHA_MODE_SHIFT 0
+#define VOYAGER_DISP_MERGE_CNTL_DISP_ALPHA_MODE_MASK  0x3u
+/* FIELD: VOYAGER.disp_merge_cntl.disp_rgb_offset_en 8:8 inferred */
+#define VOYAGER_DISP_MERGE_CNTL_DISP_RGB_OFFSET_EN_SHIFT 8
+#define VOYAGER_DISP_MERGE_CNTL_DISP_RGB_OFFSET_EN_MASK  0x1u
+/* FIELD: VOYAGER.disp_merge_cntl.disp_lin_trans_bypass 9:9 inferred */
+#define VOYAGER_DISP_MERGE_CNTL_DISP_LIN_TRANS_BYPASS_SHIFT 9
+#define VOYAGER_DISP_MERGE_CNTL_DISP_LIN_TRANS_BYPASS_MASK  0x1u
+/* FIELD: VOYAGER.disp_merge_cntl.disp_grph_alpha_mask 23:16 inferred */
+#define VOYAGER_DISP_MERGE_CNTL_DISP_GRPH_ALPHA_MASK_SHIFT 16
+#define VOYAGER_DISP_MERGE_CNTL_DISP_GRPH_ALPHA_MASK_MASK  0xffu
+/* FIELD: VOYAGER.disp_merge_cntl.disp_ov0_alpha_mask 31:24 inferred */
+#define VOYAGER_DISP_MERGE_CNTL_DISP_OV0_ALPHA_MASK_SHIFT 24
+#define VOYAGER_DISP_MERGE_CNTL_DISP_OV0_ALPHA_MASK_MASK  0xffu
 
 /* Engine status. */
 /* REG: VOYAGER.rbbm_status 0xe40 r32 reset=unknown inferred */
@@ -596,6 +689,39 @@
 #define VOYAGER_RBBM_STATUS_GUI_ACTIVE_SHIFT 31
 #define VOYAGER_RBBM_STATUS_GUI_ACTIVE_MASK  0x1u
 
+/* Scratch register 5 (the engine-reset packets write it). */
+/* REG: VOYAGER.scratch_reg5 0x15f4 rw32 reset=unknown inferred */
+
+/* Destination cache control and status, packet-register form. */
+/* REG: VOYAGER.dstcache_ctlstat 0x1714 rw32 reset=unknown inferred */
+/* FIELD: VOYAGER.dstcache_ctlstat.dc_flush 1:0 inferred */
+#define VOYAGER_DSTCACHE_CTLSTAT_DC_FLUSH_SHIFT 0
+#define VOYAGER_DSTCACHE_CTLSTAT_DC_FLUSH_MASK  0x3u
+/* FIELD: VOYAGER.dstcache_ctlstat.dc_free 3:2 inferred */
+#define VOYAGER_DSTCACHE_CTLSTAT_DC_FREE_SHIFT 2
+#define VOYAGER_DSTCACHE_CTLSTAT_DC_FREE_MASK  0x3u
+
+/* Command processor wait-until condition. */
+/* REG: VOYAGER.wait_until 0x1720 rw32 reset=unknown inferred */
+/* FIELD: VOYAGER.wait_until.wait_host_idleclean 18:18 inferred */
+#define VOYAGER_WAIT_UNTIL_WAIT_HOST_IDLECLEAN_SHIFT 18
+#define VOYAGER_WAIT_UNTIL_WAIT_HOST_IDLECLEAN_MASK  0x1u
+
+/* Vertex array processor control and status. */
+/* REG: VOYAGER.vap_cntl_status 0x2140 rw32 reset=unknown inferred */
+/* FIELD: VOYAGER.vap_cntl_status.vc_swap 1:0 inferred */
+#define VOYAGER_VAP_CNTL_STATUS_VC_SWAP_SHIFT 0
+#define VOYAGER_VAP_CNTL_STATUS_VC_SWAP_MASK  0x3u
+/* FIELD: VOYAGER.vap_cntl_status.pvs_bypass 8:8 inferred */
+#define VOYAGER_VAP_CNTL_STATUS_PVS_BYPASS_SHIFT 8
+#define VOYAGER_VAP_CNTL_STATUS_PVS_BYPASS_MASK  0x1u
+/* FIELD: VOYAGER.vap_cntl_status.busy_mid 11:11 inferred */
+#define VOYAGER_VAP_CNTL_STATUS_BUSY_MID_SHIFT 11
+#define VOYAGER_VAP_CNTL_STATUS_BUSY_MID_MASK  0x1u
+/* FIELD: VOYAGER.vap_cntl_status.busy_top 31:24 inferred */
+#define VOYAGER_VAP_CNTL_STATUS_BUSY_TOP_SHIFT 24
+#define VOYAGER_VAP_CNTL_STATUS_BUSY_TOP_MASK  0xffu
+
 /* 2D destination cache control and status. */
 /* REG: VOYAGER.rb2d_dstcache_ctlstat 0x342c rw32 reset=unknown inferred */
 /* FIELD: VOYAGER.rb2d_dstcache_ctlstat.dc_flush 1:0 established */
@@ -638,12 +764,17 @@
 #define VOYAGER_GA_SOFT_RESET_SOFT_RESET_COUNT_SHIFT 0
 #define VOYAGER_GA_SOFT_RESET_SOFT_RESET_COUNT_MASK  0xffffu
 
+/* Packet-3 opcode the engine-reset sequence queues to set the scissor rectangle. */
+#define VOYAGER_PM4_OPCODE_CP_SET_SCISSORS 0x1e /* inferred */
+
 /*
  * TESTVEC: 0x17 as VOYAGER.gb_tile_config => enable=1, pipe_count=3, tile_size=1
  *
  * TESTVEC: 0x79 as VOYAGER.rbbm_soft_reset => soft_reset_cp=1, soft_reset_re=1, soft_reset_pp=1, soft_reset_e2=1, soft_reset_rb=1, soft_reset_geometry=0
  *
  * TESTVEC: 0x00003000 as VOYAGER.unnamed_0294 => stereo_sel=3, mode_nibble=0
+ *
+ * TESTVEC: 0x00120000 as VOYAGER.crtc_offset_cntl => crtc_tile_en=0, crtc_offset_flip_cntl=0, crtc_stereo_offset_en=1, stereo_aux=1
  *
  */
 
