@@ -23,6 +23,7 @@ differ by release and option, and missing paths are normal.
 /usr/cpu/sysgen/IP35boot/is1.o
 /usr/cpu/sysgen/IP35boot/vga.a
 /usr/cpu/sysgen/IP35boot/vgastubs.a
+/usr/cpu/sysgen/IP35boot/gfxs.a
 /usr/cpu/sysgen/IP35boot/kernel.o
 /usr/cpu/sysgen/IP35boot/pciio.o
 /usr/cpu/sysgen/IP35boot/pciio_ppb.o
@@ -120,6 +121,7 @@ root/usr/cpu/sysgen/IP35boot/vga.a r300_kernel
 r300_kernel/fglrx.o root/usr/cpu/sysgen/IP35boot/fglrx.o
 r300_kernel/is1.o root/usr/cpu/sysgen/IP35boot/is1.o
 r300_kernel/vgastubs.a root/usr/cpu/sysgen/IP35boot/vgastubs.a
+r300_kernel/gfxs.a root/usr/cpu/sysgen/IP35boot/gfxs.a
 r300_kernel/kernel.o root/usr/cpu/sysgen/IP35boot/kernel.o
 r300_kernel/pciio.o root/usr/cpu/sysgen/IP35boot/pciio.o
 r300_kernel/pciio_ppb.o root/usr/cpu/sysgen/IP35boot/pciio_ppb.o

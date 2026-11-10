@@ -32,7 +32,7 @@ For licensing reasons proprietary SGI and ATI binaries are **not checked into so
 
 | Directory | Contents | Target in `root/` |
 |---|---|---|
-| `r300_kernel/` | `fglrx.o`, `is1.o`, `vga.a` members (an x86 BIOS emulator and the VGA set-up), `vgastubs.a`, `kernel.o`, the PCI and crossbar objects, `config/` (`master.d` files) | `usr/cpu/sysgen/IP35boot/`, `var/sysgen/master.d/` |
+| `r300_kernel/` | `fglrx.o`, `is1.o`, `vga.a` members (an x86 BIOS emulator and the VGA set-up), `vgastubs.a`, `gfxs.a` (the graphics-pipe list from the platform configuration table), `kernel.o`, the PCI and crossbar objects, `config/` (`master.d` files) | `usr/cpu/sysgen/IP35boot/`, `var/sysgen/master.d/` |
 | `libgl/{o32,n32,n64}/` | `libGL.so`, `libGLcore.so`, `libgl.so` | `usr/gfx/arch/IP35VOYAGER*/` |
 | `xserver/` | XFree86, `fglrx_drv.so`, `fglrx_glx.so`, `libfglrxdrm.so`, helper modules, configuration generator | `usr/X11R6/`, `etc/` |
 | `dri/` | `fglrx_dri.so`, `fglrx_dri64.so`, the multipipe DMX driver | `usr/X11R6/lib/modules/dri/` |
