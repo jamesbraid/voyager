@@ -983,6 +983,415 @@ r300 headers and the xf86-video-ati 6.14.6 `radeon_reg.h` were searched for the 
   (v0) equals 8, 47 or 49 (the `li` at 0x42c618, 0x42c624 and 0x42c61c). Unknown: the bits are constants and their
   meaning is not read.
 
+## Bit layouts
+
+This section records the bit layouts of the registers the shipped kernel object and X module reach, where a layout
+can be stated. [VOYAGER_DECODE.h](../VOYAGER_DECODE.h) carries the same layouts in the shared decode-header form, and
+`retools/tools/defs/check-publish-safe.py --config defs.toml` checks the header against this section row by row, so
+a change to either side fails the check until the other follows.
+
+Review status: written by the author of the decode header; the independent evidence review this repository's
+datasheet process asks for has not happened, so nothing here is cleared yet.
+
+How the layouts were derived and graded:
+
+- Bit positions and names come from the public Linux radeon headers (`r100d.h`, `r300d.h`, `radeon_reg.h`,
+  `r300_reg.h`) and Mesa's `r300_reg.h`, at the pins of the `linux/` and `mesa/` submodules. These describe public
+  chips. They show what a public R3xx does, not what this board does.
+- The shipped objects were then read at the sites listed in the sections above. Where the code touches a bit and the
+  mask or value it uses agrees with the public layout, the field is **established**. Where only the public layout
+  describes a field, it is **inferred**. Fields that neither source describes are not listed, and are called out as
+  unknown below.
+- Every register here is a 32-bit word in the 64 KB register aperture. Reset values were not observed: every
+  register is **unknown** at reset. Access directions are those the code uses, widened to read-write for control
+  registers the public headers treat as read-write.
+- The 0x294 word has no public name. The block name `unnamed_0294` is a label chosen here.
+- Where `r100d.h` and `r300d.h` disagree on a bit name (bit 2 of the soft-reset and bit 20 of the engine status are
+  the older chips' setup-engine bits and the R300's vertex-engine bits), the field is named for the position
+  (`geometry`) and graded inferred.
+
+| Register | Offset | Access | Public name |
+|---|---|---|---|
+| `VOYAGER.clock_cntl_index` | 0x8 | rw32 | `CLOCK_CNTL_INDEX` |
+| `VOYAGER.clock_cntl_data` | 0xc | rw32 | `CLOCK_CNTL_DATA` |
+| `VOYAGER.bios_6_scratch` | 0x28 | rw32 | `BIOS_6_SCRATCH` |
+| `VOYAGER.gen_int_cntl` | 0x40 | rw32 | `GEN_INT_CNTL` |
+| `VOYAGER.gen_int_status` | 0x44 | rw32 | `GEN_INT_STATUS` |
+| `VOYAGER.crtc_gen_cntl` | 0x50 | rw32 | `CRTC_GEN_CNTL` |
+| `VOYAGER.dac_cntl` | 0x58 | rw32 | `DAC_CNTL` |
+| `VOYAGER.crtc_status` | 0x5c | r32 | `CRTC_STATUS` |
+| `VOYAGER.dac_cntl2` | 0x7c | rw32 | `DAC_CNTL2` |
+| `VOYAGER.config_xstrap` | 0xe4 | r32 | `CONFIG_XSTRAP` |
+| `VOYAGER.rbbm_soft_reset` | 0xf0 | rw32 | `RBBM_SOFT_RESET` |
+| `VOYAGER.mc_status` | 0x150 | r32 | `MC_STATUS` |
+| `VOYAGER.crtc_offset_cntl` | 0x228 | rw32 | `CRTC_OFFSET_CNTL` |
+| `VOYAGER.fp2_gen_cntl` | 0x288 | rw32 | `FP2_GEN_CNTL` |
+| `VOYAGER.unnamed_0294` | 0x294 | rw32 | none |
+| `VOYAGER.crtc2_gen_cntl` | 0x3f8 | rw32 | `CRTC2_GEN_CNTL` |
+| `VOYAGER.ov0_scale_cntl` | 0x420 | rw32 | `OV0_SCALE_CNTL` |
+| `VOYAGER.cp_stat` | 0x7c0 | r32 | `CP_STAT` |
+| `VOYAGER.rbbm_status` | 0xe40 | r32 | `RBBM_STATUS` |
+| `VOYAGER.rb2d_dstcache_ctlstat` | 0x342c | rw32 | `RB2D_DSTCACHE_CTLSTAT` |
+| `VOYAGER.gb_tile_config` | 0x4018 | rw32 | `GB_TILE_CONFIG` |
+| `VOYAGER.ga_soft_reset` | 0x429c | rw32 | `GA_SOFT_RESET` |
+
+### `VOYAGER.clock_cntl_index` at 0x8
+
+PLL index. Code access: read and write 4, plus a byte store to the top lane (offset 0xb).
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.clock_cntl_index.pll_div_sel` | 9:8 | inferred | public header only |
+| `VOYAGER.clock_cntl_index.pll_wr_en` | 7:7 | established | set around a PLL data write, cleared afterwards |
+| `VOYAGER.clock_cntl_index.pll_addr` | 5:0 | established | index masked to six bits by the X module and the kernel helper |
+
+### `VOYAGER.clock_cntl_data` at 0xc
+
+PLL data. Code access: read and write 4; whole-word data, no fields defined.
+
+No fields are defined; the word is data.
+
+### `VOYAGER.bios_6_scratch` at 0x28
+
+Firmware scratch word 6. Code access: read 4 in the kernel object.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.bios_6_scratch.board_probe` | 13:13 | established | tested by the kernel object before it marks a workstation board; meaning unknown |
+
+### `VOYAGER.gen_int_cntl` at 0x40
+
+General interrupt enables. Code access: read and write 4; stored zero at attach.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.gen_int_cntl.viddma` | 31:31 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.guidma` | 30:30 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.dvi_i2c_int` | 29:29 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.hdcp_authorized_int` | 28:28 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.geyserville` | 27:27 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.sw_int_en` | 25:25 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.viph_int_en` | 24:24 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.gui_idle` | 19:19 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.i2c_int_en` | 17:17 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.dma_viph3_int_en` | 15:15 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.dma_viph2_int_en` | 14:14 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.dma_viph1_int_en` | 13:13 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.dma_viph0_int_en` | 12:12 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.vsync_diff_over_limit` | 11:11 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.fp2_detect` | 10:10 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.crtc2_vblank` | 9:9 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.snapshot2` | 7:7 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.crtc2_vsync` | 6:6 | established | cleared by the interrupt routine (mask 0xffffffbb) |
+| `VOYAGER.gen_int_cntl.crtc2_vline` | 5:5 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.fp_detect` | 4:4 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.snapshot` | 3:3 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.crtc_vsync` | 2:2 | established | cleared by the interrupt routine (mask 0xffffffbb) |
+| `VOYAGER.gen_int_cntl.crtc_vline` | 1:1 | inferred | public headers only |
+| `VOYAGER.gen_int_cntl.crtc_vblank` | 0:0 | established | set by the vertical-blank enable path |
+
+### `VOYAGER.gen_int_status` at 0x44
+
+General interrupt status and acknowledge. Code access: read and write 4; writing a set bit acknowledges it.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.gen_int_status.viddma_stat` | 31:31 | inferred | public headers only |
+| `VOYAGER.gen_int_status.guidma_stat` | 30:30 | inferred | public headers only |
+| `VOYAGER.gen_int_status.dvi_i2c_int_stat` | 29:29 | inferred | public headers only |
+| `VOYAGER.gen_int_status.hdcp_authorized_int_stat` | 28:28 | inferred | public headers only |
+| `VOYAGER.gen_int_status.geyserville_stat` | 27:27 | inferred | public headers only |
+| `VOYAGER.gen_int_status.sw_int_set` | 26:26 | inferred | public headers only |
+| `VOYAGER.gen_int_status.sw_int` | 25:25 | inferred | public headers only |
+| `VOYAGER.gen_int_status.viph_int` | 24:24 | inferred | public headers only |
+| `VOYAGER.gen_int_status.gui_idle_stat` | 19:19 | inferred | public headers only |
+| `VOYAGER.gen_int_status.i2c_int` | 17:17 | inferred | public headers only |
+| `VOYAGER.gen_int_status.dma_viph3_int` | 15:15 | inferred | public headers only |
+| `VOYAGER.gen_int_status.dma_viph2_int` | 14:14 | inferred | public headers only |
+| `VOYAGER.gen_int_status.dma_viph1_int` | 13:13 | inferred | public headers only |
+| `VOYAGER.gen_int_status.dma_viph0_int` | 12:12 | inferred | public headers only |
+| `VOYAGER.gen_int_status.vsync_diff_over_limit_stat` | 11:11 | inferred | public headers only |
+| `VOYAGER.gen_int_status.fp2_detect_stat` | 10:10 | inferred | public headers only |
+| `VOYAGER.gen_int_status.crtc2_vblank_stat` | 9:9 | inferred | public headers only |
+| `VOYAGER.gen_int_status.cap0_int_active` | 8:8 | inferred | public headers only |
+| `VOYAGER.gen_int_status.snapshot2_stat` | 7:7 | inferred | public headers only |
+| `VOYAGER.gen_int_status.crtc2_vsync_stat` | 6:6 | established | X module waits on it, acknowledges by writing 0x40 |
+| `VOYAGER.gen_int_status.crtc2_vline_stat` | 5:5 | inferred | public headers only |
+| `VOYAGER.gen_int_status.fp_detect_stat` | 4:4 | inferred | public headers only |
+| `VOYAGER.gen_int_status.snapshot_stat` | 3:3 | inferred | public headers only |
+| `VOYAGER.gen_int_status.crtc_vsync_stat` | 2:2 | established | tested, acknowledged by writing 4 |
+| `VOYAGER.gen_int_status.crtc_vline_stat` | 1:1 | inferred | public headers only |
+| `VOYAGER.gen_int_status.crtc_vblank_stat` | 0:0 | established | tested and acknowledged by the vblank handler |
+
+### `VOYAGER.crtc_gen_cntl` at 0x50
+
+First CRTC general control. Code access: read and write 4.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.crtc_gen_cntl.crtc_disp_req_en_b` | 26:26 | inferred | public headers only |
+| `VOYAGER.crtc_gen_cntl.crtc_en` | 25:25 | established | cleared at attach (mask 0xfdfeffff) |
+| `VOYAGER.crtc_gen_cntl.crtc_ext_disp_en` | 24:24 | inferred | public headers only |
+| `VOYAGER.crtc_gen_cntl.crtc_cur_mode` | 22:20 | inferred | public headers only |
+| `VOYAGER.crtc_gen_cntl.crtc_vstat_mode` | 18:17 | inferred | public headers only |
+| `VOYAGER.crtc_gen_cntl.crtc_cur_en` | 16:16 | established | cleared at attach (mask 0xfdfeffff) |
+| `VOYAGER.crtc_gen_cntl.crtc_icon_en` | 15:15 | inferred | public headers only |
+| `VOYAGER.crtc_gen_cntl.crtc_pix_width` | 11:8 | inferred | public headers only |
+| `VOYAGER.crtc_gen_cntl.crtc_c_sync_en` | 4:4 | inferred | public headers only |
+| `VOYAGER.crtc_gen_cntl.crtc_interlace_en` | 1:1 | inferred | public headers only |
+| `VOYAGER.crtc_gen_cntl.crtc_dbl_scan_en` | 0:0 | inferred | public headers only |
+
+### `VOYAGER.dac_cntl` at 0x58
+
+Primary DAC control. Code access: read and write 4; the gamma routine also clears bit 14, which no public header names.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.dac_cntl.dac_mask_all` | 31:24 | inferred | public header only |
+| `VOYAGER.dac_cntl.dac_pdwn` | 15:15 | inferred | public header only |
+| `VOYAGER.dac_cntl.dac_vga_adr_en` | 13:13 | inferred | public header only |
+| `VOYAGER.dac_cntl.dac_8bit_en` | 8:8 | established | ORed in (0x100) by the gamma routine |
+| `VOYAGER.dac_cntl.dac_cmp_en` | 3:3 | inferred | public header only |
+| `VOYAGER.dac_cntl.dac_blanking` | 2:2 | inferred | public header only |
+| `VOYAGER.dac_cntl.dac_range_cntl` | 1:0 | inferred | public header only |
+
+### `VOYAGER.crtc_status` at 0x5c
+
+First CRTC status. Code access: read 4 and write 4 in the tables.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.crtc_status.crtc_vblank_cur` | 0:0 | established | overlay routine polls it with no counter |
+
+### `VOYAGER.dac_cntl2` at 0x7c
+
+Second DAC control. Code access: read and write 4.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.dac_cntl2.dac2_cmp_en` | 7:7 | inferred | public header only |
+| `VOYAGER.dac_cntl2.dac2_palette_acc_ctl` | 5:5 | established | set and cleared around palette programming by the gamma routine |
+| `VOYAGER.dac_cntl2.dac2_dac2_clk_sel` | 1:1 | inferred | public header only |
+| `VOYAGER.dac_cntl2.dac2_dac_clk_sel` | 0:0 | inferred | public header only |
+
+### `VOYAGER.config_xstrap` at 0xe4
+
+Strap bits. Code access: read 4.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.config_xstrap.board_strap` | 27:27 | established | tested by the kernel object before it marks a workstation board; meaning unknown |
+
+### `VOYAGER.rbbm_soft_reset` at 0xf0
+
+Engine soft reset. Code access: write 0x79, read back, write 0, read back.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.rbbm_soft_reset.soft_reset_idct` | 14:14 | inferred | public headers only |
+| `VOYAGER.rbbm_soft_reset.soft_reset_ga` | 13:13 | inferred | public headers only |
+| `VOYAGER.rbbm_soft_reset.soft_reset_cg` | 12:12 | inferred | public headers only |
+| `VOYAGER.rbbm_soft_reset.soft_reset_disp` | 11:11 | inferred | public headers only |
+| `VOYAGER.rbbm_soft_reset.soft_reset_vip` | 10:10 | inferred | public headers only |
+| `VOYAGER.rbbm_soft_reset.soft_reset_aic` | 9:9 | inferred | public headers only |
+| `VOYAGER.rbbm_soft_reset.soft_reset_mc` | 8:8 | inferred | public headers only |
+| `VOYAGER.rbbm_soft_reset.soft_reset_hdp` | 7:7 | inferred | public headers only |
+| `VOYAGER.rbbm_soft_reset.soft_reset_rb` | 6:6 | established | part of the 0x79 pulse written by the engine reset routine |
+| `VOYAGER.rbbm_soft_reset.soft_reset_e2` | 5:5 | established | part of the 0x79 pulse written by the engine reset routine |
+| `VOYAGER.rbbm_soft_reset.soft_reset_pp` | 4:4 | established | part of the 0x79 pulse written by the engine reset routine |
+| `VOYAGER.rbbm_soft_reset.soft_reset_re` | 3:3 | established | part of the 0x79 pulse written by the engine reset routine |
+| `VOYAGER.rbbm_soft_reset.soft_reset_geometry` | 2:2 | inferred | public headers only |
+| `VOYAGER.rbbm_soft_reset.soft_reset_hi` | 1:1 | inferred | public headers only |
+| `VOYAGER.rbbm_soft_reset.soft_reset_cp` | 0:0 | established | part of the 0x79 pulse written by the engine reset routine |
+
+### `VOYAGER.mc_status` at 0x150
+
+Memory controller status. Code access: read 4; the idle-bit choice depends on a chip-class word in the driver record.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.mc_status.mc_idle_r300` | 4:4 | established | waited on for the R300-class records |
+| `VOYAGER.mc_status.mc_idle` | 2:2 | established | waited on for chips below the R300 value in the driver record |
+
+### `VOYAGER.crtc_offset_cntl` at 0x228
+
+First CRTC offset control. Code access: read and write 4.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.crtc_offset_cntl.stereo_aux` | 20:20 | inferred | set and cleared together with bit 17; no public header names bit 20 |
+| `VOYAGER.crtc_offset_cntl.crtc_stereo_offset_en` | 17:17 | established | set and cleared with bit 20 by the kernel stereo routine |
+| `VOYAGER.crtc_offset_cntl.crtc_offset_flip_cntl` | 16:16 | inferred | public header only |
+| `VOYAGER.crtc_offset_cntl.crtc_tile_en` | 15:15 | inferred | public header only |
+
+### `VOYAGER.fp2_gen_cntl` at 0x288
+
+Second flat-panel and DVO control. Code access: read and write 4.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.fp2_gen_cntl.fp2_dvo_en` | 25:25 | established | cleared with mask 0xfdffffff on one chip class |
+
+### `VOYAGER.unnamed_0294` at 0x294
+
+Stereo field word (no public name). Code access: read and write 4 in both objects.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.unnamed_0294.stereo_sel` | 13:12 | established | set and cleared as a pair by the kernel and X module; meaning inferred |
+| `VOYAGER.unnamed_0294.mode_nibble` | 3:0 | inferred | X module loads the low nibble of an argument; meaning not traced |
+
+### `VOYAGER.crtc2_gen_cntl` at 0x3f8
+
+Second CRTC general control. Code access: read and write 4.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.crtc2_gen_cntl.crtc2_vsync_dis` | 29:29 | inferred | public headers only |
+| `VOYAGER.crtc2_gen_cntl.crtc2_hsync_dis` | 28:28 | inferred | public headers only |
+| `VOYAGER.crtc2_gen_cntl.crtc2_c_sync_en` | 27:27 | inferred | public headers only |
+| `VOYAGER.crtc2_gen_cntl.crtc2_disp_req_en_b` | 26:26 | inferred | public headers only |
+| `VOYAGER.crtc2_gen_cntl.crtc2_en` | 25:25 | established | cleared at attach (mask 0xfdfeffff) |
+| `VOYAGER.crtc2_gen_cntl.crtc2_display_dis` | 23:23 | inferred | public headers only |
+| `VOYAGER.crtc2_gen_cntl.crtc2_cur_mode` | 22:20 | inferred | public headers only |
+| `VOYAGER.crtc2_gen_cntl.crtc2_cur_en` | 16:16 | established | cleared at attach (mask 0xfdfeffff) |
+| `VOYAGER.crtc2_gen_cntl.crtc2_icon_en` | 15:15 | inferred | public headers only |
+| `VOYAGER.crtc2_gen_cntl.crtc2_pix_width` | 11:8 | inferred | public headers only |
+| `VOYAGER.crtc2_gen_cntl.crt2_on` | 7:7 | inferred | public headers only |
+| `VOYAGER.crtc2_gen_cntl.crtc2_vsync_tristate` | 6:6 | inferred | public headers only |
+| `VOYAGER.crtc2_gen_cntl.crtc2_hsync_tristate` | 5:5 | inferred | public headers only |
+| `VOYAGER.crtc2_gen_cntl.crtc2_sync_tristate` | 4:4 | inferred | public headers only |
+| `VOYAGER.crtc2_gen_cntl.crtc2_interlace_en` | 1:1 | inferred | public headers only |
+| `VOYAGER.crtc2_gen_cntl.crtc2_dbl_scan_en` | 0:0 | inferred | public headers only |
+
+### `VOYAGER.ov0_scale_cntl` at 0x420
+
+Overlay scaler control. Code access: read and write 4.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.ov0_scale_cntl.ov0_soft_reset` | 31:31 | inferred | public header only |
+| `VOYAGER.ov0_scale_cntl.ov0_overlay_en` | 30:30 | established | cleared with mask 0xbfffffff when the overlay is hidden |
+| `VOYAGER.ov0_scale_cntl.ov0_int_emu` | 29:29 | inferred | public header only |
+| `VOYAGER.ov0_scale_cntl.ov0_lin_trans_bypass` | 28:28 | inferred | public header only |
+| `VOYAGER.ov0_scale_cntl.ov0_bandwidth` | 26:26 | inferred | public header only |
+| `VOYAGER.ov0_scale_cntl.ov0_double_buffer_regs` | 24:24 | inferred | public header only |
+| `VOYAGER.ov0_scale_cntl.ov0_burst_per_plane` | 22:16 | inferred | public header only |
+| `VOYAGER.ov0_scale_cntl.ov0_crtc_sel` | 14:14 | inferred | public header only |
+| `VOYAGER.ov0_scale_cntl.ov0_adaptive_deint` | 12:12 | inferred | public header only |
+| `VOYAGER.ov0_scale_cntl.ov0_surface_format` | 11:8 | inferred | public header only |
+| `VOYAGER.ov0_scale_cntl.ov0_gamma_sel` | 7:5 | inferred | public header only |
+| `VOYAGER.ov0_scale_cntl.ov0_signed_uv` | 4:4 | inferred | public header only |
+| `VOYAGER.ov0_scale_cntl.ov0_vert_pick_nearest` | 3:3 | inferred | public header only |
+| `VOYAGER.ov0_scale_cntl.ov0_horz_pick_nearest` | 2:2 | inferred | public header only |
+| `VOYAGER.ov0_scale_cntl.ov0_no_read_behind_scan` | 1:1 | inferred | public header only |
+
+### `VOYAGER.cp_stat` at 0x7c0
+
+Command processor status. Code access: read 4.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.cp_stat.cp_busy` | 31:31 | inferred | public headers only |
+| `VOYAGER.cp_stat.cmdstrm_busy` | 30:30 | established | polled until clear before the engine reset |
+| `VOYAGER.cp_stat.viddma_busy` | 29:29 | inferred | public headers only |
+| `VOYAGER.cp_stat.guidma_busy` | 28:28 | inferred | public headers only |
+| `VOYAGER.cp_stat.csq_indirect2_busy` | 15:15 | inferred | public headers only |
+| `VOYAGER.cp_stat.csf_indirect2_busy` | 14:14 | inferred | public headers only |
+| `VOYAGER.cp_stat.csi_busy` | 13:13 | inferred | public headers only |
+| `VOYAGER.cp_stat.csq_indirect_busy` | 12:12 | inferred | public headers only |
+| `VOYAGER.cp_stat.csq_primary_busy` | 11:11 | inferred | public headers only |
+| `VOYAGER.cp_stat.csf_indirect_busy` | 10:10 | inferred | public headers only |
+| `VOYAGER.cp_stat.csf_primary_busy` | 9:9 | inferred | public headers only |
+| `VOYAGER.cp_stat.rciu_busy` | 3:3 | inferred | public headers only |
+| `VOYAGER.cp_stat.rsiu_busy` | 2:2 | inferred | public headers only |
+| `VOYAGER.cp_stat.mwu_busy` | 1:1 | inferred | public headers only |
+| `VOYAGER.cp_stat.mru_busy` | 0:0 | inferred | public headers only |
+
+### `VOYAGER.rbbm_status` at 0xe40
+
+Engine status. Code access: read 4.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.rbbm_status.gui_active` | 31:31 | established | polled until clear |
+| `VOYAGER.rbbm_status.cba2d_busy` | 27:27 | inferred | public headers only |
+| `VOYAGER.rbbm_status.ga_busy` | 26:26 | inferred | public headers only |
+| `VOYAGER.rbbm_status.tim_busy` | 25:25 | inferred | public headers only |
+| `VOYAGER.rbbm_status.pb_busy` | 24:24 | inferred | public headers only |
+| `VOYAGER.rbbm_status.tdm_busy` | 23:23 | inferred | public headers only |
+| `VOYAGER.rbbm_status.tam_busy` | 22:22 | inferred | public headers only |
+| `VOYAGER.rbbm_status.re_busy` | 21:21 | inferred | public headers only |
+| `VOYAGER.rbbm_status.geometry_busy` | 20:20 | inferred | public headers only |
+| `VOYAGER.rbbm_status.rb3d_busy` | 19:19 | inferred | public headers only |
+| `VOYAGER.rbbm_status.rb2d_busy` | 18:18 | inferred | public headers only |
+| `VOYAGER.rbbm_status.e2_busy` | 17:17 | inferred | public headers only |
+| `VOYAGER.rbbm_status.cp_cmdstrm_busy` | 16:16 | inferred | public headers only |
+| `VOYAGER.rbbm_status.eng_ev_busy` | 15:15 | inferred | public headers only |
+| `VOYAGER.rbbm_status.cf_pipe_busy` | 14:14 | inferred | public headers only |
+| `VOYAGER.rbbm_status.cfrq_in_rtbuf` | 13:13 | inferred | public headers only |
+| `VOYAGER.rbbm_status.cprq_in_rtbuf` | 12:12 | inferred | public headers only |
+| `VOYAGER.rbbm_status.hirq_in_rtbuf` | 11:11 | inferred | public headers only |
+| `VOYAGER.rbbm_status.cfrq_on_rbb` | 10:10 | inferred | public headers only |
+| `VOYAGER.rbbm_status.cprq_on_rbb` | 9:9 | inferred | public headers only |
+| `VOYAGER.rbbm_status.hirq_on_rbb` | 8:8 | inferred | public headers only |
+| `VOYAGER.rbbm_status.cmdfifo_avail` | 6:0 | established | masked with 0x7f and compared with a requested entry count |
+
+### `VOYAGER.rb2d_dstcache_ctlstat` at 0x342c
+
+2D destination cache control and status. Code access: read and write 4.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.rb2d_dstcache_ctlstat.dc_busy` | 31:31 | established | polled until clear |
+| `VOYAGER.rb2d_dstcache_ctlstat.dc_free` | 3:2 | established | upper bits of the 0xf written by the engine flush routine |
+| `VOYAGER.rb2d_dstcache_ctlstat.dc_flush` | 1:0 | established | low bits of the 0xf written by the engine flush routine |
+
+### `VOYAGER.gb_tile_config` at 0x4018
+
+Tile and pipe configuration. Code access: write 4 (twice).
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.gb_tile_config.tile_size` | 5:4 | established | value 1 in 0x17 |
+| `VOYAGER.gb_tile_config.pipe_count` | 3:1 | established | value 3 in 0x17 |
+| `VOYAGER.gb_tile_config.enable` | 0:0 | established | value 0x17 written at attach |
+
+### `VOYAGER.ga_soft_reset` at 0x429c
+
+Setup engine soft reset. Code access: write 4.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.ga_soft_reset.soft_reset_count` | 15:0 | inferred | Mesa comment and AMD R3xx reference; the driver writes 1024 |
+
+### Test values
+
+Four values that this page already records are decoded by the header and checked against it: 0x17 written to
+`gb_tile_config` at attach (enable, three pipes in the pipe-count field, 16-pixel tiles), 0x79 written to
+`rbbm_soft_reset` by the engine reset (the CP, RE, PP, E2 and RB resets), 0x3000 as the stereo pair of
+`unnamed_0294`, and 0x120000 as the pair of bits the kernel stereo routine ORs into `crtc_offset_cntl` (bit 17 and bit 20).
+
+### What is still unknown, and what would settle it
+
+- **Reset values of every register.** No capture of a board at reset was read. A register dump on a powered board
+  before the driver attaches, or the vendor reference for the same chip, would settle them.
+- **Meaning of bits `board_probe` (0x28 bit 13) and `board_strap` (0xe4 bit 27).** The kernel object tests them to
+  mark a workstation board; no public header defines them. A reference guide for this exact chip or a board with the
+  bit forced would settle them. The later M56 guide defines no such bits.
+- **Meaning of `stereo_sel` and `mode_nibble` in 0x294, and of `stereo_aux` (0x228 bit 20).** Both objects move the pair
+  together with the stereo switch, which says they relate to stereo, not what each value selects. Tracing the
+  arguments of the X module's transmitter routine to their callers, or a reference for the compositor stage, would
+  settle them.
+- **Bit 14 of `dac_cntl`.** The gamma routine clears it; no public header names it. A chip reference would settle it.
+- **Whether the older-chip and R300 names for the same bit (setup engine, vertex engine) apply to this part.** They
+  differ in the public headers. The chip identity in the driver record, once traced, or the part's own reference
+  would settle it.
+- **`soft_reset_count` width.** Taken from Mesa's comment and AMD's R3xx reference, not from a write the code makes
+  beyond the value 1024.
+- **Pipe-count values other than 3** (`rv300`, `r420`) and **tile sizes other than 16** are inferred from the public
+  headers; the code writes only 0x17.
+
 ## Not in the tables
 
 - **The compositor I2C engine, 0x2e0, 0x2e4 and 0x2e8.** `fglrxCompositorI2cRegRead` at 0x5738 reaches them
