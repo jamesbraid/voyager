@@ -1408,7 +1408,10 @@ Four values that this page already records are decoded by the header and checked
   second word carries a data count, an address count and the enable at bit 17. Inferred, from the layout match.
 - **0xf18.** `firegl_addmap` at 0x1bc50 reads the word at 0xf18 of the aperture right after storing its
   address at device record +1000, keeps the high half and stores it at device record +1008. `radeon_reg.h` lists
-  0xf18 as `REG_BASE` in the PCI configuration space, which is another address space. Role not decoded.
+  0xf18 as `REG_BASE` in the PCI configuration space, which is another address space. Role not decoded. Unknown: the
+  read, its location and the high-half keep are established from the disassembly of that routine; the register's meaning is
+  not. Next route: find where device record +1008 is used later (the aperture map size or bus address), and search the
+  AMD references and the Linux and X.Org tables for offset 0xf18 in the aperture. No REG line until it is named.
 - **Calls through the accessor table.** No routine of `fglrx.o` calls `FGLRXReadRegister`,
   `FGLRXWriteRegister`, `FGLRXWriteRegister8` or `FGLRXINPLL` (see above), so the offsets their callers use are
   outside the objects read here.

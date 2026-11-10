@@ -48,7 +48,10 @@ Promoted:
   `VAP_CNTL_STATUS` 0x2140 (page 72).
 - Documented by M56 only, so the layout is a later part's: `I2C_CNTL_1` 0x94 (page 2-118), `CONFIG_MEMSIZE` 0xf8 (2-59),
   `GPIOPAD_MASK` 0x198, `GPIOPAD_A` 0x19c, `GPIOPAD_EN` 0x1a0 and `GPIOPAD_Y` 0x1a4 (all 2-147), `CAP0_TRIG_CNTL`
-  0x950 (2-129), `VIPH_CONTROL` 0xc40 (2-122).
+  0x950 (2-129), `VIPH_CONTROL` 0xc40 (2-122). Inferred for this chip: the document is established for M56, but a later
+  part's layout is only a reading for the R300 and R350. The decode header carries `CAP0_TRIG_CNTL` and
+  `VIPH_CONTROL`; `I2C_CNTL_1`, `CONFIG_MEMSIZE` and the four pad registers have no REG line, because no R3xx-era
+  document or public R3xx header gives their fields and the header lists only what it can ground for this chip.
 
 A promotion of an M56 register says the name and field layout match and nothing IRIX does with it contradicts
 them. It does not show the R300 or R350 has identical reset values or reserved bits.
@@ -64,34 +67,44 @@ them. It does not show the R300 or R350 has identical reset values or reserved b
 - **0x2140 `VAP_CNTL_STATUS`** (R3xx page 72): this settles the two-name conflict. The Linux R300 table says
   `VAP_CNTL_STATUS`, `radeon_reg.h` says `SE_CNTL_STATUS` (the R200 name). The R3xx document has only `VAP_CNTL_STATUS`:
   VC_SWAP (1:0, the endian swap), PVS_BYPASS (8) and read-only busy bits (11, 24 to 31). `FGLInitCP`'s store of zero clears
-  the swap and the bypass and leaves the busy bits alone. This is the one earlier name corrected.
+  the swap and the bypass and leaves the busy bits alone. This is the one earlier name corrected. Name and layout:
+  established from the R3xx document, which is for this chip. The reading of the store as "no swap, vertex engine in use"
+  is inferred. The decode header now carries the register and these fields as `vap_cntl_status`.
 - **0x198, 0x19c, 0x1a0, 0x1a4 `GPIOPAD_*`** (M56 page 2-147): the 18 GPIO pads (bits 17:0, plus GENERICD at bit 18) as
   mask (use as GPIO), output level, output enable and a read-only input level. `SGIGLXSwapBarrierInit` sets bit 0 of
   the mask and clears bit 0 of the enable: pad 0 is made a GPIO input, which is the swap-barrier line. The routine at
   0x420f00 sets bits 13:12 of the mask and read-modify-writes bits 13:12 of the level and the enable, so pads 12 and 13
-  are driven. The routine at 0x421080 clears bit 25 of `CRTC_GEN_CNTL` (0x50), waits until bit 16 of 0x1a4 reads
+  are driven. Grade: the register names and the pad-to-bit layout are inferred for this chip (M56 is a later part); the bit
+  uses by the two routines are established from the stores. The routine at 0x421080 clears bit 25 of `CRTC_GEN_CNTL` (0x50), waits until bit 16 of 0x1a4 reads
   clear and then set (five reads per pass), and writes bit 25 back: the CRTC is restarted on a rising edge of pad 16.
   All of these bits are inside the document's 18-bit fields, and the input register is only read.
 - **0x1a4 and the ROM choice**: the document says the register is the level read back from the GPIO pads. So bits
   7:6 (bit i is pad i, inferred), which `sg2flash` uses to choose `sg3.bin` or `sg3a.bin`, are the levels of pads 7 and 6 on the board. Which strap or
   pull on the board drives them is wiring and is not in the document or the software.
 - **0xf8 `CONFIG_MEMSIZE`**: a byte count the BIOS leaves for the driver, with bits 19:0 hardwired to zero. The X module
-  shifts it right by 10, which gives kilobytes if the word is a byte count.
+  shifts it right by 10, which gives kilobytes if the word is a byte count. Inferred: the hardwired-zero low bits are M56's
+  layout, not shown for the R300 or R350, and the shipped code only shifts the word right (by 10 and by 16).
 
 ## Matched but not promoted
 
 - **0xe0 `CONFIG_CNTL`**: IRIX reads bits 19:16 and increments them. M56 lists those bits as reserved, so the document
-  gives the read no meaning.
+  gives the read no meaning. Unknown: no R3xx-era document or public R3xx header names the field, and the increment
+  is established only as a code fact. Routes tried: the R3xx and M56 references and the Linux and X.Org register tables.
+  The register has no REG line, since no field can be grounded.
 - **0xe4 `CONFIG_XSTRAP`**: `fglrx.o` tests bit 27. M56 defines only bits 9:1.
 - **0x30**: M56 calls it `PCIE_INDEX` (a PCI Express indirect index, 10:0). The earlier names are `BUS_CNTL` (the AGP-era
-  register) or `PCIE_INDEX`. M56 is a PCI Express part, so it cannot choose for an R300 or R350.
+  register) or `PCIE_INDEX`. M56 is a PCI Express part, so it cannot choose for an R300 or R350. Unknown: the offset is established, the name is not. Next route: the layout of the
+  word the shipped code writes (an index in bits 10:0 or an AGP-era control word) against how the X module uses the value.
+  No REG line until the name is settled.
 - **0x3c4, 0x3c8**: M56 lists `SEQ8_IDX` and `DAC_W_INDEX`, 8-bit VGA ports. IRIX moves them as 32-bit words in the same
   save and restore group as `FP2_GEN_CNTL` (0x288) and `CRTC2_GEN_CNTL` (0x3f8). The earlier conflict between
   these and `FP_H2_SYNC_STRT_WID`, `FP_V2_SYNC_STRT_WID` stays open. The 8-bit and 3-bit fields fit poorly with whole-word
-  moves, so M56's names are less likely here; the row stays `located`.
+  moves, so M56's names are less likely here; the row stays `located`. Unknown: neither pair of names is shown. The offsets are
+  established as touched; no REG line is written for either.
 - **0x194** has `GPIO_STRENGTH` in M56 (SN 3:0, SP 7:4, page 2-147). [registers.md](registers.md) infers that name from the
   neighbouring GPIO pad registers and two access sites it traces to the aperture; the layout is a later part's, so the
-  name is not proved for the R300 or R350. The row is not counted as promoted here.
+  name is not proved for the R300 or R350. The row is not counted as promoted here. Inferred, unproved: no REG line
+  for 0x194.
 
 ## Differences between generations
 
