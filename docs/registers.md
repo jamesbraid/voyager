@@ -1413,7 +1413,7 @@ Microengine RAM data, low word, written second for each table entry. Code access
 
 ### `VOYAGER.tv_master_cntl` at 0x800
 
-TV encoder master control. Code access: read and write 4. The timing save routine stores 0x80000680, reads it back and rewrites it with bit 4 cleared and bit 0 set; the restore routine writes it back. The public header names only bit 30, which the code does not touch, so no field is listed.
+TV encoder master control. Code access: read and write 4. The timing save routine (`SaveTimingCode`) stores 0x80000680 (0x4400fc), reads it back and rewrites it with bit 4 cleared and bit 0 set (the mask 0xffffffee and the or-in of 1, store at 0x440134): **established**, re-read from the routine's stores and constants. The restore routine writes it back; see [x-video-driver.md](x-video-driver.md). The public header names only bit 30, which the code does not touch, so no field is listed.
 
 ### `VOYAGER.rbbm_status` at 0xe40
 
