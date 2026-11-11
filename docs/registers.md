@@ -1025,13 +1025,25 @@ How the layouts were derived and graded:
 | `VOYAGER.dac_cntl2` | 0x7c | rw32 | `DAC_CNTL2` |
 | `VOYAGER.config_xstrap` | 0xe4 | r32 | `CONFIG_XSTRAP` |
 | `VOYAGER.rbbm_soft_reset` | 0xf0 | rw32 | `RBBM_SOFT_RESET` |
+| `VOYAGER.mc_fb_location` | 0x148 | rw32 | `MC_FB_LOCATION` |
 | `VOYAGER.mc_status` | 0x150 | r32 | `MC_STATUS` |
 | `VOYAGER.crtc_offset_cntl` | 0x228 | rw32 | `CRTC_OFFSET_CNTL` |
+| `VOYAGER.display_base_addr` | 0x23c | rw32 | `DISPLAY_BASE_ADDR` |
 | `VOYAGER.fp2_gen_cntl` | 0x288 | rw32 | `FP2_GEN_CNTL` |
 | `VOYAGER.unnamed_0294` | 0x294 | rw32 | none |
 | `VOYAGER.crtc2_gen_cntl` | 0x3f8 | rw32 | `CRTC2_GEN_CNTL` |
 | `VOYAGER.ov0_scale_cntl` | 0x420 | rw32 | `OV0_SCALE_CNTL` |
+| `VOYAGER.cp_rb_base` | 0x700 | rw32 | `CP_RB_BASE` |
+| `VOYAGER.cp_rb_cntl` | 0x704 | rw32 | `CP_RB_CNTL` |
+| `VOYAGER.cp_rb_rptr_addr` | 0x70c | rw32 | `CP_RB_RPTR_ADDR` |
+| `VOYAGER.cp_rb_wptr_delay` | 0x718 | rw32 | `CP_RB_WPTR_DELAY` |
+| `VOYAGER.cp_csq_cntl` | 0x740 | rw32 | `CP_CSQ_CNTL` |
 | `VOYAGER.cp_stat` | 0x7c0 | r32 | `CP_STAT` |
+| `VOYAGER.cp_me_cntl` | 0x7d0 | rw32 | `CP_ME_CNTL` |
+| `VOYAGER.cp_me_ram_addr` | 0x7d4 | rw32 | `CP_ME_RAM_ADDR` |
+| `VOYAGER.cp_me_ram_datah` | 0x7dc | rw32 | `CP_ME_RAM_DATAH` |
+| `VOYAGER.cp_me_ram_datal` | 0x7e0 | rw32 | `CP_ME_RAM_DATAL` |
+| `VOYAGER.tv_master_cntl` | 0x800 | rw32 | `TV_MASTER_CNTL` |
 | `VOYAGER.rbbm_status` | 0xe40 | r32 | `RBBM_STATUS` |
 | `VOYAGER.rb2d_dstcache_ctlstat` | 0x342c | rw32 | `RB2D_DSTCACHE_CTLSTAT` |
 | `VOYAGER.gb_tile_config` | 0x4018 | rw32 | `GB_TILE_CONFIG` |
@@ -1206,6 +1218,15 @@ Engine soft reset. Code access: write 0x79, read back, write 0, read back.
 | `VOYAGER.rbbm_soft_reset.soft_reset_hi` | 1:1 | inferred | public headers only |
 | `VOYAGER.rbbm_soft_reset.soft_reset_cp` | 0:0 | established | part of the 0x79 pulse written by the engine reset routine |
 
+### `VOYAGER.mc_fb_location` at 0x148
+
+Frame-buffer location word. The public tables name this offset `MC_FB_LOCATION` and also `MEM_ADDR_CONFIG` (the conflict in the access table), so the name is a label for the offset. Code access: write 4 by the engine start-up routine, first 0xffff0000, then the start and top of the frame buffer packed in two halves.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.mc_fb_location.mc_fb_top` | 31:16 | inferred | high half of the packed word the engine start-up writes; public header layout |
+| `VOYAGER.mc_fb_location.mc_fb_start` | 15:0 | inferred | low half of the packed word the engine start-up writes; public header layout |
+
 ### `VOYAGER.mc_status` at 0x150
 
 Memory controller status. Code access: read 4; the idle-bit choice depends on a chip-class word in the driver record.
@@ -1225,6 +1246,10 @@ First CRTC offset control. Code access: read and write 4.
 | `VOYAGER.crtc_offset_cntl.crtc_stereo_offset_en` | 17:17 | established | set and cleared with bit 20 by the kernel stereo routine |
 | `VOYAGER.crtc_offset_cntl.crtc_offset_flip_cntl` | 16:16 | inferred | public header only |
 | `VOYAGER.crtc_offset_cntl.crtc_tile_en` | 15:15 | inferred | public header only |
+
+### `VOYAGER.display_base_addr` at 0x23c
+
+First display base address, written by the engine start-up routine with the low word of a driver doubleword. Code access: write 4. The public header defines no bits.
 
 ### `VOYAGER.fp2_gen_cntl` at 0x288
 
@@ -1288,6 +1313,40 @@ Overlay scaler control. Code access: read and write 4.
 | `VOYAGER.ov0_scale_cntl.ov0_horz_pick_nearest` | 2:2 | inferred | public header only |
 | `VOYAGER.ov0_scale_cntl.ov0_no_read_behind_scan` | 1:1 | inferred | public header only |
 
+### `VOYAGER.cp_rb_base` at 0x700
+
+Command processor ring base address, written with the low word of a driver doubleword. Code access: write 4. The public header defines no bits.
+
+### `VOYAGER.cp_rb_cntl` at 0x704
+
+Command processor ring control. Code access: read and write 4, as a read-modify-write that sets the size, block size and fetch fields and clears the write-back suppression bit.
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.cp_rb_cntl.rb_no_update` | 27:27 | established | cleared by the read-pointer write-back routine, so the pointer is written to memory |
+| `VOYAGER.cp_rb_cntl.max_fetch` | 19:18 | established | set from a driver field by the ring-location routine |
+| `VOYAGER.cp_rb_cntl.buf_swap` | 17:16 | established | kept by the ring-location routine; its value is set elsewhere |
+| `VOYAGER.cp_rb_cntl.rb_blksz` | 13:8 | established | set to 0x3f by the ring-location routine |
+| `VOYAGER.cp_rb_cntl.rb_bufsz` | 5:0 | established | set to the base-2 log of the ring size by the ring-location routine |
+
+### `VOYAGER.cp_rb_rptr_addr` at 0x70c
+
+Address the command processor writes its ring read pointer to. Code access: write 4, a driver address plus 512. The public header defines no bits.
+
+### `VOYAGER.cp_rb_wptr_delay` at 0x718
+
+Ring write-pointer delay. Code access: read and write 4; the ring-location routine keeps the top four bits and replaces the rest. The public headers give the timer and limit fields different positions, so no field is listed.
+
+### `VOYAGER.cp_csq_cntl` at 0x740
+
+Command processor queue control. Code access: write 4 (zero, by the engine reset) and read-modify-write of the top four bits (by the operation-mode routine, which the stream start passes 8).
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.cp_csq_cntl.csq_mode` | 31:28 | established | set by the operation-mode routine and cleared by the engine reset |
+| `VOYAGER.cp_csq_cntl.csq_cnt_indirect` | 15:8 | inferred | cleared with the rest of the word by the engine reset; public header layout |
+| `VOYAGER.cp_csq_cntl.csq_cnt_primary` | 7:0 | inferred | cleared with the rest of the word by the engine reset; public header layout |
+
 ### `VOYAGER.cp_stat` at 0x7c0
 
 Command processor status. Code access: read 4.
@@ -1309,6 +1368,26 @@ Command processor status. Code access: read 4.
 | `VOYAGER.cp_stat.rsiu_busy` | 2:2 | inferred | public headers only |
 | `VOYAGER.cp_stat.mwu_busy` | 1:1 | inferred | public headers only |
 | `VOYAGER.cp_stat.mru_busy` | 0:0 | inferred | public headers only |
+
+### `VOYAGER.cp_me_cntl` at 0x7d0
+
+Microengine control, written 0x401f0000 by the microcode loader before the table is written. Code access: write 4. The field meanings come from a later part's guide, so none is listed.
+
+### `VOYAGER.cp_me_ram_addr` at 0x7d4
+
+Microengine RAM write address, written zero by the microcode loader. Code access: write 4. The public header defines no bits.
+
+### `VOYAGER.cp_me_ram_datah` at 0x7dc
+
+Microengine RAM data, high word, written first for each table entry. Code access: write 4. The public header defines no bits.
+
+### `VOYAGER.cp_me_ram_datal` at 0x7e0
+
+Microengine RAM data, low word, written second for each table entry. Code access: write 4. The public header defines no bits.
+
+### `VOYAGER.tv_master_cntl` at 0x800
+
+TV encoder master control. Code access: read and write 4. The timing save routine stores 0x80000680, reads it back and rewrites it with bit 4 cleared and bit 0 set; the restore routine writes it back. The public header names only bit 30, which the code does not touch, so no field is listed.
 
 ### `VOYAGER.rbbm_status` at 0xe40
 

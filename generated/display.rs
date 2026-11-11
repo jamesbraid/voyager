@@ -1,4 +1,4 @@
-// generated from onyx4-r300 3c632f25fa17 VOYAGER_DECODE.h - do not edit, regenerate in onyx4-r300
+// generated from onyx4-r300 e09986dc8701 VOYAGER_DECODE.h - do not edit, regenerate in onyx4-r300
 //!
 //! Display, interrupt and engine registers of the R3xx-class
 //! FireGL boards.
@@ -46,6 +46,9 @@ pub const REG_CONFIG_XSTRAP_WIDTH: u32 = 32;
 /// Register-aperture register `rbbm_soft_reset`: read/write, 32-bit; reset unknown; inferred.
 pub const REG_RBBM_SOFT_RESET: u32 = 0x00f0;
 pub const REG_RBBM_SOFT_RESET_WIDTH: u32 = 32;
+/// Register-aperture register `mc_fb_location`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_MC_FB_LOCATION: u32 = 0x0148;
+pub const REG_MC_FB_LOCATION_WIDTH: u32 = 32;
 /// Register-aperture register `mc_status`: read, 32-bit; reset unknown; inferred.
 pub const REG_MC_STATUS: u32 = 0x0150;
 pub const REG_MC_STATUS_WIDTH: u32 = 32;
@@ -64,6 +67,9 @@ pub const REG_CRTC_V_SYNC_STRT_WID_WIDTH: u32 = 32;
 /// Register-aperture register `crtc_offset_cntl`: read/write, 32-bit; reset unknown; inferred.
 pub const REG_CRTC_OFFSET_CNTL: u32 = 0x0228;
 pub const REG_CRTC_OFFSET_CNTL_WIDTH: u32 = 32;
+/// Register-aperture register `display_base_addr`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_DISPLAY_BASE_ADDR: u32 = 0x023c;
+pub const REG_DISPLAY_BASE_ADDR_WIDTH: u32 = 32;
 /// Register-aperture register `crtc_more_cntl`: read/write, 32-bit; reset unknown; established.
 pub const REG_CRTC_MORE_CNTL: u32 = 0x027c;
 pub const REG_CRTC_MORE_CNTL_WIDTH: u32 = 32;
@@ -82,9 +88,39 @@ pub const REG_OV0_SCALE_CNTL_WIDTH: u32 = 32;
 /// Register-aperture register `subpic_cntl`: read/write, 32-bit; reset unknown; established.
 pub const REG_SUBPIC_CNTL: u32 = 0x0540;
 pub const REG_SUBPIC_CNTL_WIDTH: u32 = 32;
+/// Register-aperture register `cp_rb_base`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_CP_RB_BASE: u32 = 0x0700;
+pub const REG_CP_RB_BASE_WIDTH: u32 = 32;
+/// Register-aperture register `cp_rb_cntl`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_CP_RB_CNTL: u32 = 0x0704;
+pub const REG_CP_RB_CNTL_WIDTH: u32 = 32;
+/// Register-aperture register `cp_rb_rptr_addr`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_CP_RB_RPTR_ADDR: u32 = 0x070c;
+pub const REG_CP_RB_RPTR_ADDR_WIDTH: u32 = 32;
+/// Register-aperture register `cp_rb_wptr_delay`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_CP_RB_WPTR_DELAY: u32 = 0x0718;
+pub const REG_CP_RB_WPTR_DELAY_WIDTH: u32 = 32;
+/// Register-aperture register `cp_csq_cntl`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_CP_CSQ_CNTL: u32 = 0x0740;
+pub const REG_CP_CSQ_CNTL_WIDTH: u32 = 32;
 /// Register-aperture register `cp_stat`: read, 32-bit; reset unknown; inferred.
 pub const REG_CP_STAT: u32 = 0x07c0;
 pub const REG_CP_STAT_WIDTH: u32 = 32;
+/// Register-aperture register `cp_me_cntl`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_CP_ME_CNTL: u32 = 0x07d0;
+pub const REG_CP_ME_CNTL_WIDTH: u32 = 32;
+/// Register-aperture register `cp_me_ram_addr`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_CP_ME_RAM_ADDR: u32 = 0x07d4;
+pub const REG_CP_ME_RAM_ADDR_WIDTH: u32 = 32;
+/// Register-aperture register `cp_me_ram_datah`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_CP_ME_RAM_DATAH: u32 = 0x07dc;
+pub const REG_CP_ME_RAM_DATAH_WIDTH: u32 = 32;
+/// Register-aperture register `cp_me_ram_datal`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_CP_ME_RAM_DATAL: u32 = 0x07e0;
+pub const REG_CP_ME_RAM_DATAL_WIDTH: u32 = 32;
+/// Register-aperture register `tv_master_cntl`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_TV_MASTER_CNTL: u32 = 0x0800;
+pub const REG_TV_MASTER_CNTL_WIDTH: u32 = 32;
 /// Register-aperture register `cap0_trig_cntl`: read/write, 32-bit; reset unknown; established.
 pub const REG_CAP0_TRIG_CNTL: u32 = 0x0950;
 pub const REG_CAP0_TRIG_CNTL_WIDTH: u32 = 32;
@@ -121,6 +157,35 @@ pub const REG_GB_TILE_CONFIG_WIDTH: u32 = 32;
 /// Register-aperture register `ga_soft_reset`: read/write, 32-bit; reset unknown; inferred.
 pub const REG_GA_SOFT_RESET: u32 = 0x429c;
 pub const REG_GA_SOFT_RESET_WIDTH: u32 = 32;
+
+/// Values of `csq_mode` in `CpCsqCntl` that the header names.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum CpCsqCntlCsqMode {
+    /// inferred.
+    PridisInddis,
+    /// inferred.
+    PribmIndbm,
+    /// A value the notes do not name.
+    Other(u8),
+}
+
+impl CpCsqCntlCsqMode {
+    pub const fn from_bits(v: u32) -> Self {
+        match v {
+            0x0 => Self::PridisInddis,
+            0x8 => Self::PribmIndbm,
+            _ => Self::Other(v as u8),
+        }
+    }
+
+    pub const fn bits(self) -> u32 {
+        match self {
+            Self::PridisInddis => 0x0,
+            Self::PribmIndbm => 0x8,
+            Self::Other(v) => v as u32,
+        }
+    }
+}
 
 /// Values of `pipe_count` in `GbTileConfig` that the header names.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -793,6 +858,30 @@ impl RbbmSoftReset {
     }
 }
 
+/// The `mc_fb_location` register word.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct McFbLocation(u32);
+
+impl McFbLocation {
+    pub const fn new(word: u32) -> Self {
+        Self(word)
+    }
+
+    pub const fn raw(self) -> u32 {
+        self.0
+    }
+
+    /// Bits 15:0, inferred.
+    pub const fn mc_fb_start(self) -> u32 {
+        self.0 & 0xffff
+    }
+
+    /// Bits 31:16, inferred.
+    pub const fn mc_fb_top(self) -> u32 {
+        self.0 >> 16
+    }
+}
+
 /// The `mc_status` register word.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub struct McStatus(u32);
@@ -1219,6 +1308,74 @@ impl Ov0ScaleCntl {
     /// Bit 31, inferred.
     pub const fn ov0_soft_reset(self) -> bool {
         (self.0 >> 31) & 1 != 0
+    }
+}
+
+/// The `cp_rb_cntl` register word.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct CpRbCntl(u32);
+
+impl CpRbCntl {
+    pub const fn new(word: u32) -> Self {
+        Self(word)
+    }
+
+    pub const fn raw(self) -> u32 {
+        self.0
+    }
+
+    /// Bits 5:0, established.
+    pub const fn rb_bufsz(self) -> u32 {
+        self.0 & 0x3f
+    }
+
+    /// Bits 13:8, established.
+    pub const fn rb_blksz(self) -> u32 {
+        (self.0 >> 8) & 0x3f
+    }
+
+    /// Bits 17:16, established.
+    pub const fn buf_swap(self) -> u32 {
+        (self.0 >> 16) & 0x3
+    }
+
+    /// Bits 19:18, established.
+    pub const fn max_fetch(self) -> u32 {
+        (self.0 >> 18) & 0x3
+    }
+
+    /// Bit 27, established.
+    pub const fn rb_no_update(self) -> bool {
+        (self.0 >> 27) & 1 != 0
+    }
+}
+
+/// The `cp_csq_cntl` register word.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct CpCsqCntl(u32);
+
+impl CpCsqCntl {
+    pub const fn new(word: u32) -> Self {
+        Self(word)
+    }
+
+    pub const fn raw(self) -> u32 {
+        self.0
+    }
+
+    /// Bits 7:0, inferred.
+    pub const fn csq_cnt_primary(self) -> u32 {
+        self.0 & 0xff
+    }
+
+    /// Bits 15:8, inferred.
+    pub const fn csq_cnt_indirect(self) -> u32 {
+        (self.0 >> 8) & 0xff
+    }
+
+    /// Bits 31:28, established.
+    pub const fn csq_mode(self) -> CpCsqCntlCsqMode {
+        CpCsqCntlCsqMode::from_bits(self.0 >> 28)
     }
 }
 

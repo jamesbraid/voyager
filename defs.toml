@@ -748,6 +748,27 @@ binds = [["F", "VOYAGER.rbbm_soft_reset.soft_reset_idct", 1, 2]]
 
 [[claims]]
 group = "VOYAGER_DECODE.h"
+label = "mc_fb_location offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.mc_fb_location` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.mc_fb_location", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "mc_fb_location mc_fb_start bits"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.mc_fb_location\.mc_fb_start` \| (\d+):(\d+) \|'
+binds = [["F", "VOYAGER.mc_fb_location.mc_fb_start", 1, 2]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "mc_fb_location mc_fb_top bits"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.mc_fb_location\.mc_fb_top` \| (\d+):(\d+) \|'
+binds = [["F", "VOYAGER.mc_fb_location.mc_fb_top", 1, 2]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
 label = "mc_status offset"
 doc = "docs/registers.md"
 regex = '\| `VOYAGER\.mc_status` \| (0x[0-9a-f]+) \|'
@@ -801,6 +822,13 @@ label = "crtc_offset_cntl crtc_tile_en bits"
 doc = "docs/registers.md"
 regex = '\| `VOYAGER\.crtc_offset_cntl\.crtc_tile_en` \| (\d+):(\d+) \|'
 binds = [["F", "VOYAGER.crtc_offset_cntl.crtc_tile_en", 1, 2]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "display_base_addr offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.display_base_addr` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.display_base_addr", 1]]
 
 [[claims]]
 group = "VOYAGER_DECODE.h"
@@ -1070,6 +1098,97 @@ binds = [["F", "VOYAGER.ov0_scale_cntl.ov0_soft_reset", 1, 2]]
 
 [[claims]]
 group = "VOYAGER_DECODE.h"
+label = "cp_rb_base offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.cp_rb_base` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.cp_rb_base", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "cp_rb_cntl offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.cp_rb_cntl` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.cp_rb_cntl", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "cp_rb_cntl rb_bufsz bits"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.cp_rb_cntl\.rb_bufsz` \| (\d+):(\d+) \|'
+binds = [["F", "VOYAGER.cp_rb_cntl.rb_bufsz", 1, 2]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "cp_rb_cntl rb_blksz bits"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.cp_rb_cntl\.rb_blksz` \| (\d+):(\d+) \|'
+binds = [["F", "VOYAGER.cp_rb_cntl.rb_blksz", 1, 2]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "cp_rb_cntl buf_swap bits"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.cp_rb_cntl\.buf_swap` \| (\d+):(\d+) \|'
+binds = [["F", "VOYAGER.cp_rb_cntl.buf_swap", 1, 2]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "cp_rb_cntl max_fetch bits"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.cp_rb_cntl\.max_fetch` \| (\d+):(\d+) \|'
+binds = [["F", "VOYAGER.cp_rb_cntl.max_fetch", 1, 2]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "cp_rb_cntl rb_no_update bits"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.cp_rb_cntl\.rb_no_update` \| (\d+):(\d+) \|'
+binds = [["F", "VOYAGER.cp_rb_cntl.rb_no_update", 1, 2]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "cp_rb_rptr_addr offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.cp_rb_rptr_addr` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.cp_rb_rptr_addr", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "cp_rb_wptr_delay offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.cp_rb_wptr_delay` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.cp_rb_wptr_delay", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "cp_csq_cntl offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.cp_csq_cntl` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.cp_csq_cntl", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "cp_csq_cntl csq_cnt_primary bits"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.cp_csq_cntl\.csq_cnt_primary` \| (\d+):(\d+) \|'
+binds = [["F", "VOYAGER.cp_csq_cntl.csq_cnt_primary", 1, 2]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "cp_csq_cntl csq_cnt_indirect bits"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.cp_csq_cntl\.csq_cnt_indirect` \| (\d+):(\d+) \|'
+binds = [["F", "VOYAGER.cp_csq_cntl.csq_cnt_indirect", 1, 2]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "cp_csq_cntl csq_mode bits"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.cp_csq_cntl\.csq_mode` \| (\d+):(\d+) \|'
+binds = [["F", "VOYAGER.cp_csq_cntl.csq_mode", 1, 2]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
 label = "cp_stat offset"
 doc = "docs/registers.md"
 regex = '\| `VOYAGER\.cp_stat` \| (0x[0-9a-f]+) \|'
@@ -1179,6 +1298,41 @@ label = "cp_stat cp_busy bits"
 doc = "docs/registers.md"
 regex = '\| `VOYAGER\.cp_stat\.cp_busy` \| (\d+):(\d+) \|'
 binds = [["F", "VOYAGER.cp_stat.cp_busy", 1, 2]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "cp_me_cntl offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.cp_me_cntl` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.cp_me_cntl", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "cp_me_ram_addr offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.cp_me_ram_addr` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.cp_me_ram_addr", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "cp_me_ram_datah offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.cp_me_ram_datah` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.cp_me_ram_datah", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "cp_me_ram_datal offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.cp_me_ram_datal` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.cp_me_ram_datal", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "tv_master_cntl offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.tv_master_cntl` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.tv_master_cntl", 1]]
 
 [[claims]]
 group = "VOYAGER_DECODE.h"

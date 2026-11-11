@@ -341,6 +341,15 @@
 #define VOYAGER_RBBM_SOFT_RESET_SOFT_RESET_IDCT_SHIFT 14
 #define VOYAGER_RBBM_SOFT_RESET_SOFT_RESET_IDCT_MASK  0x1u
 
+/* Frame-buffer location in the memory controller. */
+/* REG: VOYAGER.mc_fb_location 0x148 rw32 reset=unknown inferred */
+/* FIELD: VOYAGER.mc_fb_location.mc_fb_start 15:0 inferred */
+#define VOYAGER_MC_FB_LOCATION_MC_FB_START_SHIFT 0
+#define VOYAGER_MC_FB_LOCATION_MC_FB_START_MASK  0xffffu
+/* FIELD: VOYAGER.mc_fb_location.mc_fb_top 31:16 inferred */
+#define VOYAGER_MC_FB_LOCATION_MC_FB_TOP_SHIFT 16
+#define VOYAGER_MC_FB_LOCATION_MC_FB_TOP_MASK  0xffffu
+
 /* Memory controller status. */
 /* REG: VOYAGER.mc_status 0x150 r32 reset=unknown inferred */
 /* FIELD: VOYAGER.mc_status.mc_idle 2:2 established */
@@ -409,6 +418,9 @@
 /* FIELD: VOYAGER.crtc_offset_cntl.stereo_aux 20:20 inferred */
 #define VOYAGER_CRTC_OFFSET_CNTL_STEREO_AUX_SHIFT 20
 #define VOYAGER_CRTC_OFFSET_CNTL_STEREO_AUX_MASK  0x1u
+
+/* First display base address (the public header defines no bits). */
+/* REG: VOYAGER.display_base_addr 0x23c rw32 reset=unknown inferred */
 
 /* CRTC centring and cutoff enables. */
 /* REG: VOYAGER.crtc_more_cntl 0x27c rw32 reset=unknown established */
@@ -542,6 +554,49 @@
 /* Sub-picture control (the public header defines no bits). */
 /* REG: VOYAGER.subpic_cntl 0x540 rw32 reset=unknown established */
 
+/* Command processor ring base (the public header defines no bits). */
+/* REG: VOYAGER.cp_rb_base 0x700 rw32 reset=unknown inferred */
+
+/* Command processor ring control. */
+/* REG: VOYAGER.cp_rb_cntl 0x704 rw32 reset=unknown inferred */
+/* FIELD: VOYAGER.cp_rb_cntl.rb_bufsz 5:0 established */
+#define VOYAGER_CP_RB_CNTL_RB_BUFSZ_SHIFT 0
+#define VOYAGER_CP_RB_CNTL_RB_BUFSZ_MASK  0x3fu
+/* FIELD: VOYAGER.cp_rb_cntl.rb_blksz 13:8 established */
+#define VOYAGER_CP_RB_CNTL_RB_BLKSZ_SHIFT 8
+#define VOYAGER_CP_RB_CNTL_RB_BLKSZ_MASK  0x3fu
+/* FIELD: VOYAGER.cp_rb_cntl.buf_swap 17:16 established */
+#define VOYAGER_CP_RB_CNTL_BUF_SWAP_SHIFT 16
+#define VOYAGER_CP_RB_CNTL_BUF_SWAP_MASK  0x3u
+/* FIELD: VOYAGER.cp_rb_cntl.max_fetch 19:18 established */
+#define VOYAGER_CP_RB_CNTL_MAX_FETCH_SHIFT 18
+#define VOYAGER_CP_RB_CNTL_MAX_FETCH_MASK  0x3u
+/* FIELD: VOYAGER.cp_rb_cntl.rb_no_update 27:27 established */
+#define VOYAGER_CP_RB_CNTL_RB_NO_UPDATE_SHIFT 27
+#define VOYAGER_CP_RB_CNTL_RB_NO_UPDATE_MASK  0x1u
+
+/* Command processor ring read-pointer write-back address (the public header defines no bits). */
+/* REG: VOYAGER.cp_rb_rptr_addr 0x70c rw32 reset=unknown inferred */
+
+/* Command processor ring write-pointer delay (the shipped code reads it; no field is claimed). */
+/* REG: VOYAGER.cp_rb_wptr_delay 0x718 rw32 reset=unknown inferred */
+
+/* Command processor queue control. */
+/* REG: VOYAGER.cp_csq_cntl 0x740 rw32 reset=unknown inferred */
+/* FIELD: VOYAGER.cp_csq_cntl.csq_cnt_primary 7:0 inferred */
+#define VOYAGER_CP_CSQ_CNTL_CSQ_CNT_PRIMARY_SHIFT 0
+#define VOYAGER_CP_CSQ_CNTL_CSQ_CNT_PRIMARY_MASK  0xffu
+/* FIELD: VOYAGER.cp_csq_cntl.csq_cnt_indirect 15:8 inferred */
+#define VOYAGER_CP_CSQ_CNTL_CSQ_CNT_INDIRECT_SHIFT 8
+#define VOYAGER_CP_CSQ_CNTL_CSQ_CNT_INDIRECT_MASK  0xffu
+/* FIELD: VOYAGER.cp_csq_cntl.csq_mode 31:28 established */
+#define VOYAGER_CP_CSQ_CNTL_CSQ_MODE_SHIFT 28
+#define VOYAGER_CP_CSQ_CNTL_CSQ_MODE_MASK  0xfu
+/* ENUM: VOYAGER.cp_csq_cntl.csq_mode 0 pridis_inddis inferred */
+#define VOYAGER_CP_CSQ_CNTL_CSQ_MODE_PRIDIS_INDDIS 0
+/* ENUM: VOYAGER.cp_csq_cntl.csq_mode 8 pribm_indbm inferred */
+#define VOYAGER_CP_CSQ_CNTL_CSQ_MODE_PRIBM_INDBM 8
+
 /* Command processor status. */
 /* REG: VOYAGER.cp_stat 0x7c0 r32 reset=unknown inferred */
 /* FIELD: VOYAGER.cp_stat.mru_busy 0:0 inferred */
@@ -589,6 +644,21 @@
 /* FIELD: VOYAGER.cp_stat.cp_busy 31:31 inferred */
 #define VOYAGER_CP_STAT_CP_BUSY_SHIFT 31
 #define VOYAGER_CP_STAT_CP_BUSY_MASK  0x1u
+
+/* Microengine control (field layout comes from a later part's guide; none is claimed). */
+/* REG: VOYAGER.cp_me_cntl 0x7d0 rw32 reset=unknown inferred */
+
+/* Microengine RAM write address (the public header defines no bits). */
+/* REG: VOYAGER.cp_me_ram_addr 0x7d4 rw32 reset=unknown inferred */
+
+/* Microengine RAM data, high word (the public header defines no bits). */
+/* REG: VOYAGER.cp_me_ram_datah 0x7dc rw32 reset=unknown inferred */
+
+/* Microengine RAM data, low word (the public header defines no bits). */
+/* REG: VOYAGER.cp_me_ram_datal 0x7e0 rw32 reset=unknown inferred */
+
+/* TV encoder master control (the public header names too few bits to list). */
+/* REG: VOYAGER.tv_master_cntl 0x800 rw32 reset=unknown inferred */
 
 /* Capture unit 0 trigger control (the public header defines no bits). */
 /* REG: VOYAGER.cap0_trig_cntl 0x950 rw32 reset=unknown established */
