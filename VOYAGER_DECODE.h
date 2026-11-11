@@ -20,6 +20,20 @@
  * label for the offset, not proof of the behaviour. Reset values were not
  * observed and are all unknown.
  *
+ * REG grade. The grade on a REG line is the grade of the name bound to the
+ * offset, not of the access: that the shipped code reads or writes the offset
+ * is established in the notes for every register here. A REG is "established"
+ * only when a published reference for this chip family (the AMD R3xx register
+ * guide) gives the same name, offset and layout, and "inferred" when the name
+ * comes from the public headers of other chips or from the offset alone. A
+ * register with no REG field lines is listed because shipped code reaches it,
+ * not because its layout is known.
+ *
+ * Other access paths. The option ROM images also reach these registers through
+ * I/O ports (an index and data pair, a direct window and a PLL pair). Those
+ * ports address the same registers and add none, so this header has no
+ * I/O-port section.
+ *
  * Scope. Only registers the shipped code reaches, and within them the fields
  * the public headers define. Registers outside the list are not claimed.
  */
@@ -44,11 +58,20 @@
 /* PLL data. */
 /* REG: VOYAGER.clock_cntl_data 0xc rw32 reset=unknown inferred */
 
+/* Firmware scratch word 4. The option ROM clears it at start; the public tables also give this offset a TV name on another chip. */
+/* REG: VOYAGER.bios_4_scratch 0x20 rw32 reset=unknown inferred */
+
+/* Firmware scratch word 5. The option ROM clears it at start and later writes its top byte. */
+/* REG: VOYAGER.bios_5_scratch 0x24 rw32 reset=unknown inferred */
+
 /* Firmware scratch word 6. */
 /* REG: VOYAGER.bios_6_scratch 0x28 rw32 reset=unknown inferred */
 /* FIELD: VOYAGER.bios_6_scratch.board_probe 13:13 established */
 #define VOYAGER_BIOS_6_SCRATCH_BOARD_PROBE_SHIFT 13
 #define VOYAGER_BIOS_6_SCRATCH_BOARD_PROBE_MASK  0x1u
+
+/* Firmware scratch word 7. The option ROM clears it at start and records the board identity in its upper half. */
+/* REG: VOYAGER.bios_7_scratch 0x2c rw32 reset=unknown inferred */
 
 /* General interrupt enables. */
 /* REG: VOYAGER.gen_int_cntl 0x40 rw32 reset=unknown inferred */
@@ -184,7 +207,7 @@
 /* FIELD: VOYAGER.gen_int_status.viph_int 24:24 inferred */
 #define VOYAGER_GEN_INT_STATUS_VIPH_INT_SHIFT 24
 #define VOYAGER_GEN_INT_STATUS_VIPH_INT_MASK  0x1u
-/* FIELD: VOYAGER.gen_int_status.sw_int 25:25 inferred */
+/* FIELD: VOYAGER.gen_int_status.sw_int 25:25 established */
 #define VOYAGER_GEN_INT_STATUS_SW_INT_SHIFT 25
 #define VOYAGER_GEN_INT_STATUS_SW_INT_MASK  0x1u
 /* FIELD: VOYAGER.gen_int_status.sw_int_set 26:26 inferred */
@@ -238,7 +261,7 @@
 /* FIELD: VOYAGER.crtc_gen_cntl.crtc_en 25:25 established */
 #define VOYAGER_CRTC_GEN_CNTL_CRTC_EN_SHIFT 25
 #define VOYAGER_CRTC_GEN_CNTL_CRTC_EN_MASK  0x1u
-/* FIELD: VOYAGER.crtc_gen_cntl.crtc_disp_req_en_b 26:26 inferred */
+/* FIELD: VOYAGER.crtc_gen_cntl.crtc_disp_req_en_b 26:26 established */
 #define VOYAGER_CRTC_GEN_CNTL_CRTC_DISP_REQ_EN_B_SHIFT 26
 #define VOYAGER_CRTC_GEN_CNTL_CRTC_DISP_REQ_EN_B_MASK  0x1u
 
@@ -341,6 +364,12 @@
 #define VOYAGER_RBBM_SOFT_RESET_SOFT_RESET_IDCT_SHIFT 14
 #define VOYAGER_RBBM_SOFT_RESET_SOFT_RESET_IDCT_MASK  0x1u
 
+/* Memory size the firmware leaves for the driver. The option ROM reads and writes the upper half; the X module reads the whole word. */
+/* REG: VOYAGER.config_memsize 0xf8 rw32 reset=unknown inferred */
+
+/* Memory control. The option ROM writes 0x2a to its low byte. */
+/* REG: VOYAGER.mem_cntl 0x140 rw32 reset=unknown inferred */
+
 /* Frame-buffer location in the memory controller. */
 /* REG: VOYAGER.mc_fb_location 0x148 rw32 reset=unknown inferred */
 /* FIELD: VOYAGER.mc_fb_location.mc_fb_start 15:0 inferred */
@@ -350,6 +379,15 @@
 #define VOYAGER_MC_FB_LOCATION_MC_FB_TOP_SHIFT 16
 #define VOYAGER_MC_FB_LOCATION_MC_FB_TOP_MASK  0xffffu
 
+/* AGP aperture location in the memory controller, written by the driver bus-master set-up. */
+/* REG: VOYAGER.mc_agp_location 0x14c rw32 reset=unknown inferred */
+/* FIELD: VOYAGER.mc_agp_location.mc_agp_start 15:0 inferred */
+#define VOYAGER_MC_AGP_LOCATION_MC_AGP_START_SHIFT 0
+#define VOYAGER_MC_AGP_LOCATION_MC_AGP_START_MASK  0xffffu
+/* FIELD: VOYAGER.mc_agp_location.mc_agp_top 31:16 inferred */
+#define VOYAGER_MC_AGP_LOCATION_MC_AGP_TOP_SHIFT 16
+#define VOYAGER_MC_AGP_LOCATION_MC_AGP_TOP_MASK  0xffffu
+
 /* Memory controller status. */
 /* REG: VOYAGER.mc_status 0x150 r32 reset=unknown inferred */
 /* FIELD: VOYAGER.mc_status.mc_idle 2:2 established */
@@ -358,6 +396,36 @@
 /* FIELD: VOYAGER.mc_status.mc_idle_r300 4:4 established */
 #define VOYAGER_MC_STATUS_MC_IDLE_R300_SHIFT 4
 #define VOYAGER_MC_STATUS_MC_IDLE_R300_MASK  0x1u
+
+/* AGP aperture base, written by the driver bus-master set-up. */
+/* REG: VOYAGER.agp_base 0x170 rw32 reset=unknown inferred */
+
+/* Memory-controller read control word the option ROM writes in its first memory init (no public name). */
+/* REG: VOYAGER.unnamed_0178 0x178 rw32 reset=unknown inferred */
+
+/* Second memory-controller read control word the option ROM writes (no public name). */
+/* REG: VOYAGER.unnamed_017c 0x17c rw32 reset=unknown inferred */
+
+/* GPIO pad mask. Bit 0 is set by the option ROM and by the swap-barrier set-up. */
+/* REG: VOYAGER.gpiopad_mask 0x198 rw32 reset=unknown inferred */
+
+/* GPIO pad output level. Bit 0 is set by the option ROM. */
+/* REG: VOYAGER.gpiopad_a 0x19c rw32 reset=unknown inferred */
+
+/* GPIO pad output enable. Bit 0 is set by the option ROM. */
+/* REG: VOYAGER.gpiopad_en 0x1a0 rw32 reset=unknown inferred */
+
+/* GPIO pad input level. Read at constant offsets by the X module; two of its bits choose between the two X2 option ROM images. */
+/* REG: VOYAGER.gpiopad_y 0x1a4 r32 reset=unknown inferred */
+
+/* Pad-group word next to the MDGPIO pair (no public name; the public tables place MDGPIO_MASK at the GPIO pad mask offset). */
+/* REG: VOYAGER.unnamed_01a8 0x1a8 rw32 reset=unknown inferred */
+
+/* MDGPIO output level. Bit 10 is set and cleared by the external transmitter routine of the X2 option ROMs. */
+/* REG: VOYAGER.mdgpio_a 0x1ac rw32 reset=unknown inferred */
+
+/* MDGPIO output enable. Bit 10 is set by the external transmitter routine of the X2 option ROMs. */
+/* REG: VOYAGER.mdgpio_en 0x1b0 rw32 reset=unknown inferred */
 
 /* CRTC horizontal total and displayed width. */
 /* REG: VOYAGER.crtc_h_total_disp 0x200 rw32 reset=unknown established */
@@ -437,6 +505,9 @@
 #define VOYAGER_CRTC_MORE_CNTL_CRTC_V_CUTOFF_ACTIVE_EN_SHIFT 5
 #define VOYAGER_CRTC_MORE_CNTL_CRTC_V_CUTOFF_ACTIVE_EN_MASK  0x1u
 
+/* DAC extended control, written by the option ROM during DAC detection. */
+/* REG: VOYAGER.dac_ext_cntl 0x280 rw32 reset=unknown inferred */
+
 /* Second flat-panel and DVO control. */
 /* REG: VOYAGER.fp2_gen_cntl 0x288 rw32 reset=unknown inferred */
 /* FIELD: VOYAGER.fp2_gen_cntl.fp2_dvo_en 25:25 established */
@@ -451,6 +522,15 @@
 /* FIELD: VOYAGER.unnamed_0294.stereo_sel 13:12 established */
 #define VOYAGER_UNNAMED_0294_STEREO_SEL_SHIFT 12
 #define VOYAGER_UNNAMED_0294_STEREO_SEL_MASK  0x3u
+
+/* Compositor I2C accessor word 0 (no public name). */
+/* REG: VOYAGER.unnamed_02e0 0x2e0 rw32 reset=unknown inferred */
+
+/* Compositor I2C accessor word 1 (no public name). */
+/* REG: VOYAGER.unnamed_02e4 0x2e4 rw32 reset=unknown inferred */
+
+/* Compositor I2C accessor word 2 (no public name). */
+/* REG: VOYAGER.unnamed_02e8 0x2e8 rw32 reset=unknown inferred */
 
 /* Second CRTC general control. */
 /* REG: VOYAGER.crtc2_gen_cntl 0x3f8 rw32 reset=unknown inferred */
@@ -666,6 +746,12 @@
 /* Capture unit 1 trigger control (the public header defines no bits). */
 /* REG: VOYAGER.cap1_trig_cntl 0x9c0 rw32 reset=unknown established */
 
+/* Surface control. The option ROM mode helper sets bit 8. */
+/* REG: VOYAGER.surface_cntl 0xb00 rw32 reset=unknown inferred */
+/* FIELD: VOYAGER.surface_cntl.surf_translation_dis 8:8 established */
+#define VOYAGER_SURFACE_CNTL_SURF_TRANSLATION_DIS_SHIFT 8
+#define VOYAGER_SURFACE_CNTL_SURF_TRANSLATION_DIS_MASK  0x1u
+
 /* Video input port host interface control. */
 /* REG: VOYAGER.viph_control 0xc40 rw32 reset=unknown established */
 /* FIELD: VOYAGER.viph_control.viph_en 21:21 inferred */
@@ -759,8 +845,41 @@
 #define VOYAGER_RBBM_STATUS_GUI_ACTIVE_SHIFT 31
 #define VOYAGER_RBBM_STATUS_GUI_ACTIVE_MASK  0x1u
 
+/* Word the option ROM reads through its indexed port and shifts right by 4 (no public name). */
+/* REG: VOYAGER.unnamed_0f10 0xf10 r32 reset=unknown inferred */
+
+/* 2D destination offset, queued by the 2D packet routines. */
+/* REG: VOYAGER.dst_offset 0x1404 w32 reset=unknown inferred */
+
+/* 2D destination pitch, queued by the 2D packet routines. */
+/* REG: VOYAGER.dst_pitch 0x1408 w32 reset=unknown inferred */
+
+/* Combined 2D destination pitch and offset. The name is taken from the offset alone. */
+/* REG: VOYAGER.dst_pitch_offset 0x142c w32 reset=unknown inferred */
+
+/* 2D destination origin, queued by the rectangle fill routine. */
+/* REG: VOYAGER.dst_y_x 0x1438 w32 reset=unknown inferred */
+
+/* 2D engine master control, queued with every fill and copy setup. */
+/* REG: VOYAGER.dp_gui_master_cntl 0x146c w32 reset=unknown inferred */
+
+/* 2D brush foreground colour, queued by the fill setup. */
+/* REG: VOYAGER.dp_brush_frgd_clr 0x147c w32 reset=unknown inferred */
+
+/* 2D destination size, queued by the rectangle fill routine. */
+/* REG: VOYAGER.dst_width_height 0x1598 w32 reset=unknown inferred */
+
 /* Scratch register 5 (the engine-reset packets write it). */
 /* REG: VOYAGER.scratch_reg5 0x15f4 rw32 reset=unknown inferred */
+
+/* 2D engine direction control, queued by the fill and copy setup. */
+/* REG: VOYAGER.dp_cntl 0x16c0 w32 reset=unknown inferred */
+
+/* 2D plane write mask, queued by the fill and copy setup. */
+/* REG: VOYAGER.dp_write_mask 0x16cc w32 reset=unknown inferred */
+
+/* Engine word the engine-init routine and the fill setup store (no public name; role not read). */
+/* REG: VOYAGER.unnamed_1700 0x1700 w32 reset=unknown inferred */
 
 /* Destination cache control and status, packet-register form. */
 /* REG: VOYAGER.dstcache_ctlstat 0x1714 rw32 reset=unknown inferred */
@@ -778,11 +897,11 @@
 #define VOYAGER_WAIT_UNTIL_WAIT_HOST_IDLECLEAN_MASK  0x1u
 
 /* Vertex array processor control and status. */
-/* REG: VOYAGER.vap_cntl_status 0x2140 rw32 reset=unknown inferred */
-/* FIELD: VOYAGER.vap_cntl_status.vc_swap 1:0 inferred */
+/* REG: VOYAGER.vap_cntl_status 0x2140 rw32 reset=unknown established */
+/* FIELD: VOYAGER.vap_cntl_status.vc_swap 1:0 established */
 #define VOYAGER_VAP_CNTL_STATUS_VC_SWAP_SHIFT 0
 #define VOYAGER_VAP_CNTL_STATUS_VC_SWAP_MASK  0x3u
-/* FIELD: VOYAGER.vap_cntl_status.pvs_bypass 8:8 inferred */
+/* FIELD: VOYAGER.vap_cntl_status.pvs_bypass 8:8 established */
 #define VOYAGER_VAP_CNTL_STATUS_PVS_BYPASS_SHIFT 8
 #define VOYAGER_VAP_CNTL_STATUS_PVS_BYPASS_MASK  0x1u
 /* FIELD: VOYAGER.vap_cntl_status.busy_mid 11:11 inferred */
@@ -805,7 +924,7 @@
 #define VOYAGER_RB2D_DSTCACHE_CTLSTAT_DC_BUSY_MASK  0x1u
 
 /* Tile and pipe configuration. */
-/* REG: VOYAGER.gb_tile_config 0x4018 rw32 reset=unknown inferred */
+/* REG: VOYAGER.gb_tile_config 0x4018 rw32 reset=unknown established */
 /* FIELD: VOYAGER.gb_tile_config.enable 0:0 established */
 #define VOYAGER_GB_TILE_CONFIG_ENABLE_SHIFT 0
 #define VOYAGER_GB_TILE_CONFIG_ENABLE_MASK  0x1u
@@ -829,8 +948,8 @@
 #define VOYAGER_GB_TILE_CONFIG_TILE_SIZE_SIZE_32 2
 
 /* Setup engine soft reset. */
-/* REG: VOYAGER.ga_soft_reset 0x429c rw32 reset=unknown inferred */
-/* FIELD: VOYAGER.ga_soft_reset.soft_reset_count 15:0 inferred */
+/* REG: VOYAGER.ga_soft_reset 0x429c rw32 reset=unknown established */
+/* FIELD: VOYAGER.ga_soft_reset.soft_reset_count 15:0 established */
 #define VOYAGER_GA_SOFT_RESET_SOFT_RESET_COUNT_SHIFT 0
 #define VOYAGER_GA_SOFT_RESET_SOFT_RESET_COUNT_MASK  0xffffu
 

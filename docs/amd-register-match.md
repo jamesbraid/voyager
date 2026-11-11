@@ -50,8 +50,9 @@ Promoted:
   `GPIOPAD_MASK` 0x198, `GPIOPAD_A` 0x19c, `GPIOPAD_EN` 0x1a0 and `GPIOPAD_Y` 0x1a4 (all 2-147), `CAP0_TRIG_CNTL`
   0x950 (2-129), `VIPH_CONTROL` 0xc40 (2-122). Inferred for this chip: the document is established for M56, but a later
   part's layout is only a reading for the R300 and R350. The decode header carries `CAP0_TRIG_CNTL` and
-  `VIPH_CONTROL`; `I2C_CNTL_1`, `CONFIG_MEMSIZE` and the four pad registers have no REG line, because no R3xx-era
-  document or public R3xx header gives their fields and the header lists only what it can ground for this chip.
+  `VIPH_CONTROL`; `I2C_CNTL_1` has no REG line, because no R3xx-era document or public R3xx header gives its fields.
+  `CONFIG_MEMSIZE` and the four pad registers have REG lines graded inferred and no fields: the offsets and the IRIX
+  accesses are established, the later part's names and layouts are not shown for this chip.
 
 A promotion of an M56 register says the name and field layout match and nothing IRIX does with it contradicts
 them. It does not show the R300 or R350 has identical reset values or reserved bits.

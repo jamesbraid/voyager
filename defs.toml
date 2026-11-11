@@ -1564,3 +1564,248 @@ label = "ga_soft_reset soft_reset_count bits"
 doc = "docs/registers.md"
 regex = '\| `VOYAGER\.ga_soft_reset\.soft_reset_count` \| (\d+):(\d+) \|'
 binds = [["F", "VOYAGER.ga_soft_reset.soft_reset_count", 1, 2]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "bios_4_scratch offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.bios_4_scratch` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.bios_4_scratch", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "bios_5_scratch offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.bios_5_scratch` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.bios_5_scratch", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "bios_7_scratch offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.bios_7_scratch` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.bios_7_scratch", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "config_memsize offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.config_memsize` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.config_memsize", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "mem_cntl offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.mem_cntl` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.mem_cntl", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "mc_agp_location offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.mc_agp_location` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.mc_agp_location", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "agp_base offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.agp_base` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.agp_base", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "unnamed_0178 offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.unnamed_0178` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.unnamed_0178", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "unnamed_017c offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.unnamed_017c` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.unnamed_017c", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "gpiopad_mask offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.gpiopad_mask` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.gpiopad_mask", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "gpiopad_a offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.gpiopad_a` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.gpiopad_a", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "gpiopad_en offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.gpiopad_en` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.gpiopad_en", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "gpiopad_y offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.gpiopad_y` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.gpiopad_y", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "unnamed_01a8 offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.unnamed_01a8` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.unnamed_01a8", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "mdgpio_a offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.mdgpio_a` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.mdgpio_a", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "mdgpio_en offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.mdgpio_en` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.mdgpio_en", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "dac_ext_cntl offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.dac_ext_cntl` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.dac_ext_cntl", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "unnamed_02e0 offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.unnamed_02e0` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.unnamed_02e0", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "unnamed_02e4 offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.unnamed_02e4` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.unnamed_02e4", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "unnamed_02e8 offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.unnamed_02e8` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.unnamed_02e8", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "surface_cntl offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.surface_cntl` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.surface_cntl", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "unnamed_0f10 offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.unnamed_0f10` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.unnamed_0f10", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "dst_offset offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.dst_offset` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.dst_offset", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "dst_pitch offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.dst_pitch` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.dst_pitch", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "dst_pitch_offset offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.dst_pitch_offset` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.dst_pitch_offset", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "dst_y_x offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.dst_y_x` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.dst_y_x", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "dp_gui_master_cntl offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.dp_gui_master_cntl` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.dp_gui_master_cntl", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "dp_brush_frgd_clr offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.dp_brush_frgd_clr` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.dp_brush_frgd_clr", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "dst_width_height offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.dst_width_height` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.dst_width_height", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "dp_cntl offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.dp_cntl` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.dp_cntl", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "dp_write_mask offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.dp_write_mask` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.dp_write_mask", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "unnamed_1700 offset"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.unnamed_1700` \| (0x[0-9a-f]+) \|'
+binds = [["O", "VOYAGER.unnamed_1700", 1]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "mc_agp_location mc_agp_start bits"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.mc_agp_location\.mc_agp_start` \| (\d+):(\d+) \|'
+binds = [["F", "VOYAGER.mc_agp_location.mc_agp_start", 1, 2]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "mc_agp_location mc_agp_top bits"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.mc_agp_location\.mc_agp_top` \| (\d+):(\d+) \|'
+binds = [["F", "VOYAGER.mc_agp_location.mc_agp_top", 1, 2]]
+
+[[claims]]
+group = "VOYAGER_DECODE.h"
+label = "surface_cntl surf_translation_dis bits"
+doc = "docs/registers.md"
+regex = '\| `VOYAGER\.surface_cntl\.surf_translation_dis` \| (\d+):(\d+) \|'
+binds = [["F", "VOYAGER.surface_cntl.surf_translation_dis", 1, 2]]

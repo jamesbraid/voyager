@@ -1027,6 +1027,12 @@ How the layouts were derived and graded:
 - Every register here is a 32-bit word in the 64 KB register aperture. Reset values were not observed: every
   register is **unknown** at reset. Access directions are those the code uses, widened to read-write for control
   registers the public headers treat as read-write.
+- The grade on a register line in the header is the grade of the name bound to the offset, not of the access. The
+  access (the shipped code reads or writes the offset) is established in the sections above for every register
+  listed. A register line is **established** only where the AMD R3xx register guide, which is for this chip family,
+  gives the same name, offset and layout: `GB_TILE_CONFIG`, `GA_SOFT_RESET` and `VAP_CNTL_STATUS` (checked against
+  the guide's entries for 0x4018, 0x429c and 0x2140). Every other register line is **inferred**: the name comes from
+  public headers of other chips, or from the offset alone.
 - The 0x294 word has no public name. The block name `unnamed_0294` is a label chosen here.
 - Where `r100d.h` and `r300d.h` disagree on a bit name (bit 2 of the soft-reset and bit 20 of the engine status are
   the older chips' setup-engine bits and the R300's vertex-engine bits), the field is named for the position
@@ -1136,7 +1142,7 @@ General interrupt status and acknowledge. Code access: read and write 4; writing
 | `VOYAGER.gen_int_status.hdcp_authorized_int_stat` | 28:28 | inferred | public headers only |
 | `VOYAGER.gen_int_status.geyserville_stat` | 27:27 | inferred | public headers only |
 | `VOYAGER.gen_int_status.sw_int_set` | 26:26 | inferred | public headers only |
-| `VOYAGER.gen_int_status.sw_int` | 25:25 | inferred | public headers only |
+| `VOYAGER.gen_int_status.sw_int` | 25:25 | established | `r200_RegisterRingBufferLocation` stores 0x2000000 to the status word (store at 0x42c044); the public layout has the software-interrupt acknowledge at that bit |
 | `VOYAGER.gen_int_status.viph_int` | 24:24 | inferred | public headers only |
 | `VOYAGER.gen_int_status.gui_idle_stat` | 19:19 | inferred | public headers only |
 | `VOYAGER.gen_int_status.i2c_int` | 17:17 | inferred | public headers only |
@@ -1163,7 +1169,7 @@ First CRTC general control. Code access: read and write 4.
 
 | Field | Bits | Grade | Evidence |
 |---|---|---|---|
-| `VOYAGER.crtc_gen_cntl.crtc_disp_req_en_b` | 26:26 | inferred | public headers only |
+| `VOYAGER.crtc_gen_cntl.crtc_disp_req_en_b` | 26:26 | established | the option ROM init routine at 0x9356 sets it (whole body read); the public layout has the display-request disable at that bit |
 | `VOYAGER.crtc_gen_cntl.crtc_en` | 25:25 | established | cleared at attach (mask 0xfdfeffff) |
 | `VOYAGER.crtc_gen_cntl.crtc_ext_disp_en` | 24:24 | inferred | public headers only |
 | `VOYAGER.crtc_gen_cntl.crtc_cur_mode` | 22:20 | inferred | public headers only |
@@ -1464,7 +1470,55 @@ Setup engine soft reset. Code access: write 4.
 
 | Field | Bits | Grade | Evidence |
 |---|---|---|---|
-| `VOYAGER.ga_soft_reset.soft_reset_count` | 15:0 | inferred | Mesa comment and AMD R3xx reference; the driver writes 1024 |
+| `VOYAGER.ga_soft_reset.soft_reset_count` | 15:0 | established | the AMD R3xx register guide defines the count in bits 15:0 (default 256); the driver writes 1024 |
+
+### Registers listed without a full layout
+
+These registers have a register line in the header because the shipped code reaches them at the sites the access
+table and the option ROM chapter cite. Only `mc_agp_location` and `surface_cntl` carry fields. The name of 0x30 is
+disputed between the older `BUS_CNTL` and a later part's `PCIE_INDEX`, so it has no register line yet
+([the register match](amd-register-match.md) names the test). The 0xf18 word is not listed either.
+
+| Register | Offset | Access | Public name |
+|---|---|---|---|
+| `VOYAGER.bios_4_scratch` | 0x20 | rw32 | `BIOS_4_SCRATCH` |
+| `VOYAGER.bios_5_scratch` | 0x24 | rw32 | `BIOS_5_SCRATCH` |
+| `VOYAGER.bios_7_scratch` | 0x2c | rw32 | `BIOS_7_SCRATCH` |
+| `VOYAGER.config_memsize` | 0xf8 | rw32 | `CONFIG_MEMSIZE` |
+| `VOYAGER.mem_cntl` | 0x140 | rw32 | `MEM_CNTL` |
+| `VOYAGER.mc_agp_location` | 0x14c | rw32 | `MC_AGP_LOCATION` |
+| `VOYAGER.agp_base` | 0x170 | rw32 | `AGP_BASE` |
+| `VOYAGER.unnamed_0178` | 0x178 | rw32 | none |
+| `VOYAGER.unnamed_017c` | 0x17c | rw32 | none |
+| `VOYAGER.gpiopad_mask` | 0x198 | rw32 | `GPIOPAD_MASK` |
+| `VOYAGER.gpiopad_a` | 0x19c | rw32 | `GPIOPAD_A` |
+| `VOYAGER.gpiopad_en` | 0x1a0 | rw32 | `GPIOPAD_EN` |
+| `VOYAGER.gpiopad_y` | 0x1a4 | r32 | `GPIOPAD_Y` |
+| `VOYAGER.unnamed_01a8` | 0x1a8 | rw32 | none |
+| `VOYAGER.mdgpio_a` | 0x1ac | rw32 | `MDGPIO_A_REG` |
+| `VOYAGER.mdgpio_en` | 0x1b0 | rw32 | `MDGPIO_EN_REG` |
+| `VOYAGER.dac_ext_cntl` | 0x280 | rw32 | `DAC_EXT_CNTL` |
+| `VOYAGER.unnamed_02e0` | 0x2e0 | rw32 | none |
+| `VOYAGER.unnamed_02e4` | 0x2e4 | rw32 | none |
+| `VOYAGER.unnamed_02e8` | 0x2e8 | rw32 | none |
+| `VOYAGER.surface_cntl` | 0xb00 | rw32 | `SURFACE_CNTL` |
+| `VOYAGER.unnamed_0f10` | 0xf10 | r32 | none |
+| `VOYAGER.dst_offset` | 0x1404 | w32 | `DST_OFFSET` |
+| `VOYAGER.dst_pitch` | 0x1408 | w32 | `DST_PITCH` |
+| `VOYAGER.dst_pitch_offset` | 0x142c | w32 | `DST_PITCH_OFFSET` (from the offset alone) |
+| `VOYAGER.dst_y_x` | 0x1438 | w32 | `DST_Y_X` |
+| `VOYAGER.dp_gui_master_cntl` | 0x146c | w32 | `DP_GUI_MASTER_CNTL` |
+| `VOYAGER.dp_brush_frgd_clr` | 0x147c | w32 | `DP_BRUSH_FRGD_CLR` |
+| `VOYAGER.dst_width_height` | 0x1598 | w32 | `DST_WIDTH_HEIGHT` |
+| `VOYAGER.dp_cntl` | 0x16c0 | w32 | `DP_CNTL` |
+| `VOYAGER.dp_write_mask` | 0x16cc | w32 | `DP_WRITE_MASK` |
+| `VOYAGER.unnamed_1700` | 0x1700 | w32 | none |
+
+| Field | Bits | Grade | Evidence |
+|---|---|---|---|
+| `VOYAGER.mc_agp_location.mc_agp_start` | 15:0 | inferred | public layout; the driver writes the aperture start in 64 KB units |
+| `VOYAGER.mc_agp_location.mc_agp_top` | 31:16 | inferred | public layout; the driver writes the aperture top in 64 KB units |
+| `VOYAGER.surface_cntl.surf_translation_dis` | 8:8 | established | the option ROM mode helper sets bit 8 of the register by an indexed byte write (whole body read); the public layout names that bit |
 
 ### Test values
 

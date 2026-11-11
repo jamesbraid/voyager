@@ -1,4 +1,4 @@
-// generated from onyx4-r300 e09986dc8701 VOYAGER_DECODE.h - do not edit, regenerate in onyx4-r300
+// generated from onyx4-r300 6b8df1ea1d13 VOYAGER_DECODE.h - do not edit, regenerate in onyx4-r300
 //!
 //! Display, interrupt and engine registers of the R3xx-class
 //! FireGL boards.
@@ -19,9 +19,18 @@ pub const REG_CLOCK_CNTL_INDEX_WIDTH: u32 = 32;
 /// Register-aperture register `clock_cntl_data`: read/write, 32-bit; reset unknown; inferred.
 pub const REG_CLOCK_CNTL_DATA: u32 = 0x000c;
 pub const REG_CLOCK_CNTL_DATA_WIDTH: u32 = 32;
+/// Register-aperture register `bios_4_scratch`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_BIOS_4_SCRATCH: u32 = 0x0020;
+pub const REG_BIOS_4_SCRATCH_WIDTH: u32 = 32;
+/// Register-aperture register `bios_5_scratch`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_BIOS_5_SCRATCH: u32 = 0x0024;
+pub const REG_BIOS_5_SCRATCH_WIDTH: u32 = 32;
 /// Register-aperture register `bios_6_scratch`: read/write, 32-bit; reset unknown; inferred.
 pub const REG_BIOS_6_SCRATCH: u32 = 0x0028;
 pub const REG_BIOS_6_SCRATCH_WIDTH: u32 = 32;
+/// Register-aperture register `bios_7_scratch`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_BIOS_7_SCRATCH: u32 = 0x002c;
+pub const REG_BIOS_7_SCRATCH_WIDTH: u32 = 32;
 /// Register-aperture register `gen_int_cntl`: read/write, 32-bit; reset unknown; inferred.
 pub const REG_GEN_INT_CNTL: u32 = 0x0040;
 pub const REG_GEN_INT_CNTL_WIDTH: u32 = 32;
@@ -46,12 +55,51 @@ pub const REG_CONFIG_XSTRAP_WIDTH: u32 = 32;
 /// Register-aperture register `rbbm_soft_reset`: read/write, 32-bit; reset unknown; inferred.
 pub const REG_RBBM_SOFT_RESET: u32 = 0x00f0;
 pub const REG_RBBM_SOFT_RESET_WIDTH: u32 = 32;
+/// Register-aperture register `config_memsize`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_CONFIG_MEMSIZE: u32 = 0x00f8;
+pub const REG_CONFIG_MEMSIZE_WIDTH: u32 = 32;
+/// Register-aperture register `mem_cntl`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_MEM_CNTL: u32 = 0x0140;
+pub const REG_MEM_CNTL_WIDTH: u32 = 32;
 /// Register-aperture register `mc_fb_location`: read/write, 32-bit; reset unknown; inferred.
 pub const REG_MC_FB_LOCATION: u32 = 0x0148;
 pub const REG_MC_FB_LOCATION_WIDTH: u32 = 32;
+/// Register-aperture register `mc_agp_location`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_MC_AGP_LOCATION: u32 = 0x014c;
+pub const REG_MC_AGP_LOCATION_WIDTH: u32 = 32;
 /// Register-aperture register `mc_status`: read, 32-bit; reset unknown; inferred.
 pub const REG_MC_STATUS: u32 = 0x0150;
 pub const REG_MC_STATUS_WIDTH: u32 = 32;
+/// Register-aperture register `agp_base`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_AGP_BASE: u32 = 0x0170;
+pub const REG_AGP_BASE_WIDTH: u32 = 32;
+/// Register-aperture register `unnamed_0178`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_UNNAMED_0178: u32 = 0x0178;
+pub const REG_UNNAMED_0178_WIDTH: u32 = 32;
+/// Register-aperture register `unnamed_017c`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_UNNAMED_017C: u32 = 0x017c;
+pub const REG_UNNAMED_017C_WIDTH: u32 = 32;
+/// Register-aperture register `gpiopad_mask`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_GPIOPAD_MASK: u32 = 0x0198;
+pub const REG_GPIOPAD_MASK_WIDTH: u32 = 32;
+/// Register-aperture register `gpiopad_a`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_GPIOPAD_A: u32 = 0x019c;
+pub const REG_GPIOPAD_A_WIDTH: u32 = 32;
+/// Register-aperture register `gpiopad_en`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_GPIOPAD_EN: u32 = 0x01a0;
+pub const REG_GPIOPAD_EN_WIDTH: u32 = 32;
+/// Register-aperture register `gpiopad_y`: read, 32-bit; reset unknown; inferred.
+pub const REG_GPIOPAD_Y: u32 = 0x01a4;
+pub const REG_GPIOPAD_Y_WIDTH: u32 = 32;
+/// Register-aperture register `unnamed_01a8`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_UNNAMED_01A8: u32 = 0x01a8;
+pub const REG_UNNAMED_01A8_WIDTH: u32 = 32;
+/// Register-aperture register `mdgpio_a`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_MDGPIO_A: u32 = 0x01ac;
+pub const REG_MDGPIO_A_WIDTH: u32 = 32;
+/// Register-aperture register `mdgpio_en`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_MDGPIO_EN: u32 = 0x01b0;
+pub const REG_MDGPIO_EN_WIDTH: u32 = 32;
 /// Register-aperture register `crtc_h_total_disp`: read/write, 32-bit; reset unknown; established.
 pub const REG_CRTC_H_TOTAL_DISP: u32 = 0x0200;
 pub const REG_CRTC_H_TOTAL_DISP_WIDTH: u32 = 32;
@@ -73,12 +121,24 @@ pub const REG_DISPLAY_BASE_ADDR_WIDTH: u32 = 32;
 /// Register-aperture register `crtc_more_cntl`: read/write, 32-bit; reset unknown; established.
 pub const REG_CRTC_MORE_CNTL: u32 = 0x027c;
 pub const REG_CRTC_MORE_CNTL_WIDTH: u32 = 32;
+/// Register-aperture register `dac_ext_cntl`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_DAC_EXT_CNTL: u32 = 0x0280;
+pub const REG_DAC_EXT_CNTL_WIDTH: u32 = 32;
 /// Register-aperture register `fp2_gen_cntl`: read/write, 32-bit; reset unknown; inferred.
 pub const REG_FP2_GEN_CNTL: u32 = 0x0288;
 pub const REG_FP2_GEN_CNTL_WIDTH: u32 = 32;
 /// Register-aperture register `unnamed_0294`: read/write, 32-bit; reset unknown; inferred.
 pub const REG_UNNAMED_0294: u32 = 0x0294;
 pub const REG_UNNAMED_0294_WIDTH: u32 = 32;
+/// Register-aperture register `unnamed_02e0`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_UNNAMED_02E0: u32 = 0x02e0;
+pub const REG_UNNAMED_02E0_WIDTH: u32 = 32;
+/// Register-aperture register `unnamed_02e4`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_UNNAMED_02E4: u32 = 0x02e4;
+pub const REG_UNNAMED_02E4_WIDTH: u32 = 32;
+/// Register-aperture register `unnamed_02e8`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_UNNAMED_02E8: u32 = 0x02e8;
+pub const REG_UNNAMED_02E8_WIDTH: u32 = 32;
 /// Register-aperture register `crtc2_gen_cntl`: read/write, 32-bit; reset unknown; inferred.
 pub const REG_CRTC2_GEN_CNTL: u32 = 0x03f8;
 pub const REG_CRTC2_GEN_CNTL_WIDTH: u32 = 32;
@@ -127,6 +187,9 @@ pub const REG_CAP0_TRIG_CNTL_WIDTH: u32 = 32;
 /// Register-aperture register `cap1_trig_cntl`: read/write, 32-bit; reset unknown; established.
 pub const REG_CAP1_TRIG_CNTL: u32 = 0x09c0;
 pub const REG_CAP1_TRIG_CNTL_WIDTH: u32 = 32;
+/// Register-aperture register `surface_cntl`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_SURFACE_CNTL: u32 = 0x0b00;
+pub const REG_SURFACE_CNTL_WIDTH: u32 = 32;
 /// Register-aperture register `viph_control`: read/write, 32-bit; reset unknown; established.
 pub const REG_VIPH_CONTROL: u32 = 0x0c40;
 pub const REG_VIPH_CONTROL_WIDTH: u32 = 32;
@@ -136,25 +199,58 @@ pub const REG_DISP_MERGE_CNTL_WIDTH: u32 = 32;
 /// Register-aperture register `rbbm_status`: read, 32-bit; reset unknown; inferred.
 pub const REG_RBBM_STATUS: u32 = 0x0e40;
 pub const REG_RBBM_STATUS_WIDTH: u32 = 32;
+/// Register-aperture register `unnamed_0f10`: read, 32-bit; reset unknown; inferred.
+pub const REG_UNNAMED_0F10: u32 = 0x0f10;
+pub const REG_UNNAMED_0F10_WIDTH: u32 = 32;
+/// Register-aperture register `dst_offset`: write, 32-bit; reset unknown; inferred.
+pub const REG_DST_OFFSET: u32 = 0x1404;
+pub const REG_DST_OFFSET_WIDTH: u32 = 32;
+/// Register-aperture register `dst_pitch`: write, 32-bit; reset unknown; inferred.
+pub const REG_DST_PITCH: u32 = 0x1408;
+pub const REG_DST_PITCH_WIDTH: u32 = 32;
+/// Register-aperture register `dst_pitch_offset`: write, 32-bit; reset unknown; inferred.
+pub const REG_DST_PITCH_OFFSET: u32 = 0x142c;
+pub const REG_DST_PITCH_OFFSET_WIDTH: u32 = 32;
+/// Register-aperture register `dst_y_x`: write, 32-bit; reset unknown; inferred.
+pub const REG_DST_Y_X: u32 = 0x1438;
+pub const REG_DST_Y_X_WIDTH: u32 = 32;
+/// Register-aperture register `dp_gui_master_cntl`: write, 32-bit; reset unknown; inferred.
+pub const REG_DP_GUI_MASTER_CNTL: u32 = 0x146c;
+pub const REG_DP_GUI_MASTER_CNTL_WIDTH: u32 = 32;
+/// Register-aperture register `dp_brush_frgd_clr`: write, 32-bit; reset unknown; inferred.
+pub const REG_DP_BRUSH_FRGD_CLR: u32 = 0x147c;
+pub const REG_DP_BRUSH_FRGD_CLR_WIDTH: u32 = 32;
+/// Register-aperture register `dst_width_height`: write, 32-bit; reset unknown; inferred.
+pub const REG_DST_WIDTH_HEIGHT: u32 = 0x1598;
+pub const REG_DST_WIDTH_HEIGHT_WIDTH: u32 = 32;
 /// Register-aperture register `scratch_reg5`: read/write, 32-bit; reset unknown; inferred.
 pub const REG_SCRATCH_REG5: u32 = 0x15f4;
 pub const REG_SCRATCH_REG5_WIDTH: u32 = 32;
+/// Register-aperture register `dp_cntl`: write, 32-bit; reset unknown; inferred.
+pub const REG_DP_CNTL: u32 = 0x16c0;
+pub const REG_DP_CNTL_WIDTH: u32 = 32;
+/// Register-aperture register `dp_write_mask`: write, 32-bit; reset unknown; inferred.
+pub const REG_DP_WRITE_MASK: u32 = 0x16cc;
+pub const REG_DP_WRITE_MASK_WIDTH: u32 = 32;
+/// Register-aperture register `unnamed_1700`: write, 32-bit; reset unknown; inferred.
+pub const REG_UNNAMED_1700: u32 = 0x1700;
+pub const REG_UNNAMED_1700_WIDTH: u32 = 32;
 /// Register-aperture register `dstcache_ctlstat`: read/write, 32-bit; reset unknown; inferred.
 pub const REG_DSTCACHE_CTLSTAT: u32 = 0x1714;
 pub const REG_DSTCACHE_CTLSTAT_WIDTH: u32 = 32;
 /// Register-aperture register `wait_until`: read/write, 32-bit; reset unknown; inferred.
 pub const REG_WAIT_UNTIL: u32 = 0x1720;
 pub const REG_WAIT_UNTIL_WIDTH: u32 = 32;
-/// Register-aperture register `vap_cntl_status`: read/write, 32-bit; reset unknown; inferred.
+/// Register-aperture register `vap_cntl_status`: read/write, 32-bit; reset unknown; established.
 pub const REG_VAP_CNTL_STATUS: u32 = 0x2140;
 pub const REG_VAP_CNTL_STATUS_WIDTH: u32 = 32;
 /// Register-aperture register `rb2d_dstcache_ctlstat`: read/write, 32-bit; reset unknown; inferred.
 pub const REG_RB2D_DSTCACHE_CTLSTAT: u32 = 0x342c;
 pub const REG_RB2D_DSTCACHE_CTLSTAT_WIDTH: u32 = 32;
-/// Register-aperture register `gb_tile_config`: read/write, 32-bit; reset unknown; inferred.
+/// Register-aperture register `gb_tile_config`: read/write, 32-bit; reset unknown; established.
 pub const REG_GB_TILE_CONFIG: u32 = 0x4018;
 pub const REG_GB_TILE_CONFIG_WIDTH: u32 = 32;
-/// Register-aperture register `ga_soft_reset`: read/write, 32-bit; reset unknown; inferred.
+/// Register-aperture register `ga_soft_reset`: read/write, 32-bit; reset unknown; established.
 pub const REG_GA_SOFT_RESET: u32 = 0x429c;
 pub const REG_GA_SOFT_RESET_WIDTH: u32 = 32;
 
@@ -543,7 +639,7 @@ impl GenIntStatus {
         (self.0 >> 24) & 1 != 0
     }
 
-    /// Bit 25, inferred.
+    /// Bit 25, established.
     pub const fn sw_int(self) -> bool {
         (self.0 >> 25) & 1 != 0
     }
@@ -642,7 +738,7 @@ impl CrtcGenCntl {
         (self.0 >> 25) & 1 != 0
     }
 
-    /// Bit 26, inferred.
+    /// Bit 26, established.
     pub const fn crtc_disp_req_en_b(self) -> bool {
         (self.0 >> 26) & 1 != 0
     }
@@ -878,6 +974,30 @@ impl McFbLocation {
 
     /// Bits 31:16, inferred.
     pub const fn mc_fb_top(self) -> u32 {
+        self.0 >> 16
+    }
+}
+
+/// The `mc_agp_location` register word.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct McAgpLocation(u32);
+
+impl McAgpLocation {
+    pub const fn new(word: u32) -> Self {
+        Self(word)
+    }
+
+    pub const fn raw(self) -> u32 {
+        self.0
+    }
+
+    /// Bits 15:0, inferred.
+    pub const fn mc_agp_start(self) -> u32 {
+        self.0 & 0xffff
+    }
+
+    /// Bits 31:16, inferred.
+    pub const fn mc_agp_top(self) -> u32 {
         self.0 >> 16
     }
 }
@@ -1468,6 +1588,25 @@ impl CpStat {
     }
 }
 
+/// The `surface_cntl` register word.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct SurfaceCntl(u32);
+
+impl SurfaceCntl {
+    pub const fn new(word: u32) -> Self {
+        Self(word)
+    }
+
+    pub const fn raw(self) -> u32 {
+        self.0
+    }
+
+    /// Bit 8, established.
+    pub const fn surf_translation_dis(self) -> bool {
+        (self.0 >> 8) & 1 != 0
+    }
+}
+
 /// The `viph_control` register word.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub struct ViphControl(u32);
@@ -1706,12 +1845,12 @@ impl VapCntlStatus {
         self.0
     }
 
-    /// Bits 1:0, inferred.
+    /// Bits 1:0, established.
     pub const fn vc_swap(self) -> u32 {
         self.0 & 0x3
     }
 
-    /// Bit 8, inferred.
+    /// Bit 8, established.
     pub const fn pvs_bypass(self) -> bool {
         (self.0 >> 8) & 1 != 0
     }
@@ -1798,7 +1937,7 @@ impl GaSoftReset {
         self.0
     }
 
-    /// Bits 15:0, inferred.
+    /// Bits 15:0, established.
     pub const fn soft_reset_count(self) -> u32 {
         self.0 & 0xffff
     }
