@@ -12,6 +12,58 @@ describes, then link the convenience directories as that file describes. [AGENTS
 evidence, the toolchain and the working rules; [docs/coverage.md](docs/coverage.md) is the map of what is
 covered and what is next; [docs/open-questions.md](docs/open-questions.md) holds what is not known yet.
 
+## Document index
+
+Every tracked document at the top level and under `docs/`, grouped by subject.
+
+### Top level
+
+- [AGENTS.md](AGENTS.md) — Project goal, evidence labels, toolchain and working rules.
+- [IRIX_FILES.md](IRIX_FILES.md) — IRIX files needed for the R300 and R350 reverse engineering.
+- [README.md](README.md) — This overview and document index.
+
+### Coverage and open items
+
+- [docs/coverage.md](docs/coverage.md) — Two views of what the workspace covers and what is next.
+- [docs/open-questions.md](docs/open-questions.md) — Questions the binaries and published sources have not answered.
+- [docs/sources/INDEX.md](docs/sources/INDEX.md) — Public documents and code this workspace reads, by title and URL.
+- [docs/inventory/README.md](docs/inventory/README.md) — Columns, statuses and rules for the generated inventory tables.
+- [docs/binaries.md](docs/binaries.md) — One entry per shipped file in the install set.
+
+### Registers and option ROMs
+
+- [docs/registers.md](docs/registers.md) — Register accesses of the FireGL kernel object and X module.
+- [docs/amd-register-match.md](docs/amd-register-match.md) — Register offsets against AMD's published references.
+- [docs/option-roms.md](docs/option-roms.md) — The three video option ROM images, sg2, sg3 and sg3a.
+- [docs/hw-explanations-voyager-w1.md](docs/hw-explanations-voyager-w1.md) — Hardware-facing routine explanations for the R200 X module, wave 1.
+
+### Kernel objects
+
+- [docs/kernel-attach.md](docs/kernel-attach.md) — How IRIX finds, maps and first-writes an Onyx4 FireGL card.
+- [docs/kernel-bus-objects.md](docs/kernel-bus-objects.md) — Three IRIX kernel objects between the host and the FireGL cards.
+- [docs/kernel-compat-layer.md](docs/kernel-compat-layer.md) — Linux compatibility layer in the kernel driver (IP35).
+- [docs/kernel-object-functions.md](docs/kernel-object-functions.md) — Kernel object: open, release, detach and board-identity routines.
+- [docs/kernel-drm-functions.md](docs/kernel-drm-functions.md) — The FireGL kernel driver: lock, map, buffer and context routines.
+- [docs/kernel-ioctl-irq-functions.md](docs/kernel-ioctl-irq-functions.md) — The FireGL kernel driver: ioctl and interrupt routines.
+- [docs/messages.md](docs/messages.md) — Console messages printed by the FireGL kernel driver.
+- [docs/image-sync-functions.md](docs/image-sync-functions.md) — Image-sync driver: one entry per routine.
+
+### X server and user-side
+
+- [docs/fglrx-drv-functions.md](docs/fglrx-drv-functions.md) — The FireGL X server module: one entry per routine.
+- [docs/x-driver-functions.md](docs/x-driver-functions.md) — X server driver module: one entry per routine.
+- [docs/x-video-driver.md](docs/x-video-driver.md) — X video driver: overlay, timing, stereo and BIOS-interface routines.
+- [docs/x-helper-modules.md](docs/x-helper-modules.md) — Helper modules: PCI tables, VESA BIOS calls and int10 hooks.
+- [docs/xserver-functions.md](docs/xserver-functions.md) — The XFree86 server: one entry per routine.
+- [docs/dri-driver.md](docs/dri-driver.md) — DRI driver, o32 and n32 build.
+- [docs/dri-driver-64.md](docs/dri-driver-64.md) — Direct-rendering driver, 64-bit build (fglrx_dri64.so).
+- [docs/libfglrxdrm-functions.md](docs/libfglrxdrm-functions.md) — The FireGL DRM helper library: one entry per routine.
+- [docs/messages-userland.md](docs/messages-userland.md) — Messages from the FireGL X driver and the userland tools.
+
+### Instruction readings
+
+- `docs/instruction-readings-voyager-g1.md` to `g4.md` — Instruction-level readings, g1 to g4, indexed as one group.
+
 ## Scope
 
 - the R300 and R350 as fitted in the Onyx4 FireGL X1 and X2;
