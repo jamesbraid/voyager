@@ -1,4 +1,4 @@
-// generated from onyx4-r300 6b8df1ea1d13 VOYAGER_DECODE.h - do not edit, regenerate in onyx4-r300
+// generated from onyx4-r300 d9a9a9c3719d VOYAGER_DECODE.h - do not edit, regenerate in onyx4-r300
 //!
 //! Display, interrupt and engine registers of the R3xx-class
 //! FireGL boards.
@@ -12,6 +12,10 @@
 
 /// inferred.
 pub const PM4_OPCODE_CP_SET_SCISSORS: u32 = 30;
+/// inferred.
+pub const PM4_OPCODE_BITBLT_MULTI: u32 = 155;
+/// inferred.
+pub const PM4_OPCODE_NOP: u32 = 16;
 
 /// Register-aperture register `clock_cntl_index`: read/write, 32-bit; reset unknown; inferred.
 pub const REG_CLOCK_CNTL_INDEX: u32 = 0x0008;
@@ -37,6 +41,9 @@ pub const REG_GEN_INT_CNTL_WIDTH: u32 = 32;
 /// Register-aperture register `gen_int_status`: read/write, 32-bit; reset unknown; inferred.
 pub const REG_GEN_INT_STATUS: u32 = 0x0044;
 pub const REG_GEN_INT_STATUS_WIDTH: u32 = 32;
+/// Register-aperture register `crtc_ext_cntl`: read/write, 32-bit; reset unknown; inferred.
+pub const REG_CRTC_EXT_CNTL: u32 = 0x0054;
+pub const REG_CRTC_EXT_CNTL_WIDTH: u32 = 32;
 /// Register-aperture register `crtc_gen_cntl`: read/write, 32-bit; reset unknown; inferred.
 pub const REG_CRTC_GEN_CNTL: u32 = 0x0050;
 pub const REG_CRTC_GEN_CNTL_WIDTH: u32 = 32;
@@ -675,6 +682,25 @@ impl GenIntStatus {
     }
 }
 
+/// The `crtc_ext_cntl` register word.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct CrtcExtCntl(u32);
+
+impl CrtcExtCntl {
+    pub const fn new(word: u32) -> Self {
+        Self(word)
+    }
+
+    pub const fn raw(self) -> u32 {
+        self.0
+    }
+
+    /// Bit 15, inferred.
+    pub const fn crtc_crt_on(self) -> bool {
+        (self.0 >> 15) & 1 != 0
+    }
+}
+
 /// The `crtc_gen_cntl` register word.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub struct CrtcGenCntl(u32);
@@ -1026,6 +1052,63 @@ impl McStatus {
     }
 }
 
+/// The `gpiopad_mask` register word.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct GpiopadMask(u32);
+
+impl GpiopadMask {
+    pub const fn new(word: u32) -> Self {
+        Self(word)
+    }
+
+    pub const fn raw(self) -> u32 {
+        self.0
+    }
+
+    /// Bit 0, inferred.
+    pub const fn pad0(self) -> bool {
+        self.0 & 1 != 0
+    }
+}
+
+/// The `gpiopad_a` register word.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct GpiopadA(u32);
+
+impl GpiopadA {
+    pub const fn new(word: u32) -> Self {
+        Self(word)
+    }
+
+    pub const fn raw(self) -> u32 {
+        self.0
+    }
+
+    /// Bit 0, inferred.
+    pub const fn pad0(self) -> bool {
+        self.0 & 1 != 0
+    }
+}
+
+/// The `gpiopad_en` register word.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct GpiopadEn(u32);
+
+impl GpiopadEn {
+    pub const fn new(word: u32) -> Self {
+        Self(word)
+    }
+
+    pub const fn raw(self) -> u32 {
+        self.0
+    }
+
+    /// Bit 0, inferred.
+    pub const fn pad0(self) -> bool {
+        self.0 & 1 != 0
+    }
+}
+
 /// The `crtc_h_total_disp` register word.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub struct CrtcHTotalDisp(u32);
@@ -1148,6 +1231,16 @@ impl CrtcOffsetCntl {
 
     pub const fn raw(self) -> u32 {
         self.0
+    }
+
+    /// Bit 9, inferred.
+    pub const fn crtc_xy_mode_en(self) -> bool {
+        (self.0 >> 9) & 1 != 0
+    }
+
+    /// Bit 13, inferred.
+    pub const fn crtc_micro_tile_en(self) -> bool {
+        (self.0 >> 13) & 1 != 0
     }
 
     /// Bit 15, inferred.
@@ -1943,6 +2036,64 @@ impl GaSoftReset {
     }
 }
 
+/// The `PM4_TYPE3_HDR` word.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct Pm4Type3Hdr(u32);
+
+impl Pm4Type3Hdr {
+    pub const fn new(word: u32) -> Self {
+        Self(word)
+    }
+
+    pub const fn raw(self) -> u32 {
+        self.0
+    }
+
+    /// Bits 15:8, inferred.
+    pub const fn opcode(self) -> u32 {
+        (self.0 >> 8) & 0xff
+    }
+
+    /// Bits 29:16, inferred.
+    pub const fn count(self) -> u32 {
+        (self.0 >> 16) & 0x3fff
+    }
+
+    /// Bits 31:30, inferred.
+    pub const fn type_(self) -> u32 {
+        self.0 >> 30
+    }
+}
+
+/// The `PM4_TYPE0_HDR` word.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct Pm4Type0Hdr(u32);
+
+impl Pm4Type0Hdr {
+    pub const fn new(word: u32) -> Self {
+        Self(word)
+    }
+
+    pub const fn raw(self) -> u32 {
+        self.0
+    }
+
+    /// Bits 12:0, inferred.
+    pub const fn reg_index(self) -> u32 {
+        self.0 & 0x1fff
+    }
+
+    /// Bits 29:16, inferred.
+    pub const fn count(self) -> u32 {
+        (self.0 >> 16) & 0x3fff
+    }
+
+    /// Bits 31:30, inferred.
+    pub const fn type_(self) -> u32 {
+        self.0 >> 30
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -1971,6 +2122,38 @@ mod tests {
         let w = Unnamed0294::new(0x3000);
         assert_eq!(w.stereo_sel(), 3, "stereo_sel");
         assert_eq!(w.mode_nibble(), 0, "mode_nibble");
+    }
+
+    #[test]
+    fn testvec_pm4_type3_hdr_c0059b00() {
+        let w = Pm4Type3Hdr::new(0xc0059b00);
+        assert_eq!(w.type_(), 3, "type");
+        assert_eq!(w.count(), 5, "count");
+        assert_eq!(w.opcode(), 155, "opcode");
+    }
+
+    #[test]
+    fn testvec_pm4_type3_hdr_fffd1000() {
+        let w = Pm4Type3Hdr::new(0xfffd1000);
+        assert_eq!(w.type_(), 3, "type");
+        assert_eq!(w.count(), 16381, "count");
+        assert_eq!(w.opcode(), 16, "opcode");
+    }
+
+    #[test]
+    fn testvec_pm4_type3_hdr_c0011e00() {
+        let w = Pm4Type3Hdr::new(0xc0011e00);
+        assert_eq!(w.type_(), 3, "type");
+        assert_eq!(w.count(), 1, "count");
+        assert_eq!(w.opcode(), 30, "opcode");
+    }
+
+    #[test]
+    fn testvec_pm4_type0_hdr_1057c() {
+        let w = Pm4Type0Hdr::new(0x1057c);
+        assert_eq!(w.type_(), 0, "type");
+        assert_eq!(w.count(), 1, "count");
+        assert_eq!(w.reg_index(), 1404, "reg_index");
     }
 
     #[test]

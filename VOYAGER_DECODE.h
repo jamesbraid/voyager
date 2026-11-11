@@ -230,6 +230,12 @@
 #define VOYAGER_GEN_INT_STATUS_VIDDMA_STAT_MASK  0x1u
 
 /* First CRTC general control. */
+/* CRTC extended control. The option ROM display-probe routine sets bit 15 around its test and restores it. */
+/* REG: VOYAGER.crtc_ext_cntl 0x54 rw32 reset=unknown inferred */
+/* FIELD: VOYAGER.crtc_ext_cntl.crtc_crt_on 15:15 inferred */
+#define VOYAGER_CRTC_EXT_CNTL_CRTC_CRT_ON_SHIFT 15
+#define VOYAGER_CRTC_EXT_CNTL_CRTC_CRT_ON_MASK  0x1u
+
 /* REG: VOYAGER.crtc_gen_cntl 0x50 rw32 reset=unknown inferred */
 /* FIELD: VOYAGER.crtc_gen_cntl.crtc_dbl_scan_en 0:0 inferred */
 #define VOYAGER_CRTC_GEN_CNTL_CRTC_DBL_SCAN_EN_SHIFT 0
@@ -408,12 +414,21 @@
 
 /* GPIO pad mask. Bit 0 is set by the option ROM and by the swap-barrier set-up. */
 /* REG: VOYAGER.gpiopad_mask 0x198 rw32 reset=unknown inferred */
+/* FIELD: VOYAGER.gpiopad_mask.pad0 0:0 inferred */
+#define VOYAGER_GPIOPAD_MASK_PAD0_SHIFT 0
+#define VOYAGER_GPIOPAD_MASK_PAD0_MASK  0x1u
 
 /* GPIO pad output level. Bit 0 is set by the option ROM. */
 /* REG: VOYAGER.gpiopad_a 0x19c rw32 reset=unknown inferred */
+/* FIELD: VOYAGER.gpiopad_a.pad0 0:0 inferred */
+#define VOYAGER_GPIOPAD_A_PAD0_SHIFT 0
+#define VOYAGER_GPIOPAD_A_PAD0_MASK  0x1u
 
 /* GPIO pad output enable. Bit 0 is set by the option ROM. */
 /* REG: VOYAGER.gpiopad_en 0x1a0 rw32 reset=unknown inferred */
+/* FIELD: VOYAGER.gpiopad_en.pad0 0:0 inferred */
+#define VOYAGER_GPIOPAD_EN_PAD0_SHIFT 0
+#define VOYAGER_GPIOPAD_EN_PAD0_MASK  0x1u
 
 /* GPIO pad input level. Read at constant offsets by the X module; two of its bits choose between the two X2 option ROM images. */
 /* REG: VOYAGER.gpiopad_y 0x1a4 r32 reset=unknown inferred */
@@ -474,6 +489,12 @@
 
 /* First CRTC offset control. */
 /* REG: VOYAGER.crtc_offset_cntl 0x228 rw32 reset=unknown inferred */
+/* FIELD: VOYAGER.crtc_offset_cntl.crtc_xy_mode_en 9:9 inferred */
+#define VOYAGER_CRTC_OFFSET_CNTL_CRTC_XY_MODE_EN_SHIFT 9
+#define VOYAGER_CRTC_OFFSET_CNTL_CRTC_XY_MODE_EN_MASK  0x1u
+/* FIELD: VOYAGER.crtc_offset_cntl.crtc_micro_tile_en 13:13 inferred */
+#define VOYAGER_CRTC_OFFSET_CNTL_CRTC_MICRO_TILE_EN_SHIFT 13
+#define VOYAGER_CRTC_OFFSET_CNTL_CRTC_MICRO_TILE_EN_MASK  0x1u
 /* FIELD: VOYAGER.crtc_offset_cntl.crtc_tile_en 15:15 inferred */
 #define VOYAGER_CRTC_OFFSET_CNTL_CRTC_TILE_EN_SHIFT 15
 #define VOYAGER_CRTC_OFFSET_CNTL_CRTC_TILE_EN_MASK  0x1u
@@ -956,12 +977,54 @@
 /* Packet-3 opcode the engine-reset sequence queues to set the scissor rectangle. */
 #define VOYAGER_PM4_OPCODE_CP_SET_SCISSORS 0x1e /* inferred */
 
+/* Packet-3 opcode of the five-extra-word block transfer the host video driver queues for screen read-back. */
+#define VOYAGER_PM4_OPCODE_BITBLT_MULTI 0x9b /* inferred */
+
+/* Packet-3 opcode the ring-wrap code uses to pad the ring to its end (a no-operation packet). */
+#define VOYAGER_PM4_OPCODE_NOP 0x10 /* inferred */
+
+/*
+ * Command packet headers. The shipped drivers write both forms to the ring.
+ * The layouts are the public Radeon packet encodings; the values the shipped
+ * code stores decode to them as the test vectors below show.
+ */
+
+/* Packet-3 header: type 3, a count (the number of data words minus one) and an opcode. */
+/* FIELD: PM4_TYPE3_HDR.opcode 15:8 inferred */
+#define VOYAGER_PM4_TYPE3_HDR_OPCODE_SHIFT 8
+#define VOYAGER_PM4_TYPE3_HDR_OPCODE_MASK  0xffu
+/* FIELD: PM4_TYPE3_HDR.count 29:16 inferred */
+#define VOYAGER_PM4_TYPE3_HDR_COUNT_SHIFT 16
+#define VOYAGER_PM4_TYPE3_HDR_COUNT_MASK  0x3fffu
+/* FIELD: PM4_TYPE3_HDR.type 31:30 inferred */
+#define VOYAGER_PM4_TYPE3_HDR_TYPE_SHIFT 30
+#define VOYAGER_PM4_TYPE3_HDR_TYPE_MASK  0x3u
+
+/* Packet-0 header: a register dword index and the number of extra registers written after the first. */
+/* FIELD: PM4_TYPE0_HDR.reg_index 12:0 inferred */
+#define VOYAGER_PM4_TYPE0_HDR_REG_INDEX_SHIFT 0
+#define VOYAGER_PM4_TYPE0_HDR_REG_INDEX_MASK  0x1fffu
+/* FIELD: PM4_TYPE0_HDR.count 29:16 inferred */
+#define VOYAGER_PM4_TYPE0_HDR_COUNT_SHIFT 16
+#define VOYAGER_PM4_TYPE0_HDR_COUNT_MASK  0x3fffu
+/* FIELD: PM4_TYPE0_HDR.type 31:30 inferred */
+#define VOYAGER_PM4_TYPE0_HDR_TYPE_SHIFT 30
+#define VOYAGER_PM4_TYPE0_HDR_TYPE_MASK  0x3u
+
 /*
  * TESTVEC: 0x17 as VOYAGER.gb_tile_config => enable=1, pipe_count=3, tile_size=1
  *
  * TESTVEC: 0x79 as VOYAGER.rbbm_soft_reset => soft_reset_cp=1, soft_reset_re=1, soft_reset_pp=1, soft_reset_e2=1, soft_reset_rb=1, soft_reset_geometry=0
  *
  * TESTVEC: 0x00003000 as VOYAGER.unnamed_0294 => stereo_sel=3, mode_nibble=0
+ *
+ * TESTVEC: 0xc0059b00 as PM4_TYPE3_HDR => type=3, count=5, opcode=0x9b
+ *
+ * TESTVEC: 0xfffd1000 as PM4_TYPE3_HDR => type=3, count=16381, opcode=0x10
+ *
+ * TESTVEC: 0xc0011e00 as PM4_TYPE3_HDR => type=3, count=1, opcode=0x1e
+ *
+ * TESTVEC: 0x0001057c as PM4_TYPE0_HDR => type=0, count=1, reg_index=0x57c
  *
  * TESTVEC: 0x00120000 as VOYAGER.crtc_offset_cntl => crtc_tile_en=0, crtc_offset_flip_cntl=0, crtc_stereo_offset_en=1, stereo_aux=1
  *
