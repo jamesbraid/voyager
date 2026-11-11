@@ -1,6 +1,6 @@
 table	rows	out_of_scope	understood	understood_with_open	understood_distinct	templated	located	named_only	undocumented	no_software_dependency	pct_understood	pct_located_or_better	pct_mentioned	pct_done	unresolved_sites	truncated	audited_real_pct	audited_sample	audited_date	computes	reused	multi_unit	shared_address	address_unknown	input
 binaries	84	0	83	0	81	0	0	0	1	0	98.8	98.8	98.8	98.8							0				
-functions	28840	38510	998	88	968	27683	27842	0	0	0	3.5	100.0	100.0	3.5			100.0	1	2026-11-02		0	519	17	0	
+functions	28840	38510	998	88	968	15099	15099	3709	9034	0	3.5	55.8	68.7	3.5			100.0	1	2026-11-02		0	519	17	0	
 functions (distinct names)	12895	17321	846	88	841	12049	12049	0	0	0	6.6	100.0	100.0	6.6							0				
 mmio	207	0	146	2	143	0	55	4	2	0	70.5	97.1	99.0	70.5	37		86.7	15	2026-11-02		0				
 tokens	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0				
@@ -10,23 +10,23 @@ spec-registers	207	0	3	0	3	0	0	1	203	0	1.4	1.4	1.9	1.4							0
 input root manifest	68																								f460183ba5ef2e0d3a51a38138fa0887c0ebf7a929b85a4ef7380976fad2b88a
 input sibling kona																									5dc6e9d883985b4573b634de9d4d0a80f54d3d56
 input sibling odsy																									a3d032f4c6526e5544896b9fdde48a87bd355ea6
-functions in usr/X11R6/bin/XFree86	144	2780	34	0	34	103	110	0	0	0	23.6	100.0	100.0	23.6							0	0	0	0	
-functions in usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	112	0	1	0	1	110	111	0	0	0	0.9	100.0	100.0	0.9							0	0	0	0	
-functions in usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	112	0	1	0	1	110	111	0	0	0	0.9	100.0	100.0	0.9							0	0	0	0	
-functions in usr/X11R6/lib/modules/dri/fglrx_dri.so	7481	5373	71	0	71	7404	7410	0	0	0	0.9	100.0	100.0	0.9							0	165	0	0	
-functions in usr/X11R6/lib/modules/dri/fglrx_dri64.so	7481	5373	69	0	66	7405	7412	0	0	0	0.9	100.0	100.0	0.9							0	165	0	0	
-functions in usr/X11R6/lib/modules/drivers/fglrx_drv.so	623	0	266	69	266	356	357	0	0	0	42.7	100.0	100.0	42.7							0	6	0	0	
-functions in usr/X11R6/lib/modules/extensions/fglrx_glx.so	7440	5373	7	0	7	7413	7433	0	0	0	0.1	100.0	100.0	0.1							0	165	0	0	
+functions in usr/X11R6/bin/XFree86	144	2780	34	0	34	103	103	7	0	0	23.6	95.1	100.0	23.6							0	0	0	0	
+functions in usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	112	0	1	0	1	110	110	1	0	0	0.9	99.1	100.0	0.9							0	0	0	0	
+functions in usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	112	0	1	0	1	110	110	1	0	0	0.9	99.1	100.0	0.9							0	0	0	0	
+functions in usr/X11R6/lib/modules/dri/fglrx_dri.so	7481	5373	71	0	71	7404	7404	6	0	0	0.9	99.9	100.0	0.9							0	165	0	0	
+functions in usr/X11R6/lib/modules/dri/fglrx_dri64.so	7481	5373	69	0	66	993	993	1786	4633	0	0.9	14.2	38.1	0.9							0	165	0	0	
+functions in usr/X11R6/lib/modules/drivers/fglrx_drv.so	623	0	266	69	266	356	356	1	0	0	42.7	99.8	100.0	42.7							0	6	0	0	
+functions in usr/X11R6/lib/modules/extensions/fglrx_glx.so	7440	5373	7	0	7	1445	1445	1684	4304	0	0.1	19.5	42.2	0.1							0	165	0	0	
 functions in usr/X11R6/lib/modules/extensions/libGLcore.so	86	3217	0	0	0	86	86	0	0	0	0.0	100.0	100.0	0.0							0	0	0	0	
-functions in usr/X11R6/lib/modules/extensions/libdri.so	101	0	2	0	2	98	99	0	0	0	2.0	100.0	100.0	2.0							0	0	0	0	
-functions in usr/X11R6/lib/modules/extensions/libglx.so	206	714	0	0	0	205	206	0	0	0	0.0	100.0	100.0	0.0							0	4	0	0	
-functions in usr/X11R6/lib/modules/irix/libdrm.so	105	0	0	0	0	103	105	0	0	0	0.0	100.0	100.0	0.0							0	0	0	0	
+functions in usr/X11R6/lib/modules/extensions/libdri.so	101	0	2	0	2	98	98	1	0	0	2.0	99.0	100.0	2.0							0	0	0	0	
+functions in usr/X11R6/lib/modules/extensions/libglx.so	206	714	0	0	0	205	205	1	0	0	0.0	99.5	100.0	0.0							0	4	0	0	
+functions in usr/X11R6/lib/modules/irix/libdrm.so	105	0	0	0	0	8	8	51	46	0	0.0	7.6	56.2	0.0							0	0	0	0	
 functions in usr/X11R6/lib/modules/irix/libfglrxdrm.so	51	0	51	0	51	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	0	
-functions in usr/X11R6/lib/modules/libint10.so	78	404	19	0	17	21	59	0	0	0	24.4	100.0	100.0	24.4							0	0	0	0	
+functions in usr/X11R6/lib/modules/libint10.so	78	404	19	0	17	16	16	42	1	0	24.4	44.9	98.7	24.4							0	0	0	0	
 functions in usr/X11R6/lib/modules/libpcidata.so	1	0	1	0	1	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	0	
 functions in usr/X11R6/lib/modules/libscanpci.so	5	0	5	1	5	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	0	
 functions in usr/X11R6/lib/modules/libvbe.so	21	0	21	0	21	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	0	
-functions in usr/cpu/sysgen/IP35boot/fglrx.o	384	0	235	13	233	147	149	0	0	0	61.2	100.0	100.0	61.2							0	4	10	0	
+functions in usr/cpu/sysgen/IP35boot/fglrx.o	384	0	235	13	233	147	147	2	0	0	61.2	99.5	100.0	61.2							0	4	10	0	
 functions in usr/cpu/sysgen/IP35boot/hubspc.o	13	0	13	3	13	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	0	
 functions in usr/cpu/sysgen/IP35boot/is1.o	54	0	54	1	54	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	0	
 functions in usr/cpu/sysgen/IP35boot/kernel.o	161	1157	3	0	3	158	158	0	0	0	1.9	100.0	100.0	1.9							0	0	7	0	
@@ -51,21 +51,21 @@ functions in usr/cpu/sysgen/IP35boot/vga.a(xf86int10.o)	4	0	4	0	4	0	0	0	0	0	100.
 functions in usr/cpu/sysgen/IP35boot/vga.a(xf86x86emu.o)	4	0	0	0	0	4	4	0	0	0	0.0	100.0	100.0	0.0							0	0	0	0	
 functions in usr/cpu/sysgen/IP35boot/vga.a(vga_init.o)	24	0	24	0	24	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	0	
 functions in usr/cpu/sysgen/IP35boot/vga.a(vga_tport.o)	11	0	11	0	11	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	0	
-functions in usr/cpu/sysgen/IP35boot/vgastubs.a(vgastubs.o)	1	0	0	0	0	0	1	0	0	0	0.0	100.0	100.0	0.0							0	0	0	0	
+functions in usr/cpu/sysgen/IP35boot/vgastubs.a(vgastubs.o)	1	0	0	0	0	0	0	1	0	0	0.0	0.0	100.0	0.0							0	0	0	0	
 functions in usr/cpu/sysgen/IP35boot/xbridge.o	2	0	0	0	0	2	2	0	0	0	0.0	100.0	100.0	0.0							0	0	0	0	
 functions in usr/cpu/sysgen/IP35boot/xswitch.o	13	0	13	0	13	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	0	
 functions in usr/cpu/sysgen/IP35boot/xtalk.o	71	0	0	0	0	71	71	0	0	0	0.0	100.0	100.0	0.0							0	0	0	0	
-functions in usr/diags/SG/bin/biosemu	75	398	0	0	0	23	75	0	0	0	0.0	100.0	100.0	0.0							0	0	0	0	
-functions in usr/diags/SG/bin/olsg	2183	34	4	0	4	2178	2179	0	0	0	0.2	100.0	100.0	0.2							0	0	0	0	
-functions in usr/diags/SG/bin/olsgsys	171	0	3	0	3	168	168	0	0	0	1.8	100.0	100.0	1.8							0	0	0	0	
-functions in usr/gfx/VOYAGER/bin/sg2flash	8	0	1	0	1	7	7	0	0	0	12.5	100.0	100.0	12.5							0	0	0	0	
-functions in usr/gfx/VOYAGER/bin/vpm	31	0	7	0	7	22	24	0	0	0	22.6	100.0	100.0	22.6							0	0	0	0	
-functions in usr/gfx/arch/IP35VOYAGER/libGL.so	542	129	0	0	0	542	542	0	0	0	0.0	100.0	100.0	0.0							0	0	0	0	
+functions in usr/diags/SG/bin/biosemu	75	398	0	0	0	16	16	56	3	0	0.0	21.3	96.0	0.0							0	0	0	0	
+functions in usr/diags/SG/bin/olsg	2183	34	4	0	4	2177	2177	2	0	0	0.2	99.9	100.0	0.2							0	0	0	0	
+functions in usr/diags/SG/bin/olsgsys	171	0	3	0	3	167	167	1	0	0	1.8	99.4	100.0	1.8							0	0	0	0	
+functions in usr/gfx/VOYAGER/bin/sg2flash	8	0	1	0	1	6	6	1	0	0	12.5	87.5	100.0	12.5							0	0	0	0	
+functions in usr/gfx/VOYAGER/bin/vpm	31	0	7	0	7	22	22	2	0	0	22.6	93.5	100.0	22.6							0	0	0	0	
+functions in usr/gfx/arch/IP35VOYAGER/libGL.so	542	129	0	0	0	541	541	0	1	0	0.0	99.8	99.8	0.0							0	0	0	0	
 functions in usr/gfx/arch/IP35VOYAGER/libGLcore.so	0	504	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0				
 functions in usr/gfx/arch/IP35VOYAGER/libgl.so	1	3811	0	0	0	1	1	0	0	0	0.0	100.0	100.0	0.0							0	0	0	0	
-functions in usr/gfx/arch/IP35VOYAGER32/libGL.so	314	2282	0	0	0	313	314	0	0	0	0.0	100.0	100.0	0.0							0	5	0	0	
+functions in usr/gfx/arch/IP35VOYAGER32/libGL.so	314	2282	0	0	0	267	267	25	22	0	0.0	85.0	93.0	0.0							0	5	0	0	
 functions in usr/gfx/arch/IP35VOYAGER32/libGLcore.so	1	0	0	0	0	1	1	0	0	0	0.0	100.0	100.0	0.0							0	0	0	0	
-functions in usr/gfx/arch/IP35VOYAGER32/libgl.so	1	3812	0	0	0	1	1	0	0	0	0.0	100.0	100.0	0.0							0	0	0	0	
-functions in usr/gfx/arch/IP35VOYAGER64/libGL.so	314	2282	0	0	0	313	314	0	0	0	0.0	100.0	100.0	0.0							0	5	0	0	
+functions in usr/gfx/arch/IP35VOYAGER32/libgl.so	1	3812	0	0	0	0	0	1	0	0	0.0	0.0	100.0	0.0							0	0	0	0	
+functions in usr/gfx/arch/IP35VOYAGER64/libGL.so	314	2282	0	0	0	267	267	25	22	0	0.0	85.0	93.0	0.0							0	5	0	0	
 functions in usr/gfx/arch/IP35VOYAGER64/libGLcore.so	1	0	0	0	0	1	1	0	0	0	0.0	100.0	100.0	0.0							0	0	0	0	
-functions in usr/gfx/sgcombine	35	367	0	0	0	21	35	0	0	0	0.0	100.0	100.0	0.0							0	0	0	0	
+functions in usr/gfx/sgcombine	35	367	0	0	0	21	21	12	2	0	0.0	60.0	94.3	0.0							0	0	0	0	
