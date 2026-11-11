@@ -408,3 +408,87 @@ Where an entry reads `errno`, it does so through the GOT slot at `gp+1728`.
 
 - `fglx11AlignedFree` (`fglrx_dri.so`, address 0x4c1440, 52 bytes): **established.** Every instruction is read.
   It loads the word at a0-4, which holds the malloc pointer that `fglx11AlignedMalloc` stored, and calls `free` through `gp+1804` with it.
+
+## Empty bodies and constant returns
+
+Each routine here is eight bytes: a return word, 0x03e00008 (`jr ra`), and its delay slot. The delay slot is either an empty word, 0x00000000, or one instruction that loads a constant or stores a field. Nothing in these bodies calls out, so the value a caller sees is the one the delay slot leaves in v0, or the one v0 held on entry.
+
+- `vLockNoop` (`fglrx_dri.so`, address 0x4c5400, 8 bytes): **established.** The whole routine is read. The return word sits at 0x4c5400 and an empty delay slot, 0x00000000, at 0x4c5404. It stores nothing and leaves v0 as the caller set it.
+
+- `vUnlockNoop` (`fglrx_dri.so`, address 0x4c5440, 8 bytes): **established.** The body is two words: the return at 0x4c5440 and the empty delay slot 0x00000000 at 0x4c5444. No register is written and no memory is stored.
+
+- `vFreeNoop` (`fglrx_dri.so`, address 0x4c5480, 8 bytes): **established.** Every word is read. The return 0x03e00008 at 0x4c5480 is followed by li v0,1 (0x24020001) in its delay slot at 0x4c5484. The routine returns 1 and writes nothing else.
+
+- `fglX11CMMUpdateCLUT` (`fglrx_dri.so`, address 0x4cb100, 8 bytes): **established.** The whole body is read. The delay slot at 0x4cb104 holds li v0,1 (0x24020001), so the routine returns 1. It stores nothing.
+
+- `_init` (`fglrx_dri.so`, address 0x4cb400, 8 bytes): **established.** The body is a return 0x03e00008 at 0x4cb400 with an empty delay slot 0x00000000 at 0x4cb404. It does no work, and v0 leaves with its entry value. The routine is read in full.
+
+- `__driRegisterExtensions` (`fglrx_dri.so`, address 0x4cdf00, 8 bytes): **established.** The whole routine is read. Its delay slot at 0x4cdf04 is move v0,zero (0x00001025), so the return is 0. Nothing is stored and no call is made.
+
+- `Lock` (`fglrx_dri.so`, address 0x4cff80, 8 bytes): **established.** Read in full: a return 0x03e00008 at 0x4cff80 and an empty delay slot 0x00000000 at 0x4cff84. The routine has no effect and returns with v0 as it was on entry.
+
+- `Unlock` (`fglrx_dri.so`, address 0x4cffc0, 8 bytes): **established.** Read in full: a return 0x03e00008 at 0x4cffc0 and an empty delay slot 0x00000000 at 0x4cffc4. It is the same empty pair as the routine at 0x4cff80, and it has no effect.
+
+- `fglX11FreeARecentlyUsedAgpSurface` (`fglrx_dri.so`, address 0x4d34c0, 8 bytes): **established.** The whole body is two words. The delay slot at 0x4d34c4 is move v0,zero (0x00001025), so the routine returns 0 after the return at 0x4d34c0 and stores nothing.
+
+- `XGLOpenFullScreen` (`fglrx_dri.so`, address 0x4d9c00, 8 bytes): **established.** Every word is read. The delay slot at 0x4d9c04 is li v0,1 (0x24020001), so the routine returns 1 and writes nothing else.
+
+- `XGLCloseFullScreen` (`fglrx_dri.so`, address 0x4d9c40, 8 bytes): **established.** The full body is the return 0x03e00008 at 0x4d9c40 and the delay slot li v0,1 (0x24020001) at 0x4d9c44. The routine returns 1 and performs no store.
+
+- `__FGLTexMgrExpandSharedMemory` (`fglrx_dri.so`, address 0x4de700, 8 bytes): **established.** The routine is read through its last word, the delay slot 0x00001025 (move v0,zero) at 0x4de704. It returns 0 at once and stores nothing.
+
+- `__FGLTexMgrSetLRU` (`fglrx_dri.so`, address 0x4def00, 8 bytes): **established.** The two words at 0x4def00 and 0x4def04 are the return 0x03e00008 and an empty delay slot 0x00000000. The routine writes no register and no memory.
+
+- `__FGLSurfaceIsLost` (`fglrx_dri.so`, address 0x4e0080, 8 bytes): **established.** Read in full. The delay slot at 0x4e0084 is move v0,zero (0x00001025), so the return value is 0. The routine makes no store and no call.
+
+- `__FGLRestoreManagedSurface` (`fglrx_dri.so`, address 0x4e00c0, 8 bytes): **established.** The whole body is the return 0x03e00008 at 0x4e00c0, followed by the empty delay slot 0x00000000 at 0x4e00c4. It writes nothing.
+
+- `GetObjectSurface` (`fglrx_dri.so`, address 0x4e3340, 8 bytes): **established.** Read in full: the return 0x03e00008 at 0x4e3340, and its delay slot at 0x4e3344 is lw v0,4(a0) (0x8c820004). The routine returns the word at offset 4 of the object in a0, with no store.
+
+- `UnlockDevice` (`fglrx_dri.so`, address 0x4e5a40, 8 bytes): **established.** The whole body is the return 0x03e00008 at 0x4e5a40 with an empty delay slot 0x00000000 at 0x4e5a44. It has no effect.
+
+- `ErrorMessage` (`fglrx_dri.so`, address 0x4e8740, 8 bytes): **established.** Read in full: a return 0x03e00008 at 0x4e8740 and an empty delay slot 0x00000000 at 0x4e8744. It prints nothing and leaves v0 unchanged.
+
+- `__glATIUpdateDeferredStateNotSupported` (`fglrx_dri.so`, address 0x4eb680, 8 bytes): **established.** Every word is read. The return 0x03e00008 sits at 0x4eb680 with an empty delay slot 0x00000000 at 0x4eb684. The routine sets no error code and stores nothing.
+
+- `__glATIEnableHyperpipe` (`fglrx_dri.so`, address 0x4ef000, 8 bytes): **established.** The body is the return 0x03e00008 at 0x4ef000 and an empty delay slot 0x00000000 at 0x4ef004. The routine changes no memory and sets no return value.
+
+- `__glATIDisableHyperpipe` (`fglrx_dri.so`, address 0x4ef040, 8 bytes): **established.** Read in full: the return 0x03e00008 at 0x4ef040 and an empty delay slot 0x00000000 at 0x4ef044. Nothing is stored, and v0 keeps its entry value.
+
+- `__glATIFinishHyperpipe` (`fglrx_dri.so`, address 0x4ef080, 8 bytes): **established.** The whole routine is read: return 0x03e00008 at 0x4ef080, empty delay slot 0x00000000 at 0x4ef084. No store, no call and no value is set.
+
+- `UpdateObject` (`fglrx_dri.so`, address 0x4f7540, 8 bytes): **established.** Read in full. The delay slot at 0x4f7544 is sw a1,128(a0) (0xac850080), so the routine stores its a1 argument as a word at offset 128 of the object in a0 and then returns.
+
+- `EvictObject` (`fglrx_dri.so`, address 0x4f7580, 8 bytes): **established.** The body is the return 0x03e00008 at 0x4f7580 and an empty delay slot 0x00000000 at 0x4f7584. It writes nothing.
+
+- `FreeObject` (`fglrx_dri.so`, address 0x4f75c0, 8 bytes): **established.** Every word is read. The delay slot at 0x4f75c4 is sw zero,128(a1) (0xaca00080), so the routine stores a zero word at offset 128 of the object in a1, then returns.
+
+- `InitAccumBuffer` (`fglrx_dri.so`, address 0x4f9540, 8 bytes): **established.** Read in full: return 0x03e00008 at 0x4f9540 and empty delay slot 0x00000000 at 0x4f9544. The routine writes nothing and returns at once.
+
+- `InitStencilBuffer` (`fglrx_dri.so`, address 0x4f9800, 8 bytes): **established.** The whole body is the return 0x03e00008 at 0x4f9800 with an empty delay slot 0x00000000 at 0x4f9804. Nothing is stored.
+
+- `__glATIInitializeSLock` (`fglrx_dri.so`, address 0x50ca00, 8 bytes): **established.** The delay slot at 0x50ca04 holds li v0,1 (0x24020001), so the routine returns 1. The return at 0x50ca00 is its only other word, and no store occurs.
+
+- `__glATIInitSLock` (`fglrx_dri.so`, address 0x50ca40, 8 bytes): **established.** Read in full. The delay slot at 0x50ca44 is li v0,1 (0x24020001), so it returns 1 after the return at 0x50ca40. Nothing else is stored.
+
+- `FreeCurrentBuffer` (`fglrx_dri.so`, address 0x560600, 8 bytes): **established.** The body is the return 0x03e00008 at 0x560600 and the empty delay slot 0x00000000 at 0x560604. It has no effect.
+
+- `__glDontRenderTriangle` (`fglrx_dri.so`, address 0x5642c0, 8 bytes): **established.** Every word is read: return 0x03e00008 at 0x5642c0 and empty delay slot 0x00000000 at 0x5642c4. The routine has no effect.
+
+- `__glNop0` (`fglrx_dri.so`, address 0x57c440, 8 bytes): **established.** The whole routine is read. Its return word 0x03e00008 is at 0x57c440 and its empty delay slot 0x00000000 is at 0x57c444. It writes nothing.
+
+- `__glNop1` (`fglrx_dri.so`, address 0x57c480, 8 bytes): **established.** Read in full. The eight bytes are the return 0x03e00008 at 0x57c480 and the empty word 0x00000000 at 0x57c484. No store is made.
+
+- `__glNop2` (`fglrx_dri.so`, address 0x57c4c0, 8 bytes): **established.** Every instruction is read: return 0x03e00008 at 0x57c4c0, empty delay slot 0x00000000 at 0x57c4c4. The routine leaves all registers and memory alone.
+
+- `__glNop3` (`fglrx_dri.so`, address 0x57c500, 8 bytes): **established.** The body is a return at 0x57c500 (0x03e00008) and an empty slot at 0x57c504 (0x00000000). It returns at once with v0 unchanged.
+
+- `__glNop4` (`fglrx_dri.so`, address 0x57c540, 8 bytes): **established.** The full routine is read. The return 0x03e00008 at 0x57c540 is followed by the empty word 0x00000000 at 0x57c544, and no memory is written.
+
+- `__glNop5` (`fglrx_dri.so`, address 0x57c580, 8 bytes): **established.** Read through the last word: the return 0x03e00008 at 0x57c580 and the empty slot 0x00000000 at 0x57c584. Nothing is stored and nothing is called.
+
+- `__glNop6` (`fglrx_dri.so`, address 0x57c5c0, 8 bytes): **established.** Every word is read. The return 0x03e00008 at 0x57c5c0 has an empty delay slot 0x00000000 at 0x57c5c4, and v0 keeps its entry value.
+
+- `__glNop7` (`fglrx_dri.so`, address 0x57c600, 8 bytes): **established.** The body is the return 0x03e00008 at 0x57c600 and the empty delay slot 0x00000000 at 0x57c604. The routine writes no state.
+
+- `__glNop8` (`fglrx_dri.so`, address 0x57c640, 8 bytes): **established.** The whole routine is read: return 0x03e00008 at 0x57c640 and empty delay slot 0x00000000 at 0x57c644. It stores nothing and returns at once.
