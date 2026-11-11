@@ -52,24 +52,24 @@ Fields:
 
 **established.** The slots below hold 16-bit absolute offsets (0 means absent). The offsets are Linux's slot numbers for the legacy table format; each non-zero target below was checked by reading it.
 
-| Slot | Name (public driver) | sg2 | sg3 | sg3a |
-|---|---|---|---|---|
-| +0x0c | ASIC init 1 | 0x2a7 | 0x2a7 | 0x297 |
-| +0x14 | BIOS support (holds the product string) | 0x10b | 0x10c | 0xfc |
-| +0x2a | DAC programming | 0x6f40 | 0x7250 | 0x7240 |
-| +0x2c | maximum colour depth | 0x661c | 0x692c | 0x691c |
-| +0x2e | CRTC info | 0xd23 | 0xcf1 | 0xce1 |
-| +0x30 | PLL info | 0x9a2 | 0x970 | 0x960 |
-| +0x36 | hardware config | 0x6b6 | 0x6c1 | 0x6b1 |
-| +0x46 | PLL init | 0x58f | 0x595 | 0x585 |
-| +0x48 | memory config | 0x686 | 0x691 | 0x681 |
-| +0x4a | save mask | 0x75df | 0x78ef | 0x78df |
-| +0x4e | ASIC init 2 | 0x3de | 0x3e4 | 0x3d4 |
-| +0x50 | connector info | 0x6c0 | 0x6cb | 0x6bb |
-| +0x52 | dynamic clock 1 | 0x661 | 0x66c | 0x65c |
-| +0x58 | external TMDS info | absent | 0x5f47 | 0x5f37 |
-| +0x5e | misc info | 0x1ff | 0x1ff | 0x1ef |
-| +0x60 | CRT info | 0x213 | 0x213 | 0x203 |
+| Slot | Name (public driver) | Grade | sg2 | sg3 | sg3a |
+|---|---|---|---|---|---|
+| +0x0c | ASIC init 1 | established | 0x2a7 | 0x2a7 | 0x297 |
+| +0x14 | BIOS support (holds the product string) | established | 0x10b | 0x10c | 0xfc |
+| +0x2a | DAC programming | established | 0x6f40 | 0x7250 | 0x7240 |
+| +0x2c | maximum colour depth | established | 0x661c | 0x692c | 0x691c |
+| +0x2e | CRTC info | established | 0xd23 | 0xcf1 | 0xce1 |
+| +0x30 | PLL info | established | 0x9a2 | 0x970 | 0x960 |
+| +0x36 | hardware config | established | 0x6b6 | 0x6c1 | 0x6b1 |
+| +0x46 | PLL init | established | 0x58f | 0x595 | 0x585 |
+| +0x48 | memory config | established | 0x686 | 0x691 | 0x681 |
+| +0x4a | save mask | established | 0x75df | 0x78ef | 0x78df |
+| +0x4e | ASIC init 2 | established | 0x3de | 0x3e4 | 0x3d4 |
+| +0x50 | connector info | established | 0x6c0 | 0x6cb | 0x6bb |
+| +0x52 | dynamic clock 1 | established | 0x661 | 0x66c | 0x65c |
+| +0x58 | external TMDS info | established | absent | 0x5f47 | 0x5f37 |
+| +0x5e | misc info | established | 0x1ff | 0x1ff | 0x1ef |
+| +0x60 | CRT info | established | 0x213 | 0x213 | 0x203 |
 
 - **established.** The slots for TV info, DFP info, multimedia, TV standard patch, LCD info, mobile info, hard-coded EDID, reserved memory, memory-clock info, external DAC, integrated system, component video, fan speed and overdrive are 0 in all three images.
 - **established.** The slots at +0x6a and beyond are outside the header (its length is 0x6a).
@@ -108,14 +108,14 @@ All of these follow the public driver's layout (`radeon_combios.c`); every numbe
 
 - **established.** The two ASIC init tables, the two misc-info tables (ASIC init 3 is empty), the PLL init table and the dynamic clock table all walk to their zero terminators with the public driver's decoding, and each ends within one byte of where the next table starts, so the boundaries are consistent. Counts of entries:
 
-| Table | sg2 | sg3 | sg3a |
-|---|---|---|---|
-| ASIC init 1 | 46 | 47 | 47 |
-| ASIC init 2 | 33 | 33 | 33 |
-| ASIC init 3 | 0 | 0 | 0 |
-| ASIC init 4 | 25 | 25 | 25 |
-| PLL init | 64 | 65 | 65 |
-| dynamic clock 1 | 9 | 9 | 9 |
+| Table | Grade | sg2 | sg3 | sg3a |
+|---|---|---|---|---|
+| ASIC init 1 | established | 46 | 47 | 47 |
+| ASIC init 2 | established | 33 | 33 | 33 |
+| ASIC init 3 | established | 0 | 0 | 0 |
+| ASIC init 4 | established | 25 | 25 | 25 |
+| PLL init | established | 64 | 65 | 65 |
+| dynamic clock 1 | established | 9 | 9 | 9 |
 
 - **inferred.** The MMIO tables write registers by offset; in the public headers the offsets used most are the indirect memory-controller index and data pair (0x1f8 and 0x1fc, in the R300 header) and the memory timing, framebuffer location, latency-timer and SDRAM mode registers at 0x140 to 0x158. The remaining offsets include bus control (0x30), CRTC and DAC control (0x50, 0x58, 0x7c), GPIO pad registers (0x198 to 0x1a0), display output (0xd00 to 0xd64) and the graphics buffer controls (0x2f0, 0x3f0). The names are the public header's; this chapter has not checked each against AMD's register reference.
 
@@ -184,14 +184,14 @@ depth table (34 records) and the first 500 bytes of the CRTC info table (25 reco
 
 **established.** sg3a is sg3 with the title, version and part-number strings changed, a shorter string area (everything from the product string on moves down by 0x10 bytes) and a small number of content changes. After removing the 0x10-byte shift, `option_rom.py diff` leaves only the differences below over the compared range (0x19c to 0x9000, about 36 KB); the rest is identical apart from the pointers the shift moves. The two X2 images agree on the default clocks, the connector table, the external TMDS script and the DAC macro value.
 
-| Where (sg3a offset) | sg3 | sg3a | What |
-|---|---|---|---|
-| 0x2fb to 0x30d | register 0x178 = 0x7020; 0x17c and index 0x124 of the indirect set = 0x0db30db3 | 0x4026; 0x39933993 | memory-controller read control values (ASIC init 1) |
-| 0x362 to 0x388 | indexes 0x11a, 0x11c, 0x11e, 0x120 = 0x161557ff | 0x141551ff | four indirect-register writes |
-| 0x3e9 | index 0x122 = 0x554f | 0x4f | one indirect-register write (ASIC init 2) |
-| 0x418 to 0x41a | memory timing (0x144) = 0x1a292b13 | 0x1a49a222 | memory timing register |
-| 0x4d7 to 0x4fd | values 0x171557ff (ASIC init 4) | 0x151551ff | four indirect-register writes |
-| 0x595d to 0x5962, 0x71fb to 0x7200 | `push cx; mov cx,2; jmp` | `push bx; mov bx,2; jmp` | one small x86 helper, in two copies; the behaviour is unknown |
+| Where (sg3a offset) | sg3 | sg3a | Grade | What |
+|---|---|---|---|---|
+| 0x2fb to 0x30d | register 0x178 = 0x7020; 0x17c and index 0x124 of the indirect set = 0x0db30db3 | 0x4026; 0x39933993 | established | memory-controller read control values (ASIC init 1) |
+| 0x362 to 0x388 | indexes 0x11a, 0x11c, 0x11e, 0x120 = 0x161557ff | 0x141551ff | established | four indirect-register writes |
+| 0x3e9 | index 0x122 = 0x554f | 0x4f | established | one indirect-register write (ASIC init 2) |
+| 0x418 to 0x41a | memory timing (0x144) = 0x1a292b13 | 0x1a49a222 | established | memory timing register |
+| 0x4d7 to 0x4fd | values 0x171557ff (ASIC init 4) | 0x151551ff | established | four indirect-register writes |
+| 0x595d to 0x5962, 0x71fb to 0x7200 | `push cx; mov cx,2; jmp` | `push bx; mov bx,2; jmp` | established | one small x86 helper, in two copies; the behaviour is unknown |
 
 - **inferred.** The X2 changes are memory-controller and memory-timing values, which fits a retuned memory configuration, such as a different memory part or speed. That is a reading from the values; the registers' fields are not decoded here and no manual names a reason. The default clocks (317 MHz memory, 378 MHz system) are the same in both.
 - **established.** The version string has a different leading field (001 in sg3, 201 in sg3a) and a later date (2005/04/06 against 2004/05/06). The flash tool's records (below) list `sg3a.bin` and `sg3b.bin` for the same PCI device as `sg3.bin`, and select between them by two bits on the card.
@@ -226,38 +226,38 @@ The init entry and every routine it reaches were read as 16-bit x86 code (the ca
 
 Addresses in sg2, sg3 and sg3a. **established** for every row: the whole body was read.
 
-| sg2 | sg3 | sg3a | What it does |
-|---|---|---|---|
-| 5743 / 5752 | 571b / 572a | 570b / 571a | Base lookup and validation (above). |
-| 5720 / 5727 / 572e / 5735 | 56f8 / 56ff / 5706 / 570d | 56e8 / 56ef / 56f6 / 56fd | Direct port write of ax, read of al, read of ax at `P` plus dl; `5735` computes the address. |
-| 57d6 | 57ae | 579e | Reads one configuration dword (ports 0xcf8, 0xcfc): bh, bl and dl hold bus, device-and-function and offset. |
-| 5913 / 586a | 58eb / 5842 | 58db / 5832 | Indexed dword read and write (above). |
-| 5898 / 58a7 | 5870 / 587f | 5860 / 586f | Indexed byte read, lane 0 and lane 3. |
-| 57f3 / 57f8 / 5802 / 5835 | 57cb / 57d0 / 57da / 580d | 57bb / 57c0 / 57ca / 57fd | Indexed byte write to lane 0, 1, 3 and word write to lane 0. |
-| 6574 | 6884 | 6874 | Register-script interpreter for every MMIO table. Word with bit 15 clear: bits 12:0 are the register; bit 13 set means direct access at `P` plus the low byte, clear means indexed; bit 14 set means read, AND with the first dword, OR with the second, write (10 bytes), clear means write the dword (6 bytes). Bit 15 set: bit 13 clear is a wait of the second word in timer ticks (`6eaa`); bit 13 set is meant to poll, but the code compares the raw high byte of the entry, which has bit 7 set, with 3 and 8, so the poll branches (PLL register 0x14 lane 2 bit 0 clear, and register 0x150 bits 1:0 set) are unreachable and the entry is skipped; no table in the images has one. Each wait entry is 4 bytes. A zero word ends the table and writes 0 to `P+8`. Types 6 and 7 take the same 4-byte step as 4 and 5; `retools/tools/voyager/option_rom.py` steps 2 bytes over them, but no table uses them. |
-| 6a49 | 6d59 | 6d49 | PLL-script interpreter (PLL init and dynamic clock tables), at most 999 entries. A zero byte ends. Bit 7 set: low bits 1 wait 0x168 ticks, 2 wait five times 0x952, 3 poll PLL register 0x14 lane 2 until bit 0 clears, 4 poll it until bit 3 sets, 5 if PLL register 0x14 lane 3 has bit 0 set then write 0x11 to PLL register 0x12 lanes 1 and 0, wait 20 ms, clear bit 0 of PLL register 0x14 lane 3 and wait 20 ms again (other codes skip). Bit 6 set, bit 7 clear: a lane byte, an AND-mask byte and an OR byte follow (3 bytes). Both clear: a dword follows, written to the PLL register in the low six bits. |
-| 6552 | 6862 | 6852 | ASIC init 2: `6574` over the slot +0x4e table (bx = 0x3de, 0x3e4 in sg3, 0x3d4 in sg3a) with interrupts off, then reads register 0x3428 (`RB2D_DSTCACHE_MODE`), ORs bit 17 and writes the result to register 0x1710 (`FLUSH_4`). Why a value read from one register goes to another is **unknown**. |
-| 6b12 | 6e22 | 6e12 | Memory-mode sequence. Runs the table at 0x4d8 (sg3 0x4de, sg3a 0x4ce) through `6574`. Then reads records from the memory-config table plus 5 (0x68b; sg3 0x696; sg3a 0x686): byte 0xff ends; byte 0x0f waits until register 0x150 bits 3:0 are all set (up to 0x8000 reads); any other byte is cl and is followed by two bytes. The two bytes go to lanes 0 and 1 of register 0x158 (`SDRAM_MODE_REG`); then lane 3 is read, ANDed with 0x6f and ORed with cl, and written back. The loop runs once. After it the byte following 0xff goes into PLL register 0x15 lane 3 (AND 0x0f, OR that byte), and the table at 0x4d6 (sg3 0x4dc, sg3a 0x4cc) runs. In sg2 the records have cl of 0, 0x80 or 0x10. **inferred:** these are SDRAM mode-register writes; the bit meanings are **unknown**; settling test: decode the lane bytes 0x00, 0x80 and 0x10 and the two data bytes of each record against the SDRAM mode-register layout in the public Linux and X.Org `SDRAM_MODE_REG` field names (burst length, CAS latency in `radeon_reg.h`), and check whether any shipped code also writes 0x158; agreement on a field makes it **inferred**, a vendor memory datasheet is needed for **established**. |
-| 7766 | 7a76 | 7a66 | Calls `774c`, then `7759`. |
-| 774c / 7759 | 7a5c / 7a69 | 7a4c / 7a59 | `774c`: `7641`, then replace bits 1:0 of the byte at `P+0x20` with its result (`60c7` with ah = 3). `7759`: `7674`, then the same into the byte at `P+0x21` (`60be`). |
-| 60c7 / 60be | 63d6 / 63cd | 63c6 / 63bd | Byte read-modify-write at `P+0x20` / `P+0x21`: AND with the complement of ah, OR with al. |
-| 7641 | 7951 | 7941 | Saves PLL register 8 lane 0, clears its bits 7:6, calls `7603` with cl = 0xc0 and returns 2 if bit 7 of its test is set; otherwise calls it with cl = 0x40 and returns 0 if clear, 1 if set; restores PLL register 8. |
-| 7603 | 7913 | 7903 | Sets bit 7 of the byte at `P+0x55` (`CRTC_EXT_CNTL` lane 1), writes 0x1b630 OR cl to register 0x280 (`DAC_EXT_CNTL`), clears bits 15 and 1:0 and sets bits 3 and 1 of the word at `P+0x58` (`DAC_CNTL`), waits 2 ms (`6ef5`), reads the byte at `P+0x58`, restores the word and the `P+0x55` byte, writes 0 to register 0x280 and returns with ZF clear when bit 7 of the byte it read is set. |
-| 7674 | 7984 | 7974 | Sets bit 0 of registers 0x1a0, 0x198 and 0x19c (`GPIOPAD_EN`, `GPIOPAD_MASK`, `GPIOPAD_A`, lane 0). Saves 0x7c (`DAC_CNTL2`), 0x3f8 (`CRTC2_GEN_CNTL`), 0x280 and 0x88c (`TV_DAC_CNTL`), writes 2, 0xc0 and 0x180c3 to the first three and 0x680200 then 0x680213 to 0x88c with waits between, reads lane 3 of 0x88c, returns 2 if bits 7:5 of it are not all zero and 0 otherwise. Restores 0x88c, the low word of 0x280, 0x3f8, the low byte of 0x7c and the low byte of 0x19c; bit 0 of 0x1a0 and 0x198 stays set. Bit meanings of the DAC and TV registers: **unknown**; it has the shape of a presence test on the second DAC; settling test: look up 0x7c, 0x3f8, 0x280 and 0x88c in the AMD R3xx and later register references and the Linux and X.Org headers (`DAC_CNTL2`, `CRTC2_GEN_CNTL`, `DAC_EXT_CNTL`, `TV_DAC_CNTL`), map the written values 2, 0xc0, 0x180c3, 0x680200 and 0x680213 onto the named bits, and compare with the public drivers' load-detect routines for the second DAC and the TV DAC, if they have one. |
-| 843 | 812 | 802 | Reads the word at `P+0x20`; if none of bits 0xb3f is set, sets bit 1 of its low byte and writes that byte back. From the two bytes it picks ah = 2, 8, 0x20 or 0x80 and calls `6136`, which writes ah AND 0xab to the byte at `P+0x27` (the top byte of `BIOS_5_SCRATCH`). The bit meanings are **unknown**. |
-| 81f | 7ee | 7de | Calls `20e2`; sets bits 4 and 0 in the byte at linear 0x489 and keeps only its bits 4, 2, 1 and 0; calls `474a` with al = 1; calls `47ff` (mono text: equipment bits 5:4 = 3, CRTC port 0x3b4 in linear 0x463, `int 0x42` ax = 7) with that byte saved around it; then `4847` (colour text: equipment bits 5:4 = 2, port 0x3d4, `int 0x6d` ax = 3). |
-| 20e2 | 20ba | 20aa | If bit 1 of linear 0x489 is set: stores 0x62 and 0xfb in the word at linear 0x487 and 0x0d at linear 0x48a, calls `475a`, and when it returns nonzero stores 0xf9 in linear 0x488. Otherwise stores 0x60 and 0xf9, 0x0b, calls `4765`, and when nonzero stores 0xfb. Then sets bit 4 of linear 0x489. |
-| 474a / 475a / 4765 | 4722 / 4732 / 473d | 4712 / 4722 / 472d | Set bit 0 of the VGA miscellaneous output register to al. `475a` sets it and then runs `7c49` on port 0x3b4; `4765` clears it and runs `7c49` on 0x3d4. |
-| 7c49 | 7f59 | 7f49 | Saves CRTC registers 0xe and 0xf, writes 0xaa and 0x55, reads them back, restores them; returns 1 if either read back matches and 0 if neither does. |
-| 78af / 78b9 / 78ce | 7bbf / 7bc9 / 7bde | 7baf / 7bb9 / 7bce | `78af`: write index al to the port in dx and read the byte from dx+1. `78b9`: load ds from the word at `cs:[0x56ee]` (sg3 `0x56c6`, sg3a `0x56b6`), the BIOS-data selector field of the `PMID` block, which holds 0 in all three images, so data accesses through it are flat linear addresses (0x487 is the BIOS data area byte at linear 0x487). `78ce`: dx = the word at linear 0x463 (the BIOS data area's CRTC base port). |
-| 5013 | 4feb | 4fdb | Table patch: stores `P` and the bus/device/function in two words of the table at 0x53f1 (+8 and +0xa), then, for the 2-byte entries from the offset the table's word at +6 gives (0x0c), until a word of -1 or until cx counts out (cx is whatever the caller left), stores the high byte of `P` in each entry's high byte. The entries are 0xf010, 0xf016, 0xf054, 0xf038, 0xf03c, 0xf05c, 0xf000, 0xf004, 0xf0b0, 0xf0b2 and 0xf0b4: port numbers of the card, patched with its real base. **inferred:** the table starts with the words 0x26, 0x94, 0xe0 and 0x0c, the layout of the VESA protected-mode function table (offsets of set window, set display start and set palette, then of the port list), so the entries are its port list. |
-| f99 / f17 / fc1 | f67 / ee5 / f8f | f57 / ed5 / f7f | A save and restore pair for five scratch bytes. `f17` with bl = 0 writes five (identifier, value) word pairs at es:di, identifiers 0x12, 0x6a, 0x55, 0x83, 0x84, each value being the byte at `P+0x18`, 0x19, 0x1a, 0x1b, 0x1c ORed with 0x80 (`fc1`: 0x62 and 0x12 read `P+0x18`, 0xe5 and 0x6a read `P+0x19`, 0x55, 0x83 and 0x84 the next three; any other identifier returns its own bit 7), then two zero words and two 0xffff words. bl = 1 writes the five values back to `P+0x18` to `P+0x1c`. bl = 2 returns ah = 1. bl = 3 calls `f99`, which writes the constants 0, 4, 4, 0x10 and 0 to `P+0x18` to `P+0x1c` (it builds a 0x20-byte frame holding them and runs the bl = 1 path); the main set-up calls `f99` directly for that reason. **inferred:** the identifiers are video mode numbers (0x6a and 0x183 to 0x186 are in the mode list); what the flag bytes record is **unknown**. |
-| 67ee / 684a / 6861 / 6869 / 6a32 | 6afe / 6b5a / 6b71 / 6b79 / 6d42 | 6aee / 6b4a / 6b61 / 6b69 / 6d32 | PLL accessors (above). `67ee` saves the index byte, writes 0 to the index port, reads one dword from the data port and discards it (eax is restored), then restores the index; `684a` and `6869` call it after their access. `6861` is `6869` with an AND mask of 0. |
-| 6eaa | 71ba | 71aa | Waits bx timer ticks: reads timer 0 twice per loop (`6f21`) and loops while the elapsed count is below bx; a zero change reduces bx by 2 and clears bit 0 of bl. |
-| 6ee3 / 6ef5 / 6f01 | 71f3 / 7205 / 7211 | 71e3 / 71f5 / 7201 | Waits of 0x168 ticks, 0x952 ticks and five times 0x952 through `6eaa`. At the standard 1.193 MHz timer clock (**inferred**, not read) that is 0.3 ms, 2 ms and 10 ms. |
-| 6f21 / 6f36 | 7231 / 7246 | 7221 / 7236 | Latch and read the 16-bit count of timer 0 (ports 0x43, 0x40). |
-| 598f / 59a1 | 5967 / 5979 | 5957 / 5969 | A second copy of the 2 ms wait, and 15 times it. |
-| 9286 / 92ac / 9356 | 9596 / 95bc / 9666 | 9586 / 95ac / 9656 | Above. |
+| sg2 | sg3 | sg3a | Grade | What it does |
+|---|---|---|---|---|
+| 5743 / 5752 | 571b / 572a | 570b / 571a | established | Base lookup and validation (above). |
+| 5720 / 5727 / 572e / 5735 | 56f8 / 56ff / 5706 / 570d | 56e8 / 56ef / 56f6 / 56fd | established | Direct port write of ax, read of al, read of ax at `P` plus dl; `5735` computes the address. |
+| 57d6 | 57ae | 579e | established | Reads one configuration dword (ports 0xcf8, 0xcfc): bh, bl and dl hold bus, device-and-function and offset. |
+| 5913 / 586a | 58eb / 5842 | 58db / 5832 | established | Indexed dword read and write (above). |
+| 5898 / 58a7 | 5870 / 587f | 5860 / 586f | established | Indexed byte read, lane 0 and lane 3. |
+| 57f3 / 57f8 / 5802 / 5835 | 57cb / 57d0 / 57da / 580d | 57bb / 57c0 / 57ca / 57fd | established | Indexed byte write to lane 0, 1, 3 and word write to lane 0. |
+| 6574 | 6884 | 6874 | established | Register-script interpreter for every MMIO table. Word with bit 15 clear: bits 12:0 are the register; bit 13 set means direct access at `P` plus the low byte, clear means indexed; bit 14 set means read, AND with the first dword, OR with the second, write (10 bytes), clear means write the dword (6 bytes). Bit 15 set: bit 13 clear is a wait of the second word in timer ticks (`6eaa`); bit 13 set is meant to poll, but the code compares the raw high byte of the entry, which has bit 7 set, with 3 and 8, so the poll branches (PLL register 0x14 lane 2 bit 0 clear, and register 0x150 bits 1:0 set) are unreachable and the entry is skipped; no table in the images has one. Each wait entry is 4 bytes. A zero word ends the table and writes 0 to `P+8`. Types 6 and 7 take the same 4-byte step as 4 and 5; `retools/tools/voyager/option_rom.py` steps 2 bytes over them, but no table uses them. |
+| 6a49 | 6d59 | 6d49 | established | PLL-script interpreter (PLL init and dynamic clock tables), at most 999 entries. A zero byte ends. Bit 7 set: low bits 1 wait 0x168 ticks, 2 wait five times 0x952, 3 poll PLL register 0x14 lane 2 until bit 0 clears, 4 poll it until bit 3 sets, 5 if PLL register 0x14 lane 3 has bit 0 set then write 0x11 to PLL register 0x12 lanes 1 and 0, wait 20 ms, clear bit 0 of PLL register 0x14 lane 3 and wait 20 ms again (other codes skip). Bit 6 set, bit 7 clear: a lane byte, an AND-mask byte and an OR byte follow (3 bytes). Both clear: a dword follows, written to the PLL register in the low six bits. |
+| 6552 | 6862 | 6852 | established | ASIC init 2: `6574` over the slot +0x4e table (bx = 0x3de, 0x3e4 in sg3, 0x3d4 in sg3a) with interrupts off, then reads register 0x3428 (`RB2D_DSTCACHE_MODE`), ORs bit 17 and writes the result to register 0x1710 (`FLUSH_4`). Why a value read from one register goes to another is **unknown**. |
+| 6b12 | 6e22 | 6e12 | established | Memory-mode sequence. Runs the table at 0x4d8 (sg3 0x4de, sg3a 0x4ce) through `6574`. Then reads records from the memory-config table plus 5 (0x68b; sg3 0x696; sg3a 0x686): byte 0xff ends; byte 0x0f waits until register 0x150 bits 3:0 are all set (up to 0x8000 reads); any other byte is cl and is followed by two bytes. The two bytes go to lanes 0 and 1 of register 0x158 (`SDRAM_MODE_REG`); then lane 3 is read, ANDed with 0x6f and ORed with cl, and written back. The loop runs once. After it the byte following 0xff goes into PLL register 0x15 lane 3 (AND 0x0f, OR that byte), and the table at 0x4d6 (sg3 0x4dc, sg3a 0x4cc) runs. In sg2 the records have cl of 0, 0x80 or 0x10. **inferred:** these are SDRAM mode-register writes; the bit meanings are **unknown**; settling test: decode the lane bytes 0x00, 0x80 and 0x10 and the two data bytes of each record against the SDRAM mode-register layout in the public Linux and X.Org `SDRAM_MODE_REG` field names (burst length, CAS latency in `radeon_reg.h`), and check whether any shipped code also writes 0x158; agreement on a field makes it **inferred**, a vendor memory datasheet is needed for **established**. |
+| 7766 | 7a76 | 7a66 | established | Calls `774c`, then `7759`. |
+| 774c / 7759 | 7a5c / 7a69 | 7a4c / 7a59 | established | `774c`: `7641`, then replace bits 1:0 of the byte at `P+0x20` with its result (`60c7` with ah = 3). `7759`: `7674`, then the same into the byte at `P+0x21` (`60be`). |
+| 60c7 / 60be | 63d6 / 63cd | 63c6 / 63bd | established | Byte read-modify-write at `P+0x20` / `P+0x21`: AND with the complement of ah, OR with al. |
+| 7641 | 7951 | 7941 | established | Saves PLL register 8 lane 0, clears its bits 7:6, calls `7603` with cl = 0xc0 and returns 2 if bit 7 of its test is set; otherwise calls it with cl = 0x40 and returns 0 if clear, 1 if set; restores PLL register 8. |
+| 7603 | 7913 | 7903 | established | Sets bit 7 of the byte at `P+0x55` (`CRTC_EXT_CNTL` lane 1), writes 0x1b630 OR cl to register 0x280 (`DAC_EXT_CNTL`), clears bits 15 and 1:0 and sets bits 3 and 1 of the word at `P+0x58` (`DAC_CNTL`), waits 2 ms (`6ef5`), reads the byte at `P+0x58`, restores the word and the `P+0x55` byte, writes 0 to register 0x280 and returns with ZF clear when bit 7 of the byte it read is set. |
+| 7674 | 7984 | 7974 | established | Sets bit 0 of registers 0x1a0, 0x198 and 0x19c (`GPIOPAD_EN`, `GPIOPAD_MASK`, `GPIOPAD_A`, lane 0). Saves 0x7c (`DAC_CNTL2`), 0x3f8 (`CRTC2_GEN_CNTL`), 0x280 and 0x88c (`TV_DAC_CNTL`), writes 2, 0xc0 and 0x180c3 to the first three and 0x680200 then 0x680213 to 0x88c with waits between, reads lane 3 of 0x88c, returns 2 if bits 7:5 of it are not all zero and 0 otherwise. Restores 0x88c, the low word of 0x280, 0x3f8, the low byte of 0x7c and the low byte of 0x19c; bit 0 of 0x1a0 and 0x198 stays set. Bit meanings of the DAC and TV registers: **unknown**; it has the shape of a presence test on the second DAC; settling test: look up 0x7c, 0x3f8, 0x280 and 0x88c in the AMD R3xx and later register references and the Linux and X.Org headers (`DAC_CNTL2`, `CRTC2_GEN_CNTL`, `DAC_EXT_CNTL`, `TV_DAC_CNTL`), map the written values 2, 0xc0, 0x180c3, 0x680200 and 0x680213 onto the named bits, and compare with the public drivers' load-detect routines for the second DAC and the TV DAC, if they have one. |
+| 843 | 812 | 802 | established | Reads the word at `P+0x20`; if none of bits 0xb3f is set, sets bit 1 of its low byte and writes that byte back. From the two bytes it picks ah = 2, 8, 0x20 or 0x80 and calls `6136`, which writes ah AND 0xab to the byte at `P+0x27` (the top byte of `BIOS_5_SCRATCH`). The bit meanings are **unknown**. |
+| 81f | 7ee | 7de | established | Calls `20e2`; sets bits 4 and 0 in the byte at linear 0x489 and keeps only its bits 4, 2, 1 and 0; calls `474a` with al = 1; calls `47ff` (mono text: equipment bits 5:4 = 3, CRTC port 0x3b4 in linear 0x463, `int 0x42` ax = 7) with that byte saved around it; then `4847` (colour text: equipment bits 5:4 = 2, port 0x3d4, `int 0x6d` ax = 3). |
+| 20e2 | 20ba | 20aa | established | If bit 1 of linear 0x489 is set: stores 0x62 and 0xfb in the word at linear 0x487 and 0x0d at linear 0x48a, calls `475a`, and when it returns nonzero stores 0xf9 in linear 0x488. Otherwise stores 0x60 and 0xf9, 0x0b, calls `4765`, and when nonzero stores 0xfb. Then sets bit 4 of linear 0x489. |
+| 474a / 475a / 4765 | 4722 / 4732 / 473d | 4712 / 4722 / 472d | established | Set bit 0 of the VGA miscellaneous output register to al. `475a` sets it and then runs `7c49` on port 0x3b4; `4765` clears it and runs `7c49` on 0x3d4. |
+| 7c49 | 7f59 | 7f49 | established | Saves CRTC registers 0xe and 0xf, writes 0xaa and 0x55, reads them back, restores them; returns 1 if either read back matches and 0 if neither does. |
+| 78af / 78b9 / 78ce | 7bbf / 7bc9 / 7bde | 7baf / 7bb9 / 7bce | established | `78af`: write index al to the port in dx and read the byte from dx+1. `78b9`: load ds from the word at `cs:[0x56ee]` (sg3 `0x56c6`, sg3a `0x56b6`), the BIOS-data selector field of the `PMID` block, which holds 0 in all three images, so data accesses through it are flat linear addresses (0x487 is the BIOS data area byte at linear 0x487). `78ce`: dx = the word at linear 0x463 (the BIOS data area's CRTC base port). |
+| 5013 | 4feb | 4fdb | established | Table patch: stores `P` and the bus/device/function in two words of the table at 0x53f1 (+8 and +0xa), then, for the 2-byte entries from the offset the table's word at +6 gives (0x0c), until a word of -1 or until cx counts out (cx is whatever the caller left), stores the high byte of `P` in each entry's high byte. The entries are 0xf010, 0xf016, 0xf054, 0xf038, 0xf03c, 0xf05c, 0xf000, 0xf004, 0xf0b0, 0xf0b2 and 0xf0b4: port numbers of the card, patched with its real base. **inferred:** the table starts with the words 0x26, 0x94, 0xe0 and 0x0c, the layout of the VESA protected-mode function table (offsets of set window, set display start and set palette, then of the port list), so the entries are its port list. |
+| f99 / f17 / fc1 | f67 / ee5 / f8f | f57 / ed5 / f7f | established | A save and restore pair for five scratch bytes. `f17` with bl = 0 writes five (identifier, value) word pairs at es:di, identifiers 0x12, 0x6a, 0x55, 0x83, 0x84, each value being the byte at `P+0x18`, 0x19, 0x1a, 0x1b, 0x1c ORed with 0x80 (`fc1`: 0x62 and 0x12 read `P+0x18`, 0xe5 and 0x6a read `P+0x19`, 0x55, 0x83 and 0x84 the next three; any other identifier returns its own bit 7), then two zero words and two 0xffff words. bl = 1 writes the five values back to `P+0x18` to `P+0x1c`. bl = 2 returns ah = 1. bl = 3 calls `f99`, which writes the constants 0, 4, 4, 0x10 and 0 to `P+0x18` to `P+0x1c` (it builds a 0x20-byte frame holding them and runs the bl = 1 path); the main set-up calls `f99` directly for that reason. **inferred:** the identifiers are video mode numbers (0x6a and 0x183 to 0x186 are in the mode list); what the flag bytes record is **unknown**. |
+| 67ee / 684a / 6861 / 6869 / 6a32 | 6afe / 6b5a / 6b71 / 6b79 / 6d42 | 6aee / 6b4a / 6b61 / 6b69 / 6d32 | established | PLL accessors (above). `67ee` saves the index byte, writes 0 to the index port, reads one dword from the data port and discards it (eax is restored), then restores the index; `684a` and `6869` call it after their access. `6861` is `6869` with an AND mask of 0. |
+| 6eaa | 71ba | 71aa | established | Waits bx timer ticks: reads timer 0 twice per loop (`6f21`) and loops while the elapsed count is below bx; a zero change reduces bx by 2 and clears bit 0 of bl. |
+| 6ee3 / 6ef5 / 6f01 | 71f3 / 7205 / 7211 | 71e3 / 71f5 / 7201 | established | Waits of 0x168 ticks, 0x952 ticks and five times 0x952 through `6eaa`. At the standard 1.193 MHz timer clock (**inferred**, not read) that is 0.3 ms, 2 ms and 10 ms. |
+| 6f21 / 6f36 | 7231 / 7246 | 7221 / 7236 | established | Latch and read the 16-bit count of timer 0 (ports 0x43, 0x40). |
+| 598f / 59a1 | 5967 / 5979 | 5957 / 5969 | established | A second copy of the 2 ms wait, and 15 times it. |
+| 9286 / 92ac / 9356 | 9596 / 95bc / 9666 | 9586 / 95ac / 9656 | established | Above. |
 
 The 2 ms and 10 ms values are the timer-tick counts above; no routine reads the timer clock rate.
 
