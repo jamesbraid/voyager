@@ -319,6 +319,19 @@ write) as reads.
 
 <!-- registers:end -->
 
+The offsets in the "no public name" table above are not in [VOYAGER_DECODE.h](../VOYAGER_DECODE.h) except 0x294,
+because the header lists only what it can ground to a name or a field layout. The access at each site is established
+(the entries below cite the stores and loads). The grade of the reading, offset by offset:
+
+| Offset | Grade of the role | Why |
+|---|---|---|
+| 0x194 | inferred | neighbouring pad registers and two save and restore sites; the name is a later part's |
+| 0x294 | inferred | bits 13:12 switch together with stereo; carried in the header as `unnamed_0294` |
+| 0x350, 0x358 | inferred | public tile-origin names (`common`), same value shape as the public driver writes |
+| 0x354 | inferred | right-eye counterpart of 0x350 by pairing and by the stereo guard; no public name |
+| 0x878, 0x87c, 0x880, 0x884 | unknown | the stored constants are read, their effect is not; settling tests are in the entries |
+| 0x1700, 0x26ac | unknown | the stored constants are read, their role is not |
+
 ## Registers read in full
 
 Each entry below was read against the bodies of the routines it cites and against the bit definitions in the
