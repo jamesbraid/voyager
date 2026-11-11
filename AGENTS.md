@@ -11,7 +11,7 @@ The layout and working style follow techomancer's [gr2](https://github.com/techo
 
 The Onyx4 pairs an IP35 host with ATI FireGL cards. In the shipped IRIX install the cards carry the graphics-board tag `VOYAGER`, the library sets are `IP35VOYAGER`, `IP35VOYAGER32` and `IP35VOYAGER64`, and the driver is ATI's FireGL driver (`fglrx`) packaged for IRIX: a kernel object, an XFree86 video driver, a GLX module, a direct-rendering driver and a DRM library. Three video option ROM images ship with it.
 
-Facts in this file are labelled **established** (read directly from a binary or a public source, with the function, offset or path), **inferred** (a reasoned reading, with the reasoning) or **unknown**. Anything unlabelled is unknown. Do not fill gaps from memory, from other SGI graphics families or from other emulators.
+Facts in this file are labelled **established** (read directly from a shipped binary, a published document or a capture, with the function, offset or install path), **inferred** (a reasoned reading, with the reasoning) or **unknown**. Anything unlabelled is unknown. Do not fill gaps from memory, from other SGI graphics families or from other emulators.
 
 Established so far (headers of the three option ROM images in `ucode/VOYAGER/`, read as PCI expansion ROM data structures): `sg2.bin` is for PCI vendor 0x1002, device 0x4e47; `sg3.bin` and `sg3a.bin` are for vendor 0x1002, device 0x4e4b. The public PCI ID list and Mesa's r300 driver name those devices FireGL X1 (R300) and FireGL X2 (R350). Everything else about the boards is open: see `docs/open-questions.md`.
 
@@ -84,7 +84,7 @@ No hardware is available for this work. Do not plan, request or wait for measure
 Readers may open anything:
 
 - every shipped binary on every IRIX release, and any disassembly or decompilation of it;
-- the public IRIX 6.5.7 source tree linked from this repository;
+- the public IRIX 6.5.7 source tree linked from this repository (hint only, never evidence);
 - vendor specifications, including AMD's published R3xx and R5xx register and acceleration references;
 - public drivers and emulators: Linux, Mesa, X.Org drivers, NetBSD, OpenBSD and others;
 - manuals, release notes and man pages;
@@ -94,7 +94,7 @@ Running the shipped software under an emulator, to watch which registers it touc
 
 Write findings in your own words. Never paste vendor source, HDL, firmware or proprietary binaries into the repository. Microcode and option ROM images stay in `root/`; describe their format and cite offsets.
 
-Label honestly. Use "established" only for what you read in full: the whole function body, table or source passage. A reading built from call lists, register-store summaries, a sibling chip or a name is "inferred". Never reword an entry to change its grade. An entry written quickly and not yet checked ends with "Unverified." instead of "Inferred." or "Established." and grades at most `located`.
+Label honestly. Use "established" only for what you read in full: the whole function body or table in a shipped binary, or the passage in a published document or capture. A reading built from call lists, register-store summaries, a sibling chip or a name is "inferred". Never reword an entry to change its grade. An entry written quickly and not yet checked ends with "Unverified." instead of "Inferred." or "Established." and grades at most `located`.
 
 Linux and Mesa describe the public chips, and AMD's documents describe the silicon; they are cross-checks. A fact about what IRIX does on an Onyx4 needs a shipped binary or an SGI document. A fact about the Onyx4's wiring needs the same. Do not assume a PC's AGP or PCI Express arrangement.
 
@@ -104,7 +104,7 @@ An open question is not a stopping point. Record it in `docs/open-questions.md` 
 
 ## 6. When work is finished
 
-A coverage row is done when every inventory entry in its area (`docs/inventory/`) is `understood` or `no-software-dependency`. `understood` means the entry carries a label (established or inferred), a role and hardware effect, and a derivation citation (release, binary or path, offset, callee or source path) in the same entry. `located` (identity, address or size, and callers or sites cited, behaviour labelled unknown) and `named-only` are partial. [docs/inventory/README.md](docs/inventory/README.md) gives the exact rule. When you finish a task, regenerate the inventory, then pick the next entries below `understood`. Hand off only when your assigned area meets the definition above, or when the session ends; then say in `docs/open-questions.md` where you stopped.
+A coverage row is done when every inventory entry in its area (`docs/inventory/`) is `understood` or `no-software-dependency`. `understood` means the entry carries a label (established or inferred), a role and hardware effect, and a derivation citation (release, binary and its install path under `root/`, offset, callee) in the same entry. `located` (identity, address or size, and callers or sites cited, behaviour labelled unknown) and `named-only` are partial. [docs/inventory/README.md](docs/inventory/README.md) gives the exact rule. When you finish a task, regenerate the inventory, then pick the next entries below `understood`. Hand off only when your assigned area meets the definition above, or when the session ends; then say in `docs/open-questions.md` where you stopped.
 
 ---
 
