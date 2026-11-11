@@ -11,7 +11,7 @@ The layout and working style follow techomancer's [gr2](https://github.com/techo
 
 The Onyx4 pairs an IP35 host with ATI FireGL cards. In the shipped IRIX install the cards carry the graphics-board tag `VOYAGER`, the library sets are `IP35VOYAGER`, `IP35VOYAGER32` and `IP35VOYAGER64`, and the driver is ATI's FireGL driver (`fglrx`) packaged for IRIX: a kernel object, an XFree86 video driver, a GLX module, a direct-rendering driver and a DRM library. Three video option ROM images ship with it.
 
-Facts in this file are labelled **established** (read directly from a shipped binary, a published document or a capture, with the function, offset or install path), **inferred** (a reasoned reading, with the reasoning) or **unknown**. Anything unlabelled is unknown. Do not fill gaps from memory, from other SGI graphics families or from other emulators.
+Facts in this file are labelled **established** (read directly from a shipped binary, a published document, a capture or public open-source code (cited by project, revision and file), with the function, offset or install path), **inferred** (a reasoned reading, with the reasoning) or **unknown**. Anything unlabelled is unknown. Do not fill gaps from memory, from other SGI graphics families or from other emulators.
 
 Established so far (headers of the three option ROM images in `ucode/VOYAGER/`, read as PCI expansion ROM data structures): `sg2.bin` is for PCI vendor 0x1002, device 0x4e47; `sg3.bin` and `sg3a.bin` are for vendor 0x1002, device 0x4e4b. The public PCI ID list and Mesa's r300 driver name those devices FireGL X1 (R300) and FireGL X2 (R350). Everything else about the boards is open: see `docs/open-questions.md`.
 
