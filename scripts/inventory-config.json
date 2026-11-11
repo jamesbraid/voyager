@@ -223,7 +223,29 @@
     "groups": [],
     "sources": []
   },
-  "ioctls": {},
+  "ioctls": {
+    "constants": {
+      "mask": "0x0000ff00",
+      "value": "0x6400",
+      "binaries": [
+        "usr/X11R6/lib/modules/irix/libfglrxdrm.so"
+      ]
+    },
+    "dispatchers": [
+      {
+        "type": "pointer-table",
+        "name": "firegl ioctl",
+        "binaries": [
+          "usr/cpu/sysgen/IP35boot/fglrx.o"
+        ],
+        "section": ".data",
+        "start": "0x348",
+        "stride": 16,
+        "count": 101,
+        "base": 0
+      }
+    ]
+  },
   "ucode": [],
   "spec_registers": [
     {
