@@ -76,6 +76,17 @@ The tables list every offset the replay resolved. Each row stands for a register
 configured base. Rows of the X module count dummy reads (loads into register zero, used to flush a posted
 write) as reads.
 
+The last column says how far the register's role is read. `see below` means a section after the tables reads the
+register against its bit definitions. `unknown` means no such section exists yet: the access count and the routine
+name say where the register is reached, not what it is for. One test settles any `unknown` row. Run
+`retools/tools/hostfacts.py` on the row's routine, and on the further routines the inventory in `docs/inventory/`
+lists for the offset. List the stores to the offset, with the constants and conditions that reach them, and compare each
+stored mask or value with the public bit names for that offset (the AMD register references indexed in
+`docs/sources/INDEX.md`, Linux's `radeon_reg.h` and `r300_reg.h`). Then write the role up as an entry under
+"Registers read in full"; regenerating the tables turns the cell to `see below`. A role that rests on board wiring or
+silicon behaviour the code cannot show stays unknown until a vendor reference for this chip exists, and its entry says
+so.
+
 <!-- registers:begin -->
 ### `fglrx.o`
 
