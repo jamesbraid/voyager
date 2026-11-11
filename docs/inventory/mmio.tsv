@@ -119,10 +119,10 @@ mmio	0x4f8		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/dr
 mmio	0x540		r4,w4	2	1	R200RestoreCommonRegisters;R200SaveCommonRegisters	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200RestoreCommonRegisters	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x600		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x604		w4	1	1	FIREGL_ShowOverlay	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:FIREGL_ShowOverlay	understood	docs/registers.md#registers-read-in-full	Registers read in full
-mmio	0x700		w4	1	1	r200_RegisterRingBufferLocation	caller argument	usr/X11R6/lib/modules/drivers/fglrx_drv.so:r200_RegisterRingBufferLocation	undocumented		
-mmio	0x704		r4,w4	4	1	r200_EnableRPTRwriteback;r200_RegisterRingBufferLocation	caller argument	usr/X11R6/lib/modules/drivers/fglrx_drv.so:r200_EnableRPTRwriteback	undocumented		
-mmio	0x70c		w4	1	1	r200_EnableRPTRwriteback	caller argument	usr/X11R6/lib/modules/drivers/fglrx_drv.so:r200_EnableRPTRwriteback	undocumented		
-mmio	0x718		r4,w4	2	1	r200_RegisterRingBufferLocation	caller argument	usr/X11R6/lib/modules/drivers/fglrx_drv.so:r200_RegisterRingBufferLocation	undocumented		
+mmio	0x700		w4	1	1	r200_RegisterRingBufferLocation	caller argument	usr/X11R6/lib/modules/drivers/fglrx_drv.so:r200_RegisterRingBufferLocation	named-only	docs/registers.md#bit-layouts	Bit layouts
+mmio	0x704		r4,w4	4	1	r200_EnableRPTRwriteback;r200_RegisterRingBufferLocation	caller argument	usr/X11R6/lib/modules/drivers/fglrx_drv.so:r200_EnableRPTRwriteback	named-only	docs/registers.md#bit-layouts	Bit layouts
+mmio	0x70c		w4	1	1	r200_EnableRPTRwriteback	caller argument	usr/X11R6/lib/modules/drivers/fglrx_drv.so:r200_EnableRPTRwriteback	named-only	docs/registers.md#bit-layouts	Bit layouts
+mmio	0x718		r4,w4	2	1	r200_RegisterRingBufferLocation	caller argument	usr/X11R6/lib/modules/drivers/fglrx_drv.so:r200_RegisterRingBufferLocation	named-only	docs/registers.md#bit-layouts	Bit layouts
 mmio	0x740		r4,w4	2	1	R200EngineReset	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200EngineReset	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x770		w4	1	1	r200_EnableTimeStampWriteBack	caller argument	usr/X11R6/lib/modules/drivers/fglrx_drv.so:r200_EnableTimeStampWriteBack	undocumented		
 mmio	0x774		w4	1	1	r200_EnableTimeStampWriteBack	caller argument	usr/X11R6/lib/modules/drivers/fglrx_drv.so:r200_EnableTimeStampWriteBack	undocumented		
@@ -149,7 +149,7 @@ mmio	0x85c		r4,w4	4	1	R200RestoreTVRegisters;R200SaveTVRegisters;Set_MV_Mode	dri
 mmio	0x860		r4,w4	2	1	R200RestoreTVRegisters;R200SaveTVRegisters	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200RestoreTVRegisters	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x870		r4,w4	2	1	R200RestoreTVRegisters;R200SaveTVRegisters	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200RestoreTVRegisters	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x874		r4,w4	2	1	R200RestoreTVRegisters;R200SaveTVRegisters	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:R200RestoreTVRegisters	understood	docs/registers.md#registers-read-in-full	Registers read in full
-mmio	0x878		w4	1	1	Set_MV_Mode	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:Set_MV_Mode	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
+mmio	0x878		w4	1	1	Set_MV_Mode	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:Set_MV_Mode	understood	docs/registers.md#registers-read-in-full	Registers read in full
 mmio	0x87c		w4	1	1	Set_MV_Mode	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:Set_MV_Mode	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x880		w4	1	1	Set_MV_Mode	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:Set_MV_Mode	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`
 mmio	0x884		w4	1	1	Set_MV_Mode	driver record +48	usr/X11R6/lib/modules/drivers/fglrx_drv.so:Set_MV_Mode	located	docs/registers.md#fglrx_drvso	`fglrx_drv.so`

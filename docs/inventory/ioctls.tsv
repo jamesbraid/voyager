@@ -1,1 +1,76 @@
 number	hex	table	handler	evidence	senders	binaries	example	status	doc	section
+1	0x1	firegl ioctl	drm_getunique	table		1		understood	docs/kernel-drm-functions.md#vertical-retrace-authentication-aperture-and-texture-routines	Vertical-retrace, authentication, aperture and texture routines
+2	0x2	firegl ioctl	drm_getmagic	table		1		understood	docs/kernel-drm-functions.md#authentication-drawables-textures-contexts-and-mutexes	Authentication, drawables, textures, contexts and mutexes
+3	0x3	firegl ioctl	drm_irq_busid	table		1		understood	docs/kernel-drm-functions.md#vertical-retrace-authentication-aperture-and-texture-routines	Vertical-retrace, authentication, aperture and texture routines
+16	0x10	firegl ioctl	drm_setunique	table		1		understood	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
+17	0x11	firegl ioctl	drm_authmagic	table		1		understood	docs/kernel-drm-functions.md#authentication-drawables-textures-contexts-and-mutexes	Authentication, drawables, textures, contexts and mutexes
+21	0x15	firegl ioctl	drm_addmap	table		1		understood	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
+27	0x1b	firegl ioctl	drm_rmmap	table		1		understood	docs/kernel-drm-functions.md#buffer-lock-release-name-and-area-ioctls-and-capability-query	Buffer-lock release, name and area ioctls, and capability query
+32	0x20	firegl ioctl	firegl_addctx	table		1		understood	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
+33	0x21	firegl ioctl	firegl_rmctx	table		1		understood	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
+34	0x22	firegl ioctl	firegl_modctx	table		1		understood	docs/kernel-drm-functions.md#authentication-drawables-textures-contexts-and-mutexes	Authentication, drawables, textures, contexts and mutexes
+35	0x23	firegl ioctl	firegl_getctx	table		1		understood	docs/kernel-drm-functions.md#authentication-drawables-textures-contexts-and-mutexes	Authentication, drawables, textures, contexts and mutexes
+36	0x24	firegl ioctl	firegl_switch_context	table		1		understood	docs/kernel-drm-functions.md#open-release-memory-accounting-and-buffer-pools	Open, release, memory accounting and buffer pools
+37	0x25	firegl ioctl	firegl_noop	table		1		located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
+38	0x26	firegl ioctl	firegl_resctx	table		1		understood	docs/kernel-drm-functions.md#lock-release-allocation-tracking-and-drawable-removal	Lock release, allocation tracking and drawable removal
+39	0x27	firegl ioctl	drm_adddraw	table		1		understood	docs/kernel-drm-functions.md#authentication-drawables-textures-contexts-and-mutexes	Authentication, drawables, textures, contexts and mutexes
+40	0x28	firegl ioctl	drm_rmdraw	table		1		understood	docs/kernel-drm-functions.md#lock-release-allocation-tracking-and-drawable-removal	Lock release, allocation tracking and drawable removal
+42	0x2a	firegl ioctl	firegl_lock	table		1		understood	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
+43	0x2b	firegl ioctl	firegl_unlock	table		1		understood	docs/kernel-drm-functions.md#authentication-drawables-textures-contexts-and-mutexes	Authentication, drawables, textures, contexts and mutexes
+64	0x40	firegl ioctl	firegl_alloc_bufs	table		1		understood	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
+65	0x41	firegl ioctl	firegl_free_bufs	table		1		understood	docs/kernel-drm-functions.md#aperture-pools-buffer-ioctls-and-device-set-up	Aperture pools, buffer ioctls and device set-up
+70	0x46	firegl ioctl	firegl_alloc_mutex	table		1		understood	docs/kernel-drm-functions.md#buffer-lock-release-name-and-area-ioctls-and-capability-query	Buffer-lock release, name and area ioctls, and capability query
+71	0x47	firegl ioctl	firegl_free_mutex	table		1		understood	docs/kernel-drm-functions.md#mutex-texture-dma-mapping-and-vsync-routines	Mutex, texture, DMA-mapping and vsync routines
+72	0x48	firegl ioctl	firegl_register_texture	table		1		understood	docs/kernel-drm-functions.md#authentication-drawables-textures-contexts-and-mutexes	Authentication, drawables, textures, contexts and mutexes
+73	0x49	firegl ioctl	firegl_unregister_texture	table		1		understood	docs/kernel-drm-functions.md#mutex-texture-dma-mapping-and-vsync-routines	Mutex, texture, DMA-mapping and vsync routines
+74	0x4a	firegl ioctl	firegl_enable_auth	table		1		understood	docs/kernel-drm-functions.md#vertical-retrace-authentication-aperture-and-texture-routines	Vertical-retrace, authentication, aperture and texture routines
+75	0x4b	firegl ioctl	firegl_lock_memory	table		1		understood	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
+76	0x4c	firegl ioctl	firegl_unlock_memory	table		1		understood	docs/kernel-drm-functions.md#locked-memory-stereo-reference-counting-and-mapping-tables	Locked memory, stereo reference counting and mapping tables
+77	0x4d	firegl ioctl	firegl_flush_cache	table		1		located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
+79	0x4f	firegl ioctl	drm_rmmap	table		1		understood	docs/kernel-drm-functions.md#buffer-lock-release-name-and-area-ioctls-and-capability-query	Buffer-lock release, name and area ioctls, and capability query
+83	0x53	firegl ioctl	firegl_cp_init	table		1		understood	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
+86	0x56	firegl ioctl	firegl_bufmeminfo	table		1		understood	docs/kernel-drm-functions.md#lock-release-allocation-tracking-and-drawable-removal	Lock release, allocation tracking and drawable removal
+87	0x57	firegl ioctl	firegl_get_lockid	table		1		located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
+88	0x58	firegl ioctl	firegl_set_cap_ipc_lock	table		1		located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
+89	0x59	firegl ioctl	firegl_restore_cap	table		1		located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
+91	0x5b	firegl ioctl	firegl_umm_init	table		1		understood	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
+92	0x5c	firegl ioctl	firegl_wait_for_vertical_retrace	table		1		understood	docs/kernel-drm-functions.md#vertical-retrace-authentication-aperture-and-texture-routines	Vertical-retrace, authentication, aperture and texture routines
+93	0x5d	firegl ioctl	firegl_install_irq	table		1		understood	docs/kernel-attach.md#interrupts	Interrupts
+94	0x5e	firegl ioctl	firegl_vs_stereo_swap	table		1		understood	docs/kernel-drm-functions.md#vertical-retrace-authentication-aperture-and-texture-routines	Vertical-retrace, authentication, aperture and texture routines
+95	0x5f	firegl ioctl	firegl_vs_validate	table		1		understood	docs/kernel-drm-functions.md#locked-memory-stereo-reference-counting-and-mapping-tables	Locked memory, stereo reference counting and mapping tables
+96	0x60	firegl ioctl	firegl_modify_buf	table		1		understood	docs/kernel-drm-functions.md#aperture-pools-buffer-ioctls-and-device-set-up	Aperture pools, buffer ioctls and device set-up
+97	0x61	firegl ioctl	firegl_sync_dacs	table		1		understood	docs/kernel-ioctl-irq-functions.md#display-control	Display control
+100	0x64	firegl ioctl	firegl_cp_resume	table		1		located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
+536896589	0x2000644d			constant	firegl_FlushCache	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_FlushCache	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+536896609	0x20006461			constant	firegl_SyncDacs	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_SyncDacs	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+536896612	0x20006464			constant	firegl_CPResume	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_CPResume	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+1074029638	0x40046446			constant	firegl_AllocMutex	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_AllocMutex	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+1074029655	0x40046457			constant	firegl_GetLockID	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_GetLockID	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+1074029656	0x40046458			constant	firegl_SetCapIpcLock	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_SetCapIpcLock	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+1074553938	0x400c6452			constant	firegl_GetAGPCapPtr;firegl_GetAGPCommand;firegl_GetAGPStatus	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_GetAGPCapPtr	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+1074816084	0x40106454			constant	firegl_QueryHwCaps	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_QueryHwCaps	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+2147509326	0x8000644e			constant	firegl_ModuleParm	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_ModuleParm	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+2147771463	0x80046447			constant	firegl_FreeMutex	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_FreeMutex	named-only	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+2147771465	0x80046449			constant	firegl_UnregisterTexture	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_UnregisterTexture	named-only	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+2147771466	0x8004644a			constant	firegl_EnableAuthentication	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_EnableAuthentication	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+2147771481	0x80046459			constant	firegl_RestoreCap	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_RestoreCap	named-only	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+2147771482	0x8004645a			constant	firegl_SetBlockMode	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_SetBlockMode	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+2147771490	0x80046462			constant	firegl_EnableStereo	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_EnableStereo	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+2147771491	0x80046463			constant	firegl_AGPAcquire	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_AGPAcquire	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+2148033578	0x8008642a			constant	firegl_LockHardware	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_LockHardware	named-only	docs/dri-driver-64.md#locks-mutexes-and-the-agp-request	Locks, mutexes and the AGP request
+2148033579	0x8008642b			constant	firegl_UnlockHardware	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_UnlockHardware	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+2148033608	0x80086448			constant	firegl_RegisterTexture	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_RegisterTexture	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+2148557905	0x80106451			constant	firegl_VerifyArea	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_VerifyArea	named-only	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
+2148557920	0x80106460			constant	firegl_ModifyBuffer	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_ModifyBuffer	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+2148820044	0x8014644c			constant	firegl_UnlockPages	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_UnlockPages	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+2149082177	0x80186441			constant	firegl_FreeBuffer;firegl_FreeBufferAdvanced	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_FreeBuffer	named-only	docs/dri-driver-64.md#buffer-and-memory-requests	Buffer and memory requests
+2149082203	0x8018645b			constant	firegl_InitUMM	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_InitUMM	named-only	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
+2149606483	0x80206453			constant	firegl_InitCP	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_InitCP	named-only	docs/dri-driver-64.md#kernel-object-memory-and-agp-requests	Kernel-object, memory and AGP requests
+2150130767	0x8028644f			constant	firegl_RmMap	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_RmMap	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+2154325061	0x80686445			constant	firegl_AgpLockPages	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_AgpLockPages	named-only	docs/libfglrxdrm-functions.md#request-wrappers-that-only-send-a-value	Request wrappers that only send a value
+3221775453	0xc008645d			constant	firegl_InitIrq	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_InitIrq	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+3222299733	0xc0106455			constant	firegl_modify_ldt	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_modify_ldt	named-only	docs/dri-driver.md#the-ioctl-wrappers	The ioctl wrappers
+3222561867	0xc014644b			constant	firegl_LockPages	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_LockPages	named-only	docs/dri-driver.md#locking-drm-handles-and-queue-waits	Locking, DRM handles and queue waits
+3222824000	0xc0186440			constant	firegl_AllocBuffer;firegl_AllocBufferAtPhysicalAddress;firegl_AllocCache	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_AllocBuffer	named-only	docs/dri-driver-64.md#buffer-and-memory-requests	Buffer and memory requests
+3223348310	0xc0206456			constant	firegl_GetMemInfo	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_GetMemInfo	named-only	docs/dri-driver-64.md#buffer-and-memory-requests	Buffer and memory requests
+3223610448	0xc0246450			constant	firegl_GetKernelInfo	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_GetKernelInfo	named-only	docs/libfglrxdrm-functions.md#setup-teardown-and-the-handle-tables	Setup, teardown and the handle tables
