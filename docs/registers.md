@@ -969,9 +969,16 @@ r300 headers and the xf86-video-ati 6.14.6 `radeon_reg.h` were searched for the 
   word at +184 of the driver record: 0x3f7f382d for most values; 0x4d8d3030 for 1 and 4; for 0 and 2, 0x4d8d382d when
   the byte at +188 is zero and 0x4d8d2d2d when it is not. Unknown: the constants are fixed in the code, and their
   effect is not read.
+  Settling test: the same as for 0x878: search the AMD R3xx and R5xx references and the Linux and X.Org register
+  tables for offset 0x880 under any name, then read the writers of the word at +184 and of the byte at +188 (the
+  multi-view mode and its option) to say which mode picks each constant; a name from a table gives the constants
+  fields to be split and graded inferred, and the mode table is the evidence for each.
 - **0x884** in `fglrx_drv.so`: no public name. `Set_MV_Mode` stores at 0x444330 the low 32 bits of a 64-bit
   constant, chosen by the word at +184: 0xb7da for 0 and 2, 0xb0cf for 1 and 4, 0xb7cf otherwise. Unknown: the
   effect is not read.
+  Settling test: the same as for 0x880, with the offset 0x884; the three constants differ only in the byte at
+  bits 15:8 (0xb7 or 0xb0) and the byte at bits 7:0 (0xda or 0xcf), so a public layout for the offset would split them into two byte fields
+  that the mode table then explains.
 - **0x1700** in `fglrx_drv.so`: no public name. The replay attributes its one site to static code at 0x40ac40, but
   the store is at 0x40b2bc inside `R200EngineInit` (at 0x40aa40). `sw t3,5888(s1)` writes the word that
   `lw t3,8236(s0)` loads from the driver record at 0x40b2b4. The store sits in the delay slot of the branch at

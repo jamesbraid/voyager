@@ -711,9 +711,17 @@ Each entry says what one routine does to the hardware and cites the instruction 
   shifts of 5, 2 and 3 with a subtract and an add (0x41bfa8 through 0x41bfc4, and 0x41c024 through 0x41c03c).
   Unknown: the handling by `xf86usleep` of its argument, since no note exists for that callee; a note for it
   would settle it.
-  Unknown: which register the block offsets +0x24 and +0x250 through +0x2c8 belong to, and which
-  field the bit 0x80000 sets in the word at +0x2d0; the linked mmio rows carry no register names
-  for them.
+  Inferred: the offsets stored are 0x24, 0x250, 0x254, 0x284, 0x28c, 0x290, 0x2a4, 0x2a8, 0x2c4, 0x2c8 and
+  0x2d0 (an access listing of the whole routine). The register-access table in
+  [registers.md](registers.md) gives the public names `BIOS_5_SCRATCH`, `FP_CRTC_H_TOTAL_DISP`,
+  `FP_CRTC_V_TOTAL_DISP`, `FP_GEN_CNTL`, `FP_HORZ_STRETCH`, `FP_VERT_STRETCH`, `TMDS_TRANSMITTER_CNTL`,
+  `TMDS_PLL_CNTL`, `FP_H_SYNC_STRT_WID`, `FP_V_SYNC_STRT_WID` and `LVDS_GEN_CNTL` for them, so the routine
+  restores the flat-panel and LVDS block. The bit 0x80000 in 0x2d0 is bit 19 of `LVDS_GEN_CNTL`, which the
+  public X.Org register header names `RADEON_LVDS_BLON` (backlight on): the routine sets it around the
+  timed wait, which fits a backlight sequence but is the public layout's reading, not something the routine
+  states. Public names describe public chips, not necessarily this board.
+  Unknown: how long the panel needs after the backlight bit is set; the routine only passes a driver word to
+  `xf86usleep`. The note on that callee, once written, would settle it.
   Evidence grade: established.
 - `R200RestoreMode` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x41cf40 (n32).
   Inferred: it replays a saved mode on one R200 adapter, since it calls the head, PLL, TV and timing
@@ -819,8 +827,11 @@ Each entry says what one routine does to the hardware and cites the instruction 
   s3+0x388 in place of s3+0x788, over the same range.
   The return at 0x41cf0c gives the value of the last `FGLMDelay` call on the loop path (v0 =
   ret(FGLMDelay) at 0x41cf00).
-  Unknown: the field that bit 0x20 of the word at +0x7c selects and the field that the byte at +0xb3 holds; the
-  linked rows name no register.
+  Inferred: the access table in [registers.md](registers.md) names these offsets: 0x7c is the public
+  `DAC_CNTL2`, where bit 5 (0x20) is `RADEON_DAC2_PALETTE_ACC_CTL` in the public X.Org register header, set
+  here around the palette writes and cleared after; 0xb0 is `PALETTE_INDEX` and the byte at +0xb3 is its low
+  lane (byte 3 of the big-endian word), so each run first zeroes the palette index and then streams words into
+  0xb4, `PALETTE_DATA`. Public names describe public chips, not necessarily this board.
   Evidence grade: inferred.
 - `R200RestoreTVRegisters` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x41c080 (n32).
   Inferred: it copies words from the record at a1 into a register block at offset 0x30 of the structure
@@ -971,8 +982,10 @@ Each entry says what one routine does to the hardware and cites the instruction 
   Inferred: the words at +0x7c, +0xb0 and +0xb4 of the block are device registers, the evidence being the
   inventory's mmio rows for those offsets, read and written at 4 bytes; those rows name no window or
   register.
-  Unknown: the field that bit 0x20 of the word at +0x7c selects and the field that the word at +0xb0 holds;
-  the linked rows carry no register names.
+  Inferred: by the same access table, 0x7c is the public `DAC_CNTL2` with bit 5 (0x20) the public
+  `RADEON_DAC2_PALETTE_ACC_CTL`, 0xb0 is `PALETTE_INDEX` (zeroed before each read run) and 0xb4 is
+  `PALETTE_DATA`, so the routine reads the palette out of the device from index zero. Public names describe
+  public chips, not necessarily this board.
   Evidence grade: inferred.
 - `R200SaveScreen` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x422140 (n32).
   Inferred: it blanks or unblanks one screen, because it selects the screen record from `xf86Screens`
@@ -1036,8 +1049,13 @@ Each entry says what one routine does to the hardware and cites the instruction 
   the path that skips the last call.
   Inferred: `R200WaitForFifoFunction`'s note calls the count at +6412 the free-entry count of the command FIFO,
   so the three-entry and nine-entry reservations above come out of that count.
-  Unknown: the device-side fields of the words at +0x1404, +0x1408, +0x146c, +0x1700 and +0x1704, which the
-  linked rows name by offset only.
+  Inferred: the access table in [registers.md](registers.md) names +0x1404 `DST_OFFSET`, +0x1408 `DST_PITCH`,
+  +0x146c `DP_GUI_MASTER_CNTL` and +0x1704 `FLUSH_1` (public names, so what the offsets are is settled to
+  that grade); the fields inside each word are the public layout's and are not claimed here.
+  Unknown: what the word stored at +0x1700 is. No public table in the repository names the offset (the
+  registers.md entry and the open-questions entry for unnamed offsets list the routes tried), so the next route
+  is the register tables of the AMD R5xx acceleration guide, looked up by offset 0x1700, and then the other
+  callers of the stored word at driver record +0x202c.
   Evidence grade: inferred.
 - `R200SetupForSolidFill` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x40ac40 (n32).
   Writes four words into the block that the driver record points to at +0x30, after a count check at +0x190c
@@ -1102,8 +1120,11 @@ Each entry says what one routine does to the hardware and cites the instruction 
   path returns the wait's value.
   Inferred: by the note on `R200WaitForFifoFunction`, the count at driver record +6412 is the masked free
   command-FIFO count, so the three words here are paid for out of it.
-  Unknown: the fields packed into the words at +0x1434, +0x1438 and +0x143c, since the linked rows list
-  those offsets without field names.
+  Inferred: the access table in [registers.md](registers.md) names +0x1434 `SRC_Y_X`, +0x1438 `DST_Y_X` and
+  +0x143c `DST_HEIGHT_WIDTH` (exact in both public tables). The routine's own stores show each word packed
+  as one value ORed with a second value shifted left by 16, so each is two 16-bit halves; the names put the
+  first-named quantity (Y, or height) in the high half, which agrees with the shift but is the public
+  layout's reading, not something the routine states.
   Evidence grade: inferred.
 - `R200SubsequentSolidFillRect` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x40adc0 (n32).
   Acts on the block that the driver record points to at +0x30: it packs argument pairs into two words of
@@ -1122,8 +1143,10 @@ Each entry says what one routine does to the hardware and cites the instruction 
   On the wait path the arguments and the block pointer were saved in the frame before the call (`sd` at 0x40ae24
   through 0x40ae30, and a2 at 0x40add4) and are reloaded afterwards, so the stores at 0x40ae7c and 0x40ae80
   write the same two packed words to +0x1438 and +0x1598 of the same block as on the other path.
-  Unknown: the device-side fields packed into the words at +0x1438 and +0x1598; the linked rows give those
-  offsets with a four-byte width and nothing more.
+  Inferred: the access table in [registers.md](registers.md) names +0x1438 `DST_Y_X` and +0x1598
+  `DST_WIDTH_HEIGHT` (exact in both public tables), the second being the destination size in the other
+  half order than `DST_HEIGHT_WIDTH`. Both stores write a pair of 16-bit halves packed by a shift of 16; which
+  half holds which quantity is the public names' reading of the order, not stated by the routine.
   Evidence grade: inferred.
 - `R200Unblank` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x411080 (n32).
   Inferred: it writes words of a block in an X11R6 driver module, at offsets +0x2d0, +0x54,

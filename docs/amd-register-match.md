@@ -99,8 +99,15 @@ them. It does not show the R300 or R350 has identical reset values or reserved b
 - **0x3c4, 0x3c8**: M56 lists `SEQ8_IDX` and `DAC_W_INDEX`, 8-bit VGA ports. IRIX moves them as 32-bit words in the same
   save and restore group as `FP2_GEN_CNTL` (0x288) and `CRTC2_GEN_CNTL` (0x3f8). The earlier conflict between
   these and `FP_H2_SYNC_STRT_WID`, `FP_V2_SYNC_STRT_WID` stays open. The 8-bit and 3-bit fields fit poorly with whole-word
-  moves, so M56's names are less likely here; the row stays `located`. Unknown: neither pair of names is shown. The offsets are
-  established as touched; no REG line is written for either.
+  moves, so M56's names are less likely here; the row stays `located`. Inferred: the X.Org `radeon_reg.h` (pin of
+  the `xf86-video-ati-xorg-6.8.2` submodule) defines `FP_H2_SYNC_STRT_WID` at 0x3c4 and `FP_V2_SYNC_STRT_WID` at 0x3c8
+  as ordinary 32-bit registers, and defines the VGA names at the same offsets as 8-bit ports. The shipped code reads and
+  writes all four bytes (the access table's `read 4, write 4`) in the save and restore routines that also move the
+  second-head flat-panel registers, so the flat-panel names are the better fit; no source states it. A REG line stays
+  unwritten because no field layout is grounded. The test that would raise the grade is to read the save and restore
+  routine for the second head in full and show that the record slots for 0x3c4 and 0x3c8 sit beside those of
+  `FP2_GEN_CNTL` and the other second-head words in the same order as the first-head `FP_H_SYNC_STRT_WID` and
+  `FP_V_SYNC_STRT_WID` slots. The offsets are established as touched.
 - **0x194** has `GPIO_STRENGTH` in M56 (SN 3:0, SP 7:4, page 2-147). [registers.md](registers.md) infers that name from the
   neighbouring GPIO pad registers and two access sites it traces to the aperture; the layout is a later part's, so the
   name is not proved for the R300 or R350. The row is not counted as promoted here. Inferred, unproved: no REG line
