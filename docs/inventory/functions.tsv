@@ -21592,7 +21592,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7ad5e0	888	__R300
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7ad960	524	__R300UpdateMultisampleRegsForBlt	dwarf+dynsym	495798070b38		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x7adb70	156	__R300ForceCmaskClear	dwarf	279f3a73aad6		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7adc10	188	__R300ForceCmaskClearWithoutQSList	dwarf+dynsym	2a21087c81db		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7adcd0	5472	__R300ResolveMultisampledColorBuffer	dwarf+dynsym	aceca612caaf		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7adcd0	5472	__R300ResolveMultisampledColorBuffer	dwarf+dynsym	aceca612caaf		in	named-only	docs/registers.md#graphics-backend-gb	Graphics backend (GB)
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x7af230	192	UncompressColorBuffer	dwarf	0be82e1bcb2a		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7af2f0	428	__R300UncompressColorBuffers	dwarf+dynsym	9c451fcdcba8		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7af4a0	452	__R300ValidateMultisample	dwarf+dynsym	050fac5d65e5		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
@@ -21604,7 +21604,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7afe60	608	__R300
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7b00c0	604	__R300ProgramAccumMultPixelShader	dwarf+dynsym	d1bddb4daf99		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x7b0320	1528	accumMultiBlt	dwarf	18d501d3a134		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7b0920	1036	__R300AccumAccumulate	dwarf+dynsym	049fa3380c86		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7b0d30	1400	__R300AccumClear	dwarf+dynsym	0dc269707367		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7b0d30	1400	__R300AccumClear	dwarf+dynsym	0dc269707367		in	named-only	docs/registers.md#geometry-assembly-ga	Geometry assembly (GA)
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7b12b0	1024	__R300AccumLoad	dwarf+dynsym	2964bfa35166		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7b16b0	916	__R300AccumRet	dwarf+dynsym	bfd064547bdf		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7b1a50	760	__R300AccumMult	dwarf+dynsym	918230cbb868		in	named-only		
@@ -21648,7 +21648,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7b4d50	84	__R300D
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7b4db0	80	__R300DepthFetch16	dwarf+dynsym	2fe3bd9fd615		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x7b4e00	1676	ZBltFunc	dwarf	763852c076a1		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x7b5490	1352	__R300ColorBlt2DFunc	dwarf	18b1f7299ce6		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x7b59e0	3648	ColorBltFunc	dwarf	4e3b460f52da		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x7b59e0	3648	ColorBltFunc	dwarf	4e3b460f52da		in	named-only	docs/registers.md#geometry-assembly-ga	Geometry assembly (GA)
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x7b6820	756	__R300ColorBltFuncOV	dwarf	58aa8e956c96		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x7b6b20	116	__R300SetupCLUTTextures	dwarf	09daba4849d7		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x7b6ba0	392	__R300OVSetupShader	dwarf	539858638654		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
@@ -21840,7 +21840,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7d4390	292	__R300
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x7d44c0	3060	__R300UpdateQueue	dwarf	c843eb8b3620		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7d50c0	120	__R300UpdateQueueAtSwap	dwarf+dynsym	40d51b788a47		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7d5140	292	__R300UpdateQueueAtSubmit	dwarf+dynsym	7d0bc8093bda		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7d5270	4328	__R300LoadContext	dwarf+dynsym	3e36997bc45c		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7d5270	4328	__R300LoadContext	dwarf+dynsym	3e36997bc45c		in	named-only	docs/registers.md#geometry-assembly-ga	Geometry assembly (GA)
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7d6360	188	__R300CalcHWDepthClearValue	dwarf+dynsym	a7a93b09df82		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7d6420	3096	__R300ValidateBufferRegs	dwarf+dynsym	a63d4b46e59a		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x7d7040	304	__R300UpdatePolygonState	dwarf+dynsym	67790b121092		in	named-only		
@@ -22017,7 +22017,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x80a8f0	52	__R300T
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x80a930	84	__glim_R300TCLArrayElement	dwarf+dynsym	895cc8051147		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x80a990	84	__glim_R300TCLArrayElement_vcount	dwarf+dynsym	b9e3cd1c754a		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x80a9f0	4128	__glim_R300DrawElementsFGL	dwarf+dynsym	a5a6c461bb91		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x80ba10	4712	__glim_R300DrawWireTrianglesFGL	dwarf+dynsym	0fd150d6456d		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x80ba10	4712	__glim_R300DrawWireTrianglesFGL	dwarf+dynsym	0fd150d6456d		in	named-only	docs/registers.md#vertex-assembly-and-processing-vap	Vertex assembly and processing (VAP)
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x80cc80	172	__glNativeSwapCopy1	dwarf+dynsym	35986c27ead4		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x80cd30	176	__glNativeFlipCopy2s	dwarf+dynsym	2d18ce22efee		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x80cde0	236	__glNativeFlipCopy4s	dwarf+dynsym	61c455f65f8c		in	named-only		
@@ -22032,15 +22032,15 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x80fad0	3412	__R30
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x810830	8	__R300TCLProcessIndexBufferHosPrimitive	dwarf+dynsym	78aa5094d5ec		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x810880	156	__R300TCLArrayElementV3F	dwarf+dynsym	0eb2380cb6e1		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x810920	184	__R300TCLArrayElementV3F_vcount	dwarf+dynsym	523eb38144ab		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x8109e0	168	__R300TCLArrayElementV3D	dwarf+dynsym	d8cac4a2bdfb		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x8109e0	168	__R300TCLArrayElementV3D	dwarf+dynsym	d8cac4a2bdfb		in	named-only	docs/registers.md#vertex-assembly-and-processing-vap	Vertex assembly and processing (VAP)
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x810a90	200	__R300TCLArrayElementV3D_vcount	dwarf+dynsym	12e31adacaf0		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x810b60	248	__R300TCLArrayElementV3FC4UB	dwarf+dynsym	fa8e0cddb946		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x810c60	260	__R300TCLArrayElementV3FC4UB_vcount	dwarf+dynsym	6fc3ffd54060		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x810d70	252	__R300TCLArrayElementV3DC4UB	dwarf+dynsym	3e37f142d858		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x810d70	252	__R300TCLArrayElementV3DC4UB	dwarf+dynsym	3e37f142d858		in	named-only	docs/registers.md#vertex-assembly-and-processing-vap	Vertex assembly and processing (VAP)
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x810e70	272	__R300TCLArrayElementV3DC4UB_vcount	dwarf+dynsym	846d2bebb634		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x810f80	220	__R300TCLArrayElementV3FC3F	dwarf+dynsym	6967e48d5b44		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x811060	248	__R300TCLArrayElementV3FC3F_vcount	dwarf+dynsym	4d8d66bf435c		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x811160	232	__R300TCLArrayElementV3DC3F	dwarf+dynsym	8002d74ca941		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x811160	232	__R300TCLArrayElementV3DC3F	dwarf+dynsym	8002d74ca941		in	named-only	docs/registers.md#vertex-assembly-and-processing-vap	Vertex assembly and processing (VAP)
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x811250	264	__R300TCLArrayElementV3DC3F_vcount	dwarf+dynsym	910ab4680b75		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x811360	232	__R300TCLArrayElementV3FC4F	dwarf+dynsym	48b5e8986d21		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x811450	264	__R300TCLArrayElementV3FC4F_vcount	dwarf+dynsym	227bc364c1f5		in	named-only		
@@ -22048,7 +22048,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x811560	248	__R300
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x811660	264	__R300TCLArrayElementV3DC4F_vcount	dwarf+dynsym	f37c4fa038a5		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x811770	232	__R300TCLArrayElementV3FN3F	dwarf+dynsym	83c22ad9a74d		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x811860	248	__R300TCLArrayElementV3FN3F_vcount	dwarf+dynsym	e76e073b7a12		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x811960	232	__R300TCLArrayElementV3DN3F	dwarf+dynsym	94c295bd24bd		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x811960	232	__R300TCLArrayElementV3DN3F	dwarf+dynsym	94c295bd24bd		in	named-only	docs/registers.md#vertex-assembly-and-processing-vap	Vertex assembly and processing (VAP)
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x811a50	264	__R300TCLArrayElementV3DN3F_vcount	dwarf+dynsym	bbc8748ba25f		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x811b60	312	__R300TCLArrayElementV3FN3FC4UB	dwarf+dynsym	a0926579ba62		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x811ca0	324	__R300TCLArrayElementV3FN3FC4UB_vcount	dwarf+dynsym	43ec364c2a50		in	named-only		
@@ -22072,7 +22072,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x8130a0	312	__R300
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x8131e0	328	__R300TCLArrayElementV3DC4UBT02F_vcount	dwarf+dynsym	647a5fa88c61		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x813330	276	__R300TCLArrayElementV3FC3FT02F	dwarf+dynsym	5c9a9d18a081		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x813450	296	__R300TCLArrayElementV3FC3FT02F_vcount	dwarf+dynsym	388bf7b9222f		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x813580	288	__R300TCLArrayElementV3DC3FT02F	dwarf+dynsym	a1fa7bc80dde		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x813580	288	__R300TCLArrayElementV3DC3FT02F	dwarf+dynsym	a1fa7bc80dde		in	named-only	docs/registers.md#vertex-assembly-and-processing-vap	Vertex assembly and processing (VAP)
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x8136a0	312	__R300TCLArrayElementV3DC3FT02F_vcount	dwarf+dynsym	5341372669ec		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x8137e0	288	__R300TCLArrayElementV3FC4FT02F	dwarf+dynsym	742f1c972caf		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x813900	308	__R300TCLArrayElementV3FC4FT02F_vcount	dwarf+dynsym	1c58535c6eef		in	named-only		
@@ -22136,7 +22136,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x81c9e0	664	__R300
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x81cc80	536	__R300TCLDrawArraysV3DC3F	dwarf+dynsym	2e9629c4ceea		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x81cea0	704	__R300TCLDrawArraysV3FC4F	dwarf+dynsym	da667f47400c		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x81d160	544	__R300TCLDrawArraysV3DC4F	dwarf+dynsym	48bd77584ba8		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x81d380	1020	__R300TCLDrawArraysV3DN3F	dwarf+dynsym	012157766582		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x81d380	1020	__R300TCLDrawArraysV3DN3F	dwarf+dynsym	012157766582		in	named-only	docs/registers.md#vertex-assembly-and-processing-vap	Vertex assembly and processing (VAP)
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x81d780	836	__R300TCLDrawArraysV3FN3FC4UB	dwarf+dynsym	173dc3efa859		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x81dad0	848	__R300TCLDrawArraysV3DN3FC4UB	dwarf+dynsym	0023bdd130bf		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x81de20	788	__R300TCLDrawArraysV3FN3FC3F	dwarf+dynsym	a848a537387c		in	named-only		
@@ -23675,7 +23675,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x9540d0	80	__glim_
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x954120	100	__glim_R200TCLVcacheSecondaryColor3usvEXT	dwarf+dynsym	0dd17f12a713		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x9541c0	868	__R200SetFSAAScaledBltInfo	dwarf	d07d82ac9ba6		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x954530	1724	__R200SetFSAAScaledBltRegisters	dwarf	d9c9c4c8fce2		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x954bf0	1696	ColorBlt3DFSAAFunc	dwarf	f1f203d17cd9		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x954bf0	1696	ColorBlt3DFSAAFunc	dwarf	f1f203d17cd9		in	named-only	docs/registers.md#vertex-assembly-and-processing-vap	Vertex assembly and processing (VAP)
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x955290	1664	__R200ColorBlt3DFunc	dwarf+dynsym	135639c3e341		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x955910	328	__R200ColorBlt3DSync	dwarf+dynsym	e50881ee6647		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x955a60	104	__R200ColorBlt3D	dwarf+dynsym	edb67f50d7fc		in	named-only		
@@ -35025,7 +35025,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x758540	872	_
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7588c0	512	__R300UpdateMultisampleRegsForBlt	dwarf+dynsym	9f15f7a4dd92		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x758ac0	200	__R300ForceCmaskClear	dwarf+funcnames	604633e0e726		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x758bc0	180	__R300ForceCmaskClearWithoutQSList	dwarf+dynsym	e1a1fe5e091d		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x758c80	5464	__R300ResolveMultisampledColorBuffer	dwarf+dynsym	778209d3d37b		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x758c80	5464	__R300ResolveMultisampledColorBuffer	dwarf+dynsym	778209d3d37b		in	named-only	docs/registers.md#graphics-backend-gb	Graphics backend (GB)
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x75a200	188	UncompressColorBuffer	dwarf+funcnames	e357ca70a186		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x75a2c0	424	__R300UncompressColorBuffers	dwarf+dynsym	6d0cbb289885		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x75a480	436	__R300ValidateMultisample	dwarf+dynsym	4af0c872f20a		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
@@ -35037,7 +35037,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x75ac80	488	_
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x75ae80	484	__R300ProgramAccumMultPixelShader	dwarf+dynsym	cb2b265185e5		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x75b080	1320	accumMultiBlt	dwarf+funcnames	1220a359aa2e		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x75b5c0	956	__R300AccumAccumulate	dwarf+dynsym	5d5ca35769eb		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x75b980	1320	__R300AccumClear	dwarf+dynsym	17e1937517d7		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x75b980	1320	__R300AccumClear	dwarf+dynsym	17e1937517d7		in	named-only	docs/registers.md#geometry-assembly-ga	Geometry assembly (GA)
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x75bec0	948	__R300AccumLoad	dwarf+dynsym	f11313a7abf8		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x75c280	844	__R300AccumRet	dwarf+dynsym	d22e545b343c		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x75c600	700	__R300AccumMult	dwarf+dynsym	3d8fd7fd9ae2		in	named-only		
@@ -35081,7 +35081,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x75fcc0	84	__
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x75fd40	80	__R300DepthFetch16	dwarf+dynsym	27f4153c21f8		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x75fdc0	1592	ZBltFunc	dwarf+funcnames	9122945774e3		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x760400	1260	__R300ColorBlt2DFunc	dwarf+funcnames	31ba1eb4aeb4		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x760900	3192	ColorBltFunc	dwarf+funcnames	0cbd53a95e93		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x760900	3192	ColorBltFunc	dwarf+funcnames	0cbd53a95e93		in	named-only	docs/registers.md#geometry-assembly-ga	Geometry assembly (GA)
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x761580	728	__R300ColorBltFuncOV	dwarf+funcnames	e84c0651f264		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x761880	112	__R300SetupCLUTTextures	dwarf+funcnames	e1bdd7672cff		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x761900	380	__R300OVSetupShader	dwarf+funcnames	89c146afc2f0		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
@@ -35273,7 +35273,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x77dfc0	252	_
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x77e0c0	3060	__R300UpdateQueue	dwarf+funcnames	3f881b69706f		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x77ecc0	112	__R300UpdateQueueAtSwap	dwarf+dynsym	2ed7a33a2a58		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x77ed40	240	__R300UpdateQueueAtSubmit	dwarf+dynsym	51b7d0a8479b		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x77ee40	3524	__R300LoadContext	dwarf+dynsym	e5858340d67f		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x77ee40	3524	__R300LoadContext	dwarf+dynsym	e5858340d67f		in	named-only	docs/registers.md#geometry-assembly-ga	Geometry assembly (GA)
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x77fc40	188	__R300CalcHWDepthClearValue	dwarf+dynsym	639fb45bb6f9		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x77fd00	3040	__R300ValidateBufferRegs	dwarf+dynsym	8dce9bafa350		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x780900	304	__R300UpdatePolygonState	dwarf+dynsym	82004c5c9f2a		in	named-only		
@@ -35450,7 +35450,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7ab580	52	__
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7ab5c0	84	__glim_R300TCLArrayElement	dwarf+dynsym	110c734b35be		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7ab640	84	__glim_R300TCLArrayElement_vcount	dwarf+dynsym	52818214c39c		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7ab6c0	4076	__glim_R300DrawElementsFGL	dwarf+dynsym	410f28b0fd6b		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7ac6c0	4412	__glim_R300DrawWireTrianglesFGL	dwarf+dynsym	476676a51628		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7ac6c0	4412	__glim_R300DrawWireTrianglesFGL	dwarf+dynsym	476676a51628		in	named-only	docs/registers.md#vertex-assembly-and-processing-vap	Vertex assembly and processing (VAP)
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7ad800	160	__glNativeSwapCopy1	dwarf+dynsym	8efc76d753f1		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7ad8c0	160	__glNativeFlipCopy2s	dwarf+dynsym	f5f59caac041		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7ad980	224	__glNativeFlipCopy4s	dwarf+dynsym	b9a386c13cc5		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
@@ -35465,15 +35465,15 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b0580	3256	
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b1240	8	__R300TCLProcessIndexBufferHosPrimitive	dwarf+dynsym	78aa5094d5ec		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b1280	152	__R300TCLArrayElementV3F	dwarf+dynsym	b6436ad0c4e9		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b1340	156	__R300TCLArrayElementV3F_vcount	dwarf+dynsym	3b3f2e1be51f		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b1400	156	__R300TCLArrayElementV3D	dwarf+dynsym	0c05a8ad8e7b		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b1400	156	__R300TCLArrayElementV3D	dwarf+dynsym	0c05a8ad8e7b		in	named-only	docs/registers.md#vertex-assembly-and-processing-vap	Vertex assembly and processing (VAP)
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b14c0	168	__R300TCLArrayElementV3D_vcount	dwarf+dynsym	08292b5df402		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b1580	236	__R300TCLArrayElementV3FC4UB	dwarf+dynsym	f0edc086bfd1		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b1680	248	__R300TCLArrayElementV3FC4UB_vcount	dwarf+dynsym	dd4a07d2cba2		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b1780	248	__R300TCLArrayElementV3DC4UB	dwarf+dynsym	8587a1690ca5		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b1780	248	__R300TCLArrayElementV3DC4UB	dwarf+dynsym	8587a1690ca5		in	named-only	docs/registers.md#vertex-assembly-and-processing-vap	Vertex assembly and processing (VAP)
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b1880	260	__R300TCLArrayElementV3DC4UB_vcount	dwarf+dynsym	c5ebbd6dd0ee		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b19c0	216	__R300TCLArrayElementV3FC3F	dwarf+dynsym	e4e94df13732		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b1ac0	228	__R300TCLArrayElementV3FC3F_vcount	dwarf+dynsym	853f392fc7dd		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b1bc0	228	__R300TCLArrayElementV3DC3F	dwarf+dynsym	6285a964fe42		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b1bc0	228	__R300TCLArrayElementV3DC3F	dwarf+dynsym	6285a964fe42		in	named-only	docs/registers.md#vertex-assembly-and-processing-vap	Vertex assembly and processing (VAP)
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b1cc0	240	__R300TCLArrayElementV3DC3F_vcount	dwarf+dynsym	ac2bf10127ef		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b1dc0	228	__R300TCLArrayElementV3FC4F	dwarf+dynsym	ccef8c0b3281		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b1ec0	240	__R300TCLArrayElementV3FC4F_vcount	dwarf+dynsym	6ef99b4e1ca8		in	named-only		
@@ -35481,7 +35481,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b1fc0	240	_
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b20c0	252	__R300TCLArrayElementV3DC4F_vcount	dwarf+dynsym	17ef073d2165		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b21c0	216	__R300TCLArrayElementV3FN3F	dwarf+dynsym	e160c25be7b6		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b22c0	220	__R300TCLArrayElementV3FN3F_vcount	dwarf+dynsym	06e9469e2110		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b23c0	220	__R300TCLArrayElementV3DN3F	dwarf+dynsym	2c3140acd0bd		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b23c0	220	__R300TCLArrayElementV3DN3F	dwarf+dynsym	2c3140acd0bd		in	named-only	docs/registers.md#vertex-assembly-and-processing-vap	Vertex assembly and processing (VAP)
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b24c0	232	__R300TCLArrayElementV3DN3F_vcount	dwarf+dynsym	81b6be067eb1		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b25c0	300	__R300TCLArrayElementV3FN3FC4UB	dwarf+dynsym	ee361f75e982		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b2700	312	__R300TCLArrayElementV3FN3FC4UB_vcount	dwarf+dynsym	ed43314ea192		in	named-only		
@@ -35505,7 +35505,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b3b80	304	_
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b3cc0	316	__R300TCLArrayElementV3DC4UBT02F_vcount	dwarf+dynsym	1c5ba7091c79		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b3e00	280	__R300TCLArrayElementV3FC3FT02F	dwarf+dynsym	6a28810c3a79		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b3f40	284	__R300TCLArrayElementV3FC3FT02F_vcount	dwarf+dynsym	300ebf28a62d		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b4080	284	__R300TCLArrayElementV3DC3FT02F	dwarf+dynsym	a2236d7f3639		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b4080	284	__R300TCLArrayElementV3DC3FT02F	dwarf+dynsym	a2236d7f3639		in	named-only	docs/registers.md#vertex-assembly-and-processing-vap	Vertex assembly and processing (VAP)
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b41c0	296	__R300TCLArrayElementV3DC3FT02F_vcount	dwarf+dynsym	fff8ad02efbf		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b4300	284	__R300TCLArrayElementV3FC4FT02F	dwarf+dynsym	68c45912697f		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7b4440	296	__R300TCLArrayElementV3FC4FT02F_vcount	dwarf+dynsym	5e2e7359342e		in	named-only		
@@ -35569,7 +35569,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7bd580	636	_
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7bd800	508	__R300TCLDrawArraysV3DC3F	dwarf+dynsym	abfb66f3bd53		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7bda00	684	__R300TCLDrawArraysV3FC4F	dwarf+dynsym	648942e70d14		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7bdcc0	540	__R300TCLDrawArraysV3DC4F	dwarf+dynsym	ed9ea25c9bfc		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7bdf00	956	__R300TCLDrawArraysV3DN3F	dwarf+dynsym	30d11d0f70a0		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7bdf00	956	__R300TCLDrawArraysV3DN3F	dwarf+dynsym	30d11d0f70a0		in	named-only	docs/registers.md#vertex-assembly-and-processing-vap	Vertex assembly and processing (VAP)
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7be2c0	792	__R300TCLDrawArraysV3FN3FC4UB	dwarf+dynsym	512e7a06255e		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7be600	808	__R300TCLDrawArraysV3DN3FC4UB	dwarf+dynsym	fe22084f4d0b		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x7be940	748	__R300TCLDrawArraysV3FN3FC3F	dwarf+dynsym	19c785729b21		in	named-only		
@@ -37111,7 +37111,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x8e9c40	80	__
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x8e9cc0	100	__glim_R200TCLVcacheSecondaryColor3usvEXT	dwarf+dynsym	135fc99166d5		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x8e9d40	868	__R200SetFSAAScaledBltInfo	dwarf+funcnames	8dbe8711aeee		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x8ea0c0	1740	__R200SetFSAAScaledBltRegisters	dwarf+funcnames	8ad9b738564d		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x8ea7c0	1448	ColorBlt3DFSAAFunc	dwarf+funcnames	da54f399b2e5		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x8ea7c0	1448	ColorBlt3DFSAAFunc	dwarf+funcnames	da54f399b2e5		in	named-only	docs/registers.md#vertex-assembly-and-processing-vap	Vertex assembly and processing (VAP)
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x8ead80	1652	__R200ColorBlt3DFunc	dwarf+dynsym	49f21ab9b72d		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x8eb400	316	__R200ColorBlt3DSync	dwarf+dynsym	40fc483d09b5		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x8eb540	100	__R200ColorBlt3D	dwarf+dynsym	adf1bbc745e6		in	named-only		
