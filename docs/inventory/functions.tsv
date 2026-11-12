@@ -4700,19 +4700,19 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x576c80	260	__glNMNF
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x576dc0	260	__glLMNFilter	dwarf+dynsym	5a773938bfcc		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x576f00	680	__glNMLFilter	dwarf+dynsym	063bae1926e8		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x5771c0	680	__glLMLFilter	dwarf+dynsym	c6f98e9520a7		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x577480	44	__glTextureModulateL	dwarf+dynsym	df6a1a365d63		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x5774c0	60	__glTextureModulateLA	dwarf+dynsym	91dfa1dc9726		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x577500	52	__glTextureModulateRGB	dwarf+dynsym	d2df76409d84		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x577540	68	__glTextureModulateRGBA	dwarf+dynsym	07fd8c843aa5		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x5775c0	20	__glTextureModulateA	dwarf+dynsym	f9b77559a0cb		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x577600	56	__glTextureModulateI	dwarf+dynsym	faafa57b05c6		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x577480	44	__glTextureModulateL	dwarf+dynsym	df6a1a365d63		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x5774c0	60	__glTextureModulateLA	dwarf+dynsym	91dfa1dc9726		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x577500	52	__glTextureModulateRGB	dwarf+dynsym	d2df76409d84		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x577540	68	__glTextureModulateRGBA	dwarf+dynsym	07fd8c843aa5		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x5775c0	20	__glTextureModulateA	dwarf+dynsym	f9b77559a0cb		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x577600	56	__glTextureModulateI	dwarf+dynsym	faafa57b05c6		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x577640	52	__glTextureDecalRGB	dwarf+dynsym	3d4bba85c924		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x577680	124	__glTextureDecalRGBA	dwarf+dynsym	5d3d0c3f4fbc		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x577700	124	__glTextureBlendL	dwarf+dynsym	b2578485930c		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x577780	140	__glTextureBlendLA	dwarf+dynsym	5dde3a42882d		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x577840	140	__glTextureBlendRGB	dwarf+dynsym	e3dde38f9834		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x577900	156	__glTextureBlendRGBA	dwarf+dynsym	ecbcf6bcc313		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x5779c0	20	__glTextureBlendA	dwarf+dynsym	f9b77559a0cb		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x5779c0	20	__glTextureBlendA	dwarf+dynsym	f9b77559a0cb		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x577a00	156	__glTextureBlendI	dwarf+dynsym	0ab5ea7a0915		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x577ac0	44	__glTextureReplaceL	dwarf+dynsym	a024e81b0031		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x577b00	60	__glTextureReplaceLA	dwarf+dynsym	283a1869b6e6		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
@@ -4736,9 +4736,9 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x579c00	200	__glText
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x579d00	168	__glTextureCombineA	dwarf+dynsym	ca544764c20c		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x579dc0	164	__glTextureCombineI	dwarf+dynsym	fb61214a4f96		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32	.text	0x579e80	1248	tweakCubeMapCoords	dwarf+funcnames	3a1e29a0cd2b		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x57a380	12	__glNopPolygonRho	dwarf+dynsym	d91daee8abe5		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x57a380	12	__glNopPolygonRho	dwarf+dynsym	d91daee8abe5		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x57a3c0	1736	__glComputePolygonRho	dwarf+dynsym	9ab4edd5cb89		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x57aac0	12	__glNopLineRho	dwarf+dynsym	d91daee8abe5		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x57aac0	12	__glNopLineRho	dwarf+dynsym	d91daee8abe5		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x57ab00	2000	__glComputeLineRho	dwarf+dynsym	6e7d4aa9efd0		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x57b300	156	__glFastTextureFragment	dwarf+dynsym	e0e384f2bddc		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x57b3c0	456	__glTextureFragment	dwarf+dynsym	5bb6046db1bb		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
@@ -17223,31 +17223,31 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5aa850	312	__glim
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5aa990	736	__glim_ClipPlane	dwarf+dynsym	c920730cb754		out:10	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5aac70	220	__glComputeInverseTranspose	dwarf+dynsym	d7a9cd5c67f5		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5aad50	304	__glComputeEyeInObject	dwarf+dynsym	2192a42373f5		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5aae80	620	__glDoMultMatrix	dwarf+dynsym	e3f017c0edec		in	located	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5aae80	620	__glDoMultMatrix	dwarf+dynsym	e3f017c0edec		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ab0f0	452	__glDoRotate	dwarf+dynsym	6c42d46e55f8		in	understood	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5ab2c0	180	__glScaleMatrix	dwarf	6fe93945403b		out:11	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ab380	76	__glDoScale	dwarf+dynsym	f0b41fbbf825		in	located	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ab380	76	__glDoScale	dwarf+dynsym	f0b41fbbf825		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5ab3d0	212	__glTranslateMatrix	dwarf	52b3562eb78b		in	understood	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ab4b0	76	__glDoTranslate	dwarf+dynsym	a7dfdd1ac8a6		in	understood	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ab500	416	__glComputeClipBox	dwarf+dynsym	2c2d29cab89e		in	understood	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ab6a0	140	__glXForm2	dwarf+dynsym	eb16e4d8af6e		in	understood	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ab730	192	__glXForm3	dwarf+dynsym	e51a1f0e2be1		in	understood	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ab7f0	380	__glXForm4	dwarf+dynsym	00faf6fa6c43		in	located	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ab7f0	380	__glXForm4	dwarf+dynsym	00faf6fa6c43		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ab970	212	__glXForm4_PreMultiply	dwarf+dynsym	b9880403fe17		in	understood	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5aba50	388	__glMultiModelXForm4MV	dwarf+dynsym	ffab7493fc60		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5abbe0	396	__glMultiModelXForm2MVP	dwarf+dynsym	4b4d51824193		out:11	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5abd70	404	__glMultiModelXForm3MVP	dwarf+dynsym	04f22690071b		out:11	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5abf10	396	__glMultiModelXForm4MVP	dwarf+dynsym	50ad5d6044f2		out:11	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ac0a0	444	__glMultiModelXForm4ITMV	dwarf+dynsym	e9e7f644491d		out:11	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ac260	128	__glXForm2_W	dwarf+dynsym	ca0dd61cfe83		in	located	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ac2e0	168	__glXForm3_W	dwarf+dynsym	75532b837f29		in	located	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ac390	296	__glXForm4_W	dwarf+dynsym	3302b5de1455		in	located	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ac4c0	104	__glXForm2_2DW	dwarf+dynsym	70321c4a2f6a		in	located	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ac260	128	__glXForm2_W	dwarf+dynsym	ca0dd61cfe83		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ac2e0	168	__glXForm3_W	dwarf+dynsym	75532b837f29		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ac390	296	__glXForm4_W	dwarf+dynsym	3302b5de1455		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ac4c0	104	__glXForm2_2DW	dwarf+dynsym	70321c4a2f6a		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ac530	120	__glXForm3_2DW	dwarf+dynsym	10854b910dd1		in	understood	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ac5b0	212	__glXForm4_2DW	dwarf+dynsym	2b1d5ff48f07		in	understood	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ac690	80	__glXForm2_2DNRW	dwarf+dynsym	6f3c7816e597		in	understood	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ac6e0	96	__glXForm3_2DNRW	dwarf+dynsym	798f3c855c5d		in	understood	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ac740	176	__glXForm4_2DNRW	dwarf+dynsym	79932f26d66d		in	located	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ac740	176	__glXForm4_2DNRW	dwarf+dynsym	79932f26d66d		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ac7f0	164	__glGenericPickMvpMatrixProcs	dwarf+dynsym	575480eb193c		in	understood	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ac8a0	212	__glGenericPickMatrixProcs	dwarf+dynsym	7b73eac35203		in	understood	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ac980	160	__glGenericPickInvTransposeProcs	dwarf+dynsym	c299f4a53c66		in	understood	docs/routines/t2-voyager-r3-b002.md#tier-2-routine-readings-voyager-batch-2	Tier-2 routine readings, voyager batch 2
@@ -17289,64 +17289,64 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b2ff0	612	__glSt
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b3260	640	__glDepthTestSpan	dwarf+dynsym	becc570c3ece		in	understood	docs/routines/t2-voyager-r3-b003.md#tier-2-routine-readings-voyager-round-3-batch-3	Tier-2 routine readings, voyager round 3, batch 3
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b34e0	652	__glDepthTestStippledSpan	dwarf+dynsym	e9e52493f1b0		in	understood	docs/routines/t2-voyager-r3-b003.md#tier-2-routine-readings-voyager-round-3-batch-3	Tier-2 routine readings, voyager round 3, batch 3
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b3770	800	__glDepthTestStencilSpan	dwarf+dynsym	d90abddc621c		in	understood	docs/routines/t2-voyager-r3-b003.md#tier-2-routine-readings-voyager-round-3-batch-3	Tier-2 routine readings, voyager round 3, batch 3
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b3a90	844	__glDepthTestStencilStippledSpan	dwarf+dynsym	1c6c51239d49		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b3de0	216	__glDepthPassSpan	dwarf+dynsym	8586d5d91a8f		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b3ec0	392	__glDepthPassStippledSpan	dwarf+dynsym	bae37b4b1765		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b4050	264	__glShadeCISpan	dwarf+dynsym	dfbe20ea0c7e		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b4160	216	__glShadeRGBASpan	dwarf+dynsym	a68f37332d0c		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b4240	220	__glShadeSpecularSpan	dwarf+dynsym	96d9197434dd		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b3a90	844	__glDepthTestStencilStippledSpan	dwarf+dynsym	1c6c51239d49		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b3de0	216	__glDepthPassSpan	dwarf+dynsym	8586d5d91a8f		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b3ec0	392	__glDepthPassStippledSpan	dwarf+dynsym	bae37b4b1765		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b4050	264	__glShadeCISpan	dwarf+dynsym	dfbe20ea0c7e		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b4160	216	__glShadeRGBASpan	dwarf+dynsym	a68f37332d0c		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b4240	220	__glShadeSpecularSpan	dwarf+dynsym	96d9197434dd		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b4320	156	__glFlatSpecularSpan	dwarf+dynsym	280eebeae124		out:11	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b43c0	1012	__glColorSumSpan	dwarf+dynsym	ba1c18102dae		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b43c0	1012	__glColorSumSpan	dwarf+dynsym	ba1c18102dae		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b47c0	188	__glFlatCISpan	dwarf+dynsym	ad90113f5fae		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b4880	152	__glFlatRGBASpan	dwarf+dynsym	8ef30e4fbc6c		out:11	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b4920	352	__glSetCubeMapCoords	dwarf+dynsym	2253f528f296		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b4920	352	__glSetCubeMapCoords	dwarf+dynsym	2253f528f296		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b4a80	564	__glMultiTextureSpan	dwarf+dynsym	c09ec011b164		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b4cc0	784	__glMultiTextureStippledSpan	dwarf+dynsym	682fba8bf3d0		out:11	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b4fd0	1236	__glILSpan	dwarf+dynsym	90540227dafc		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b54b0	1268	__glILStippledSpan	dwarf+dynsym	eb5560965ac2		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b59b0	484	__glDitherCISpan	dwarf+dynsym	51f6af3e279d		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b5ba0	604	__glDitherCIStippledSpan	dwarf+dynsym	2b7efffac7a5		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b5e00	1240	__glDitherRGBASpan	dwarf+dynsym	1b0028927778		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b62e0	552	__glDitherRGBAStippledSpan	dwarf+dynsym	79f0161d9eb9		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b6510	160	__glRoundCISpan	dwarf+dynsym	8bd308068355		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b65b0	444	__glRoundCIStippledSpan	dwarf+dynsym	3a09323abfe0		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b6770	1388	__glRoundRGBASpan	dwarf+dynsym	3e2159d2270b		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b6ce0	424	__glRoundRGBAStippledSpan	dwarf+dynsym	23f0dbf15c16		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b6e90	312	__glLogicOpSpan	dwarf+dynsym	3b0ada4dd74f		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b6fd0	476	__glLogicOpStippledSpan	dwarf+dynsym	603d201a1665		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b71b0	352	__glMaskRGBASpan	dwarf+dynsym	8fa920f9e4a0		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7310	320	__glMaskCISpan	dwarf+dynsym	c24972deeb06		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7480	76	__glInitBuffer	dwarf+dynsym	60cf10d576d0		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b74d0	12	__glMakeCurrentBuffer	dwarf+dynsym	e28e148de7e7		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b74e0	12	__glLoseCurrentBuffer	dwarf+dynsym	72521538eaa0		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b4fd0	1236	__glILSpan	dwarf+dynsym	90540227dafc		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b54b0	1268	__glILStippledSpan	dwarf+dynsym	eb5560965ac2		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b59b0	484	__glDitherCISpan	dwarf+dynsym	51f6af3e279d		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b5ba0	604	__glDitherCIStippledSpan	dwarf+dynsym	2b7efffac7a5		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b5e00	1240	__glDitherRGBASpan	dwarf+dynsym	1b0028927778		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b62e0	552	__glDitherRGBAStippledSpan	dwarf+dynsym	79f0161d9eb9		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b6510	160	__glRoundCISpan	dwarf+dynsym	8bd308068355		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b65b0	444	__glRoundCIStippledSpan	dwarf+dynsym	3a09323abfe0		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b6770	1388	__glRoundRGBASpan	dwarf+dynsym	3e2159d2270b		in	understood	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b6ce0	424	__glRoundRGBAStippledSpan	dwarf+dynsym	23f0dbf15c16		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b6e90	312	__glLogicOpSpan	dwarf+dynsym	3b0ada4dd74f		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b6fd0	476	__glLogicOpStippledSpan	dwarf+dynsym	603d201a1665		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b71b0	352	__glMaskRGBASpan	dwarf+dynsym	8fa920f9e4a0		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7310	320	__glMaskCISpan	dwarf+dynsym	c24972deeb06		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7480	76	__glInitBuffer	dwarf+dynsym	60cf10d576d0		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b74d0	12	__glMakeCurrentBuffer	dwarf+dynsym	e28e148de7e7		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b74e0	12	__glLoseCurrentBuffer	dwarf+dynsym	72521538eaa0		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5b74f0	8	FreeCurrentBuffer	dwarf	78aa5094d5ec		in	understood	docs/dri-driver.md#empty-bodies-and-constant-returns	Empty bodies and constant returns
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7500	568	__glLockBuffers	dwarf+dynsym	fd7221c0bef5		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7740	580	__glUnlockBuffers	dwarf+dynsym	432cf00d9a37		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7990	60	__glLockRenderBuffers	dwarf+dynsym	0aefe2d747e8		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b79d0	60	__glUnlockRenderBuffers	dwarf+dynsym	4715aafffcfa		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7a10	180	__glLockColorBuffer	dwarf+dynsym	7c9db19da3cc		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7ad0	176	__glUnlockColorBuffer	dwarf+dynsym	1c7ea7cd505d		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7b80	200	__glLockColorBufferDepthBuffer	dwarf+dynsym	f6f2f6a6d069		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7c50	188	__glUnlockColorBufferDepthBuffer	dwarf+dynsym	87c1512f1c97		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7d10	168	__glTestOwnership	dwarf+dynsym	55c0eb4995cc		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7dc0	364	__glFreePrivate	dwarf+dynsym	388ecc272b90		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7f30	1544	__glUpdateWindowSize	dwarf+dynsym	436aaf26a371		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5b8540	572	__glMakeCurrentReadBuffers	dwarf	e64105ee95e7		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b8780	3828	__glMakeCurrentBuffers	dwarf+dynsym	da6a04fb4e66		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b9680	532	__glLoseCurrentReadBuffers	dwarf+dynsym	b96ccacc93d4		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b98a0	516	__glLoseCurrentBuffers	dwarf+dynsym	52d6d3fb0e8f		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b9ab0	468	__glFreeBufData	dwarf+dynsym	dd2216818f02		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b9c90	800	__glATIFSAAModifyReadBuffer	dwarf+dynsym	751729fbe0fb		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b9fb0	232	__glATIFSAARestoreReadBuffer	dwarf+dynsym	ac37fb042b34		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7500	568	__glLockBuffers	dwarf+dynsym	fd7221c0bef5		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7740	580	__glUnlockBuffers	dwarf+dynsym	432cf00d9a37		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7990	60	__glLockRenderBuffers	dwarf+dynsym	0aefe2d747e8		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b79d0	60	__glUnlockRenderBuffers	dwarf+dynsym	4715aafffcfa		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7a10	180	__glLockColorBuffer	dwarf+dynsym	7c9db19da3cc		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7ad0	176	__glUnlockColorBuffer	dwarf+dynsym	1c7ea7cd505d		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7b80	200	__glLockColorBufferDepthBuffer	dwarf+dynsym	f6f2f6a6d069		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7c50	188	__glUnlockColorBufferDepthBuffer	dwarf+dynsym	87c1512f1c97		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7d10	168	__glTestOwnership	dwarf+dynsym	55c0eb4995cc		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7dc0	364	__glFreePrivate	dwarf+dynsym	388ecc272b90		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b7f30	1544	__glUpdateWindowSize	dwarf+dynsym	436aaf26a371		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5b8540	572	__glMakeCurrentReadBuffers	dwarf	e64105ee95e7		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b8780	3828	__glMakeCurrentBuffers	dwarf+dynsym	da6a04fb4e66		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b9680	532	__glLoseCurrentReadBuffers	dwarf+dynsym	b96ccacc93d4		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b98a0	516	__glLoseCurrentBuffers	dwarf+dynsym	52d6d3fb0e8f		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b9ab0	468	__glFreeBufData	dwarf+dynsym	dd2216818f02		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b9c90	800	__glATIFSAAModifyReadBuffer	dwarf+dynsym	751729fbe0fb		in	understood	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5b9fb0	232	__glATIFSAARestoreReadBuffer	dwarf+dynsym	ac37fb042b34		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ba0a0	244	__glim_SampleCoverageARB	dwarf+dynsym	acdc9a88cdad		out:10	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ba1c0	360	__glCalcPolygonOffset	dwarf+dynsym	94d493553944		out:11	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ba330	916	__glRenderTriangle	dwarf+dynsym	d9548066b5e5		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ba6d0	204	__glRenderLineTriangle	dwarf+dynsym	c2c3f2cbf873		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ba7a0	172	__glRenderOffsetLineTriangle	dwarf+dynsym	5d9c7155e1eb		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ba850	188	__glRenderPointTriangle	dwarf+dynsym	55de4b7a5116		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ba910	172	__glRenderOffsetPointTriangle	dwarf+dynsym	03d849f927b7		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ba9c0	596	__glRenderFlatTriangle	dwarf+dynsym	1619fe6c0935		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bac20	596	__glRenderSmoothTriangle	dwarf+dynsym	5e8760f6dd48		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ba330	916	__glRenderTriangle	dwarf+dynsym	d9548066b5e5		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ba6d0	204	__glRenderLineTriangle	dwarf+dynsym	c2c3f2cbf873		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ba7a0	172	__glRenderOffsetLineTriangle	dwarf+dynsym	5d9c7155e1eb		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ba850	188	__glRenderPointTriangle	dwarf+dynsym	55de4b7a5116		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ba910	172	__glRenderOffsetPointTriangle	dwarf+dynsym	03d849f927b7		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ba9c0	596	__glRenderFlatTriangle	dwarf+dynsym	1619fe6c0935		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bac20	596	__glRenderSmoothTriangle	dwarf+dynsym	5e8760f6dd48		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bae80	8	__glDontRenderTriangle	dwarf+dynsym	78aa5094d5ec		in	understood	docs/dri-driver.md#empty-bodies-and-constant-returns	Empty bodies and constant returns
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5baec0	1040	__glim_TexGenfv	dwarf+dynsym	b137a2b04ae5		out:10	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bb2d0	84	__glim_TexGenf	dwarf+dynsym	08dcff53db05		out:10	undocumented		
@@ -17354,8 +17354,8 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bb330	1076	__gli
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bb770	84	__glim_TexGend	dwarf+dynsym	81229348a08c		out:10	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bb7d0	1088	__glim_TexGeniv	dwarf+dynsym	9c8db99ecda3		out:10	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bbc10	84	__glim_TexGeni	dwarf+dynsym	c69b521358d0		out:10	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5bbc70	256	SphereGen	dwarf	3417cc97bb64		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5bbd70	164	ReflectGen	dwarf	43942068a449		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5bbc70	256	SphereGen	dwarf	3417cc97bb64		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5bbd70	164	ReflectGen	dwarf	43942068a449		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bbe20	2816	__glCalcMixedTexture	dwarf+dynsym	62f856827c04		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bc920	304	__glCalcEyeLinear	dwarf+dynsym	e2fb367ef693		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bca50	176	__glCalcEyeLinearSTOnly	dwarf+dynsym	89b949b330e3		out:11	undocumented		
@@ -17365,14 +17365,14 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bcce0	116	__glCa
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bcd60	124	__glCalcReflectMap	dwarf+dynsym	20ed902f528c		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bcde0	44	__glCalcNormalMap	dwarf+dynsym	30f8ad347e8d		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bce10	364	__glCalcMultiTexture	dwarf+dynsym	cf3ad47e9637		out:11	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bcf80	596	__glFogSpan	dwarf+dynsym	daab0e9f4fec		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bd1e0	756	__glFogStippledSpan	dwarf+dynsym	7efffa2ebf98		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bd4e0	1196	__glFogSpanSlow	dwarf+dynsym	2ce88448a16f		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bd990	1440	__glFogStippledSpanSlow	dwarf+dynsym	0f53426b3119		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bdf30	440	__glFogFragmentSlow	dwarf+dynsym	15f1717a81b9		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5be0f0	312	__glFogVertex	dwarf+dynsym	69d8cb0869ee		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5be230	136	__glFogVertexLinear	dwarf+dynsym	02fe15e1554f		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5be2c0	132	__glFogColorSlow	dwarf+dynsym	4515d6a6cef7		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bcf80	596	__glFogSpan	dwarf+dynsym	daab0e9f4fec		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bd1e0	756	__glFogStippledSpan	dwarf+dynsym	7efffa2ebf98		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bd4e0	1196	__glFogSpanSlow	dwarf+dynsym	2ce88448a16f		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bd990	1440	__glFogStippledSpanSlow	dwarf+dynsym	0f53426b3119		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5bdf30	440	__glFogFragmentSlow	dwarf+dynsym	15f1717a81b9		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5be0f0	312	__glFogVertex	dwarf+dynsym	69d8cb0869ee		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5be230	136	__glFogVertexLinear	dwarf+dynsym	02fe15e1554f		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5be2c0	132	__glFogColorSlow	dwarf+dynsym	4515d6a6cef7		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5be380	384	__glStoreLine_CI_8_Flat	dwarf+dynsym	566f0d69430e		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5be500	320	__glStoreLine_CI_8_Smooth	dwarf+dynsym	e82c3e9ab866		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5be640	424	__glStoreLine_CI_8_Flat_Dither	dwarf+dynsym	ef650c74aca3		out:11	undocumented		
@@ -17391,7 +17391,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c0280	140	_
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c0310	120	__glExtractTexelA8	dwarf	5d776b7f48fa		out:9	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c0390	144	__glExtractTexelI8	dwarf	e6ba198b184a		out:9	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c0420	164	__glExtractTexelLA8	dwarf	475b93a981fa		out:9	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c04d0	148	__glExtractBumpmap	dwarf	d79cbc505531		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c04d0	148	__glExtractBumpmap	dwarf	d79cbc505531		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c0570	192	__glExtractTexelRGB565	dwarf	10f5c393dd1e		out:9	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c0630	220	__glExtractTexelARGB4	dwarf	2d33c8686243		out:9	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c0710	216	__glExtractTexelARGB1555	dwarf	903fb6ee59bd		out:9	undocumented		
@@ -17428,7 +17428,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c21b0	76	__
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c2200	68	__glExtractTexelA8_B	dwarf	91b949d7a7a4		out:9	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c2250	80	__glExtractTexelI8_B	dwarf	04586dfcfea6		out:9	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c22a0	108	__glExtractTexelLA8_B	dwarf	5858a0ac8d52		out:9	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c2310	100	__glExtractBumpmap_B	dwarf	3e7546e02f06		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c2310	100	__glExtractBumpmap_B	dwarf	3e7546e02f06		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c2380	128	__glExtractTexelRGB565_B	dwarf	96303636a931		out:9	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c2400	148	__glExtractTexelARGB4_B	dwarf	eaa5ca96bdd3		out:9	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c24a0	144	__glExtractTexelARGB1555_B	dwarf	4fd4f506acef		out:9	undocumented		
@@ -17540,61 +17540,61 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c8dc0	1164	
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c9250	1076	__glAverageColorARGB1555	dwarf	2b23543fce26		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c9690	796	__glAverageColor8	dwarf	710a08c98ca1		out:11	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c99b0	592	__glAverageColorLA8	dwarf	3c5c743cf12f		out:11	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c9c00	444	ClampCoordNearest	dwarf	677eecf50a4a		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c9dc0	816	ClampCoordLinear	dwarf	407e63a2f1a6		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ca0f0	164	__glNearestFilter1	dwarf+dynsym	79896d8e6a4f		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ca1a0	224	__glNearestFilter2	dwarf+dynsym	bd9d62610604		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ca280	276	__glNearestFilter3	dwarf+dynsym	ef8f75df95e5		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ca3a0	536	__glLinearFilter1	dwarf+dynsym	48e2cc40b9a1		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ca5c0	852	__glLinearFilter2	dwarf+dynsym	ce953081eb85		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ca920	1372	__glLinearFilter3	dwarf+dynsym	eda449452be4		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cae80	96	__glLinearFilter	dwarf+dynsym	225772592a4d		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5caee0	96	__glNearestFilter	dwarf+dynsym	a1f517020b21		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5caf40	260	__glNMNFilter	dwarf+dynsym	44cad505619d		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb050	260	__glLMNFilter	dwarf+dynsym	f4b2f539845f		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb160	704	__glNMLFilter	dwarf+dynsym	9e6e0b4486de		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb420	700	__glLMLFilter	dwarf+dynsym	bbe837c4abd3		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb6e0	44	__glTextureModulateL	dwarf+dynsym	df6a1a365d63		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb710	60	__glTextureModulateLA	dwarf+dynsym	91dfa1dc9726		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb750	52	__glTextureModulateRGB	dwarf+dynsym	d2df76409d84		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb790	68	__glTextureModulateRGBA	dwarf+dynsym	07fd8c843aa5		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb7e0	20	__glTextureModulateA	dwarf+dynsym	f9b77559a0cb		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb800	56	__glTextureModulateI	dwarf+dynsym	faafa57b05c6		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb840	52	__glTextureDecalRGB	dwarf+dynsym	0aebd3c52d8c		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb880	124	__glTextureDecalRGBA	dwarf+dynsym	ca1a5e92e69e		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb900	124	__glTextureBlendL	dwarf+dynsym	8176883f8a98		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb980	140	__glTextureBlendLA	dwarf+dynsym	ab31bbb602eb		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cba10	140	__glTextureBlendRGB	dwarf+dynsym	350b28fa9085		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbaa0	156	__glTextureBlendRGBA	dwarf+dynsym	7118f7d632d2		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbb40	20	__glTextureBlendA	dwarf+dynsym	f9b77559a0cb		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbb60	156	__glTextureBlendI	dwarf+dynsym	54e9762e838f		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbc00	44	__glTextureReplaceL	dwarf+dynsym	50e8c657b341		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbc30	60	__glTextureReplaceLA	dwarf+dynsym	74adb64b0559		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbc70	52	__glTextureReplaceRGB	dwarf+dynsym	0aebd3c52d8c		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbcb0	68	__glTextureReplaceRGBA	dwarf+dynsym	d9d637018f6d		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbd00	20	__glTextureReplaceA	dwarf+dynsym	abe2c6a12304		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbd20	56	__glTextureReplaceI	dwarf+dynsym	dd1c32cbab1a		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5cbd60	136	ClampColor	dwarf	c1522478ba4e		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbdf0	124	__glTextureAddL	dwarf+dynsym	6036c795bc40		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbe70	140	__glTextureAddLA	dwarf+dynsym	b2b8275c8b7c		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbf00	132	__glTextureAddRGB	dwarf+dynsym	cdf99fa50da0		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbf90	148	__glTextureAddRGBA	dwarf+dynsym	156807eacd37		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cc030	144	__glTextureAddI	dwarf+dynsym	2dbfab57cda1		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5cc0c0	636	BumpmapLookup	dwarf	4dbc7730dee9		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5cc340	928	TextureCrossbarLookup	dwarf	c13d39eb450e		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5cc6e0	4740	ComputeTexCombine	dwarf	00c5dddf7f24		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cd970	176	__glTextureCombineL	dwarf+dynsym	64f4a4cae216		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cda20	184	__glTextureCombineLA	dwarf+dynsym	be10a51f57ca		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cdae0	200	__glTextureCombineRGB	dwarf+dynsym	d8fe07fc2b40		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cdbb0	208	__glTextureCombineRGBA	dwarf+dynsym	d14925cafe16		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cdc80	176	__glTextureCombineA	dwarf+dynsym	282b59023a7c		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cdd30	172	__glTextureCombineI	dwarf+dynsym	ff350b384baf		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5cdde0	1252	tweakCubeMapCoords	dwarf	f90333bc13cf		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ce2d0	12	__glNopPolygonRho	dwarf+dynsym	d91daee8abe5		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ce2e0	1768	__glComputePolygonRho	dwarf+dynsym	a9f01f10be5d		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ce9d0	12	__glNopLineRho	dwarf+dynsym	d91daee8abe5		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ce9e0	2032	__glComputeLineRho	dwarf+dynsym	a1c4b07c4f37		in	named-only		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cf1d0	156	__glFastTextureFragment	dwarf+dynsym	925abaf38d7d		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c9c00	444	ClampCoordNearest	dwarf	677eecf50a4a		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5c9dc0	816	ClampCoordLinear	dwarf	407e63a2f1a6		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ca0f0	164	__glNearestFilter1	dwarf+dynsym	79896d8e6a4f		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ca1a0	224	__glNearestFilter2	dwarf+dynsym	bd9d62610604		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ca280	276	__glNearestFilter3	dwarf+dynsym	ef8f75df95e5		in	understood	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ca3a0	536	__glLinearFilter1	dwarf+dynsym	48e2cc40b9a1		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ca5c0	852	__glLinearFilter2	dwarf+dynsym	ce953081eb85		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ca920	1372	__glLinearFilter3	dwarf+dynsym	eda449452be4		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cae80	96	__glLinearFilter	dwarf+dynsym	225772592a4d		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5caee0	96	__glNearestFilter	dwarf+dynsym	a1f517020b21		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5caf40	260	__glNMNFilter	dwarf+dynsym	44cad505619d		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb050	260	__glLMNFilter	dwarf+dynsym	f4b2f539845f		in	located	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb160	704	__glNMLFilter	dwarf+dynsym	9e6e0b4486de		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb420	700	__glLMLFilter	dwarf+dynsym	bbe837c4abd3		in	located	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb6e0	44	__glTextureModulateL	dwarf+dynsym	df6a1a365d63		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb710	60	__glTextureModulateLA	dwarf+dynsym	91dfa1dc9726		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb750	52	__glTextureModulateRGB	dwarf+dynsym	d2df76409d84		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb790	68	__glTextureModulateRGBA	dwarf+dynsym	07fd8c843aa5		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb7e0	20	__glTextureModulateA	dwarf+dynsym	f9b77559a0cb		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb800	56	__glTextureModulateI	dwarf+dynsym	faafa57b05c6		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb840	52	__glTextureDecalRGB	dwarf+dynsym	0aebd3c52d8c		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb880	124	__glTextureDecalRGBA	dwarf+dynsym	ca1a5e92e69e		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb900	124	__glTextureBlendL	dwarf+dynsym	8176883f8a98		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cb980	140	__glTextureBlendLA	dwarf+dynsym	ab31bbb602eb		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cba10	140	__glTextureBlendRGB	dwarf+dynsym	350b28fa9085		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbaa0	156	__glTextureBlendRGBA	dwarf+dynsym	7118f7d632d2		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbb40	20	__glTextureBlendA	dwarf+dynsym	f9b77559a0cb		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbb60	156	__glTextureBlendI	dwarf+dynsym	54e9762e838f		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbc00	44	__glTextureReplaceL	dwarf+dynsym	50e8c657b341		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbc30	60	__glTextureReplaceLA	dwarf+dynsym	74adb64b0559		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbc70	52	__glTextureReplaceRGB	dwarf+dynsym	0aebd3c52d8c		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbcb0	68	__glTextureReplaceRGBA	dwarf+dynsym	d9d637018f6d		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbd00	20	__glTextureReplaceA	dwarf+dynsym	abe2c6a12304		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbd20	56	__glTextureReplaceI	dwarf+dynsym	dd1c32cbab1a		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5cbd60	136	ClampColor	dwarf	c1522478ba4e		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbdf0	124	__glTextureAddL	dwarf+dynsym	6036c795bc40		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbe70	140	__glTextureAddLA	dwarf+dynsym	b2b8275c8b7c		in	located	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbf00	132	__glTextureAddRGB	dwarf+dynsym	cdf99fa50da0		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cbf90	148	__glTextureAddRGBA	dwarf+dynsym	156807eacd37		in	located	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cc030	144	__glTextureAddI	dwarf+dynsym	2dbfab57cda1		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5cc0c0	636	BumpmapLookup	dwarf	4dbc7730dee9		in	located	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5cc340	928	TextureCrossbarLookup	dwarf	c13d39eb450e		in	located	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5cc6e0	4740	ComputeTexCombine	dwarf	00c5dddf7f24		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cd970	176	__glTextureCombineL	dwarf+dynsym	64f4a4cae216		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cda20	184	__glTextureCombineLA	dwarf+dynsym	be10a51f57ca		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cdae0	200	__glTextureCombineRGB	dwarf+dynsym	d8fe07fc2b40		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cdbb0	208	__glTextureCombineRGBA	dwarf+dynsym	d14925cafe16		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cdc80	176	__glTextureCombineA	dwarf+dynsym	282b59023a7c		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cdd30	172	__glTextureCombineI	dwarf+dynsym	ff350b384baf		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0x5cdde0	1252	tweakCubeMapCoords	dwarf	f90333bc13cf		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ce2d0	12	__glNopPolygonRho	dwarf+dynsym	d91daee8abe5		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ce2e0	1768	__glComputePolygonRho	dwarf+dynsym	a9f01f10be5d		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ce9d0	12	__glNopLineRho	dwarf+dynsym	d91daee8abe5		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5ce9e0	2032	__glComputeLineRho	dwarf+dynsym	a1c4b07c4f37		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cf1d0	156	__glFastTextureFragment	dwarf+dynsym	925abaf38d7d		in	located	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cf270	468	__glTextureFragment	dwarf+dynsym	8f5afe5efcbd		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cf450	768	__glMipMapFragment	dwarf+dynsym	0ba01dbdf9b7		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x5cf750	3124	__glLookupTextureFormat	dwarf+dynsym	d909cdbc5d83		in	named-only		
@@ -30723,7 +30723,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x553a40	640	_
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x553cc0	664	__glDepthTestStippledSpan	dwarf+dynsym	420e6e4069a5		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x553f80	812	__glDepthTestStencilSpan	dwarf+dynsym	a1c3c7f1d20e		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x5542c0	824	__glDepthTestStencilStippledSpan	dwarf+dynsym	43750c4fc153		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x554600	224	__glDepthPassSpan	dwarf+dynsym	ef7da286f981		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x554600	224	__glDepthPassSpan	dwarf+dynsym	ef7da286f981		in	named-only	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x554700	392	__glDepthPassStippledSpan	dwarf+dynsym	069124d26909		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x5548c0	288	__glShadeCISpan	dwarf+dynsym	609bc01d68cf		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x554a00	404	__glShadeRGBASpan	dwarf+dynsym	9b77dd8fc2a6		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
@@ -30735,7 +30735,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x555380	240	_
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x555480	320	__glSetCubeMapCoords	dwarf+dynsym	63432ac58955		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x5555c0	536	__glMultiTextureSpan	dwarf+dynsym	c43a720ce08f		out:11	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x555800	708	__glMultiTextureStippledSpan	dwarf+dynsym	6d75d24c4d03		out:11	undocumented		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x555b00	1188	__glILSpan	dwarf+dynsym	73175c77342f		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x555b00	1188	__glILSpan	dwarf+dynsym	73175c77342f		in	named-only	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x555fc0	1216	__glILStippledSpan	dwarf+dynsym	171b07d42123		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x556480	936	__glDitherCISpan	dwarf+dynsym	8c1263c85b39		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x556840	592	__glDitherCIStippledSpan	dwarf+dynsym	22c20bc728a2		in	named-only		
@@ -30745,7 +30745,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x557300	1096	
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x557780	428	__glRoundCIStippledSpan	dwarf+dynsym	80403b3cdd75		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x557940	1556	__glRoundRGBASpan	dwarf+dynsym	c693fc90a32e		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x557f80	404	__glRoundRGBAStippledSpan	dwarf+dynsym	e08214eccbaf		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x558140	316	__glLogicOpSpan	dwarf+dynsym	fd3ae4f1d882		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x558140	316	__glLogicOpSpan	dwarf+dynsym	fd3ae4f1d882		in	named-only	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x558280	464	__glLogicOpStippledSpan	dwarf+dynsym	1bca4c93e7f3		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x558480	344	__glMaskRGBASpan	dwarf+dynsym	d1117692efaf		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x558600	308	__glMaskCISpan	dwarf+dynsym	73f93d4fc072		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
@@ -30755,11 +30755,11 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x558800	12	__
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x558840	8	FreeCurrentBuffer	dwarf+funcnames	78aa5094d5ec		in	understood	docs/dri-driver.md#empty-bodies-and-constant-returns	Empty bodies and constant returns
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x558880	580	__glLockBuffers	dwarf+dynsym	a3d78584a113		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x558b00	584	__glUnlockBuffers	dwarf+dynsym	d90c910d6662		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x558d80	60	__glLockRenderBuffers	dwarf+dynsym	91d2c79992ef		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x558d80	60	__glLockRenderBuffers	dwarf+dynsym	91d2c79992ef		in	named-only	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x558dc0	60	__glUnlockRenderBuffers	dwarf+dynsym	c5e3f2e5a01a		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x558e00	188	__glLockColorBuffer	dwarf+dynsym	5faddf320d33		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x558e00	188	__glLockColorBuffer	dwarf+dynsym	5faddf320d33		in	named-only	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x558ec0	184	__glUnlockColorBuffer	dwarf+dynsym	52434f55b7c6		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x558f80	212	__glLockColorBufferDepthBuffer	dwarf+dynsym	a12d34881f4f		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x558f80	212	__glLockColorBufferDepthBuffer	dwarf+dynsym	a12d34881f4f		in	named-only	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x559080	208	__glUnlockColorBufferDepthBuffer	dwarf+dynsym	7e4d408b938c		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x559180	156	__glTestOwnership	dwarf+dynsym	5d1ac2b541bd		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x559240	352	__glFreePrivate	dwarf+dynsym	5bc57b5e0126		in	named-only		
@@ -30775,11 +30775,11 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55b700	236	_
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55b800	360	__glCalcPolygonOffset	dwarf+dynsym	79a9211a0024		out:11	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55b980	884	__glRenderTriangle	dwarf+dynsym	ca9db93901f9		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55bd00	200	__glRenderLineTriangle	dwarf+dynsym	3de25ef33ea6		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55be00	172	__glRenderOffsetLineTriangle	dwarf+dynsym	2e06ab1ffac3		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55be00	172	__glRenderOffsetLineTriangle	dwarf+dynsym	2e06ab1ffac3		in	named-only	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55bec0	180	__glRenderPointTriangle	dwarf+dynsym	016ff80538d1		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55bf80	172	__glRenderOffsetPointTriangle	dwarf+dynsym	0917e7fcb331		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55c040	588	__glRenderFlatTriangle	dwarf+dynsym	1bd252a23578		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55c2c0	564	__glRenderSmoothTriangle	dwarf+dynsym	043f9f54803a		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55c040	588	__glRenderFlatTriangle	dwarf+dynsym	1bd252a23578		in	named-only	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55c2c0	564	__glRenderSmoothTriangle	dwarf+dynsym	043f9f54803a		in	named-only	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55c500	8	__glDontRenderTriangle	dwarf+dynsym	78aa5094d5ec		in	understood	docs/dri-driver.md#empty-bodies-and-constant-returns	Empty bodies and constant returns
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55c600	1032	__glim_TexGenfv	dwarf+dynsym	966ce5fbfba0		out:10	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55ca40	84	__glim_TexGenf	dwarf+dynsym	f0ffe5fef2d5		out:10	undocumented		
@@ -30787,7 +30787,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55cac0	1060	
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55cf00	84	__glim_TexGend	dwarf+dynsym	f134ac0d1789		out:10	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55cf80	1064	__glim_TexGeniv	dwarf+dynsym	3e5ebc5047ab		out:10	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55d3c0	84	__glim_TexGeni	dwarf+dynsym	c08b79048045		out:10	undocumented		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x55d440	260	SphereGen	dwarf+funcnames	4a2633f6995a		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x55d440	260	SphereGen	dwarf+funcnames	4a2633f6995a		in	named-only	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x55d580	164	ReflectGen	dwarf+funcnames	46682e6c1b81		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55d640	2788	__glCalcMixedTexture	dwarf+dynsym	eb1f83eba039		out:11	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55e140	296	__glCalcEyeLinear	dwarf+dynsym	76eed7888df5		out:11	undocumented		
@@ -30798,9 +30798,9 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55e540	108	_
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55e5c0	116	__glCalcReflectMap	dwarf+dynsym	0cb068fa87e6		out:11	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55e640	40	__glCalcNormalMap	dwarf+dynsym	e501f7bae25a		out:11	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55e680	352	__glCalcMultiTexture	dwarf+dynsym	d4fe10c57e97		out:11	undocumented		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55e800	572	__glFogSpan	dwarf+dynsym	aba67d927417		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55e800	572	__glFogSpan	dwarf+dynsym	aba67d927417		in	named-only	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55ea40	740	__glFogStippledSpan	dwarf+dynsym	649b4ccb5039		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55ed40	1164	__glFogSpanSlow	dwarf+dynsym	fa121f8f7aa4		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55ed40	1164	__glFogSpanSlow	dwarf+dynsym	fa121f8f7aa4		in	named-only	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55f200	1372	__glFogStippledSpanSlow	dwarf+dynsym	2f5f3f9ecb0c		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55f780	432	__glFogFragmentSlow	dwarf+dynsym	2008904e824e		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x55f940	296	__glFogVertex	dwarf+dynsym	0abad6c75d20		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
@@ -30824,7 +30824,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x561ac0	
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x561b80	120	__glExtractTexelA8	dwarf+funcnames	c840ad32991f		out:9	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x561c00	148	__glExtractTexelI8	dwarf+funcnames	af96e7091096		out:9	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x561cc0	168	__glExtractTexelLA8	dwarf+funcnames	1db85e09148d		out:9	undocumented		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x561d80	152	__glExtractBumpmap	dwarf+funcnames	926fe1516c04		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x561d80	152	__glExtractBumpmap	dwarf+funcnames	926fe1516c04		in	named-only	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x561e40	192	__glExtractTexelRGB565	dwarf+funcnames	b9bb65f0f064		out:9	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x561f00	220	__glExtractTexelARGB4	dwarf+funcnames	87986cd72661		out:9	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x562000	216	__glExtractTexelARGB1555	dwarf+funcnames	f896a5c54861		out:9	undocumented		
@@ -30978,28 +30978,28 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x56dcc0	
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56e000	160	__glNearestFilter1	dwarf+dynsym	b9fc288bf644		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56e0c0	212	__glNearestFilter2	dwarf+dynsym	59fb9dbf008d		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56e1c0	272	__glNearestFilter3	dwarf+dynsym	3b822963975d		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56e300	536	__glLinearFilter1	dwarf+dynsym	695e99a131d7		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56e300	536	__glLinearFilter1	dwarf+dynsym	695e99a131d7		in	named-only	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56e540	836	__glLinearFilter2	dwarf+dynsym	83ae9be698ac		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56e8c0	1356	__glLinearFilter3	dwarf+dynsym	74be00109a7d		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56ee40	96	__glLinearFilter	dwarf+dynsym	99c7d7779cd0		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56ee40	96	__glLinearFilter	dwarf+dynsym	99c7d7779cd0		in	named-only	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56eec0	96	__glNearestFilter	dwarf+dynsym	5b879a5283b6		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56ef40	260	__glNMNFilter	dwarf+dynsym	ead4d7165dd8		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56ef40	260	__glNMNFilter	dwarf+dynsym	ead4d7165dd8		in	named-only	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56f080	260	__glLMNFilter	dwarf+dynsym	5981a3a82976		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56f1c0	680	__glNMLFilter	dwarf+dynsym	b8112d83c4dd		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56f1c0	680	__glNMLFilter	dwarf+dynsym	b8112d83c4dd		in	named-only	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56f480	680	__glLMLFilter	dwarf+dynsym	b9a1b1ad98cf		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56f740	44	__glTextureModulateL	dwarf+dynsym	df6a1a365d63		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56f780	60	__glTextureModulateLA	dwarf+dynsym	91dfa1dc9726		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56f7c0	52	__glTextureModulateRGB	dwarf+dynsym	d2df76409d84		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56f800	68	__glTextureModulateRGBA	dwarf+dynsym	07fd8c843aa5		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56f880	20	__glTextureModulateA	dwarf+dynsym	f9b77559a0cb		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56f8c0	56	__glTextureModulateI	dwarf+dynsym	faafa57b05c6		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56f740	44	__glTextureModulateL	dwarf+dynsym	df6a1a365d63		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56f780	60	__glTextureModulateLA	dwarf+dynsym	91dfa1dc9726		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56f7c0	52	__glTextureModulateRGB	dwarf+dynsym	d2df76409d84		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56f800	68	__glTextureModulateRGBA	dwarf+dynsym	07fd8c843aa5		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56f880	20	__glTextureModulateA	dwarf+dynsym	f9b77559a0cb		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56f8c0	56	__glTextureModulateI	dwarf+dynsym	faafa57b05c6		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56f900	52	__glTextureDecalRGB	dwarf+dynsym	3d4bba85c924		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56f940	124	__glTextureDecalRGBA	dwarf+dynsym	81a130c9c66b		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56f9c0	124	__glTextureBlendL	dwarf+dynsym	1f3233fcce67		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56fa40	140	__glTextureBlendLA	dwarf+dynsym	37ab6e1d554c		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56fb00	140	__glTextureBlendRGB	dwarf+dynsym	64ae0ad41ba2		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56fbc0	156	__glTextureBlendRGBA	dwarf+dynsym	3c94efbd1c2e		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56fc80	20	__glTextureBlendA	dwarf+dynsym	f9b77559a0cb		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56fc80	20	__glTextureBlendA	dwarf+dynsym	f9b77559a0cb		in	understood	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56fcc0	156	__glTextureBlendI	dwarf+dynsym	4b467c056f40		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56fd80	44	__glTextureReplaceL	dwarf+dynsym	a024e81b0031		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x56fdc0	60	__glTextureReplaceLA	dwarf+dynsym	283a1869b6e6		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
@@ -31023,9 +31023,9 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x571ec0	200	_
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x571fc0	168	__glTextureCombineA	dwarf+dynsym	89975264c186		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x572080	164	__glTextureCombineI	dwarf+dynsym	19bf0695a62b		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0x572140	1248	tweakCubeMapCoords	dwarf+funcnames	7b01f0bb7fa2		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x572640	12	__glNopPolygonRho	dwarf+dynsym	d91daee8abe5		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x572640	12	__glNopPolygonRho	dwarf+dynsym	d91daee8abe5		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x572680	1736	__glComputePolygonRho	dwarf+dynsym	53db2c3c4811		in	named-only		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x572d80	12	__glNopLineRho	dwarf+dynsym	d91daee8abe5		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x572d80	12	__glNopLineRho	dwarf+dynsym	d91daee8abe5		in	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x572dc0	2000	__glComputeLineRho	dwarf+dynsym	6963495fa75d		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x5735c0	156	__glFastTextureFragment	dwarf+dynsym	14b7151a7f3e		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x573680	456	__glTextureFragment	dwarf+dynsym	028eefbb5cd0		in	named-only		
@@ -44196,11 +44196,11 @@ usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x491540	12	_
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x491580	12	__glLoseCurrentBuffer	dwarf+dynsym	3b6d5f0eeb3d		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4915c0	308	__glLockBuffers	dwarf+dynsym	a71b58071838		out:15	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x491700	348	__glUnlockBuffers	dwarf+dynsym	9c6d0be25337		out:15	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x491880	52	__glLockRenderBuffers	dwarf+dynsym	fe9af422c832		out:15	named-only		
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x491880	52	__glLockRenderBuffers	dwarf+dynsym	fe9af422c832		out:15	named-only	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4918c0	52	__glUnlockRenderBuffers	dwarf+dynsym	51870310d1e0		out:15	named-only		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x491900	164	__glLockColorBuffer	dwarf+dynsym	1ff6a7eff5c8		out:15	named-only		
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x491900	164	__glLockColorBuffer	dwarf+dynsym	1ff6a7eff5c8		out:15	named-only	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4919c0	220	__glUnlockColorBuffer	dwarf+dynsym	f0d032b13abf		out:15	named-only		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x491ac0	192	__glLockColorBufferDepthBuffer	dwarf+dynsym	25f96691998f		out:15	named-only		
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x491ac0	192	__glLockColorBufferDepthBuffer	dwarf+dynsym	25f96691998f		out:15	named-only	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x491b80	248	__glUnlockColorBufferDepthBuffer	dwarf+dynsym	b9152c739f15		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x491c80	132	__glTestOwnership	dwarf+dynsym	ed10486f0064		out:15	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x491d40	160	__glFreePrivate	dwarf+dynsym	84903b9347a4		out:15	named-only		
@@ -44466,9 +44466,9 @@ usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4a8b80	224	
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4a8c80	1296	__glFeedbackTriangle	dwarf+dynsym	6199835c35c6		out:15	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4a91c0	92	__glim_Finish	dwarf+dynsym	07700097070a		out:15	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4a9240	92	__glim_Flush	dwarf+dynsym	5f8354c02833		out:15	undocumented		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4a92c0	560	__glFogSpan	dwarf+dynsym	ab22af155ef0		out:15	named-only		
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4a92c0	560	__glFogSpan	dwarf+dynsym	ab22af155ef0		out:15	named-only	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4a9500	684	__glFogStippledSpan	dwarf+dynsym	3d1eb597fe35		out:15	named-only		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4a97c0	1104	__glFogSpanSlow	dwarf+dynsym	56d0afb60810		out:15	named-only		
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4a97c0	1104	__glFogSpanSlow	dwarf+dynsym	56d0afb60810		out:15	named-only	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4a9c40	1304	__glFogStippledSpanSlow	dwarf+dynsym	83206a6f7151		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4aa180	424	__glFogFragmentSlow	dwarf+dynsym	19bdd77f34a3		out:15	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4aa340	296	__glFogVertex	dwarf+dynsym	8475d3cf3528		out:15	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
@@ -44817,8 +44817,8 @@ usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4d7380	288	
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4d74c0	184	__glRenderTriangleLine	dwarf+dynsym	a6794c2ab959		out:15	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4d7580	284	__glRenderTrianglePointLock	dwarf+dynsym	7078b196988e		out:15	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4d76c0	164	__glRenderTrianglePoint	dwarf+dynsym	c23e6519537f		out:15	undocumented		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4d7780	544	__glRenderFlatTriangle	dwarf+dynsym	e6947ec3003d		out:15	named-only		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4d79c0	512	__glRenderSmoothTriangle	dwarf+dynsym	d0ec685cca7f		out:15	named-only		
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4d7780	544	__glRenderFlatTriangle	dwarf+dynsym	e6947ec3003d		out:15	named-only	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4d79c0	512	__glRenderSmoothTriangle	dwarf+dynsym	d0ec685cca7f		out:15	named-only	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4d7bc0	8	__glDontRenderTriangle	dwarf+dynsym	78aa5094d5ec		out:15	understood	docs/dri-driver.md#empty-bodies-and-constant-returns	Empty bodies and constant returns
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4d7c00	236	__glProcessSpan	dwarf+dynsym	15cbb9b0868a		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4d7d00	2696	__glProcessReplicateSpan	dwarf+dynsym	4d9d5c98ad32		out:15	named-only		
@@ -44837,10 +44837,10 @@ usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4daa00	616	
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4dac80	644	__glDepthTestStencilStippledSpan	dwarf+dynsym	8aab0d975130		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4daf40	2164	__glDepthTestStencilOffsetSpan	dwarf+dynsym	234aa7ada6ea		out:15	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4db7c0	2196	__glDepthTestStencilStippledOffsetSpan	dwarf+dynsym	9775af428633		out:15	undocumented		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4dc080	200	__glDepthPassSpan	dwarf+dynsym	b354a1b15371		out:15	named-only		
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4dc080	200	__glDepthPassSpan	dwarf+dynsym	b354a1b15371		out:15	named-only	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4dc180	252	__glDepthPassStippledSpan	dwarf+dynsym	55f3b17c3738		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4dc280	280	__glShadeCISpan	dwarf+dynsym	fd029de6944c		out:15	named-only		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4dc3c0	396	__glShadeRGBASpan	dwarf+dynsym	40b4c8d16f83		out:15	named-only		
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4dc3c0	396	__glShadeRGBASpan	dwarf+dynsym	40b4c8d16f83		out:15	named-only	docs/routines/t2-voyager-r4-b000.md#routine-readings-voyager-round-4-batch-0	Routine readings, voyager round 4, batch 0
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4dc580	464	__glShadeSecondaryRGBASpan	dwarf+dynsym	9524fd422bde		out:15	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4dc780	188	__glFlatCISpan	dwarf+dynsym	3d7d317d7464		out:15	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4dc840	220	__glFlatRGBASpan	dwarf+dynsym	b6ed4c78bf0d		out:15	undocumented		
@@ -44855,7 +44855,7 @@ usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4dd5c0	112	
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4dd640	400	__glRoundCIStippledSpan	dwarf+dynsym	98cce0f13bfe		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4dd800	260	__glRoundRGBASpan	dwarf+dynsym	c9efb65f4699		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4dd940	428	__glRoundRGBAStippledSpan	dwarf+dynsym	e268ff110efb		out:15	named-only		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4ddb00	296	__glLogicOpSpan	dwarf+dynsym	2b8d25a91b13		out:15	named-only		
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4ddb00	296	__glLogicOpSpan	dwarf+dynsym	2b8d25a91b13		out:15	named-only	docs/routines/t2-voyager-r4-b001.md#tier-2-routine-readings-voyager-round-4-batch-1	Tier-2 routine readings, voyager round 4, batch 1
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4ddc40	464	__glLogicOpStippledSpan	dwarf+dynsym	2742409f0a6c		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4dde40	344	__glMaskRGBASpan	dwarf+dynsym	5f5cf7365cb4		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4ddfc0	292	__glMaskCISpan	dwarf+dynsym	906925bb384c		out:15	named-only		
@@ -45115,7 +45115,7 @@ usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f1b00	548	
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f1d40	560	__glim_TexImage3D	dwarf+dynsym	e691480ecd53		out:15	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f1f80	548	__gllei_TexImage3D	dwarf+dynsym	059d64248a26		out:15	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32	.text	0x4f21c0	48	Dot	dwarf+funcnames	695fd9fc653c		out:15	undocumented		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32	.text	0x4f2200	276	SphereGen	dwarf+funcnames	5114343dad80		out:15	named-only		
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32	.text	0x4f2200	276	SphereGen	dwarf+funcnames	5114343dad80		out:15	named-only	docs/routines/t2-voyager-r4-b002.md#tier-2-routine-readings-voyager-round-4-batch-2	Tier-2 routine readings, voyager round 4, batch 2
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f2340	1464	__glCalcMixedTexture	dwarf+dynsym	6f3284f2e8e3		out:15	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f2900	296	__glCalcEyeLinear	dwarf+dynsym	dd96acaf281e		out:15	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f2a40	296	__glCalcObjectLinear	dwarf+dynsym	3b2ae203912c		out:15	undocumented		
@@ -45165,22 +45165,22 @@ usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f68c0	52	_
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f6900	144	__glNearestFilter1	dwarf+dynsym	046af6873af2		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f69c0	232	__glNearestFilter2	dwarf+dynsym	7ad2c3ea706f		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f6ac0	340	__glNearestFilter3	dwarf+dynsym	35b4b60a000e		out:15	named-only		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f6c40	1004	__glLinearFilter1	dwarf+dynsym	e388196755df		out:15	named-only		
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f6c40	1004	__glLinearFilter1	dwarf+dynsym	e388196755df		out:15	named-only	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f7040	1848	__glLinearFilter2	dwarf+dynsym	cd2e833c60c6		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f7780	2964	__glLinearFilter3	dwarf+dynsym	7c6e4c506d28		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f8340	68	__glLinearFilterUVScaled	dwarf+dynsym	1512e8f091bf		out:15	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f83c0	68	__glNearestFilterUVScaled	dwarf+dynsym	d94763b864ac		out:15	undocumented		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f8440	96	__glLinearFilter	dwarf+dynsym	6933e6e11f12		out:15	named-only		
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f8440	96	__glLinearFilter	dwarf+dynsym	6933e6e11f12		out:15	named-only	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f84c0	96	__glNearestFilter	dwarf+dynsym	93f076d48139		out:15	named-only		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f8540	248	__glNMNFilter	dwarf+dynsym	d4cbd0d28790		out:15	named-only		
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f8540	248	__glNMNFilter	dwarf+dynsym	d4cbd0d28790		out:15	named-only	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f8640	248	__glLMNFilter	dwarf+dynsym	f9258b41e34a		out:15	named-only		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f8740	972	__glNMLFilter	dwarf+dynsym	8b94db42a20f		out:15	named-only		
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f8740	972	__glNMLFilter	dwarf+dynsym	8b94db42a20f		out:15	named-only	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f8b40	972	__glLMLFilter	dwarf+dynsym	917be5e06754		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f8f40	56	__glTextureModulateL	dwarf+dynsym	03573339f529		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f8f80	84	__glTextureModulateLA	dwarf+dynsym	dd1c06a16b9b		out:15	named-only		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f9000	88	__glTextureModulateRGB	dwarf+dynsym	141dbe52211e		out:15	named-only		
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f9000	88	__glTextureModulateRGB	dwarf+dynsym	141dbe52211e		out:15	named-only	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f9080	116	__glTextureModulateRGBA	dwarf+dynsym	6a759cf162ae		out:15	named-only		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f9100	32	__glTextureModulateA	dwarf+dynsym	fcbf57aece97		out:15	named-only		
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f9100	32	__glTextureModulateA	dwarf+dynsym	fcbf57aece97		out:15	named-only	docs/routines/t2-voyager-r4-b003.md#voyager-tier-2-batch-3-routine-roles	Voyager tier-2 batch 3 routine roles
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f9140	68	__glTextureModulateI	dwarf+dynsym	1f1b4ad0a536		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f91c0	32	__glTextureModulateCI	dwarf+dynsym	1fe35fd5e1e4		out:15	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f9200	88	__glTextureDecalRGB	dwarf+dynsym	925cee843bbf		out:15	named-only		
@@ -45199,9 +45199,9 @@ usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f9880	32	_
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f98c0	68	__glTextureReplaceI	dwarf+dynsym	aff6dedf9cc6		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f9940	24	__glTextureReplaceCI	dwarf+dynsym	aa44728f7fe8		out:15	undocumented		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f9980	32	__glTextureAddCI	dwarf+dynsym	2671f5dd53c7		out:15	undocumented		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f99c0	12	__glNopPolygonRho	dwarf+dynsym	d91daee8abe5		out:15	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f99c0	12	__glNopPolygonRho	dwarf+dynsym	d91daee8abe5		out:15	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f9a00	576	__glComputePolygonRho	dwarf+dynsym	01a7f96dfdf0		out:15	named-only		
-usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f9c40	12	__glNopLineRho	dwarf+dynsym	d91daee8abe5		out:15	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
+usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f9c40	12	__glNopLineRho	dwarf+dynsym	d91daee8abe5		out:15	understood	docs/routines/t2-voyager-r4-b004.md#tier-2-routine-readings-voyager-round-4-batch-4	Tier-2 routine readings, voyager round 4 batch 4
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f9c80	356	__glComputeLineRho	dwarf+dynsym	370a03e34c1f		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f9e00	116	__glFastTextureFragment	dwarf+dynsym	ae581e9ba132		out:15	named-only		
 usr/X11R6/lib/modules/extensions/libGLcore.so	shared-x-server	n32		0x4f9e80	224	__glTextureFragment	dwarf+dynsym	d2868e36d563		out:15	named-only		
