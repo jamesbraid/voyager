@@ -31,7 +31,7 @@ number	hex	table	handler	evidence	senders	binaries	example	status	doc	section
 83	0x53	firegl ioctl	firegl_cp_init	table		1		understood	docs/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
 86	0x56	firegl ioctl	firegl_bufmeminfo	table		1		understood	docs/kernel-drm-functions.md#lock-release-allocation-tracking-and-drawable-removal	Lock release, allocation tracking and drawable removal
 87	0x57	firegl ioctl	firegl_get_lockid	table		1		located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-88	0x58	firegl ioctl	firegl_set_cap_ipc_lock	table		1		located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
+88	0x58	firegl ioctl	firegl_set_cap_ipc_lock	table		1		understood	docs/routines/vfin-fglrxo-2.md#routine-readings-ip35-fglrxo-located-routines-sample-2	Routine readings, IP35 fglrx.o, located routines sample 2
 89	0x59	firegl ioctl	firegl_restore_cap	table		1		understood	docs/routines/vfin-fglrxo-1.md#routine-readings-for-ip35boot-fglrxo-sample-1	Routine readings for IP35boot fglrx.o, sample 1
 91	0x5b	firegl ioctl	firegl_umm_init	table		1		understood	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 92	0x5c	firegl ioctl	firegl_wait_for_vertical_retrace	table		1		understood	docs/kernel-drm-functions.md#vertical-retrace-authentication-aperture-and-texture-routines	Vertical-retrace, authentication, aperture and texture routines
