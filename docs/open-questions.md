@@ -4,7 +4,7 @@ Questions the binaries and published sources have not yet answered. One entry ea
 
 ## Triage
 
-Of the 23 entries below, all are `software-now`. Three of them also carry a hardware-only residue, marked in the entry and recorded, not scheduled: the PCI bus clock, the display output and the ROM select.
+Of the 24 entries below, all are `software-now`. Three of them also carry a hardware-only residue, marked in the entry and recorded, not scheduled: the PCI bus clock, the display output and the ROM select.
 
 The tags:
 
@@ -27,12 +27,12 @@ Registers and interrupts come first, because they block the register headers. Th
 2. Roles of the matched registers, starting with `R200AdjustFrame`.
 3. Accesses the replay does not follow.
 4. The register at 0xf18 and the pointers at device record +400 and +992. Answered: [kernel-drm-functions.md](kernel-drm-functions.md) (the `firegl_addmap` entry): +400 and +992 are the shared area plus 64 and plus 2200, and +1008 holds the upper half of register 0xf18 and is never read back in the kernel object. What register 0xf18 is stays unknown.
-5. Interrupt bits, against the R3xx reference.
+5. Interrupt bits, against the R3xx reference. Answered: [kernel-ioctl-irq-functions.md](kernel-ioctl-irq-functions.md#interrupt-control) names the status and control registers (0x44 and 0x40), bits 0 and 2 and the `irq_table` words, [amd-register-match.md](amd-register-match.md) matches them to the public names, and the 2026-11-02 row for the interrupt-status naming in [inventory/audits.tsv](inventory/audits.tsv) records its re-derivation.
 6. Memory controller and GART set-up.
 7. Video memory.
 8. Ring and CP start-up, starting with `FGLInitCP`.
-9. Microcode table and its chip-code writers.
-10. Fence, idle and reset.
+9. Microcode table and its chip-code writers. Answered: [kernel-attach.md](kernel-attach.md#command-processor-start-up-x-server-module) (`PM4LoadMicroCode` picks `aPM4_Microcode_R6x` for chip codes 8, 47 and 49 and `aPM4_Microcode_R300` for 44, 45 and 52, and the R300 table matches the public `radeon/R300_cp.bin`).
+10. Fence, idle and reset. Idle and reset answered: [kernel-attach.md](kernel-attach.md#command-processor-start-up-x-server-module) (`FGLStartCP` and the idle wait it runs first), [kernel-drm-functions.md](kernel-drm-functions.md) (`firegl_PM4WaitForIdle`, `__fglQSQuietDown`) and [kernel-ioctl-irq-functions.md](kernel-ioctl-irq-functions.md#vertical-sync-wait-and-engine-reset) (`_r6x_resetPM4`). The fence part is the time stamp and stays open as its own entry under "Command processor and ring".
 11. Vertex and fragment units.
 12. GL extensions and limits.
 13. Display output.
@@ -82,6 +82,7 @@ The attach path read so far is in [kernel-attach.md](kernel-attach.md).
 ## Command processor and ring
 
 - [software-now] **Ring parameters and order of CP start-up.** Settled: the kernel object never programs the ring base, size or microcode, see [kernel-attach.md](kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel). The X server module does it ([kernel-attach.md](kernel-attach.md#command-processor-start-up-x-server-module)): `PM4LoadMicroCode`, `r200_RegisterRingBufferLocation`, `r200_EnableCommonBusMaster`, `r200_SetPm4OperationMode` (mode 8, both queues bus-master), `r200_EnableRPTRwriteback`, `FGLEnableCP`, `FGLStartCP`. Answered since: `FGLInitCP` and the routine at 0x42bc00 are read ([x-driver-functions.md](x-driver-functions.md#command-processor-initialisation), [kernel-attach.md](kernel-attach.md#command-processor-start-up-x-server-module)), and `firegl_cp_init` takes the ring from a map the X module created earlier, named by handle, not from `kmem_contig_reserve`. Settled: `firegl_cp_init` adopts three already-created memory maps, named by handle, see [kernel-attach.md](kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel). Still open: how the X module creates that ring map and forms the bus address it keeps at E +0x48, and what the E fields at +0x18, +0x38 and +0x58 are before `FGLInitCP`. Next: the writers of those entity-record fields in `fglrx_drv.so`, and the map-creating calls (`firegl_AllocBuffer`) that precede the start-up.
+- [software-now] **Fence: the time stamp.** The write-back registers are read ([kernel-attach.md](kernel-attach.md#command-processor-start-up-x-server-module): `r200_EnableTimeStampWriteBack` sets `SCRATCH_ADDR` and `SCRATCH_UMSK`, `r200_WriteTimeStamp` writes the four scratch registers). Still open: the user-side half, the ATI time-stamp extension entry points and trackers in `fglrx_dri.so` and `fglrx_dri64.so` (`glSendTimestampATI`, `glWaitTimestampATI`, `__glATIWaitForTimestamp`, `__glATIQSTimeStampRetired` and the `__glATI*TimeStampTracker` routines), which are `located` or `named-only` in the inventory, and what the kernel or the chip does with the stamp. Next: read those routines against the scratch-register layout.
 
 ## 3D
 
