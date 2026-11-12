@@ -1,0 +1,881 @@
+# Imported from VOYAGER_DECODE.h. Review the sources and grades, then maintain by hand.
+unit = "display"
+prefix = "VOYAGER"
+title = "display, interrupt and engine registers of the R3xx-class FireGL boards (publish-safe decode header)"
+doc = "Display, interrupt and engine registers of the R3xx-class FireGL boards."
+from = "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
+public_from = ["public Linux radeon", "public Radeon packet"]
+
+[c]
+legacy_header = "VOYAGER_DECODE.h"
+legacy_guard = "VOYAGER_DECODE_H"
+
+[registers.clock_cntl_index]
+offset = 0x8
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.clock_cntl_index.fields]
+pll_div_sel = { bits = [9, 8], grade = "inferred" }
+pll_wr_en = { bits = [7, 7], grade = "established" }
+pll_addr = { bits = [5, 0], grade = "established" }
+
+[registers.clock_cntl_data]
+offset = 0xc
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.bios_4_scratch]
+offset = 0x20
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.bios_5_scratch]
+offset = 0x24
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.bios_6_scratch]
+offset = 0x28
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.bios_6_scratch.fields]
+board_probe = { bits = [13, 13], grade = "established" }
+
+[registers.bios_7_scratch]
+offset = 0x2c
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.gen_int_cntl]
+offset = 0x40
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.gen_int_cntl.fields]
+viddma = { bits = [31, 31], grade = "inferred" }
+guidma = { bits = [30, 30], grade = "inferred" }
+dvi_i2c_int = { bits = [29, 29], grade = "inferred" }
+hdcp_authorized_int = { bits = [28, 28], grade = "inferred" }
+geyserville = { bits = [27, 27], grade = "inferred" }
+sw_int_en = { bits = [25, 25], grade = "inferred" }
+viph_int_en = { bits = [24, 24], grade = "inferred" }
+gui_idle = { bits = [19, 19], grade = "inferred" }
+i2c_int_en = { bits = [17, 17], grade = "inferred" }
+dma_viph3_int_en = { bits = [15, 15], grade = "inferred" }
+dma_viph2_int_en = { bits = [14, 14], grade = "inferred" }
+dma_viph1_int_en = { bits = [13, 13], grade = "inferred" }
+dma_viph0_int_en = { bits = [12, 12], grade = "inferred" }
+vsync_diff_over_limit = { bits = [11, 11], grade = "inferred" }
+fp2_detect = { bits = [10, 10], grade = "inferred" }
+crtc2_vblank = { bits = [9, 9], grade = "inferred" }
+snapshot2 = { bits = [7, 7], grade = "inferred" }
+crtc2_vsync = { bits = [6, 6], grade = "established" }
+crtc2_vline = { bits = [5, 5], grade = "inferred" }
+fp_detect = { bits = [4, 4], grade = "inferred" }
+snapshot = { bits = [3, 3], grade = "inferred" }
+crtc_vsync = { bits = [2, 2], grade = "established" }
+crtc_vline = { bits = [1, 1], grade = "inferred" }
+crtc_vblank = { bits = [0, 0], grade = "established" }
+
+[registers.gen_int_status]
+offset = 0x44
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.gen_int_status.fields]
+viddma_stat = { bits = [31, 31], grade = "inferred" }
+guidma_stat = { bits = [30, 30], grade = "inferred" }
+dvi_i2c_int_stat = { bits = [29, 29], grade = "inferred" }
+hdcp_authorized_int_stat = { bits = [28, 28], grade = "inferred" }
+geyserville_stat = { bits = [27, 27], grade = "inferred" }
+sw_int_set = { bits = [26, 26], grade = "inferred" }
+sw_int = { bits = [25, 25], grade = "established" }
+viph_int = { bits = [24, 24], grade = "inferred" }
+gui_idle_stat = { bits = [19, 19], grade = "inferred" }
+i2c_int = { bits = [17, 17], grade = "inferred" }
+dma_viph3_int = { bits = [15, 15], grade = "inferred" }
+dma_viph2_int = { bits = [14, 14], grade = "inferred" }
+dma_viph1_int = { bits = [13, 13], grade = "inferred" }
+dma_viph0_int = { bits = [12, 12], grade = "inferred" }
+vsync_diff_over_limit_stat = { bits = [11, 11], grade = "inferred" }
+fp2_detect_stat = { bits = [10, 10], grade = "inferred" }
+crtc2_vblank_stat = { bits = [9, 9], grade = "inferred" }
+cap0_int_active = { bits = [8, 8], grade = "inferred" }
+snapshot2_stat = { bits = [7, 7], grade = "inferred" }
+crtc2_vsync_stat = { bits = [6, 6], grade = "established" }
+crtc2_vline_stat = { bits = [5, 5], grade = "inferred" }
+fp_detect_stat = { bits = [4, 4], grade = "inferred" }
+snapshot_stat = { bits = [3, 3], grade = "inferred" }
+crtc_vsync_stat = { bits = [2, 2], grade = "established" }
+crtc_vline_stat = { bits = [1, 1], grade = "inferred" }
+crtc_vblank_stat = { bits = [0, 0], grade = "established" }
+
+[registers.crtc_gen_cntl]
+offset = 0x50
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.crtc_gen_cntl.fields]
+crtc_disp_req_en_b = { bits = [26, 26], grade = "established" }
+crtc_en = { bits = [25, 25], grade = "established" }
+crtc_ext_disp_en = { bits = [24, 24], grade = "inferred" }
+crtc_cur_mode = { bits = [22, 20], grade = "inferred" }
+crtc_vstat_mode = { bits = [18, 17], grade = "inferred" }
+crtc_cur_en = { bits = [16, 16], grade = "established" }
+crtc_icon_en = { bits = [15, 15], grade = "inferred" }
+crtc_pix_width = { bits = [11, 8], grade = "inferred" }
+crtc_c_sync_en = { bits = [4, 4], grade = "inferred" }
+crtc_interlace_en = { bits = [1, 1], grade = "inferred" }
+crtc_dbl_scan_en = { bits = [0, 0], grade = "inferred" }
+
+[registers.crtc_ext_cntl]
+offset = 0x54
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.crtc_ext_cntl.fields]
+crtc_crt_on = { bits = [15, 15], grade = "inferred" }
+
+[registers.dac_cntl]
+offset = 0x58
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.dac_cntl.fields]
+dac_mask_all = { bits = [31, 24], grade = "inferred" }
+dac_pdwn = { bits = [15, 15], grade = "inferred" }
+dac_vga_adr_en = { bits = [13, 13], grade = "inferred" }
+dac_8bit_en = { bits = [8, 8], grade = "established" }
+dac_cmp_en = { bits = [3, 3], grade = "inferred" }
+dac_blanking = { bits = [2, 2], grade = "inferred" }
+dac_range_cntl = { bits = [1, 0], grade = "inferred" }
+
+[registers.crtc_status]
+offset = 0x5c
+access = "r"
+width = 32
+grade = "inferred"
+
+[registers.crtc_status.fields]
+crtc_vblank_cur = { bits = [0, 0], grade = "established" }
+
+[registers.dac_cntl2]
+offset = 0x7c
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.dac_cntl2.fields]
+dac2_cmp_en = { bits = [7, 7], grade = "inferred" }
+dac2_palette_acc_ctl = { bits = [5, 5], grade = "established" }
+dac2_dac2_clk_sel = { bits = [1, 1], grade = "inferred" }
+dac2_dac_clk_sel = { bits = [0, 0], grade = "inferred" }
+
+[registers.config_xstrap]
+offset = 0xe4
+access = "r"
+width = 32
+grade = "inferred"
+
+[registers.config_xstrap.fields]
+board_strap = { bits = [27, 27], grade = "established" }
+
+[registers.rbbm_soft_reset]
+offset = 0xf0
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.rbbm_soft_reset.fields]
+soft_reset_idct = { bits = [14, 14], grade = "inferred" }
+soft_reset_ga = { bits = [13, 13], grade = "inferred" }
+soft_reset_cg = { bits = [12, 12], grade = "inferred" }
+soft_reset_disp = { bits = [11, 11], grade = "inferred" }
+soft_reset_vip = { bits = [10, 10], grade = "inferred" }
+soft_reset_aic = { bits = [9, 9], grade = "inferred" }
+soft_reset_mc = { bits = [8, 8], grade = "inferred" }
+soft_reset_hdp = { bits = [7, 7], grade = "inferred" }
+soft_reset_rb = { bits = [6, 6], grade = "established" }
+soft_reset_e2 = { bits = [5, 5], grade = "established" }
+soft_reset_pp = { bits = [4, 4], grade = "established" }
+soft_reset_re = { bits = [3, 3], grade = "established" }
+soft_reset_geometry = { bits = [2, 2], grade = "inferred" }
+soft_reset_hi = { bits = [1, 1], grade = "inferred" }
+soft_reset_cp = { bits = [0, 0], grade = "established" }
+
+[[registers.rbbm_soft_reset.tests]]
+value = 0x79
+expect = { soft_reset_cp = 1, soft_reset_re = 1, soft_reset_pp = 1, soft_reset_e2 = 1, soft_reset_rb = 1, soft_reset_geometry = 0 }
+
+[registers.config_memsize]
+offset = 0xf8
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.mem_cntl]
+offset = 0x140
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.mc_fb_location]
+offset = 0x148
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.mc_fb_location.fields]
+mc_fb_top = { bits = [31, 16], grade = "inferred" }
+mc_fb_start = { bits = [15, 0], grade = "inferred" }
+
+[registers.mc_agp_location]
+offset = 0x14c
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.mc_agp_location.fields]
+mc_agp_top = { bits = [31, 16], grade = "inferred" }
+mc_agp_start = { bits = [15, 0], grade = "inferred" }
+
+[registers.mc_status]
+offset = 0x150
+access = "r"
+width = 32
+grade = "inferred"
+
+[registers.mc_status.fields]
+mc_idle_r300 = { bits = [4, 4], grade = "established" }
+mc_idle = { bits = [2, 2], grade = "established" }
+
+[registers.agp_base]
+offset = 0x170
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.unnamed_0178]
+offset = 0x178
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.unnamed_017c]
+offset = 0x17c
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.gpiopad_mask]
+offset = 0x198
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.gpiopad_mask.fields]
+pad0 = { bits = [0, 0], grade = "inferred" }
+
+[registers.gpiopad_a]
+offset = 0x19c
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.gpiopad_a.fields]
+pad0 = { bits = [0, 0], grade = "inferred" }
+
+[registers.gpiopad_en]
+offset = 0x1a0
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.gpiopad_en.fields]
+pad0 = { bits = [0, 0], grade = "inferred" }
+
+[registers.gpiopad_y]
+offset = 0x1a4
+access = "r"
+width = 32
+grade = "inferred"
+
+[registers.unnamed_01a8]
+offset = 0x1a8
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.mdgpio_a]
+offset = 0x1ac
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.mdgpio_en]
+offset = 0x1b0
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.crtc_h_total_disp]
+offset = 0x200
+access = "rw"
+width = 32
+grade = "established"
+
+[registers.crtc_h_total_disp.fields]
+crtc_h_disp = { bits = [24, 16], grade = "inferred" }
+crtc_h_total = { bits = [9, 0], grade = "inferred" }
+
+[registers.crtc_h_sync_strt_wid]
+offset = 0x204
+access = "rw"
+width = 32
+grade = "established"
+
+[registers.crtc_h_sync_strt_wid.fields]
+crtc_h_sync_pol = { bits = [23, 23], grade = "inferred" }
+crtc_h_sync_wid = { bits = [21, 16], grade = "inferred" }
+crtc_h_sync_strt_char = { bits = [12, 3], grade = "inferred" }
+crtc_h_sync_strt_pix = { bits = [2, 0], grade = "inferred" }
+
+[registers.crtc_v_total_disp]
+offset = 0x208
+access = "rw"
+width = 32
+grade = "established"
+
+[registers.crtc_v_total_disp.fields]
+crtc_v_disp = { bits = [26, 16], grade = "inferred" }
+crtc_v_total = { bits = [10, 0], grade = "inferred" }
+
+[registers.crtc_v_sync_strt_wid]
+offset = 0x20c
+access = "rw"
+width = 32
+grade = "established"
+
+[registers.crtc_v_sync_strt_wid.fields]
+crtc_v_sync_pol = { bits = [23, 23], grade = "inferred" }
+crtc_v_sync_wid = { bits = [20, 16], grade = "inferred" }
+crtc_v_sync_strt = { bits = [10, 0], grade = "inferred" }
+
+[registers.crtc_offset_cntl]
+offset = 0x228
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.crtc_offset_cntl.fields]
+stereo_aux = { bits = [20, 20], grade = "inferred" }
+crtc_stereo_offset_en = { bits = [17, 17], grade = "established" }
+crtc_offset_flip_cntl = { bits = [16, 16], grade = "inferred" }
+crtc_tile_en = { bits = [15, 15], grade = "inferred" }
+crtc_micro_tile_en = { bits = [13, 13], grade = "inferred" }
+crtc_xy_mode_en = { bits = [9, 9], grade = "inferred" }
+
+[[registers.crtc_offset_cntl.tests]]
+value = 0x120000
+expect = { crtc_tile_en = 0, crtc_offset_flip_cntl = 0, crtc_stereo_offset_en = 1, stereo_aux = 1 }
+
+[registers.display_base_addr]
+offset = 0x23c
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.crtc_more_cntl]
+offset = 0x27c
+access = "rw"
+width = 32
+grade = "established"
+
+[registers.crtc_more_cntl.fields]
+crtc_v_cutoff_active_en = { bits = [5, 5], grade = "inferred" }
+crtc_h_cutoff_active_en = { bits = [4, 4], grade = "inferred" }
+crtc_auto_vert_center_en = { bits = [3, 3], grade = "inferred" }
+crtc_auto_horz_center_en = { bits = [2, 2], grade = "inferred" }
+
+[registers.dac_ext_cntl]
+offset = 0x280
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.fp2_gen_cntl]
+offset = 0x288
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.fp2_gen_cntl.fields]
+fp2_dvo_en = { bits = [25, 25], grade = "established" }
+
+[registers.unnamed_0294]
+offset = 0x294
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.unnamed_0294.fields]
+stereo_sel = { bits = [13, 12], grade = "established" }
+mode_nibble = { bits = [3, 0], grade = "inferred" }
+
+[[registers.unnamed_0294.tests]]
+value = 0x3000
+expect = { stereo_sel = 3, mode_nibble = 0 }
+
+[registers.unnamed_02e0]
+offset = 0x2e0
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.unnamed_02e4]
+offset = 0x2e4
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.unnamed_02e8]
+offset = 0x2e8
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.crtc2_gen_cntl]
+offset = 0x3f8
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.crtc2_gen_cntl.fields]
+crtc2_vsync_dis = { bits = [29, 29], grade = "inferred" }
+crtc2_hsync_dis = { bits = [28, 28], grade = "inferred" }
+crtc2_c_sync_en = { bits = [27, 27], grade = "inferred" }
+crtc2_disp_req_en_b = { bits = [26, 26], grade = "inferred" }
+crtc2_en = { bits = [25, 25], grade = "established" }
+crtc2_display_dis = { bits = [23, 23], grade = "inferred" }
+crtc2_cur_mode = { bits = [22, 20], grade = "inferred" }
+crtc2_cur_en = { bits = [16, 16], grade = "established" }
+crtc2_icon_en = { bits = [15, 15], grade = "inferred" }
+crtc2_pix_width = { bits = [11, 8], grade = "inferred" }
+crt2_on = { bits = [7, 7], grade = "inferred" }
+crtc2_vsync_tristate = { bits = [6, 6], grade = "inferred" }
+crtc2_hsync_tristate = { bits = [5, 5], grade = "inferred" }
+crtc2_sync_tristate = { bits = [4, 4], grade = "inferred" }
+crtc2_interlace_en = { bits = [1, 1], grade = "inferred" }
+crtc2_dbl_scan_en = { bits = [0, 0], grade = "inferred" }
+
+[registers.ov0_scale_cntl]
+offset = 0x420
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.ov0_scale_cntl.fields]
+ov0_soft_reset = { bits = [31, 31], grade = "inferred" }
+ov0_overlay_en = { bits = [30, 30], grade = "established" }
+ov0_int_emu = { bits = [29, 29], grade = "inferred" }
+ov0_lin_trans_bypass = { bits = [28, 28], grade = "inferred" }
+ov0_bandwidth = { bits = [26, 26], grade = "inferred" }
+ov0_double_buffer_regs = { bits = [24, 24], grade = "inferred" }
+ov0_burst_per_plane = { bits = [22, 16], grade = "inferred" }
+ov0_crtc_sel = { bits = [14, 14], grade = "inferred" }
+ov0_adaptive_deint = { bits = [12, 12], grade = "inferred" }
+ov0_surface_format = { bits = [11, 8], grade = "inferred" }
+ov0_gamma_sel = { bits = [7, 5], grade = "inferred" }
+ov0_signed_uv = { bits = [4, 4], grade = "inferred" }
+ov0_vert_pick_nearest = { bits = [3, 3], grade = "inferred" }
+ov0_horz_pick_nearest = { bits = [2, 2], grade = "inferred" }
+ov0_no_read_behind_scan = { bits = [1, 1], grade = "inferred" }
+
+[registers.subpic_cntl]
+offset = 0x540
+access = "rw"
+width = 32
+grade = "established"
+
+[registers.cp_rb_base]
+offset = 0x700
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.cp_rb_cntl]
+offset = 0x704
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.cp_rb_cntl.fields]
+rb_no_update = { bits = [27, 27], grade = "established" }
+max_fetch = { bits = [19, 18], grade = "established" }
+buf_swap = { bits = [17, 16], grade = "established" }
+rb_blksz = { bits = [13, 8], grade = "established" }
+rb_bufsz = { bits = [5, 0], grade = "established" }
+
+[registers.cp_rb_rptr_addr]
+offset = 0x70c
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.cp_rb_wptr_delay]
+offset = 0x718
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.cp_csq_cntl]
+offset = 0x740
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.cp_csq_cntl.fields]
+csq_cnt_indirect = { bits = [15, 8], grade = "inferred" }
+csq_cnt_primary = { bits = [7, 0], grade = "inferred" }
+
+[registers.cp_csq_cntl.fields.csq_mode]
+bits = [31, 28]
+grade = "established"
+
+[registers.cp_csq_cntl.fields.csq_mode.enums]
+pridis_inddis = { value = 0, grade = "inferred" }
+pribm_indbm = { value = 8, grade = "inferred" }
+
+[registers.cp_stat]
+offset = 0x7c0
+access = "r"
+width = 32
+grade = "inferred"
+
+[registers.cp_stat.fields]
+cp_busy = { bits = [31, 31], grade = "inferred" }
+cmdstrm_busy = { bits = [30, 30], grade = "established" }
+viddma_busy = { bits = [29, 29], grade = "inferred" }
+guidma_busy = { bits = [28, 28], grade = "inferred" }
+csq_indirect2_busy = { bits = [15, 15], grade = "inferred" }
+csf_indirect2_busy = { bits = [14, 14], grade = "inferred" }
+csi_busy = { bits = [13, 13], grade = "inferred" }
+csq_indirect_busy = { bits = [12, 12], grade = "inferred" }
+csq_primary_busy = { bits = [11, 11], grade = "inferred" }
+csf_indirect_busy = { bits = [10, 10], grade = "inferred" }
+csf_primary_busy = { bits = [9, 9], grade = "inferred" }
+rciu_busy = { bits = [3, 3], grade = "inferred" }
+rsiu_busy = { bits = [2, 2], grade = "inferred" }
+mwu_busy = { bits = [1, 1], grade = "inferred" }
+mru_busy = { bits = [0, 0], grade = "inferred" }
+
+[registers.cp_me_cntl]
+offset = 0x7d0
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.cp_me_ram_addr]
+offset = 0x7d4
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.cp_me_ram_datah]
+offset = 0x7dc
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.cp_me_ram_datal]
+offset = 0x7e0
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.tv_master_cntl]
+offset = 0x800
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.cap0_trig_cntl]
+offset = 0x950
+access = "rw"
+width = 32
+grade = "established"
+
+[registers.cap1_trig_cntl]
+offset = 0x9c0
+access = "rw"
+width = 32
+grade = "established"
+
+[registers.surface_cntl]
+offset = 0xb00
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.surface_cntl.fields]
+surf_translation_dis = { bits = [8, 8], grade = "established" }
+
+[registers.viph_control]
+offset = 0xc40
+access = "rw"
+width = 32
+grade = "established"
+
+[registers.viph_control.fields]
+viph_en = { bits = [21, 21], grade = "inferred" }
+
+[registers.disp_merge_cntl]
+offset = 0xd60
+access = "rw"
+width = 32
+grade = "established"
+
+[registers.disp_merge_cntl.fields]
+disp_ov0_alpha_mask = { bits = [31, 24], grade = "inferred" }
+disp_grph_alpha_mask = { bits = [23, 16], grade = "inferred" }
+disp_lin_trans_bypass = { bits = [9, 9], grade = "inferred" }
+disp_rgb_offset_en = { bits = [8, 8], grade = "inferred" }
+disp_alpha_mode = { bits = [1, 0], grade = "inferred" }
+
+[registers.rbbm_status]
+offset = 0xe40
+access = "r"
+width = 32
+grade = "inferred"
+
+[registers.rbbm_status.fields]
+gui_active = { bits = [31, 31], grade = "established" }
+cba2d_busy = { bits = [27, 27], grade = "inferred" }
+ga_busy = { bits = [26, 26], grade = "inferred" }
+tim_busy = { bits = [25, 25], grade = "inferred" }
+pb_busy = { bits = [24, 24], grade = "inferred" }
+tdm_busy = { bits = [23, 23], grade = "inferred" }
+tam_busy = { bits = [22, 22], grade = "inferred" }
+re_busy = { bits = [21, 21], grade = "inferred" }
+geometry_busy = { bits = [20, 20], grade = "inferred" }
+rb3d_busy = { bits = [19, 19], grade = "inferred" }
+rb2d_busy = { bits = [18, 18], grade = "inferred" }
+e2_busy = { bits = [17, 17], grade = "inferred" }
+cp_cmdstrm_busy = { bits = [16, 16], grade = "inferred" }
+eng_ev_busy = { bits = [15, 15], grade = "inferred" }
+cf_pipe_busy = { bits = [14, 14], grade = "inferred" }
+cfrq_in_rtbuf = { bits = [13, 13], grade = "inferred" }
+cprq_in_rtbuf = { bits = [12, 12], grade = "inferred" }
+hirq_in_rtbuf = { bits = [11, 11], grade = "inferred" }
+cfrq_on_rbb = { bits = [10, 10], grade = "inferred" }
+cprq_on_rbb = { bits = [9, 9], grade = "inferred" }
+hirq_on_rbb = { bits = [8, 8], grade = "inferred" }
+cmdfifo_avail = { bits = [6, 0], grade = "established" }
+
+[registers.unnamed_0f10]
+offset = 0xf10
+access = "r"
+width = 32
+grade = "inferred"
+
+[registers.dst_offset]
+offset = 0x1404
+access = "w"
+width = 32
+grade = "inferred"
+
+[registers.dst_pitch]
+offset = 0x1408
+access = "w"
+width = 32
+grade = "inferred"
+
+[registers.dst_pitch_offset]
+offset = 0x142c
+access = "w"
+width = 32
+grade = "inferred"
+
+[registers.dst_y_x]
+offset = 0x1438
+access = "w"
+width = 32
+grade = "inferred"
+
+[registers.dp_gui_master_cntl]
+offset = 0x146c
+access = "w"
+width = 32
+grade = "inferred"
+
+[registers.dp_brush_frgd_clr]
+offset = 0x147c
+access = "w"
+width = 32
+grade = "inferred"
+
+[registers.dst_width_height]
+offset = 0x1598
+access = "w"
+width = 32
+grade = "inferred"
+
+[registers.scratch_reg5]
+offset = 0x15f4
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.dp_cntl]
+offset = 0x16c0
+access = "w"
+width = 32
+grade = "inferred"
+
+[registers.dp_write_mask]
+offset = 0x16cc
+access = "w"
+width = 32
+grade = "inferred"
+
+[registers.unnamed_1700]
+offset = 0x1700
+access = "w"
+width = 32
+grade = "inferred"
+
+[registers.dstcache_ctlstat]
+offset = 0x1714
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.dstcache_ctlstat.fields]
+dc_free = { bits = [3, 2], grade = "inferred" }
+dc_flush = { bits = [1, 0], grade = "inferred" }
+
+[registers.wait_until]
+offset = 0x1720
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.wait_until.fields]
+wait_host_idleclean = { bits = [18, 18], grade = "inferred" }
+
+[registers.vap_cntl_status]
+offset = 0x2140
+access = "rw"
+width = 32
+grade = "established"
+
+[registers.vap_cntl_status.fields]
+busy_top = { bits = [31, 24], grade = "inferred" }
+busy_mid = { bits = [11, 11], grade = "inferred" }
+pvs_bypass = { bits = [8, 8], grade = "established" }
+vc_swap = { bits = [1, 0], grade = "established" }
+
+[registers.rb2d_dstcache_ctlstat]
+offset = 0x342c
+access = "rw"
+width = 32
+grade = "inferred"
+
+[registers.rb2d_dstcache_ctlstat.fields]
+dc_busy = { bits = [31, 31], grade = "established" }
+dc_free = { bits = [3, 2], grade = "established" }
+dc_flush = { bits = [1, 0], grade = "established" }
+
+[registers.gb_tile_config]
+offset = 0x4018
+access = "rw"
+width = 32
+grade = "established"
+
+[registers.gb_tile_config.fields]
+enable = { bits = [0, 0], grade = "established" }
+
+[registers.gb_tile_config.fields.tile_size]
+bits = [5, 4]
+grade = "established"
+
+[registers.gb_tile_config.fields.tile_size.enums]
+size_8 = { value = 0, grade = "inferred" }
+size_16 = { value = 1, grade = "established" }
+size_32 = { value = 2, grade = "inferred" }
+
+[registers.gb_tile_config.fields.pipe_count]
+bits = [3, 1]
+grade = "established"
+
+[registers.gb_tile_config.fields.pipe_count.enums]
+rv300 = { value = 0, grade = "inferred" }
+r300 = { value = 3, grade = "established" }
+r420 = { value = 7, grade = "inferred" }
+
+[[registers.gb_tile_config.tests]]
+value = 0x17
+expect = { enable = 1, pipe_count = 3, tile_size = 1 }
+
+[registers.ga_soft_reset]
+offset = 0x429c
+access = "rw"
+width = 32
+grade = "established"
+
+[registers.ga_soft_reset.fields]
+soft_reset_count = { bits = [15, 0], grade = "established" }
+
+[words.PM4_TYPE0_HDR]
+width = 32
+grade = "inferred"
+from = "public Radeon packet encodings, checked against the packet values the shipped driver writes"
+
+[words.PM4_TYPE0_HDR.fields]
+type = { bits = [31, 30], grade = "inferred" }
+count = { bits = [29, 16], grade = "inferred" }
+reg_index = { bits = [12, 0], grade = "inferred" }
+
+[[words.PM4_TYPE0_HDR.tests]]
+value = 0x1057c
+expect = { type = 0, count = 1, reg_index = 1404 }
+
+[words.PM4_TYPE3_HDR]
+width = 32
+grade = "inferred"
+from = "public Radeon packet encodings, checked against the packet values the shipped driver writes"
+
+[words.PM4_TYPE3_HDR.fields]
+type = { bits = [31, 30], grade = "inferred" }
+count = { bits = [29, 16], grade = "inferred" }
+opcode = { bits = [15, 8], grade = "inferred" }
+
+[[words.PM4_TYPE3_HDR.tests]]
+value = 0xc0011e00
+expect = { type = 3, count = 1, opcode = 30 }
+
+[[words.PM4_TYPE3_HDR.tests]]
+value = 0xc0059b00
+expect = { type = 3, count = 5, opcode = 155 }
+
+[[words.PM4_TYPE3_HDR.tests]]
+value = 0xfffd1000
+expect = { type = 3, count = 16381, opcode = 16 }
+
+[constants]
+PM4_OPCODE_BITBLT_MULTI = { value = 0x9b, grade = "inferred" }
+PM4_OPCODE_CP_SET_SCISSORS = { value = 0x1e, grade = "inferred" }
+PM4_OPCODE_NOP = { value = 0x10, grade = "inferred" }
