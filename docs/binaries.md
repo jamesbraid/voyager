@@ -131,6 +131,14 @@ One entry per file in the install set, in the order of [the binaries table](inve
   The router check prints `check_router_cfg: nasid %d is_voyager %d check_cfg = %d`.
   **Inferred** that this is the IP35 PROM that builds the node and router configuration.
   It also adds a VGA graphics component to the hardware graph, and its `is_voyager` flag tests for the VOYAGER board tag.
+  **Established** (layout, read from the bytes): the file is a container.
+  A 64-bit word at 0x38 holds 0xd2, `JFKSWCSM` is at 0x40, `ip35prom` at 0x80, and a segment table at 0x90 names file offset 0x1000, physical address 0x1fc00000 and a length of 0x1686a8.
+  From 0x1000 to about 0x70000 the file is MIPS code (the reset code at file offset 0x1400), followed by strings to about 0x90000.
+  Bytes from 0x90000 are high-entropy, and a gzip stream (`1f 8b 08`) starts at 0x8cbb0.
+  It inflates to 1468990 bytes: a big-endian ELF64 MIPS image (entry 0xc000000013000140, one load segment at file offset 0 and virtual address 0xc000000013000000, file size 0x166a3e, memory size 0xa8a510) with no symbol table and section headers past the end of the stream.
+  That image is the PROM monitor and holds the graphics bring-up read in [kernel-attach.md](kernel-attach.md#the-ip35-proms-vga-bring-up-ip35promimg), among its command and diagnostic text.
+  The `init_klcfg_vgagfx` string above occurs twice: in the plain part of the file (offset 0x7f428) and in the inflated image (offset 0x1175c8).
+  No code reference to either copy was found with the address-building patterns the inflated image uses, so the code that adds the graphics component to the configuration table and prints that message is **unknown**.
 
 ## Host and board kernel objects
 
