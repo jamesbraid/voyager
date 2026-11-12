@@ -90,6 +90,8 @@ One row per register offset the code reaches, in a window of the config.
 | `evidence` | how the base was known: a constant address, a pointer field, a global, an argument, an accessor, `caller argument` (every call site passes the same window) or `callee return` (the callee always returns it) |
 | `example` | the first `binary:function` by name |
 
+An `access` of `packet` marks a register programmed through an R300 type-0 command-packet header the driver builds, not a direct store to the window; the header encoding follows Linux radeon's `r100d.h` and Mesa's `r300_reg.h`.
+
 ### tokens.tsv
 
 One row per command token or constant command word.

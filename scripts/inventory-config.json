@@ -2544,6 +2544,26 @@
       ]
     }
   ],
+  "packets": [
+    {
+      "label": "R300 PM4 type-0 header",
+      "window": "mmio",
+      "type": {"shift": 30, "mask": "0x3", "eq": 0},
+      "count": {"shift": 16, "mask": "0x3fff", "bias": 1},
+      "index": {"shift": 0, "mask": "0x1fff", "scale": 4},
+      "same_register": {"mask": "0x8000"},
+      "reserved": "0x6000",
+      "max_words": 64,
+      "registers": "spec",
+      "exclude_functions": [".*R[12]00.*"],
+      "max_displacement": 1024,
+      "binaries": [
+        "usr/X11R6/lib/modules/dri/*",
+        "usr/X11R6/lib/modules/drivers/fglrx_drv.so",
+        "usr/cpu/sysgen/IP35boot/fglrx.o"
+      ]
+    }
+  ],
   "scope": [
     {
       "binaries": [
