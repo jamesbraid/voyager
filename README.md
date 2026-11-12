@@ -32,6 +32,7 @@ Every tracked document at the top level and under `docs/`, grouped by subject.
 
 ### Registers and option ROMs
 
+- [gen/docs/display.md](gen/docs/display.md) — Reference page for the display, interrupt and engine layouts, generated from `defs/`.
 - [docs/registers.md](docs/registers.md) — Register accesses of the FireGL kernel object and X module.
 - [docs/amd-register-match.md](docs/amd-register-match.md) — Register offsets against AMD's published references.
 - [docs/option-roms.md](docs/option-roms.md) — The three video option ROM images, sg2, sg3 and sg3a.
@@ -87,6 +88,9 @@ There is no GL sample-implementation pipeline: the Onyx4 GL stack is ATI's drive
     root/                your copy of those files (ignored)
     r300_kernel/ libgl/ xserver/ dri/ gfxtools/ diags/ ucode/ firmware/
                          symlinks into root/ you make yourself (ignored)
+    defs/                register and packet layouts as TOML, the source of hardware facts ([AGENTS.md](AGENTS.md))
+    gen/                 generated from defs/ by retools/tools/defs/defs-gen, never edited; gen/docs/ holds the reference pages
+    VOYAGER_DECODE.h     forwarding header for the old macro names; new code includes gen/c/display.h
     docs/                open-questions.md, coverage.md, inventory/, sources/INDEX.md, chapters as they land
     scripts/             this workspace's inventory configuration and message-site extractors
     tools/               setup-clone.sh, the stub that fetches the shared tooling
