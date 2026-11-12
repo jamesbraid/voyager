@@ -165,3 +165,104 @@ The command-ring routines share three records. The control record, the first arg
   The section opens with a `break 6` word. Three five-word stubs follow, at 0x4013e4, 0x4013f8 and 0x40140c, each loading the resolver from the first GOT word (gp-32752, the start of the table at 0x4040f4), saving ra in t3, jumping through t9 and setting t8 in the delay slot to the dynamic symbol index: 0x52 for `xf86memset`, 0x53 for `xf86strncpy` and 0x54 for `xf86fprintf`. Those three symbols' `.dynsym` values point at the stubs. **Established.**
 - `setup` (`usr/X11R6/lib/modules/irix/libfglrxdrm.so`, 8 bytes at address 0x403e00): returns 1 and does nothing else.
   It is a `jr ra` with `li v0,1` in the delay slot (0x403e04), takes no argument and touches no memory. **Established.**
+
+## Ioctl request numbers and the kernel handlers they reach
+
+Each request below is the word a wrapper passes to `xf86ioctl`. The kernel module's dispatcher takes the command number from the low byte of that word and runs the handler in slot N of its table of 101 handlers, each 16 bytes, at `.data`+0x348 in usr/cpu/sysgen/IP35boot/fglrx.o (docs/kernel-drm-functions.md, `firegl_ioctl`). The slot's address is 0x348 plus 16 times N. A zero handler makes the dispatcher return -22.
+
+- `0x2000644d` is sent by `firegl_FlushCache`, a wrapper in usr/X11R6/lib/modules/irix/libfglrxdrm.so, with no payload (call at 0x4022a4).
+  Its low byte, 0x4d, is index 77, so the dispatcher runs slot 77 at +0x818.
+  That slot holds `firegl_flush_cache`, which calls `__ke_flush_cache` at 0x2032c (docs/routines/vfin-fglrxo-5.md). **Inferred.**
+- `0x20006461` is sent by `firegl_SyncDacs` in usr/X11R6/lib/modules/irix/libfglrxdrm.so, with no payload (call at 0x4030a4).
+  The low byte 0x61 gives index 97, the slot at +0x958 of the table in fglrx.o.
+  That handler, `firegl_sync_dacs`, restarts both display controllers together (docs/kernel-drm-functions.md). **Inferred.**
+- `0x20006464` is sent by `firegl_CPResume` in usr/X11R6/lib/modules/irix/libfglrxdrm.so, with no payload (call at 0x403224).
+  Index 100 comes from the low byte 0x64, and the slot is at +0x988 of the table in fglrx.o.
+  That handler, `firegl_cp_resume`, calls `__ke_get_file_priv` at 0x17cf0 and then an unnamed routine three times (docs/routines/vfin-fglrxo-1.md). What that routine does is unknown here.
+- `0x40046446` is the out-only request that `firegl_AllocMutex` sends from usr/X11R6/lib/modules/irix/libfglrxdrm.so (call at 0x401d6c).
+  The index is 70, from the low byte 0x46, and the slot sits at +0x7a8.
+  That handler, `firegl_alloc_mutex`, creates a mutex with `firegl_new_mutex` and copies its identifier back to the caller (docs/kernel-drm-functions.md). **Inferred.**
+- `0x40046457` is sent by `firegl_GetLockID` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  Its low byte 0x57 selects index 87, the slot at +0x8b8 of the table in fglrx.o.
+  That handler, `firegl_get_lockid`, finds the file's private record with `__ke_get_file_priv` at 0x174ac, reads the word at offset 28 of it and copies 4 bytes to the caller (docs/routines/vfin-fglrxo-0.md). **Inferred.**
+- `0x40046458` is sent by `firegl_SetCapIpcLock` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  Index 88 comes from the low byte 0x58, and the slot is at +0x8c8.
+  That handler, `firegl_set_cap_ipc_lock`, tests capability number 1 with `__ke_capable` at 0x2038c and raises it in the effective set with `__ke_cap_effective_raise` at 0x203f8 (docs/routines/vfin-fglrxo-0.md). Which branch leads to the raise is unknown. **Inferred.**
+- `0x80046447` is the in-only counterpart of `firegl_AllocMutex`, sent as `firegl_FreeMutex` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  The low byte 0x47 gives index 71, the slot at +0x7b8 of the table in fglrx.o.
+  That handler, `firegl_free_mutex`, removes a mutex identifier from the opening file's list and from the device's table (docs/kernel-drm-functions.md). **Inferred.**
+- `0x80046449` is sent by `firegl_UnregisterTexture` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  Index 73 comes from the low byte 0x49, and the slot is at +0x7d8 of the table in fglrx.o.
+  That handler, `firegl_unregister_texture`, removes one texture identifier from the device's list (docs/kernel-drm-functions.md). **Inferred.**
+- `0x8004644a` is sent by `firegl_EnableAuthentication` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  The low byte 0x4a gives index 74, the slot at +0x7e8.
+  That handler, `firegl_enable_auth`, reads a 4-byte status from user space and sets or clears an authentication flag in the device structure. It returns -14 when the copy fails and 0 otherwise (docs/kernel-drm-functions.md). **Inferred.**
+- `0x80046459` is sent by `firegl_RestoreCap` in usr/X11R6/lib/modules/irix/libfglrxdrm.so, the counterpart of `firegl_SetCapIpcLock`.
+  Index 89 comes from the low byte 0x59, and the slot sits at +0x8d8.
+  That handler, `firegl_restore_cap`, copies 4 bytes from the user pointer with `__ke_copy_from_user` at 0x20430. Only when that copy returns 0 does it set the effective capability set with `__ke_set_cap_effective` at 0x20464 (docs/routines/vfin-fglrxo-1.md). **Inferred.**
+- `0x8008642a` is sent by `firegl_LockHardware` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  The low byte 0x2a gives index 42, the slot at +0x5e8 of the table in fglrx.o.
+  That handler, `firegl_lock`, validates the requested context and takes the hardware lock for it through `firegl_lock_device` (docs/kernel-drm-functions.md). **Inferred.**
+- `0x8008642b` is sent by `firegl_UnlockHardware` in usr/X11R6/lib/modules/irix/libfglrxdrm.so, the release counterpart of the request above.
+  Index 43 comes from the low byte 0x2b, and the slot is at +0x5f8.
+  That handler, `firegl_unlock`, releases the hardware lock a context holds (docs/kernel-drm-functions.md). **Inferred.**
+- `0x80086448` is sent by `firegl_RegisterTexture` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  Its low byte 0x48 selects index 72, the slot at +0x7c8 of the table in fglrx.o.
+  That handler, `firegl_register_texture`, hands back the identifier of a dead texture record when one is waiting and otherwise registers a new one (docs/kernel-drm-functions.md). **Inferred.**
+- `0x80106460` is sent by `firegl_ModifyBuffer` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  The index is 96, from the low byte 0x60, and the slot sits at +0x948.
+  That handler, `firegl_modify_buf`, looks up one of the file's buffer queues by handle and passes the request's flag word to `modify_buffer` (docs/kernel-drm-functions.md). **Inferred.**
+- `0x8014644c` is sent by `firegl_UnlockPages` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  Index 76 follows from the low byte 0x4c, and the slot is at +0x808.
+  That handler, `firegl_unlock_memory`, releases a locked user-memory record and puts it back on the file's list when the release fails (docs/kernel-drm-functions.md). **Inferred.**
+- `0x80186441` is sent by `firegl_FreeBuffer` in usr/X11R6/lib/modules/irix/libfglrxdrm.so, which also has `firegl_FreeBufferAdvanced`.
+  The low byte 0x41 gives index 65, the slot at +0x758 of the table in fglrx.o.
+  That handler, `firegl_free_bufs`, releases the buffer queue a user handle names, or parks it on the device's dead list while it is still mapped (docs/kernel-drm-functions.md). **Inferred.**
+- `0x8018645b` is sent by `firegl_InitUMM` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  Index 91 comes from the low byte 0x5b, and the slot sits at +0x8f8.
+  That handler, `firegl_umm_init`, sets up the unified memory apertures that the driver hands out of the board's frame buffer (docs/kernel-drm-functions.md). **Inferred.**
+- `0x80206453` is sent by `firegl_InitCP` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  The low byte 0x53 gives index 83, the slot at +0x878.
+  That handler, `firegl_cp_init`, adopts three already-created memory maps, named by handle in a 32-byte argument, as the command-processor structures. It changes no chip register (docs/kernel-drm-functions.md). **Established.**
+- `0x8028644f` is sent by `firegl_RmMap` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  Index 79 follows from the low byte 0x4f, and the slot is at +0x838.
+  That handler, `drm_rmmap`, reads a 40-byte request and asks `firegl_rmmap` to remove the map that one of its fields names (docs/kernel-drm-functions.md). **Inferred.**
+- `0xc008645d` is sent by `firegl_InitIrq` in usr/X11R6/lib/modules/irix/libfglrxdrm.so, with a block the caller builds (call at 0x402324).
+  Its low byte 0x5d selects index 93, the slot at +0x918 of the table in fglrx.o.
+  That handler, `firegl_install_irq`, turns on the ATI layer's interrupt use. It calls `__ke_request_irq` and waits 200 ms between its two halves (docs/kernel-drm-functions.md). **Inferred.**
+- `0xc014644b` is sent by `firegl_LockPages` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  The index is 75, from the low byte 0x4b, and the slot sits at +0x7f8.
+  That handler, `firegl_lock_memory`, locks a range of user pages in memory and writes the physical address of each page back to the caller (docs/kernel-drm-functions.md). **Inferred.**
+- `0xc0186440` is sent by `firegl_AllocBuffer` in usr/X11R6/lib/modules/irix/libfglrxdrm.so, which also has `firegl_AllocBufferAtPhysicalAddress`.
+  Index 64 comes from the low byte 0x40, and the slot is at +0x748.
+  That handler, `firegl_alloc_bufs`, copies a 24-byte request in from user space, creates a buffer queue of the requested kind and returns the queue's mapping handle (docs/kernel-drm-functions.md). **Inferred.**
+- `0xc0206456` is sent by `firegl_GetMemInfo` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  The low byte 0x56 gives index 86, the slot at +0x8a8 of the table in fglrx.o.
+  That handler, `firegl_bufmeminfo`, returns the unified-memory free and total sizes to the caller (docs/kernel-drm-functions.md). **Inferred.**
+- `0xc0246450` is sent by `firegl_GetKernelInfo` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  The slot for index 80 (low byte 0x50) is at +0x848 of the table in fglrx.o, and it holds 0xff2c, the address of `firegl_kernel_info`.
+  That handler reports the running kernel's release string and a few build properties in a 40-byte request (docs/kernel-drm-functions.md). **Inferred.**
+- `0x80106451` is sent by `firegl_VerifyArea` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  Index 81 comes from the low byte 0x51. Its slot at +0x858 holds 0x10280, the address of `firegl_verify_area`.
+  That handler checks whether a user address range may be read or written, as the caller asks. It returns -14 for a failed copy and for any kind other than 0 or 1 (docs/kernel-drm-functions.md). **Inferred.**
+- `0x40106454` is sent by `firegl_QueryHwCaps` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  The low byte 0x54 selects index 84, and the slot at +0x888 holds 0x10184, the address of `firegl_query_hw_caps`.
+  That handler runs the workstation-board check on the device and copies 16 bytes of capability data out of the device structure. It returns 0, -19 or -14 (docs/kernel-drm-functions.md). **Inferred.**
+- `0x8004645a` is sent by `firegl_SetBlockMode` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  Index 90 comes from the low byte 0x5a. Its slot at +0x8e8 holds 0xfd40, the address of `firegl_set_block_mode`.
+  That handler stores the caller's block-mode word in the device record (docs/kernel-drm-functions.md). **Inferred.**
+- `0x80046462` is sent by `firegl_EnableStereo` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  The low byte 0x62 gives index 98. Its slot at +0x968 holds 0x11064, the address of `firegl_enable_stereo`.
+  That handler turns the board's stereo mode on or off for the opening file (docs/kernel-drm-functions.md). **Inferred.**
+- `0xc0106455` is sent by `firegl_modify_ldt` in usr/X11R6/lib/modules/irix/libfglrxdrm.so, which sends four words.
+  Index 85 comes from the low byte 0x55. Its slot at +0x898 holds 0x10278, a routine in fglrx.o that no kernel doc names.
+  What that routine does is unknown here, so its effect is not yet credited.
+- `0x400c6452` is sent by `firegl_GetAGPCapPtr` in usr/X11R6/lib/modules/irix/libfglrxdrm.so, with the same word as `firegl_GetAGPCommand` and `firegl_GetAGPStatus`.
+  The low byte 0x52 gives index 82, and the table slot at +0x868 holds no handler address.
+  A zero handler sends the dispatcher to its "no function" branch, which returns -22 (docs/kernel-drm-functions.md). **Established.**
+- `0x8000644e` is sent by `firegl_ModuleParm` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
+  Index 78 comes from the low byte 0x4e, and the slot at +0x828 holds no handler address, so the request returns -22 without reaching a handler. **Established.**
+- `0x80046463` is sent by `firegl_AGPAcquire` in usr/X11R6/lib/modules/irix/libfglrxdrm.so (call at 0x4031a8).
+  The low byte 0x63 selects index 99, and its slot at +0x978 holds no handler address, so the dispatcher returns -22. **Established.**
+- `0x80686445` is sent by `firegl_AgpLockPages` in usr/X11R6/lib/modules/irix/libfglrxdrm.so, with a 104-byte block (call at 0x401e64).
+  Index 69 comes from the low byte 0x45, and the slot at +0x798 holds no handler address, so the dispatcher returns -22. **Established.**
