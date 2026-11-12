@@ -94,9 +94,9 @@ end of the file).
   return value is the word at [a1+68] (0x4348a0).
 
 - `CMapAllocateColormapPrivate` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x435bc0
-  **Inferred.** Allocates a per-colormap private block. It reads the screen's entry count from
-  [[a0+12]+360] indexed by the word at 0x467ed0 (0x435be0 to 0x435bec), compares it with the
-  requested size (0x435bfc), and allocates with `Xalloc` (0x435c24, 0x435c4c, 0x435c88). It
+  **Inferred.** Allocates a per-colormap private block. It reads a word at +0x28 of the record
+  reached through [[a0+12]+360] indexed by the word at 0x467ed0 (0x435be0 to 0x435bec), compares it
+  with a value the render does not trace (0x435bfc), and allocates with `Xalloc` (0x435c24, 0x435c4c, 0x435c88). It
   stores the pointers into the colormap record at [a0+72] (0x435c74) and frees the first block
   with `Xfree` (0x435ccc) on the failure path. The return is 0 at 0x435c40 and 1 at 0x435cbc.
 

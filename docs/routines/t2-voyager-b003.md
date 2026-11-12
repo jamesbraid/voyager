@@ -57,7 +57,7 @@ Role statements for the 25 routines in batch 3 of the tier-2 reading round. Each
       **Inferred.** Calls `pciInit` at 0x1006df24 on first use, based on the flag loaded from 0x10240720 at 0x1006df54, then walks the buses up to `pciNumBuses` and makes an indirect call through `pciBusInfo` at 0x1006df74. It returns the callee's result or -0x1 when no bus matches at 0x1006df9c. The render shows no masking of the value it returns.
 
 - `pciReadWord` in `usr/X11R6/bin/XFree86` at 0x1006dfc0
-      **Inferred.** Checks that the offset is 2-byte aligned at 0x1006dfec and that the access size is 2 at 0x1006dff8, then reads a 32-bit value through `pciReadLong` at 0x1006e018. The branch fall-through leads to `FatalError` at 0x1006e004, which suggests a misaligned or wrong-size access is treated as fatal. The render does not show how the 16-bit field is extracted from the long.
+      **Inferred.** Tests the low two bits of the offset (a1 & 0x3) against 0 at 0x1006dfec and, with the same masked value, against 2 at 0x1006dff8, then reads a 32-bit value through `pciReadLong` at 0x1006e018 with a1 set to -4 at 0x1006e014. The fall-through of both branches leads to `FatalError` at 0x1006e004, which suggests a misaligned offset is treated as fatal. The render does not show how the 16-bit field is extracted from the long.
 
 - `pciReadByte` in `usr/X11R6/bin/XFree86` at 0x1006e080
       **Inferred.** A thin wrapper that calls `pciReadLong` at 0x1006e0a8 with its arguments and returns the value in v0 at 0x1006e0cc. The render shows no masking or shift of the result, so the byte selection, if any, is not visible in this routine.

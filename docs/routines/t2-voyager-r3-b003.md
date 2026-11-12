@@ -40,7 +40,7 @@ inferred.
 
 - `__glGenericPickCalcTextureProcs` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x5ae980
       **Inferred.** A 692-byte routine with 53 branches and no direct calls. It loads 8-byte values from the
-      absolute addresses 0xc32390 through 0xc323c8 and stores 20 values through pointers whose base the
+      absolute addresses 0xc32390 through 0xc323d0 and stores 20 values through pointers whose base the
       facts do not name. Its single return site gives 0x68a1f8 or an unknown value. The texture-calc name
       is from the symbol; the facts show table filling rather than any texture arithmetic.
 

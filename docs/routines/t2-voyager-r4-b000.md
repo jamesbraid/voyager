@@ -39,7 +39,7 @@ Role statements for the first 25 targets of the ranked list (offset 0). Each sta
   **Inferred.** A color-index shading span: it loads a word at a0+0x3f270 and two floats at a0+0x3f294 and a0+0x3f04c, and loops over the count at a0+258672. The loop is unrolled by eight (`andi` 0x7 test at 0x5b4080), and it returns 0 at 0x5b4150. The float loads suggest per-pixel increments, which the render does not name.
 
 - `__glShadeRGBASpan` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x5b4160
-  **Inferred.** The RGBA form: three float state words at a0+0x3f298 to a0+0x3f2a0 are loaded as per-span values, and the loop is driven by the count at a0+258672 (`blez` at 0x5b4198). Two conditional branches at 0x5b41a4 and 0x5b41d4 select the path, and it returns 0 at 0x5b4230.
+  **Inferred.** The RGBA form: four float state words at a0+0x3f294 to a0+0x3f2a0 are loaded as per-span values, and the loop is driven by the count at a0+258672 (`blez` at 0x5b4198). Two conditional branches at 0x5b41a4 and 0x5b41d4 select the path, and it returns 0 at 0x5b4230.
 
 - `__glShadeSpecularSpan` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x5b4240
   **Inferred.** The specular-color variant of the shade span: floats at a0+0x3f2d8 to a0+0x3f2e0 are loaded as per-span values, the count at a0+258672 controls the loop (`blez` at 0x5b4278), and the routine returns 0 at 0x5b4314. Its structure matches `__glShadeRGBASpan` at 0x5b4160.
@@ -48,7 +48,7 @@ Role statements for the first 25 targets of the ranked list (offset 0). Each sta
   **Inferred.** A span routine of about 1 KB that loads a count from a0+258672 and a float from a pointer chain at [a0+58144]+152, then branches on float compares (`c.lt.s` at 0x5b4448, `bc1f` at 0x5b446c). The compares look like a clamp of the color sum, but the render does not name the bounds. It returns 0 at 0x5b46f8.
 
 - `__glSetCubeMapCoords` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x5b4920
-  **Inferred.** Makes three float compares (`c.le.s` at 0x5b4928, 0x5b4940, 0x5b4958) on coordinate pairs, which fits a cube-map face choice, and writes results through two pointer arguments, a4 and a5, at +0x0. It loads the constants at 0xc3f3a8 and 0xc3f378 to compare against. The two returns at 0x5b4a2c and 0x5b4a58 pass back a value the render does not trace to a constant.
+  **Inferred.** Makes a series of float compares on coordinate pairs (`c.le.s` at 0x5b4928, 0x5b4940 and 0x5b4958 first, more from 0x5b4980, and a `c.eq.s` at 0x5b49e4), which fits a cube-map face choice, and writes results through two pointer arguments, a4 and a5, at +0x0. It loads the words at 0xc3f3a8 and 0xc3f378 (0x5b49ec, 0x5b49f8); the render does not show them as compare operands. The two returns at 0x5b4a2c and 0x5b4a58 pass back a value the render does not trace to a constant.
 
 - `__glILSpan` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x5b4fd0
   **Inferred.** An interpreted fragment path: it reads a float at a0+0x3f398 and integers at a0+0x3f380, a0+0x3f37c and a0+0x3f040, and calls `__glRunILFragmentShaderProgram` at 0x71be20 with a1 set to a 768-byte stack buffer and a2=1 (jalr at 0x5b539c). The count at a0+32548 controls the loop (`blez` at 0x5b5084). It returns 0 or 1 at 0x5b544c and 1 at 0x5b5488.

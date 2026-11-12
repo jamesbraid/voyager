@@ -7484,8 +7484,8 @@ usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x682480	68	glMapText
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x682500	68	glUnmapTexture3DATI	dwarf+dynsym	6ac0eb7887a3		out:10	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x682580	68	glNewTimestampATI	dwarf+dynsym	d2261c396859		out:10	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x682600	68	glDeleteTimestampATI	dwarf+dynsym	dad65d52647e		out:10	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x682680	68	glSendTimestampATI	dwarf+dynsym	8233283bb31f		out:10	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x682700	68	glWaitTimestampATI	dwarf+dynsym	e7e0d1214f6c		out:10	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x682680	68	glSendTimestampATI	dwarf+dynsym	8233283bb31f		out:10	named-only	docs/open-questions.md#command-processor-and-ring	Command processor and ring
+usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x682700	68	glWaitTimestampATI	dwarf+dynsym	e7e0d1214f6c		out:10	named-only	docs/open-questions.md#command-processor-and-ring	Command processor and ring
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x682780	68	glGenVisibilityQueriesATI	dwarf+dynsym	7f5a4bbf96ab		out:10	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x682800	68	glDeleteVisibilityQueriesATI	dwarf+dynsym	30423a3c0e7d		out:10	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri.so	board-x-module	n32		0x682880	68	glBeginDefineVisibilityQueryATI	dwarf+dynsym	985fa7d06dc7		out:10	undocumented		
@@ -20338,8 +20338,8 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6cc2a0	68	glMapTe
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6cc2f0	68	glUnmapTexture3DATI	dwarf+dynsym	f9640104a36e		out:10	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6cc340	68	glNewTimestampATI	dwarf+dynsym	df5eab730eb8		out:10	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6cc390	68	glDeleteTimestampATI	dwarf+dynsym	8611d8ce0a50		out:10	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6cc3e0	68	glSendTimestampATI	dwarf+dynsym	b6bd0a8e2e41		out:10	undocumented		
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6cc430	68	glWaitTimestampATI	dwarf+dynsym	78c240ef26af		out:10	undocumented		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6cc3e0	68	glSendTimestampATI	dwarf+dynsym	b6bd0a8e2e41		out:10	named-only	docs/open-questions.md#command-processor-and-ring	Command processor and ring
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6cc430	68	glWaitTimestampATI	dwarf+dynsym	78c240ef26af		out:10	named-only	docs/open-questions.md#command-processor-and-ring	Command processor and ring
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6cc480	68	glGenVisibilityQueriesATI	dwarf+dynsym	673c5b4b6ec3		out:10	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6cc4d0	68	glDeleteVisibilityQueriesATI	dwarf+dynsym	ddfed8b7ed6a		out:10	undocumented		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0x6cc520	68	glBeginDefineVisibilityQueryATI	dwarf+dynsym	f80f92c8cc38		out:10	undocumented		
@@ -26155,7 +26155,7 @@ usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb47f40	800	__R100
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb48280	1640	__R100UpdateObjectBuffer	dwarf+dynsym	543a7c861e04		in	named-only		
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0xb48900	140	__glATIQSTimeStampRetired	dwarf	982ec72886b1		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb48990	8	__glATIWaitTimeStamp	dwarf+dynsym	87506497337c		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb489a0	76	__glATIWaitForTimestamp	dwarf+dynsym	e7fd1ed01033		in	named-only		
+usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64		0xb489a0	76	__glATIWaitForTimestamp	dwarf+dynsym	e7fd1ed01033		in	named-only	docs/open-questions.md#command-processor-and-ring	Command processor and ring
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0xb489f0	156	ResetBufferManager	dwarf	d445d94e08a3		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0xb48a90	312	AllocIndirectBuffer	dwarf	eab338dbdd67		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/dri/fglrx_dri64.so	board-x-module	n64	.text	0xb48bd0	112	FreeIndirectBuffer	dwarf	b02f1649b04c		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
@@ -33771,8 +33771,8 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x67a480	68	gl
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x67a500	68	glUnmapTexture3DATI	dwarf+dynsym	0e6825578ae3		out:10	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x67a580	68	glNewTimestampATI	dwarf+dynsym	089a3e07213f		out:10	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x67a600	68	glDeleteTimestampATI	dwarf+dynsym	7a3ea6914d8f		out:10	undocumented		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x67a680	68	glSendTimestampATI	dwarf+dynsym	7194c2a4e3f2		out:10	undocumented		
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x67a700	68	glWaitTimestampATI	dwarf+dynsym	37f8d80c6bc6		out:10	undocumented		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x67a680	68	glSendTimestampATI	dwarf+dynsym	7194c2a4e3f2		out:10	named-only	docs/open-questions.md#command-processor-and-ring	Command processor and ring
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x67a700	68	glWaitTimestampATI	dwarf+dynsym	37f8d80c6bc6		out:10	named-only	docs/open-questions.md#command-processor-and-ring	Command processor and ring
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x67a780	68	glGenVisibilityQueriesATI	dwarf+dynsym	ba347272b9a1		out:10	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x67a800	68	glDeleteVisibilityQueriesATI	dwarf+dynsym	ef6d3d26e571		out:10	undocumented		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0x67a880	68	glBeginDefineVisibilityQueryATI	dwarf+dynsym	8abc9591e6e6		out:10	undocumented		
@@ -39591,7 +39591,7 @@ usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xab8a40	736	_
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xab8d40	1508	__R100UpdateObjectBuffer	dwarf+dynsym	ff1bfa01c50c		in	named-only		
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0xab9340	140	__glATIQSTimeStampRetired	dwarf+funcnames	de5997eb2059		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xab9400	8	__glATIWaitTimeStamp	dwarf+dynsym	87506497337c		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
-usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xab9440	72	__glATIWaitForTimestamp	dwarf+dynsym	6fff7e88c622		in	named-only		
+usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32		0xab9440	72	__glATIWaitForTimestamp	dwarf+dynsym	6fff7e88c622		in	named-only	docs/open-questions.md#command-processor-and-ring	Command processor and ring
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0xab94c0	144	ResetBufferManager	dwarf+funcnames	e6616d4cbb49		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0xab9580	308	AllocIndirectBuffer	dwarf+funcnames	c821573b0515		in	named-only	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
 usr/X11R6/lib/modules/extensions/fglrx_glx.so	board-x-module	n32	.text	0xab96c0	100	FreeIndirectBuffer	dwarf+funcnames	8e3f777abbe6		in	located	docs/instruction-readings-voyager-g1.md#instruction-readings-from-hostfacts	Instruction readings from hostfacts
@@ -47622,7 +47622,7 @@ usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1b8f0	8	firegl_aperture
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1b9b8	224	drm_order	dwarf+symtab	56d9817519dc		in	understood	docs/kernel-drm-functions.md#buffer-lock-release-name-and-area-ioctls-and-capability-query	Buffer-lock release, name and area ioctls, and capability query
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1ba98	212	drm_pages_from_order	dwarf+symtab	8f6eb1880f2c		in	understood	docs/kernel-drm-functions.md#file-lookup-drawable-removal-map-offsets-and-order-helpers	File lookup, drawable removal, map offsets and order helpers
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1bb6c	228	calc_offset	dwarf	8df741849b1b		in	understood	docs/kernel-drm-functions.md#buffer-lock-release-name-and-area-ioctls-and-capability-query	Buffer-lock release, name and area ioctls, and capability query
-usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1bc50	1684	firegl_addmap	dwarf+symtab	4fc2f33d8223		in	understood	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
+usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1bc50	1684	firegl_addmap	dwarf+symtab	4fc2f33d8223		in	located	docs/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1c2e4	980	firegl_rmmap	dwarf+symtab	e78050ac0e9c		in	understood	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1c6b8	1280	drm_addmap	dwarf+symtab	72c4b6eaac37		in	understood	docs/kernel-drm-functions.md#map-removal-context-creation-and-buffer-queues	Map removal, context creation and buffer queues
 usr/cpu/sysgen/IP35boot/fglrx.o	board-kernel	n64	.text	0x1cbb8	228	drm_rmmap	dwarf+symtab	3599fda124c7		in	understood	docs/kernel-drm-functions.md#buffer-lock-release-name-and-area-ioctls-and-capability-query	Buffer-lock release, name and area ioctls, and capability query

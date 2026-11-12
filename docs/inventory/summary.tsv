@@ -1,7 +1,7 @@
 table	rows	out_of_scope	understood	understood_with_open	understood_distinct	templated	located	named_only	undocumented	no_software_dependency	pct_understood	pct_located_or_better	pct_mentioned	pct_done	unresolved_sites	truncated	audited_real_pct	audited_sample	audited_date	computes	reused	multi_unit	shared_address	address_unknown	input
-binaries	84	0	83	0	81	0	0	0	1	0	98.8	98.8	98.8	98.8							0				
-functions	28840	38510	1724	122	1616	14563	14570	12546	0	0	6.0	56.5	100.0	6.0			100.0	1	2026-11-02		0	519	17	0	
-functions (distinct names)	12895	17321	1475	118	1462	11420	11420	0	0	0	11.4	100.0	100.0	11.4							0				
+binaries	84	0	83	1	81	0	0	0	1	0	98.8	98.8	98.8	98.8							0				
+functions	28840	38510	1723	121	1615	14563	14571	12546	0	0	6.0	56.5	100.0	6.0			100.0	1	2026-11-02		0	519	17	0	
+functions (distinct names)	12895	17321	1474	117	1461	11420	11421	0	0	0	11.4	100.0	100.0	11.4							0				
 mmio	440	0	182	2	179	0	64	192	2	0	41.4	55.9	99.5	41.4	37		86.7	15	2026-11-02		0				
 tokens	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0				
 ioctls	75	0	73	2	72	0	2	0	0	0	97.3	100.0	100.0	97.3							0				
@@ -26,7 +26,7 @@ functions in usr/X11R6/lib/modules/libint10.so	78	404	19	0	17	16	16	43	0	0	24.4	
 functions in usr/X11R6/lib/modules/libpcidata.so	1	0	1	0	1	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	0	
 functions in usr/X11R6/lib/modules/libscanpci.so	5	0	5	1	5	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	0	
 functions in usr/X11R6/lib/modules/libvbe.so	21	0	21	0	21	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	0	
-functions in usr/cpu/sysgen/IP35boot/fglrx.o	384	0	341	21	335	43	43	0	0	0	88.8	100.0	100.0	88.8							0	4	10	0	
+functions in usr/cpu/sysgen/IP35boot/fglrx.o	384	0	340	20	334	43	44	0	0	0	88.5	100.0	100.0	88.5							0	4	10	0	
 functions in usr/cpu/sysgen/IP35boot/hubspc.o	13	0	13	3	13	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	0	
 functions in usr/cpu/sysgen/IP35boot/is1.o	54	0	54	1	54	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	0	
 functions in usr/cpu/sysgen/IP35boot/kernel.o	161	1157	6	0	6	155	155	0	0	0	3.7	100.0	100.0	3.7							0	0	7	0	
