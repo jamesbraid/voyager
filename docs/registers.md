@@ -1599,3 +1599,264 @@ Four values that this page already records are decoded by the header and checked
   `miRegionBreak`, 0x43d100 in `FIREGL_OverlayCollectUnderlayRegions` and 0x43f4c0 in `QBS_EnableStereo`.
 
 Everything this page leaves open is in [open-questions.md](open-questions.md), under "Register accesses".
+
+## Specification registers of the R3xx 3D block
+
+These are the 207 registers of the R3xx 3D block listed in the AMD *Radeon R3xx 3D Register Reference Guide*,
+revision 1.0 (25 February 2008, the document named in [sources/INDEX.md](sources/INDEX.md)). The table in
+[inventory/spec-registers.tsv](inventory/spec-registers.tsv) takes its rows from that guide's register headers
+(the `scripts/inventory-config.json` `spec_registers` block), so the names and page numbers here are the guide's.
+The field layouts come from the guide's field tables, read from its text layer; the guide's page numbers are the
+printed ones.
+
+Each entry gives the register's role and its fields in the guide's bit ranges. `r300_reg.h` is the Linux radeon
+header at the pin in [sources/INDEX.md](sources/INDEX.md) (`linux/`, commit d89e1d18), read from the upstream file
+at that commit. Where that header names the same offset with a different register, the entry says so, and the
+guide's name is the one used. Where the header has no name for an offset, the entry says so too.
+
+A register whose guide entry gives only a 32-bit data field, with no meaning beyond the name, is marked unknown in
+its entry. No public source here describes what those registers hold. Settling them needs a fuller reference for
+this chip or a test on the chip itself; the guide and the Linux header give no more.
+
+The roles here are the guide's and the Linux header's. The voyager driver and kernel object are not a source for
+these entries.
+
+### Colour buffer (CB)
+
+- **0x4e00** `RB3D_CCTL` (R3xx p. 12): unpipelined control. `NUM_MULTIWRITES` in bits 6:5 replicates a quad to one, two or three buffers, `CLRCMP_FLIPE_ENABLE` in bit 7 turns on the flipped colour compare so 3D data is not keyed away, `AA_COMPRESSION_ENABLE` in bit 9 enables antialias colour compression, and bit 10 is reserved and written as zero. Established. Linux has no name at this offset.
+- **0x4e04** `RB3D_BLENDCNTL` (R3xx p. 8; `r300_reg.h` `R300_RB3D_CBLEND`): colour blend control. `ALPHA_BLEND_ENABLE` is bit 0, `SEPARATE_ALPHA_ENABLE` bit 1 selects `RB3D_ABLENDCNTL` for alpha, `READ_ENABLE` bit 2 (default 1) lets blending read the destination, `DISCARD_SRC_PIXELS` bits 5:3 drops pixels on source alpha or colour zero or one, `COMB_FCN` bits 14:12, `SRCBLEND` bits 21:16, `DESTBLEND` bits 29:24. Established.
+- **0x4e08** `RB3D_ABLENDCNTL` (R3xx p. 5; `r300_reg.h` `R300_RB3D_ABLEND`): the same blend-function fields for the alpha channel, `COMB_FCN` in bits 14:12, `SRCBLEND` in 21:16 and `DESTBLEND` in 29:24, used when bit 1 of `RB3D_BLENDCNTL` is set. Established.
+- **0x4e0c** `RB3D_COLOR_CHANNEL_MASK` (R3xx p. 14; `r300_reg.h` `R300_RB3D_COLORMASK`): one write enable per channel, blue in bit 0, green bit 1, red bit 2 and alpha bit 3, all defaulting to 1. With every channel of the current format off, the colour buffer discards every quad. Established.
+- **0x4e10** `RB3D_CONSTANT_COLOR` (R3xx p. 15; `r300_reg.h` `R300_RB3D_BLEND_COLOR`): the constant colour the blender uses, one byte each: blue in 7:0, green 15:8, red 23:16 and alpha 31:24. Established.
+- **0x4e14** `RB3D_COLOR_CLEAR_VALUE` (R3xx p. 15): the clear colour written when the colour mask is zero, in the same byte order as the constant colour (blue 7:0 through alpha 31:24). Established.
+- **0x4e18** `RB3D_ROPCNTL` (R3xx p. 16; `r300_reg.h` none): `ROP_ENABLE` is bit 2, and with it clear the ROP is forced to code 0xC (plain copy). `ROP` in bits 11:8 is the GDI ROP2 code, replicated into two nibbles to make the ROP3 code. Established.
+- **0x4e1c** `RB3D_CLRCMP_FLIPE` (R3xx p. 13): the flipped colour-compare value, all 32 bits. It is the 3D copy of the 2D register, so 2D and 3D compare state stay apart. Established.
+- **0x4e20** `RB3D_CLRCMP_CLR` (R3xx p. 12): the colour-compare colour, all 32 bits, separate from `RB2D_CLRCMP_CLR`. Established.
+- **0x4e24** `RB3D_CLRCMP_MSK` (R3xx p. 13): the colour-compare mask, all 32 bits, separate from the 2D mask. Established.
+- **0x4e28** `RB3D_COLOROFFSET[0-3]` (R3xx p. 13; `r300_reg.h` `R300_RB3D_COLOROFFSET0`): base address of each of four multibuffer targets, bits 31:5, 256-bit aligned. The cache must be empty before a change. Established.
+- **0x4e38** `RB3D_COLORPITCH[0-3]` (R3xx p. 13; `r300_reg.h` `R300_RB3D_COLORPITCH0`): pitch of target 0 in bits 13:1 (units of two pixels), `COLORTILE` bit 16 for macro tiling, `COLORMICROTILE` bits 18:17, `COLORENDIAN` bits 20:19 (none, word or dword swap) and `COLORFORMAT` bits 24:21, default 6. Established.
+- **0x4e4c** `RB3D_DSTCACHE_CTLSTAT` (R3xx p. 15): `DC_FLUSH` bits 1:0 writes dirty 3D data out (value 2), `DC_FREE` bits 3:2 invalidates the tags (value 2), and `DC_FINISH` bit 4 sends a finish signal to the command processor after the operation. Established.
+- **0x4e50** `RB3D_DITHER_CTL` (R3xx p. 15): `DITHER_MODE` in bits 1:0 selects truncate, round or lookup-table dither for colour, and `ALPHA_DITHER_MODE` in bits 3:2 uses the same three codes for alpha. Established.
+- **0x4e80** `RB3D_AARESOLVE_OFFSET` (R3xx p. 5; `r300_reg.h` `R300_RB3D_AARESOLVE_OFFSET`): the resolve destination address, bits 31:5, 256-bit aligned. Established.
+- **0x4e84** `RB3D_AARESOLVE_PITCH` (R3xx p. 5; `r300_reg.h` `R300_RB3D_AARESOLVE_PITCH`): the resolve destination pitch in bits 13:1, in units of two pixels, with its tiling control. Established.
+- **0x4e88** `RB3D_AARESOLVE_CTL` (R3xx p. 5; `r300_reg.h` `R300_RB3D_AARESOLVE_CTL`): `AARESOLVE_MODE` bit 0 switches the buffer to resolve (1) or normal (0) operation, and `AARESOLVE_GAMMA` bit 1 selects a 1.0 or 2.2 gamma for the samples before and after filtering. Established.
+
+### Fog and fragment-stage fog (FG)
+
+- **0x4bc0** `FG_FOG_BLEND` (R3xx p. 18; `r300_reg.h` `R300_RE_FOG_STATE`): `ENABLE` is bit 0 (0 passes the input colour through), and `FN` bits 2:1 selects linear, exponential or exponential-squared fog. Established.
+- **0x4bc4** `FG_FOG_FACTOR` (R3xx p. 18): a constant fog factor, `FACTOR` in bits 9:0 in a (0.9) fixed-point format. Established.
+- **0x4bc8** `FG_FOG_COLOR_R` (R3xx p. 18; `r300_reg.h` `R300_FOG_COLOR_R`): the red component of the fog colour, bits 9:0, (0.9) fixed point. Established.
+- **0x4bcc** `FG_FOG_COLOR_G` (R3xx p. 18; `r300_reg.h` `R300_FOG_COLOR_G`): the green component of the fog colour, bits 9:0, (0.9) fixed point. Established.
+- **0x4bd0** `FG_FOG_COLOR_B` (R3xx p. 18; `r300_reg.h` `R300_FOG_COLOR_B`): the blue component of the fog colour, bits 9:0, (0.9) fixed point. Established.
+- **0x4bd4** `FG_ALPHA_FUNC` (R3xx p. 17; `r300_reg.h` `R300_PP_ALPHA_TEST`): the alpha test. `AF_VAL` bits 7:0 is the reference value, `AF_FUNC` bits 10:8 the compare (0 never, 1 less, 2 equal and so on), `AF_EN` bit 11 turns the test on, `AM_EN` bit 16 turns alpha-to-mask on, `AM_CFG` bit 17 picks 2 or 4 subsamples (0) or 3 or 6 (1), and `DITH_EN` bit 20 enables RGB dithering. Established.
+- **0x4bd8** `FG_DEPTH_SRC` (R3xx p. 17): `DEPTH_SRC` bit 0 chooses where depth comes from, the scan converter's plane equation (0) or the shader's four discrete values (1). Established.
+
+### Geometry assembly (GA)
+
+- **0x4200** `GA_POINT_S0` (R3xx p. 22): the S texture coordinate of vertex 0 of a point, a 32-bit IEEE float, used for point texture stuffing. Established.
+- **0x4204** `GA_POINT_T0` (R3xx p. 22): the T texture coordinate of vertex 0 of a point, a 32-bit IEEE float, for the same point stuffing. Established.
+- **0x4208** `GA_POINT_S1` (R3xx p. 22): the S texture coordinate of vertex 2 of the point quad (the guide's URC corner), a 32-bit float. Established.
+- **0x420c** `GA_POINT_T1` (R3xx p. 23): the T texture coordinate of that same vertex 2 of the point quad, a 32-bit float. Established.
+- **0x4214** `GA_TRIANGLE_STIPPLE` (R3xx p. 24): `X_SHIFT` in bits 3:0 and `Y_SHIFT` in bits 19:16 shift the integer vertex position before it is turned into a float for triangle stipple. Established.
+- **0x421c** `GA_POINT_SIZE` (R3xx p. 22; `r300_reg.h` `R300_RE_POINTSIZE`): the point size, with `HEIGHT` in bits 15:0 and `WIDTH` in bits 31:16, each a half-size in 16.0 subpixel format. Established.
+- **0x4230** `GA_POINT_MINMAX` (R3xx p. 22): the smallest and largest point or sprite radius allowed for per-vertex sizes, `MIN_SIZE` in bits 15:0 and `MAX_SIZE` in bits 31:16, both in subsamples. Established.
+- **0x4234** `GA_LINE_CNTL` (R3xx p. 20; `r300_reg.h` `R300_RE_LINE_CNT`): the line half-width in bits 15:0 (16.0 subpixels) and `END_TYPE` in bits 17:16, which draws line ends horizontal (0), vertical (1) or square (2). Established.
+- **0x4238** `GA_LINE_STIPPLE_CONFIG` (R3xx p. 21; `r300_reg.h` `R300_RE_UNK4238`, an unnamed entry there): `LINE_RESET` in bits 1:0 resets the stipple accumulator never (0), per line (1) or per packet (2), and `STIPPLE_SCALE` in bits 31:2 is a truncated 30-bit float that scales the generated texture coordinates. Established.
+- **0x4260** `GA_LINE_STIPPLE_VALUE` (R3xx p. 21): the current stipple accumulator, a 24-bit integer counting subpixels; the upper eight bits of the 32-bit field are not used. Established.
+- **0x4264** `GA_LINE_S0` (R3xx p. 21): the S texture coordinate generated at vertex 0 of an antialiased line, a 32-bit float, typically 0.0. Established.
+- **0x4268** `GA_LINE_S1` (R3xx p. 21): the S texture coordinate generated at vertex 1 of an antialiased line, a 32-bit float, typically 1.0. Established.
+- **0x4274** `GA_ENHANCE` (R3xx p. 20; `r300_reg.h` `R300_RE_SHADE`, a different name at this offset): `DEADLOCK_CNTL` bit 0 stops the TCL and GA units deadlocking on each other, and `FASTSYNC_CNTL` bit 1 enables fast register and primitive switching. Established.
+- **0x4278** `GA_COLOR_CONTROL` (R3xx p. 19; `r300_reg.h` `R300_RE_SHADE_MODEL`): one two-bit shading mode per colour component (solid 0, flat 1, Gouraud 2) for RGB0 to RGB3 and ALPHA0 to ALPHA3 across bits 15:0, and `PROVOKING_VERTEX` in bits 17:16 picks the vertex whose colour a flat triangle uses (first, second or third). Established.
+- **0x427c** `GA_SOLID_RG` (R3xx p. 24): the fill colour's red component in bits 31:16 and green in bits 15:0, each in S3.12 format. Established.
+- **0x4280** `GA_SOLID_BA` (R3xx p. 24): the fill colour's blue component in bits 31:16 and alpha in bits 15:0, each in S3.12 format. Established.
+- **0x4288** `GA_POLY_MODE` (R3xx p. 23; `r300_reg.h` `R300_RE_POLYGON_MODE`): `POLY_MODE` in bits 1:0 turns polygon mode off (0, draw triangles) or on as dual mode (1), `FRONT_PTYPE` in bits 6:4 draws front faces as points, lines or triangles, and `BACK_PTYPE` in bits 9:7 does the same for back faces. Established.
+- **0x428c** `GA_ROUND_MODE` (R3xx p. 23): `GEOMETRY_ROUND` in bits 1:0 and `COLOR_ROUND` in bits 3:2 each choose truncation (0) or round to nearest (1) for the float conversion, `RGB_CLAMP` bit 4 clamps colour to [0, 1] or [-8, 8], and `ALPHA_CLAMP` bit 5 does the same for alpha. Established.
+- **0x4290** `GA_OFFSET` (R3xx p. 22): the vertex offsets added after conversion to float, `X_OFFSET` in bits 15:0 and `Y_OFFSET` in bits 31:16, both in S15 subpixel format. Established.
+- **0x4294** `GA_FOG_SCALE` (R3xx p. 20; `r300_reg.h` `R300_RE_FOG_SCALE`): the fog scale, a 32-bit single-precision float in `VALUE`. Established.
+- **0x4298** `GA_FOG_OFFSET` (R3xx p. 20; `r300_reg.h` `R300_RE_FOG_START`, which names it a fog start): the fog offset, a 32-bit single-precision float in `VALUE`. The guide's name is used here. Established.
+- **0x429c** `GA_SOFT_RESET` (R3xx p. 24; `r300_reg.h` none): `SOFT_RESET_COUNT` in bits 15:0 sets the number of cycles reset is held (default 256), and writing it also asserts the RB3D soft reset. Established.
+
+### Graphics backend (GB)
+
+- **0x4008** `GB_ENABLE` (R3xx p. 25; `r300_reg.h` `R300_GB_ENABLE`): point, line and triangle texture stuffing are bits 0, 1 and 2. `STENCIL_AUTO` in bits 5:4 turns the automatic stencil increment and decrement off (0), on by winding (1) or forces a zero into the depth low bit (2). `TEX0_SOURCE` to `TEX7_SOURCE` are two-bit fields from bits 17:16 to 31:30, each choosing to copy the VAP coordinates (0), stuff S and T (1) or stuff S, T and R (2). Established.
+- **0x4010** `GB_MSPOS0` (R3xx p. 28; `r300_reg.h` `R300_GB_MSPOS0`): the x and y subpixel positions of multisamples 0 to 2 as four-bit fields, and `MSBD0_Y` (27:24) and `MSBD0_X` (31:28) give the minimum distance from the pixel edge to the multisample bounding box, used by the tile scan converter. A stored 8 for `MSBD0_X` is coded as 7 with bit 3 set to force a bounding-box scan. Established.
+- **0x4014** `GB_MSPOS1` (R3xx p. 29; `r300_reg.h` `R300_GB_MSPOS1`): the same subpixel positions for multisamples 3 to 5, and `MSBD1` in bits 27:24, the bounding-box distance that the quad scan converter uses. Established.
+- **0x4018** `GB_TILE_CONFIG` (R3xx p. 30; `r300_reg.h` `R300_GB_TILE_CONFIG`): `ENABLE` bit 0 turns tiling on, `PIPE_COUNT` in bits 3:1 gives the active pipes (3 for R300, 0 for RV350), `TILE_SIZE` in bits 5:4 is the square tile width (1 is 16 pixels), `SUPER_SIZE` bits 8:6, `SUPER_X` bits 11:9, `SUPER_Y` bits 14:12 and `SUPER_TILE` bit 15 place the chip in a multi-chip super tile, and `SUBPIXEL` bit 16 selects 1/12 or 1/16 subpixel precision. Established.
+- **0x401c** `GB_SELECT` (R3xx p. 29; `r300_reg.h` `R300_GB_SELECT`): `FOG_SELECT` bits 2:0 picks which colour-attribute slot (C0A, C1A or C2A) feeds fog, `DEPTH_SELECT` bit 3 picks Z (0) or 1/(1/W) (1) as the depth sent on, and `W_SELECT` bit 4 picks 1/W (0) or 1.0 (1), which turns perspective correction off for colour and texture. Established.
+- **0x4020** `GB_AA_CONFIG` (R3xx p. 25; `r300_reg.h` `R300_GB_AA_CONFIG`): `AA_ENABLE` is bit 0 and `NUM_AA_SUBSAMPLES` bits 2:1 picks 2, 3 or 4 subsamples. Established.
+- **0x4024** `GB_FIFO_SIZE` (R3xx p. 27; `r300_reg.h` `R300_GB_FIFO_SIZE`): the sizes of the scan converter, rasterizer and shader FIFOs in two-bit fields from bit 1:0 up to 15:14, then the high-water marks `RS_HIGHWATER_COL` (18:16), `RS_HIGHWATER_TEX` (21:19), `US_OFIFO_HIGHWATER` (23:22) and `US_CUBE_FIFO_HIGHWATER` (27:24). The guide says this register must be written first. Established.
+
+### Rasterizer (RS)
+
+- **0x4300** `RS_COUNT` (R3xx p. 32; `r300_reg.h` `R300_RS_CNTL_0`): the layout of the rasterizer input packet: `IT_COUNT` bits 6:0 counts texture address components (0 to 32), `IC_COUNT` bits 10:7 counts colours (0 to 4), `W_COUNT` bit 11 says whether a w value is present, `W_ADDR` bits 17:12 locates it in the packet, and `HIRES_EN` bit 18 enables high-resolution texture coordinates when q is 1. Established.
+- **0x4304** `RS_INST_COUNT` (R3xx p. 33; `r300_reg.h` `R300_RS_CNTL_1`): `INST_COUNT` bits 3:0 is the number of rasterizer instructions (1 to 16), `W_EN` bit 4 asks the rasterizer to generate w, and `TX_OFFSET` bits 7:5 sets the texture coordinate offset (0.0, range/8K or range/16K) that removes periodic errors on texel edges. Established.
+- **0x4310** `RS_IP_[0-7]` (R3xx p. 33; `r300_reg.h` `R300_RS_INTERP_0`): one interpolation entry per texture address i[0] to i[7] and colour c[0] to c[3]. `TEX_PTR` bits 5:0 locates the texture address in the input packet, `COL_PTR` bits 8:6 locates the colour, `COL_FMT` bits 12:9 picks RGBA, RGB with alpha 0 or RGB with alpha 1, and `SEL_S`, `SEL_T`, `SEL_R` and `SEL_Q` (bits 15:13 to 24:22) pick which colour component feeds each texture coordinate. Established.
+- **0x4330** `RS_INST_[0-15]` (R3xx p. 32; `r300_reg.h` `R300_RS_ROUTE_0`): one routing instruction per row. `TEX_ID` bits 2:0 indexes the interpolation table for the texture address, `TEX_CN` bits 5:3 is the write enable, `TEX_ADDR` bits 10:6 is the destination in the pixel stack frame, `COL_ID`, `COL_CN` and `COL_ADDR` (bits 13:11, 16:14 and 21:17) do the same for colour, `TEX_ADJ` bit 22 samples texture coordinates at real or adjusted pixel centres, and bits 24:23 are unused. Established.
+
+### Scan converter and clipping (SC)
+
+- **0x43a4** `SC_HYPERZ_EN` (R3xx p. 41; `r300_reg.h` `R300_SC_HYPERZ`): hierarchical Z. `HZ_EN` is bit 0, `HZ_MAX` bit 1 chooses the minimum or maximum Z to compute, `HZ_ADJ` bits 4:2 is the adjustment added to or subtracted from that value, and `HZ_Z0MIN` and `HZ_Z0MAX` (bits 5 and 6) say whether vertex 0's Z is the minimum or the maximum. Established.
+- **0x43a8** `SC_EDGERULE` (R3xx p. 36; `r300_reg.h` `R300_SC_EDGERULE`): six five-bit fields that decide what happens when an edge falls exactly on a sample point, one each for triangles (`ER_TRI`, bits 4:0), points (`ER_POINT`, 9:5), left-to-right lines (`ER_LINE_LR`, 14:10), right-to-left lines (`ER_LINE_RL`, 19:15), top-to-bottom lines (`ER_LINE_TB`, 24:20) and bottom-to-top lines (`ER_LINE_BT`, 29:25). Established.
+- **0x43b0** `SC_CLIP_0_A` (R3xx p. 35; `r300_reg.h` `R300_RE_CLIPRECT_TL_0`): the top-left corner of OpenGL clip rectangle 0, `XS0` as the left edge in bits 12:0 and `YS0` as the top edge in bits 25:13. Established.
+- **0x43b4** `SC_CLIP_0_B` (R3xx p. 35; `r300_reg.h` `R300_RE_CLIPRECT_BR_0`): the bottom-right corner of clip rectangle 0, `XS1` as the right edge in bits 12:0 and `YS1` as the bottom edge in bits 25:13. Established.
+- **0x43b8** `SC_CLIP_1_A` (R3xx p. 35; `r300_reg.h` `R300_RE_CLIPRECT_TL_1`): the top-left corner of clip rectangle 1, with the same `XS0` and `YS0` fields as rectangle 0. Established.
+- **0x43bc** `SC_CLIP_1_B` (R3xx p. 35; `r300_reg.h` `R300_RE_CLIPRECT_BR_1`): the bottom-right corner of clip rectangle 1, with the same `XS1` and `YS1` fields. Established.
+- **0x43c0** `SC_CLIP_2_A` (R3xx p. 35; `r300_reg.h` `R300_RE_CLIPRECT_TL_2`): the top-left corner of clip rectangle 2, with the same two fields. Established.
+- **0x43c4** `SC_CLIP_2_B` (R3xx p. 35; `r300_reg.h` `R300_RE_CLIPRECT_BR_2`): the bottom-right corner of clip rectangle 2, with the same two fields. Established.
+- **0x43c8** `SC_CLIP_3_A` (R3xx p. 35; `r300_reg.h` `R300_RE_CLIPRECT_TL_3`): the top-left corner of clip rectangle 3, with the same two fields. Established.
+- **0x43cc** `SC_CLIP_3_B` (R3xx p. 36; `r300_reg.h` `R300_RE_CLIPRECT_BR_3`): the bottom-right corner of clip rectangle 3, with the same two fields. Established.
+- **0x43d0** `SC_CLIP_RULE` (R3xx p. 36; `r300_reg.h` `R300_RE_CLIPRECT_CNTL`): `CLIP_RULE` in bits 15:0 is a 16-entry boolean table indexed by the four inside flags of the four clip rectangles, which form a four-bit index. Established.
+- **0x43e0** `SC_SCISSOR0` (R3xx p. 42; `r300_reg.h` `R300_RE_SCISSORS_TL`): the top-left corner of the scissor rectangle, `XS0` the left edge in bits 12:0 and `YS0` the top edge in bits 25:13. Established.
+- **0x43e4** `SC_SCISSOR1` (R3xx p. 42; `r300_reg.h` `R300_RE_SCISSORS_BR`): the bottom-right corner of the scissor rectangle, `XS1` the right edge in bits 12:0 and `YS1` the bottom edge in bits 25:13. Established.
+- **0x43e8** `SC_SCREENDOOR` (R3xx p. 42): a 24-bit screen-door sample mask in bits 23:0, where a set bit lets the sample be covered and a clear bit leaves it uncovered. Established.
+
+### Texture units (TX)
+
+- **0x4100** `TX_INVALTAGS` (R3xx p. 56; `r300_reg.h` `R300_TX_INVALTAGS`): writing this register invalidates the texture cache tags. Its only field is `RESERVED` in bits 31:0, so the value written does not matter. Established.
+- **0x4104** `TX_ENABLE` (R3xx p. 48; `r300_reg.h` `R300_TX_ENABLE`): one enable bit per texture map, `TEX_0_ENABLE` in bit 0 through `TEX_15_ENABLE` in bit 15. Established.
+- **0x4400** `TX_FILTER0_[0-15]` (R3xx p. 50; `r300_reg.h` `R300_TX_FILTER_0`): per-map sampling state for maps 0 to 15: `CLAMP_S`, `CLAMP_T` and `CLAMP_R` (bits 2:0, 5:3, 8:6), `MAG_FILTER` 10:9, `MIN_FILTER` 12:11, `MIP_FILTER` 14:13, `VOL_FILTER` 16:15, `MAX_MIP_LEVEL` 20:17 (the finest mip level used) and `ID` 31:28, the logical id of the physical map. Established.
+- **0x4440** `TX_FILTER1_[0-15]` (R3xx p. 51; `r300_reg.h` `R300_TX_FILTER1_0`): `CHROMA_KEY_MODE` bits 1:0, `MC_ROUND` bit 2 (bilinear rounding), `LOD_BIAS` bits 12:3 (a signed s4.5 mipmap bias from -16.0 to 15.99), and `MC_COORD_TRUNCATE` bit 14 (MPEG coordinate truncation). Established.
+- **0x4480** `TX_FORMAT0_[0-15]` (R3xx p. 52; `r300_reg.h` `R300_TX_SIZE_0`): the map's size: `TXWIDTH` bits 10:0 and `TXHEIGHT` bits 21:11, each stored as size minus one and at most 2048 texels, `TXDEPTH` bits 25:22 as log2 of the depth of a volume, `NUM_LEVELS` bits 29:26 as the mip count minus one, `PROJECTED` bit 30, and `TXPITCH_EN` bit 31, which makes the pitch register used for addressing. Established.
+- **0x44c0** `TX_FORMAT1_[0-15]` (R3xx p. 52; `r300_reg.h` `R300_TX_FORMAT_0`): `TXFORMAT` bits 4:0 is the texel format, `SIGNED_COMP0` to `SIGNED_COMP3` (bits 5 to 8) say whether each component is signed, `SEL_ALPHA`, `SEL_RED`, `SEL_GREEN` and `SEL_BLUE` (bits 11:9 to 20:18) swizzle the channels into the shader, `GAMMA` bit 21 removes gamma, `YUV_TO_RGB` bits 23:22 picks the conversion, `SWAP_YUV` bit 24 swaps U and V, `TEX_COORD_TYPE` bits 26:25 picks the coordinate type, and `CACHE` bits 31:27 assigns the map to a cache region. Established.
+- **0x4500** `TX_FORMAT2_[0-15]` (R3xx p. 56; `r300_reg.h` `R300_TX_PITCH_0`): `TXPITCH` in bits 13:0, the pitch used in place of `TXWIDTH` for addressing when `TXPITCH_EN` is set. Established.
+- **0x4540** `TX_OFFSET_[0-15]` (R3xx p. 56; `r300_reg.h` `R300_TX_OFFSET_0`): `ENDIAN_SWAP` bits 1:0, `MACRO_TILE` bit 2, `MICRO_TILE` bits 4:3, and `TXOFFSET` bits 31:5, the base address of the map as a 32-byte aligned pointer. Established.
+- **0x4580** `TX_CHROMA_KEY_[0-15]` (R3xx p. 48; `r300_reg.h` `R300_TX_CHROMA_KEY_0`): the colour the chroma key compares against, in the map's own texel format, 32 bits. Established.
+- **0x45c0** `TX_BORDER_COLOR_[0-15]` (R3xx p. 48; `r300_reg.h` `R300_TX_BORDER_COLOR_0`): the border colour for clamped samples, 32 bits in the map's texel format. Established.
+
+### Fragment shader (US)
+
+- **0x4600** `US_CONFIG` (R3xx p. 66; `r300_reg.h` `R300_PFS_CNTL_0`, and `R500_US_CONFIG` for the later chip): `NLEVEL` bits 2:0 is the number of valid indirection levels, and `FIRST_TEX` bit 3 says whether the texture code of the first valid level is enabled. Bits 8:4 to 23:19 are reserved. Established.
+- **0x4604** `US_PIXSIZE` (R3xx p. 68; `r300_reg.h` `R300_PFS_CNTL_1`): `PIX_SIZE` in bits 4:0, the total size of the current pixel stack frame. Established.
+- **0x4608** `US_CODE_OFFSET` (R3xx p. 66; `r300_reg.h` `R300_PFS_CNTL_2`): `ALU_OFFSET` bits 5:0 is added to each level's start address to relocate ALU code, `ALU_SIZE` bits 12:6 is the total ALU code size over all levels, `TEX_OFFSET` bits 17:13 relocates texture code, and `TEX_SIZE` bits 23:18 is the total texture code size. Established.
+- **0x4610** `US_CODE_ADDR_[0-3]` (R3xx p. 66; `r300_reg.h` `R300_PFS_NODE_0`): one entry per indirection level 0 to 3. `ALU_START` bits 5:0 and `ALU_SIZE` bits 11:6 (1 to 64) give the ALU segment, `TEX_START` bits 16:12 and `TEX_SIZE` bits 21:17 (1 to 32) give the texture segment, and `RGBA_OUT` bit 22 and `W_OUT` bit 23 say whether the level has colour or depth output. Established.
+- **0x4620** `US_TEX_INST_[0-31]` (R3xx p. 68; `r300_reg.h` `R300_PFS_TEXI_0`): one texture instruction per row. `SRC_ADDR` bits 4:0 locates the texture address in the pixel stack frame, `DST_ADDR` bits 10:6 is where the fetched texel goes, `TEX_ID` bits 14:11 names the map, `INST` bits 17:15 is the operation, and bit 18 is unused. Established.
+- **0x46a4** `US_OUT_FMT_[0-3]` (R3xx p. 67): output format for each of up to four render targets: `OUT_FMT` bits 4:0 gives the component count and size, `C0_SEL` to `C3_SEL` (bits 9:8 to 15:14) choose the source of each output component, and `OUT_SIGN` bits 19:16 mark which components are signed. Established.
+- **0x46b4** `US_W_FMT` (R3xx p. 69): the depth (W) output the shader writes. `W_FMT` bits 1:0 gives its format and `W_SRC` bit 2 its source. Established.
+- **0x46c0** `US_ALU_RGB_ADDR_[0-63]` (R3xx p. 61; `r300_reg.h` `R300_PFS_INSTR1_0`): one row per ALU instruction. `ADDR0`, `ADDR1` and `ADDR2` (bits 5:0, 11:6, 17:12) are the three colour source operands rgb0 to rgb2, `ADDRD` bits 22:18 is the destination in the pixel stack frame, `WMASK` bits 25:23 and `OMASK` bits 28:26 pick which of R, G and B are written to the frame and to the output FIFO, and `TARGET` bits 30:29 picks the frame buffer target. Established.
+- **0x47c0** `US_ALU_ALPHA_ADDR_[0-63]` (R3xx p. 58; `r300_reg.h` `R300_PFS_INSTR3_0`): the alpha counterpart of the colour address row. `ADDR0` to `ADDR2` (bits 5:0, 11:6, 17:12) are the alpha operands a0 to a2, `ADDRD` bits 22:18 is the destination, `WMASK` bit 23 and `OMASK` bit 24 gate alpha writes, `TARGET` bits 26:25 picks the target, `OMASK_W` bit 27 gates the depth output, and `STAT_WE` bits 31:28 selects which components count toward performance statistics. Established.
+- **0x48c0** `US_ALU_RGB_INST_[0-63]` (R3xx p. 62; `r300_reg.h` `R300_PFS_INSTR0_0`): the colour ALU operation. `SEL_A`, `SEL_B` and `SEL_C` (bits 4:0, 11:7, 18:14) pick the operand and component for inputs A, B and C, `MOD_A`, `MOD_B` and `MOD_C` (6:5, 13:12, 20:19) modify them, `SRCP_OP` bits 22:21 sets how the pre-subtract value is formed, `OP` bits 26:23 is the operation, `OMOD` bits 29:27 the output modifier, `CLAMP` bit 30 the clamp, and `NOP` bit 31 asks for a no-op after it to meet a dependency. Established.
+- **0x49c0** `US_ALU_ALPHA_INST_[0-63]` (R3xx p. 59; `r300_reg.h` `R300_PFS_INSTR2_0`): the alpha ALU operation, with the same fields as the colour instruction in the same bit positions, except that the no-op bit 31 is not part of the alpha layout. Established.
+- **0x4c00** `US_ALU_CONST_R_[0-31]` (R3xx p. 70; `r300_reg.h` `R300_PFS_PARAM_0_X`): the red component of shader constant 0, `KR` in bits 23:0 in S16E7 fixed point. Established.
+- **0x4c04** `US_ALU_CONST_G_[0-31]` (R3xx p. 69; `r300_reg.h` `R300_PFS_PARAM_0_Y`): the green component of shader constant 0, `KG` in bits 23:0, S16E7. Established.
+- **0x4c08** `US_ALU_CONST_B_[0-31]` (R3xx p. 69; `r300_reg.h` `R300_PFS_PARAM_0_Z`): the blue component of shader constant 0, `KB` in bits 23:0, S16E7. Established.
+- **0x4c0c** `US_ALU_CONST_A_[0-31]` (R3xx p. 69; `r300_reg.h` `R300_PFS_PARAM_0_W`): the alpha component of shader constant 0, `KA` in bits 23:0, S16E7. Established.
+
+### Setup and polygon offset (SU)
+
+- **0x42a0** `SU_TEX_WRAP` (R3xx p. 45): cylindrical wrap enables, one bit per texture coordinate component: `T0C0` in bit 0 through `T7C3` in bit 31, four bits per map. The guide's name for this offset differs from `r300_reg.h`, which calls it `R300_RE_ZBIAS_CNTL` with a comment that it is a guess; the guide's fields are the ones used here. Established.
+- **0x42a4** `SU_POLY_OFFSET_FRONT_SCALE` (R3xx p. 44; `r300_reg.h` `R300_RE_ZBIAS_T_FACTOR`): the 32-bit IEEE scale of the polygon offset for front-facing polygons, applied after the Z scale and offset. Established.
+- **0x42a8** `SU_POLY_OFFSET_FRONT_OFFSET` (R3xx p. 44; `r300_reg.h` `R300_RE_ZBIAS_T_CONSTANT`): the 32-bit IEEE offset for front-facing polygons, applied after the Z scale and offset. Established.
+- **0x42ac** `SU_POLY_OFFSET_BACK_SCALE` (R3xx p. 44; `r300_reg.h` `R300_RE_ZBIAS_W_FACTOR`): the 32-bit IEEE scale of the polygon offset for back-facing polygons. Established.
+- **0x42b0** `SU_POLY_OFFSET_BACK_OFFSET` (R3xx p. 43; `r300_reg.h` `R300_RE_ZBIAS_W_CONSTANT`): the 32-bit IEEE offset for back-facing polygons. Established.
+- **0x42b4** `SU_POLY_OFFSET_ENABLE` (R3xx p. 44; `r300_reg.h` `R300_RE_OCCLUSION_CNTL`, a different name at this offset): `FRONT_ENABLE` bit 0 and `BACK_ENABLE` bit 1 turn the offset on for each face, and `PARA_ENABLE` bit 2 treats every parallelogram as front-facing for the offset, which needs `FRONT_ENABLE` set as well. Established.
+- **0x42b8** `SU_CULL_MODE` (R3xx p. 43; `r300_reg.h` `R300_RE_CULL_CNTL`): `CULL_FRONT` bit 0 and `CULL_BACK` bit 1 enable culling of each face, and `FACE` bit 2 is XORed with the sign of the cross product to decide which winding counts as front-facing. Established.
+- **0x42c0** `SU_DEPTH_SCALE` (R3xx p. 43): a 32-bit IEEE float applied to depth before it is converted to fixed point. Its default is 0x3F800000, which is 1.0. Established.
+- **0x42c4** `SU_DEPTH_OFFSET` (R3xx p. 43): a 32-bit IEEE float added to depth before the fixed-point conversion, default 0. Established.
+- **0x42c8** `SU_REG_DEST` (R3xx p. 45; `r300_reg.h` `R300_SU_REG_DEST`): `SELECT` bits 3:0 picks which of the two raster pipes receive register reads and writes, bit 0 for pipe 0 and bit 3 for pipe 1. Its default is 0xF, both pipes. Established.
+
+### Z buffer (ZB)
+
+- **0x4f00** `ZB_CNTL` (R3xx p. 93; `r300_reg.h` `R300_ZB_CNTL`): `STENCIL_ENABLE` bit 0, `Z_ENABLE` bit 1, `ZWRITEENABLE` bit 2, `ZSIGNED_COMPARE` bit 3 (signed Z compare for W-buffering) and `STENCIL_FRONT_BACK` bit 4, which, with stenciling on, gives back faces their own stencil functions. Established.
+- **0x4f04** `ZB_ZSTENCILCNTL` (R3xx p. 98; `r300_reg.h` `R300_ZB_ZSTENCILCNTL`): the Z function in `ZFUNC` bits 2:0, then for front faces `STENCILFUNC` (5:3), `STENCILFAIL` (8:6), `STENCILZPASS` (11:9) and `STENCILZFAIL` (14:12), and the same four for back faces at bits 17:15, 20:18, 23:21 and 26:24. Established.
+- **0x4f08** `ZB_STENCILREFMASK` (R3xx p. 96; `r300_reg.h` `R300_ZB_STENCILREFMASK`): `STENCILREF` bits 7:0 is the reference value, `STENCILMASK` bits 15:8 is ANDed with both the reference and the stored value before the test, and `STENCILWRITEMASK` bits 23:16 masks the stencil planes on write. Established.
+- **0x4f10** `ZB_FORMAT` (R3xx p. 95; `r300_reg.h` `R300_ZB_FORMAT`): `DEPTHFORMAT` bits 3:0 is the Z buffer format (0 is 16-bit integer Z, 2 is 24-bit Z with an 8-bit stencil in the low bits, and the rest are reserved in the guide), `INVERT` bit 4 selects the 13E3 compressed-format leading-bit count (zeros or ones), and bit 5 is unused. Established.
+- **0x4f14** `ZB_ZTOP` (R3xx p. 99; `r300_reg.h` `R300_ZB_ZTOP`): bit 0 places the Z test either at the bottom of the pipe, after fog (0), or at the top of the pipe, after the scan unit (1). Established.
+- **0x4f18** `ZB_ZCACHE_CTLSTAT` (R3xx p. 97; `r300_reg.h` `R300_ZB_ZCACHE_CTLSTAT`): `ZC_FLUSH` bit 0 writes dirty Z cache lines out, `ZC_FREE` bit 1 invalidates the Z cache tags, and bit 31 (`ZC_BUSY`) is unused. Established.
+- **0x4f1c** `ZB_BW_CNTL` (R3xx p. 92; `r300_reg.h` `R300_ZB_BW_CNTL`): bandwidth controls: `HIZ_ENABLE` bit 0, `HIZ_MIN` bit 1, `FAST_FILL` bit 2, `RD_COMP_ENABLE` bit 3 and `WR_COMP_ENABLE` bit 4 for compressed Z reads and writes, `ZB_CB_CLEAR` bit 5 for a Z-assisted colour clear, and `FORCE_COMPRESSED_STENCIL` bit 6. Established.
+- **0x4f20** `ZB_DEPTHOFFSET` (R3xx p. 94; `r300_reg.h` `R300_ZB_DEPTHOFFSET`): the base address of the Z buffer, bits 31:5, 2 KB aligned for macro tiles. Established.
+- **0x4f24** `ZB_DEPTHPITCH` (R3xx p. 94; `r300_reg.h` `R300_ZB_DEPTHPITCH`): `DEPTHPITCH` bits 13:2 (units of four pixels), `DEPTHMACROTILE` bit 16, `DEPTHMICROTILE` bits 18:17 (32-byte micro-tiles) and `DEPTHENDIAN` bits 20:19. Established.
+- **0x4f28** `ZB_DEPTHCLEARVALUE` (R3xx p. 93; `r300_reg.h` `R300_ZB_DEPTHCLEARVALUE`): the 32-bit value cleared into any block whose Z mask is zero. Established.
+- **0x4f44** `ZB_HIZ_OFFSET` (R3xx p. 95; `r300_reg.h` `R300_ZB_HIZ_OFFSET`): `HIZ_OFFSET` bits 16:2 is the DWORD offset into the hierarchical Z RAM, aligned to four blocks. Established.
+- **0x4f48** `ZB_HIZ_WRINDEX` (R3xx p. 96; `r300_reg.h` `R300_ZB_HIZ_WRINDEX`): the hierarchical Z write index, `HIZ_WRINDEX` bits 16:2, which increments itself on each write and starts on a DWORD boundary. Established.
+- **0x4f4c** `ZB_HIZ_DWORD` (R3xx p. 95; `r300_reg.h` `R300_ZB_HIZ_DWORD`): one DWORD of hierarchical Z data, an 8-bit value for each of four 4x4 blocks that form a 2x2 tile. Established.
+- **0x4f50** `ZB_HIZ_RDINDEX` (R3xx p. 96; `r300_reg.h` `R300_ZB_HIZ_RDINDEX`): the hierarchical Z read index, `HIZ_RDINDEX` bits 16:2, on a DWORD boundary. Established.
+- **0x4f54** `ZB_HIZ_PITCH` (R3xx p. 96; `r300_reg.h` `R300_ZB_HIZ_PITCH`): the pitch in bits 13:4 used when computing hierarchical Z addresses. Established.
+- **0x4f58** `ZB_ZPASS_DATA` (R3xx p. 97; `r300_reg.h` `R300_ZB_ZPASS_DATA`): the count of Z components that passed since the last write to this location, in bits 31:0. Writing the register resets the count. Established.
+- **0x4f5c** `ZB_ZPASS_ADDR` (R3xx p. 97; `r300_reg.h` `R300_ZB_ZPASS_ADDR`): `ZPASS_ADDR` bits 31:2 is a DWORD address. Writing it stores the current `ZB_ZPASS_DATA` count to that address in memory. Established.
+- **0x4f60** `ZB_DEPTHXY_OFFSET` (R3xx p. 94): the depth buffer's X and Y coordinate offsets, `DEPTHX_OFFSET` in bits 11:1 and `DEPTHY_OFFSET` in bits 27:17, both in multiples of 32 with bits 4:0 zero. `r300_reg.h` `R300_ZB_DEPTHXY_OFFSET` names the same offset. Established.
+
+### Vertex assembly and processing (VAP)
+
+- **0x1d98** `VAP_VPORT_XSCALE` (R3xx p. 82; `r300_reg.h` `R300_SE_VPORT_XSCALE`): the viewport scale for X, a 32-bit IEEE float. Established.
+- **0x1d9c** `VAP_VPORT_XOFFSET` (R3xx p. 82; `r300_reg.h` `R300_SE_VPORT_XOFFSET`): the viewport offset for X, a 32-bit IEEE float. Established.
+- **0x1da0** `VAP_VPORT_YSCALE` (R3xx p. 82; `r300_reg.h` `R300_SE_VPORT_YSCALE`): the viewport scale for Y, a 32-bit IEEE float. Established.
+- **0x1da4** `VAP_VPORT_YOFFSET` (R3xx p. 82; `r300_reg.h` `R300_SE_VPORT_YOFFSET`): the viewport offset for Y, a 32-bit IEEE float. Established.
+- **0x1da8** `VAP_VPORT_ZSCALE` (R3xx p. 83; `r300_reg.h` `R300_SE_VPORT_ZSCALE`): the viewport scale for Z, a 32-bit IEEE float. Established.
+- **0x1dac** `VAP_VPORT_ZOFFSET` (R3xx p. 83; `r300_reg.h` `R300_SE_VPORT_ZOFFSET`): the viewport offset for Z, a 32-bit IEEE float. Established.
+- **0x2000** `VAP_PORT_DATA[0-15]` (R3xx p. 74): a write-only port. `DATAPORT0` in bits 31:0 is the first of 16 consecutive DWORDs for writing vertex data. Established.
+- **0x2040** `VAP_PORT_IDX[0-15]` (R3xx p. 75): a write-only port. `IDXPORT0` in bits 31:0 is the first of 16 consecutive DWORDs for writing vertex indices, with the index in bits 15:0 of each word. Established.
+- **0x2080** `VAP_CNTL` (R3xx p. 71; `r300_reg.h` `R300_VAP_CNTL`): `PVS_NUM_SLOTS` bits 3:0 is the number of vertex slots in the vertex shader process, `PVS_NUM_CNTLRS` bits 7:4 the controllers that run in parallel, `PVS_NUM_FPUS` bits 11:8 the floating-point units, `VF_MAX_VTX_NUM` bits 21:18 (default 9) the vertices the fetcher manages, and `DX_CLIP_SPACE_DEF` bit 22 selects OpenGL clip space (0) or DirectX clip space (1). Established.
+- **0x2084** `VAP_VF_CNTL` (R3xx p. 81; `r300_reg.h` `R300_VAP_VF_CNTL`): `PRIM_TYPE` bits 3:0 (0 means nothing is triggered), `PRIM_WALK` bits 5:4 for how vertex data arrives, `INDEX_SIZE` bit 11 for 32-bit rather than 16-bit indices, `VTX_REUSE_DIS` bit 12, `DUAL_INDEX_MODE` bit 13, and `NUM_VERTICES` bits 31:16 for the vertex count in the command packet. Established.
+- **0x2090** `VAP_OUT_VTX_FMT_0` (R3xx p. 73; `r300_reg.h` `R300_VAP_OUTPUT_VTX_FMT_0`): which vertex attributes the VAP outputs: the position in bit 0, colours 0 to 3 in bits 1 to 4, and the point size in bit 16. Established.
+- **0x2094** `VAP_OUT_VTX_FMT_1` (R3xx p. 73; `r300_reg.h` `R300_VAP_OUTPUT_VTX_FMT_1`): the word count of each texture coordinate set, three bits per set from `TEX_0_COMP_CNT` (bits 2:0) to `TEX_7_COMP_CNT` (bits 23:21), where 0 means absent. Established.
+- **0x20b0** `VAP_VTE_CNTL` (R3xx p. 83; `r300_reg.h` `R300_SE_VTE_CNTL`): the viewport transform enables, scale and offset for X, Y and Z in bits 0 to 5, then `VTX_XY_FMT` bit 8 (X and Y already divided by W), `VTX_Z_FMT` bit 9 (Z already divided by W), `VTX_W0_FMT` bit 10 (W0 is not already 1/W0), and `SERIAL_PROC_ENA` bit 11 to run the three transforms one after another. Established.
+- **0x20b4** `VAP_VTX_SIZE` (R3xx p. 85; `r300_reg.h` none): `DWORDS_PER_VTX` bits 6:0 is the number of DWORDs per vertex when `PRIM_WALK` is set to vertex data embedded in the command stream, and the guide says the field is unused for other walks. Established.
+- **0x20b8** `VAP_PORT_DATA_IDX_128` (R3xx p. 75): a write-only 128-bit port for indexed primitives, with `DATA_IDX_PORT_128` in bits 31:0 taking one DWORD of the 128-bit word per write. Established.
+- **0x20c0** `VAP_VTX_NUM_ARRAYS` (R3xx p. 84): `VTX_NUM_ARRAYS` bits 4:0 is the number of arrays the current vertex type needs, `VC_FORCE_PREFETCH` bit 5 always fetches a 256-bit word, `VC_DIS_CACHE_INVLD` bit 6 disables a cache invalidate, and `AOS_0_FETCH_SIZE` to `AOS_15_FETCH_SIZE` (bits 16 to 31) pick a 128-bit or 256-bit fetch granule for each array. Established.
+- **0x20c4** `VAP_VTX_AOS_ATTR[01-1415]` (R3xx p. 84): the attributes of two array-of-structures entries per register, with `VTX_AOS_COUNT0` bits 6:0 and `VTX_AOS_STRIDE0` bits 14:8 for the first, and `VTX_AOS_COUNT1` bits 22:16 and `VTX_AOS_STRIDE1` bits 30:24 for the second. The count is the DWORDs in the structure and the stride is the DWORDs from one element to the next. Established.
+- **0x20c8** `VAP_VTX_AOS_ADDR[0-15]` (R3xx p. 83): the base address of each array of structures, in bits 31:2. Established.
+- **0x2134** `VAP_VF_MAX_VTX_INDX` (R3xx p. 82): the largest index the fetcher uses, `MAX_INDX` in bits 23:0 (default 0xFFFFFF). Larger indices are clamped to this value. Established.
+- **0x2138** `VAP_VF_MIN_VTX_INDX` (R3xx p. 82): the smallest index the fetcher uses, `MIN_INDX` in bits 23:0 (default 0). Smaller indices are clamped to this value. Established.
+- **0x2140** `VAP_CNTL_STATUS` (R3xx p. 72; `r300_reg.h` `R300_VAP_CNTL_STATUS`): `VC_SWAP` bits 1:0 is the endian swap (0 none, 1 16-bit, 2 32-bit, 3 half-dword), `PVS_BYPASS` bit 8 removes the TCL engine from the path, and the read-only busy flags are `PVS_BUSY` 11, `VS_BUSY` 24, `RCP_BUSY` 25, `VTE_BUSY` 26, `MIU_BUSY` 27, `VC_BUSY` 28, `VF_BUSY` 29, `REGPIPE_BUSY` 30 and `VAP_BUSY` 31. Established.
+- **0x2150** `VAP_PROG_STREAM_CNTL_[0-7]` (R3xx p. 75; `r300_reg.h` `R300_VAP_INPUT_ROUTE_0_0`): the programmable stream control word, two elements per register. Each element has a `DATA_TYPE` (bits 3:0 for element 0, 19:16 for element 1; 0 is a single float, 1 two floats, 2 three floats and so on), `SKIP_DWORDS` after the element (7:4, 23:20), `DST_VEC_LOC` where it lands in input memory (12:8, 28:24), `LAST_VEC` (13, 29), `SIGNED` (14, 30) and `NORMALIZE` (15, 31). Established.
+- **0x2180** `VAP_VTX_STATE_CNTL` (R3xx p. 85; `r300_reg.h` `R300_VAP_INPUT_CNTL_0`): `COLOR_0_ASSEMBLY_CNTL` to `COLOR_7_ASSEMBLY_CNTL` are two-bit fields from bits 1:0 to 15:14, each choosing the colour (0) or user colour 0 (1) for the vertex, `UPDATE_USER_COLOR_0_ENA` bit 16 says whether writing user colour 0 updates its state, and `USE_ADDR_IND_TBL` bit 18 says whether vertex state is written through an address table. Established.
+- **0x21dc** `VAP_PSC_SGN_NORM_CNTL` (R3xx p. 77): `SGN_NORM_METHOD_0` to `SGN_NORM_METHOD_15`, two-bit fields from bits 1:0 to 31:30, choose how signed fixed-point input is normalized, one of three methods (for example value divided by 2^(n-1)-1). Established.
+- **0x21e0** `VAP_PROG_STREAM_CNTL_EXT_[0-7]` (R3xx p. 76; `r300_reg.h` `R300_VAP_INPUT_ROUTE_1_0`): the stream extension word, two elements per register. Each element has three-bit swizzle selects for X, Y, Z and W (bits 2:0, 5:3, 8:6, 11:9 for element 0), `WRITE_ENA_0` bits 15:12 for which of the four components are written (bit 0 is X), and the same fields again at bits 18:16 to 31:28 for element 1. Established.
+- **0x2200** `VAP_PVS_VECTOR_INDX_REG` (R3xx p. 80; `r300_reg.h` `R300_VAP_PVS_UPLOAD_ADDRESS`): `OCTWORD_OFFSET` bits 10:0 is the octword in vector memory where the next write goes. Established.
+- **0x2204** `VAP_PVS_VECTOR_DATA_REG` (R3xx p. 80): a 32-bit data register; writes go to vector memory for vertex shader code and constants. Established.
+- **0x2208** `VAP_PVS_VECTOR_DATA_REG_128` (R3xx p. 80; `r300_reg.h` `R300_VAP_PVS_UPLOAD_DATA`): a write-only 128-bit datapath to vector memory for the same shader code and constant updates. Established.
+- **0x221c** `VAP_CLIP_CNTL` (R3xx p. 71; `r300_reg.h` `R300_VAP_UNKNOWN_221C`, which leaves the name open): `UCP_ENA_0` to `UCP_ENA_5` (bits 0 to 5) enable the six user clip planes, `PS_UCP_MODE` bits 15:14 culls points by centre distance (0) or radius (1), `CLIP_DISABLE` bit 16 turns clip code generation off, `UCP_CULL_ONLY_ENA` bit 17 culls against the user planes without clipping, and `BOUNDARY_EDGE_FLAG_ENA` bit 18 highlights boundary edges. Established.
+- **0x2220** `VAP_GB_VERT_CLIP_ADJ` (R3xx p. 73; `r300_reg.h` `R300_VAP_CLIP_X_0`, a different name at this offset): the vertical guard-band clip adjust, a 32-bit float that should be 1.0 for no guard band. Established.
+- **0x2224** `VAP_GB_VERT_DISC_ADJ` (R3xx p. 73; `r300_reg.h` `R300_VAP_CLIP_X_1`, a different name): the vertical guard-band discard adjust, a 32-bit float that should be 1.0 for no guard band. Established.
+- **0x2228** `VAP_GB_HORZ_CLIP_ADJ` (R3xx p. 72; `r300_reg.h` `R300_VAP_CLIP_Y_0`, a different name): the horizontal guard-band clip adjust, a 32-bit float that should be 1.0 for no guard band. Established.
+- **0x222c** `VAP_GB_HORZ_DISC_ADJ` (R3xx p. 73; `r300_reg.h` none): the horizontal guard-band discard adjust, a 32-bit float that should be 1.0 for no guard band. Established.
+- **0x2230** `VAP_PVS_FLOW_CNTL_ADDRS_[0-15]` (R3xx p. 78; `r300_reg.h` `R300_VAP_CLIP_Y_1`, a different name): the flow-control addresses of the vertex shader, one register per flow entry, with four eight-bit fields. `PVS_FC_ACT_ADRS_0` (7:0) is the last instruction before the redirect, `PVS_FC_LOOP_CNT_JMP_INST_0` (15:8) is the jump target or loop count, `PVS_FC_LAST_INST_0` (23:16) is the loop end, and `PVS_FC_RTN_INST_0` (31:24) is the return address. The guide says the meaning of each field depends on the opcode. Established.
+- **0x2284** `VAP_PVS_STATE_FLUSH_REG` (R3xx p. 80; `r300_reg.h` `R300_VAP_PVS_STATE_FLUSH_REG`): a write-only register whose write forces a flush of the vertex shader's state control for its code and constant memories. Established.
+- **0x2288** `VAP_PVS_VTX_TIMEOUT_REG` (R3xx p. 80; `r300_reg.h` `R300_VAP_UNKNOWN_2288`, which leaves the name open): `CLK_COUNT` bits 31:0 (default 0xFFFFFFFF) is the number of core clocks the input controller waits for a vertex when the primitive path is backed up, after which the vertices collected so far are sent on. Established.
+- **0x2290** `VAP_PVS_FLOW_CNTL_LOOP_INDEX_[0-15]` (R3xx p. 79): one loop index register per entry. `PVS_FC_LOOP_INIT_VAL_0` in bits 7:0 is the unsigned initial value (0 to 255), and `PVS_FC_LOOP_STEP_VAL_0` in bits 15:8 is the signed step (-128 to 127). Established.
+- **0x22d0** `VAP_PVS_CODE_CNTL_0` (R3xx p. 77; `r300_reg.h` `R300_VAP_PVS_CNTL_1`): `PVS_FIRST_INST` bits 9:0 is the first instruction to run, `PVS_XYZW_VALID_INST` bits 19:10 is the last instruction that writes the clip position, and `PVS_LAST_INST` bits 29:20 is the last instruction run, inclusive. Established.
+- **0x22d4** `VAP_PVS_CONST_CNTL` (R3xx p. 78; `r300_reg.h` `R300_VAP_PVS_CNTL_2`): `PVS_CONST_BASE_OFFSET` bits 7:0 is the vector offset of this shader's constants in constant memory, and `PVS_MAX_CONST_ADDR` bits 23:16 is the highest constant address the shader may generate. Established.
+- **0x22d8** `VAP_PVS_CODE_CNTL_1` (R3xx p. 78; `r300_reg.h` `R300_VAP_PVS_CNTL_3`): `PVS_LAST_VTX_SRC_INST` bits 9:0 is the last instruction that reads input vertex memory, which frees that memory. Established.
+- **0x22dc** `VAP_PVS_FLOW_CNTL_OPC` (R3xx p. 79): `PVS_FC_OPC_0` to `PVS_FC_OPC_15`, two-bit flow-control opcodes from bits 1:0 to 31:30, one per flow entry. Established.
+- **0x2300** `VAP_VTX_ST_POS_0_X_4` (R3xx p. 88): one vertex-state data register. The guide gives a 32-bit `DATA_REGISTER` field and nothing else, so its role beyond the name is unknown. Read-write; `r300_reg.h` has no name here.
+- **0x2304** `VAP_VTX_ST_POS_0_Y_4` (R3xx p. 89): one vertex-state data register. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x2308** `VAP_VTX_ST_POS_0_Z_4` (R3xx p. 89): one vertex-state data register. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x230c** `VAP_VTX_ST_POS_0_W_4` (R3xx p. 88): one vertex-state data register. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x2310** `VAP_VTX_ST_NORM_0_X` (R3xx p. 87): one vertex-state data register for the X component of normal 0. The guide gives only a 32-bit data field, so the role beyond the name is unknown.
+- **0x2314** `VAP_VTX_ST_NORM_0_Y` (R3xx p. 87): one vertex-state data register for the Y component of normal 0. The guide gives only a 32-bit data field, so the role beyond the name is unknown.
+- **0x2318** `VAP_VTX_ST_NORM_0_Z` (R3xx p. 87): one vertex-state data register for the Z component of normal 0. The guide gives only a 32-bit data field, so the role beyond the name is unknown.
+- **0x231c** `VAP_VTX_ST_PVMS` (R3xx p. 89): one vertex-state data register, named after the guide's PVMS word. The guide gives only a 32-bit data field, so the role is unknown.
+- **0x2320** `VAP_VTX_ST_CLR_[0-7]_R` (R3xx p. 86): the red component of colour slot 0 to 7 in vertex state. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x2324** `VAP_VTX_ST_CLR_[0-7]_G` (R3xx p. 86): the green component of vertex-state colour slots 0 to 7. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x2328** `VAP_VTX_ST_CLR_[0-7]_B` (R3xx p. 86): the blue component of vertex-state colour slots 0 to 7. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x232c** `VAP_VTX_ST_CLR_[0-7]_A` (R3xx p. 86): the alpha component of vertex-state colour slots 0 to 7. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x23a0** `VAP_VTX_ST_TEX_[0-7]_S` (R3xx p. 90): the S component of texture coordinate set 0 to 7 in vertex state. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x23a4** `VAP_VTX_ST_TEX_[0-7]_T` (R3xx p. 90): the T component of texture coordinate set 0 to 7 in vertex state. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x23a8** `VAP_VTX_ST_TEX_[0-7]_R` (R3xx p. 90): the R component of texture coordinate set 0 to 7 in vertex state. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x23ac** `VAP_VTX_ST_TEX_[0-7]_Q` (R3xx p. 90): the Q component of texture coordinate set 0 to 7 in vertex state. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x2420** `VAP_VTX_ST_PNT_SPRT_SZ` (R3xx p. 88): the point-sprite size word in vertex state. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x2424** `VAP_VTX_ST_DISC_FOG` (R3xx p. 87): the fog word in vertex state, used with discard. The guide gives only a 32-bit data field, so its role is unknown beyond the name.
+- **0x2428** `VAP_VTX_ST_SHININESS_0` (R3xx p. 89): the material shininess for light set 0 in vertex state. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x242c** `VAP_VTX_ST_SHININESS_1` (R3xx p. 90): the material shininess for the second light set in vertex state. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x2430** `VAP_VTX_ST_BLND_WT_[0-3]` (R3xx p. 86): four vertex-state blend weight words. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x2440** `VAP_VTX_ST_POS_1_X` (R3xx p. 89): the X component of the second vertex-state position. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x2444** `VAP_VTX_ST_POS_1_Y` (R3xx p. 89): the Y component of the second vertex-state position. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x2448** `VAP_VTX_ST_POS_1_Z` (R3xx p. 89): the Z component of the second vertex-state position. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x244c** `VAP_VTX_ST_POS_1_W` (R3xx p. 89): the W component of the second vertex-state position. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x2450** `VAP_VTX_ST_NORM_1_X` (R3xx p. 87): the X component of the second vertex-state normal. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x2454** `VAP_VTX_ST_NORM_1_Y` (R3xx p. 87): the Y component of the second vertex-state normal. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x2458** `VAP_VTX_ST_NORM_1_Z` (R3xx p. 88): the Z component of the second vertex-state normal. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x245c** `VAP_VTX_ST_EDGE_FLAGS` (R3xx p. 87): the edge-flag word in vertex state. The guide gives only a single data bit, so its role is unknown beyond the name.
+- **0x2460** `VAP_VTX_ST_USR_CLR_R` (R3xx p. 91): the red component of the user colour in vertex state. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x2464** `VAP_VTX_ST_USR_CLR_G` (R3xx p. 90; `r300_reg.h` `R300_VAP_VTX_COLOR_R`, a different name at this offset): the green component of the user colour in vertex state. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x2468** `VAP_VTX_ST_USR_CLR_B` (R3xx p. 90; `r300_reg.h` `R300_VAP_VTX_COLOR_G`, a different name): the blue component of the user colour in vertex state. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x246c** `VAP_VTX_ST_USR_CLR_A` (R3xx p. 90; `r300_reg.h` `R300_VAP_VTX_COLOR_B`, a different name): the alpha component of the user colour in vertex state. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x2470** `VAP_VTX_ST_CLR_[0-7]_PKD` (R3xx p. 86): the packed colour word for vertex-state colour slots 0 to 7, write-only. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x2490** `VAP_VTX_ST_POS_0_X_2` (R3xx p. 88; `r300_reg.h` `R300_VAP_VTX_POS_0_X_1`, a different name): a write-only vertex-state position word for X. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x2494** `VAP_VTX_ST_POS_0_Y_2` (R3xx p. 88; `r300_reg.h` `R300_VAP_VTX_POS_0_Y_1`, a different name): a write-only vertex-state position word for Y. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x2498** `VAP_VTX_ST_NORM_0_PKD` (R3xx p. 87): the packed normal word for vertex state, write-only. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x249c** `VAP_VTX_ST_USR_CLR_PKD` (R3xx p. 91; `r300_reg.h` `R300_VAP_VTX_COLOR_PKD`): the packed user colour word in vertex state, write-only. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x24a0** `VAP_VTX_ST_POS_0_X_3` (R3xx p. 88; `r300_reg.h` `R300_VAP_VTX_POS_0_X_2`, a different name): a write-only vertex-state position word for X. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x24a4** `VAP_VTX_ST_POS_0_Y_3` (R3xx p. 88): a write-only vertex-state position word for Y. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x24a8** `VAP_VTX_ST_POS_0_Z_3` (R3xx p. 89; `r300_reg.h` `R300_VAP_VTX_POS_0_Z_2`, a different name): a write-only vertex-state position word for Z. The guide gives only a 32-bit data field, so the role is unknown beyond the name.
+- **0x24ac** `VAP_VTX_ST_END_OF_PKT` (R3xx p. 87; `r300_reg.h` `R300_VAP_VTX_END_OF_PKT`): a write-only word that marks the end of a vertex packet. The guide gives only a 32-bit data field, so the role is unknown beyond what the name says.
