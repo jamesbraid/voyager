@@ -1,12 +1,12 @@
 table	rows	out_of_scope	understood	understood_with_open	understood_distinct	templated	located	named_only	undocumented	no_software_dependency	pct_understood	pct_located_or_better	pct_mentioned	pct_done	unresolved_sites	truncated	audited_real_pct	audited_sample	audited_date	computes	reused	multi_unit	shared_address	address_unknown	input
 binaries	84	0	83	0	81	0	0	0	1	0	98.8	98.8	98.8	98.8							0				
-functions	28840	38510	1381	107	1278	14906	14913	12546	0	0	4.8	56.5	100.0	4.8			100.0	1	2026-11-02		0	519	17	0	
-functions (distinct names)	12895	17321	1136	103	1128	11759	11759	0	0	0	8.8	100.0	100.0	8.8							0				
+functions	28840	38510	1724	122	1616	14563	14570	12546	0	0	6.0	56.5	100.0	6.0			100.0	1	2026-11-02		0	519	17	0	
+functions (distinct names)	12895	17321	1475	118	1462	11420	11420	0	0	0	11.4	100.0	100.0	11.4							0				
 mmio	207	0	146	2	143	0	55	4	2	0	70.5	97.1	99.0	70.5	37		86.7	15	2026-11-02		0				
 tokens	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0							0				
-ioctls	75	0	36	1	35	6	6	33	0	0	48.0	56.0	100.0	48.0							0				
+ioctls	75	0	42	1	41	0	0	33	0	0	56.0	56.0	100.0	56.0							0				
 ucode	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0						0	0				
-spec-registers	207	0	3	0	3	0	0	1	203	0	1.4	1.4	1.9	1.4							0				
+spec-registers	207	0	41	0	39	0	10	156	0	0	19.8	24.6	100.0	19.8							0				
 input root manifest	68																								f460183ba5ef2e0d3a51a38138fa0887c0ebf7a929b85a4ef7380976fad2b88a
 input sibling kona																									5dc6e9d883985b4573b634de9d4d0a80f54d3d56
 input sibling odsy																									a3d032f4c6526e5544896b9fdde48a87bd355ea6
@@ -15,7 +15,7 @@ functions in usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	112	0	2	0	2	110	110	0	0	
 functions in usr/X11R6/lib/modules/dri/SGIOMPdmx_dri64.so	112	0	2	0	2	110	110	0	0	0	1.8	100.0	100.0	1.8							0	0	0	0	
 functions in usr/X11R6/lib/modules/dri/fglrx_dri.so	7481	5373	112	3	109	7369	7369	0	0	0	1.5	100.0	100.0	1.5							0	165	0	0	
 functions in usr/X11R6/lib/modules/dri/fglrx_dri64.so	7481	5373	276	14	270	958	965	6240	0	0	3.7	16.6	100.0	3.7							0	165	0	0	
-functions in usr/X11R6/lib/modules/drivers/fglrx_drv.so	623	0	266	69	266	356	356	1	0	0	42.7	99.8	100.0	42.7							0	6	0	0	
+functions in usr/X11R6/lib/modules/drivers/fglrx_drv.so	623	0	522	76	521	100	100	1	0	0	83.8	99.8	100.0	83.8							0	6	0	0	
 functions in usr/X11R6/lib/modules/extensions/fglrx_glx.so	7440	5373	42	2	39	1410	1410	5988	0	0	0.6	19.5	100.0	0.6							0	165	0	0	
 functions in usr/X11R6/lib/modules/extensions/libGLcore.so	86	3217	0	0	0	86	86	0	0	0	0.0	100.0	100.0	0.0							0	0	0	0	
 functions in usr/X11R6/lib/modules/extensions/libdri.so	101	0	2	0	2	98	98	1	0	0	2.0	99.0	100.0	2.0							0	0	0	0	
@@ -26,7 +26,7 @@ functions in usr/X11R6/lib/modules/libint10.so	78	404	19	0	17	16	16	43	0	0	24.4	
 functions in usr/X11R6/lib/modules/libpcidata.so	1	0	1	0	1	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	0	
 functions in usr/X11R6/lib/modules/libscanpci.so	5	0	5	1	5	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	0	
 functions in usr/X11R6/lib/modules/libvbe.so	21	0	21	0	21	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	0	
-functions in usr/cpu/sysgen/IP35boot/fglrx.o	384	0	254	13	252	130	130	0	0	0	66.1	100.0	100.0	66.1							0	4	10	0	
+functions in usr/cpu/sysgen/IP35boot/fglrx.o	384	0	341	21	335	43	43	0	0	0	88.8	100.0	100.0	88.8							0	4	10	0	
 functions in usr/cpu/sysgen/IP35boot/hubspc.o	13	0	13	3	13	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	0	
 functions in usr/cpu/sysgen/IP35boot/is1.o	54	0	54	1	54	0	0	0	0	0	100.0	100.0	100.0	100.0							0	0	0	0	
 functions in usr/cpu/sysgen/IP35boot/kernel.o	161	1157	6	0	6	155	155	0	0	0	3.7	100.0	100.0	3.7							0	0	7	0	
