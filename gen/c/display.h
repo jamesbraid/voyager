@@ -649,6 +649,12 @@
 #define VOYAGER_CP_RB_RPTR_ADDR_RB_RPTR_SWAP_MASK    0x3u
 #define VOYAGER_CP_RB_RPTR_ADDR_RB_RPTR_SWAP_INPLACE (VOYAGER_CP_RB_RPTR_ADDR_RB_RPTR_SWAP_MASK << VOYAGER_CP_RB_RPTR_ADDR_RB_RPTR_SWAP_SHIFT)
 
+/*
+ * Read pointer of the ring. The CP start routine reads it and copies it into the write pointer, so the ring starts empty.
+ */
+/* cp_rb_rptr: r32, reset unknown; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
+#define VOYAGER_CP_RB_RPTR_OFFSET                    0x710u /* inferred */
+
 /* cp_rb_wptr: rw32, reset 0x0; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
 #define VOYAGER_CP_RB_WPTR_OFFSET                    0x714u /* inferred */
 
@@ -732,7 +738,10 @@
 #define VOYAGER_CP_STAT_MRU_BUSY_MASK                0x1u
 #define VOYAGER_CP_STAT_MRU_BUSY_INPLACE             (VOYAGER_CP_STAT_MRU_BUSY_MASK << VOYAGER_CP_STAT_MRU_BUSY_SHIFT)
 
-/* cp_me_cntl: rw32, reset unknown; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
+/*
+ * Microengine control. The default value 0x40000000 sets ME_MODE to 1, free-running. The status fields have no default.
+ */
+/* cp_me_cntl: rw32, reset 0x40000000; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
 #define VOYAGER_CP_ME_CNTL_OFFSET                    0x7d0u /* inferred */
 
 /* cp_me_ram_addr: rw32, reset unknown; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
@@ -743,6 +752,9 @@
 
 /* cp_me_ram_datah: rw32, reset unknown; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
 #define VOYAGER_CP_ME_RAM_DATAH_OFFSET               0x7dcu /* inferred */
+#define VOYAGER_CP_ME_RAM_DATAH_WORD_HIGH_SHIFT      0 /* inferred */
+#define VOYAGER_CP_ME_RAM_DATAH_WORD_HIGH_MASK       0xffu
+#define VOYAGER_CP_ME_RAM_DATAH_WORD_HIGH_INPLACE    (VOYAGER_CP_ME_RAM_DATAH_WORD_HIGH_MASK << VOYAGER_CP_ME_RAM_DATAH_WORD_HIGH_SHIFT)
 
 /* cp_me_ram_datal: rw32, reset unknown; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
 #define VOYAGER_CP_ME_RAM_DATAL_OFFSET               0x7e0u /* inferred */

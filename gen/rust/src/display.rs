@@ -1919,6 +1919,11 @@ pub mod cp_rb_rptr_addr {
         }
     }
 }
+/// Read pointer of the ring. The CP start routine reads it and copies it into the write pointer, so the ring starts empty. (inferred)
+pub mod cp_rb_rptr {
+    pub const WIDTH: u32 = 32;
+    pub const OFFSET: u64 = 0x710;
+}
 /// (inferred)
 pub mod cp_rb_wptr {
     pub const WIDTH: u32 = 32;
@@ -2163,7 +2168,7 @@ pub mod cp_stat {
         }
     }
 }
-/// (inferred)
+/// Microengine control. The default value 0x40000000 sets ME_MODE to 1, free-running. The status fields have no default. (inferred)
 pub mod cp_me_cntl {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x7d0;
@@ -2187,6 +2192,16 @@ pub mod cp_me_ram_addr {
 pub mod cp_me_ram_datah {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x7dc;
+    pub mod word_high { // bits 7:0, inferred
+        pub const SHIFT: u32 = 0;
+        pub const MASK: u32 = 0xff;
+        pub const fn get(v: u32) -> u32 {
+            (v >> SHIFT) & MASK
+        }
+        pub const fn set(v: u32, x: u32) -> u32 {
+            (v & !(MASK << SHIFT)) | ((x & MASK) << SHIFT)
+        }
+    }
 }
 /// (inferred)
 pub mod cp_me_ram_datal {

@@ -62,13 +62,14 @@ Every item has a grade: established, inferred or unknown. A grade says how the i
 | `cp_rb_base` | 0x700 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_rb_cntl` | 0x704 | rw | 32 |  |  | 0x0 | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_rb_rptr_addr` | 0x70c | rw | 32 |  |  | 0x0 | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
+| `cp_rb_rptr` | 0x710 | r | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_rb_wptr` | 0x714 | rw | 32 |  |  | 0x0 | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_rb_wptr_delay` | 0x718 | rw | 32 |  |  | 0x0 | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_csq_cntl` | 0x740 | rw | 32 |  |  | 0x0 | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `scratch_umsk` | 0x770 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `scratch_addr` | 0x774 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_stat` | 0x7c0 | r | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
-| `cp_me_cntl` | 0x7d0 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
+| `cp_me_cntl` | 0x7d0 | rw | 32 |  |  | 0x40000000 | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_me_ram_addr` | 0x7d4 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_me_ram_datah` | 0x7dc | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_me_ram_datal` | 0x7e0 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
@@ -447,6 +448,10 @@ Every item has a grade: established, inferred or unknown. A grade says how the i
 |---|---|---|---|---|---|
 | 1:0 | `rb_rptr_swap` | inferred |  | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |  |
 
+### Register `cp_rb_rptr`
+
+Read pointer of the ring. The CP start routine reads it and copies it into the write pointer, so the ring starts empty.
+
 ### Register `cp_rb_wptr`
 
 ### Register `cp_rb_wptr_delay`
@@ -493,6 +498,8 @@ Host address that the command processor writes scratch register values to, when 
 
 ### Register `cp_me_cntl`
 
+Microengine control. The default value 0x40000000 sets ME_MODE to 1, free-running. The status fields have no default.
+
 ### Register `cp_me_ram_addr`
 
 | Bits | Field | Grade | Values | Source | Description |
@@ -500,6 +507,10 @@ Host address that the command processor writes scratch register values to, when 
 | 7:0 | `ram_addr` | inferred |  | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |  |
 
 ### Register `cp_me_ram_datah`
+
+| Bits | Field | Grade | Values | Source | Description |
+|---|---|---|---|---|---|
+| 7:0 | `word_high` | inferred |  | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |  |
 
 ### Register `cp_me_ram_datal`
 

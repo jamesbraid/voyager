@@ -2200,6 +2200,20 @@
   {
    "unit": "display",
    "kind": "register",
+   "name": "cp_rb_rptr",
+   "offset": 1808,
+   "access": "r",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": "unknown",
+   "grade": "inferred",
+   "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
+  },
+  {
+   "unit": "display",
+   "kind": "register",
    "name": "cp_rb_wptr",
    "offset": 1812,
    "access": "rw",
@@ -2478,7 +2492,7 @@
    "count": 1,
    "stride": 4,
    "space": null,
-   "reset": "unknown",
+   "reset": 1073741824,
    "grade": "inferred",
    "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
   },
@@ -2516,6 +2530,15 @@
    "stride": 4,
    "space": null,
    "reset": "unknown",
+   "grade": "inferred",
+   "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
+  },
+  {
+   "unit": "display",
+   "kind": "field",
+   "name": "cp_me_ram_datah.word_high",
+   "hi": 7,
+   "lo": 0,
    "grade": "inferred",
    "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
   },

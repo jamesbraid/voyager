@@ -302,6 +302,9 @@
   <struct name="CP_RB_RPTR_ADDR" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x70c" access="rw" reset="0x0">
     <field name="rb_rptr_swap" start="0" size="2" type="uint" grade="inferred"/>
   </struct>
+  <struct name="CP_RB_RPTR" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x710" access="r" reset="unknown">
+    <doc>Read pointer of the ring. The CP start routine reads it and copies it into the write pointer, so the ring starts empty.</doc>
+  </struct>
   <struct name="CP_RB_WPTR" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x714" access="rw" reset="0x0">
   </struct>
   <struct name="CP_RB_WPTR_DELAY" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x718" access="rw" reset="0x0">
@@ -335,12 +338,14 @@
     <field name="mwu_busy" start="1" size="1" type="uint" grade="inferred"/>
     <field name="mru_busy" start="0" size="1" type="uint" grade="inferred"/>
   </struct>
-  <struct name="CP_ME_CNTL" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x7d0" access="rw" reset="unknown">
+  <struct name="CP_ME_CNTL" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x7d0" access="rw" reset="0x40000000">
+    <doc>Microengine control. The default value 0x40000000 sets ME_MODE to 1, free-running. The status fields have no default.</doc>
   </struct>
   <struct name="CP_ME_RAM_ADDR" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x7d4" access="rw" reset="unknown">
     <field name="ram_addr" start="0" size="8" type="uint" grade="inferred"/>
   </struct>
   <struct name="CP_ME_RAM_DATAH" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x7dc" access="rw" reset="unknown">
+    <field name="word_high" start="0" size="8" type="uint" grade="inferred"/>
   </struct>
   <struct name="CP_ME_RAM_DATAL" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x7e0" access="rw" reset="unknown">
   </struct>
