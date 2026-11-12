@@ -23,7 +23,7 @@ Labels: **established** (read in the image, or in the whole body of a routine), 
 | Init entry (jump target) | 0x6c8 | 0x6d3 | 0x6c3 |
 
 - **established.** All three carry the string ` 761295520` at 0x30 and the copyright line `(C) 1988-2003, ATI Technologies Inc.` followed by the version string, at 0xb8 (sg2), 0xb9 (sg3) and 0xa9 (sg3a). The version string has the form `VERaaa.bbb.ccc.ddd`; the flash tool reads it with `sscanf("VER%d.%d.%d.%d")` (below), giving 1.114.39.1, 1.110.39.0 and 201.211.39.0.
-- **established.** The title carries a part number in sg2 (113-99002-114) and sg3 (113-A10503-110) and none in sg3a. The strings name the boards "256p": 256 MB, matching the memory size the tables give (below), is an **inferred** reading of "256".
+- **established.** The title carries a part number in sg2 (113-99002-114) and sg3 (113-A10503-110) and none in sg3a. The strings name the boards "256p": 256 MB, matching the memory size the tables give (below), is an **inferred** reading of "256" for the X1; for the X2 a published SGI document states it (below).
 - **established.** The product string names the board "AGP" in all three images. Whether the Onyx4 boards attach by AGP, PCI or PCI-X is **unknown**; see `open-questions.md`.
 
 ## PCI expansion ROM structure
@@ -91,6 +91,8 @@ All of these follow the public driver's layout (`radeon_combios.c`); every numbe
 
 - **established.** The misc info table (revision 1) points at the detected-memory table (0x20c, 0x20c, 0x1fc). It reads: revision 0, a 32-bit word 0x2a, a 16-bit size of 256. The memory config table has revision byte 1 and its first byte is 0x80 (128).
 - **inferred.** The public driver reads the first as 256 MB, and would read the second (used only when the first is absent) as 128 doubled, 256 MB: the two agree in all three images, so each board is a 256 MB card, matching "256p" in the names.
+- **established** (a published SGI document, FireGL X2 only). The Silicon Graphics UltimateVision Graphics Porting Guide (007-4297-001, "Graphics Architecture", printed pages 8 and 9) says each graphics pipe of an Onyx4 brick holds an ATI FireGL X2-256 accelerator on the FGL 9800 VPU (R350) with 256 MB of on-board memory, GDDR2 at an effective clock of 700 MHz and 22.4 GB/s of theoretical peak bandwidth. It also says that 128 MB of the memory is reserved for textures, display lists and vertex array objects, and the other 128 MB is used by the framebuffer, command FIFO and pbuffers, with any unused framebuffer memory available to the first group. So the size the tables give is the board's memory size for `sg3.bin` and `sg3a.bin`.
+- **inferred.** 22.4 GB/s divided by 700 million transfers a second is 32 bytes a transfer, a 256-bit data path (arithmetic on the guide's two numbers; the guide does not state the width). The guide does not describe the FireGL X1: its 256 MB (`sg2.bin`) stays an inference from the tables and the "X1-256p" name, and the memory type of the X1 is **unknown**. The guide says nothing of apertures or of how the host sees the memory, so the aperture sizes stay open ([open-questions.md](open-questions.md#memory-and-display)).
 
 ### Connector info (slot +0x50)
 
