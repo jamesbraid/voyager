@@ -520,31 +520,57 @@ grade = "inferred"
 offset = 0x704
 access = "rw"
 width = 32
+reset = 0x0
 grade = "inferred"
 
 [registers.cp_rb_cntl.fields]
 rb_no_update = { bits = [27, 27], grade = "established" }
 max_fetch = { bits = [19, 18], grade = "established" }
-buf_swap = { bits = [17, 16], grade = "established" }
 rb_blksz = { bits = [13, 8], grade = "established" }
 rb_bufsz = { bits = [5, 0], grade = "established" }
+
+[registers.cp_rb_cntl.fields.buf_swap]
+bits = [17, 16]
+grade = "established"
+
+[registers.cp_rb_cntl.fields.buf_swap.enums]
+none = { value = 0, grade = "inferred" }
+swap_16 = { value = 1, grade = "inferred" }
+swap_32 = { value = 2, grade = "inferred" }
+swap_half_dword = { value = 3, grade = "inferred" }
 
 [registers.cp_rb_rptr_addr]
 offset = 0x70c
 access = "rw"
 width = 32
+reset = 0x0
+grade = "inferred"
+
+[registers.cp_rb_rptr_addr.fields]
+rb_rptr_swap = { bits = [1, 0], grade = "inferred" }
+
+[registers.cp_rb_wptr]
+offset = 0x714
+access = "rw"
+width = 32
+reset = 0x0
 grade = "inferred"
 
 [registers.cp_rb_wptr_delay]
 offset = 0x718
 access = "rw"
 width = 32
+reset = 0x0
 grade = "inferred"
+
+[registers.cp_rb_wptr_delay.fields]
+pre_write_timer = { bits = [27, 0], grade = "inferred" }
 
 [registers.cp_csq_cntl]
 offset = 0x740
 access = "rw"
 width = 32
+reset = 0x0
 grade = "inferred"
 
 [registers.cp_csq_cntl.fields]
@@ -558,6 +584,20 @@ grade = "established"
 [registers.cp_csq_cntl.fields.csq_mode.enums]
 pridis_inddis = { value = 0, grade = "inferred" }
 pribm_indbm = { value = 8, grade = "inferred" }
+
+[registers.scratch_umsk]
+offset = 0x770
+access = "rw"
+width = 32
+grade = "inferred"
+doc = "Write-back mask for the scratch registers. The X module writes 0x3f when it starts the command processor."
+
+[registers.scratch_addr]
+offset = 0x774
+access = "rw"
+width = 32
+grade = "inferred"
+doc = "Host address that the command processor writes scratch register values to, when the mask enables them."
 
 [registers.cp_stat]
 offset = 0x7c0
@@ -593,6 +633,9 @@ offset = 0x7d4
 access = "rw"
 width = 32
 grade = "inferred"
+
+[registers.cp_me_ram_addr.fields]
+ram_addr = { bits = [7, 0], grade = "inferred" }
 
 [registers.cp_me_ram_datah]
 offset = 0x7dc
@@ -803,7 +846,9 @@ dc_flush = { bits = [1, 0], grade = "established" }
 offset = 0x4018
 access = "rw"
 width = 32
+reset = 0x11
 grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 30 (default column)"
 
 [registers.gb_tile_config.fields]
 enable = { bits = [0, 0], grade = "established" }
@@ -848,10 +893,29 @@ from = "public Radeon packet encodings, checked against the packet values the sh
 type = { bits = [31, 30], grade = "inferred" }
 count = { bits = [29, 16], grade = "inferred" }
 reg_index = { bits = [12, 0], grade = "inferred" }
+one_reg_wr = { bits = [15, 15], grade = "inferred" }
 
 [[words.PM4_TYPE0_HDR.tests]]
 value = 0x1057c
 expect = { type = 0, count = 1, reg_index = 1404 }
+
+[words.PM4_TYPE1_HDR]
+width = 32
+grade = "inferred"
+from = "public Radeon packet encodings (AMD Radeon R5xx Acceleration, revision 1.5, section 6.1)"
+
+[words.PM4_TYPE1_HDR.fields]
+type = { bits = [31, 30], grade = "inferred" }
+second_index = { bits = [21, 11], grade = "inferred" }
+first_index = { bits = [10, 0], grade = "inferred" }
+
+[words.PM4_TYPE2_HDR]
+width = 32
+grade = "inferred"
+from = "public Radeon packet encodings (AMD Radeon R5xx Acceleration, revision 1.5, section 6.1)"
+
+[words.PM4_TYPE2_HDR.fields]
+type = { bits = [31, 30], grade = "inferred" }
 
 [words.PM4_TYPE3_HDR]
 width = 32

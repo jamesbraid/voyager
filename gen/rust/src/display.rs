@@ -1850,6 +1850,38 @@ pub mod cp_rb_cntl {
         pub const fn set(v: u32, x: u32) -> u32 {
             (v & !(MASK << SHIFT)) | ((x & MASK) << SHIFT)
         }
+        pub const NONE: u32 = 0; // inferred
+        pub const SWAP_16: u32 = 1; // inferred
+        pub const SWAP_32: u32 = 2; // inferred
+        pub const SWAP_HALF_DWORD: u32 = 3; // inferred
+        #[derive(Debug, Clone, Copy, PartialEq, Eq)]
+        pub enum Value {
+            None,
+            Swap16,
+            Swap32,
+            SwapHalfDword,
+            Other(u32),
+        }
+        impl Value {
+            pub const fn from_raw(v: u32) -> Self {
+                match v {
+                    0 => Self::None,
+                    1 => Self::Swap16,
+                    2 => Self::Swap32,
+                    3 => Self::SwapHalfDword,
+                    _ => Self::Other(v),
+                }
+            }
+            pub const fn raw(self) -> u32 {
+                match self {
+                    Self::None => 0,
+                    Self::Swap16 => 1,
+                    Self::Swap32 => 2,
+                    Self::SwapHalfDword => 3,
+                    Self::Other(v) => v,
+                }
+            }
+        }
     }
     pub mod rb_blksz { // bits 13:8, established
         pub const SHIFT: u32 = 8;
@@ -1876,11 +1908,36 @@ pub mod cp_rb_cntl {
 pub mod cp_rb_rptr_addr {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x70c;
+    pub mod rb_rptr_swap { // bits 1:0, inferred
+        pub const SHIFT: u32 = 0;
+        pub const MASK: u32 = 0x3;
+        pub const fn get(v: u32) -> u32 {
+            (v >> SHIFT) & MASK
+        }
+        pub const fn set(v: u32, x: u32) -> u32 {
+            (v & !(MASK << SHIFT)) | ((x & MASK) << SHIFT)
+        }
+    }
+}
+/// (inferred)
+pub mod cp_rb_wptr {
+    pub const WIDTH: u32 = 32;
+    pub const OFFSET: u64 = 0x714;
 }
 /// (inferred)
 pub mod cp_rb_wptr_delay {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x718;
+    pub mod pre_write_timer { // bits 27:0, inferred
+        pub const SHIFT: u32 = 0;
+        pub const MASK: u32 = 0xfffffff;
+        pub const fn get(v: u32) -> u32 {
+            (v >> SHIFT) & MASK
+        }
+        pub const fn set(v: u32, x: u32) -> u32 {
+            (v & !(MASK << SHIFT)) | ((x & MASK) << SHIFT)
+        }
+    }
 }
 /// (inferred)
 pub mod cp_csq_cntl {
@@ -1940,6 +1997,16 @@ pub mod cp_csq_cntl {
             (v & !(MASK << SHIFT)) | ((x & MASK) << SHIFT)
         }
     }
+}
+/// Write-back mask for the scratch registers. The X module writes 0x3f when it starts the command processor. (inferred)
+pub mod scratch_umsk {
+    pub const WIDTH: u32 = 32;
+    pub const OFFSET: u64 = 0x770;
+}
+/// Host address that the command processor writes scratch register values to, when the mask enables them. (inferred)
+pub mod scratch_addr {
+    pub const WIDTH: u32 = 32;
+    pub const OFFSET: u64 = 0x774;
 }
 /// (inferred)
 pub mod cp_stat {
@@ -2105,6 +2172,16 @@ pub mod cp_me_cntl {
 pub mod cp_me_ram_addr {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x7d4;
+    pub mod ram_addr { // bits 7:0, inferred
+        pub const SHIFT: u32 = 0;
+        pub const MASK: u32 = 0xff;
+        pub const fn get(v: u32) -> u32 {
+            (v >> SHIFT) & MASK
+        }
+        pub const fn set(v: u32, x: u32) -> u32 {
+            (v & !(MASK << SHIFT)) | ((x & MASK) << SHIFT)
+        }
+    }
 }
 /// (inferred)
 pub mod cp_me_ram_datah {
@@ -2750,9 +2827,67 @@ pub mod pm4_type0_hdr {
             (v & !(MASK << SHIFT)) | ((x & MASK) << SHIFT)
         }
     }
+    pub mod one_reg_wr { // bits 15:15, inferred
+        pub const SHIFT: u32 = 15;
+        pub const MASK: u32 = 0x1;
+        pub const fn get(v: u32) -> u32 {
+            (v >> SHIFT) & MASK
+        }
+        pub const fn set(v: u32, x: u32) -> u32 {
+            (v & !(MASK << SHIFT)) | ((x & MASK) << SHIFT)
+        }
+    }
     pub mod reg_index { // bits 12:0, inferred
         pub const SHIFT: u32 = 0;
         pub const MASK: u32 = 0x1fff;
+        pub const fn get(v: u32) -> u32 {
+            (v >> SHIFT) & MASK
+        }
+        pub const fn set(v: u32, x: u32) -> u32 {
+            (v & !(MASK << SHIFT)) | ((x & MASK) << SHIFT)
+        }
+    }
+}
+/// (inferred)
+pub mod pm4_type1_hdr {
+    pub const WIDTH: u32 = 32;
+    pub mod r#type { // bits 31:30, inferred
+        pub const SHIFT: u32 = 30;
+        pub const MASK: u32 = 0x3;
+        pub const fn get(v: u32) -> u32 {
+            (v >> SHIFT) & MASK
+        }
+        pub const fn set(v: u32, x: u32) -> u32 {
+            (v & !(MASK << SHIFT)) | ((x & MASK) << SHIFT)
+        }
+    }
+    pub mod second_index { // bits 21:11, inferred
+        pub const SHIFT: u32 = 11;
+        pub const MASK: u32 = 0x7ff;
+        pub const fn get(v: u32) -> u32 {
+            (v >> SHIFT) & MASK
+        }
+        pub const fn set(v: u32, x: u32) -> u32 {
+            (v & !(MASK << SHIFT)) | ((x & MASK) << SHIFT)
+        }
+    }
+    pub mod first_index { // bits 10:0, inferred
+        pub const SHIFT: u32 = 0;
+        pub const MASK: u32 = 0x7ff;
+        pub const fn get(v: u32) -> u32 {
+            (v >> SHIFT) & MASK
+        }
+        pub const fn set(v: u32, x: u32) -> u32 {
+            (v & !(MASK << SHIFT)) | ((x & MASK) << SHIFT)
+        }
+    }
+}
+/// (inferred)
+pub mod pm4_type2_hdr {
+    pub const WIDTH: u32 = 32;
+    pub mod r#type { // bits 31:30, inferred
+        pub const SHIFT: u32 = 30;
+        pub const MASK: u32 = 0x3;
         pub const fn get(v: u32) -> u32 {
             (v >> SHIFT) & MASK
         }

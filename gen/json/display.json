@@ -2093,7 +2093,7 @@
    "count": 1,
    "stride": 4,
    "space": null,
-   "reset": "unknown",
+   "reset": 0,
    "grade": "inferred",
    "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
   },
@@ -2126,6 +2126,38 @@
   },
   {
    "unit": "display",
+   "kind": "enum_value",
+   "name": "cp_rb_cntl.buf_swap.none",
+   "value": 0,
+   "grade": "inferred",
+   "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
+  },
+  {
+   "unit": "display",
+   "kind": "enum_value",
+   "name": "cp_rb_cntl.buf_swap.swap_16",
+   "value": 1,
+   "grade": "inferred",
+   "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
+  },
+  {
+   "unit": "display",
+   "kind": "enum_value",
+   "name": "cp_rb_cntl.buf_swap.swap_32",
+   "value": 2,
+   "grade": "inferred",
+   "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
+  },
+  {
+   "unit": "display",
+   "kind": "enum_value",
+   "name": "cp_rb_cntl.buf_swap.swap_half_dword",
+   "value": 3,
+   "grade": "inferred",
+   "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
+  },
+  {
+   "unit": "display",
    "kind": "field",
    "name": "cp_rb_cntl.rb_blksz",
    "hi": 13,
@@ -2152,7 +2184,30 @@
    "count": 1,
    "stride": 4,
    "space": null,
-   "reset": "unknown",
+   "reset": 0,
+   "grade": "inferred",
+   "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
+  },
+  {
+   "unit": "display",
+   "kind": "field",
+   "name": "cp_rb_rptr_addr.rb_rptr_swap",
+   "hi": 1,
+   "lo": 0,
+   "grade": "inferred",
+   "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
+  },
+  {
+   "unit": "display",
+   "kind": "register",
+   "name": "cp_rb_wptr",
+   "offset": 1812,
+   "access": "rw",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": 0,
    "grade": "inferred",
    "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
   },
@@ -2166,7 +2221,16 @@
    "count": 1,
    "stride": 4,
    "space": null,
-   "reset": "unknown",
+   "reset": 0,
+   "grade": "inferred",
+   "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
+  },
+  {
+   "unit": "display",
+   "kind": "field",
+   "name": "cp_rb_wptr_delay.pre_write_timer",
+   "hi": 27,
+   "lo": 0,
    "grade": "inferred",
    "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
   },
@@ -2180,7 +2244,7 @@
    "count": 1,
    "stride": 4,
    "space": null,
-   "reset": "unknown",
+   "reset": 0,
    "grade": "inferred",
    "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
   },
@@ -2224,6 +2288,34 @@
    "name": "cp_csq_cntl.csq_cnt_primary",
    "hi": 7,
    "lo": 0,
+   "grade": "inferred",
+   "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
+  },
+  {
+   "unit": "display",
+   "kind": "register",
+   "name": "scratch_umsk",
+   "offset": 1904,
+   "access": "rw",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": "unknown",
+   "grade": "inferred",
+   "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
+  },
+  {
+   "unit": "display",
+   "kind": "register",
+   "name": "scratch_addr",
+   "offset": 1908,
+   "access": "rw",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": "unknown",
    "grade": "inferred",
    "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
   },
@@ -2401,6 +2493,15 @@
    "stride": 4,
    "space": null,
    "reset": "unknown",
+   "grade": "inferred",
+   "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
+  },
+  {
+   "unit": "display",
+   "kind": "field",
+   "name": "cp_me_ram_addr.ram_addr",
+   "hi": 7,
+   "lo": 0,
    "grade": "inferred",
    "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
   },
@@ -3115,7 +3216,7 @@
    "count": 1,
    "stride": 4,
    "space": null,
-   "reset": "unknown",
+   "reset": 17,
    "grade": "established",
    "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
   },
@@ -3246,11 +3347,72 @@
   {
    "unit": "display",
    "kind": "field",
+   "name": "PM4_TYPE0_HDR.one_reg_wr",
+   "hi": 15,
+   "lo": 15,
+   "grade": "inferred",
+   "from": "public Radeon packet encodings, checked against the packet values the shipped driver writes"
+  },
+  {
+   "unit": "display",
+   "kind": "field",
    "name": "PM4_TYPE0_HDR.reg_index",
    "hi": 12,
    "lo": 0,
    "grade": "inferred",
    "from": "public Radeon packet encodings, checked against the packet values the shipped driver writes"
+  },
+  {
+   "unit": "display",
+   "kind": "word",
+   "name": "PM4_TYPE1_HDR",
+   "width": 32,
+   "grade": "inferred",
+   "from": "public Radeon packet encodings (AMD Radeon R5xx Acceleration, revision 1.5, section 6.1)"
+  },
+  {
+   "unit": "display",
+   "kind": "field",
+   "name": "PM4_TYPE1_HDR.type",
+   "hi": 31,
+   "lo": 30,
+   "grade": "inferred",
+   "from": "public Radeon packet encodings (AMD Radeon R5xx Acceleration, revision 1.5, section 6.1)"
+  },
+  {
+   "unit": "display",
+   "kind": "field",
+   "name": "PM4_TYPE1_HDR.second_index",
+   "hi": 21,
+   "lo": 11,
+   "grade": "inferred",
+   "from": "public Radeon packet encodings (AMD Radeon R5xx Acceleration, revision 1.5, section 6.1)"
+  },
+  {
+   "unit": "display",
+   "kind": "field",
+   "name": "PM4_TYPE1_HDR.first_index",
+   "hi": 10,
+   "lo": 0,
+   "grade": "inferred",
+   "from": "public Radeon packet encodings (AMD Radeon R5xx Acceleration, revision 1.5, section 6.1)"
+  },
+  {
+   "unit": "display",
+   "kind": "word",
+   "name": "PM4_TYPE2_HDR",
+   "width": 32,
+   "grade": "inferred",
+   "from": "public Radeon packet encodings (AMD Radeon R5xx Acceleration, revision 1.5, section 6.1)"
+  },
+  {
+   "unit": "display",
+   "kind": "field",
+   "name": "PM4_TYPE2_HDR.type",
+   "hi": 31,
+   "lo": 30,
+   "grade": "inferred",
+   "from": "public Radeon packet encodings (AMD Radeon R5xx Acceleration, revision 1.5, section 6.1)"
   },
   {
    "unit": "display",

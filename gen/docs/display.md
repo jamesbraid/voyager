@@ -60,10 +60,13 @@ Every item has a grade: established, inferred or unknown. A grade says how the i
 | `ov0_scale_cntl` | 0x420 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `subpic_cntl` | 0x540 | rw | 32 |  |  | unknown | established | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_rb_base` | 0x700 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
-| `cp_rb_cntl` | 0x704 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
-| `cp_rb_rptr_addr` | 0x70c | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
-| `cp_rb_wptr_delay` | 0x718 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
-| `cp_csq_cntl` | 0x740 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
+| `cp_rb_cntl` | 0x704 | rw | 32 |  |  | 0x0 | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
+| `cp_rb_rptr_addr` | 0x70c | rw | 32 |  |  | 0x0 | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
+| `cp_rb_wptr` | 0x714 | rw | 32 |  |  | 0x0 | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
+| `cp_rb_wptr_delay` | 0x718 | rw | 32 |  |  | 0x0 | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
+| `cp_csq_cntl` | 0x740 | rw | 32 |  |  | 0x0 | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
+| `scratch_umsk` | 0x770 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
+| `scratch_addr` | 0x774 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_stat` | 0x7c0 | r | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_me_cntl` | 0x7d0 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_me_ram_addr` | 0x7d4 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
@@ -92,7 +95,7 @@ Every item has a grade: established, inferred or unknown. A grade says how the i
 | `wait_until` | 0x1720 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `vap_cntl_status` | 0x2140 | rw | 32 |  |  | unknown | established | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `rb2d_dstcache_ctlstat` | 0x342c | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
-| `gb_tile_config` | 0x4018 | rw | 32 |  |  | unknown | established | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
+| `gb_tile_config` | 0x4018 | rw | 32 |  |  | 0x11 | established | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `ga_soft_reset` | 0x429c | rw | 32 |  |  | unknown | established | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 
 ### Register `clock_cntl_index`
@@ -434,13 +437,23 @@ Every item has a grade: established, inferred or unknown. A grade says how the i
 |---|---|---|---|---|---|
 | 27 | `rb_no_update` | established |  | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |  |
 | 19:18 | `max_fetch` | established |  | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |  |
-| 17:16 | `buf_swap` | established |  | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |  |
+| 17:16 | `buf_swap` | established | none=0, swap_16=1, swap_32=2, swap_half_dword=3 | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |  |
 | 13:8 | `rb_blksz` | established |  | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |  |
 | 5:0 | `rb_bufsz` | established |  | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |  |
 
 ### Register `cp_rb_rptr_addr`
 
+| Bits | Field | Grade | Values | Source | Description |
+|---|---|---|---|---|---|
+| 1:0 | `rb_rptr_swap` | inferred |  | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |  |
+
+### Register `cp_rb_wptr`
+
 ### Register `cp_rb_wptr_delay`
+
+| Bits | Field | Grade | Values | Source | Description |
+|---|---|---|---|---|---|
+| 27:0 | `pre_write_timer` | inferred |  | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |  |
 
 ### Register `cp_csq_cntl`
 
@@ -449,6 +462,14 @@ Every item has a grade: established, inferred or unknown. A grade says how the i
 | 31:28 | `csq_mode` | established | pridis_inddis=0, pribm_indbm=8 | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |  |
 | 15:8 | `csq_cnt_indirect` | inferred |  | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |  |
 | 7:0 | `csq_cnt_primary` | inferred |  | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |  |
+
+### Register `scratch_umsk`
+
+Write-back mask for the scratch registers. The X module writes 0x3f when it starts the command processor.
+
+### Register `scratch_addr`
+
+Host address that the command processor writes scratch register values to, when the mask enables them.
 
 ### Register `cp_stat`
 
@@ -473,6 +494,10 @@ Every item has a grade: established, inferred or unknown. A grade says how the i
 ### Register `cp_me_cntl`
 
 ### Register `cp_me_ram_addr`
+
+| Bits | Field | Grade | Values | Source | Description |
+|---|---|---|---|---|---|
+| 7:0 | `ram_addr` | inferred |  | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |  |
 
 ### Register `cp_me_ram_datah`
 
@@ -606,6 +631,8 @@ Every item has a grade: established, inferred or unknown. A grade says how the i
 | Word | Width | Grade | Source |
 |---|---|---|---|
 | `PM4_TYPE0_HDR` | 32 | inferred | public Radeon packet encodings, checked against the packet values the shipped driver writes |
+| `PM4_TYPE1_HDR` | 32 | inferred | public Radeon packet encodings (AMD Radeon R5xx Acceleration, revision 1.5, section 6.1) |
+| `PM4_TYPE2_HDR` | 32 | inferred | public Radeon packet encodings (AMD Radeon R5xx Acceleration, revision 1.5, section 6.1) |
 | `PM4_TYPE3_HDR` | 32 | inferred | public Radeon packet encodings, checked against the packet values the shipped driver writes |
 
 ### Word `PM4_TYPE0_HDR`
@@ -614,7 +641,22 @@ Every item has a grade: established, inferred or unknown. A grade says how the i
 |---|---|---|---|---|---|
 | 31:30 | `type` | inferred |  | public Radeon packet encodings, checked against the packet values the shipped driver writes |  |
 | 29:16 | `count` | inferred |  | public Radeon packet encodings, checked against the packet values the shipped driver writes |  |
+| 15 | `one_reg_wr` | inferred |  | public Radeon packet encodings, checked against the packet values the shipped driver writes |  |
 | 12:0 | `reg_index` | inferred |  | public Radeon packet encodings, checked against the packet values the shipped driver writes |  |
+
+### Word `PM4_TYPE1_HDR`
+
+| Bits | Field | Grade | Values | Source | Description |
+|---|---|---|---|---|---|
+| 31:30 | `type` | inferred |  | public Radeon packet encodings (AMD Radeon R5xx Acceleration, revision 1.5, section 6.1) |  |
+| 21:11 | `second_index` | inferred |  | public Radeon packet encodings (AMD Radeon R5xx Acceleration, revision 1.5, section 6.1) |  |
+| 10:0 | `first_index` | inferred |  | public Radeon packet encodings (AMD Radeon R5xx Acceleration, revision 1.5, section 6.1) |  |
+
+### Word `PM4_TYPE2_HDR`
+
+| Bits | Field | Grade | Values | Source | Description |
+|---|---|---|---|---|---|
+| 31:30 | `type` | inferred |  | public Radeon packet encodings (AMD Radeon R5xx Acceleration, revision 1.5, section 6.1) |  |
 
 ### Word `PM4_TYPE3_HDR`
 

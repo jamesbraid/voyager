@@ -621,7 +621,7 @@
 /* cp_rb_base: rw32, reset unknown; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
 #define VOYAGER_CP_RB_BASE_OFFSET                    0x700u /* inferred */
 
-/* cp_rb_cntl: rw32, reset unknown; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
+/* cp_rb_cntl: rw32, reset 0x0; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
 #define VOYAGER_CP_RB_CNTL_OFFSET                    0x704u /* inferred */
 #define VOYAGER_CP_RB_CNTL_RB_NO_UPDATE_SHIFT        27 /* established */
 #define VOYAGER_CP_RB_CNTL_RB_NO_UPDATE_MASK         0x1u
@@ -632,6 +632,10 @@
 #define VOYAGER_CP_RB_CNTL_BUF_SWAP_SHIFT            16 /* established */
 #define VOYAGER_CP_RB_CNTL_BUF_SWAP_MASK             0x3u
 #define VOYAGER_CP_RB_CNTL_BUF_SWAP_INPLACE          (VOYAGER_CP_RB_CNTL_BUF_SWAP_MASK << VOYAGER_CP_RB_CNTL_BUF_SWAP_SHIFT)
+#define VOYAGER_CP_RB_CNTL_BUF_SWAP_NONE             0 /* inferred */
+#define VOYAGER_CP_RB_CNTL_BUF_SWAP_SWAP_16          1 /* inferred */
+#define VOYAGER_CP_RB_CNTL_BUF_SWAP_SWAP_32          2 /* inferred */
+#define VOYAGER_CP_RB_CNTL_BUF_SWAP_SWAP_HALF_DWORD  3 /* inferred */
 #define VOYAGER_CP_RB_CNTL_RB_BLKSZ_SHIFT            8 /* established */
 #define VOYAGER_CP_RB_CNTL_RB_BLKSZ_MASK             0x3fu
 #define VOYAGER_CP_RB_CNTL_RB_BLKSZ_INPLACE          (VOYAGER_CP_RB_CNTL_RB_BLKSZ_MASK << VOYAGER_CP_RB_CNTL_RB_BLKSZ_SHIFT)
@@ -639,13 +643,22 @@
 #define VOYAGER_CP_RB_CNTL_RB_BUFSZ_MASK             0x3fu
 #define VOYAGER_CP_RB_CNTL_RB_BUFSZ_INPLACE          (VOYAGER_CP_RB_CNTL_RB_BUFSZ_MASK << VOYAGER_CP_RB_CNTL_RB_BUFSZ_SHIFT)
 
-/* cp_rb_rptr_addr: rw32, reset unknown; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
+/* cp_rb_rptr_addr: rw32, reset 0x0; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
 #define VOYAGER_CP_RB_RPTR_ADDR_OFFSET               0x70cu /* inferred */
+#define VOYAGER_CP_RB_RPTR_ADDR_RB_RPTR_SWAP_SHIFT   0 /* inferred */
+#define VOYAGER_CP_RB_RPTR_ADDR_RB_RPTR_SWAP_MASK    0x3u
+#define VOYAGER_CP_RB_RPTR_ADDR_RB_RPTR_SWAP_INPLACE (VOYAGER_CP_RB_RPTR_ADDR_RB_RPTR_SWAP_MASK << VOYAGER_CP_RB_RPTR_ADDR_RB_RPTR_SWAP_SHIFT)
 
-/* cp_rb_wptr_delay: rw32, reset unknown; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
+/* cp_rb_wptr: rw32, reset 0x0; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
+#define VOYAGER_CP_RB_WPTR_OFFSET                    0x714u /* inferred */
+
+/* cp_rb_wptr_delay: rw32, reset 0x0; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
 #define VOYAGER_CP_RB_WPTR_DELAY_OFFSET              0x718u /* inferred */
+#define VOYAGER_CP_RB_WPTR_DELAY_PRE_WRITE_TIMER_SHIFT 0 /* inferred */
+#define VOYAGER_CP_RB_WPTR_DELAY_PRE_WRITE_TIMER_MASK 0xfffffffu
+#define VOYAGER_CP_RB_WPTR_DELAY_PRE_WRITE_TIMER_INPLACE (VOYAGER_CP_RB_WPTR_DELAY_PRE_WRITE_TIMER_MASK << VOYAGER_CP_RB_WPTR_DELAY_PRE_WRITE_TIMER_SHIFT)
 
-/* cp_csq_cntl: rw32, reset unknown; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
+/* cp_csq_cntl: rw32, reset 0x0; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
 #define VOYAGER_CP_CSQ_CNTL_OFFSET                   0x740u /* inferred */
 #define VOYAGER_CP_CSQ_CNTL_CSQ_MODE_SHIFT           28 /* established */
 #define VOYAGER_CP_CSQ_CNTL_CSQ_MODE_MASK            0xfu
@@ -658,6 +671,18 @@
 #define VOYAGER_CP_CSQ_CNTL_CSQ_CNT_PRIMARY_SHIFT    0 /* inferred */
 #define VOYAGER_CP_CSQ_CNTL_CSQ_CNT_PRIMARY_MASK     0xffu
 #define VOYAGER_CP_CSQ_CNTL_CSQ_CNT_PRIMARY_INPLACE  (VOYAGER_CP_CSQ_CNTL_CSQ_CNT_PRIMARY_MASK << VOYAGER_CP_CSQ_CNTL_CSQ_CNT_PRIMARY_SHIFT)
+
+/*
+ * Write-back mask for the scratch registers. The X module writes 0x3f when it starts the command processor.
+ */
+/* scratch_umsk: rw32, reset unknown; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
+#define VOYAGER_SCRATCH_UMSK_OFFSET                  0x770u /* inferred */
+
+/*
+ * Host address that the command processor writes scratch register values to, when the mask enables them.
+ */
+/* scratch_addr: rw32, reset unknown; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
+#define VOYAGER_SCRATCH_ADDR_OFFSET                  0x774u /* inferred */
 
 /* cp_stat: r32, reset unknown; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
 #define VOYAGER_CP_STAT_OFFSET                       0x7c0u /* inferred */
@@ -712,6 +737,9 @@
 
 /* cp_me_ram_addr: rw32, reset unknown; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
 #define VOYAGER_CP_ME_RAM_ADDR_OFFSET                0x7d4u /* inferred */
+#define VOYAGER_CP_ME_RAM_ADDR_RAM_ADDR_SHIFT        0 /* inferred */
+#define VOYAGER_CP_ME_RAM_ADDR_RAM_ADDR_MASK         0xffu
+#define VOYAGER_CP_ME_RAM_ADDR_RAM_ADDR_INPLACE      (VOYAGER_CP_ME_RAM_ADDR_RAM_ADDR_MASK << VOYAGER_CP_ME_RAM_ADDR_RAM_ADDR_SHIFT)
 
 /* cp_me_ram_datah: rw32, reset unknown; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
 #define VOYAGER_CP_ME_RAM_DATAH_OFFSET               0x7dcu /* inferred */
@@ -905,7 +933,7 @@
 #define VOYAGER_RB2D_DSTCACHE_CTLSTAT_DC_FLUSH_MASK  0x3u
 #define VOYAGER_RB2D_DSTCACHE_CTLSTAT_DC_FLUSH_INPLACE (VOYAGER_RB2D_DSTCACHE_CTLSTAT_DC_FLUSH_MASK << VOYAGER_RB2D_DSTCACHE_CTLSTAT_DC_FLUSH_SHIFT)
 
-/* gb_tile_config: rw32, reset unknown; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
+/* gb_tile_config: rw32, reset 0x11; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
 #define VOYAGER_GB_TILE_CONFIG_OFFSET                0x4018u /* established */
 #define VOYAGER_GB_TILE_CONFIG_TILE_SIZE_SHIFT       4 /* established */
 #define VOYAGER_GB_TILE_CONFIG_TILE_SIZE_MASK        0x3u
@@ -937,9 +965,30 @@
 #define VOYAGER_PM4_TYPE0_HDR_COUNT_SHIFT            16 /* inferred */
 #define VOYAGER_PM4_TYPE0_HDR_COUNT_MASK             0x3fffu
 #define VOYAGER_PM4_TYPE0_HDR_COUNT_INPLACE          (VOYAGER_PM4_TYPE0_HDR_COUNT_MASK << VOYAGER_PM4_TYPE0_HDR_COUNT_SHIFT)
+#define VOYAGER_PM4_TYPE0_HDR_ONE_REG_WR_SHIFT       15 /* inferred */
+#define VOYAGER_PM4_TYPE0_HDR_ONE_REG_WR_MASK        0x1u
+#define VOYAGER_PM4_TYPE0_HDR_ONE_REG_WR_INPLACE     (VOYAGER_PM4_TYPE0_HDR_ONE_REG_WR_MASK << VOYAGER_PM4_TYPE0_HDR_ONE_REG_WR_SHIFT)
 #define VOYAGER_PM4_TYPE0_HDR_REG_INDEX_SHIFT        0 /* inferred */
 #define VOYAGER_PM4_TYPE0_HDR_REG_INDEX_MASK         0x1fffu
 #define VOYAGER_PM4_TYPE0_HDR_REG_INDEX_INPLACE      (VOYAGER_PM4_TYPE0_HDR_REG_INDEX_MASK << VOYAGER_PM4_TYPE0_HDR_REG_INDEX_SHIFT)
+
+/* word PM4_TYPE1_HDR: 32 bits; public Radeon packet encodings (AMD Radeon R5xx Acceleration, revision 1.5, section 6.1) */
+#define VOYAGER_PM4_TYPE1_HDR_WIDTH                  32 /* inferred */
+#define VOYAGER_PM4_TYPE1_HDR_TYPE_SHIFT             30 /* inferred */
+#define VOYAGER_PM4_TYPE1_HDR_TYPE_MASK              0x3u
+#define VOYAGER_PM4_TYPE1_HDR_TYPE_INPLACE           (VOYAGER_PM4_TYPE1_HDR_TYPE_MASK << VOYAGER_PM4_TYPE1_HDR_TYPE_SHIFT)
+#define VOYAGER_PM4_TYPE1_HDR_SECOND_INDEX_SHIFT     11 /* inferred */
+#define VOYAGER_PM4_TYPE1_HDR_SECOND_INDEX_MASK      0x7ffu
+#define VOYAGER_PM4_TYPE1_HDR_SECOND_INDEX_INPLACE   (VOYAGER_PM4_TYPE1_HDR_SECOND_INDEX_MASK << VOYAGER_PM4_TYPE1_HDR_SECOND_INDEX_SHIFT)
+#define VOYAGER_PM4_TYPE1_HDR_FIRST_INDEX_SHIFT      0 /* inferred */
+#define VOYAGER_PM4_TYPE1_HDR_FIRST_INDEX_MASK       0x7ffu
+#define VOYAGER_PM4_TYPE1_HDR_FIRST_INDEX_INPLACE    (VOYAGER_PM4_TYPE1_HDR_FIRST_INDEX_MASK << VOYAGER_PM4_TYPE1_HDR_FIRST_INDEX_SHIFT)
+
+/* word PM4_TYPE2_HDR: 32 bits; public Radeon packet encodings (AMD Radeon R5xx Acceleration, revision 1.5, section 6.1) */
+#define VOYAGER_PM4_TYPE2_HDR_WIDTH                  32 /* inferred */
+#define VOYAGER_PM4_TYPE2_HDR_TYPE_SHIFT             30 /* inferred */
+#define VOYAGER_PM4_TYPE2_HDR_TYPE_MASK              0x3u
+#define VOYAGER_PM4_TYPE2_HDR_TYPE_INPLACE           (VOYAGER_PM4_TYPE2_HDR_TYPE_MASK << VOYAGER_PM4_TYPE2_HDR_TYPE_SHIFT)
 
 /* word PM4_TYPE3_HDR: 32 bits; public Radeon packet encodings, checked against the packet values the shipped driver writes */
 #define VOYAGER_PM4_TYPE3_HDR_WIDTH                  32 /* inferred */

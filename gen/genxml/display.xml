@@ -2,6 +2,12 @@
 <!-- generated from defs/display.toml by defs-gen - do not edit, change the source -->
 <genxml unit="display" prefix="VOYAGER" title="display, interrupt and engine registers of the R3xx-class FireGL boards (publish-safe decode header)" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver">
   <doc>Display, interrupt and engine registers of the R3xx-class FireGL boards.</doc>
+  <enum name="cp_rb_cntl_buf_swap">
+    <value name="none" value="0" grade="inferred"/>
+    <value name="swap_16" value="1" grade="inferred"/>
+    <value name="swap_32" value="2" grade="inferred"/>
+    <value name="swap_half_dword" value="3" grade="inferred"/>
+  </enum>
   <enum name="cp_csq_cntl_csq_mode">
     <value name="pridis_inddis" value="0" grade="inferred"/>
     <value name="pribm_indbm" value="8" grade="inferred"/>
@@ -286,21 +292,31 @@
   </struct>
   <struct name="CP_RB_BASE" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x700" access="rw" reset="unknown">
   </struct>
-  <struct name="CP_RB_CNTL" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x704" access="rw" reset="unknown">
+  <struct name="CP_RB_CNTL" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x704" access="rw" reset="0x0">
     <field name="rb_no_update" start="27" size="1" type="uint" grade="established"/>
     <field name="max_fetch" start="18" size="2" type="uint" grade="established"/>
-    <field name="buf_swap" start="16" size="2" type="uint" grade="established"/>
+    <field name="buf_swap" start="16" size="2" type="cp_rb_cntl_buf_swap" grade="established"/>
     <field name="rb_blksz" start="8" size="6" type="uint" grade="established"/>
     <field name="rb_bufsz" start="0" size="6" type="uint" grade="established"/>
   </struct>
-  <struct name="CP_RB_RPTR_ADDR" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x70c" access="rw" reset="unknown">
+  <struct name="CP_RB_RPTR_ADDR" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x70c" access="rw" reset="0x0">
+    <field name="rb_rptr_swap" start="0" size="2" type="uint" grade="inferred"/>
   </struct>
-  <struct name="CP_RB_WPTR_DELAY" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x718" access="rw" reset="unknown">
+  <struct name="CP_RB_WPTR" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x714" access="rw" reset="0x0">
   </struct>
-  <struct name="CP_CSQ_CNTL" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x740" access="rw" reset="unknown">
+  <struct name="CP_RB_WPTR_DELAY" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x718" access="rw" reset="0x0">
+    <field name="pre_write_timer" start="0" size="28" type="uint" grade="inferred"/>
+  </struct>
+  <struct name="CP_CSQ_CNTL" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x740" access="rw" reset="0x0">
     <field name="csq_mode" start="28" size="4" type="cp_csq_cntl_csq_mode" grade="established"/>
     <field name="csq_cnt_indirect" start="8" size="8" type="uint" grade="inferred"/>
     <field name="csq_cnt_primary" start="0" size="8" type="uint" grade="inferred"/>
+  </struct>
+  <struct name="SCRATCH_UMSK" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x770" access="rw" reset="unknown">
+    <doc>Write-back mask for the scratch registers. The X module writes 0x3f when it starts the command processor.</doc>
+  </struct>
+  <struct name="SCRATCH_ADDR" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x774" access="rw" reset="unknown">
+    <doc>Host address that the command processor writes scratch register values to, when the mask enables them.</doc>
   </struct>
   <struct name="CP_STAT" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x7c0" access="r" reset="unknown">
     <field name="cp_busy" start="31" size="1" type="uint" grade="inferred"/>
@@ -322,6 +338,7 @@
   <struct name="CP_ME_CNTL" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x7d0" access="rw" reset="unknown">
   </struct>
   <struct name="CP_ME_RAM_ADDR" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x7d4" access="rw" reset="unknown">
+    <field name="ram_addr" start="0" size="8" type="uint" grade="inferred"/>
   </struct>
   <struct name="CP_ME_RAM_DATAH" size="4" grade="inferred" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x7dc" access="rw" reset="unknown">
   </struct>
@@ -412,7 +429,7 @@
     <field name="dc_free" start="2" size="2" type="uint" grade="established"/>
     <field name="dc_flush" start="0" size="2" type="uint" grade="established"/>
   </struct>
-  <struct name="GB_TILE_CONFIG" size="4" grade="established" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x4018" access="rw" reset="unknown">
+  <struct name="GB_TILE_CONFIG" size="4" grade="established" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver" register="yes" offset="0x4018" access="rw" reset="0x11">
     <field name="tile_size" start="4" size="2" type="gb_tile_config_tile_size" grade="established"/>
     <field name="pipe_count" start="1" size="3" type="gb_tile_config_pipe_count" grade="established"/>
     <field name="enable" start="0" size="1" type="uint" grade="established"/>
@@ -428,12 +445,21 @@
   <struct name="PM4_TYPE0_HDR" size="4" grade="inferred" from="public Radeon packet encodings, checked against the packet values the shipped driver writes">
     <field name="type" start="30" size="2" type="uint" grade="inferred"/>
     <field name="count" start="16" size="14" type="uint" grade="inferred"/>
+    <field name="one_reg_wr" start="15" size="1" type="uint" grade="inferred"/>
     <field name="reg_index" start="0" size="13" type="uint" grade="inferred"/>
     <test value="0x1057c" kind="vector">
       <expect field="type" value="0"/>
       <expect field="count" value="1"/>
       <expect field="reg_index" value="1404"/>
     </test>
+  </struct>
+  <struct name="PM4_TYPE1_HDR" size="4" grade="inferred" from="public Radeon packet encodings (AMD Radeon R5xx Acceleration, revision 1.5, section 6.1)">
+    <field name="type" start="30" size="2" type="uint" grade="inferred"/>
+    <field name="second_index" start="11" size="11" type="uint" grade="inferred"/>
+    <field name="first_index" start="0" size="11" type="uint" grade="inferred"/>
+  </struct>
+  <struct name="PM4_TYPE2_HDR" size="4" grade="inferred" from="public Radeon packet encodings (AMD Radeon R5xx Acceleration, revision 1.5, section 6.1)">
+    <field name="type" start="30" size="2" type="uint" grade="inferred"/>
   </struct>
   <struct name="PM4_TYPE3_HDR" size="4" grade="inferred" from="public Radeon packet encodings, checked against the packet values the shipped driver writes">
     <field name="type" start="30" size="2" type="uint" grade="inferred"/>
