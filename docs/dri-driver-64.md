@@ -325,3 +325,14 @@ These routines pass the same lock-state structure to two helpers in the same obj
   It stores the raw `malloc` pointer in the eight bytes below the aligned result (0x5199bc) and returns the aligned pointer (0x5199c0).
 - `fglx11AlignedFree` (`usr/X11R6/lib/modules/dri/fglrx_dri64.so`, 52 bytes at 0x5199d0): **established.** All nine instructions were read.
   It frees the raw pointer that `fglx11AlignedMalloc` stored eight bytes below its argument (`free` call at 0x5199ec, GOT slot 6809, argument loaded from -8 at 0x5199f0).
+
+## Limits and extensions the vendor manual states
+
+These come from a published SGI document, not from the shipped drivers, so they are what the vendor told programmers, not a reading of what `fglrx_dri64.so` sets. They are **established** as statements of the Silicon Graphics UltimateVision Graphics Porting Guide (007-4297-001), for the FireGL X2-256 pipe that guide describes. They say nothing of the FireGL X1, so the X1's limits stay **unknown**. The driver's own limit-setting code and extension-string builder are not read ([open-questions.md](open-questions.md#3d)).
+
+- Vertex programs (the `ARB_vertex_program` interface): the maximum length is 64K instructions, and the length is also limited by the number of hardware registers; temporary storage cannot be virtualised (printed pages 13 and 14).
+- Fragment programs (the `ARB_fragment_program` interface): the maximum length is 64 instructions (printed page 14).
+- The guide lists the ATI vertex array extensions `ATI_vertex_array_object` and `ATI_element_array` for server-side vertex data (printed page 50) and says the GPU does not support `SGI_texture_color_table`, so texture lookup tables need a fragment program (printed page 52).
+- Display resolution is limited to 2048x1536 per display, with two displays per pipe, and the second output analog only (printed page 5).
+
+The guide gives no texture size limit and no extension list; an extension list per card remains open.
