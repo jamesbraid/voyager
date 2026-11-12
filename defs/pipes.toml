@@ -1,0 +1,110 @@
+unit = "pipes"
+prefix = "VOYAGER"
+title = "per-pipe select and Z-buffer registers of the R3xx-class FireGL boards"
+doc = "Per-pipe destination select, occlusion counters and the hierarchical Z RAM of the R3xx-class boards. The chip has two pixel pipes; the registers below decide which of them a write reaches."
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0"
+public_from = ["AMD Radeon R3xx 3D Register Reference"]
+
+[registers.su_reg_dest]
+offset = 0x42c8
+access = "rw"
+width = 32
+reset = 0xf
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+doc = "Selects the pixel pipes that receive register writes. Writes reach both pipes unless this register restricts them."
+
+[registers.su_reg_dest.fields]
+pipe0 = { bits = [0, 0], grade = "established" }
+pipe1 = { bits = [3, 3], grade = "established" }
+
+[registers.zb_bw_cntl]
+offset = 0x4f1c
+access = "rw"
+width = 32
+reset = 0x0
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 92"
+doc = "Z buffer bandwidth control. Hierarchical Z is switched on and off here."
+
+[registers.zb_bw_cntl.fields]
+hiz_enable = { bits = [0, 0], grade = "established" }
+hiz_min = { bits = [1, 1], grade = "established" }
+
+[registers.zb_hiz_offset]
+offset = 0x4f44
+access = "rw"
+width = 32
+reset = 0x0
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 95"
+doc = "Base of the hierarchical Z RAM in each pipe, in dwords. The Z RAM address of pixel (x, y) is the base in bits 16:3, plus the Y block index times the pitch, plus the X block index. One dword holds an 8-bit Z value for each of four 4x4 blocks."
+
+[registers.zb_hiz_offset.fields]
+hiz_offset = { bits = [16, 2], grade = "established" }
+
+[registers.zb_hiz_wrindex]
+offset = 0x4f48
+access = "rw"
+width = 32
+reset = 0x0
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 96"
+doc = "Dword index for writes to the Z RAM data port. Each write to the data port advances it by two dwords, because the data goes to both pipes."
+
+[registers.zb_hiz_wrindex.fields]
+index = { bits = [16, 2], grade = "established" }
+
+[registers.zb_hiz_dword]
+offset = 0x4f4c
+access = "rw"
+width = 32
+reset = 0x0
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 95"
+doc = "Z RAM data port. One write carries four 8-bit values for a 2x2 group of 4x4 blocks; the byte for block (X, Y) sits at bit 16 times X bit 2 plus 8 times Y bit 2."
+
+[registers.zb_hiz_rdindex]
+offset = 0x4f50
+access = "rw"
+width = 32
+reset = 0x0
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 96"
+doc = "Dword index for reads of the Z RAM data port. Each read advances it by two dwords."
+
+[registers.zb_hiz_rdindex.fields]
+index = { bits = [16, 2], grade = "established" }
+
+[registers.zb_hiz_pitch]
+offset = 0x4f54
+access = "rw"
+width = 32
+reset = 0x0
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 96"
+doc = "Row pitch of the hierarchical Z RAM, used with the base to address a block."
+
+[registers.zb_hiz_pitch.fields]
+pitch = { bits = [13, 4], grade = "established" }
+
+[registers.zb_zpass_data]
+offset = 0x4f58
+access = "rw"
+width = 32
+reset = 0x0
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 97-98"
+doc = "Count of samples that passed the Z test since this register was last written. A write sets the count to the value written. Each pipe keeps its own count."
+
+[registers.zb_zpass_addr]
+offset = 0x4f5c
+access = "rw"
+width = 32
+reset = 0x0
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 97"
+doc = "Writing a dword address makes each selected pipe write its occlusion count to memory at that address. A write that reaches both pipes makes both write to the same address in no guaranteed order, so a driver selects one pipe at a time."
+
+[registers.zb_zpass_addr.fields]
+address = { bits = [31, 2], grade = "established" }

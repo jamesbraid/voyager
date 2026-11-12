@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<!-- generated from defs/pipes.toml by defs-gen - do not edit, change the source -->
+<genxml unit="pipes" prefix="VOYAGER" title="per-pipe select and Z-buffer registers of the R3xx-class FireGL boards" from="AMD Radeon R3xx 3D Register Reference, revision 1.0">
+  <doc>Per-pipe destination select, occlusion counters and the hierarchical Z RAM of the R3xx-class boards. The chip has two pixel pipes; the registers below decide which of them a write reaches.</doc>
+  <struct name="SU_REG_DEST" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45" register="yes" offset="0x42c8" access="rw" reset="0xf">
+    <doc>Selects the pixel pipes that receive register writes. Writes reach both pipes unless this register restricts them.</doc>
+    <field name="pipe1" start="3" size="1" type="uint" grade="established"/>
+    <field name="pipe0" start="0" size="1" type="uint" grade="established"/>
+  </struct>
+  <struct name="ZB_BW_CNTL" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 92" register="yes" offset="0x4f1c" access="rw" reset="0x0">
+    <doc>Z buffer bandwidth control. Hierarchical Z is switched on and off here.</doc>
+    <field name="hiz_min" start="1" size="1" type="uint" grade="established"/>
+    <field name="hiz_enable" start="0" size="1" type="uint" grade="established"/>
+  </struct>
+  <struct name="ZB_HIZ_OFFSET" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 95" register="yes" offset="0x4f44" access="rw" reset="0x0">
+    <doc>Base of the hierarchical Z RAM in each pipe, in dwords. The Z RAM address of pixel (x, y) is the base in bits 16:3, plus the Y block index times the pitch, plus the X block index. One dword holds an 8-bit Z value for each of four 4x4 blocks.</doc>
+    <field name="hiz_offset" start="2" size="15" type="uint" grade="established"/>
+  </struct>
+  <struct name="ZB_HIZ_WRINDEX" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 96" register="yes" offset="0x4f48" access="rw" reset="0x0">
+    <doc>Dword index for writes to the Z RAM data port. Each write to the data port advances it by two dwords, because the data goes to both pipes.</doc>
+    <field name="index" start="2" size="15" type="uint" grade="established"/>
+  </struct>
+  <struct name="ZB_HIZ_DWORD" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 95" register="yes" offset="0x4f4c" access="rw" reset="0x0">
+    <doc>Z RAM data port. One write carries four 8-bit values for a 2x2 group of 4x4 blocks; the byte for block (X, Y) sits at bit 16 times X bit 2 plus 8 times Y bit 2.</doc>
+  </struct>
+  <struct name="ZB_HIZ_RDINDEX" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 96" register="yes" offset="0x4f50" access="rw" reset="0x0">
+    <doc>Dword index for reads of the Z RAM data port. Each read advances it by two dwords.</doc>
+    <field name="index" start="2" size="15" type="uint" grade="established"/>
+  </struct>
+  <struct name="ZB_HIZ_PITCH" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 96" register="yes" offset="0x4f54" access="rw" reset="0x0">
+    <doc>Row pitch of the hierarchical Z RAM, used with the base to address a block.</doc>
+    <field name="pitch" start="4" size="10" type="uint" grade="established"/>
+  </struct>
+  <struct name="ZB_ZPASS_DATA" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 97-98" register="yes" offset="0x4f58" access="rw" reset="0x0">
+    <doc>Count of samples that passed the Z test since this register was last written. A write sets the count to the value written. Each pipe keeps its own count.</doc>
+  </struct>
+  <struct name="ZB_ZPASS_ADDR" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 97" register="yes" offset="0x4f5c" access="rw" reset="0x0">
+    <doc>Writing a dword address makes each selected pipe write its occlusion count to memory at that address. A write that reaches both pipes makes both write to the same address in no guaranteed order, so a driver selects one pipe at a time.</doc>
+    <field name="address" start="2" size="30" type="uint" grade="established"/>
+  </struct>
+</genxml>
