@@ -11,7 +11,7 @@
       "README.md"
     ],
     "headers": [
-      "*.h",
+      "gen/c/*.h",
       "*/include/*.h"
     ],
     "tables": [],
