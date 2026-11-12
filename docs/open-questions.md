@@ -4,7 +4,7 @@ Questions the binaries and published sources have not yet answered. One entry ea
 
 ## Triage
 
-Of the 24 entries below, all are `software-now`. Three of them also carry a hardware-only residue, marked in the entry and recorded, not scheduled: the PCI bus clock, the display output and the ROM select.
+Of the 23 entries below, all are `software-now`. Three of them also carry a hardware-only residue, marked in the entry and recorded, not scheduled: the PCI bus clock, the display output and the ROM select.
 
 The tags:
 
@@ -26,7 +26,7 @@ Registers and interrupts come first, because they block the register headers. Th
 1. Offsets with no public name, against the AMD R3xx, R5xx and M56 references.
 2. Roles of the matched registers, starting with `R200AdjustFrame`.
 3. Accesses the replay does not follow.
-4. The register at 0xf18 and the pointers at device record +400 and +992.
+4. The register at 0xf18 and the pointers at device record +400 and +992. Answered: [kernel-drm-functions.md](kernel-drm-functions.md) (the `firegl_addmap` entry): +400 and +992 are the shared area plus 64 and plus 2200, and +1008 holds the upper half of register 0xf18 and is never read back in the kernel object. What register 0xf18 is stays unknown.
 5. Interrupt bits, against the R3xx reference.
 6. Memory controller and GART set-up.
 7. Video memory.
@@ -116,4 +116,3 @@ The attach path read so far is in [kernel-attach.md](kernel-attach.md).
 - [software-now] **Roles of the matched registers beyond the bits read.** The 197 offsets of `fglrx_drv.so` are graded by offset only; the bit-level reading in `registers.md` covers the interrupt, PLL, engine-status, tile and CRTC-enable registers. Next: one routine at a time, starting with `R200AdjustFrame` at 0x422680 and `FIREGL_ShowOverlay`.
 - [software-now] **Bit layouts beyond the registers in `VOYAGER_DECODE.h`.** [registers.md](registers.md) ("Bit layouts") grades 22 registers and lists what stays unknown: reset values, the meaning of bit 13 of 0x28 and bit 27 of 0xe4, the stereo pair in 0x294 and bit 20 of 0x228, bit 14 of the primary DAC control, and which chip generation's names fit this part. Routes tried: the public Linux, X.Org and Mesa headers, AMD's R3xx 3D reference, and the disassembly of the routines that touch each bit. Next: trace the callers of the X module's transmitter and stereo routines to the values they pass, and read the remaining display registers the same way.
 - [software-now] **Accesses the replay does not follow.** Calls through addresses built with `dsll32` and `dadd` (the kernel object's compositor I2C path, and every callee of `fglrx.o` reached that way) and the sites counted unresolved in `inventory/summary.tsv`. Next: read the unresolved sites of `fglrx_drv.so` by hand; the dword accessors' callers in `fglrx.o` are read in `registers.md`.
-- [software-now] **The register at 0xf18 and the pointers at device record +400 and +992.** `firegl_addmap` reads one word and derives two pointers; their later use is not traced. Next: loads of device record +400, +992 and +1008 in `fglrx.o`.

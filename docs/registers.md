@@ -28,7 +28,7 @@ All of it is established from the disassembly.
   +656. `fglrx_attach` at 0xbdc, `fglrx_intr` at 0x964, `fglrx_exit` and `fglrx_dma_flush` load it and use
   constant offsets from it.
 - **Kernel object, device record.** `firegl_addmap` at 0x1bc50 stores the mapped register aperture at device
-  record +1000 (instruction 0x1c2b8) and reads the word at 0xf18 from it at once. The `_r6x_*` routines, `firegl_sync_dacs`
+  record +1000 (instruction 0x1c2b8) and reads the word at 0xf18 from it at once. It keeps the word's upper half at record +1008 and no routine of the object loads that back ([kernel-drm-functions.md](kernel-drm-functions.md)). The `_r6x_*` routines, `firegl_sync_dacs`
   and the interrupt routines load it from there.
 - **Kernel object, accessors.** `FGLRXReadRegister` at 0x4908 and `FGLRXWriteRegister` at 0x4950 take a board
   index and a byte offset, look the board up in `fglrx_boards`, load the aperture from board record +656, and
