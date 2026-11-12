@@ -73,7 +73,7 @@ identifiable role.
   from a0+16 and the screen record from `xf86Screens`. It walks the window tree with `TraverseTree`
   (call at 0x42953c, callback at 0x429480). It translates and intersects the region with
   `miTranslateRegion` (0x429574) and `miIntersect` (0x429588). It calls `R200DRIMoveBuffers` at
-  0x427a00 (from 0x4295a8) to move the buffers, and calls `Xfree` at 0x4295c8.
+  0x427a00 (from 0x4295a8) to move the buffers, and calls `Xfree` at 0x4295c8 only when the pointer at sp+8 and the word it points to are both nonzero (the branches at 0x4295b4 and 0x4295c0 skip it).
   The name matches a window copy. The render shows the region arithmetic, not the copy offsets.
 
 - `r200_EnableRPTRwriteback` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42c1c0
