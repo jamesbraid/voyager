@@ -29,6 +29,11 @@
     ],
     "context": {}
   },
+  "review_required": [
+    "docs/routines/t1-*.md",
+    "docs/routines/t2-*.md",
+    "docs/routines/vfin-*.md"
+  ],
   "prepare": [],
   "binaries": [
     {
