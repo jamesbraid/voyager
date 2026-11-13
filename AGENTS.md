@@ -60,7 +60,7 @@ Planned headers (none written yet; `evidence/coverage.md` tracks each): `R300.h`
 
 Local driver headers capture internal driver structures: `r300_kernel/include/fglrx_kern.h`, `xserver/include/fglrx_ddx.h`.
 
-The register and command-packet layouts of the display, interrupt and engine blocks are not hand-written headers. Their source is the TOML in `devices/<unit>/registers.toml`, one file per unit, with a grade on every item. `generated/` is written from it by `retools/tools/defs/defs-gen`: C headers, a Rust crate, Python decoders, JSON and a genxml export, plus the reference page `devices/<unit>/registers.md`. Nothing under `generated/` and no `registers.md` is edited by hand. `VOYAGER_DECODE.h` is a forwarding header that keeps the old macro names for existing includes. To change a layout, edit `devices/<unit>/registers.toml`, run `retools/tools/defs/defs-gen`, then run `retools/tools/defs/defs-check --build` before committing both.
+The register and command-packet layouts of the display, interrupt and engine blocks are not hand-written headers. Their source is the TOML in `devices/<unit>/registers.toml`, one file per unit, with a grade on every item. `generated/` is written from it by `retools/tools/defs/defs-gen`: C headers, a Rust crate, Python decoders, JSON and a genxml export, plus the reference page `devices/<unit>/registers.md`. Nothing under `generated/` and no `registers.md` is edited by hand. To change a layout, edit `devices/<unit>/registers.toml`, run `retools/tools/defs/defs-gen`, then run `retools/tools/defs/defs-check --build` before committing both.
 
 ---
 

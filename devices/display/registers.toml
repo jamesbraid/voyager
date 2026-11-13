@@ -1,14 +1,10 @@
-# Imported from VOYAGER_DECODE.h. Review the sources and grades, then maintain by hand.
+# Imported from an annotated decode header. Review the sources and grades, then maintain by hand.
 unit = "display"
 prefix = "VOYAGER"
 title = "display, interrupt and engine registers of the R3xx-class FireGL boards (publish-safe decode header)"
 doc = "Display, interrupt and engine registers of the R3xx-class FireGL boards."
 from = "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
 public_from = ["public Linux radeon", "public Radeon packet"]
-
-[c]
-legacy_header = "VOYAGER_DECODE.h"
-legacy_guard = "VOYAGER_DECODE_H"
 
 [registers.clock_cntl_index]
 offset = 0x8

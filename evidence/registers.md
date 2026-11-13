@@ -330,7 +330,7 @@ so.
 
 <!-- registers:end -->
 
-The offsets in the "no public name" table above are not in [VOYAGER_DECODE.h](../VOYAGER_DECODE.h) except 0x294,
+The offsets in the "no public name" table above are not in [generated/c/display.h](../generated/c/display.h) except 0x294,
 because the header lists only what it can ground to a name or a field layout. The access at each site is established
 (the entries below cite the stores and loads). The grade of the reading, offset by offset:
 
@@ -1019,7 +1019,7 @@ r300 headers and the xf86-video-ati 6.14.6 `radeon_reg.h` were searched for the 
 ## Bit layouts
 
 This section records the bit layouts of the registers the shipped kernel object and X module reach, where a layout
-can be stated. [VOYAGER_DECODE.h](../VOYAGER_DECODE.h) carries the same layouts in the shared decode-header form, and
+can be stated. [generated/c/display.h](../generated/c/display.h) carries the same layouts in the shared decode-header form, and
 `retools/tools/defs/check-publish-safe.py --config defs.toml` checks the header against this section row by row, so
 a change to either side fails the check until the other follows.
 

@@ -101,7 +101,6 @@ There is no GL sample-implementation pipeline: the Onyx4 GL stack is ATI's drive
     software/            how IRIX drives the hardware: kernel/, xsgi/, opengl/, ucode/
     generated/           c, rust, python, json and xml generated from devices/ by
                          retools/tools/defs/defs-gen, never edited
-    VOYAGER_DECODE.h     forwarding header for the old macro names; new code includes generated/c/display.h
     questions/           open questions, each with the routes tried and the next one
     evidence/            coverage.md, the generated inventory/, routines/, message tables, register
                          accesses and the list of IRIX files expected in root/
