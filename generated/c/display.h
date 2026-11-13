@@ -1,4 +1,4 @@
-/* generated from defs/display.toml by defs-gen - do not edit, change the source */
+/* generated from devices/display/registers.toml by defs-gen - do not edit, change the source */
 /* display, interrupt and engine registers of the R3xx-class FireGL boards (publish-safe decode header) */
 #ifndef VOYAGER_GEN_H
 #define VOYAGER_GEN_H

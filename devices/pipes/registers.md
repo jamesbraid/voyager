@@ -1,6 +1,6 @@
-# per-pipe select and Z-buffer registers of the R3xx-class FireGL boards
+<!-- generated from devices/pipes/registers.toml by defs-gen - do not edit, change the source -->
 
-<!-- generated from defs/pipes.toml by defs-gen - do not edit, change the source -->
+# per-pipe select and Z-buffer registers of the R3xx-class FireGL boards
 
 Per-pipe destination select, occlusion counters and the hierarchical Z RAM of the R3xx-class boards. The chip has two pixel pipes; the registers below decide which of them a write reaches.
 

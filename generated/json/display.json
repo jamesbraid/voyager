@@ -1,6 +1,6 @@
 {
  "schema": "defs-flat/1",
- "source": "defs/display.toml",
+ "source": "devices/display/registers.toml",
  "profile": "public",
  "rows": [
   {

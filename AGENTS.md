@@ -60,7 +60,7 @@ Planned headers (none written yet; `docs/coverage.md` tracks each): `R300.h` (th
 
 Local driver headers capture internal driver structures: `r300_kernel/include/fglrx_kern.h`, `xserver/include/fglrx_ddx.h`.
 
-The register and command-packet layouts of the display, interrupt and engine blocks are not hand-written headers. Their source is the TOML in `defs/`, one file per unit, with a grade on every item. `gen/` is written from it by `retools/tools/defs/defs-gen`: C headers, a Rust crate, Python decoders, JSON, a genxml export and the reference pages in `gen/docs/`. Nothing under `gen/` is edited by hand. `VOYAGER_DECODE.h` is a forwarding header that keeps the old macro names for existing includes. To change a layout, edit `defs/`, run `retools/tools/defs/defs-gen`, then run `retools/tools/defs/defs-check --build` before committing both.
+The register and command-packet layouts of the display, interrupt and engine blocks are not hand-written headers. Their source is the TOML in `devices/<unit>/registers.toml`, one file per unit, with a grade on every item. `generated/` is written from it by `retools/tools/defs/defs-gen`: C headers, a Rust crate, Python decoders, JSON and a genxml export, plus the reference page `devices/<unit>/registers.md`. Nothing under `generated/` and no `registers.md` is edited by hand. `VOYAGER_DECODE.h` is a forwarding header that keeps the old macro names for existing includes. To change a layout, edit `devices/<unit>/registers.toml`, run `retools/tools/defs/defs-gen`, then run `retools/tools/defs/defs-check --build` before committing both.
 
 ---
 
@@ -118,7 +118,7 @@ A coverage row is done when every inventory entry in its area (`docs/inventory/`
 - Give no capture, trace or machine a nickname. Describe it generically ("a 6.5.30 install with an Onyx4").
 - Do not quote internal documents. Quote only public sources, briefly, with the title and URL in `docs/sources/INDEX.md`.
 - No trailers in commit messages: no attribution, sign-off or generated-with lines. The leak check refuses them.
-- Findings go in `docs/` chapters, in your own words, each labelled with its derivation. A register or packet layout goes in its `defs/` source, with `gen/` regenerated in the same commit; a root header is for everything else. Update `docs/coverage.md` and the inventory in the same commit as the finding.
+- Findings go in `docs/` chapters, in your own words, each labelled with its derivation. A register or packet layout goes in its `devices/<unit>/registers.toml`, with `generated/` regenerated in the same commit; a root header is for everything else. Update `docs/coverage.md` and the inventory in the same commit as the finding.
 - Commit disassembly, decompiled C and traces you produce as data; keep the proprietary binaries in `root/`.
 
 Commit small and often, straight to `main`. Subjects are lowercase, component-prefixed imperatives (`r300_kernel: label the ring base register`); bodies say why. Write everything for a stranger.

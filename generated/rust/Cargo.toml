@@ -1,4 +1,4 @@
-# generated from defs/ by defs-gen - do not edit, change the source
+# generated from devices/ and formats/ by defs-gen - do not edit, change the source
 [package]
 name = "hwdefs"
 version = "0.1.0"

@@ -1,4 +1,4 @@
-/* generated from defs/pipes.toml by defs-gen - do not edit, change the source */
+/* generated from devices/pipes/registers.toml by defs-gen - do not edit, change the source */
 /* per-pipe select and Z-buffer registers of the R3xx-class FireGL boards */
 #ifndef VOYAGER_GEN_H
 #define VOYAGER_GEN_H

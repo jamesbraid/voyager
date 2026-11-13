@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<!-- generated from defs/display.toml by defs-gen - do not edit, change the source -->
+<!-- generated from devices/display/registers.toml by defs-gen - do not edit, change the source -->
 <genxml unit="display" prefix="VOYAGER" title="display, interrupt and engine registers of the R3xx-class FireGL boards (publish-safe decode header)" from="public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver">
   <doc>Display, interrupt and engine registers of the R3xx-class FireGL boards.</doc>
   <enum name="cp_rb_cntl_buf_swap">
