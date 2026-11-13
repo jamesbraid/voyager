@@ -101,7 +101,7 @@ them. It does not show the R300 or R350 has identical reset values or reserved b
   save and restore group as `FP2_GEN_CNTL` (0x288) and `CRTC2_GEN_CNTL` (0x3f8). The earlier conflict between
   these and `FP_H2_SYNC_STRT_WID`, `FP_V2_SYNC_STRT_WID` stays open. The 8-bit and 3-bit fields fit poorly with whole-word
   moves, so M56's names are less likely here; the row stays `located`. Inferred: the X.Org `radeon_reg.h` (pin of
-  the `xf86-video-ati-xorg-6.8.2` submodule) defines `FP_H2_SYNC_STRT_WID` at 0x3c4 and `FP_V2_SYNC_STRT_WID` at 0x3c8
+  the `references/code/xf86-video-ati-6.8.2` submodule) defines `FP_H2_SYNC_STRT_WID` at 0x3c4 and `FP_V2_SYNC_STRT_WID` at 0x3c8
   as ordinary 32-bit registers, and defines the VGA names at the same offsets as 8-bit ports. The shipped code reads and
   writes all four bytes (the access table's `read 4, write 4`) in the save and restore routines that also move the
   second-head flat-panel registers, so the flat-panel names are the better fit; no source states it. A REG line stays

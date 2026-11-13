@@ -1,72 +1,72 @@
-[submodule "m2c"]
-	path = m2c
+[submodule "references/code/m2c"]
+	path = references/code/m2c
 	url = https://github.com/techomancer/m2c.git
 	branch = irixn32
-[submodule "spimdisasm"]
-	path = spimdisasm
+[submodule "references/code/spimdisasm"]
+	path = references/code/spimdisasm
 	url = https://github.com/Decompollaborate/spimdisasm.git
-[submodule "libdwarf-code"]
-	path = libdwarf-code
+[submodule "references/code/libdwarf"]
+	path = references/code/libdwarf
 	url = https://github.com/davea42/libdwarf-code.git
-[submodule "irix-657m-src"]
-	path = irix-657m-src
+[submodule "references/code/irix-657m-src"]
+	path = references/code/irix-657m-src
 	url = https://github.com/calmsacibis995/irix-657m-src.git
-[submodule "linux"]
-	path = linux
+[submodule "references/code/linux"]
+	path = references/code/linux
 	url = https://github.com/torvalds/linux.git
-[submodule "mesa"]
-	path = mesa
+[submodule "references/code/mesa"]
+	path = references/code/mesa
 	url = https://gitlab.freedesktop.org/mesa/mesa.git
-[submodule "xf86-video-ati"]
-	path = xf86-video-ati
+[submodule "references/code/xf86-video-ati"]
+	path = references/code/xf86-video-ati
 	url = https://gitlab.freedesktop.org/xorg/driver/xf86-video-ati.git
 	shallow = true
-[submodule "xf86-video-ati-xorg-6.8.2"]
-	path = xf86-video-ati-xorg-6.8.2
+[submodule "references/code/xf86-video-ati-6.8.2"]
+	path = references/code/xf86-video-ati-6.8.2
 	url = https://gitlab.freedesktop.org/xorg/driver/xf86-video-ati.git
 	shallow = true
-[submodule "xf86-video-radeonhd"]
-	path = xf86-video-radeonhd
+[submodule "references/code/xf86-video-radeonhd"]
+	path = references/code/xf86-video-radeonhd
 	url = https://gitlab.freedesktop.org/xorg/driver/xf86-video-radeonhd.git
 	shallow = true
-[submodule "xf86-video-avivo"]
-	path = xf86-video-avivo
+[submodule "references/code/xf86-video-avivo"]
+	path = references/code/xf86-video-avivo
 	url = https://gitlab.freedesktop.org/xorg/driver/xf86-video-avivo.git
 	shallow = true
-[submodule "atomdis"]
-	path = atomdis
+[submodule "references/code/atomdis"]
+	path = references/code/atomdis
 	url = https://github.com/gpuhw/AtomDis.git
 	shallow = true
-[submodule "libdrm"]
-	path = libdrm
+[submodule "references/code/libdrm"]
+	path = references/code/libdrm
 	url = https://gitlab.freedesktop.org/mesa/drm.git
 	shallow = true
-[submodule "libdrm-2.4.0"]
-	path = libdrm-2.4.0
+[submodule "references/code/libdrm-2.4.0"]
+	path = references/code/libdrm-2.4.0
 	url = https://gitlab.freedesktop.org/mesa/drm.git
 	shallow = true
-[submodule "linux-2.6.30"]
-	path = linux-2.6.30
+[submodule "references/code/linux-2.6.30"]
+	path = references/code/linux-2.6.30
 	url = https://github.com/torvalds/linux.git
 	shallow = true
-[submodule "mesa-7.11.2"]
-	path = mesa-7.11.2
+[submodule "references/code/mesa-7.11.2"]
+	path = references/code/mesa-7.11.2
 	url = https://gitlab.freedesktop.org/mesa/mesa.git
 	shallow = true
-[submodule "freebsd"]
-	path = freebsd
+[submodule "references/code/freebsd"]
+	path = references/code/freebsd
 	url = https://github.com/freebsd/freebsd-src.git
 	shallow = true
-[submodule "netbsd"]
-	path = netbsd
+[submodule "references/code/netbsd"]
+	path = references/code/netbsd
 	url = https://github.com/NetBSD/src.git
 	shallow = true
-[submodule "openbsd"]
-	path = openbsd
+[submodule "references/code/openbsd"]
+	path = references/code/openbsd
 	url = https://github.com/openbsd/src.git
 	shallow = true
-[submodule "haiku"]
-	path = haiku
+[submodule "references/code/haiku"]
+	path = references/code/haiku
 	url = https://github.com/haiku/haiku.git
 	shallow = true
 [submodule "retools"]

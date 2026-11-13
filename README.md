@@ -95,7 +95,7 @@ There is no GL sample-implementation pipeline: the Onyx4 GL stack is ATI's drive
     scripts/             this workspace's inventory configuration and message-site extractors
     tools/               setup-clone.sh, the stub that fetches the shared tooling
     retools/             the shared tooling submodule (sgi-retools): retools/tools/ and retools/tools/voyager/
-    m2c spimdisasm libdwarf-code linux mesa
+    m2c spimdisasm libdwarf linux mesa
                          public-source submodules, fetched on demand
 
 ## Running the tools and reproducing a result

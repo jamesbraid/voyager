@@ -43,11 +43,11 @@ For licensing reasons proprietary SGI and ATI binaries are **not checked into so
 
 Debug information: the kernel objects, `fglrx_drv.so` and the DRI drivers are reported by `file` as carrying debug info and unstripped; `biosemu`, `vpm` and `sgcombine` are stripped; `libGLcore.so` for IP35VOYAGER64 is a 19 KB stub (established from its size and symbol table) while `libGL.so` carries ATI GL extension names, so the OpenGL implementation is ATI's, not an SGI sample-implementation build. For that reason this workspace has no GL sample-implementation pipeline. Whether the DWARF holds types or only names and lines is open: `dwarfdump -i` has not been run.
 
-Other public sources in this repository (submodules, fetch only what you need, shallow: `git submodule update --init --depth 1 NAME`):
+Other public sources in this repository (submodules, fetch only what you need, shallow: `git submodule update --init --depth 1 references/code/NAME`):
 
-- `linux/`: the radeon DRM driver for R3xx, `drivers/gpu/drm/radeon/` (`r300.c`, `r300_reg.h`, `r300d.h`, `reg_srcs/r300`, the command checker). A public cross-check of register meaning and ring programming, not proof of what IRIX does.
-- `mesa/`: the r300 driver, `src/gallium/drivers/r300/` and its shader compiler under `compiler/`, and the PCI ID table in `include/pci_ids/r300_pci_ids.h`.
-- `irix-657m-src/`: the public IRIX 6.5.7 source tree. It predates the Onyx4, so it is a hint only for the host side (PCI, crossbar and bridge code), never evidence.
+- `references/code/linux/`: the radeon DRM driver for R3xx, `drivers/gpu/drm/radeon/` (`r300.c`, `r300_reg.h`, `r300d.h`, `reg_srcs/r300`, the command checker). A public cross-check of register meaning and ring programming, not proof of what IRIX does.
+- `references/code/mesa/`: the r300 driver, `src/gallium/drivers/r300/` and its shader compiler under `compiler/`, and the PCI ID table in `include/pci_ids/r300_pci_ids.h`.
+- `references/code/irix-657m-src/`: the public IRIX 6.5.7 source tree. It predates the Onyx4, so it is a hint only for the host side (PCI, crossbar and bridge code), never evidence.
 - `docs/sources/INDEX.md`: public documents by title and URL.
 
 ---

@@ -15,7 +15,7 @@ same BAR itself.
 - The shipped objects: `fglrx.o` (a 64-bit relocatable MIPS object) and `fglrx_drv.so` (an n32 shared object).
   The kernel object is read at its section offsets, the X module at its dynamic-symbol addresses.
 - Public register names from the Linux radeon driver (`reg_srcs/r300`, `r300d.h`, `r100d.h`, `r300_reg.h`,
-  `radeon_reg.h`) and Mesa's `r300_reg.h`, at the pins of the `linux/` and `mesa/` submodules. AMD's R3xx 3D
+  `radeon_reg.h`) and Mesa's `r300_reg.h`, at the pins of the `references/code/linux/` and `references/code/mesa/` submodules. AMD's R3xx 3D
   register reference (listed in [sources/INDEX.md](sources/INDEX.md)) was not read for this table: it covers
   the 3D block, and the offsets here are mostly the display, interrupt, clock and engine-status registers.
   Linux and Mesa show what the public chips do, not what IRIX does on this board.
@@ -1029,7 +1029,7 @@ datasheet process asks for has not happened, so nothing here is cleared yet.
 How the layouts were derived and graded:
 
 - Bit positions and names come from the public Linux radeon headers (`r100d.h`, `r300d.h`, `radeon_reg.h`,
-  `r300_reg.h`) and Mesa's `r300_reg.h`, at the pins of the `linux/` and `mesa/` submodules. These describe public
+  `r300_reg.h`) and Mesa's `r300_reg.h`, at the pins of the `references/code/linux/` and `references/code/mesa/` submodules. These describe public
   chips. They show what a public R3xx does, not what this board does.
 - The shipped objects were then read at the sites listed in the sections above. Where the code touches a bit and the
   mask or value it uses agrees with the public layout, the field is **established**. Where only the public layout
@@ -1610,7 +1610,7 @@ The field layouts come from the guide's field tables, read from its text layer; 
 printed ones.
 
 Each entry gives the register's role and its fields in the guide's bit ranges. `r300_reg.h` is the Linux radeon
-header at the pin in [sources/INDEX.md](sources/INDEX.md) (`linux/`, commit d89e1d18), read from the upstream file
+header at the pin in [sources/INDEX.md](sources/INDEX.md) (`references/code/linux/`, commit d89e1d18), read from the upstream file
 at that commit. Where that header names the same offset with a different register, the entry says so, and the
 guide's name is the one used. Where the header has no name for an offset, the entry says so too.
 
