@@ -21,7 +21,7 @@ Status: partial. See [what is missing](#what-is-missing).
 
 ## How the rows are found
 
-`scripts/message_sites_elf.py` runs `retools/tools/facts.py` on every function symbol of a file, in one process. For each call it reads the callee and the argument registers from the fact sheet. A call is a site when its callee is one of the printers in the script, the format argument is a constant address, and the address is a string in the file.
+`tools/message_sites_elf.py` runs `retools/tools/facts.py` on every function symbol of a file, in one process. For each call it reads the callee and the argument registers from the fact sheet. A call is a site when its callee is one of the printers in the script, the format argument is a constant address, and the address is a string in the file.
 
 The guard is picked in this order:
 
@@ -68,7 +68,7 @@ Of the 354 sites, 14 have a written condition. Those are the priority rows: the 
 
 To regenerate the table, from the repository root inside the toolchain environment, run the generator once per file and keep one header row:
 
-    python3 scripts/message_sites_elf.py root/usr/X11R6/lib/modules/drivers/fglrx_drv.so fglrx_drv.so --conditions docs/messages-userland-conditions.tsv > OUT-a.tsv
-    python3 scripts/message_sites_elf.py root/usr/diags/SG/bin/biosemu biosemu --conditions docs/messages-userland-conditions.tsv > OUT-b.tsv
+    python3 tools/message_sites_elf.py root/usr/X11R6/lib/modules/drivers/fglrx_drv.so fglrx_drv.so --conditions docs/messages-userland-conditions.tsv > OUT-a.tsv
+    python3 tools/message_sites_elf.py root/usr/diags/SG/bin/biosemu biosemu --conditions docs/messages-userland-conditions.tsv > OUT-b.tsv
 
 Repeat for `libfglrxdrm.so`, `olsgsys`, `vpm` and `sg2flash` (paths in IRIX_FILES.md), then concatenate the outputs under one header. Keep the scratch outputs out of the repository.

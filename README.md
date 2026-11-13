@@ -92,8 +92,7 @@ There is no GL sample-implementation pipeline: the Onyx4 GL stack is ATI's drive
     generated/           generated from devices/ by retools/tools/defs/defs-gen, never edited
     VOYAGER_DECODE.h     forwarding header for the old macro names; new code includes generated/c/display.h
     docs/                open-questions.md, coverage.md, inventory/, sources/INDEX.md, chapters as they land
-    scripts/             this workspace's inventory configuration and message-site extractors
-    tools/               setup-clone.sh, the stub that fetches the shared tooling
+    tools/               setup-clone.sh and this workspace's message-site extractors; tools/config/ holds the inventory configuration and allowlists
     retools/             the shared tooling submodule (sgi-retools): retools/tools/ and retools/tools/voyager/
     m2c spimdisasm libdwarf linux mesa
                          public-source submodules, fetched on demand
@@ -112,7 +111,7 @@ included; with no command it opens a shell. Fill `root/` from your install or me
 
 - Generated tables under `docs/inventory/` come from `retools/tools/re-run python3 retools/tools/inventory.py`.
 - A claim an entry marks as established by execution is reproduced by the script that the entry
-  names, always as `retools/tools/re-run python3 retools/tools/NAME.py ...` (or `scripts/NAME.py` for this workspace's own).
+  names, always as `retools/tools/re-run python3 retools/tools/NAME.py ...` (or `tools/NAME.py` for this workspace's own).
 - The shared tooling (container definitions, the `re-run` wrapper, Ghidra scripts, the inventory, fact sheet, the device extractors) is the `retools/` submodule (sgi-retools). Run a tool by its submodule path from the repository root: `retools/tools/<name>` for the shared ones, `retools/tools/voyager/<name>` for this device's. A tool finds this repository from the current directory, so there are no local links or wrappers; a change to a tool is made in retools and the pin here moves with a commit.
 
 ## Rules

@@ -68,11 +68,11 @@ The register and command-packet layouts of the display, interrupt and engine blo
 
 The host needs Podman, git and python3. Everything else runs in the container [retools/tools/Containerfile](retools/tools/Containerfile) builds: `retools/tools/re-run COMMAND`. [tools/setup-clone.sh](tools/setup-clone.sh) prepares a fresh clone. The shared tooling (container definitions, the `re-run` wrapper, Ghidra scripts, the inventory, fact sheet, the device extractors) is the `retools/` submodule (sgi-retools). Run a tool by its submodule path from the repository root: `retools/tools/<name>` for the shared ones, `retools/tools/voyager/<name>` for this device's. A tool finds this repository from the current directory, so there are no local links or wrappers; a change to a tool is made in retools and the pin here moves with a commit.
 
-Tools (run from the repository root, inside `retools/tools/re-run`; `scripts/` here keeps only this workspace's configuration, data and its message-site extractors):
+Tools (run from the repository root, inside `retools/tools/re-run`; `tools/` here keeps only this workspace's setup stub and message-site extractors, and `tools/config/` its configuration and allowlists):
 
 - `retools/tools/voyager/map_binaries.py`: catalogue every linked binary (sections, functions, DWARF compilation units) into `binaries_manifest.json`.
 - `retools/tools/voyager/disasm_kernel.py`, `resolve_got.py`, `clean_asm.py`: disassemble kernel objects for m2c and resolve `$gp`-relative loads.
-- `retools/tools/inventory.py` (config `scripts/inventory-config.json`): measure coverage from the binaries; output is `docs/inventory/*.tsv` (see `docs/inventory/README.md`).
+- `retools/tools/inventory.py` (config `tools/config/inventory-config.json`): measure coverage from the binaries; output is `docs/inventory/*.tsv` (see `docs/inventory/README.md`).
 - `retools/tools/facts.py`: build facts for a routine from the binaries.
 
 The tools descend from gr4's and carry its BSD-3 notice ([retools/tools/LICENSE-gr4](retools/tools/LICENSE-gr4)).

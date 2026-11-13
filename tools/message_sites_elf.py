@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Catalogue the messages one MIPS ELF image hands to a printer, with the condition that reaches each call.
 
-Usage: scripts/message_sites_elf.py BINARY LABEL [--conditions FILE] [--tsv FILE] [--only ROUTINE_REGEX]
+Usage: tools/message_sites_elf.py BINARY LABEL [--conditions FILE] [--tsv FILE] [--only ROUTINE_REGEX]
 
 Every function symbol of BINARY gets a fact sheet from retools/tools/facts.py (in one process, so the image
 is parsed once). A call is a site when its callee is a known printer (PRINTERS below) and the format

@@ -5,9 +5,9 @@ name = "onyx4-r300"
 address_bits = 16
 
 [allowlists]
-leak = "scripts/leak-allow.txt"
-source_names = "scripts/source-names-allow.txt"
-copy = "scripts/copy-check-allow.txt"
+leak = "tools/config/leak-allow.txt"
+source_names = "tools/config/source-names-allow.txt"
+copy = "tools/config/copy-check-allow.txt"
 
 [units.display]
 group = "VOYAGER_DECODE.h"
