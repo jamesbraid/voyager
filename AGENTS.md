@@ -13,7 +13,7 @@ The Onyx4 pairs an IP35 host with ATI FireGL cards. In the shipped IRIX install 
 
 Facts in this file are labelled **established** (read directly from a shipped binary, a published document, a capture or public open-source code (cited by project, revision and file), with the function, offset or install path), **inferred** (a reasoned reading, with the reasoning) or **unknown**. Anything unlabelled is unknown. Do not fill gaps from memory, from other SGI graphics families or from other emulators.
 
-Established so far (headers of the three option ROM images in `ucode/VOYAGER/`, read as PCI expansion ROM data structures): `sg2.bin` is for PCI vendor 0x1002, device 0x4e47; `sg3.bin` and `sg3a.bin` are for vendor 0x1002, device 0x4e4b. The public PCI ID list and Mesa's r300 driver name those devices FireGL X1 (R300) and FireGL X2 (R350). Everything else about the boards is open: see `docs/open-questions.md`.
+Established so far (headers of the three option ROM images in `ucode/VOYAGER/`, read as PCI expansion ROM data structures): `sg2.bin` is for PCI vendor 0x1002, device 0x4e47; `sg3.bin` and `sg3a.bin` are for vendor 0x1002, device 0x4e4b. The public PCI ID list and Mesa's r300 driver name those devices FireGL X1 (R300) and FireGL X2 (R350). Everything else about the boards is open: see `questions/open-questions.md`.
 
 ### Major blocks and their roles
 
@@ -28,7 +28,7 @@ Every role above is a name from a source, not a finding. Replace each with a lab
 
 ## 2. Project binaries and evidence
 
-For licensing reasons proprietary SGI and ATI binaries are **not checked into source control**. The local `root/` tree is gitignored. Copy the files [IRIX_FILES.md](IRIX_FILES.md) lists from your own IRIX 6.5.30 install or media into `root/`, then make the relative symlinks below from the map in IRIX_FILES.md, which are also not committed. Disassembly, decompiled C, headers and notes derived from the files are committed.
+For licensing reasons proprietary SGI and ATI binaries are **not checked into source control**. The local `root/` tree is gitignored. Copy the files [evidence/irix-files.md](evidence/irix-files.md) lists from your own IRIX 6.5.30 install or media into `root/`, then make the relative symlinks below from the map in evidence/irix-files.md, which are also not committed. Disassembly, decompiled C, headers and notes derived from the files are committed.
 
 | Directory | Contents | Target in `root/` |
 |---|---|---|
@@ -48,7 +48,7 @@ Other public sources in this repository (submodules, fetch only what you need, s
 - `references/code/linux/`: the radeon DRM driver for R3xx, `drivers/gpu/drm/radeon/` (`r300.c`, `r300_reg.h`, `r300d.h`, `reg_srcs/r300`, the command checker). A public cross-check of register meaning and ring programming, not proof of what IRIX does.
 - `references/code/mesa/`: the r300 driver, `src/gallium/drivers/r300/` and its shader compiler under `compiler/`, and the PCI ID table in `include/pci_ids/r300_pci_ids.h`.
 - `references/code/irix-657m-src/`: the public IRIX 6.5.7 source tree. It predates the Onyx4, so it is a hint only for the host side (PCI, crossbar and bridge code), never evidence.
-- `docs/sources/INDEX.md`: public documents by title and URL.
+- `references/documents/INDEX.md`: public documents by title and URL.
 
 ---
 
@@ -56,7 +56,7 @@ Other public sources in this repository (submodules, fetch only what you need, s
 
 Our primary output is a set of C header files at the repository root, one per chip or block, in the style of gr2 and gr4. **The code is the document.** Each header holds register offsets and fields, packet formats, state machines and constants, with a comment on every definition saying how it was derived and whether it is established, inferred or unknown.
 
-Planned headers (none written yet; `docs/coverage.md` tracks each): `R300.h` (the chip: registers, command packets, microcode interface), `R350.h` (what differs in R350), `ONYX4.h` (attachment to the IP35 host, PCI identity and configuration).
+Planned headers (none written yet; `evidence/coverage.md` tracks each): `R300.h` (the chip: registers, command packets, microcode interface), `R350.h` (what differs in R350), `ONYX4.h` (attachment to the IP35 host, PCI identity and configuration).
 
 Local driver headers capture internal driver structures: `r300_kernel/include/fglrx_kern.h`, `xserver/include/fglrx_ddx.h`.
 
@@ -72,7 +72,7 @@ Tools (run from the repository root, inside `retools/tools/re-run`; `tools/` her
 
 - `retools/tools/voyager/map_binaries.py`: catalogue every linked binary (sections, functions, DWARF compilation units) into `binaries_manifest.json`.
 - `retools/tools/voyager/disasm_kernel.py`, `resolve_got.py`, `clean_asm.py`: disassemble kernel objects for m2c and resolve `$gp`-relative loads.
-- `retools/tools/inventory.py` (config `tools/config/inventory-config.json`): measure coverage from the binaries; output is `docs/inventory/*.tsv` (see `docs/inventory/README.md`).
+- `retools/tools/inventory.py` (config `tools/config/inventory-config.json`): measure coverage from the binaries; output is `evidence/inventory/*.tsv` (see `evidence/inventory/README.md`).
 - `retools/tools/facts.py`: build facts for a routine from the binaries.
 
 The tools descend from gr4's and carry its BSD-3 notice ([retools/tools/LICENSE-gr4](retools/tools/LICENSE-gr4)).
@@ -102,23 +102,23 @@ Linux and Mesa describe the public chips, and AMD's documents describe the silic
 
 Some facts no software reveals. When every route is exhausted, label the fact "unknown: no shipped software or published source depends on it" and list the routes tried. An emulator author then chooses a value and documents the choice. Never write "needs capture".
 
-An open question is not a stopping point. Record it in `docs/open-questions.md` with every route already tried and the next one to try, then carry on. When a question is answered, move it into the owning header or chapter and delete the entry.
+An open question is not a stopping point. Record it in `questions/open-questions.md` with every route already tried and the next one to try, then carry on. When a question is answered, move it into the owning header or chapter and delete the entry.
 
 ## 6. When work is finished
 
-A coverage row is done when every inventory entry in its area (`docs/inventory/`) is `understood` or `no-software-dependency`. `understood` means the entry carries a label (established or inferred), a role and hardware effect, and a derivation citation (release, binary and its install path under `root/`, offset, callee) in the same entry. `located` (identity, address or size, and callers or sites cited, behaviour labelled unknown) and `named-only` are partial. [docs/inventory/README.md](docs/inventory/README.md) gives the exact rule. When you finish a task, regenerate the inventory, then pick the next entries below `understood`. Hand off only when your assigned area meets the definition above, or when the session ends; then say in `docs/open-questions.md` where you stopped.
+A coverage row is done when every inventory entry in its area (`evidence/inventory/`) is `understood` or `no-software-dependency`. `understood` means the entry carries a label (established or inferred), a role and hardware effect, and a derivation citation (release, binary and its install path under `root/`, offset, callee) in the same entry. `located` (identity, address or size, and callers or sites cited, behaviour labelled unknown) and `named-only` are partial. [evidence/inventory/README.md](evidence/inventory/README.md) gives the exact rule. When you finish a task, regenerate the inventory, then pick the next entries below `understood`. Hand off only when your assigned area meets the definition above, or when the session ends; then say in `questions/open-questions.md` where you stopped.
 
 ---
 
 ## 7. Rules
 
 - Software-only reverse engineering from public sources and shipped binaries. Nothing else is an input.
-- Unanswered questions go in `docs/open-questions.md`. There are no captures; never write "needs capture".
+- Unanswered questions go in `questions/open-questions.md`. There are no captures; never write "needs capture".
 - Do not name, in committed files, the emulator projects, private tooling, hosts or people behind this work, or any local storage path. Do not record where your copy of the IRIX files came from, or any local cache or library path. `scripts/check-leaks.sh` enforces this.
 - Give no capture, trace or machine a nickname. Describe it generically ("a 6.5.30 install with an Onyx4").
-- Do not quote internal documents. Quote only public sources, briefly, with the title and URL in `docs/sources/INDEX.md`.
+- Do not quote internal documents. Quote only public sources, briefly, with the title and URL in `references/documents/INDEX.md`.
 - No trailers in commit messages: no attribution, sign-off or generated-with lines. The leak check refuses them.
-- Findings go in `docs/` chapters, in your own words, each labelled with its derivation. A register or packet layout goes in its `devices/<unit>/registers.toml`, with `generated/` regenerated in the same commit; a root header is for everything else. Update `docs/coverage.md` and the inventory in the same commit as the finding.
+- Findings go in the pages under `devices/`, `software/` and `evidence/`, in your own words, each labelled with its derivation. A register or packet layout goes in its `devices/<unit>/registers.toml`, with `generated/` regenerated in the same commit; a root header is for everything else. Update `evidence/coverage.md` and the inventory in the same commit as the finding.
 - Commit disassembly, decompiled C and traces you produce as data; keep the proprietary binaries in `root/`.
 
 Commit small and often, straight to `main`. Subjects are lowercase, component-prefixed imperatives (`r300_kernel: label the ring base register`); bodies say why. Write everything for a stranger.

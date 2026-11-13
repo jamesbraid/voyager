@@ -11,12 +11,12 @@ copy = "tools/config/copy-check-allow.txt"
 
 [units.display]
 group = "VOYAGER_DECODE.h"
-notes_corpus = ["docs/registers.md", "docs/fglrx-drv-functions.md", "docs/libfglrxdrm-functions.md", "docs/kernel-ioctl-irq-functions.md"]
+notes_corpus = ["evidence/registers.md", "software/xsgi/fglrx-drv-functions.md", "software/xsgi/libfglrxdrm-functions.md", "software/kernel/kernel-ioctl-irq-functions.md"]
 
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "clock_cntl_index offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.clock_cntl_index` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.clock_cntl_index", 1],
@@ -25,7 +25,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "clock_cntl_index pll_addr bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.clock_cntl_index\.pll_addr` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.clock_cntl_index.pll_addr", 1, 2],
@@ -34,7 +34,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "clock_cntl_index pll_wr_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.clock_cntl_index\.pll_wr_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.clock_cntl_index.pll_wr_en", 1, 2],
@@ -43,7 +43,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "clock_cntl_index pll_div_sel bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.clock_cntl_index\.pll_div_sel` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.clock_cntl_index.pll_div_sel", 1, 2],
@@ -52,7 +52,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "clock_cntl_data offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.clock_cntl_data` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.clock_cntl_data", 1],
@@ -61,7 +61,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "bios_6_scratch offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.bios_6_scratch` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.bios_6_scratch", 1],
@@ -70,7 +70,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "bios_6_scratch board_probe bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.bios_6_scratch\.board_probe` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.bios_6_scratch.board_probe", 1, 2],
@@ -79,7 +79,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.gen_int_cntl", 1],
@@ -88,7 +88,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl crtc_vblank bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.crtc_vblank` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.crtc_vblank", 1, 2],
@@ -97,7 +97,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl crtc_vline bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.crtc_vline` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.crtc_vline", 1, 2],
@@ -106,7 +106,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl crtc_vsync bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.crtc_vsync` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.crtc_vsync", 1, 2],
@@ -115,7 +115,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl snapshot bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.snapshot` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.snapshot", 1, 2],
@@ -124,7 +124,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl fp_detect bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.fp_detect` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.fp_detect", 1, 2],
@@ -133,7 +133,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl crtc2_vline bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.crtc2_vline` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.crtc2_vline", 1, 2],
@@ -142,7 +142,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl dma_viph0_int_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.dma_viph0_int_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.dma_viph0_int_en", 1, 2],
@@ -151,7 +151,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl crtc2_vsync bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.crtc2_vsync` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.crtc2_vsync", 1, 2],
@@ -160,7 +160,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl snapshot2 bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.snapshot2` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.snapshot2", 1, 2],
@@ -169,7 +169,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl crtc2_vblank bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.crtc2_vblank` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.crtc2_vblank", 1, 2],
@@ -178,7 +178,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl fp2_detect bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.fp2_detect` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.fp2_detect", 1, 2],
@@ -187,7 +187,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl vsync_diff_over_limit bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.vsync_diff_over_limit` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.vsync_diff_over_limit", 1, 2],
@@ -196,7 +196,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl dma_viph1_int_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.dma_viph1_int_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.dma_viph1_int_en", 1, 2],
@@ -205,7 +205,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl dma_viph2_int_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.dma_viph2_int_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.dma_viph2_int_en", 1, 2],
@@ -214,7 +214,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl dma_viph3_int_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.dma_viph3_int_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.dma_viph3_int_en", 1, 2],
@@ -223,7 +223,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl i2c_int_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.i2c_int_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.i2c_int_en", 1, 2],
@@ -232,7 +232,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl gui_idle bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.gui_idle` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.gui_idle", 1, 2],
@@ -241,7 +241,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl viph_int_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.viph_int_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.viph_int_en", 1, 2],
@@ -250,7 +250,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl sw_int_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.sw_int_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.sw_int_en", 1, 2],
@@ -259,7 +259,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl geyserville bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.geyserville` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.geyserville", 1, 2],
@@ -268,7 +268,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl hdcp_authorized_int bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.hdcp_authorized_int` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.hdcp_authorized_int", 1, 2],
@@ -277,7 +277,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl dvi_i2c_int bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.dvi_i2c_int` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.dvi_i2c_int", 1, 2],
@@ -286,7 +286,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl guidma bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.guidma` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.guidma", 1, 2],
@@ -295,7 +295,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_cntl viddma bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_cntl\.viddma` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_cntl.viddma", 1, 2],
@@ -304,7 +304,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.gen_int_status", 1],
@@ -313,7 +313,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status crtc_vblank_stat bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.crtc_vblank_stat` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.crtc_vblank_stat", 1, 2],
@@ -322,7 +322,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status crtc_vline_stat bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.crtc_vline_stat` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.crtc_vline_stat", 1, 2],
@@ -331,7 +331,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status crtc_vsync_stat bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.crtc_vsync_stat` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.crtc_vsync_stat", 1, 2],
@@ -340,7 +340,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status snapshot_stat bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.snapshot_stat` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.snapshot_stat", 1, 2],
@@ -349,7 +349,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status fp_detect_stat bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.fp_detect_stat` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.fp_detect_stat", 1, 2],
@@ -358,7 +358,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status crtc2_vline_stat bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.crtc2_vline_stat` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.crtc2_vline_stat", 1, 2],
@@ -367,7 +367,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status crtc2_vsync_stat bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.crtc2_vsync_stat` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.crtc2_vsync_stat", 1, 2],
@@ -376,7 +376,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status snapshot2_stat bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.snapshot2_stat` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.snapshot2_stat", 1, 2],
@@ -385,7 +385,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status cap0_int_active bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.cap0_int_active` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.cap0_int_active", 1, 2],
@@ -394,7 +394,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status crtc2_vblank_stat bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.crtc2_vblank_stat` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.crtc2_vblank_stat", 1, 2],
@@ -403,7 +403,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status fp2_detect_stat bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.fp2_detect_stat` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.fp2_detect_stat", 1, 2],
@@ -412,7 +412,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status vsync_diff_over_limit_stat bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.vsync_diff_over_limit_stat` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.vsync_diff_over_limit_stat", 1, 2],
@@ -421,7 +421,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status dma_viph0_int bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.dma_viph0_int` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.dma_viph0_int", 1, 2],
@@ -430,7 +430,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status dma_viph1_int bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.dma_viph1_int` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.dma_viph1_int", 1, 2],
@@ -439,7 +439,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status dma_viph2_int bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.dma_viph2_int` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.dma_viph2_int", 1, 2],
@@ -448,7 +448,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status dma_viph3_int bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.dma_viph3_int` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.dma_viph3_int", 1, 2],
@@ -457,7 +457,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status i2c_int bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.i2c_int` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.i2c_int", 1, 2],
@@ -466,7 +466,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status gui_idle_stat bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.gui_idle_stat` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.gui_idle_stat", 1, 2],
@@ -475,7 +475,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status viph_int bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.viph_int` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.viph_int", 1, 2],
@@ -484,7 +484,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status sw_int bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.sw_int` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.sw_int", 1, 2],
@@ -493,7 +493,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status sw_int_set bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.sw_int_set` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.sw_int_set", 1, 2],
@@ -502,7 +502,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status geyserville_stat bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.geyserville_stat` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.geyserville_stat", 1, 2],
@@ -511,7 +511,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status hdcp_authorized_int_stat bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.hdcp_authorized_int_stat` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.hdcp_authorized_int_stat", 1, 2],
@@ -520,7 +520,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status dvi_i2c_int_stat bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.dvi_i2c_int_stat` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.dvi_i2c_int_stat", 1, 2],
@@ -529,7 +529,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status guidma_stat bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.guidma_stat` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.guidma_stat", 1, 2],
@@ -538,7 +538,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gen_int_status viddma_stat bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gen_int_status\.viddma_stat` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gen_int_status.viddma_stat", 1, 2],
@@ -547,7 +547,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc_gen_cntl offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc_gen_cntl` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.crtc_gen_cntl", 1],
@@ -556,7 +556,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc_gen_cntl crtc_dbl_scan_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc_gen_cntl\.crtc_dbl_scan_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc_gen_cntl.crtc_dbl_scan_en", 1, 2],
@@ -565,7 +565,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc_gen_cntl crtc_interlace_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc_gen_cntl\.crtc_interlace_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc_gen_cntl.crtc_interlace_en", 1, 2],
@@ -574,7 +574,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc_gen_cntl crtc_c_sync_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc_gen_cntl\.crtc_c_sync_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc_gen_cntl.crtc_c_sync_en", 1, 2],
@@ -583,7 +583,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc_gen_cntl crtc_pix_width bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc_gen_cntl\.crtc_pix_width` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc_gen_cntl.crtc_pix_width", 1, 2],
@@ -592,7 +592,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc_gen_cntl crtc_icon_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc_gen_cntl\.crtc_icon_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc_gen_cntl.crtc_icon_en", 1, 2],
@@ -601,7 +601,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc_gen_cntl crtc_cur_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc_gen_cntl\.crtc_cur_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc_gen_cntl.crtc_cur_en", 1, 2],
@@ -610,7 +610,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc_gen_cntl crtc_vstat_mode bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc_gen_cntl\.crtc_vstat_mode` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc_gen_cntl.crtc_vstat_mode", 1, 2],
@@ -619,7 +619,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc_gen_cntl crtc_cur_mode bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc_gen_cntl\.crtc_cur_mode` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc_gen_cntl.crtc_cur_mode", 1, 2],
@@ -628,7 +628,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc_gen_cntl crtc_ext_disp_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc_gen_cntl\.crtc_ext_disp_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc_gen_cntl.crtc_ext_disp_en", 1, 2],
@@ -637,7 +637,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc_gen_cntl crtc_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc_gen_cntl\.crtc_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc_gen_cntl.crtc_en", 1, 2],
@@ -646,7 +646,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc_gen_cntl crtc_disp_req_en_b bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc_gen_cntl\.crtc_disp_req_en_b` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc_gen_cntl.crtc_disp_req_en_b", 1, 2],
@@ -655,7 +655,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dac_cntl offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dac_cntl` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.dac_cntl", 1],
@@ -664,7 +664,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dac_cntl dac_range_cntl bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dac_cntl\.dac_range_cntl` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.dac_cntl.dac_range_cntl", 1, 2],
@@ -673,7 +673,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dac_cntl dac_blanking bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dac_cntl\.dac_blanking` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.dac_cntl.dac_blanking", 1, 2],
@@ -682,7 +682,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dac_cntl dac_cmp_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dac_cntl\.dac_cmp_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.dac_cntl.dac_cmp_en", 1, 2],
@@ -691,7 +691,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dac_cntl dac_8bit_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dac_cntl\.dac_8bit_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.dac_cntl.dac_8bit_en", 1, 2],
@@ -700,7 +700,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dac_cntl dac_vga_adr_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dac_cntl\.dac_vga_adr_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.dac_cntl.dac_vga_adr_en", 1, 2],
@@ -709,7 +709,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dac_cntl dac_pdwn bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dac_cntl\.dac_pdwn` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.dac_cntl.dac_pdwn", 1, 2],
@@ -718,7 +718,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dac_cntl dac_mask_all bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dac_cntl\.dac_mask_all` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.dac_cntl.dac_mask_all", 1, 2],
@@ -727,7 +727,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc_status offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc_status` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.crtc_status", 1],
@@ -736,7 +736,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc_status crtc_vblank_cur bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc_status\.crtc_vblank_cur` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc_status.crtc_vblank_cur", 1, 2],
@@ -745,7 +745,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dac_cntl2 offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dac_cntl2` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.dac_cntl2", 1],
@@ -754,7 +754,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dac_cntl2 dac2_dac_clk_sel bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dac_cntl2\.dac2_dac_clk_sel` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.dac_cntl2.dac2_dac_clk_sel", 1, 2],
@@ -763,7 +763,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dac_cntl2 dac2_dac2_clk_sel bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dac_cntl2\.dac2_dac2_clk_sel` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.dac_cntl2.dac2_dac2_clk_sel", 1, 2],
@@ -772,7 +772,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dac_cntl2 dac2_palette_acc_ctl bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dac_cntl2\.dac2_palette_acc_ctl` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.dac_cntl2.dac2_palette_acc_ctl", 1, 2],
@@ -781,7 +781,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dac_cntl2 dac2_cmp_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dac_cntl2\.dac2_cmp_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.dac_cntl2.dac2_cmp_en", 1, 2],
@@ -790,7 +790,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "config_xstrap offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.config_xstrap` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.config_xstrap", 1],
@@ -799,7 +799,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "config_xstrap board_strap bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.config_xstrap\.board_strap` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.config_xstrap.board_strap", 1, 2],
@@ -808,7 +808,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_soft_reset offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_soft_reset` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.rbbm_soft_reset", 1],
@@ -817,7 +817,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_soft_reset soft_reset_cp bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_soft_reset\.soft_reset_cp` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_soft_reset.soft_reset_cp", 1, 2],
@@ -826,7 +826,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_soft_reset soft_reset_hi bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_soft_reset\.soft_reset_hi` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_soft_reset.soft_reset_hi", 1, 2],
@@ -835,7 +835,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_soft_reset soft_reset_geometry bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_soft_reset\.soft_reset_geometry` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_soft_reset.soft_reset_geometry", 1, 2],
@@ -844,7 +844,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_soft_reset soft_reset_re bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_soft_reset\.soft_reset_re` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_soft_reset.soft_reset_re", 1, 2],
@@ -853,7 +853,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_soft_reset soft_reset_pp bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_soft_reset\.soft_reset_pp` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_soft_reset.soft_reset_pp", 1, 2],
@@ -862,7 +862,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_soft_reset soft_reset_e2 bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_soft_reset\.soft_reset_e2` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_soft_reset.soft_reset_e2", 1, 2],
@@ -871,7 +871,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_soft_reset soft_reset_rb bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_soft_reset\.soft_reset_rb` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_soft_reset.soft_reset_rb", 1, 2],
@@ -880,7 +880,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_soft_reset soft_reset_hdp bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_soft_reset\.soft_reset_hdp` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_soft_reset.soft_reset_hdp", 1, 2],
@@ -889,7 +889,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_soft_reset soft_reset_mc bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_soft_reset\.soft_reset_mc` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_soft_reset.soft_reset_mc", 1, 2],
@@ -898,7 +898,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_soft_reset soft_reset_aic bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_soft_reset\.soft_reset_aic` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_soft_reset.soft_reset_aic", 1, 2],
@@ -907,7 +907,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_soft_reset soft_reset_vip bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_soft_reset\.soft_reset_vip` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_soft_reset.soft_reset_vip", 1, 2],
@@ -916,7 +916,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_soft_reset soft_reset_disp bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_soft_reset\.soft_reset_disp` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_soft_reset.soft_reset_disp", 1, 2],
@@ -925,7 +925,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_soft_reset soft_reset_cg bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_soft_reset\.soft_reset_cg` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_soft_reset.soft_reset_cg", 1, 2],
@@ -934,7 +934,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_soft_reset soft_reset_ga bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_soft_reset\.soft_reset_ga` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_soft_reset.soft_reset_ga", 1, 2],
@@ -943,7 +943,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_soft_reset soft_reset_idct bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_soft_reset\.soft_reset_idct` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_soft_reset.soft_reset_idct", 1, 2],
@@ -952,7 +952,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "mc_fb_location offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.mc_fb_location` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.mc_fb_location", 1],
@@ -961,7 +961,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "mc_fb_location mc_fb_start bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.mc_fb_location\.mc_fb_start` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.mc_fb_location.mc_fb_start", 1, 2],
@@ -970,7 +970,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "mc_fb_location mc_fb_top bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.mc_fb_location\.mc_fb_top` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.mc_fb_location.mc_fb_top", 1, 2],
@@ -979,7 +979,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "mc_status offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.mc_status` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.mc_status", 1],
@@ -988,7 +988,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "mc_status mc_idle bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.mc_status\.mc_idle` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.mc_status.mc_idle", 1, 2],
@@ -997,7 +997,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "mc_status mc_idle_r300 bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.mc_status\.mc_idle_r300` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.mc_status.mc_idle_r300", 1, 2],
@@ -1006,7 +1006,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc_offset_cntl offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc_offset_cntl` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.crtc_offset_cntl", 1],
@@ -1015,7 +1015,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc_offset_cntl crtc_offset_flip_cntl bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc_offset_cntl\.crtc_offset_flip_cntl` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc_offset_cntl.crtc_offset_flip_cntl", 1, 2],
@@ -1024,7 +1024,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc_offset_cntl crtc_stereo_offset_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc_offset_cntl\.crtc_stereo_offset_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc_offset_cntl.crtc_stereo_offset_en", 1, 2],
@@ -1033,7 +1033,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc_offset_cntl stereo_aux bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc_offset_cntl\.stereo_aux` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc_offset_cntl.stereo_aux", 1, 2],
@@ -1042,7 +1042,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc_offset_cntl crtc_tile_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc_offset_cntl\.crtc_tile_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc_offset_cntl.crtc_tile_en", 1, 2],
@@ -1051,7 +1051,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "display_base_addr offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.display_base_addr` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.display_base_addr", 1],
@@ -1060,7 +1060,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "fp2_gen_cntl offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.fp2_gen_cntl` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.fp2_gen_cntl", 1],
@@ -1069,7 +1069,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "fp2_gen_cntl fp2_dvo_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.fp2_gen_cntl\.fp2_dvo_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.fp2_gen_cntl.fp2_dvo_en", 1, 2],
@@ -1078,7 +1078,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "unnamed_0294 offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.unnamed_0294` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.unnamed_0294", 1],
@@ -1087,7 +1087,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "unnamed_0294 stereo_sel bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.unnamed_0294\.stereo_sel` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.unnamed_0294.stereo_sel", 1, 2],
@@ -1096,7 +1096,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "unnamed_0294 mode_nibble bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.unnamed_0294\.mode_nibble` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.unnamed_0294.mode_nibble", 1, 2],
@@ -1105,7 +1105,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc2_gen_cntl offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc2_gen_cntl` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.crtc2_gen_cntl", 1],
@@ -1114,7 +1114,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc2_gen_cntl crtc2_dbl_scan_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc2_gen_cntl\.crtc2_dbl_scan_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc2_gen_cntl.crtc2_dbl_scan_en", 1, 2],
@@ -1123,7 +1123,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc2_gen_cntl crtc2_interlace_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc2_gen_cntl\.crtc2_interlace_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc2_gen_cntl.crtc2_interlace_en", 1, 2],
@@ -1132,7 +1132,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc2_gen_cntl crtc2_sync_tristate bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc2_gen_cntl\.crtc2_sync_tristate` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc2_gen_cntl.crtc2_sync_tristate", 1, 2],
@@ -1141,7 +1141,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc2_gen_cntl crtc2_hsync_tristate bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc2_gen_cntl\.crtc2_hsync_tristate` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc2_gen_cntl.crtc2_hsync_tristate", 1, 2],
@@ -1150,7 +1150,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc2_gen_cntl crtc2_vsync_tristate bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc2_gen_cntl\.crtc2_vsync_tristate` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc2_gen_cntl.crtc2_vsync_tristate", 1, 2],
@@ -1159,7 +1159,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc2_gen_cntl crt2_on bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc2_gen_cntl\.crt2_on` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc2_gen_cntl.crt2_on", 1, 2],
@@ -1168,7 +1168,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc2_gen_cntl crtc2_pix_width bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc2_gen_cntl\.crtc2_pix_width` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc2_gen_cntl.crtc2_pix_width", 1, 2],
@@ -1177,7 +1177,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc2_gen_cntl crtc2_icon_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc2_gen_cntl\.crtc2_icon_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc2_gen_cntl.crtc2_icon_en", 1, 2],
@@ -1186,7 +1186,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc2_gen_cntl crtc2_cur_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc2_gen_cntl\.crtc2_cur_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc2_gen_cntl.crtc2_cur_en", 1, 2],
@@ -1195,7 +1195,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc2_gen_cntl crtc2_cur_mode bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc2_gen_cntl\.crtc2_cur_mode` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc2_gen_cntl.crtc2_cur_mode", 1, 2],
@@ -1204,7 +1204,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc2_gen_cntl crtc2_display_dis bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc2_gen_cntl\.crtc2_display_dis` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc2_gen_cntl.crtc2_display_dis", 1, 2],
@@ -1213,7 +1213,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc2_gen_cntl crtc2_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc2_gen_cntl\.crtc2_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc2_gen_cntl.crtc2_en", 1, 2],
@@ -1222,7 +1222,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc2_gen_cntl crtc2_disp_req_en_b bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc2_gen_cntl\.crtc2_disp_req_en_b` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc2_gen_cntl.crtc2_disp_req_en_b", 1, 2],
@@ -1231,7 +1231,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc2_gen_cntl crtc2_c_sync_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc2_gen_cntl\.crtc2_c_sync_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc2_gen_cntl.crtc2_c_sync_en", 1, 2],
@@ -1240,7 +1240,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc2_gen_cntl crtc2_hsync_dis bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc2_gen_cntl\.crtc2_hsync_dis` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc2_gen_cntl.crtc2_hsync_dis", 1, 2],
@@ -1249,7 +1249,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "crtc2_gen_cntl crtc2_vsync_dis bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.crtc2_gen_cntl\.crtc2_vsync_dis` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.crtc2_gen_cntl.crtc2_vsync_dis", 1, 2],
@@ -1258,7 +1258,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "ov0_scale_cntl offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.ov0_scale_cntl` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.ov0_scale_cntl", 1],
@@ -1267,7 +1267,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "ov0_scale_cntl ov0_no_read_behind_scan bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.ov0_scale_cntl\.ov0_no_read_behind_scan` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.ov0_scale_cntl.ov0_no_read_behind_scan", 1, 2],
@@ -1276,7 +1276,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "ov0_scale_cntl ov0_horz_pick_nearest bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.ov0_scale_cntl\.ov0_horz_pick_nearest` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.ov0_scale_cntl.ov0_horz_pick_nearest", 1, 2],
@@ -1285,7 +1285,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "ov0_scale_cntl ov0_vert_pick_nearest bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.ov0_scale_cntl\.ov0_vert_pick_nearest` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.ov0_scale_cntl.ov0_vert_pick_nearest", 1, 2],
@@ -1294,7 +1294,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "ov0_scale_cntl ov0_signed_uv bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.ov0_scale_cntl\.ov0_signed_uv` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.ov0_scale_cntl.ov0_signed_uv", 1, 2],
@@ -1303,7 +1303,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "ov0_scale_cntl ov0_gamma_sel bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.ov0_scale_cntl\.ov0_gamma_sel` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.ov0_scale_cntl.ov0_gamma_sel", 1, 2],
@@ -1312,7 +1312,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "ov0_scale_cntl ov0_surface_format bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.ov0_scale_cntl\.ov0_surface_format` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.ov0_scale_cntl.ov0_surface_format", 1, 2],
@@ -1321,7 +1321,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "ov0_scale_cntl ov0_adaptive_deint bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.ov0_scale_cntl\.ov0_adaptive_deint` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.ov0_scale_cntl.ov0_adaptive_deint", 1, 2],
@@ -1330,7 +1330,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "ov0_scale_cntl ov0_crtc_sel bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.ov0_scale_cntl\.ov0_crtc_sel` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.ov0_scale_cntl.ov0_crtc_sel", 1, 2],
@@ -1339,7 +1339,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "ov0_scale_cntl ov0_burst_per_plane bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.ov0_scale_cntl\.ov0_burst_per_plane` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.ov0_scale_cntl.ov0_burst_per_plane", 1, 2],
@@ -1348,7 +1348,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "ov0_scale_cntl ov0_double_buffer_regs bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.ov0_scale_cntl\.ov0_double_buffer_regs` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.ov0_scale_cntl.ov0_double_buffer_regs", 1, 2],
@@ -1357,7 +1357,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "ov0_scale_cntl ov0_bandwidth bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.ov0_scale_cntl\.ov0_bandwidth` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.ov0_scale_cntl.ov0_bandwidth", 1, 2],
@@ -1366,7 +1366,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "ov0_scale_cntl ov0_lin_trans_bypass bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.ov0_scale_cntl\.ov0_lin_trans_bypass` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.ov0_scale_cntl.ov0_lin_trans_bypass", 1, 2],
@@ -1375,7 +1375,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "ov0_scale_cntl ov0_int_emu bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.ov0_scale_cntl\.ov0_int_emu` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.ov0_scale_cntl.ov0_int_emu", 1, 2],
@@ -1384,7 +1384,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "ov0_scale_cntl ov0_overlay_en bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.ov0_scale_cntl\.ov0_overlay_en` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.ov0_scale_cntl.ov0_overlay_en", 1, 2],
@@ -1393,7 +1393,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "ov0_scale_cntl ov0_soft_reset bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.ov0_scale_cntl\.ov0_soft_reset` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.ov0_scale_cntl.ov0_soft_reset", 1, 2],
@@ -1402,7 +1402,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_rb_base offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_rb_base` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.cp_rb_base", 1],
@@ -1411,7 +1411,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_rb_cntl offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_rb_cntl` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.cp_rb_cntl", 1],
@@ -1420,7 +1420,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_rb_cntl rb_bufsz bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_rb_cntl\.rb_bufsz` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_rb_cntl.rb_bufsz", 1, 2],
@@ -1429,7 +1429,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_rb_cntl rb_blksz bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_rb_cntl\.rb_blksz` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_rb_cntl.rb_blksz", 1, 2],
@@ -1438,7 +1438,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_rb_cntl buf_swap bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_rb_cntl\.buf_swap` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_rb_cntl.buf_swap", 1, 2],
@@ -1447,7 +1447,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_rb_cntl max_fetch bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_rb_cntl\.max_fetch` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_rb_cntl.max_fetch", 1, 2],
@@ -1456,7 +1456,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_rb_cntl rb_no_update bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_rb_cntl\.rb_no_update` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_rb_cntl.rb_no_update", 1, 2],
@@ -1465,7 +1465,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_rb_rptr_addr offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_rb_rptr_addr` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.cp_rb_rptr_addr", 1],
@@ -1474,7 +1474,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_rb_wptr_delay offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_rb_wptr_delay` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.cp_rb_wptr_delay", 1],
@@ -1483,7 +1483,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_csq_cntl offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_csq_cntl` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.cp_csq_cntl", 1],
@@ -1492,7 +1492,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_csq_cntl csq_cnt_primary bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_csq_cntl\.csq_cnt_primary` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_csq_cntl.csq_cnt_primary", 1, 2],
@@ -1501,7 +1501,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_csq_cntl csq_cnt_indirect bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_csq_cntl\.csq_cnt_indirect` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_csq_cntl.csq_cnt_indirect", 1, 2],
@@ -1510,7 +1510,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_csq_cntl csq_mode bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_csq_cntl\.csq_mode` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_csq_cntl.csq_mode", 1, 2],
@@ -1519,7 +1519,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_stat offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_stat` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.cp_stat", 1],
@@ -1528,7 +1528,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_stat mru_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_stat\.mru_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_stat.mru_busy", 1, 2],
@@ -1537,7 +1537,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_stat mwu_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_stat\.mwu_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_stat.mwu_busy", 1, 2],
@@ -1546,7 +1546,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_stat rsiu_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_stat\.rsiu_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_stat.rsiu_busy", 1, 2],
@@ -1555,7 +1555,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_stat rciu_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_stat\.rciu_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_stat.rciu_busy", 1, 2],
@@ -1564,7 +1564,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_stat csf_primary_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_stat\.csf_primary_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_stat.csf_primary_busy", 1, 2],
@@ -1573,7 +1573,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_stat csf_indirect_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_stat\.csf_indirect_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_stat.csf_indirect_busy", 1, 2],
@@ -1582,7 +1582,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_stat csq_primary_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_stat\.csq_primary_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_stat.csq_primary_busy", 1, 2],
@@ -1591,7 +1591,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_stat csq_indirect_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_stat\.csq_indirect_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_stat.csq_indirect_busy", 1, 2],
@@ -1600,7 +1600,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_stat csi_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_stat\.csi_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_stat.csi_busy", 1, 2],
@@ -1609,7 +1609,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_stat csf_indirect2_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_stat\.csf_indirect2_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_stat.csf_indirect2_busy", 1, 2],
@@ -1618,7 +1618,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_stat csq_indirect2_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_stat\.csq_indirect2_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_stat.csq_indirect2_busy", 1, 2],
@@ -1627,7 +1627,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_stat guidma_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_stat\.guidma_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_stat.guidma_busy", 1, 2],
@@ -1636,7 +1636,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_stat viddma_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_stat\.viddma_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_stat.viddma_busy", 1, 2],
@@ -1645,7 +1645,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_stat cmdstrm_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_stat\.cmdstrm_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_stat.cmdstrm_busy", 1, 2],
@@ -1654,7 +1654,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_stat cp_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_stat\.cp_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.cp_stat.cp_busy", 1, 2],
@@ -1663,7 +1663,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_me_cntl offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_me_cntl` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.cp_me_cntl", 1],
@@ -1672,7 +1672,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_me_ram_addr offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_me_ram_addr` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.cp_me_ram_addr", 1],
@@ -1681,7 +1681,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_me_ram_datah offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_me_ram_datah` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.cp_me_ram_datah", 1],
@@ -1690,7 +1690,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "cp_me_ram_datal offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.cp_me_ram_datal` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.cp_me_ram_datal", 1],
@@ -1699,7 +1699,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "tv_master_cntl offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.tv_master_cntl` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.tv_master_cntl", 1],
@@ -1708,7 +1708,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.rbbm_status", 1],
@@ -1717,7 +1717,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status cmdfifo_avail bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.cmdfifo_avail` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.cmdfifo_avail", 1, 2],
@@ -1726,7 +1726,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status hirq_on_rbb bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.hirq_on_rbb` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.hirq_on_rbb", 1, 2],
@@ -1735,7 +1735,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status cprq_on_rbb bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.cprq_on_rbb` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.cprq_on_rbb", 1, 2],
@@ -1744,7 +1744,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status cfrq_on_rbb bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.cfrq_on_rbb` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.cfrq_on_rbb", 1, 2],
@@ -1753,7 +1753,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status hirq_in_rtbuf bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.hirq_in_rtbuf` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.hirq_in_rtbuf", 1, 2],
@@ -1762,7 +1762,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status cprq_in_rtbuf bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.cprq_in_rtbuf` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.cprq_in_rtbuf", 1, 2],
@@ -1771,7 +1771,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status cfrq_in_rtbuf bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.cfrq_in_rtbuf` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.cfrq_in_rtbuf", 1, 2],
@@ -1780,7 +1780,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status cf_pipe_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.cf_pipe_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.cf_pipe_busy", 1, 2],
@@ -1789,7 +1789,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status eng_ev_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.eng_ev_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.eng_ev_busy", 1, 2],
@@ -1798,7 +1798,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status cp_cmdstrm_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.cp_cmdstrm_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.cp_cmdstrm_busy", 1, 2],
@@ -1807,7 +1807,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status e2_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.e2_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.e2_busy", 1, 2],
@@ -1816,7 +1816,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status rb2d_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.rb2d_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.rb2d_busy", 1, 2],
@@ -1825,7 +1825,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status rb3d_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.rb3d_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.rb3d_busy", 1, 2],
@@ -1834,7 +1834,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status geometry_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.geometry_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.geometry_busy", 1, 2],
@@ -1843,7 +1843,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status re_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.re_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.re_busy", 1, 2],
@@ -1852,7 +1852,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status tam_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.tam_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.tam_busy", 1, 2],
@@ -1861,7 +1861,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status tdm_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.tdm_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.tdm_busy", 1, 2],
@@ -1870,7 +1870,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status pb_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.pb_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.pb_busy", 1, 2],
@@ -1879,7 +1879,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status tim_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.tim_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.tim_busy", 1, 2],
@@ -1888,7 +1888,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status ga_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.ga_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.ga_busy", 1, 2],
@@ -1897,7 +1897,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status cba2d_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.cba2d_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.cba2d_busy", 1, 2],
@@ -1906,7 +1906,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rbbm_status gui_active bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rbbm_status\.gui_active` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rbbm_status.gui_active", 1, 2],
@@ -1915,7 +1915,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rb2d_dstcache_ctlstat offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rb2d_dstcache_ctlstat` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.rb2d_dstcache_ctlstat", 1],
@@ -1924,7 +1924,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rb2d_dstcache_ctlstat dc_flush bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rb2d_dstcache_ctlstat\.dc_flush` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rb2d_dstcache_ctlstat.dc_flush", 1, 2],
@@ -1933,7 +1933,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rb2d_dstcache_ctlstat dc_free bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rb2d_dstcache_ctlstat\.dc_free` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rb2d_dstcache_ctlstat.dc_free", 1, 2],
@@ -1942,7 +1942,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "rb2d_dstcache_ctlstat dc_busy bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.rb2d_dstcache_ctlstat\.dc_busy` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.rb2d_dstcache_ctlstat.dc_busy", 1, 2],
@@ -1951,7 +1951,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gb_tile_config offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gb_tile_config` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.gb_tile_config", 1],
@@ -1960,7 +1960,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gb_tile_config enable bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gb_tile_config\.enable` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gb_tile_config.enable", 1, 2],
@@ -1969,7 +1969,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gb_tile_config pipe_count bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gb_tile_config\.pipe_count` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gb_tile_config.pipe_count", 1, 2],
@@ -1978,7 +1978,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gb_tile_config tile_size bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gb_tile_config\.tile_size` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.gb_tile_config.tile_size", 1, 2],
@@ -1987,7 +1987,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "ga_soft_reset offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.ga_soft_reset` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.ga_soft_reset", 1],
@@ -1996,7 +1996,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "ga_soft_reset soft_reset_count bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.ga_soft_reset\.soft_reset_count` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.ga_soft_reset.soft_reset_count", 1, 2],
@@ -2005,7 +2005,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "bios_4_scratch offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.bios_4_scratch` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.bios_4_scratch", 1],
@@ -2014,7 +2014,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "bios_5_scratch offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.bios_5_scratch` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.bios_5_scratch", 1],
@@ -2023,7 +2023,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "bios_7_scratch offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.bios_7_scratch` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.bios_7_scratch", 1],
@@ -2032,7 +2032,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "config_memsize offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.config_memsize` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.config_memsize", 1],
@@ -2041,7 +2041,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "mem_cntl offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.mem_cntl` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.mem_cntl", 1],
@@ -2050,7 +2050,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "mc_agp_location offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.mc_agp_location` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.mc_agp_location", 1],
@@ -2059,7 +2059,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "agp_base offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.agp_base` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.agp_base", 1],
@@ -2068,7 +2068,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "unnamed_0178 offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.unnamed_0178` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.unnamed_0178", 1],
@@ -2077,7 +2077,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "unnamed_017c offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.unnamed_017c` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.unnamed_017c", 1],
@@ -2086,7 +2086,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gpiopad_mask offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gpiopad_mask` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.gpiopad_mask", 1],
@@ -2095,7 +2095,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gpiopad_a offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gpiopad_a` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.gpiopad_a", 1],
@@ -2104,7 +2104,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gpiopad_en offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gpiopad_en` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.gpiopad_en", 1],
@@ -2113,7 +2113,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "gpiopad_y offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.gpiopad_y` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.gpiopad_y", 1],
@@ -2122,7 +2122,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "unnamed_01a8 offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.unnamed_01a8` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.unnamed_01a8", 1],
@@ -2131,7 +2131,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "mdgpio_a offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.mdgpio_a` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.mdgpio_a", 1],
@@ -2140,7 +2140,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "mdgpio_en offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.mdgpio_en` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.mdgpio_en", 1],
@@ -2149,7 +2149,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dac_ext_cntl offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dac_ext_cntl` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.dac_ext_cntl", 1],
@@ -2158,7 +2158,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "unnamed_02e0 offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.unnamed_02e0` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.unnamed_02e0", 1],
@@ -2167,7 +2167,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "unnamed_02e4 offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.unnamed_02e4` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.unnamed_02e4", 1],
@@ -2176,7 +2176,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "unnamed_02e8 offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.unnamed_02e8` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.unnamed_02e8", 1],
@@ -2185,7 +2185,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "surface_cntl offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.surface_cntl` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.surface_cntl", 1],
@@ -2194,7 +2194,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "unnamed_0f10 offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.unnamed_0f10` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.unnamed_0f10", 1],
@@ -2203,7 +2203,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dst_offset offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dst_offset` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.dst_offset", 1],
@@ -2212,7 +2212,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dst_pitch offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dst_pitch` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.dst_pitch", 1],
@@ -2221,7 +2221,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dst_pitch_offset offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dst_pitch_offset` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.dst_pitch_offset", 1],
@@ -2230,7 +2230,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dst_y_x offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dst_y_x` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.dst_y_x", 1],
@@ -2239,7 +2239,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dp_gui_master_cntl offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dp_gui_master_cntl` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.dp_gui_master_cntl", 1],
@@ -2248,7 +2248,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dp_brush_frgd_clr offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dp_brush_frgd_clr` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.dp_brush_frgd_clr", 1],
@@ -2257,7 +2257,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dst_width_height offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dst_width_height` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.dst_width_height", 1],
@@ -2266,7 +2266,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dp_cntl offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dp_cntl` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.dp_cntl", 1],
@@ -2275,7 +2275,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "dp_write_mask offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.dp_write_mask` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.dp_write_mask", 1],
@@ -2284,7 +2284,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "unnamed_1700 offset"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.unnamed_1700` \| (0x[0-9a-f]+) \|'
 binds = [
   ["O", "VOYAGER.unnamed_1700", 1],
@@ -2293,7 +2293,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "mc_agp_location mc_agp_start bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.mc_agp_location\.mc_agp_start` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.mc_agp_location.mc_agp_start", 1, 2],
@@ -2302,7 +2302,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "mc_agp_location mc_agp_top bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.mc_agp_location\.mc_agp_top` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.mc_agp_location.mc_agp_top", 1, 2],
@@ -2311,7 +2311,7 @@ binds = [
 [[claims]]
 group = "VOYAGER_DECODE.h"
 label = "surface_cntl surf_translation_dis bits"
-doc = "docs/registers.md"
+doc = "evidence/registers.md"
 regex = '\| `VOYAGER\.surface_cntl\.surf_translation_dis` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.surface_cntl.surf_translation_dis", 1, 2],

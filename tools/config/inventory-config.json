@@ -6,8 +6,11 @@
   },
   "docs": {
     "prose": [
-      "docs/*.md",
-      "docs/routines/*.md",
+      "devices/*/*.md",
+      "software/*/*.md",
+      "evidence/*.md",
+      "questions/*.md",
+      "evidence/routines/*.md",
       "README.md"
     ],
     "headers": [
@@ -18,21 +21,23 @@
     "index": [
       "AGENTS.md",
       "README.md",
-      "IRIX_FILES.md",
-      "docs/coverage.md",
-      "docs/open-questions.md"
+      "evidence/irix-files.md",
+      "evidence/coverage.md",
+      "questions/open-questions.md"
     ],
     "dumps": [],
     "skip": [
-      "docs/inventory/*",
-      "docs/sources/*"
+      "evidence/inventory/*",
+      "references/documents/*",
+      "devices/*/README.md",
+      "devices/*/registers*.md"
     ],
     "context": {}
   },
   "review_required": [
-    "docs/routines/t1-*.md",
-    "docs/routines/t2-*.md",
-    "docs/routines/vfin-*.md"
+    "evidence/routines/t1-*.md",
+    "evidence/routines/t2-*.md",
+    "evidence/routines/vfin-*.md"
   ],
   "prepare": [],
   "binaries": [
@@ -152,7 +157,7 @@
       "name": "mmio",
       "size": "0x10000",
       "docs": [
-        "docs/registers.md"
+        "evidence/registers.md"
       ]
     }
   ],

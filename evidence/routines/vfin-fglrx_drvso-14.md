@@ -1,0 +1,83 @@
+# Routine readings: fglrx_drv.so, sample from index 14
+
+Role entries for routines of `usr/X11R6/lib/modules/drivers/fglrx_drv.so` that `evidence/inventory/functions.tsv` does not list as understood. The routines are sorted by address and the sample takes index 14, then every 15th routine after it. Each entry is rendered by `retools/tools/render_reading.py` from the install path in its header. All entries are inferred, because the render shows the instructions, calls, constants and branches of each routine, but not the purpose its authors gave it. The role names follow from those facts and from the routine's name.
+
+- `R200CPSubsequentSolidHorVertLine` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x40c200
+  **Inferred.** Allocates a block with `__fglDRMPM4Alloc` and submits it with `__fglDRMPM4Submit`. The `bgezall` at 0x40c244 calls `__fglDRMPM4Alloc` at 0x409f40 with a1 set to 6. Stores at 0x40c28c, 0x40c290 and, only when a4 is nonzero (the `beq` at 0x40c29c skips them otherwise), 0x40c2a4 through 0x40c2b0 write offsets 0x0 through 0x14; the render does not show their base register. The `bgezall` at 0x40c2c0 calls `__fglDRMPM4Submit` at 0x40a1c0 with pointers derived from the allocator's return (return plus 24 and return plus 8), and the return at 0x40c2d4 gives back its v0. The `beq` at 0x40c278 tests the word at +8164 with mask 0x4000 and the `beq` at 0x40c284 tests the word at +9208 for zero; the taken side of the second goes to 0x40c300, a path with its own stores at 0x40c300 and 0x40c318. Role (from name): a solid horizontal or vertical line drawn through a PM4 packet.
+  Reviewed: 2026-11-12 (sonnet)
+
+- `R200_DGASetViewport` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x40eec0
+  **Inferred.** Calls `R200AdjustFrame` through the `jalr` at 0x40eee8 with a0 loaded through the word at a0+8 (the render shows a0=[[a0+8]]) and a1 to a3 as received. The word at +0xf8 is loaded at 0x40eedc, but the render does not show its base. The store at 0x40eef8 writes the word at +0x195c after that call; the render does not show its base register. The return at 0x40ef00 gives back the v0 of `R200AdjustFrame`. Role (from name): a DGA viewport change forwarded to the frame-adjust routine.
+  Reviewed: 2026-11-12 (sonnet)
+
+- `R200GetPLLParameters` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x414700
+  **Inferred.** Loads the pointer at private+0x38 (private is the word at +0xf8 of a0) and tests it with the `beq` at 0x414718. When it is nonzero, byte loads from the table at 0x414720 through 0x4147d4 feed halfword and word stores at +0x1a8, +0x1aa, +0x1ac, +0x1b0 and +0x1b4. When it is zero the branch goes to 0x414824, where an `xf86DrvMsg` call at 0x414834 (a1 set to 6, a3 as received) and stores to the same five offsets at 0x414844 through 0x414874 follow. The `lhu` loads at 0x4147f8 and 0x414800 read +0x1a8 and +0x1aa and are passed as a3 and a4 to the `xf86DrvMsg` call at 0x414804, which has a1 set to 7. The return at 0x41481c gives 1. Role (from name): reading the PLL parameters.
+  Reviewed: 2026-11-12 (sonnet)
+
+- `R200PreInitOverlay` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x417c00
+  **Inferred.** Checks two options from the `R200Options` table: option 0x40 with `xf86IsOptionSet` at 0x417c34 and then `xf86GetOptValBool` at 0x417c50, and option 0x12 with the same pair at 0x417cf8 and 0x417d10. The word at private+7820 is compared against 2 (unsigned) at 0x417c98, 0x417ccc, 0x417d40 and 0x417d90, so values 0 and 1 take one side and 2 or more the other. The routine makes `xf86DrvMsg` calls with a1 set to 1 at 0x417c80, 0x417cb8, 0x417ce8, 0x417d60, 0x417dac, 0x417dcc, 0x417e0c, 0x417e38 and 0x417e78. It stores at 0x417c18 and 0x417c1c (+0x108, +0x10c), 0x417ddc and 0x417e48 (+0x10c), 0x417d2c, 0x417e04 and 0x417e70 (+0x1b2c) and 0x417dec and 0x417e58 (+0x23f8); the render does not show the base of most of these stores, and the later ones are conditional. The return at 0x417d7c gives 1. Role (from name): pre-initialisation of the video overlay.
+  Reviewed: 2026-11-12 (sonnet)
+
+- `R200SavePLL2Registers` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x41d600
+  **Inferred.** Calls `R200INPLL` four times at 0x41d624, 0x41d638, 0x41d64c and 0x41d660 with a1 set to 0x2b, 0x2c, 0x2e and 0x2d in that order and a0 as received. Stores at 0x41d634, 0x41d648, 0x41d65c and 0x41d674 write the results to offsets +0x368, +0x36c, +0x370 and +0x374 respectively; the render does not show the base register of these stores (a1 at entry is not shown). The return at 0x41d67c gives the v0 of the last `R200INPLL` call. Role (from name): saving PLL register values.
+  Reviewed: 2026-11-12 (sonnet)
+
+- `InitDRMConnection` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x429040
+  **Inferred.** Calls `xf86GetEntityPrivate` at 0x429070 with the index loaded from `gR200EntityIndex`, clears a 0x30-byte stack block at sp-96 with `xf86memset` at 0x42908c, and calls `firegl_InitDRM` at 0x4290e0 with that block as a0 and the address private+7660 as a1. When `firegl_InitDRM` returns nonzero, the `xf86DrvMsg` call at 0x429104 (a1 set to 5, a3 the return value) runs and the return at 0x429118 gives 0. When it returns zero, `xf86memcpy` at 0x429130 copies 0x28 bytes from sp-88 (offset 8 into the block) and the return at 0x429144 gives 1. Role (from name): setting up the DRM connection.
+  Reviewed: 2026-11-12 (sonnet)
+
+- `vR200_PM4Init` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42be40
+  **Inferred.** Makes twelve word stores at offsets 0x40, 0x44, 0x48, 0x4c, 0x50, 0x54, 0x58, 0x5c, 0x60, 0x64, 0x68 and 0x6c. The render does not show the base register or the values stored. The routine makes no calls and returns the constant 0x10000000 at 0x42be94. Role (from name): PM4 initialisation.
+  Reviewed: 2026-11-12 (sonnet)
+
+- `ProcFGLVidModePanelSetGammaData` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42ef00
+  **Inferred.** Loads the word at a0+8 and compares its +4 field with the word at screenInfo+0x30 at 0x42ef24; the taken side goes to 0x42f014, which calls `ErrorF` at 0x42f024 and returns the word at +0x28 of a0. Otherwise it calls `getXF86ConfigFileName` at 0x42ef60, loads the word at +0xf8, and tests the word at +8 of a0+8's target at 0x42ef6c. Two paths each build two strings with `xf86sprintf` (0x42ef88 and 0x42efa0, or 0x42f058 and 0x42f070) and call `UpdateFile` (0x42efb4 or 0x42f084). When `UpdateFile` returns a negative value the routine goes to a path with `ErrorF` calls at 0x42f0a0 and 0x42f0c0, which pass the return value as a1. When it is not negative, the routine calls `FGLSetGammaData` at 0x42efcc with a1 loaded from a0+8's +8 word, then `WriteToClient` at 0x42eff4 with a1 set to 0x20 (a 0x20-byte reply), and returns the word at +0x28 of a0 at 0x42f00c. Role (from name): setting the gamma data of a flat panel for a client request.
+  Reviewed: 2026-11-12 (sonnet)
+
+- `FIREGL_OverlayPolyText16` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x434180
+  **Inferred.** The `beq` at 0x434210 compares the word at private+8312 (the private of the screen found through `xf86Screens`) with the byte at a1+4. When equal, it goes to 0x43422c. When not equal, a store at 0x434218 writes +0x2078 and the byte at a1+4 is compared with 8 at 0x434220 (equal goes to 0x4342ac, where `R200CPAccelInitFuncs` is called at 0x4342b4 with a2 set to 1) and with 0x18 at 0x434228 (equal goes to 0x434290, where it is called at 0x43429c with a2 set to 0). `VALIDATE_DRAWABLE` at 0x432d40 is called at 0x434238 with a0 and a1 swapped from entry. The call at 0x43425c is indirect and the render does not name its target. The return at 0x434288 gives the v0 of that call. Role (from name): an overlay text-drawing hook.
+  Reviewed: 2026-11-12 (sonnet)
+
+- `FIREGL_MakeTrans` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x4354c0
+  **Inferred.** When a1 is above 0 (the `blez` at 0x435508 skips otherwise), a loop reads halfwords from the list at a2 in 8-byte steps (the loop ends when the pointer reaches a2 plus a1 times 8, tested at 0x43560c). Each pass calls the routine at 0x4314c0 with a1 set to 0x12 at 0x43555c, stores words at offsets 0x0 through 0x44 (the render does not show their base register; the stores follow that call), and calls the routine at 0x431740 at 0x4355fc with a1 set to the 0x4314c0 return plus 72 and a2 set to the word at `R200_ROP`+28 ORed with 0x32d2. The return at 0x435648 gives one of an unknown value or the v0 of the 0x431740 call. Role (from name): building a transparency request.
+  Reviewed: 2026-11-12 (sonnet)
+
+- `ComputeGamma` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x437480
+  **Inferred.** Loads three single-precision floats at +0x84, +0x88 and +0x8c (from 0x43748c to 0x4374b8). The `bc1t` branches at 0x4374d8 and 0x4374e8 compare a float with the double constants 0x3fb999999999999a (0.1) and 0x4024000000000000 (10.0) and go to 0x437520 when the value is below 0.1 or above 10.0. At 0x437520 and after, `xf86DrvMsgVerb` is called at 0x437540 and 0x437564 with a1 set to 6 and a2 set to 0, and swc1 stores at 0x437574, 0x43757c and 0x437584 write +0x84, +0x88 and +0x8c; the render does not show their base. The conditions of the branches at 0x4374f4, 0x437500, 0x43750c and 0x437518 are not analysed in the render. Later code compares floats with 1.0 (0x3ff0000000000000) with `c.eq.d` at 0x4375cc, 0x4375e4 and 0x437600, and calls `xf86pow` at 0x437650, 0x437690 and 0x437710. Halfword stores occur at 0x43767c, 0x4376bc, 0x4376c8, 0x4376ec, 0x4376fc and 0x437734, with loads from +0x34 at 0x437660, 0x4376a0, 0x4376c0, 0x4376e0, 0x4376f0 and 0x437720. The return at 0x43777c gives a value the render does not show. Role (from name): computing gamma ramp values.
+  Reviewed: 2026-11-12 (sonnet)
+
+- `FIREGL_OverlayValidateTree` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x439b00
+  **Inferred.** Calls the region routines `miRegionValidate` (0x439c60), `miUnion` (0x439c80), `miRegionCopy` (0x439dec, 0x439fc8), `miIntersect` (0x439f00, 0x439fe0), `miSubtract` (0x439f30, 0x43a008, 0x43a0c0) and `miRegionAppend` (0x439f40), and `FIREGL_OverlayComputeClips` at 0x439f18. It calls `InOverlay` at 0x4317c0 three times, at 0x439db0, 0x439dd4 and 0x439df8, and `Xfree` at 0x439c98, 0x439cc8, 0x439d98, 0x439e1c, 0x439e40 and 0x43a058. It loads the word at +0x207c at 0x439b3c and the `beq` at 0x439b6c tests the word at +8316 of the screen private. The `beq` at 0x43a098 compares 0x10000000 with `globalSerialNumber` plus 1, and stores of +0x0 at 0x43a09c and 0x43a0a4 follow. The returns at 0x439eac and 0x439ee8 give 1. Role (from name): recomputing the clip region for an overlay window tree.
+  Reviewed: 2026-11-12 (sonnet)
+
+- `MarkWindow` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x43d500
+  **Inferred.** Allocates a per-window record when none exists. If the pointer at the window's +0x44 is zero, the routine calls `XNFalloc` at 0x43d520 for a 0x18-byte block and fills it: two halfwords from the window's +0x8 and +0xa, and two words, then stores the new pointer at +0x44. When the pointer is already set, the routine returns at 0x43d510 without allocating. The final return at 0x43d54c gives the v0 of `XNFalloc`.
+  Reviewed: 2026-11-12 (sonnet)
+
+- `ProcATITVOSetStandard` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x445840
+  **Inferred.** Loads the word at a0+8 and compares its +4 field with the word at screenInfo+0x30 at 0x4458b4; the taken side goes to 0x445940 and returns the word at +0x28 of a0 at 0x445948. Otherwise it loads the word at +0xf8 and branches at 0x4458ec on a loaded value. When it is zero, `WriteToClient` is called at 0x445918 with a1 set to 0x24 (a 0x24-byte reply) and the return at 0x44592c gives the word at +0x28 of a0. When it is nonzero, the path at 0x445950 builds strings with `xf86sprintf` (0x44596c, 0x445990), calls `getXF86ConfigFileName` at 0x44599c and `UpdateFile` at 0x4459b0. When `UpdateFile` returns a negative value, `ErrorF` is called at 0x4459f0 with the return as a1; otherwise `R200SwitchMode` is called at 0x4459d0 with a2 set to 0. Role (from name): setting the TV-out standard for a client request.
+  Reviewed: 2026-11-12 (sonnet)
+
+- `addMode` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x446840
+  **Inferred.** Loops over a list reached through a2, calling `xf86strcmp` at 0x446874 with a0 loaded from the record that [a0] points to (+8) as its first argument. It also loads the integers at +0x18 and +0x2c and the single-precision float at +0x98 of that record (0x44688c, 0x4468a0, 0x4468bc) and branches on their comparison with values loaded from the list entries, including a `bc1t` at 0x4468cc. Further stores of words at 0x446914 through 0x44699c have no base shown in the render. The return at 0x446900 gives 1 and the return at 0x4469b0 gives 0. Role (from name): adding a mode to a list.
+  Reviewed: 2026-11-12 (sonnet)
+
+- `R200LoadAndFree` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x448600
+  **Inferred.** The `beq` at 0x44862c skips the first part when a2 is zero; otherwise `xf86free` is called at 0x448674 (arguments not shown) and at 0x448698 with a0 set to a2 at entry. The `beq` at 0x4486a4 tests a4 for zero. When a4 is nonzero, the `beq` at 0x4486ac tests the sixth argument a5: nonzero calls `R200LoadTimingTable` at 0x4486bc with a1 set to a4, and zero goes to 0x448700, where `ReadWriteTimingTable` is called at 0x448730 with a2 set to a4, a3 set to 1 and a4 set to 0. The return at 0x4486dc gives the v0 of whichever of the two calls ran, and the return at 0x4486f4 gives 0. Role (from name): freeing and reloading a timing table.
+  Reviewed: 2026-11-12 (sonnet)
+
+- `R200_lockSaveAreas` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x44e200
+  **Inferred.** Loads the word at +0x10 of a0, then a word at +0x0 and the word at +0x168 (0x44e22c through 0x44e234); the render does not name the index symbol used. It calls `DRILock` at 0x44e264 with a0 set to the word at a0+16, a1 set to 0 and a2 and a3 as received. Between that and `DRIUnlock` at 0x44e294, the call at 0x44e280 goes through a pointer loaded at 0x44e25c from +0x24 and passes a0 to a3 unchanged; its target is unnamed in the render. The stores at 0x44e268 and 0x44e2ac write a +0xf8 field before and after that call, base not shown. The return at 0x44e2b4 gives the v0 of `DRIUnlock`. Role (from name): the saved-areas hook run under the DRI lock.
+  Reviewed: 2026-11-12 (sonnet)
+
+- `R200_lockLeaveVT` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x44edc0
+  **Inferred.** Takes the word at +0x34 of the `screenInfo` entry indexed by a0 and calls `DRILock` at 0x44ee1c on it with a1 set to 0, a2 set to 0x20328 and a3 as received. The call at 0x44ee30 goes through a pointer loaded at 0x44ee28 from +0x64 of a table entry reached through loads at 0x44edf4 and 0x44edf8 (+0x168); the render does not name the index symbol used. `DRIUnlock` is called at 0x44ee40 on the same screen word. The return at 0x44ee50 gives the v0 of `DRIUnlock`. Role (from name): the leave-VT hook run under the DRI lock.
+  Reviewed: 2026-11-12 (sonnet)
+
+- `R200_lockPolySegment` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x44fcc0
+  **Inferred.** Takes the lock with `DRILock` at 0x44fd28 on the word at [a1], with a1 set to 0 and a2, a3 as received. A word at +0x4c of a1 is loaded at 0x44fcf4 and stores to +0x48 and +0x44 occur at 0x44fd14 and 0x44fd24 before the lock; the render does not name the index symbol used or the stores' base. The call at 0x44fd44 is indirect, through a pointer loaded at 0x44fd34 from +0x1c, and passes a0 to a3 unchanged. `DRIUnlock` is called at 0x44fd58. Stores at 0x44fd78 through 0x44fd88 follow it (+0x0, +0x4, +0x48, +0x44). The return at 0x44fd90 gives the address of `R200_lockGCOps`. Role (from name): the poly-segment operation run under the DRI lock.
+  Reviewed: 2026-11-12 (sonnet)
+
+- `R200_lockSpriteSetCursor` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x450bc0
+  **Inferred.** Loads through the per-screen table at a0+360 (+0x168 at 0x450bf8) and the `miPointerScreenIndex` symbol. It calls `DRILock` at 0x450c34 on a0 with a1 set to 0 and a2, a3 as received, after loading a word at +0x6c at 0x450c2c. A store at 0x450c38 writes +0x0. The call at 0x450c50 is to an unnamed target loaded at 0x450c40 from +0x8 and passes a0 to a3 unchanged. `DRIUnlock` is called at 0x450c64. Stores at 0x450c84 (+0x6c) and 0x450c88 (+0x0) follow; the render does not show their base. The return at 0x450c90 gives the word reached through a0+360, indexed by `miPointerScreenIndex`. Role (from name): the sprite set-cursor operation run under the DRI lock.
+  Reviewed: 2026-11-12 (sonnet)

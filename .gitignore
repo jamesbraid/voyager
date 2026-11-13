@@ -15,11 +15,11 @@
 __pycache__/
 *.tmp
 
-# Proprietary IRIX and ATI binaries (see IRIX_FILES.md): root/ is a directory or a link to a shared copy
+# Proprietary IRIX and ATI binaries (see evidence/irix-files.md): root/ is a directory or a link to a shared copy
 /root
 /root/
 
-# Symlinks into root/ made from IRIX_FILES.md, and the archive members unpacked for them
+# Symlinks into root/ made from evidence/irix-files.md, and the archive members unpacked for them
 /r300_kernel/
 /libgl/
 /xserver/

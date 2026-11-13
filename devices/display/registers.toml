@@ -554,7 +554,7 @@ offset = 0x710
 access = "r"
 width = 32
 grade = "inferred"
-from = "IRIX X module CP start routine (see docs/kernel-attach.md); read-only access from AMD R5xx Acceleration rev 1.5, p. 148-153"
+from = "IRIX X module CP start routine (see software/kernel/kernel-attach.md); read-only access from AMD R5xx Acceleration rev 1.5, p. 148-153"
 doc = "Read pointer of the ring. The CP start routine reads it and copies it into the write pointer, so the ring starts empty."
 
 [registers.cp_rb_wptr]
