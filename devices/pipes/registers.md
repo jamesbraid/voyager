@@ -13,15 +13,15 @@ Every item has a grade: established, inferred or unknown. A grade says how the i
 
 | Register | Offset | Access | Width | Count | Space | Reset | Grade | Source |
 |---|---|---|---|---|---|---|---|---|
-| `su_reg_dest` | 0x42c8 | rw | 32 |  |  | 0xf | established | AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45 |
-| `zb_bw_cntl` | 0x4f1c | rw | 32 |  |  | 0x0 | established | AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 92 |
-| `zb_hiz_offset` | 0x4f44 | rw | 32 |  |  | 0x0 | established | AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 95 |
-| `zb_hiz_wrindex` | 0x4f48 | rw | 32 |  |  | 0x0 | established | AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 96 |
-| `zb_hiz_dword` | 0x4f4c | rw | 32 |  |  | 0x0 | established | AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 95 |
-| `zb_hiz_rdindex` | 0x4f50 | rw | 32 |  |  | 0x0 | established | AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 96 |
-| `zb_hiz_pitch` | 0x4f54 | rw | 32 |  |  | 0x0 | established | AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 96 |
-| `zb_zpass_data` | 0x4f58 | rw | 32 |  |  | 0x0 | established | AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 97-98 |
-| `zb_zpass_addr` | 0x4f5c | rw | 32 |  |  | 0x0 | established | AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 97 |
+| `su_reg_dest` | 0x42c8 | rw | 32 |  |  | 0xf (inferred) | established | AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45 |
+| `zb_bw_cntl` | 0x4f1c | rw | 32 |  |  | 0x0 (inferred) | established | AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 92 |
+| `zb_hiz_offset` | 0x4f44 | rw | 32 |  |  | 0x0 (inferred) | established | AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 95 |
+| `zb_hiz_wrindex` | 0x4f48 | rw | 32 |  |  | 0x0 (inferred) | established | AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 96 |
+| `zb_hiz_dword` | 0x4f4c | rw | 32 |  |  | 0x0 (inferred) | established | AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 95 |
+| `zb_hiz_rdindex` | 0x4f50 | rw | 32 |  |  | 0x0 (inferred) | established | AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 96 |
+| `zb_hiz_pitch` | 0x4f54 | rw | 32 |  |  | 0x0 (inferred) | established | AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 96 |
+| `zb_zpass_data` | 0x4f58 | rw | 32 |  |  | 0x0 (inferred) | established | AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 97-98 |
+| `zb_zpass_addr` | 0x4f5c | rw | 32 |  |  | 0x0 (inferred) | established | AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 97 |
 
 ### Register `su_reg_dest`
 
