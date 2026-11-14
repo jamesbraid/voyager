@@ -8,7 +8,7 @@ ioctls	75	0	71	3	70	2	4	0	0	0	94.7	100.0	100.0	94.7							0
 ucode	0	0	0	0	0	0	0	0	0	0	0.0	0.0	0.0	0.0						0	0				
 spec-registers	207	0	57	0	55	3	39	111	0	0	27.5	46.4	100.0	27.5							0				
 input root manifest	68																								f460183ba5ef2e0d3a51a38138fa0887c0ebf7a929b85a4ef7380976fad2b88a
-input sibling kona																									5dc6e9d883985b4573b634de9d4d0a80f54d3d56
+input sibling kona																									465e4a779cd50acacd36d1fb157986d521c67b84
 input sibling odsy																									544f1f90393436de97d635edb79e365d16d19841
 functions in usr/X11R6/bin/XFree86	144	2780	41	0	41	103	103	0	0	0	28.5	100.0	100.0	28.5							0	0	0	0	
 functions in usr/X11R6/lib/modules/dri/SGIOMPdmx_dri.so	112	0	2	0	2	110	110	0	0	0	1.8	100.0	100.0	1.8							0	0	0	0	
