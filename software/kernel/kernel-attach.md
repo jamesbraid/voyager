@@ -11,6 +11,21 @@ The command processor, the microcode and the bus-master set-up are not on the ke
 3. `fglrx_reg` registers the driver for five PCI device IDs ([Which cards the driver claims](#which-cards-the-driver-claims)).
 4. `fglrx_attach` runs once per card: topology check, configuration reads, BAR, ROM and legacy mappings, six register writes, device nodes, interrupts, memory reservations, `firegl_init_module` ([fglrx_attach in order](#fglrx_attach-in-order)). It returns 0 on success and 5 on failure.
 
+<!-- Question: in what order does IRIX touch an Onyx4 card, and who programs the command processor? The kernel does not.
+     Evidence: software/kernel/kernel-attach.md ("Order of events", "Command processor, microcode and memory controller in the kernel", "Command processor start-up (X server module)"). -->
+
+```mermaid
+flowchart LR
+    prom["IP35 PROM<br/>runs option ROM in x86 emulator, sets VESA mode"]
+    early["vga_earlyinit (vga.a)<br/>maps card, runs option ROM, sets VESA mode"]
+    init["fglrx_init, fglrx_reg<br/>board records, 5 PCI device IDs"]
+    attach["fglrx_attach (fglrx.o)<br/>PCI base address registers, device nodes, interrupts"]
+    xmod["fglrx_drv.so in the X server<br/>loads microcode, sets ring, starts command processor"]
+    prom --> early --> init -->|"pciio_iterate replays devices"| attach
+    attach -. "later" .-> xmod
+```
+
+
 ## Which cards the driver claims
 
 - `fglrx_devids` (`fglrx.o`, `.data` offset 0xe0): **established.** Six 8-byte entries, then a zero entry. The first word of each entry is the PCI vendor ID in its upper half and the device ID in its lower half: 1002:4e44, 1002:4e47, 1002:4e46, 1002:4148, 1002:4e4b and 1002:4e44 again. The second words are 0x10020002, 0x10020152, 0x10020152, 0x10020002, 0x10020152 and 0x10020172; `fglrx_reg` never reads them, so their meaning (they have the form of a subsystem vendor and device pair) is **inferred** only from that form. The public PCI ID list names 4e44 Radeon 9700, 4e46 Radeon 9600 TX, 4e47 FireGL X1, 4148 Radeon 9800 and 4e4b FireGL X2; Linux `drm_pciids.h` classes 4e44, 4e46 and 4e47 as R300 and 4148 and 4e4b as R350. Compared with the vendor-1002 subsystem lines of the same public list (pciutils `pci.ids`, read in full for these IDs): the second words are subsystem pairs that list names for other parts, not for these devices. 1002:0152 and 1002:0172 appear only under device 5148, the R200 FireGL 8800, as "FireGL 8800 128Mb" and "FireGL 8700 64Mb"; 1002:0002 appears under several 9500 and 9600 parts; 4e44, 4e46, 4e47, 4148 and 4e4b carry no ATI-vendor subsystem line for any of these values, and the list's 4e44 lines are 515e and 5965 (ES1000). The one exact public match is in the VGA table below: 5245 with 1002:0008 is "Xpert 128" under device 5245 (Rage 128 GL PCI) in the list, which supports reading the second words as subsystem pairs. **Inferred:** a FireGL X1 or X2 reports subsystem 1002:0152, since that value is both the second word of the 4e47 and 4e4b entries and the pair the option ROM header carries; the list does not confirm it, and Linux's `drm_pciids.h` matches these devices with a wildcard subsystem, so no public driver depends on the value.

@@ -170,6 +170,23 @@ The command-ring routines share three records. The control record, the first arg
 
 Each request below is the word a wrapper passes to `xf86ioctl`. The kernel module's dispatcher takes the command number from the low byte of that word and runs the handler in slot N of its table of 101 handlers, each 16 bytes, at `.data`+0x348 in usr/cpu/sysgen/IP35boot/fglrx.o (software/kernel/kernel-drm-functions.md, `firegl_ioctl`). The slot's address is 0x348 plus 16 times N. A zero handler makes the dispatcher return -22.
 
+<!-- Question: which userland pieces reach the kernel object by ioctl, and which write registers themselves?
+     Evidence: software/xsgi/libfglrxdrm-functions.md (imports xf86ioctl; "Ioctl request numbers"), software/opengl/dri-driver.md ("The ioctl wrappers"),
+     software/kernel/kernel-attach.md (X module writes its own BAR 2 mapping; 101-handler table in fglrx.o). -->
+
+```mermaid
+flowchart TB
+    drv["fglrx_drv.so (X module)"]
+    lib["libfglrxdrm.so<br/>firegl_* wrappers"]
+    dri["fglrx_dri.so, fglrx_dri64.so"]
+    kern["fglrx.o<br/>dispatcher, 101 ioctl handlers"]
+    card["FireGL card registers<br/>(PCI base address register 2)"]
+    drv --> lib -->|"xf86ioctl"| kern
+    dri -->|"ioctl"| kern
+    drv -->|"direct stores, sync after each"| card
+```
+
+
 - `0x2000644d` is sent by `firegl_FlushCache`, a wrapper in usr/X11R6/lib/modules/irix/libfglrxdrm.so, with no payload (call at 0x4022a4).
   Its low byte, 0x4d, is index 77, so the dispatcher runs slot 77 at +0x818.
   That slot holds `firegl_flush_cache`, which calls `__ke_flush_cache` at 0x2032c (evidence/routines/vfin-fglrxo-5.md). **Inferred.**
