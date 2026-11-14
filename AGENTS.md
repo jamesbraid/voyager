@@ -1,108 +1,36 @@
 # ATI R300 and R350 (SGI Onyx4) Reverse Engineering Project
 
-This project reverse-engineers the ATI R300 and R350 graphics processors as fitted in the SGI **Onyx4 UltimateVision** graphics: the **FireGL X1** (R300) and the **FireGL X2** (R350), and the way IRIX 6.5.30 on an IP35 host drives them.
-The goal is to document the chips and their attachment as C headers and notes, so that emulator authors, FPGA builders and the vintage SGI community can work from published findings.
-
-The layout and working style follow techomancer's [gr2](https://github.com/techomancer/gr2) and [gr4](https://github.com/techomancer/gr4). Where this file is silent, do what gr4 does.
-
----
+This project reverse-engineers the ATI R300 and R350 graphics processors as fitted in the SGI **Onyx4 UltimateVision**: the **FireGL X1** (R300) and **FireGL X2** (R350), and the way IRIX 6.5.30 on an IP35 host drives them. The goal is to document the chips and their attachment as register definitions and notes that emulator authors, FPGA builders and the vintage SGI community can work from. Layout and working style follow techomancer's [gr2](https://github.com/techomancer/gr2) and [gr4](https://github.com/techomancer/gr4). Where this file is silent, do what gr4 does.
 
 ## 1. Board overview
 
-The Onyx4 pairs an IP35 host with ATI FireGL cards. In the shipped IRIX install the cards carry the graphics-board tag `VOYAGER`, the library sets are `IP35VOYAGER`, `IP35VOYAGER32` and `IP35VOYAGER64`, and the driver is ATI's FireGL driver (`fglrx`) packaged for IRIX: a kernel object, an XFree86 video driver, a GLX module, a direct-rendering driver and a DRM library. Three video option ROM images ship with it.
+In the shipped install the cards carry the graphics-board tag `VOYAGER`, the library sets are `IP35VOYAGER`, `IP35VOYAGER32` and `IP35VOYAGER64`, and the driver is ATI's FireGL driver (`fglrx`) packaged for IRIX: a kernel object, an XFree86 video driver, a GLX module, a direct-rendering driver and a DRM library, plus three video option ROM images. `libGLcore.so` for IP35VOYAGER64 is a 19 KB stub, so the GL implementation is ATI's and there is no GL sample-implementation pipeline to document.
 
-Facts in this file are labelled **established** (read directly from a shipped binary, a published document, a capture or public open-source code (cited by project, revision and file), with the function, offset or install path), **inferred** (a reasoned reading, with the reasoning) or **unknown**. Anything unlabelled is unknown. Do not fill gaps from memory, from other SGI graphics families or from other emulators.
+Facts are labelled **established** (read directly from a shipped binary, a published document or public open-source code, cited with function, offset or install path), **inferred** (a reasoned reading, with the reasoning) or **unknown**. Anything unlabelled is unknown. Do not fill gaps from memory, other SGI graphics families or other emulators. What is known about the option ROM images is in [software/ucode/option-roms.md](software/ucode/option-roms.md). Host attachment, command processor, microcode source and memory and display details are unknown for this board; see `questions/open-questions.md`. Roles taken from a public source's names are not findings.
 
-Established so far (headers of the three option ROM images in `ucode/VOYAGER/`, read as PCI expansion ROM data structures): `sg2.bin` is for PCI vendor 0x1002, device 0x4e47; `sg3.bin` and `sg3a.bin` are for vendor 0x1002, device 0x4e4b. The public PCI ID list and Mesa's r300 driver name those devices FireGL X1 (R300) and FireGL X2 (R350). Everything else about the boards is open: see `questions/open-questions.md`.
+## 2. Binaries
 
-### Major blocks and their roles
+Proprietary SGI and ATI binaries are not tracked. Copy the files [evidence/irix-files.md](evidence/irix-files.md) lists from your own IRIX 6.5.30 install into the ignored `root/` and make the relative links that file describes (`r300_kernel/`, `libgl/`, `xserver/`, `dri/`, `gfxtools/`, `diags/`, `ucode/`, `firmware/`). Disassembly, decompiled C, headers and notes derived from them are committed. Whether the DWARF in the unstripped objects holds types or only names and lines is open.
 
-- **Host attachment**: how the IP35 crossbar and PCI bridge present the cards, and whether the X1 and X2 are PCI or PCI-X, AGP-bridged or native: unknown.
-- **Command processor and ring**: the public R3xx documentation and Linux describe a PM4 command processor fed by a ring buffer; what IRIX programs, and in what order: unknown.
-- **Microcode**: the command processor loads microcode at start-up; where IRIX gets it: unknown.
-- **Vertex and fragment units, memory, display**: unknown for this board.
+Public sources are pinned submodules under `references/code/`, mainly `linux` (radeon DRM, `drivers/gpu/drm/radeon/`), `mesa` (r300 driver, PCI ID table) and `irix-657m-src`. Fetch one with `git submodule update --init --depth 1 references/code/NAME`. They cross-check register meaning and are not proof of what IRIX does. Documents are indexed in [references/documents/INDEX.md](references/documents/INDEX.md). The public IRIX 6.5.7 source predates the Onyx4: its facts are established for that release and cited by path, with the release named.
 
-Every role above is a name from a source, not a finding. Replace each with a labelled description as headers land.
+## 3. Deliverables
 
----
+Register and command-packet layouts live in `devices/<unit>/registers.toml`, one file per unit, with a grade on every item. `generated/` (C, Rust, Python, JSON, genxml) and `devices/<unit>/registers.md` are written from it by `retools/tools/defs/defs-gen` and never edited by hand. To change a layout, edit the TOML, run `defs-gen`, then `retools/tools/defs/defs-check --build`, and commit both. Everything else goes in pages under `devices/`, `software/` and `evidence/`, in your own words, each finding labelled with its derivation; a root header is for what the TOML cannot hold. Planned root headers `R300.h`, `R350.h` and `ONYX4.h` are not written yet.
 
-## 2. Project binaries and evidence
+## 4. Toolchain
 
-For licensing reasons proprietary SGI and ATI binaries are **not checked into source control**. The local `root/` tree is gitignored. Copy the files [evidence/irix-files.md](evidence/irix-files.md) lists from your own IRIX 6.5.30 install or media into `root/`, then make the relative symlinks below from the map in evidence/irix-files.md, which are also not committed. Disassembly, decompiled C, headers and notes derived from the files are committed.
-
-| Directory | Contents | Target in `root/` |
-|---|---|---|
-| `r300_kernel/` | `fglrx.o`, `is1.o`, `vga.a` members (an x86 BIOS emulator and the VGA set-up), `vgastubs.a`, `gfxs.a` (the graphics-pipe list from the platform configuration table), `kernel.o`, the PCI and crossbar objects, `config/` (`master.d` files) | `usr/cpu/sysgen/IP35boot/`, `var/sysgen/master.d/` |
-| `libgl/{o32,n32,n64}/` | `libGL.so`, `libGLcore.so`, `libgl.so` | `usr/gfx/arch/IP35VOYAGER*/` |
-| `xserver/` | XFree86, `fglrx_drv.so`, `fglrx_glx.so`, `libfglrxdrm.so`, helper modules, configuration generator | `usr/X11R6/`, `etc/` |
-| `dri/` | `fglrx_dri.so`, `fglrx_dri64.so`, the multipipe DMX driver | `usr/X11R6/lib/modules/dri/` |
-| `gfxtools/` | `sg2flash`, `vpm`, `sgcombine`, `gfxtopology` | `usr/gfx/` |
-| `diags/` | `biosemu`, `olsg`, `olsgsys`, `data/` | `usr/diags/SG/` |
-| `ucode/VOYAGER/` | the three option ROM images | `usr/gfx/ucode/VOYAGER/` |
-| `firmware/` | `ip35prom.img` | `usr/cpu/firmware/` |
-
-Debug information: the kernel objects, `fglrx_drv.so` and the DRI drivers are reported by `file` as carrying debug info and unstripped; `biosemu`, `vpm` and `sgcombine` are stripped; `libGLcore.so` for IP35VOYAGER64 is a 19 KB stub (established from its size and symbol table) while `libGL.so` carries ATI GL extension names, so the OpenGL implementation is ATI's, not an SGI sample-implementation build. For that reason this workspace has no GL sample-implementation pipeline. Whether the DWARF holds types or only names and lines is open: `dwarfdump -i` has not been run.
-
-Other public sources in this repository (submodules, fetch only what you need, shallow: `git submodule update --init --depth 1 references/code/NAME`):
-
-- `references/code/linux/`: the radeon DRM driver for R3xx, `drivers/gpu/drm/radeon/` (`r300.c`, `r300_reg.h`, `r300d.h`, `reg_srcs/r300`, the command checker). A public cross-check of register meaning and ring programming, not proof of what IRIX does.
-- `references/code/mesa/`: the r300 driver, `src/gallium/drivers/r300/` and its shader compiler under `compiler/`, and the PCI ID table in `include/pci_ids/r300_pci_ids.h`.
-- `references/code/irix-657m-src/`: the public IRIX 6.5.7 source tree. It predates the Onyx4, so its facts are established for the 6.5.7 release and are cited by path in that tree, with the release named.
-- `references/documents/INDEX.md`: public documents by title and URL.
-
----
-
-## 3. Deliverables: the hardware headers
-
-Our primary output is a set of C header files at the repository root, one per chip or block, in the style of gr2 and gr4. **The code is the document.** Each header holds register offsets and fields, packet formats, state machines and constants, with a comment on every definition saying how it was derived and whether it is established, inferred or unknown.
-
-Planned headers (none written yet; `evidence/coverage.md` tracks each): `R300.h` (the chip: registers, command packets, microcode interface), `R350.h` (what differs in R350), `ONYX4.h` (attachment to the IP35 host, PCI identity and configuration).
-
-Local driver headers capture internal driver structures: `r300_kernel/include/fglrx_kern.h`, `xserver/include/fglrx_ddx.h`.
-
-The register and command-packet layouts of the display, interrupt and engine blocks are not hand-written headers. Their source is the TOML in `devices/<unit>/registers.toml`, one file per unit, with a grade on every item. `generated/` is written from it by `retools/tools/defs/defs-gen`: C headers, a Rust crate, Python decoders, JSON and a genxml export, plus the reference page `devices/<unit>/registers.md`. Nothing under `generated/` and no `registers.md` is edited by hand. To change a layout, edit `devices/<unit>/registers.toml`, run `retools/tools/defs/defs-gen`, then run `retools/tools/defs/defs-check --build` before committing both.
-
----
-
-## 4. Reverse engineering toolchain
-
-The host needs Podman, git and python3. Everything else runs in the container [retools/tools/Containerfile](retools/tools/Containerfile) builds: `retools/tools/re-run COMMAND`. [tools/setup-clone.sh](tools/setup-clone.sh) prepares a fresh clone. The shared tooling (container definitions, the `re-run` wrapper, Ghidra scripts, the inventory, fact sheet, the device extractors) is the `retools/` submodule (sgi-retools). Run a tool by its submodule path from the repository root: `retools/tools/<name>` for the shared ones, `retools/tools/voyager/<name>` for this device's. A tool finds this repository from the current directory, so there are no local links or wrappers; a change to a tool is made in retools and the pin here moves with a commit.
-
-Tools (run from the repository root, inside `retools/tools/re-run`; `tools/` here keeps only this workspace's setup stub and message-site extractors, and `tools/config/` its configuration and allowlists):
-
-- `retools/tools/voyager/map_binaries.py`: catalogue every linked binary (sections, functions, DWARF compilation units) into `binaries_manifest.json`.
-- `retools/tools/voyager/disasm_kernel.py`, `resolve_got.py`, `clean_asm.py`: disassemble kernel objects for m2c and resolve `$gp`-relative loads.
-- `retools/tools/inventory.py` (config `tools/config/inventory-config.json`): measure coverage from the binaries; output is `evidence/inventory/*.tsv` (see `evidence/inventory/README.md`).
-- `retools/tools/facts.py`: build facts for a routine from the binaries.
-
-The tools descend from gr4's and carry its BSD-3 notice ([retools/tools/LICENSE-gr4](retools/tools/LICENSE-gr4)).
-
----
+The host needs Podman, git and python3; everything else runs in the container built from [retools/tools/Containerfile](retools/tools/Containerfile) via `retools/tools/re-run COMMAND`. [tools/setup-clone.sh](tools/setup-clone.sh) prepares a fresh clone. Run shared tools by their submodule path from the repository root (`retools/tools/<name>`; this device's are `retools/tools/voyager/<name>`). A change to a tool is made in retools and the pin here moves with a commit. `tools/` keeps only the setup script, the message-site extractors and `tools/config/`. The tools: `retools/tools/voyager/map_binaries.py` catalogues linked binaries, `disasm_kernel.py`, `resolve_got.py` and `clean_asm.py` prepare kernel objects for m2c, `retools/tools/inventory.py` (config `tools/config/inventory-config.json`) measures coverage into `evidence/inventory/*.tsv`, and `retools/tools/facts.py` builds facts for a routine. They descend from gr4's and carry its BSD-3 notice ([retools/tools/LICENSE-gr4](retools/tools/LICENSE-gr4)). Regenerate the inventory with `retools/tools/re-run python3 retools/tools/inventory.py`.
 
 ## 5. Evidence: software only, any source
 
-No hardware is available for this work. Do not plan, request or wait for measurements on a real machine. Every question is answered from software and published material, and a row is not finished while either still has something to read.
+No hardware is available. Do not plan, request or wait for measurements. Every question is answered from software and published material, and a row is not finished while either still has something to read. Readers may open every shipped binary on every IRIX release, the public IRIX 6.5.7 source, vendor specifications (including AMD's R3xx and R5xx references), public drivers and emulators, manuals and man pages, and published output from real machines (`hinv`, `gfxinfo`, X logs, screenshots in posts and archives).
 
-Readers may open anything:
+Running the shipped software under an emulator shows the model's behaviour and the driver's expectations. It is never hardware evidence; label it that way. Write findings in your own words. Never paste vendor source, HDL, firmware or binaries; microcode and option ROM images stay in `root/`, so describe their format and cite offsets.
 
-- every shipped binary on every IRIX release, and any disassembly or decompilation of it;
-- the public IRIX 6.5.7 source tree linked from this repository (ranked in the evidence order below);
-- vendor specifications, including AMD's published R3xx and R5xx register and acceleration references;
-- public drivers and emulators: Linux, Mesa, X.Org drivers, NetBSD, OpenBSD and others;
-- manuals, release notes and man pages;
-- published output from real machines: `hinv`, `gfxinfo`, X server logs and screenshots in newsgroup and mailing-list posts, web pages, archives and forums.
+Use "established" only for what you read in full: the whole function body or table, or the passage in a document. A reading built from call lists, register-store summaries, a sibling chip or a name is "inferred". Never reword an entry to change its grade. An entry written quickly and not yet checked ends with "Unverified." and grades at most `located`. Linux and Mesa describe the public chips and AMD's documents the silicon; they are cross-checks. A fact about what IRIX does on an Onyx4, or about its wiring, needs a shipped binary or an SGI document. Do not assume a PC's AGP or PCI Express arrangement.
 
-Running the shipped software under an emulator, to watch which registers it touches and what it expects back, shows the model's behaviour and the driver's expectations. It is never hardware evidence; label it that way.
-
-Write findings in your own words. Never paste vendor source, HDL, firmware or proprietary binaries into the repository. Microcode and option ROM images stay in `root/`; describe their format and cite offsets.
-
-Label honestly. Use "established" only for what you read in full: the whole function body or table in a shipped binary, or the passage in a published document or capture. A reading built from call lists, register-store summaries, a sibling chip or a name is "inferred". Never reword an entry to change its grade. An entry written quickly and not yet checked ends with "Unverified." instead of "Inferred." or "Established." and grades at most `located`.
-
-Linux and Mesa describe the public chips, and AMD's documents describe the silicon; they are cross-checks. A fact about what IRIX does on an Onyx4 needs a shipped binary or an SGI document. A fact about the Onyx4's wiring needs the same. Do not assume a PC's AGP or PCI Express arrangement.
-
-Some facts no software reveals. When every route is exhausted, label the fact "unknown: no shipped software or published source depends on it" and list the routes tried. An emulator author then chooses a value and documents the choice. Never write "needs capture".
-
-An open question is not a stopping point. Record it in `questions/open-questions.md` with every route already tried and the next one to try, then carry on. When a question is answered, move it into the owning header or chapter and delete the entry.
+When every route is exhausted, label the fact "unknown: no shipped software or published source depends on it" and list the routes tried; an emulator author then chooses a value and documents it. Never write "needs capture". An open question is not a stopping point: record it in `questions/open-questions.md` with the routes tried and the next one, and carry on. When it is answered, move it into the owning page and delete the entry.
 
 ## Evidence order
 
@@ -112,7 +40,7 @@ For a register or behaviour fact, take it from the highest source that states it
 2. Shipped binaries (PROMs, kernels, libraries): confirm the source matches what shipped, and the release differences (6.5.7 source, 6.5.22 and 6.5.30 binaries).
 3. Public Linux, OpenBSD and NetBSD headers and drivers: `established` once the IRIX source confirms them.
 4. Published SGI and vendor manuals.
-5. Notes from other projects (Origami datasheets, QEMU manual pages, emulator code): may confirm or contradict, never supply a fact. A fact resting only on one stays `unknown`, with the note named.
+5. Notes from other projects (other projects' datasheets, manual pages and emulator code): may confirm or contradict, never supply a fact. A fact resting only on one stays `unknown`, with the note named.
 
 Reset values: `established` when the source states a power-on default or PROM code relies on a reset state; `inferred` when the PROM depends on a value before its first write (cite the PROM address); a read after firmware initialisation is not a reset value and can only rule values out; otherwise `unknown`. A physical hardware read is a last resort, needs the repository owner's approval, and counts as a reset value only for a register firmware provably never writes. Emulator runs are model behaviour, never hardware evidence.
 
@@ -120,19 +48,12 @@ Full text and the checks that enforce it: `retools/tools/README-analysis.md#evid
 
 ## 6. When work is finished
 
-A coverage row is done when every inventory entry in its area (`evidence/inventory/`) is `understood` or `no-software-dependency`. `understood` means the entry carries a label (established or inferred), a role and hardware effect, and a derivation citation (release, binary and its install path under `root/`, offset, callee) in the same entry. `located` (identity, address or size, and callers or sites cited, behaviour labelled unknown) and `named-only` are partial. [evidence/inventory/README.md](evidence/inventory/README.md) gives the exact rule. When you finish a task, regenerate the inventory, then pick the next entries below `understood`. Hand off only when your assigned area meets the definition above, or when the session ends; then say in `questions/open-questions.md` where you stopped.
-
----
+A coverage row is done when every inventory entry in its area is `understood` or `no-software-dependency`. `understood` means a label, a role and hardware effect, and a derivation citation (release, binary and install path under `root/`, offset, callee) in the same entry; `located` and `named-only` are partial. [evidence/inventory/README.md](evidence/inventory/README.md) gives the exact rule. Regenerate the inventory, then pick the next entries below `understood`. Hand off only when your area meets that definition or the session ends; then say in `questions/open-questions.md` where you stopped.
 
 ## 7. Rules
 
 - Software-only reverse engineering from public sources and shipped binaries. Nothing else is an input.
-- Unanswered questions go in `questions/open-questions.md`. There are no captures; never write "needs capture".
-- Do not name, in committed files, the emulator projects, private tooling, hosts or people behind this work, or any local storage path. Do not record where your copy of the IRIX files came from, or any local cache or library path. `scripts/check-leaks.sh` enforces this.
-- Give no capture, trace or machine a nickname. Describe it generically ("a 6.5.30 install with an Onyx4").
-- Do not quote internal documents. Quote only public sources, briefly, with the title and URL in `references/documents/INDEX.md`.
-- No trailers in commit messages: no attribution, sign-off or generated-with lines. The leak check refuses them.
-- Findings go in the pages under `devices/`, `software/` and `evidence/`, in your own words, each labelled with its derivation. A register or packet layout goes in its `devices/<unit>/registers.toml`, with `generated/` regenerated in the same commit; a root header is for everything else. Update `evidence/coverage.md` and the inventory in the same commit as the finding.
-- Commit disassembly, decompiled C and traces you produce as data; keep the proprietary binaries in `root/`.
-
-Commit small and often, straight to `main`. Subjects are lowercase, component-prefixed imperatives (`r300_kernel: label the ring base register`); bodies say why. Write everything for a stranger.
+- Name no emulator projects, private tooling, hosts, people or local storage paths in committed files, and do not record where your copy of the IRIX files came from. Give no capture, trace or machine a nickname. Do not quote internal documents. Quote only public sources, briefly, with title and URL in `references/documents/INDEX.md`. `retools/tools/leakcheck.py` enforces this (allow-list `tools/config/leak-allow.txt`) and refuses commit trailers.
+- Update `evidence/coverage.md` and the inventory in the same commit as the finding. Commit disassembly and traces you produce as data; keep the proprietary binaries in `root/`.
+- No trailers in commit messages: no attribution, sign-off or generated-with lines.
+- Commit small and often, straight to `main`. Subjects are lowercase, component-prefixed imperatives (`r300_kernel: label the ring base register`); bodies say why. Write everything for a stranger.
