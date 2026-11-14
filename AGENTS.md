@@ -47,7 +47,7 @@ Other public sources in this repository (submodules, fetch only what you need, s
 
 - `references/code/linux/`: the radeon DRM driver for R3xx, `drivers/gpu/drm/radeon/` (`r300.c`, `r300_reg.h`, `r300d.h`, `reg_srcs/r300`, the command checker). A public cross-check of register meaning and ring programming, not proof of what IRIX does.
 - `references/code/mesa/`: the r300 driver, `src/gallium/drivers/r300/` and its shader compiler under `compiler/`, and the PCI ID table in `include/pci_ids/r300_pci_ids.h`.
-- `references/code/irix-657m-src/`: the public IRIX 6.5.7 source tree. It predates the Onyx4, so it is a hint only for the host side (PCI, crossbar and bridge code), never evidence.
+- `references/code/irix-657m-src/`: the public IRIX 6.5.7 source tree. It predates the Onyx4, so its facts are established for the 6.5.7 release and are cited by path in that tree, with the release named.
 - `references/documents/INDEX.md`: public documents by title and URL.
 
 ---
