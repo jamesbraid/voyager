@@ -86,13 +86,13 @@ No hardware is available for this work. Do not plan, request or wait for measure
 Readers may open anything:
 
 - every shipped binary on every IRIX release, and any disassembly or decompilation of it;
-- the public IRIX 6.5.7 source tree linked from this repository (hint only, never evidence);
+- the public IRIX 6.5.7 source tree linked from this repository (ranked in the evidence order below);
 - vendor specifications, including AMD's published R3xx and R5xx register and acceleration references;
 - public drivers and emulators: Linux, Mesa, X.Org drivers, NetBSD, OpenBSD and others;
 - manuals, release notes and man pages;
 - published output from real machines: `hinv`, `gfxinfo`, X server logs and screenshots in newsgroup and mailing-list posts, web pages, archives and forums.
 
-Running the shipped software under an emulator, to watch which registers it touches and what it expects back, is also software evidence. Label what it shows as the driver's expectation, not as proof of hardware behaviour.
+Running the shipped software under an emulator, to watch which registers it touches and what it expects back, shows the model's behaviour and the driver's expectations. It is never hardware evidence; label it that way.
 
 Write findings in your own words. Never paste vendor source, HDL, firmware or proprietary binaries into the repository. Microcode and option ROM images stay in `root/`; describe their format and cite offsets.
 
@@ -103,6 +103,20 @@ Linux and Mesa describe the public chips, and AMD's documents describe the silic
 Some facts no software reveals. When every route is exhausted, label the fact "unknown: no shipped software or published source depends on it" and list the routes tried. An emulator author then chooses a value and documents the choice. Never write "needs capture".
 
 An open question is not a stopping point. Record it in `questions/open-questions.md` with every route already tried and the next one to try, then carry on. When a question is answered, move it into the owning header or chapter and delete the entry.
+
+## Evidence order
+
+For a register or behaviour fact, take it from the highest source that states it and grade it by that source:
+
+1. IRIX source (public `irix-657m-src` tree): read it, write the fact in your own words, never copy source text, cite the path in the tree. A fact it defines is `established`.
+2. Shipped binaries (PROMs, kernels, libraries): confirm the source matches what shipped, and the release differences (6.5.7 source, 6.5.22 and 6.5.30 binaries).
+3. Public Linux, OpenBSD and NetBSD headers and drivers: `established` once the IRIX source confirms them.
+4. Published SGI and vendor manuals.
+5. Notes from other projects (Origami datasheets, QEMU manual pages, emulator code): may confirm or contradict, never supply a fact. A fact resting only on one stays `unknown`, with the note named.
+
+Reset values: `established` when the source states a power-on default or PROM code relies on a reset state; `inferred` when the PROM depends on a value before its first write (cite the PROM address); a read after firmware initialisation is not a reset value and can only rule values out; otherwise `unknown`. A physical hardware read is a last resort, needs the repository owner's approval, and counts as a reset value only for a register firmware provably never writes. Emulator runs are model behaviour, never hardware evidence.
+
+Full text and the checks that enforce it: `retools/tools/README-analysis.md#evidence-order`.
 
 ## 6. When work is finished
 
