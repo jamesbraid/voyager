@@ -4,7 +4,7 @@ Notes on the ATI R300 and R350 in SGI's Onyx4 UltimateVision (FireGL X1 and X2),
 drives them. VOYAGER is SGI's name for the board. This repository was called r300 until 2026-11-01.
 
 It's a PC graphics chip in an SGI, so the open radeon drivers cover a lot of the chip and none of the IRIX side.
-Everything is read from the IRIX binaries, the public IRIX 6.5.7 source, AMD's register references and the
+Everything is read from the IRIX binaries, AMD's register references and the
 radeon drivers. Where the radeon drivers and IRIX disagree, IRIX wins.
 
 ## What's covered
