@@ -16,7 +16,7 @@ Public sources are pinned submodules under `references/code/`, mainly `linux` (r
 
 ## 3. Deliverables
 
-Register and command-packet layouts live in `devices/<unit>/registers.toml`, one file per unit, with a grade on every item. `generated/` (C, Rust, Python, JSON, genxml) and `devices/<unit>/registers.md` are written from it by `retools/tools/defs/defs-gen` and never edited by hand. To change a layout, edit the TOML, run `defs-gen`, then `retools/tools/defs/defs-check --build`, and commit both. Everything else goes in pages under `devices/`, `software/` and `evidence/`, in your own words, each finding labelled with its derivation; a root header is for what the TOML cannot hold. Planned root headers `R300.h`, `R350.h` and `ONYX4.h` are not written yet.
+Register and command-packet layouts live in `devices/<unit>/registers.toml`, one file per unit, with a grade on every item. `generated/` (C, Rust, Python, JSON, genxml) and `devices/<unit>/registers.md` are written from it by `retools/tools/defs/defs-gen` and never edited by hand. To change a layout, edit the TOML, run `defs-gen`, then `retools/tools/defs/defs-check --build`, and commit both. Everything else goes in pages under `devices/` and `software/`, in your own words, each finding labelled with its derivation; a root header is for what the TOML cannot hold. Planned root headers `R300.h`, `R350.h` and `ONYX4.h` are not written yet.
 
 ## 4. Toolchain
 
