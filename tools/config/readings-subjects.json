@@ -1,0 +1,9 @@
+{
+ "default": "software/kernel",
+ "rules": [
+  {"match": "^usr/diags/SG/bin/biosemu$", "dir": "software/ucode"},
+  {"match": "^usr/diags/|^usr/gfx/VOYAGER/|^usr/gfx/sgcombine", "dir": "software/diagnostics"},
+  {"match": "/dri/|^usr/gfx/arch/", "dir": "software/opengl"},
+  {"match": "^usr/X11R6/|^fglrx_drv\\.so$", "dir": "software/xsgi"}
+ ]
+}
