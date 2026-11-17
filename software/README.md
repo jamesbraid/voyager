@@ -13,6 +13,7 @@
 | [kernel-drm-functions.md](kernel/kernel-drm-functions.md) | The FireGL kernel driver: lock, map, buffer and context routines | `usr/cpu/sysgen/IP35boot/fglrx.o` is the 64-bit kernel object ATI ships for the FireGL cards (see Kernel attach path). |
 | [kernel-ioctl-irq-functions.md](kernel/kernel-ioctl-irq-functions.md) | The FireGL kernel driver: ioctl and interrupt routines | `usr/cpu/sysgen/IP35boot/fglrx.o` is the 64-bit kernel object ATI ships for the FireGL cards (see Kernel attach path). |
 | [kernel-object-functions.md](kernel/kernel-object-functions.md) | Kernel object: open, release, detach and board-identity routines | `usr/cpu/sysgen/IP35boot/fglrx.o` is a relocatable 64-bit MIPS object with a symbol table and DWARF function names. |
+| [messages.md](kernel/messages.md) | Console messages in the FireGL kernel driver | This is the catalogue of the messages the ATI FireGL kernel driver (`fglrx.o`, from the IP35 kernel set of IRIX... |
 
 ## opengl
 
@@ -34,6 +35,7 @@
 | [fglrx-drv-functions.md](xsgi/fglrx-drv-functions.md) | The FireGL X server module: one entry per routine | `usr/X11R6/lib/modules/drivers/fglrx_drv.so` is the XFree86 video driver ATI ships for the FireGL cards. |
 | [hw-explanations-voyager-w1.md](xsgi/hw-explanations-voyager-w1.md) | Hardware-facing routine explanations, voyager (ATI Radeon R200 X module), wave 1 | Each entry says what one routine does to the hardware and cites the instruction addresses it rests on. |
 | [libfglrxdrm-functions.md](xsgi/libfglrxdrm-functions.md) | The FireGL DRM helper library: one entry per routine | `usr/X11R6/lib/modules/irix/libfglrxdrm.so` is an N32 shared object, 31128 bytes, that the X server loads beside the... |
+| [messages-userland.md](xsgi/messages-userland.md) | Messages in the FireGL X driver, the option ROM diagnostic and the Voyager tools | This is the catalogue of the text that the ATI FireGL X server module (`fglrx_drv.so`), the DRM library... |
 | [x-driver-functions.md](xsgi/x-driver-functions.md) | X server driver module: one entry per routine | `usr/X11R6/lib/modules/drivers/fglrx_drv.so` is the n32 shared object the XFree86 server loads for the FireGL cards. |
 | [x-helper-modules.md](xsgi/x-helper-modules.md) | X server helper modules: PCI tables, VESA BIOS calls and the int10 port hooks | Four small XFree86 modules sit beside the Onyx4 video driver. |
 | [x-video-driver.md](xsgi/x-video-driver.md) | X video driver: overlay, timing, stereo and BIOS-interface routines | `usr/X11R6/lib/modules/drivers/fglrx_drv.so` is the XFree86 video driver for the FireGL cards: an N32 shared object... |
