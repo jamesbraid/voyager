@@ -15,12 +15,25 @@
 | [kernel-object-functions.md](kernel/kernel-object-functions.md) | Kernel object: open, release, detach and board-identity routines | `usr/cpu/sysgen/IP35boot/fglrx.o` is a relocatable 64-bit MIPS object with a symbol table and DWARF function names. |
 | [messages.md](kernel/messages.md) | Console messages in the FireGL kernel driver | This is the catalogue of the messages the ATI FireGL kernel driver (`fglrx.o`, from the IP35 kernel set of IRIX... |
 
+## linux-sn2
+
+| Page | Title | Summary |
+|---|---|---|
+| [prism-driving.md](linux-sn2/prism-driving.md) | The R300 and R350 under Linux on SGI Prism (SN2) | What a Linux guest on a Silicon Graphics Prism asks of the same ATI chip, from public Linux and Mesa source and the... |
+
+## model-contract
+
+| Page | Title | Summary |
+|---|---|---|
+| [r300-acceptance-set.md](model-contract/r300-acceptance-set.md) | What a model of the R300 and R350 must accept, per operating system | The smallest set of configuration, register, command-packet and microcode traffic that the two software stacks send... |
+
 ## opengl
 
 | Page | Title | Summary |
 |---|---|---|
 | [dri-driver-64.md](opengl/dri-driver-64.md) | Direct-rendering driver, 64-bit build (fglrx_dri64.so) | The 64-bit direct-rendering module `usr/X11R6/lib/modules/dri/fglrx_dri64.so` is the user-side half of the FireGL... |
 | [dri-driver.md](opengl/dri-driver.md) | DRI driver, o32 and n32 build | `usr/X11R6/lib/modules/dri/fglrx_dri.so` is the ATI direct-rendering module that the X server loads for the FireGL... |
+| [r300-command-stream.md](opengl/r300-command-stream.md) | How the IRIX GL layer feeds the R300 command processor and shader units | What `usr/X11R6/lib/modules/dri/fglrx_dri64.so` (IRIX 6.5.30, n64; the n32 build has the same routine names) puts... |
 
 ## ucode
 

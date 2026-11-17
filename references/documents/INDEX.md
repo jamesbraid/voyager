@@ -35,6 +35,10 @@ None of these has a usable git remote, or the remote is gone. Nothing is vendore
 - The r300 project (r300_demo, a command-stream demonstration; r300_driver, an experimental DRM and 3D driver; glxtest, a command-stream pretty-printer; hw_script): CVS only, https://r300.sourceforge.net/ and https://r300.sourceforge.net/cvs.php
 - GATOS (the ati.2 enhanced XFree86 driver, whose code was later merged into X.Org, and the video-capture kernel modules): CVS only, https://gatos.sourceforge.net/
 - DRI wiki, R300 page, the reverse-engineering tool list (iba, glxtest, valgrind-mmt) and the shader compiler notes: https://dri.freedesktop.org/wiki/R300/, https://dri.freedesktop.org/wiki/ReverseEngineering/, https://dri.freedesktop.org/wiki/R300Compiler/
+- Linux 3.0 SN2 graphics bridge sources, read as single files: `arch/ia64/sn/pci/tioca_provider.c`, `arch/ia64/include/asm/sn/tioca.h`, `tioca_provider.h`, `drivers/char/agp/sgi-agp.c` (later releases dropped SN2): https://github.com/torvalds/linux/tree/v3.0
+- Linux radeon kernel-mode-setting driver at a recent mainline head, read as single files: `drivers/gpu/drm/radeon/r100.c`, `r300.c`, `r300_reg.h`, `radeon_reg.h`: https://github.com/torvalds/linux/tree/master/drivers/gpu/drm/radeon
+- Mesa 20.3.5 Gallium r300 driver, read as single files: `src/gallium/drivers/r300/r300_emit.c`, `r300_reg.h`, `r300_screen.c`, `compiler/r300_fragprog_emit.c`, `compiler/r3xx_vertprog.c`: https://gitlab.freedesktop.org/mesa/mesa/-/tree/mesa-20.3.5/src/gallium/drivers/r300
+- linux-ia64 mailing list, thread "Rebuilding a kernel for a proprietary closed-source ia64 module: possible or not?", December 2014 (names the SUSE `kernel-rtgfx-2.6.5-7.244` SN2 kernel and a vendor fglrx module built against it): https://lore.kernel.org/linux-ia64/
 - XFree86 4.x radeon driver as shipped by XFree86 itself: its CVS is not mirrored on a git remote we could find. The X.Org 6.8 tag above is the nearest public descendant.
 
 ## SGI documents
@@ -44,6 +48,7 @@ None of these has a usable git remote, or the remote is gone. Nothing is vendore
 - Silicon Graphics Onyx4 UltimateVision Start Here Guide, 007-4667 (revision and public URL not recorded)
 - SGI Scalable Graphics Compositor User's Guide, 007-4602-002: https://www.infania.net/misc1/sgi_techpubs/techpubs/007-4602-002.pdf
 - SGI OpenGL Multipipe User's Guide, 007-4318-015: https://irix7.com/techpubs/007-4318-015.pdf
+- Silicon Graphics Prism Visualization System User's Guide for Power & Team Scalable Configurations, 007-4701-003 (XG2N module, printed page 35); and for Extreme Scalable Configurations, 007-4774-001: https://irix7.com/techpubs/007-4701-003.pdf and https://irix7.com/techpubs/007-4774-001.pdf
 - OpenGL on Silicon Graphics Systems, 007-2392-003: https://irix7.com/techpubs/007-2392-003.pdf
 
 The SGI entries were found by title search; their contents have not been read for this workspace yet.
