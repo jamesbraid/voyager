@@ -33,7 +33,7 @@ tools/setup-clone.sh --root /path/to/your/irix/files
 retools/tools/re-run retools/tools/defs/ci-check
 ```
 
-You'll need Podman, git, python3 and your own IRIX files. [evidence/irix-files.md](evidence/irix-files.md) lists
+You'll need Podman, git, python3 and your own IRIX files. [references/irix-files.md](references/irix-files.md) lists
 which ones.
 
 ## How far along
@@ -43,11 +43,11 @@ If you spot a mistake or have a manual we don't, [open an issue](https://github.
 
 | Table | Rows | % understood | % located or better |
 |---|---:|---:|---:|
-| [binaries](evidence/inventory/binaries.tsv) | 84 | 98.8 | 98.8 |
-| [functions](evidence/inventory/functions.tsv) | 28840 | 5.1 | 56.8 |
-| [mmio](evidence/inventory/mmio.tsv) | 440 | 41.4 | 55.9 |
-| [ioctls](evidence/inventory/ioctls.tsv) | 75 | 94.7 | 100.0 |
-| [spec-registers](evidence/inventory/spec-registers.tsv) | 207 | 27.5 | 46.4 |
+| [binaries](generated/inventory/binaries.tsv) | 84 | 98.8 | 98.8 |
+| [functions](generated/inventory/functions.tsv) | 28840 | 5.1 | 56.8 |
+| [mmio](generated/inventory/mmio.tsv) | 440 | 41.4 | 55.9 |
+| [ioctls](generated/inventory/ioctls.tsv) | 75 | 94.7 | 100.0 |
+| [spec-registers](generated/inventory/spec-registers.tsv) | 207 | 27.5 | 46.4 |
 
 ## License
 

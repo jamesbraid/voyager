@@ -189,22 +189,22 @@ flowchart TB
 
 - `0x2000644d` is sent by `firegl_FlushCache`, a wrapper in usr/X11R6/lib/modules/irix/libfglrxdrm.so, with no payload (call at 0x4022a4).
   Its low byte, 0x4d, is index 77, so the dispatcher runs slot 77 at +0x818.
-  That slot holds `firegl_flush_cache`, which calls `__ke_flush_cache` at 0x2032c (evidence/routines/vfin-fglrxo-5.md). **Inferred.**
+  That slot holds `firegl_flush_cache`, which calls `__ke_flush_cache` at 0x2032c (software/kernel/readings/fglrx.o.md). **Inferred.**
 - `0x20006461` is sent by `firegl_SyncDacs` in usr/X11R6/lib/modules/irix/libfglrxdrm.so, with no payload (call at 0x4030a4).
   The low byte 0x61 gives index 97, the slot at +0x958 of the table in fglrx.o.
   That handler, `firegl_sync_dacs`, restarts both display controllers together (software/kernel/kernel-drm-functions.md). **Inferred.**
 - `0x20006464` is sent by `firegl_CPResume` in usr/X11R6/lib/modules/irix/libfglrxdrm.so, with no payload (call at 0x403224).
   Index 100 comes from the low byte 0x64, and the slot is at +0x988 of the table in fglrx.o.
-  That handler, `firegl_cp_resume`, calls `__ke_get_file_priv` at 0x17cf0 and then an unnamed routine three times (evidence/routines/vfin-fglrxo-1.md). What that routine does is unknown here.
+  That handler, `firegl_cp_resume`, calls `__ke_get_file_priv` at 0x17cf0 and then an unnamed routine three times (software/kernel/readings/fglrx.o.md). What that routine does is unknown here.
 - `0x40046446` is the out-only request that `firegl_AllocMutex` sends from usr/X11R6/lib/modules/irix/libfglrxdrm.so (call at 0x401d6c).
   The index is 70, from the low byte 0x46, and the slot sits at +0x7a8.
   That handler, `firegl_alloc_mutex`, creates a mutex with `firegl_new_mutex` and copies its identifier back to the caller (software/kernel/kernel-drm-functions.md). **Inferred.**
 - `0x40046457` is sent by `firegl_GetLockID` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
   Its low byte 0x57 selects index 87, the slot at +0x8b8 of the table in fglrx.o.
-  That handler, `firegl_get_lockid`, finds the file's private record with `__ke_get_file_priv` at 0x174ac, reads the word at offset 28 of it and copies 4 bytes to the caller (evidence/routines/vfin-fglrxo-0.md). **Inferred.**
+  That handler, `firegl_get_lockid`, finds the file's private record with `__ke_get_file_priv` at 0x174ac, reads the word at offset 28 of it and copies 4 bytes to the caller (software/kernel/readings/fglrx.o.md). **Inferred.**
 - `0x40046458` is sent by `firegl_SetCapIpcLock` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
   Index 88 comes from the low byte 0x58, and the slot is at +0x8c8.
-  That handler, `firegl_set_cap_ipc_lock`, tests capability number 1 with `__ke_capable` at 0x2038c and raises it in the effective set with `__ke_cap_effective_raise` at 0x203f8 (evidence/routines/vfin-fglrxo-0.md). Which branch leads to the raise is unknown. **Inferred.**
+  That handler, `firegl_set_cap_ipc_lock`, tests capability number 1 with `__ke_capable` at 0x2038c and raises it in the effective set with `__ke_cap_effective_raise` at 0x203f8 (software/kernel/readings/fglrx.o.md). Which branch leads to the raise is unknown. **Inferred.**
 - `0x80046447` is the in-only counterpart of `firegl_AllocMutex`, sent as `firegl_FreeMutex` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
   The low byte 0x47 gives index 71, the slot at +0x7b8 of the table in fglrx.o.
   That handler, `firegl_free_mutex`, removes a mutex identifier from the opening file's list and from the device's table (software/kernel/kernel-drm-functions.md). **Inferred.**
@@ -216,7 +216,7 @@ flowchart TB
   That handler, `firegl_enable_auth`, reads a 4-byte status from user space and sets or clears an authentication flag in the device structure. It returns -14 when the copy fails and 0 otherwise (software/kernel/kernel-drm-functions.md). **Inferred.**
 - `0x80046459` is sent by `firegl_RestoreCap` in usr/X11R6/lib/modules/irix/libfglrxdrm.so, the counterpart of `firegl_SetCapIpcLock`.
   Index 89 comes from the low byte 0x59, and the slot sits at +0x8d8.
-  That handler, `firegl_restore_cap`, copies 4 bytes from the user pointer with `__ke_copy_from_user` at 0x20430. Only when that copy returns 0 does it set the effective capability set with `__ke_set_cap_effective` at 0x20464 (evidence/routines/vfin-fglrxo-1.md). **Inferred.**
+  That handler, `firegl_restore_cap`, copies 4 bytes from the user pointer with `__ke_copy_from_user` at 0x20430. Only when that copy returns 0 does it set the effective capability set with `__ke_set_cap_effective` at 0x20464 (software/kernel/readings/fglrx.o.md). **Inferred.**
 - `0x8008642a` is sent by `firegl_LockHardware` in usr/X11R6/lib/modules/irix/libfglrxdrm.so.
   The low byte 0x2a gives index 42, the slot at +0x5e8 of the table in fglrx.o.
   That handler, `firegl_lock`, validates the requested context and takes the hardware lock for it through `firegl_lock_device` (software/kernel/kernel-drm-functions.md). **Inferred.**

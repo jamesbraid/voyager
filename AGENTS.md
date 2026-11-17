@@ -10,7 +10,7 @@ Facts are labelled **established** (read directly from a shipped binary, a publi
 
 ## 2. Binaries
 
-Proprietary SGI and ATI binaries are not tracked. Copy the files [evidence/irix-files.md](evidence/irix-files.md) lists from your own IRIX 6.5.30 install into the ignored `root/` and make the relative links that file describes (`r300_kernel/`, `libgl/`, `xserver/`, `dri/`, `gfxtools/`, `diags/`, `ucode/`, `firmware/`). Disassembly, decompiled C, headers and notes derived from them are committed. Whether the DWARF in the unstripped objects holds types or only names and lines is open.
+Proprietary SGI and ATI binaries are not tracked. Copy the files [references/irix-files.md](references/irix-files.md) lists from your own IRIX 6.5.30 install into the ignored `root/` and make the relative links that file describes (`r300_kernel/`, `libgl/`, `xserver/`, `dri/`, `gfxtools/`, `diags/`, `ucode/`, `firmware/`). Disassembly, decompiled C, headers and notes derived from them are committed. Whether the DWARF in the unstripped objects holds types or only names and lines is open.
 
 Public sources are pinned submodules under `references/code/`, mainly `linux` (radeon DRM, `drivers/gpu/drm/radeon/`), `mesa` (r300 driver, PCI ID table) and `irix-657m-src`. Fetch one with `git submodule update --init --depth 1 references/code/NAME`. They cross-check register meaning and are not proof of what IRIX does. Documents are indexed in [references/documents/INDEX.md](references/documents/INDEX.md). The public IRIX 6.5.7 source predates the Onyx4: its facts are established for that release and cited by path, with the release named.
 
@@ -20,7 +20,7 @@ Register and command-packet layouts live in `devices/<unit>/registers.toml`, one
 
 ## 4. Toolchain
 
-The host needs Podman, git and python3; everything else runs in the container built from [retools/tools/Containerfile](retools/tools/Containerfile) via `retools/tools/re-run COMMAND`. [tools/setup-clone.sh](tools/setup-clone.sh) prepares a fresh clone. Run shared tools by their submodule path from the repository root (`retools/tools/<name>`; this device's are `retools/tools/voyager/<name>`). A change to a tool is made in retools and the pin here moves with a commit. `tools/` keeps only the setup script, the message-site extractors and `tools/config/`. The tools: `retools/tools/voyager/map_binaries.py` catalogues linked binaries, `disasm_kernel.py`, `resolve_got.py` and `clean_asm.py` prepare kernel objects for m2c, `retools/tools/inventory.py` (config `tools/config/inventory-config.json`) measures coverage into `evidence/inventory/*.tsv`, and `retools/tools/facts.py` builds facts for a routine. They descend from gr4's and carry its BSD-3 notice ([retools/tools/LICENSE-gr4](retools/tools/LICENSE-gr4)). Regenerate the inventory with `retools/tools/re-run python3 retools/tools/inventory.py`.
+The host needs Podman, git and python3; everything else runs in the container built from [retools/tools/Containerfile](retools/tools/Containerfile) via `retools/tools/re-run COMMAND`. [tools/setup-clone.sh](tools/setup-clone.sh) prepares a fresh clone. Run shared tools by their submodule path from the repository root (`retools/tools/<name>`; this device's are `retools/tools/voyager/<name>`). A change to a tool is made in retools and the pin here moves with a commit. `tools/` keeps only the setup script, the message-site extractors and `tools/config/`. The tools: `retools/tools/voyager/map_binaries.py` catalogues linked binaries, `disasm_kernel.py`, `resolve_got.py` and `clean_asm.py` prepare kernel objects for m2c, `retools/tools/inventory.py` (config `tools/config/inventory-config.json`) measures coverage into `generated/inventory/*.tsv`, and `retools/tools/facts.py` builds facts for a routine. They descend from gr4's and carry its BSD-3 notice ([retools/tools/LICENSE-gr4](retools/tools/LICENSE-gr4)). Regenerate the inventory with `retools/tools/re-run python3 retools/tools/inventory.py`.
 
 ## 5. Evidence: software only, any source
 
@@ -48,12 +48,12 @@ Full text and the checks that enforce it: `retools/tools/README-analysis.md#evid
 
 ## 6. When work is finished
 
-A coverage row is done when every inventory entry in its area is `understood` or `no-software-dependency`. `understood` means a label, a role and hardware effect, and a derivation citation (release, binary and install path under `root/`, offset, callee) in the same entry; `located` and `named-only` are partial. [evidence/inventory/README.md](evidence/inventory/README.md) gives the exact rule. Regenerate the inventory, then pick the next entries below `understood`. Hand off only when your area meets that definition or the session ends; then say in `questions/open-questions.md` where you stopped.
+A coverage row is done when every inventory entry in its area is `understood` or `no-software-dependency`. `understood` means a label, a role and hardware effect, and a derivation citation (release, binary and install path under `root/`, offset, callee) in the same entry; `located` and `named-only` are partial. [generated/inventory/README.md](generated/inventory/README.md) gives the exact rule. Regenerate the inventory, then pick the next entries below `understood`. Hand off only when your area meets that definition or the session ends; then say in `questions/open-questions.md` where you stopped.
 
 ## 7. Rules
 
 - Software-only reverse engineering from public sources and shipped binaries. Nothing else is an input.
 - Name no emulator projects, private tooling, hosts, people or local storage paths in committed files, and do not record where your copy of the IRIX files came from. Give no capture, trace or machine a nickname. Do not quote internal documents. Quote only public sources, briefly, with title and URL in `references/documents/INDEX.md`. `retools/tools/leakcheck.py` enforces this (allow-list `tools/config/leak-allow.txt`) and refuses commit trailers.
-- Update `evidence/coverage.md` and the inventory in the same commit as the finding. Commit disassembly and traces you produce as data; keep the proprietary binaries in `root/`.
+- Update `COVERAGE.md` and the inventory in the same commit as the finding. Commit disassembly and traces you produce as data; keep the proprietary binaries in `root/`.
 - No trailers in commit messages: no attribution, sign-off or generated-with lines.
 - Commit small and often, straight to `main`. Subjects are lowercase, component-prefixed imperatives (`r300_kernel: label the ring base register`); bodies say why. Write everything for a stranger.

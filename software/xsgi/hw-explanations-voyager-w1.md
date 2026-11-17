@@ -713,7 +713,7 @@ Each entry says what one routine does to the hardware and cites the instruction 
   would settle it.
   Inferred: the offsets stored are 0x24, 0x250, 0x254, 0x284, 0x28c, 0x290, 0x2a4, 0x2a8, 0x2c4, 0x2c8 and
   0x2d0 (an access listing of the whole routine). The register-access table in
-  [registers.md](../../evidence/registers.md) gives the public names `BIOS_5_SCRATCH`, `FP_CRTC_H_TOTAL_DISP`,
+  [registers.md](../../devices/display/bit-layouts.md) gives the public names `BIOS_5_SCRATCH`, `FP_CRTC_H_TOTAL_DISP`,
   `FP_CRTC_V_TOTAL_DISP`, `FP_GEN_CNTL`, `FP_HORZ_STRETCH`, `FP_VERT_STRETCH`, `TMDS_TRANSMITTER_CNTL`,
   `TMDS_PLL_CNTL`, `FP_H_SYNC_STRT_WID`, `FP_V_SYNC_STRT_WID` and `LVDS_GEN_CNTL` for them, so the routine
   restores the flat-panel and LVDS block. The bit 0x80000 in 0x2d0 is bit 19 of `LVDS_GEN_CNTL`, which the
@@ -827,7 +827,7 @@ Each entry says what one routine does to the hardware and cites the instruction 
   s3+0x388 in place of s3+0x788, over the same range.
   The return at 0x41cf0c gives the value of the last `FGLMDelay` call on the loop path (v0 =
   ret(FGLMDelay) at 0x41cf00).
-  Inferred: the access table in [registers.md](../../evidence/registers.md) names these offsets: 0x7c is the public
+  Inferred: the access table in [registers.md](../../devices/display/bit-layouts.md) names these offsets: 0x7c is the public
   `DAC_CNTL2`, where bit 5 (0x20) is `RADEON_DAC2_PALETTE_ACC_CTL` in the public X.Org register header, set
   here around the palette writes and cleared after; 0xb0 is `PALETTE_INDEX` and the byte at +0xb3 is its low
   lane (byte 3 of the big-endian word), so each run first zeroes the palette index and then streams words into
@@ -1049,7 +1049,7 @@ Each entry says what one routine does to the hardware and cites the instruction 
   the path that skips the last call.
   Inferred: `R200WaitForFifoFunction`'s note calls the count at +6412 the free-entry count of the command FIFO,
   so the three-entry and nine-entry reservations above come out of that count.
-  Inferred: the access table in [registers.md](../../evidence/registers.md) names +0x1404 `DST_OFFSET`, +0x1408 `DST_PITCH`,
+  Inferred: the access table in [registers.md](../../devices/display/bit-layouts.md) names +0x1404 `DST_OFFSET`, +0x1408 `DST_PITCH`,
   +0x146c `DP_GUI_MASTER_CNTL` and +0x1704 `FLUSH_1` (public names, so what the offsets are is settled to
   that grade); the fields inside each word are the public layout's and are not claimed here.
   Unknown: what the word stored at +0x1700 is. No public table in the repository names the offset (the
@@ -1120,7 +1120,7 @@ Each entry says what one routine does to the hardware and cites the instruction 
   path returns the wait's value.
   Inferred: by the note on `R200WaitForFifoFunction`, the count at driver record +6412 is the masked free
   command-FIFO count, so the three words here are paid for out of it.
-  Inferred: the access table in [registers.md](../../evidence/registers.md) names +0x1434 `SRC_Y_X`, +0x1438 `DST_Y_X` and
+  Inferred: the access table in [registers.md](../../devices/display/bit-layouts.md) names +0x1434 `SRC_Y_X`, +0x1438 `DST_Y_X` and
   +0x143c `DST_HEIGHT_WIDTH` (exact in both public tables). The routine's own stores show each word packed
   as one value ORed with a second value shifted left by 16, so each is two 16-bit halves; the names put the
   first-named quantity (Y, or height) in the high half, which agrees with the shift but is the public
@@ -1143,7 +1143,7 @@ Each entry says what one routine does to the hardware and cites the instruction 
   On the wait path the arguments and the block pointer were saved in the frame before the call (`sd` at 0x40ae24
   through 0x40ae30, and a2 at 0x40add4) and are reloaded afterwards, so the stores at 0x40ae7c and 0x40ae80
   write the same two packed words to +0x1438 and +0x1598 of the same block as on the other path.
-  Inferred: the access table in [registers.md](../../evidence/registers.md) names +0x1438 `DST_Y_X` and +0x1598
+  Inferred: the access table in [registers.md](../../devices/display/bit-layouts.md) names +0x1438 `DST_Y_X` and +0x1598
   `DST_WIDTH_HEIGHT` (exact in both public tables), the second being the destination size in the other
   half order than `DST_HEIGHT_WIDTH`. Both stores write a pair of 16-bit halves packed by a shift of 16; which
   half holds which quantity is the public names' reading of the order, not stated by the routine.

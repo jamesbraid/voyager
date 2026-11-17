@@ -24,7 +24,7 @@ Offsets are in the register aperture. Several registers are known only by their 
 
 ## Used by
 
-- [evidence/registers.md](../../evidence/registers.md): every register access the FireGL kernel object and X module make.
+- [devices/display/bit-layouts.md](bit-layouts.md): every register access the FireGL kernel object and X module make.
 - [software/kernel/kernel-attach.md](../../software/kernel/kernel-attach.md): the first writes after a card is found and mapped.
 - [software/kernel/kernel-ioctl-irq-functions.md](../../software/kernel/kernel-ioctl-irq-functions.md): the interrupt routines.
 - [software/kernel/image-sync-functions.md](../../software/kernel/image-sync-functions.md): the image-sync driver.

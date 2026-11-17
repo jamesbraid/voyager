@@ -1,7 +1,7 @@
 # Register offsets against AMD's published references
 
 Every register offset that `fglrx.o` and `fglrx_drv.so` reach through the register aperture
-([registers.md](../../evidence/registers.md), [inventory/mmio.tsv](../../evidence/inventory/mmio.tsv)), looked up in two AMD documents. The
+([registers.md](bit-layouts.md), [inventory/mmio.tsv](../../generated/inventory/mmio.tsv)), looked up in two AMD documents. The
 full result, one row per offset, is [amd-register-match.tsv](amd-register-match.tsv): the earlier name, the AMD
 register, its offset and aperture, width, access, field layout, page, and a verdict.
 
@@ -23,7 +23,7 @@ Both are listed in [sources/INDEX.md](../../references/documents/INDEX.md).
 The offset of each of the 201 rows of `mmio.tsv` was looked up in the R3xx document (an offset inside one of its
 register ranges) and in the M56 document (a register at the same offset in `HIDEC`, `VIPDEC`, `DISPDEC`,
 `MCDEC` or `CGDEC`), and the earlier name was looked up by name in both. The access sites were then read against
-the field layout in the disassembly of `fglrx_drv.so`, with the routines named in [registers.md](../../evidence/registers.md).
+the field layout in the disassembly of `fglrx_drv.so`, with the routines named in [registers.md](bit-layouts.md).
 
 M56 is not the R300 or R350. The same offset can hold a different register in it, and a register the R3xx kept at
 one offset can live elsewhere. So an M56 entry counts for a row only when its name and offset both agree with the
@@ -109,7 +109,7 @@ them. It does not show the R300 or R350 has identical reset values or reserved b
   routine for the second head in full and show that the record slots for 0x3c4 and 0x3c8 sit beside those of
   `FP2_GEN_CNTL` and the other second-head words in the same order as the first-head `FP_H_SYNC_STRT_WID` and
   `FP_V_SYNC_STRT_WID` slots. The offsets are established as touched.
-- **0x194** has `GPIO_STRENGTH` in M56 (SN 3:0, SP 7:4, page 2-147). [registers.md](../../evidence/registers.md) infers that name from the
+- **0x194** has `GPIO_STRENGTH` in M56 (SN 3:0, SP 7:4, page 2-147). [registers.md](bit-layouts.md) infers that name from the
   neighbouring GPIO pad registers and two access sites it traces to the aperture; the layout is a later part's, so the
   name is not proved for the R300 or R350. The row is not counted as promoted here. Inferred, unproved: no REG line
   for 0x194.

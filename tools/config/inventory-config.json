@@ -21,13 +21,13 @@
     "index": [
       "AGENTS.md",
       "README.md",
-      "evidence/irix-files.md",
-      "evidence/coverage.md",
+      "references/irix-files.md",
+      "COVERAGE.md",
       "questions/open-questions.md"
     ],
     "dumps": [],
     "skip": [
-      "evidence/inventory/*",
+      "generated/inventory/*",
       "references/documents/*",
       "devices/*/README.md",
       "devices/*/registers*.md"
@@ -157,7 +157,7 @@
       "name": "mmio",
       "size": "0x10000",
       "docs": [
-        "evidence/registers.md"
+        "devices/display/bit-layouts.md"
       ]
     }
   ],

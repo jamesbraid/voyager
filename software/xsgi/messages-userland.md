@@ -68,7 +68,7 @@ Of the 354 sites, 14 have a written condition. Those are the priority rows: the 
 
 To regenerate the table, from the repository root inside the toolchain environment, run the generator once per file and keep one header row:
 
-    python3 tools/message_sites_elf.py root/usr/X11R6/lib/modules/drivers/fglrx_drv.so fglrx_drv.so --conditions evidence/messages-userland-conditions.tsv > OUT-a.tsv
-    python3 tools/message_sites_elf.py root/usr/diags/SG/bin/biosemu biosemu --conditions evidence/messages-userland-conditions.tsv > OUT-b.tsv
+    python3 tools/message_sites_elf.py root/usr/X11R6/lib/modules/drivers/fglrx_drv.so fglrx_drv.so --conditions software/xsgi/messages-userland-conditions.tsv > OUT-a.tsv
+    python3 tools/message_sites_elf.py root/usr/diags/SG/bin/biosemu biosemu --conditions software/xsgi/messages-userland-conditions.tsv > OUT-b.tsv
 
-Repeat for `libfglrxdrm.so`, `olsgsys`, `vpm` and `sg2flash` (paths in evidence/irix-files.md), then concatenate the outputs under one header. Keep the scratch outputs out of the repository.
+Repeat for `libfglrxdrm.so`, `olsgsys`, `vpm` and `sg2flash` (paths in references/irix-files.md), then concatenate the outputs under one header. Keep the scratch outputs out of the repository.

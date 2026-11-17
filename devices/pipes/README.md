@@ -13,5 +13,5 @@ The register map is [registers.toml](registers.toml), with every item graded and
 
 ## Used by
 
-- [evidence/registers.md](../../evidence/registers.md): the driver's accesses to these registers.
-- [evidence/instruction-readings-voyager-g2.md](../../evidence/instruction-readings-voyager-g2.md): instruction readings of the routines that write them.
+- [devices/display/bit-layouts.md](../display/bit-layouts.md): the driver's accesses to these registers.
+- [software/opengl/readings/usr-X11R6-lib-modules-dri-fglrx_dri.so.md](../../software/opengl/readings/usr-X11R6-lib-modules-dri-fglrx_dri.so.md) and [software/diagnostics/readings/usr-diags-SG-bin-olsg.md](../../software/diagnostics/readings/usr-diags-SG-bin-olsg.md): instruction readings of the routines that write them.
