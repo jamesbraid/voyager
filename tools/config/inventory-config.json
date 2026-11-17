@@ -8,9 +8,12 @@
     "prose": [
       "devices/*/*.md",
       "software/*/*.md",
-      "evidence/*.md",
+      "devices/*/readings/*.md",
+      "platforms/*/readings/*.md",
+      "software/*/readings/*.md",
+      "software/*/*/readings/*.md",
+      "references/*.md",
       "questions/*.md",
-      "evidence/routines/*.md",
       "README.md"
     ],
     "headers": [
@@ -34,11 +37,6 @@
     ],
     "context": {}
   },
-  "review_required": [
-    "evidence/routines/t1-*.md",
-    "evidence/routines/t2-*.md",
-    "evidence/routines/vfin-*.md"
-  ],
   "prepare": [],
   "binaries": [
     {
