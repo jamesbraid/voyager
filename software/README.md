@@ -35,6 +35,12 @@
 | [dri-driver.md](opengl/dri-driver.md) | DRI driver, o32 and n32 build | `usr/X11R6/lib/modules/dri/fglrx_dri.so` is the ATI direct-rendering module that the X server loads for the FireGL... |
 | [r300-command-stream.md](opengl/r300-command-stream.md) | How the IRIX GL layer feeds the R300 command processor and shader units | What `usr/X11R6/lib/modules/dri/fglrx_dri64.so` (IRIX 6.5.30, n64; the n32 build has the same routine names) puts... |
 
+## products
+
+| Page | Title | Summary |
+|---|---|---|
+| [sgi-ati-inventory.md](products/sgi-ati-inventory.md) | SGI products that shipped an ATI R3xx or R4xx GPU, graded one product at a time | Which SGI systems carried an ATI R300, R350 or R420 part, how each attaches, and what each is graded on. |
+
 ## ucode
 
 | Page | Title | Summary |
