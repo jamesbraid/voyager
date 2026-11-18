@@ -20,7 +20,7 @@ __pycache__/
 /root/
 
 # Symlinks into root/ made from references/irix-files.md, and the archive members unpacked for them
-/r300_kernel/
+/voyager_kernel/
 /libgl/
 /xserver/
 /dri/

@@ -10,7 +10,7 @@ Facts are labelled **established** (read directly from a shipped binary, a publi
 
 ## 2. Binaries
 
-Proprietary SGI and ATI binaries are not tracked. Copy the files [references/irix-files.md](references/irix-files.md) lists from your own IRIX 6.5.30 install into the ignored `root/` and make the relative links that file describes (`r300_kernel/`, `libgl/`, `xserver/`, `dri/`, `gfxtools/`, `diags/`, `ucode/`, `firmware/`). Disassembly, decompiled C, headers and notes derived from them are committed. Whether the DWARF in the unstripped objects holds types or only names and lines is open.
+Proprietary SGI and ATI binaries are not tracked. Copy the files [references/irix-files.md](references/irix-files.md) lists from your own IRIX 6.5.30 install into the ignored `root/` and make the relative links that file describes (`voyager_kernel/`, `libgl/`, `xserver/`, `dri/`, `gfxtools/`, `diags/`, `ucode/`, `firmware/`). Disassembly, decompiled C, headers and notes derived from them are committed. Whether the DWARF in the unstripped objects holds types or only names and lines is open.
 
 Public sources are pinned submodules under `references/code/`, mainly `linux` (radeon DRM, `drivers/gpu/drm/radeon/`), `mesa` (r300 driver, PCI ID table) and `irix-657m-src`. Fetch one with `git submodule update --init --depth 1 references/code/NAME`. They cross-check register meaning and are not proof of what IRIX does. Documents are indexed in [references/documents/INDEX.md](references/documents/INDEX.md). The public IRIX 6.5.7 source predates the Onyx4: its facts are established for that release and cited by path, with the release named.
 
@@ -56,7 +56,7 @@ A coverage row is done when every inventory entry in its area is `understood` or
 - Name no emulator projects, private tooling, hosts, people or local storage paths in committed files, and do not record where your copy of the IRIX files came from. Give no capture, trace or machine a nickname. Do not quote internal documents. Quote only public sources, briefly, with title and URL in `references/documents/INDEX.md`. `retools/tools/leakcheck.py` enforces this (allow-list `tools/config/leak-allow.txt`) and refuses commit trailers.
 - Update `COVERAGE.md` and the inventory in the same commit as the finding. Commit disassembly and traces you produce as data; keep the proprietary binaries in `root/`.
 - No trailers in commit messages: no attribution, sign-off or generated-with lines.
-- Commit small and often, straight to `main`. Subjects are lowercase, component-prefixed imperatives (`r300_kernel: label the ring base register`); bodies say why. Write everything for a stranger.
+- Commit small and often, straight to `main`. Subjects are lowercase, component-prefixed imperatives (`software/kernel: label the ring base register`); bodies say why. Write everything for a stranger.
 
 ## Where new work goes
 

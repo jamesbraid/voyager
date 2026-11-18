@@ -4,7 +4,7 @@ This lists the proprietary SGI and ATI files a reader copies from their own IRIX
 install or media into a local `root/` directory. They are not tracked in source
 control. Paths only: this repository holds no file contents.
 
-`root/` mirrors the IRIX filesystem. The directories `r300_kernel/`, `libgl/`,
+`root/` mirrors the IRIX filesystem. The directories `voyager_kernel/`, `libgl/`,
 `xserver/`, `dri/`, `gfxtools/`, `diags/`, `ucode/` and `firmware/` hold relative
 symlinks into `root/`; section 3 is the map to make them from. They are created on your machine and are not committed.
 
@@ -87,8 +87,8 @@ differ by release and option, and missing paths are normal.
 
 | Group | Files | Location under `root/` |
 |---|---|---|
-| Kernel (`r300_kernel/`) | `fglrx.o` (the FireGL driver object), `is1.o`, `vga.a` (members extracted with `ar x`), `vgastubs.a`, `kernel.o`, and the PCI and crossbar objects the cards attach through: `pciio.o`, `pciio_ppb.o`, `pciiox.o`, `pcibr.o`, `pic.o`, `xbridge.o`, `xtalk.o`, `xswitch.o`, `hubspc.o` | `usr/cpu/sysgen/IP35boot/` |
-| Kernel configuration (`r300_kernel/config/`) | the `master.d` files of the driver objects above | `var/sysgen/master.d/` |
+| Kernel (`voyager_kernel/`) | `fglrx.o` (the FireGL driver object), `is1.o`, `vga.a` (members extracted with `ar x`), `vgastubs.a`, `kernel.o`, and the PCI and crossbar objects the cards attach through: `pciio.o`, `pciio_ppb.o`, `pciiox.o`, `pcibr.o`, `pic.o`, `xbridge.o`, `xtalk.o`, `xswitch.o`, `hubspc.o` | `usr/cpu/sysgen/IP35boot/` |
+| Kernel configuration (`voyager_kernel/config/`) | the `master.d` files of the driver objects above | `var/sysgen/master.d/` |
 | GL libraries (`libgl/o32/`, `libgl/n32/`, `libgl/n64/`) | `libGL.so`, `libGLcore.so`, `libgl.so` (IrisGL) per ABI | `usr/gfx/arch/IP35VOYAGER/`, `IP35VOYAGER32/`, `IP35VOYAGER64/` |
 | X server and modules (`xserver/`) | `XFree86`, `fglrx_drv.so`, `fglrx_glx.so`, `libglx.so`, `libdri.so`, `libGLcore.so`, `libfglrxdrm.so`, `libdrm.so`, `libint10.so`, `libvbe.so`, `libscanpci.so`, `libpcidata.so`, and the configuration generator and start-up script | `usr/X11R6/`, `etc/` |
 | Direct-rendering drivers (`dri/`) | `fglrx_dri.so`, `fglrx_dri64.so`, `SGIOMPdmx_dri.so`, `SGIOMPdmx_dri64.so` | `usr/X11R6/lib/modules/dri/` |
@@ -114,29 +114,29 @@ archive's members are unpacked inside `root/` and linked into `LINKDIR`. `links`
 lines are `LINK TARGET`, relative to the repository root.
 
 ```archives
-root/usr/cpu/sysgen/IP35boot/vga.a r300_kernel
+root/usr/cpu/sysgen/IP35boot/vga.a voyager_kernel
 ```
 
 ```links
-r300_kernel/fglrx.o root/usr/cpu/sysgen/IP35boot/fglrx.o
-r300_kernel/is1.o root/usr/cpu/sysgen/IP35boot/is1.o
-r300_kernel/vgastubs.a root/usr/cpu/sysgen/IP35boot/vgastubs.a
-r300_kernel/gfxs.a root/usr/cpu/sysgen/IP35boot/gfxs.a
-r300_kernel/kernel.o root/usr/cpu/sysgen/IP35boot/kernel.o
-r300_kernel/pciio.o root/usr/cpu/sysgen/IP35boot/pciio.o
-r300_kernel/pciio_ppb.o root/usr/cpu/sysgen/IP35boot/pciio_ppb.o
-r300_kernel/pciiox.o root/usr/cpu/sysgen/IP35boot/pciiox.o
-r300_kernel/pcibr.o root/usr/cpu/sysgen/IP35boot/pcibr.o
-r300_kernel/pic.o root/usr/cpu/sysgen/IP35boot/pic.o
-r300_kernel/xbridge.o root/usr/cpu/sysgen/IP35boot/xbridge.o
-r300_kernel/xtalk.o root/usr/cpu/sysgen/IP35boot/xtalk.o
-r300_kernel/xswitch.o root/usr/cpu/sysgen/IP35boot/xswitch.o
-r300_kernel/hubspc.o root/usr/cpu/sysgen/IP35boot/hubspc.o
-r300_kernel/config/fglrx root/var/sysgen/master.d/fglrx
-r300_kernel/config/is1 root/var/sysgen/master.d/is1
-r300_kernel/config/vga root/var/sysgen/master.d/vga
-r300_kernel/config/vgastubs root/var/sysgen/master.d/vgastubs
-r300_kernel/config/pciio_ppb root/var/sysgen/master.d/pciio_ppb
+voyager_kernel/fglrx.o root/usr/cpu/sysgen/IP35boot/fglrx.o
+voyager_kernel/is1.o root/usr/cpu/sysgen/IP35boot/is1.o
+voyager_kernel/vgastubs.a root/usr/cpu/sysgen/IP35boot/vgastubs.a
+voyager_kernel/gfxs.a root/usr/cpu/sysgen/IP35boot/gfxs.a
+voyager_kernel/kernel.o root/usr/cpu/sysgen/IP35boot/kernel.o
+voyager_kernel/pciio.o root/usr/cpu/sysgen/IP35boot/pciio.o
+voyager_kernel/pciio_ppb.o root/usr/cpu/sysgen/IP35boot/pciio_ppb.o
+voyager_kernel/pciiox.o root/usr/cpu/sysgen/IP35boot/pciiox.o
+voyager_kernel/pcibr.o root/usr/cpu/sysgen/IP35boot/pcibr.o
+voyager_kernel/pic.o root/usr/cpu/sysgen/IP35boot/pic.o
+voyager_kernel/xbridge.o root/usr/cpu/sysgen/IP35boot/xbridge.o
+voyager_kernel/xtalk.o root/usr/cpu/sysgen/IP35boot/xtalk.o
+voyager_kernel/xswitch.o root/usr/cpu/sysgen/IP35boot/xswitch.o
+voyager_kernel/hubspc.o root/usr/cpu/sysgen/IP35boot/hubspc.o
+voyager_kernel/config/fglrx root/var/sysgen/master.d/fglrx
+voyager_kernel/config/is1 root/var/sysgen/master.d/is1
+voyager_kernel/config/vga root/var/sysgen/master.d/vga
+voyager_kernel/config/vgastubs root/var/sysgen/master.d/vgastubs
+voyager_kernel/config/pciio_ppb root/var/sysgen/master.d/pciio_ppb
 libgl/o32/libGL.so root/usr/gfx/arch/IP35VOYAGER/libGL.so
 libgl/o32/libGLcore.so root/usr/gfx/arch/IP35VOYAGER/libGLcore.so
 libgl/o32/libgl.so root/usr/gfx/arch/IP35VOYAGER/libgl.so
