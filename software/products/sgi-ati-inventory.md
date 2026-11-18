@@ -29,7 +29,7 @@ Sources are in [INDEX.md](../../references/documents/INDEX.md); a capture is cit
   the list's name and from the Prism capture below, where every pipe has a primary and a secondary function. No capture
   includes a `gfxinfo`, so which chip a given brick carries is **unknown**; keep R300 (observed) and R350 (documented)
   as separate options.
-- **Attach.** Graded in onyx4-bus-attach.md: a PCI function on a Bridge-family chip that
+- **Attach.** Graded in [onyx4-bus-attach.md](../kernel/onyx4-bus-attach.md): a PCI function on a Bridge-family chip that
   is the brick's XIO widget (a G2 reaches the host over XIO, a G2N over NUMAlink), observed at widget 10 (G2, 2014) and
   widget 15 (G2N, 2020); IRIX never uses AGP; whether a bridge chip converts AGP on the board is **unknown**.
 - **Pipes and displays.** Two pipes per brick, two display devices per pipe, up to 16 bricks, 32 pipes and 64 displays
@@ -90,12 +90,12 @@ compression and a different DXT swizzle (Mesa, `is_r400`). R300 and R350 use 4x4
 RV350 on can use 8x8 (AMD R5xx guide 10.4.9). The pixel-pipe counts differ in kind: registers and Linux count two quad
 pipes for R300 and R350, while SGI's guide says eight pixel pipelines; do not mix the units. R420 numbers come only
 from Mesa; the AMD R3xx document does not cover it. The word formats are in
-r300-shader-formats.md.
+[r300-shader-formats.md](../opengl/r300-shader-formats.md).
 
 ## Open items
 
 1. Which chip each Onyx4 variant has: a `gfxinfo -v` or `hinv -vvv` from a G2 and a G2N; look for 4e4b.
-2. Whether the SG2 board has an AGP-to-PCI(-X) bridge: hardware-only; see onyx4-bus-attach.md.
+2. Whether the SG2 board has an AGP-to-PCI(-X) bridge: hardware-only; see [onyx4-bus-attach.md](../kernel/onyx4-bus-attach.md).
 3. The Prism X2PRO-256 chip and ID, and the secondary ID 4a6d (not in the PCI ID list read): a Prism `lspci` with that
    option; a newer list snapshot.
 4. The Prism deskside chip and bridge; the Extreme guide's graphics pages.

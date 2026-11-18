@@ -66,9 +66,11 @@ Type-0 (register write, with the one-register-write form), type-2 (NOP padding) 
 | 0x32 CLEAR_ZMASK, 0x37 CLEAR_HIZ, 0x38 CLEAR_CMASK | Hyper-Z clears | yes | yes (filtered by owner) | IRIX inferred, Linux expectation |
 | 0x1b, 0x2b, 0x2d | seen in IRIX R300 routines | yes | no | unknown (no public name checked) |
 
-Indirect buffers: type-0 pair at 0x738 and 0x73c (address, dwords), accepted in both stacks, established for IRIX
-(`__R300DRMSubmitPM4`) and expectation for Linux. IRIX also writes a pair at 0x730 and 0x734 from
-`__R300TCLInsertIndirectBuffer`; that pair has no public name (**unknown**), accept and treat as a nested jump.
+Indirect buffers: type-0 pair at 0x738 and 0x73c (`CP_IB_BASE`, `CP_IB_BUFSZ`: address, dwords), accepted in both stacks,
+established for IRIX (`__R300DRMSubmitPM4`) and expectation for Linux. IRIX also writes a pair at 0x730 and 0x734 from
+`__R300TCLInsertIndirectBuffer`: `CP_IB2_BASE` and `CP_IB2_BUFSZ`, the second indirect level, **established** by AMD's R5xx
+Acceleration guide rev 1.5 (printed pages 25 and 150); model a ring, indirect 1, indirect 2 stack
+([r300-engine-facts.md](r300-engine-facts.md#1-the-second-indirect-buffer-0x730-and-0x734-are-cp_ib2_base-and-cp_ib2_bufsz)).
 
 Type-0 register writes the model must decode (names after Linux `r300_reg.h`, `radeon_reg.h`): the PVS block
 0x2200, 0x2208 (one-register burst), 0x2284, 0x22d0..0x22d8, 0x22dc and following flow-control words; fragment block
@@ -87,6 +89,8 @@ Linux source: `r300_reg_safe.h` and `r300_reg.h`. Grade: inferred for IRIX, expe
 | Interpolators (RS) | 0x4300, 0x4310 (8 words), 0x4330 route words | IRIX, Mesa | inferred, expectation |
 | Hyper-Z, multisample | z-mask, Hi-Z, c-mask memories cleared with the clear packets; aperture split in the kernel driver (zmask, hiz, cmask, visible, invisible) | IRIX kernel `firegl_free_buffer_queue` types 2 to 6 | established as kernel behaviour; chip behaviour unknown |
 
+The word layouts of both programmable units are in [r300-shader-formats.md](../opengl/r300-shader-formats.md).
+
 The IRIX GL compiles ARB vertex programs and, in the fixed-function paths, generates PVS programs itself; ARB fragment
 programs go through a pixel-shader optimiser and packer into the US instruction banks (inferred from names and strings, see
 the command-stream page). A guest GL layer never sees raw microcode; the model must execute or translate the PVS and US
@@ -97,8 +101,9 @@ formats Linux's `r300_reg.h` defines (`R300_VPI_*` and `R300_PFS_*` fields).
 - Microcode: the IRIX R300 table is a different revision of the public table (187 of 256 aligned pairs equal); the
   Linux file is `R300_cp.bin`. A model that accepts the writes and ignores the contents satisfies both; one that
   validates contents needs both images.
-- Bridge: the IRIX contract assumes a Bridge-family host bridge (card directly on the bridge or behind a PCI-to-PCI
-  bridge, the choice open); the Linux SN2 path has TIO-CA AGP with a GART (Prism pipe bridge unconfirmed).
+- Bridge: the IRIX contract is a PCI function on a Bridge-family chip (a PIC or XBridge; card directly on the bridge,
+  inferred), with no AGP; the Linux SN2 path on Prism has TIO-CA AGP with a GART, observed for the X3 board
+  ([onyx4-bus-attach.md](../kernel/onyx4-bus-attach.md), [the inventory](../products/sgi-ati-inventory.md)).
 - Command submission: IRIX writes the ring itself from user space and uses indirect buffers only as jumps; Linux's
   checked stream never lets user space write the ring. Both reach the same CP.
 - Display: IRIX sets modes through the X module's CRTC and PLL writes after the option ROM has set a VESA mode; Linux

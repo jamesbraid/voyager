@@ -35,12 +35,16 @@ type-3 header: top bits 11, bits 29:16 dword count minus one, bits 15:8 opcode) 
   words), a type-3 WAIT_FOR_IDLE (0xc0002600) when bit 0x1000 of the submit record's first word is set, and a type-3
   SET_SCISSORS (0xc0011e00) with the words 0 and 0x1fff1fff. This matches Linux's r100 indirect-buffer use
   (`PACKET0(RADEON_CP_IB_BASE, 1)` in `drivers/gpu/drm/radeon/r100.c`).
-- **A second jump pair at 0x730.** `__R300TCLInsertIndirectBuffer` (0x854320, 588 bytes, read in full) emits a three-dword
-  packet with header 0x000101cc, a type-0 write of two registers starting at byte offset **0x730**, carrying a buffer address
-  and a length in dwords (split into pieces of at most 0x7fffff dwords). Linux names nothing at 0x730 or 0x734. **Inferred:**
-  a second-level indirect buffer (the CP has two indirect queues, see the Linux comment on `INDIRECT1` and `INDIRECT2` in
-  `r100_cp_init`), because it is emitted from inside a draw stream that was itself reached through the 0x738 jump.
-  Name and size semantics **unknown**: a model must accept the write.
+- **A second jump pair at 0x730: `CP_IB2_BASE` and `CP_IB2_BUFSZ`.** `__R300TCLInsertIndirectBuffer` (0x854320, 588 bytes,
+  read in full) emits a three-dword packet with header 0x000101cc, a type-0 write of two registers starting at byte offset
+  **0x730**, carrying a buffer address and a length in dwords (split into pieces of at most 0x7fffff dwords). AMD's R5xx
+  Acceleration guide, rev 1.5, names them: 0x730 is `CP_IB2_BASE` (bits 31:2) and 0x734 is `CP_IB2_BUFSZ` (bits 22:0, size in
+  dwords), printed page 150. **Established** as the public name and offset, and **established** that the routine follows
+  the guide's rules for starting an indirect stream (base written first, the size write is the last register of the
+  type-0 packet; section 5.10, printed page 25) and that the second level is reached only from the first (section 5.6),
+  which is how the routine is used: it sits inside a draw stream that was reached through the 0x738 jump. Linux names
+  only the first pair. [r300-engine-facts.md](../model-contract/r300-engine-facts.md#1-the-second-indirect-buffer-0x730-and-0x734-are-cp_ib2_base-and-cp_ib2_bufsz)
+  has the model consequences (a ring, indirect 1, indirect 2 stack).
 - **Type-3 opcodes in the R300 draw, clear and blit routines.** Constants of the form 0xc000XX00 are built in R300
   routines for opcodes 0x10 (NOP), 0x1e (SET_SCISSORS), 0x26 (WAIT_FOR_IDLE), 0x28 (3D_DRAW_VBUF), 0x2f
   (3D_LOAD_VBPNTR), 0x32 (3D_CLEAR_ZMASK), 0x33 (INDX_BUFFER), 0x34 (3D_DRAW_VBUF_2), 0x35 (3D_DRAW_IMMD_2), 0x36
@@ -138,6 +142,6 @@ All **inferred** from constant scans of R300 routines and matched by offset to p
 Settled here: the CP is driven by a user-written ring of type-0, type-2 and type-3 packets; programs are uploaded to the PVS
 through the 0x2200/0x2208 pair and to the fragment block through registers 0x4600 to 0x4dfc, both from the ring, never
 through a separate shader API. Open (recorded in [../../questions/open-questions.md](../../questions/open-questions.md)):
-the identity of the 0x730 pair, the three unnamed type-3 opcodes, whether the ARB program entry points reach the R300
+the three unnamed type-3 opcodes, whether the ARB program entry points reach the R300
 compilers or only a software path, the full register list per block (the constant scan names offsets, not roles), and
 which routines program `GB_TILE_CONFIG` and the Hi-Z memory.
