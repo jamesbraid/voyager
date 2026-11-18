@@ -1,4 +1,7 @@
 <!-- generated from devices/pipes/registers.toml by defs-gen - do not edit, change the source -->
+<!-- SPDX-License-Identifier: BSD-3-Clause -->
+<!-- defs-gen 2 -->
+<!-- input sha256 e34450f0e3a1cdb6a394d0c3d5325db659d980425921c14e955301c3fb584e8d -->
 
 # per-pipe select and Z-buffer registers of the R3xx-class FireGL boards
 

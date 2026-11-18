@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<!-- generated from devices/rs/registers.toml by defs-gen - do not edit, change the source -->
+<!-- SPDX-License-Identifier: BSD-3-Clause -->
+<!-- defs-gen 2 -->
+<!-- input sha256 edb28dd4e62253a48534c96dbcd487bceba38c394a9adcbf775935987876084e -->
+<genxml unit="rs" prefix="R300_RS" title="rasteriser interpolator registers of the R300 and R350 3D engine" from="AMD Radeon R3xx 3D Register Reference, revision 1.0">
+  <doc>Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes the R300 and R350. Registers already defined in the display or pipes unit are not repeated.</doc>
+  <struct name="COUNT" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 32" register="yes" offset="0x4300" access="rw" reset="unknown">
+    <field name="hires_en" start="18" size="1" type="uint" grade="established"/>
+    <field name="w_addr" start="12" size="6" type="uint" grade="established"/>
+    <field name="w_count" start="11" size="1" type="uint" grade="established"/>
+    <field name="ic_count" start="7" size="4" type="uint" grade="established"/>
+    <field name="it_count" start="0" size="7" type="uint" grade="established"/>
+  </struct>
+  <struct name="INST_COUNT" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 33" register="yes" offset="0x4304" access="rw" reset="unknown">
+    <field name="tx_offset" start="5" size="3" type="uint" grade="established"/>
+    <field name="w_en" start="4" size="1" type="uint" grade="established"/>
+    <field name="inst_count" start="0" size="4" type="uint" grade="established"/>
+  </struct>
+  <struct name="IP" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 33" register="yes" offset="0x4310" access="rw" count="8" stride="4" reset="unknown">
+    <field name="sel_q" start="22" size="3" type="uint" grade="established"/>
+    <field name="sel_r" start="19" size="3" type="uint" grade="established"/>
+    <field name="sel_t" start="16" size="3" type="uint" grade="established"/>
+    <field name="sel_s" start="13" size="3" type="uint" grade="established"/>
+    <field name="col_fmt" start="9" size="4" type="uint" grade="established"/>
+    <field name="col_ptr" start="6" size="3" type="uint" grade="established"/>
+    <field name="tex_ptr" start="0" size="6" type="uint" grade="established"/>
+  </struct>
+  <struct name="INST" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 32" register="yes" offset="0x4330" access="rw" count="16" stride="4" reset="unknown">
+    <field name="col_bias" start="23" size="2" type="uint" grade="established"/>
+    <field name="tex_adj" start="22" size="1" type="uint" grade="established"/>
+    <field name="col_addr" start="17" size="5" type="uint" grade="established"/>
+    <field name="col_cn" start="14" size="3" type="uint" grade="established"/>
+    <field name="col_id" start="11" size="3" type="uint" grade="established"/>
+    <field name="tex_addr" start="6" size="5" type="uint" grade="established"/>
+    <field name="tex_cn" start="3" size="3" type="uint" grade="established"/>
+    <field name="tex_id" start="0" size="3" type="uint" grade="established"/>
+  </struct>
+</genxml>

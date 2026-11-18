@@ -1,0 +1,107 @@
+{
+ "license": "BSD-3-Clause",
+ "generator": "defs-gen 2",
+ "input_sha256": "7a4b4167ec5845ba012d8b67a0e3e5a3042273b13933438c5f1985fdd2536629",
+ "schema": "defs-flat/1",
+ "source": "devices/gart/registers.toml",
+ "profile": "public",
+ "rows": [
+  {
+   "unit": "gart",
+   "kind": "register",
+   "name": "agp_cntl",
+   "offset": 372,
+   "access": "rw",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": "unknown",
+   "grade": "inferred",
+   "from": "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_AGP_CNTL"
+  },
+  {
+   "unit": "gart",
+   "kind": "field",
+   "name": "agp_cntl.aperture_size",
+   "hi": 5,
+   "lo": 0,
+   "grade": "inferred",
+   "from": "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_AGP_CNTL"
+  },
+  {
+   "unit": "gart",
+   "kind": "register",
+   "name": "aic_cntl",
+   "offset": 464,
+   "access": "rw",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": "unknown",
+   "grade": "inferred",
+   "from": "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_AIC_CNTL"
+  },
+  {
+   "unit": "gart",
+   "kind": "field",
+   "name": "aic_cntl.dis_out_of_pci_gart_access",
+   "hi": 1,
+   "lo": 1,
+   "grade": "inferred",
+   "from": "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_AIC_CNTL"
+  },
+  {
+   "unit": "gart",
+   "kind": "field",
+   "name": "aic_cntl.pcigart_translate_en",
+   "hi": 0,
+   "lo": 0,
+   "grade": "inferred",
+   "from": "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_AIC_CNTL"
+  },
+  {
+   "unit": "gart",
+   "kind": "register",
+   "name": "aic_pt_base",
+   "offset": 472,
+   "access": "rw",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": "unknown",
+   "grade": "inferred",
+   "from": "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_AIC_PT_BASE"
+  },
+  {
+   "unit": "gart",
+   "kind": "register",
+   "name": "aic_lo_addr",
+   "offset": 476,
+   "access": "rw",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": "unknown",
+   "grade": "inferred",
+   "from": "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_AIC_LO_ADDR"
+  },
+  {
+   "unit": "gart",
+   "kind": "register",
+   "name": "aic_hi_addr",
+   "offset": 480,
+   "access": "rw",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": "unknown",
+   "grade": "inferred",
+   "from": "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_AIC_HI_ADDR"
+  }
+ ]
+}

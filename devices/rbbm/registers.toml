@@ -1,0 +1,25 @@
+unit = "rbbm"
+prefix = "R300_RBBM"
+title = "register backbone manager registers of the R3xx-class FireGL boards"
+doc = "Host-visible backbone registers beyond the status, reset and wait registers the display unit already holds. Names and offsets come from the public Linux radeon header, so the grade is inferred; no shipped IRIX binary read here uses them."
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h"
+public_from = ["Linux drivers/gpu/drm/radeon"]
+name_source = "public"
+name_cite = "Linux drivers/gpu/drm/radeon/radeon_reg.h"
+
+[registers.guicntl]
+offset = 0x172c
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_RBBM_GUICNTL"
+
+[registers.guicntl.fields]
+host_data_swap = { bits = [1, 0], grade = "inferred" }
+
+[registers.isync_cntl]
+offset = 0x1724
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/r500_reg.h, RADEON_ISYNC_CNTL"

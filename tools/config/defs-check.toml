@@ -1,5 +1,9 @@
 [project]
+license = "BSD-3-Clause"
 name = "onyx4-r300"
+
+[gen]
+rust_crate = "voyager-defs"
 
 [checks]
 address_bits = 16
@@ -2316,3 +2320,36 @@ regex = '\| `VOYAGER\.surface_cntl\.surf_translation_dis` \| (\d+):(\d+) \|'
 binds = [
   ["F", "VOYAGER.surface_cntl.surf_translation_dis", 1, 2],
 ]
+
+[gen.qemu]
+board = "R300"
+
+[gen.qemu.units.display]
+
+[gen.qemu.units.pipes]
+
+[gen.qemu.units.cp]
+
+[gen.qemu.units.rbbm]
+
+[gen.qemu.units.vap]
+
+[gen.qemu.units.us]
+
+[gen.qemu.units.rs]
+
+[gen.qemu.units.tx]
+
+[gen.qemu.units.rb3d]
+
+[gen.qemu.units.zb]
+
+[gen.qemu.units.sc]
+
+[gen.qemu.units.ga]
+
+[gen.qemu.units.su]
+
+[gen.qemu.units.crtc]
+
+[gen.qemu.units.gart]

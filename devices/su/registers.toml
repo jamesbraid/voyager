@@ -1,0 +1,130 @@
+unit = "su"
+prefix = "R300_SU"
+title = "setup unit registers of the R300 and R350 3D engine"
+doc = "Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes the R300 and R350. Registers already defined in the display or pipes unit are not repeated."
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0"
+public_from = ["AMD Radeon R3xx 3D Register Reference", "Mesa 20.3.5 r300 driver"]
+name_source = "public"
+name_cite = "AMD Radeon R3xx 3D Register Reference, revision 1.0"
+
+[registers.cull_mode]
+offset = 0x42b8
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 43"
+
+[registers.cull_mode.fields]
+cull_front = { bits = [0, 0], grade = "established" }
+cull_back = { bits = [1, 1], grade = "established" }
+face = { bits = [2, 2], grade = "established" }
+
+[registers.depth_offset]
+offset = 0x42c4
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 43"
+
+[registers.depth_offset.fields]
+offset = { bits = [31, 0], grade = "established" }
+
+[registers.depth_scale]
+offset = 0x42c0
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 43"
+
+[registers.poly_offset_back_offset]
+offset = 0x42b0
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 43"
+
+[registers.poly_offset_back_offset.fields]
+offset = { bits = [31, 0], grade = "established" }
+
+[registers.poly_offset_back_scale]
+offset = 0x42ac
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 44"
+
+[registers.poly_offset_back_scale.fields]
+scale = { bits = [31, 0], grade = "established" }
+
+[registers.poly_offset_enable]
+offset = 0x42b4
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 44"
+
+[registers.poly_offset_enable.fields]
+front_enable = { bits = [0, 0], grade = "established" }
+back_enable = { bits = [1, 1], grade = "established" }
+para_enable = { bits = [2, 2], grade = "established" }
+
+[registers.poly_offset_front_offset]
+offset = 0x42a8
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 44"
+
+[registers.poly_offset_front_offset.fields]
+offset = { bits = [31, 0], grade = "established" }
+
+[registers.poly_offset_front_scale]
+offset = 0x42a4
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 44"
+
+[registers.poly_offset_front_scale.fields]
+scale = { bits = [31, 0], grade = "established" }
+
+[registers.tex_wrap]
+offset = 0x42a0
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+
+[registers.tex_wrap.fields]
+t0c0 = { bits = [0, 0], grade = "established" }
+t0c1 = { bits = [1, 1], grade = "established" }
+t0c2 = { bits = [2, 2], grade = "established" }
+t0c3 = { bits = [3, 3], grade = "established" }
+t1c0 = { bits = [4, 4], grade = "established" }
+t1c1 = { bits = [5, 5], grade = "established" }
+t1c2 = { bits = [6, 6], grade = "established" }
+t1c3 = { bits = [7, 7], grade = "established" }
+t2c0 = { bits = [8, 8], grade = "established" }
+t2c1 = { bits = [9, 9], grade = "established" }
+t2c2 = { bits = [10, 10], grade = "established" }
+t2c3 = { bits = [11, 11], grade = "established" }
+t3c0 = { bits = [12, 12], grade = "established" }
+t3c1 = { bits = [13, 13], grade = "established" }
+t3c2 = { bits = [14, 14], grade = "established" }
+t3c3 = { bits = [15, 15], grade = "established" }
+t4c0 = { bits = [16, 16], grade = "established" }
+t4c1 = { bits = [17, 17], grade = "established" }
+t4c2 = { bits = [18, 18], grade = "established" }
+t4c3 = { bits = [19, 19], grade = "established" }
+t5c0 = { bits = [20, 20], grade = "established" }
+t5c1 = { bits = [21, 21], grade = "established" }
+t5c2 = { bits = [22, 22], grade = "established" }
+t5c3 = { bits = [23, 23], grade = "established" }
+t6c0 = { bits = [24, 24], grade = "established" }
+t6c1 = { bits = [25, 25], grade = "established" }
+t6c2 = { bits = [26, 26], grade = "established" }
+t6c3 = { bits = [27, 27], grade = "established" }
+t7c0 = { bits = [28, 28], grade = "established" }
+t7c1 = { bits = [29, 29], grade = "established" }
+t7c2 = { bits = [30, 30], grade = "established" }
+t7c3 = { bits = [31, 31], grade = "established" }

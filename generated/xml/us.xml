@@ -1,0 +1,105 @@
+<?xml version="1.0" ?>
+<!-- generated from devices/us/registers.toml by defs-gen - do not edit, change the source -->
+<!-- SPDX-License-Identifier: BSD-3-Clause -->
+<!-- defs-gen 2 -->
+<!-- input sha256 80becab3c0b740e55268ba2bbbe58a6b232c7a30e094a0abfae67f17f4dc7017 -->
+<genxml unit="us" prefix="R300_US" title="fragment shader (unified shader) registers of the R300 and R350 3D engine" from="AMD Radeon R3xx 3D Register Reference, revision 1.0">
+  <doc>Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes the R300 and R350. Registers already defined in the display or pipes unit are not repeated.</doc>
+  <struct name="CONFIG" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 66" register="yes" offset="0x4600" access="rw" reset="unknown">
+    <field name="first_tex" start="3" size="1" type="uint" grade="established"/>
+    <field name="nlevel" start="0" size="3" type="uint" grade="established"/>
+  </struct>
+  <struct name="PIXSIZE" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 68" register="yes" offset="0x4604" access="rw" reset="unknown">
+    <field name="pix_size" start="0" size="5" type="uint" grade="established"/>
+  </struct>
+  <struct name="CODE_OFFSET" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 66" register="yes" offset="0x4608" access="rw" reset="unknown">
+    <field name="tex_size" start="18" size="6" type="uint" grade="established"/>
+    <field name="tex_offset" start="13" size="5" type="uint" grade="established"/>
+    <field name="alu_size" start="6" size="7" type="uint" grade="established"/>
+    <field name="alu_offset" start="0" size="6" type="uint" grade="established"/>
+  </struct>
+  <struct name="CODE_ADDR" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 66" register="yes" offset="0x4610" access="rw" count="4" stride="4" reset="unknown">
+    <field name="w_out" start="23" size="1" type="uint" grade="established"/>
+    <field name="rgba_out" start="22" size="1" type="uint" grade="established"/>
+    <field name="tex_size" start="17" size="5" type="uint" grade="established"/>
+    <field name="tex_start" start="12" size="5" type="uint" grade="established"/>
+    <field name="alu_size" start="6" size="6" type="uint" grade="established"/>
+    <field name="alu_start" start="0" size="6" type="uint" grade="established"/>
+  </struct>
+  <struct name="TEX_INST" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 68" register="yes" offset="0x4620" access="rw" count="32" stride="4" reset="unknown">
+    <field name="omod" start="18" size="1" type="uint" grade="established"/>
+    <field name="inst" start="15" size="3" type="uint" grade="established"/>
+    <field name="tex_id" start="11" size="4" type="uint" grade="established"/>
+    <field name="dst_addr" start="6" size="5" type="uint" grade="established"/>
+    <field name="src_addr" start="0" size="5" type="uint" grade="established"/>
+  </struct>
+  <struct name="OUT_FMT" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 67" register="yes" offset="0x46a4" access="rw" count="4" stride="4" reset="unknown">
+    <field name="out_sign" start="16" size="4" type="uint" grade="established"/>
+    <field name="c3_sel" start="14" size="2" type="uint" grade="established"/>
+    <field name="c2_sel" start="12" size="2" type="uint" grade="established"/>
+    <field name="c1_sel" start="10" size="2" type="uint" grade="established"/>
+    <field name="c0_sel" start="8" size="2" type="uint" grade="established"/>
+    <field name="out_fmt" start="0" size="5" type="uint" grade="established"/>
+  </struct>
+  <struct name="W_FMT" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 69" register="yes" offset="0x46b4" access="rw" reset="unknown">
+    <field name="w_src" start="2" size="1" type="uint" grade="established"/>
+    <field name="w_fmt" start="0" size="2" type="uint" grade="established"/>
+  </struct>
+  <struct name="ALU_RGB_ADDR" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 61" register="yes" offset="0x46c0" access="rw" count="64" stride="4" reset="unknown">
+    <field name="target" start="29" size="2" type="uint" grade="established"/>
+    <field name="omask" start="26" size="3" type="uint" grade="established"/>
+    <field name="wmask" start="23" size="3" type="uint" grade="established"/>
+    <field name="addrd" start="18" size="5" type="uint" grade="established"/>
+    <field name="addr2" start="12" size="6" type="uint" grade="established"/>
+    <field name="addr1" start="6" size="6" type="uint" grade="established"/>
+    <field name="addr0" start="0" size="6" type="uint" grade="established"/>
+  </struct>
+  <struct name="ALU_ALPHA_ADDR" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 58" register="yes" offset="0x47c0" access="rw" count="64" stride="4" reset="unknown">
+    <field name="stat_we" start="28" size="4" type="uint" grade="established"/>
+    <field name="omask_w" start="27" size="1" type="uint" grade="established"/>
+    <field name="target" start="25" size="2" type="uint" grade="established"/>
+    <field name="omask" start="24" size="1" type="uint" grade="established"/>
+    <field name="wmask" start="23" size="1" type="uint" grade="established"/>
+    <field name="addrd" start="18" size="5" type="uint" grade="established"/>
+    <field name="addr2" start="12" size="6" type="uint" grade="established"/>
+    <field name="addr1" start="6" size="6" type="uint" grade="established"/>
+    <field name="addr0" start="0" size="6" type="uint" grade="established"/>
+  </struct>
+  <struct name="ALU_RGB_INST" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 62" register="yes" offset="0x48c0" access="rw" count="64" stride="4" reset="unknown">
+    <field name="nop" start="31" size="1" type="uint" grade="established"/>
+    <field name="clamp" start="30" size="1" type="uint" grade="established"/>
+    <field name="omod" start="27" size="3" type="uint" grade="established"/>
+    <field name="op" start="23" size="4" type="uint" grade="established"/>
+    <field name="srcp_op" start="21" size="2" type="uint" grade="established"/>
+    <field name="mod_c" start="19" size="2" type="uint" grade="established"/>
+    <field name="sel_c" start="14" size="5" type="uint" grade="established"/>
+    <field name="mod_b" start="12" size="2" type="uint" grade="established"/>
+    <field name="sel_b" start="7" size="5" type="uint" grade="established"/>
+    <field name="mod_a" start="5" size="2" type="uint" grade="established"/>
+    <field name="sel_a" start="0" size="5" type="uint" grade="established"/>
+  </struct>
+  <struct name="ALU_ALPHA_INST" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 59" register="yes" offset="0x49c0" access="rw" count="64" stride="4" reset="unknown">
+    <field name="clamp" start="30" size="1" type="uint" grade="established"/>
+    <field name="omod" start="27" size="3" type="uint" grade="established"/>
+    <field name="op" start="23" size="4" type="uint" grade="established"/>
+    <field name="srcp_op" start="21" size="2" type="uint" grade="established"/>
+    <field name="mod_c" start="19" size="2" type="uint" grade="established"/>
+    <field name="sel_c" start="14" size="5" type="uint" grade="established"/>
+    <field name="mod_b" start="12" size="2" type="uint" grade="established"/>
+    <field name="sel_b" start="7" size="5" type="uint" grade="established"/>
+    <field name="mod_a" start="5" size="2" type="uint" grade="established"/>
+    <field name="sel_a" start="0" size="5" type="uint" grade="established"/>
+  </struct>
+  <struct name="ALU_CONST_R" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 70" register="yes" offset="0x4c00" access="rw" count="32" stride="16" reset="unknown">
+    <field name="kr" start="0" size="24" type="uint" grade="established"/>
+  </struct>
+  <struct name="ALU_CONST_G" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 69" register="yes" offset="0x4c04" access="rw" count="32" stride="16" reset="unknown">
+    <field name="kg" start="0" size="24" type="uint" grade="established"/>
+  </struct>
+  <struct name="ALU_CONST_B" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 69" register="yes" offset="0x4c08" access="rw" count="32" stride="16" reset="unknown">
+    <field name="kb" start="0" size="24" type="uint" grade="established"/>
+  </struct>
+  <struct name="ALU_CONST_A" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 69" register="yes" offset="0x4c0c" access="rw" count="32" stride="16" reset="unknown">
+    <field name="ka" start="0" size="24" type="uint" grade="established"/>
+  </struct>
+</genxml>

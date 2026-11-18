@@ -1,0 +1,93 @@
+<?xml version="1.0" ?>
+<!-- generated from devices/ga/registers.toml by defs-gen - do not edit, change the source -->
+<!-- SPDX-License-Identifier: BSD-3-Clause -->
+<!-- defs-gen 2 -->
+<!-- input sha256 b474daa9d295799fe8f5e5ddf58374b9d80cdb167b2acb0dfa77d323e342828f -->
+<genxml unit="ga" prefix="R300_GA" title="geometry assembly registers of the R300 and R350 3D engine" from="AMD Radeon R3xx 3D Register Reference, revision 1.0">
+  <doc>Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes the R300 and R350. Registers already defined in the display or pipes unit are not repeated.</doc>
+  <struct name="POINT_S0" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 22" register="yes" offset="0x4200" access="rw" reset="unknown">
+    <field name="s0" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="POINT_T0" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 22" register="yes" offset="0x4204" access="rw" reset="unknown">
+    <field name="t0" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="POINT_S1" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 22" register="yes" offset="0x4208" access="rw" reset="unknown">
+    <field name="s1" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="POINT_T1" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 23" register="yes" offset="0x420c" access="rw" reset="unknown">
+    <field name="t1" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="TRIANGLE_STIPPLE" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 24" register="yes" offset="0x4214" access="rw" reset="unknown">
+    <field name="y_shift" start="16" size="4" type="uint" grade="established"/>
+    <field name="x_shift" start="0" size="4" type="uint" grade="established"/>
+  </struct>
+  <struct name="POINT_SIZE" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 22" register="yes" offset="0x421c" access="rw" reset="unknown">
+    <field name="width" start="16" size="16" type="uint" grade="established"/>
+    <field name="height" start="0" size="16" type="uint" grade="established"/>
+  </struct>
+  <struct name="POINT_MINMAX" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 22" register="yes" offset="0x4230" access="rw" reset="unknown">
+    <field name="max_size" start="16" size="16" type="uint" grade="established"/>
+    <field name="min_size" start="0" size="16" type="uint" grade="established"/>
+  </struct>
+  <struct name="LINE_CNTL" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 20" register="yes" offset="0x4234" access="rw" reset="unknown">
+    <field name="end_type" start="16" size="2" type="uint" grade="established"/>
+    <field name="width" start="0" size="16" type="uint" grade="established"/>
+  </struct>
+  <struct name="LINE_STIPPLE_CONFIG" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 21" register="yes" offset="0x4238" access="rw" reset="unknown">
+    <field name="stipple_scale" start="2" size="30" type="uint" grade="established"/>
+    <field name="line_reset" start="0" size="2" type="uint" grade="established"/>
+  </struct>
+  <struct name="LINE_STIPPLE_VALUE" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 21" register="yes" offset="0x4260" access="rw" reset="unknown">
+    <field name="stipple_value" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="LINE_S0" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 21" register="yes" offset="0x4264" access="rw" reset="unknown">
+    <field name="s0" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="LINE_S1" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 21" register="yes" offset="0x4268" access="rw" reset="unknown">
+    <field name="s1" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="ENHANCE" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 20" register="yes" offset="0x4274" access="rw" reset="unknown">
+    <field name="fastsync_cntl" start="1" size="1" type="uint" grade="established"/>
+    <field name="deadlock_cntl" start="0" size="1" type="uint" grade="established"/>
+  </struct>
+  <struct name="COLOR_CONTROL" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 19" register="yes" offset="0x4278" access="rw" reset="unknown">
+    <field name="provoking_vertex" start="16" size="2" type="uint" grade="established"/>
+    <field name="alpha3_shading" start="14" size="2" type="uint" grade="established"/>
+    <field name="rgb3_shading" start="12" size="2" type="uint" grade="established"/>
+    <field name="alpha2_shading" start="10" size="2" type="uint" grade="established"/>
+    <field name="rgb2_shading" start="8" size="2" type="uint" grade="established"/>
+    <field name="alpha1_shading" start="6" size="2" type="uint" grade="established"/>
+    <field name="rgb1_shading" start="4" size="2" type="uint" grade="established"/>
+    <field name="alpha0_shading" start="2" size="2" type="uint" grade="established"/>
+    <field name="rgb0_shading" start="0" size="2" type="uint" grade="established"/>
+  </struct>
+  <struct name="SOLID_RG" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 24" register="yes" offset="0x427c" access="rw" reset="unknown">
+    <field name="color_red" start="16" size="16" type="uint" grade="established"/>
+    <field name="color_green" start="0" size="16" type="uint" grade="established"/>
+  </struct>
+  <struct name="SOLID_BA" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 24" register="yes" offset="0x4280" access="rw" reset="unknown">
+    <field name="color_blue" start="16" size="16" type="uint" grade="established"/>
+    <field name="color_alpha" start="0" size="16" type="uint" grade="established"/>
+  </struct>
+  <struct name="POLY_MODE" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 23" register="yes" offset="0x4288" access="rw" reset="unknown">
+    <field name="back_ptype" start="7" size="3" type="uint" grade="established"/>
+    <field name="front_ptype" start="4" size="3" type="uint" grade="established"/>
+    <field name="poly_mode" start="0" size="2" type="uint" grade="established"/>
+  </struct>
+  <struct name="ROUND_MODE" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 23" register="yes" offset="0x428c" access="rw" reset="unknown">
+    <field name="alpha_clamp" start="5" size="1" type="uint" grade="established"/>
+    <field name="rgb_clamp" start="4" size="1" type="uint" grade="established"/>
+    <field name="color_round" start="2" size="2" type="uint" grade="established"/>
+    <field name="geometry_round" start="0" size="2" type="uint" grade="established"/>
+  </struct>
+  <struct name="OFFSET" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 22" register="yes" offset="0x4290" access="rw" reset="unknown">
+    <field name="y_offset" start="16" size="16" type="uint" grade="established"/>
+    <field name="x_offset" start="0" size="16" type="uint" grade="established"/>
+  </struct>
+  <struct name="FOG_SCALE" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 20" register="yes" offset="0x4294" access="rw" reset="unknown">
+    <field name="value" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="FOG_OFFSET" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 20" register="yes" offset="0x4298" access="rw" reset="unknown">
+    <field name="value" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+</genxml>

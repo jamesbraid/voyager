@@ -1,0 +1,102 @@
+<?xml version="1.0" ?>
+<!-- generated from devices/cp/registers.toml by defs-gen - do not edit, change the source -->
+<!-- SPDX-License-Identifier: BSD-3-Clause -->
+<!-- defs-gen 2 -->
+<!-- input sha256 292f6629f6377b5166461499fbd6206ddb0589ceeaf9ddb855fae73fe3716ed5 -->
+<genxml unit="cp" prefix="R300_CP" title="command processor registers of the R3xx-class FireGL boards" from="AMD Radeon R5xx Acceleration, revision 1.5">
+  <doc>Command processor registers from AMD's public R5xx acceleration guide, whose command processor chapter is the common R3xx to R5xx design. Registers already defined in the display unit (ring, mode, microcode, status) are not repeated.</doc>
+  <struct name="RB_RPTR_WR" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 153" register="yes" offset="0x71c" access="rw" reset="unknown">
+    <field name="rb_rptr_wr" start="0" size="23" type="uint" grade="established"/>
+  </struct>
+  <struct name="GUI_SRC_ADDR" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 150" register="yes" offset="0x720" access="rw" reset="unknown">
+    <field name="cp_gui_src_addr" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="GUI_DST_ADDR" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 149" register="yes" offset="0x724" access="rw" reset="unknown">
+    <field name="cp_gui_dst_addr" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="GUI_COMMAND" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 149" register="yes" offset="0x728" access="rw" reset="unknown">
+    <field name="cp_gui_command" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="IB2_BASE" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 150" register="yes" offset="0x730" access="rw" reset="unknown">
+    <field name="ib2_base" start="2" size="30" type="uint" grade="established"/>
+  </struct>
+  <struct name="IB2_BUFSZ" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 150" register="yes" offset="0x734" access="rw" reset="unknown">
+    <field name="ib2_bufsz" start="0" size="23" type="uint" grade="established"/>
+  </struct>
+  <struct name="IB_BASE" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 150" register="yes" offset="0x738" access="rw" reset="unknown">
+    <field name="ib_base" start="2" size="30" type="uint" grade="established"/>
+  </struct>
+  <struct name="IB_BUFSZ" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 150" register="yes" offset="0x73c" access="rw" reset="unknown">
+    <field name="ib_bufsz" start="0" size="23" type="uint" grade="established"/>
+  </struct>
+  <struct name="CSQ_MODE" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 148" register="yes" offset="0x744" access="rw" reset="unknown">
+    <field name="csq_primary_enable" start="31" size="1" type="uint" grade="established"/>
+    <field name="csq_primary_mode" start="30" size="1" type="uint" grade="established"/>
+    <field name="csq_indirect1_enable" start="29" size="1" type="uint" grade="established"/>
+    <field name="csq_indirect1_mode" start="28" size="1" type="uint" grade="established"/>
+    <field name="csq_indirect2_enable" start="27" size="1" type="uint" grade="established"/>
+    <field name="csq_indirect2_mode" start="26" size="1" type="uint" grade="established"/>
+    <field name="indirect1_start" start="8" size="7" type="uint" grade="established"/>
+    <field name="indirect2_start" start="0" size="7" type="uint" grade="established"/>
+  </struct>
+  <struct name="RESYNC_ADDR" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 154" register="yes" offset="0x778" access="rw" reset="unknown">
+    <field name="resync_addr" start="0" size="3" type="uint" grade="established"/>
+  </struct>
+  <struct name="RESYNC_DATA" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 154" register="yes" offset="0x77c" access="rw" reset="unknown">
+    <field name="resync_data" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="CSQ_AVAIL" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 148" register="yes" offset="0x7b8" access="rw" reset="unknown">
+    <field name="csq_cnt_indirect2" start="20" size="10" type="uint" grade="established"/>
+    <field name="csq_cnt_indirect" start="10" size="10" type="uint" grade="established"/>
+    <field name="csq_cnt_primary" start="0" size="10" type="uint" grade="established"/>
+  </struct>
+  <struct name="VID_SRC_ADDR" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 155" register="yes" offset="0x7c4" access="rw" reset="unknown">
+    <field name="cp_vid_src_addr" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="VID_DST_ADDR" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 155" register="yes" offset="0x7c8" access="rw" reset="unknown">
+    <field name="cp_vid_dst_addr" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="VID_COMMAND" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 154" register="yes" offset="0x7cc" access="rw" reset="unknown">
+    <field name="cp_vid_command" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="ME_RAM_RADDR" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 151" register="yes" offset="0x7d8" access="rw" reset="unknown">
+    <field name="me_ram_raddr" start="0" size="8" type="uint" grade="established"/>
+  </struct>
+  <struct name="VP_ADDR_CNTL" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 155" register="yes" offset="0x7e8" access="rw" reset="unknown">
+    <field name="ring_vp_fetch" start="9" size="1" type="uint" grade="established"/>
+    <field name="indr1_vp_fetch" start="8" size="1" type="uint" grade="established"/>
+    <field name="indr2_vp_fetch" start="7" size="1" type="uint" grade="established"/>
+    <field name="guidma_vp_rd" start="6" size="1" type="uint" grade="established"/>
+    <field name="guidma_vp_wr" start="5" size="1" type="uint" grade="established"/>
+    <field name="viddma_vp_rd" start="4" size="1" type="uint" grade="established"/>
+    <field name="viddma_vp_wr" start="3" size="1" type="uint" grade="established"/>
+    <field name="rptr_vp_update" start="2" size="1" type="uint" grade="established"/>
+    <field name="scratch_vp_wr" start="1" size="1" type="uint" grade="established"/>
+    <field name="scratch_alt_vp_wr" start="0" size="1" type="uint" grade="established"/>
+  </struct>
+  <struct name="CSQ_ADDR" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 147" register="yes" offset="0x7f0" access="w" reset="unknown">
+    <field name="csq_addr" start="2" size="10" type="uint" grade="established"/>
+  </struct>
+  <struct name="CSQ_DATA" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 148" register="yes" offset="0x7f4" access="r" reset="unknown">
+    <field name="csq_data" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="CSQ_STAT" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 149" register="yes" offset="0x7f8" access="r" reset="unknown">
+    <field name="csq_rptr_indirect" start="20" size="10" type="uint" grade="established"/>
+    <field name="csq_wptr_primary" start="10" size="10" type="uint" grade="established"/>
+    <field name="csq_rptr_primary" start="0" size="10" type="uint" grade="established"/>
+  </struct>
+  <struct name="CSQ2_STAT" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 147" register="yes" offset="0x7fc" access="r" reset="unknown">
+    <field name="csq_wptr_indirect2" start="20" size="10" type="uint" grade="established"/>
+    <field name="csq_rptr_indirect2" start="10" size="10" type="uint" grade="established"/>
+    <field name="csq_wptr_indirect" start="0" size="10" type="uint" grade="established"/>
+  </struct>
+  <struct name="CSQ_APER_PRIMARY" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 147" register="yes" offset="0x1000" access="rw" count="128" stride="4" reset="unknown">
+    <field name="cp_csq_aper_primary" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="CSQ_APER_INDIRECT2" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 147" register="yes" offset="0x1200" access="rw" count="64" stride="4" reset="unknown">
+    <field name="cp_csq_aper_indirect2" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="CSQ_APER_INDIRECT" size="4" grade="established" from="AMD Radeon R5xx Acceleration, revision 1.5, p. 147" register="yes" offset="0x1300" access="rw" count="64" stride="4" reset="unknown">
+    <field name="cp_csq_aper_indirect" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+</genxml>

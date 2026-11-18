@@ -1,0 +1,47 @@
+{
+ "license": "BSD-3-Clause",
+ "generator": "defs-gen 2",
+ "input_sha256": "121d3d64a25ddc59b53ac488a3c0da210fe1d0d5744d583b956791ca012d1ad2",
+ "schema": "defs-flat/1",
+ "source": "devices/rbbm/registers.toml",
+ "profile": "public",
+ "rows": [
+  {
+   "unit": "rbbm",
+   "kind": "register",
+   "name": "isync_cntl",
+   "offset": 5924,
+   "access": "rw",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": "unknown",
+   "grade": "inferred",
+   "from": "Linux drivers/gpu/drm/radeon/r500_reg.h, RADEON_ISYNC_CNTL"
+  },
+  {
+   "unit": "rbbm",
+   "kind": "register",
+   "name": "guicntl",
+   "offset": 5932,
+   "access": "rw",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": "unknown",
+   "grade": "inferred",
+   "from": "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_RBBM_GUICNTL"
+  },
+  {
+   "unit": "rbbm",
+   "kind": "field",
+   "name": "guicntl.host_data_swap",
+   "hi": 1,
+   "lo": 0,
+   "grade": "inferred",
+   "from": "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_RBBM_GUICNTL"
+  }
+ ]
+}

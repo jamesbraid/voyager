@@ -1,0 +1,143 @@
+unit = "sc"
+prefix = "R300_SC"
+title = "scan converter registers (clip rectangles, scissors, Hi-Z enable) of the R300 and R350 3D engine"
+doc = "Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes the R300 and R350. Registers already defined in the display or pipes unit are not repeated."
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0"
+public_from = ["AMD Radeon R3xx 3D Register Reference", "Mesa 20.3.5 r300 driver"]
+name_source = "public"
+name_cite = "AMD Radeon R3xx 3D Register Reference, revision 1.0"
+
+[registers.clip_0_a]
+offset = 0x43b0
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 35"
+
+[registers.clip_0_a.fields]
+xs0 = { bits = [12, 0], grade = "established" }
+ys0 = { bits = [25, 13], grade = "established" }
+
+[registers.clip_0_b]
+offset = 0x43b4
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 35"
+
+[registers.clip_0_b.fields]
+xs1 = { bits = [12, 0], grade = "established" }
+ys1 = { bits = [25, 13], grade = "established" }
+
+[registers.clip_1_a]
+offset = 0x43b8
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 35"
+
+[registers.clip_1_b]
+offset = 0x43bc
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 35"
+
+[registers.clip_2_a]
+offset = 0x43c0
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 35"
+
+[registers.clip_2_b]
+offset = 0x43c4
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 35"
+
+[registers.clip_3_a]
+offset = 0x43c8
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 35"
+
+[registers.clip_3_b]
+offset = 0x43cc
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 36"
+
+[registers.clip_rule]
+offset = 0x43d0
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 36"
+
+[registers.clip_rule.fields]
+clip_rule = { bits = [15, 0], grade = "established" }
+
+[registers.edgerule]
+offset = 0x43a8
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 36"
+
+[registers.edgerule.fields]
+er_tri = { bits = [4, 0], grade = "established" }
+er_point = { bits = [9, 5], grade = "established" }
+er_line_lr = { bits = [14, 10], grade = "established" }
+er_line_rl = { bits = [19, 15], grade = "established" }
+er_line_tb = { bits = [24, 20], grade = "established" }
+er_line_bt = { bits = [29, 25], grade = "established" }
+
+[registers.hyperz_en]
+offset = 0x43a4
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 41"
+
+[registers.hyperz_en.fields]
+hz_en = { bits = [0, 0], grade = "established" }
+hz_max = { bits = [1, 1], grade = "established" }
+hz_adj = { bits = [4, 2], grade = "established" }
+hz_z0min = { bits = [5, 5], grade = "established" }
+hz_z0max = { bits = [6, 6], grade = "established" }
+
+[registers.scissor0]
+offset = 0x43e0
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 42"
+
+[registers.scissor0.fields]
+xs0 = { bits = [12, 0], grade = "established" }
+ys0 = { bits = [25, 13], grade = "established" }
+
+[registers.scissor1]
+offset = 0x43e4
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 42"
+
+[registers.scissor1.fields]
+xs1 = { bits = [12, 0], grade = "established" }
+ys1 = { bits = [25, 13], grade = "established" }
+
+[registers.screendoor]
+offset = 0x43e8
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 42"
+
+[registers.screendoor.fields]
+screendoor = { bits = [23, 0], grade = "established" }

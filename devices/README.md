@@ -4,5 +4,18 @@
 
 | Page | Title | Summary |
 |---|---|---|
+| [cp/](cp/registers.md) | command processor registers of the R3xx-class FireGL boards | Command processor registers from AMD's public R5xx acceleration guide, whose command processor chapter is the common... |
+| [crtc/](crtc/registers.md) | second CRTC, cursor, palette and DAC registers of the R3xx-class FireGL boards | Registers of the second display head and its cursor, the palette port, DAC and panel-link registers beyond those the... |
 | [display/](display/README.md) | display: display, interrupt and engine registers | This unit holds the registers of the R3xx-class FireGL boards (the R300 on the FireGL X1, the R350 on the X2) that... |
+| [ga/](ga/registers.md) | geometry assembly registers of the R300 and R350 3D engine | Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes... |
+| [gart/](gart/registers.md) | AGP and PCI GART registers of the R3xx-class FireGL boards | The chip-side translation of bus addresses: the AGP control word and the PCI GART table registers of the public... |
 | [pipes/](pipes/README.md) | pipes: per-pipe select and Z-buffer registers | This unit holds the registers of the R3xx-class FireGL boards that decide which of the chip's two pixel pipes a... |
+| [rb3d/](rb3d/registers.md) | colour buffer registers of the R300 and R350 3D engine | Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes... |
+| [rbbm/](rbbm/registers.md) | register backbone manager registers of the R3xx-class FireGL boards | Host-visible backbone registers beyond the status, reset and wait registers the display unit already holds. |
+| [rs/](rs/registers.md) | rasteriser interpolator registers of the R300 and R350 3D engine | Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes... |
+| [sc/](sc/registers.md) | scan converter registers (clip rectangles, scissors, Hi-Z enable) of the R300 and R350 3D engine | Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes... |
+| [su/](su/registers.md) | setup unit registers of the R300 and R350 3D engine | Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes... |
+| [tx/](tx/registers.md) | texture unit registers of the R300 and R350 3D engine | Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes... |
+| [us/](us/registers.md) | fragment shader (unified shader) registers of the R300 and R350 3D engine | Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes... |
+| [vap/](vap/registers.md) | vertex array processor and programmable vertex shader registers of the R300 and R350 3D engine | Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes... |
+| [zb/](zb/registers.md) | Z buffer and hierarchical Z registers of the R300 and R350 3D engine | Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes... |

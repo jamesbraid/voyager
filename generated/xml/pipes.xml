@@ -1,5 +1,8 @@
 <?xml version="1.0" ?>
 <!-- generated from devices/pipes/registers.toml by defs-gen - do not edit, change the source -->
+<!-- SPDX-License-Identifier: BSD-3-Clause -->
+<!-- defs-gen 2 -->
+<!-- input sha256 e34450f0e3a1cdb6a394d0c3d5325db659d980425921c14e955301c3fb584e8d -->
 <genxml unit="pipes" prefix="VOYAGER" title="per-pipe select and Z-buffer registers of the R3xx-class FireGL boards" from="AMD Radeon R3xx 3D Register Reference, revision 1.0">
   <doc>Per-pipe destination select, occlusion counters and the hierarchical Z RAM of the R3xx-class boards. The chip has two pixel pipes; the registers below decide which of them a write reaches.</doc>
   <struct name="SU_REG_DEST" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45" register="yes" offset="0x42c8" access="rw" reset="0xf">

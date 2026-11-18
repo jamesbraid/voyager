@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<!-- generated from devices/tx/registers.toml by defs-gen - do not edit, change the source -->
+<!-- SPDX-License-Identifier: BSD-3-Clause -->
+<!-- defs-gen 2 -->
+<!-- input sha256 3182bec562aa83900a02fc72f4b5bb6a3ce852f0d98aaeaf2f0e8b15f70b0ef8 -->
+<genxml unit="tx" prefix="R300_TX" title="texture unit registers of the R300 and R350 3D engine" from="AMD Radeon R3xx 3D Register Reference, revision 1.0">
+  <doc>Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes the R300 and R350. Registers already defined in the display or pipes unit are not repeated.</doc>
+  <struct name="INVALTAGS" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 56" register="yes" offset="0x4100" access="rw" reset="unknown">
+  </struct>
+  <struct name="ENABLE" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 48" register="yes" offset="0x4104" access="rw" reset="unknown">
+    <field name="tex_15_enable" start="15" size="1" type="uint" grade="established"/>
+    <field name="tex_14_enable" start="14" size="1" type="uint" grade="established"/>
+    <field name="tex_13_enable" start="13" size="1" type="uint" grade="established"/>
+    <field name="tex_12_enable" start="12" size="1" type="uint" grade="established"/>
+    <field name="tex_11_enable" start="11" size="1" type="uint" grade="established"/>
+    <field name="tex_10_enable" start="10" size="1" type="uint" grade="established"/>
+    <field name="tex_9_enable" start="9" size="1" type="uint" grade="established"/>
+    <field name="tex_8_enable" start="8" size="1" type="uint" grade="established"/>
+    <field name="tex_7_enable" start="7" size="1" type="uint" grade="established"/>
+    <field name="tex_6_enable" start="6" size="1" type="uint" grade="established"/>
+    <field name="tex_5_enable" start="5" size="1" type="uint" grade="established"/>
+    <field name="tex_4_enable" start="4" size="1" type="uint" grade="established"/>
+    <field name="tex_3_enable" start="3" size="1" type="uint" grade="established"/>
+    <field name="tex_2_enable" start="2" size="1" type="uint" grade="established"/>
+    <field name="tex_1_enable" start="1" size="1" type="uint" grade="established"/>
+    <field name="tex_0_enable" start="0" size="1" type="uint" grade="established"/>
+  </struct>
+  <struct name="FILTER0" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 50" register="yes" offset="0x4400" access="rw" count="16" stride="4" reset="unknown">
+    <field name="id" start="28" size="4" type="uint" grade="established"/>
+    <field name="max_mip_level" start="17" size="4" type="uint" grade="established"/>
+    <field name="vol_filter" start="15" size="2" type="uint" grade="established"/>
+    <field name="mip_filter" start="13" size="2" type="uint" grade="established"/>
+    <field name="min_filter" start="11" size="2" type="uint" grade="established"/>
+    <field name="mag_filter" start="9" size="2" type="uint" grade="established"/>
+    <field name="clamp_r" start="6" size="3" type="uint" grade="established"/>
+    <field name="clamp_t" start="3" size="3" type="uint" grade="established"/>
+    <field name="clamp_s" start="0" size="3" type="uint" grade="established"/>
+  </struct>
+  <struct name="FILTER1" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 51" register="yes" offset="0x4440" access="rw" count="16" stride="4" reset="unknown">
+    <field name="mc_coord_truncate" start="14" size="1" type="uint" grade="established"/>
+    <field name="lod_bias" start="3" size="10" type="uint" grade="established"/>
+    <field name="mc_round" start="2" size="1" type="uint" grade="established"/>
+    <field name="chroma_key_mode" start="0" size="2" type="uint" grade="established"/>
+  </struct>
+  <struct name="FORMAT0" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 52" register="yes" offset="0x4480" access="rw" count="16" stride="4" reset="unknown">
+    <field name="txpitch_en" start="31" size="1" type="uint" grade="established"/>
+    <field name="projected" start="30" size="1" type="uint" grade="established"/>
+    <field name="num_levels" start="26" size="4" type="uint" grade="established"/>
+    <field name="txdepth" start="22" size="4" type="uint" grade="established"/>
+    <field name="txheight" start="11" size="11" type="uint" grade="established"/>
+    <field name="txwidth" start="0" size="11" type="uint" grade="established"/>
+  </struct>
+  <struct name="FORMAT1" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 52" register="yes" offset="0x44c0" access="rw" count="16" stride="4" reset="unknown">
+    <field name="cache" start="27" size="5" type="uint" grade="established"/>
+    <field name="tex_coord_type" start="25" size="2" type="uint" grade="established"/>
+    <field name="swap_yuv" start="24" size="1" type="uint" grade="established"/>
+    <field name="yuv_to_rgb" start="22" size="2" type="uint" grade="established"/>
+    <field name="gamma" start="21" size="1" type="uint" grade="established"/>
+    <field name="sel_blue" start="18" size="3" type="uint" grade="established"/>
+    <field name="sel_green" start="15" size="3" type="uint" grade="established"/>
+    <field name="sel_red" start="12" size="3" type="uint" grade="established"/>
+    <field name="sel_alpha" start="9" size="3" type="uint" grade="established"/>
+    <field name="signed_comp3" start="8" size="1" type="uint" grade="established"/>
+    <field name="signed_comp2" start="7" size="1" type="uint" grade="established"/>
+    <field name="signed_comp1" start="6" size="1" type="uint" grade="established"/>
+    <field name="signed_comp0" start="5" size="1" type="uint" grade="established"/>
+    <field name="txformat" start="0" size="5" type="uint" grade="established"/>
+  </struct>
+  <struct name="FORMAT2" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 56" register="yes" offset="0x4500" access="rw" count="16" stride="4" reset="unknown">
+    <field name="txpitch" start="0" size="14" type="uint" grade="established"/>
+  </struct>
+  <struct name="OFFSET" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 56" register="yes" offset="0x4540" access="rw" count="16" stride="4" reset="unknown">
+    <field name="txoffset" start="5" size="27" type="uint" grade="established"/>
+    <field name="micro_tile" start="3" size="2" type="uint" grade="established"/>
+    <field name="macro_tile" start="2" size="1" type="uint" grade="established"/>
+    <field name="endian_swap" start="0" size="2" type="uint" grade="established"/>
+  </struct>
+  <struct name="CHROMA_KEY" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 48" register="yes" offset="0x4580" access="rw" count="16" stride="4" reset="unknown">
+    <field name="chroma_key" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="BORDER_COLOR" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 48" register="yes" offset="0x45c0" access="rw" count="16" stride="4" reset="unknown">
+    <field name="border_color" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+</genxml>

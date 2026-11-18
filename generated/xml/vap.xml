@@ -1,0 +1,355 @@
+<?xml version="1.0" ?>
+<!-- generated from devices/vap/registers.toml by defs-gen - do not edit, change the source -->
+<!-- SPDX-License-Identifier: BSD-3-Clause -->
+<!-- defs-gen 2 -->
+<!-- input sha256 3b8ae7410ab910f79ca79ae8117cfa7efcb514eb7342b7158f00fc0bf00e96e0 -->
+<genxml unit="vap" prefix="R300_VAP" title="vertex array processor and programmable vertex shader registers of the R300 and R350 3D engine" from="AMD Radeon R3xx 3D Register Reference, revision 1.0">
+  <doc>Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes the R300 and R350. Registers already defined in the display or pipes unit are not repeated.</doc>
+  <struct name="VPORT_XSCALE_ALIAS" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 82" register="yes" offset="0x1d98" access="rw" reset="unknown">
+    <field name="vport_xscale" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="VPORT_XOFFSET_ALIAS" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 82" register="yes" offset="0x1d9c" access="rw" reset="unknown">
+    <field name="vport_xoffset" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="VPORT_YSCALE_ALIAS" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 82" register="yes" offset="0x1da0" access="rw" reset="unknown">
+    <field name="vport_yscale" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="VPORT_YOFFSET_ALIAS" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 82" register="yes" offset="0x1da4" access="rw" reset="unknown">
+    <field name="vport_yoffset" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="VPORT_ZSCALE_ALIAS" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 83" register="yes" offset="0x1da8" access="rw" reset="unknown">
+    <field name="vport_zscale" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="VPORT_ZOFFSET_ALIAS" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 83" register="yes" offset="0x1dac" access="rw" reset="unknown">
+    <field name="vport_zoffset" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="PORT_DATA" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 74" register="yes" offset="0x2000" access="w" count="16" stride="4" reset="unknown">
+    <field name="dataport0" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="PORT_IDX" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 75" register="yes" offset="0x2040" access="w" count="16" stride="4" reset="unknown">
+    <field name="idxport0" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="CNTL" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 71" register="yes" offset="0x2080" access="rw" reset="unknown">
+    <field name="dx_clip_space_def" start="22" size="1" type="uint" grade="established"/>
+    <field name="vf_max_vtx_num" start="18" size="4" type="uint" grade="established"/>
+    <field name="pvs_num_fpus" start="8" size="4" type="uint" grade="established"/>
+    <field name="pvs_num_cntlrs" start="4" size="4" type="uint" grade="established"/>
+    <field name="pvs_num_slots" start="0" size="4" type="uint" grade="established"/>
+  </struct>
+  <struct name="VF_CNTL" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 81" register="yes" offset="0x2084" access="rw" reset="unknown">
+    <field name="num_vertices" start="16" size="16" type="uint" grade="established"/>
+    <field name="dual_index_mode" start="13" size="1" type="uint" grade="established"/>
+    <field name="vtx_reuse_dis" start="12" size="1" type="uint" grade="established"/>
+    <field name="index_size" start="11" size="1" type="uint" grade="established"/>
+    <field name="prim_walk" start="4" size="2" type="uint" grade="established"/>
+    <field name="prim_type" start="0" size="4" type="uint" grade="established"/>
+  </struct>
+  <struct name="OUT_VTX_FMT_0" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 73" register="yes" offset="0x2090" access="rw" reset="unknown">
+    <field name="vtx_pt_size_present" start="16" size="1" type="uint" grade="established"/>
+    <field name="vtx_color_3_present" start="4" size="1" type="uint" grade="established"/>
+    <field name="vtx_color_2_present" start="3" size="1" type="uint" grade="established"/>
+    <field name="vtx_color_1_present" start="2" size="1" type="uint" grade="established"/>
+    <field name="vtx_color_0_present" start="1" size="1" type="uint" grade="established"/>
+    <field name="vtx_pos_present" start="0" size="1" type="uint" grade="established"/>
+  </struct>
+  <struct name="OUT_VTX_FMT_1" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 73" register="yes" offset="0x2094" access="rw" reset="unknown">
+    <field name="tex_7_comp_cnt" start="21" size="3" type="uint" grade="established"/>
+    <field name="tex_6_comp_cnt" start="18" size="3" type="uint" grade="established"/>
+    <field name="tex_5_comp_cnt" start="15" size="3" type="uint" grade="established"/>
+    <field name="tex_4_comp_cnt" start="12" size="3" type="uint" grade="established"/>
+    <field name="tex_3_comp_cnt" start="9" size="3" type="uint" grade="established"/>
+    <field name="tex_2_comp_cnt" start="6" size="3" type="uint" grade="established"/>
+    <field name="tex_1_comp_cnt" start="3" size="3" type="uint" grade="established"/>
+    <field name="tex_0_comp_cnt" start="0" size="3" type="uint" grade="established"/>
+  </struct>
+  <struct name="VPORT_XSCALE" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 82" register="yes" offset="0x2098" access="rw" reset="unknown">
+    <field name="vport_xscale" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="VPORT_XOFFSET" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 82" register="yes" offset="0x209c" access="rw" reset="unknown">
+    <field name="vport_xoffset" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="VPORT_YSCALE" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 82" register="yes" offset="0x20a0" access="rw" reset="unknown">
+    <field name="vport_yscale" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="VPORT_YOFFSET" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 82" register="yes" offset="0x20a4" access="rw" reset="unknown">
+    <field name="vport_yoffset" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="VPORT_ZSCALE" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 83" register="yes" offset="0x20a8" access="rw" reset="unknown">
+    <field name="vport_zscale" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="VPORT_ZOFFSET" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 83" register="yes" offset="0x20ac" access="rw" reset="unknown">
+    <field name="vport_zoffset" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="VTE_CNTL" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 83" register="yes" offset="0x20b0" access="rw" reset="unknown">
+    <field name="serial_proc_ena" start="11" size="1" type="uint" grade="established"/>
+    <field name="vtx_w0_fmt" start="10" size="1" type="uint" grade="established"/>
+    <field name="vtx_z_fmt" start="9" size="1" type="uint" grade="established"/>
+    <field name="vtx_xy_fmt" start="8" size="1" type="uint" grade="established"/>
+    <field name="vport_z_offset_ena" start="5" size="1" type="uint" grade="established"/>
+    <field name="vport_z_scale_ena" start="4" size="1" type="uint" grade="established"/>
+    <field name="vport_y_offset_ena" start="3" size="1" type="uint" grade="established"/>
+    <field name="vport_y_scale_ena" start="2" size="1" type="uint" grade="established"/>
+    <field name="vport_x_offset_ena" start="1" size="1" type="uint" grade="established"/>
+    <field name="vport_x_scale_ena" start="0" size="1" type="uint" grade="established"/>
+  </struct>
+  <struct name="VTX_SIZE" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 85" register="yes" offset="0x20b4" access="rw" reset="unknown">
+    <field name="dwords_per_vtx" start="0" size="7" type="uint" grade="established"/>
+  </struct>
+  <struct name="PORT_DATA_IDX_128" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 75" register="yes" offset="0x20b8" access="w" reset="unknown">
+    <field name="data_idx_port_128" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="VTX_NUM_ARRAYS" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 84" register="yes" offset="0x20c0" access="rw" reset="unknown">
+    <field name="aos_15_fetch_size" start="31" size="1" type="uint" grade="established"/>
+    <field name="aos_14_fetch_size" start="30" size="1" type="uint" grade="established"/>
+    <field name="aos_13_fetch_size" start="29" size="1" type="uint" grade="established"/>
+    <field name="aos_12_fetch_size" start="28" size="1" type="uint" grade="established"/>
+    <field name="aos_11_fetch_size" start="27" size="1" type="uint" grade="established"/>
+    <field name="aos_10_fetch_size" start="26" size="1" type="uint" grade="established"/>
+    <field name="aos_9_fetch_size" start="25" size="1" type="uint" grade="established"/>
+    <field name="aos_8_fetch_size" start="24" size="1" type="uint" grade="established"/>
+    <field name="aos_7_fetch_size" start="23" size="1" type="uint" grade="established"/>
+    <field name="aos_6_fetch_size" start="22" size="1" type="uint" grade="established"/>
+    <field name="aos_5_fetch_size" start="21" size="1" type="uint" grade="established"/>
+    <field name="aos_4_fetch_size" start="20" size="1" type="uint" grade="established"/>
+    <field name="aos_3_fetch_size" start="19" size="1" type="uint" grade="established"/>
+    <field name="aos_2_fetch_size" start="18" size="1" type="uint" grade="established"/>
+    <field name="aos_1_fetch_size" start="17" size="1" type="uint" grade="established"/>
+    <field name="aos_0_fetch_size" start="16" size="1" type="uint" grade="established"/>
+    <field name="vc_force_prefetch" start="5" size="1" type="uint" grade="established"/>
+    <field name="vtx_num_arrays" start="0" size="5" type="uint" grade="established"/>
+  </struct>
+  <struct name="VTX_AOS_ATTR" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 84" register="yes" offset="0x20c4" access="rw" count="8" stride="12" reset="unknown">
+    <field name="vtx_aos_stride1" start="24" size="7" type="uint" grade="established"/>
+    <field name="vtx_aos_count1" start="16" size="7" type="uint" grade="established"/>
+    <field name="vtx_aos_stride0" start="8" size="7" type="uint" grade="established"/>
+    <field name="vtx_aos_count0" start="0" size="7" type="uint" grade="established"/>
+  </struct>
+  <struct name="VTX_AOS_ADDR_EVEN" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 83" register="yes" offset="0x20c8" access="rw" count="8" stride="12" reset="unknown">
+    <field name="vtx_aos_addr0" start="2" size="30" type="uint" grade="established"/>
+  </struct>
+  <struct name="VTX_AOS_ADDR_ODD" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 83" register="yes" offset="0x20cc" access="rw" count="8" stride="12" reset="unknown">
+    <field name="vtx_aos_addr1" start="2" size="30" type="uint" grade="established"/>
+  </struct>
+  <struct name="VF_MAX_VTX_INDX" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 82" register="yes" offset="0x2134" access="rw" reset="unknown">
+  </struct>
+  <struct name="VF_MIN_VTX_INDX" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 82" register="yes" offset="0x2138" access="rw" reset="unknown">
+    <field name="min_indx" start="0" size="24" type="uint" grade="established"/>
+  </struct>
+  <struct name="PROG_STREAM_CNTL" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 75" register="yes" offset="0x2150" access="rw" count="8" stride="4" reset="unknown">
+    <field name="normalize_1" start="31" size="1" type="uint" grade="established"/>
+    <field name="signed_1" start="30" size="1" type="uint" grade="established"/>
+    <field name="last_vec_1" start="29" size="1" type="uint" grade="established"/>
+    <field name="dst_vec_loc_1" start="24" size="5" type="uint" grade="established"/>
+    <field name="skip_dwords_1" start="20" size="4" type="uint" grade="established"/>
+    <field name="normalize_0" start="15" size="1" type="uint" grade="established"/>
+    <field name="signed_0" start="14" size="1" type="uint" grade="established"/>
+    <field name="last_vec_0" start="13" size="1" type="uint" grade="established"/>
+    <field name="dst_vec_loc_0" start="8" size="5" type="uint" grade="established"/>
+    <field name="skip_dwords_0" start="4" size="4" type="uint" grade="established"/>
+    <field name="data_type_0" start="0" size="4" type="uint" grade="established"/>
+  </struct>
+  <struct name="VTX_STATE_CNTL" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 85" register="yes" offset="0x2180" access="rw" reset="unknown">
+    <field name="use_addr_ind_tbl" start="18" size="1" type="uint" grade="established"/>
+    <field name="update_user_color_0_ena" start="16" size="1" type="uint" grade="established"/>
+    <field name="color_7_assembly_cntl" start="14" size="2" type="uint" grade="established"/>
+    <field name="color_6_assembly_cntl" start="12" size="2" type="uint" grade="established"/>
+    <field name="color_5_assembly_cntl" start="10" size="2" type="uint" grade="established"/>
+    <field name="color_4_assembly_cntl" start="8" size="2" type="uint" grade="established"/>
+    <field name="color_3_assembly_cntl" start="6" size="2" type="uint" grade="established"/>
+    <field name="color_2_assembly_cntl" start="4" size="2" type="uint" grade="established"/>
+    <field name="color_1_assembly_cntl" start="2" size="2" type="uint" grade="established"/>
+    <field name="color_0_assembly_cntl" start="0" size="2" type="uint" grade="established"/>
+  </struct>
+  <struct name="PSC_SGN_NORM_CNTL" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 77" register="yes" offset="0x21dc" access="rw" reset="unknown">
+    <field name="sgn_norm_method_15" start="30" size="2" type="uint" grade="established"/>
+    <field name="sgn_norm_method_14" start="28" size="2" type="uint" grade="established"/>
+    <field name="sgn_norm_method_13" start="26" size="2" type="uint" grade="established"/>
+    <field name="sgn_norm_method_12" start="24" size="2" type="uint" grade="established"/>
+    <field name="sgn_norm_method_11" start="22" size="2" type="uint" grade="established"/>
+    <field name="sgn_norm_method_10" start="20" size="2" type="uint" grade="established"/>
+    <field name="sgn_norm_method_9" start="18" size="2" type="uint" grade="established"/>
+    <field name="sgn_norm_method_8" start="16" size="2" type="uint" grade="established"/>
+    <field name="sgn_norm_method_7" start="14" size="2" type="uint" grade="established"/>
+    <field name="sgn_norm_method_6" start="12" size="2" type="uint" grade="established"/>
+    <field name="sgn_norm_method_5" start="10" size="2" type="uint" grade="established"/>
+    <field name="sgn_norm_method_4" start="8" size="2" type="uint" grade="established"/>
+    <field name="sgn_norm_method_3" start="6" size="2" type="uint" grade="established"/>
+    <field name="sgn_norm_method_2" start="4" size="2" type="uint" grade="established"/>
+    <field name="sgn_norm_method_1" start="2" size="2" type="uint" grade="established"/>
+    <field name="sgn_norm_method_0" start="0" size="2" type="uint" grade="established"/>
+  </struct>
+  <struct name="PROG_STREAM_CNTL_EXT" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 76" register="yes" offset="0x21e0" access="rw" count="8" stride="4" reset="unknown">
+    <field name="write_ena_1" start="28" size="4" type="uint" grade="established"/>
+    <field name="swizzle_select_w_1" start="25" size="3" type="uint" grade="established"/>
+    <field name="swizzle_select_z_1" start="22" size="3" type="uint" grade="established"/>
+    <field name="swizzle_select_y_1" start="19" size="3" type="uint" grade="established"/>
+    <field name="swizzle_select_x_1" start="16" size="3" type="uint" grade="established"/>
+    <field name="write_ena_0" start="12" size="4" type="uint" grade="established"/>
+    <field name="swizzle_select_w_0" start="9" size="3" type="uint" grade="established"/>
+    <field name="swizzle_select_z_0" start="6" size="3" type="uint" grade="established"/>
+    <field name="swizzle_select_y_0" start="3" size="3" type="uint" grade="established"/>
+    <field name="swizzle_select_x_0" start="0" size="3" type="uint" grade="established"/>
+  </struct>
+  <struct name="PVS_VECTOR_INDX_REG" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 80" register="yes" offset="0x2200" access="rw" reset="unknown">
+    <field name="octword_offset" start="0" size="11" type="uint" grade="established"/>
+  </struct>
+  <struct name="PVS_VECTOR_DATA_REG" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 80" register="yes" offset="0x2204" access="rw" reset="unknown">
+    <field name="data_register" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="PVS_VECTOR_DATA_REG_128" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 80" register="yes" offset="0x2208" access="w" reset="unknown">
+    <field name="data_register" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="CLIP_CNTL" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 71" register="yes" offset="0x221c" access="rw" reset="unknown">
+    <field name="boundary_edge_flag_ena" start="18" size="1" type="uint" grade="established"/>
+    <field name="ucp_cull_only_ena" start="17" size="1" type="uint" grade="established"/>
+    <field name="clip_disable" start="16" size="1" type="uint" grade="established"/>
+    <field name="ps_ucp_mode" start="14" size="2" type="uint" grade="established"/>
+    <field name="ucp_ena_5" start="5" size="1" type="uint" grade="established"/>
+    <field name="ucp_ena_4" start="4" size="1" type="uint" grade="established"/>
+    <field name="ucp_ena_3" start="3" size="1" type="uint" grade="established"/>
+    <field name="ucp_ena_2" start="2" size="1" type="uint" grade="established"/>
+    <field name="ucp_ena_1" start="1" size="1" type="uint" grade="established"/>
+    <field name="ucp_ena_0" start="0" size="1" type="uint" grade="established"/>
+  </struct>
+  <struct name="GB_VERT_CLIP_ADJ" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 73" register="yes" offset="0x2220" access="rw" reset="unknown">
+    <field name="data_register" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="GB_VERT_DISC_ADJ" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 73" register="yes" offset="0x2224" access="rw" reset="unknown">
+    <field name="data_register" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="GB_HORZ_CLIP_ADJ" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 72" register="yes" offset="0x2228" access="rw" reset="unknown">
+    <field name="data_register" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="GB_HORZ_DISC_ADJ" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 73" register="yes" offset="0x222c" access="rw" reset="unknown">
+    <field name="data_register" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="PVS_FLOW_CNTL_ADDRS" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 78" register="yes" offset="0x2230" access="rw" count="16" stride="4" reset="unknown">
+    <field name="pvs_fc_rtn_inst_0" start="24" size="8" type="uint" grade="established"/>
+    <field name="pvs_fc_last_inst_0" start="16" size="8" type="uint" grade="established"/>
+    <field name="pvs_fc_loop_cnt_jmp_inst_0" start="8" size="8" type="uint" grade="established"/>
+    <field name="pvs_fc_act_adrs_0" start="0" size="8" type="uint" grade="established"/>
+  </struct>
+  <struct name="PVS_STATE_FLUSH_REG" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 80" register="yes" offset="0x2284" access="rw" reset="unknown">
+    <field name="data_register" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="PVS_VTX_TIMEOUT_REG" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 80" register="yes" offset="0x2288" access="rw" reset="unknown">
+  </struct>
+  <struct name="PVS_FLOW_CNTL_LOOP_INDEX" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 79" register="yes" offset="0x2290" access="rw" count="16" stride="4" reset="unknown">
+    <field name="pvs_fc_loop_step_val_0" start="8" size="8" type="uint" grade="established"/>
+    <field name="pvs_fc_loop_init_val_0" start="0" size="8" type="uint" grade="established"/>
+  </struct>
+  <struct name="PVS_CODE_CNTL_0" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 77" register="yes" offset="0x22d0" access="rw" reset="unknown">
+    <field name="pvs_last_inst" start="20" size="10" type="uint" grade="established"/>
+    <field name="pvs_xyzw_valid_inst" start="10" size="10" type="uint" grade="established"/>
+    <field name="pvs_first_inst" start="0" size="10" type="uint" grade="established"/>
+  </struct>
+  <struct name="PVS_CONST_CNTL" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 78" register="yes" offset="0x22d4" access="rw" reset="unknown">
+    <field name="pvs_max_const_addr" start="16" size="8" type="uint" grade="established"/>
+    <field name="pvs_const_base_offset" start="0" size="8" type="uint" grade="established"/>
+  </struct>
+  <struct name="PVS_CODE_CNTL_1" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 78" register="yes" offset="0x22d8" access="rw" reset="unknown">
+    <field name="pvs_last_vtx_src_inst" start="0" size="10" type="uint" grade="established"/>
+  </struct>
+  <struct name="PVS_FLOW_CNTL_OPC" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 79" register="yes" offset="0x22dc" access="rw" reset="unknown">
+    <field name="pvs_fc_opc_15" start="30" size="2" type="uint" grade="established"/>
+    <field name="pvs_fc_opc_14" start="28" size="2" type="uint" grade="established"/>
+    <field name="pvs_fc_opc_13" start="26" size="2" type="uint" grade="established"/>
+    <field name="pvs_fc_opc_12" start="24" size="2" type="uint" grade="established"/>
+    <field name="pvs_fc_opc_11" start="22" size="2" type="uint" grade="established"/>
+    <field name="pvs_fc_opc_10" start="20" size="2" type="uint" grade="established"/>
+    <field name="pvs_fc_opc_9" start="18" size="2" type="uint" grade="established"/>
+    <field name="pvs_fc_opc_8" start="16" size="2" type="uint" grade="established"/>
+    <field name="pvs_fc_opc_7" start="14" size="2" type="uint" grade="established"/>
+    <field name="pvs_fc_opc_6" start="12" size="2" type="uint" grade="established"/>
+    <field name="pvs_fc_opc_5" start="10" size="2" type="uint" grade="established"/>
+    <field name="pvs_fc_opc_4" start="8" size="2" type="uint" grade="established"/>
+    <field name="pvs_fc_opc_3" start="6" size="2" type="uint" grade="established"/>
+    <field name="pvs_fc_opc_2" start="4" size="2" type="uint" grade="established"/>
+    <field name="pvs_fc_opc_1" start="2" size="2" type="uint" grade="established"/>
+    <field name="pvs_fc_opc_0" start="0" size="2" type="uint" grade="established"/>
+  </struct>
+  <struct name="VTX_ST_POS_0_X_4" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 88" register="yes" offset="0x2300" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_POS_0_Y_4" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 89" register="yes" offset="0x2304" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_POS_0_Z_4" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 89" register="yes" offset="0x2308" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_POS_0_W_4" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 88" register="yes" offset="0x230c" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_NORM_0_X" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 87" register="yes" offset="0x2310" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_NORM_0_Y" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 87" register="yes" offset="0x2314" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_NORM_0_Z" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 87" register="yes" offset="0x2318" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_PVMS" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 89" register="yes" offset="0x231c" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_CLR_R" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 86" register="yes" offset="0x2320" access="rw" count="8" stride="16" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_CLR_G" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 86" register="yes" offset="0x2324" access="rw" count="8" stride="16" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_CLR_B" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 86" register="yes" offset="0x2328" access="rw" count="8" stride="16" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_CLR_A" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 86" register="yes" offset="0x232c" access="rw" count="8" stride="16" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_TEX_S" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 90" register="yes" offset="0x23a0" access="rw" count="8" stride="16" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_TEX_T" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 90" register="yes" offset="0x23a4" access="rw" count="8" stride="16" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_TEX_R" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 90" register="yes" offset="0x23a8" access="rw" count="8" stride="16" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_TEX_Q" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 90" register="yes" offset="0x23ac" access="rw" count="8" stride="16" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_PNT_SPRT_SZ" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 88" register="yes" offset="0x2420" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_DISC_FOG" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 87" register="yes" offset="0x2424" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_SHININESS_0" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 89" register="yes" offset="0x2428" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_SHININESS_1" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 90" register="yes" offset="0x242c" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_BLND_WT" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 86" register="yes" offset="0x2430" access="rw" count="4" stride="4" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_POS_1_X" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 89" register="yes" offset="0x2440" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_POS_1_Y" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 89" register="yes" offset="0x2444" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_POS_1_Z" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 89" register="yes" offset="0x2448" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_POS_1_W" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 89" register="yes" offset="0x244c" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_NORM_1_X" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 87" register="yes" offset="0x2450" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_NORM_1_Y" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 87" register="yes" offset="0x2454" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_NORM_1_Z" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 88" register="yes" offset="0x2458" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_EDGE_FLAGS" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 87" register="yes" offset="0x245c" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_USR_CLR_R" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 91" register="yes" offset="0x2460" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_USR_CLR_G" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 90" register="yes" offset="0x2464" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_USR_CLR_B" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 90" register="yes" offset="0x2468" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_USR_CLR_A" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 90" register="yes" offset="0x246c" access="rw" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_CLR_PKD" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 86" register="yes" offset="0x2470" access="w" count="8" stride="4" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_POS_0_X_2" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 88" register="yes" offset="0x2490" access="w" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_POS_0_Y_2" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 88" register="yes" offset="0x2494" access="w" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_NORM_0_PKD" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 87" register="yes" offset="0x2498" access="w" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_USR_CLR_PKD" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 91" register="yes" offset="0x249c" access="w" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_POS_0_X_3" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 88" register="yes" offset="0x24a0" access="w" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_POS_0_Y_3" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 88" register="yes" offset="0x24a4" access="w" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_POS_0_Z_3" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 89" register="yes" offset="0x24a8" access="w" reset="unknown">
+  </struct>
+  <struct name="VTX_ST_END_OF_PKT" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 87" register="yes" offset="0x24ac" access="w" reset="unknown">
+  </struct>
+</genxml>

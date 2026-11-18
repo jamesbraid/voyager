@@ -1,0 +1,232 @@
+unit = "us"
+prefix = "R300_US"
+title = "fragment shader (unified shader) registers of the R300 and R350 3D engine"
+doc = "Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes the R300 and R350. Registers already defined in the display or pipes unit are not repeated."
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0"
+public_from = ["AMD Radeon R3xx 3D Register Reference", "Mesa 20.3.5 r300 driver"]
+name_source = "public"
+name_cite = "AMD Radeon R3xx 3D Register Reference, revision 1.0"
+
+[registers.alu_alpha_addr]
+offset = 0x47c0
+access = "rw"
+width = 32
+count = 64
+stride = 0x4
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 58"
+
+[registers.alu_alpha_addr.fields]
+addr0 = { bits = [5, 0], grade = "established" }
+addr1 = { bits = [11, 6], grade = "established" }
+addr2 = { bits = [17, 12], grade = "established" }
+addrd = { bits = [22, 18], grade = "established" }
+wmask = { bits = [23, 23], grade = "established" }
+omask = { bits = [24, 24], grade = "established" }
+target = { bits = [26, 25], grade = "established" }
+omask_w = { bits = [27, 27], grade = "established" }
+stat_we = { bits = [31, 28], grade = "established" }
+
+[registers.alu_alpha_inst]
+offset = 0x49c0
+access = "rw"
+width = 32
+count = 64
+stride = 0x4
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 59"
+
+[registers.alu_alpha_inst.fields]
+sel_a = { bits = [4, 0], grade = "established" }
+mod_a = { bits = [6, 5], grade = "established" }
+sel_b = { bits = [11, 7], grade = "established" }
+mod_b = { bits = [13, 12], grade = "established" }
+sel_c = { bits = [18, 14], grade = "established" }
+mod_c = { bits = [20, 19], grade = "established" }
+srcp_op = { bits = [22, 21], grade = "established" }
+op = { bits = [26, 23], grade = "established" }
+omod = { bits = [29, 27], grade = "established" }
+clamp = { bits = [30, 30], grade = "established" }
+
+[registers.alu_rgb_addr]
+offset = 0x46c0
+access = "rw"
+width = 32
+count = 64
+stride = 0x4
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 61"
+
+[registers.alu_rgb_addr.fields]
+addr0 = { bits = [5, 0], grade = "established" }
+addr1 = { bits = [11, 6], grade = "established" }
+addr2 = { bits = [17, 12], grade = "established" }
+addrd = { bits = [22, 18], grade = "established" }
+wmask = { bits = [25, 23], grade = "established" }
+omask = { bits = [28, 26], grade = "established" }
+target = { bits = [30, 29], grade = "established" }
+
+[registers.alu_rgb_inst]
+offset = 0x48c0
+access = "rw"
+width = 32
+count = 64
+stride = 0x4
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 62"
+
+[registers.alu_rgb_inst.fields]
+sel_a = { bits = [4, 0], grade = "established" }
+mod_a = { bits = [6, 5], grade = "established" }
+sel_b = { bits = [11, 7], grade = "established" }
+mod_b = { bits = [13, 12], grade = "established" }
+sel_c = { bits = [18, 14], grade = "established" }
+mod_c = { bits = [20, 19], grade = "established" }
+srcp_op = { bits = [22, 21], grade = "established" }
+op = { bits = [26, 23], grade = "established" }
+omod = { bits = [29, 27], grade = "established" }
+clamp = { bits = [30, 30], grade = "established" }
+nop = { bits = [31, 31], grade = "established" }
+
+[registers.code_addr]
+offset = 0x4610
+access = "rw"
+width = 32
+count = 4
+stride = 0x4
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 66"
+
+[registers.code_addr.fields]
+alu_start = { bits = [5, 0], grade = "established" }
+alu_size = { bits = [11, 6], grade = "established" }
+tex_start = { bits = [16, 12], grade = "established" }
+tex_size = { bits = [21, 17], grade = "established" }
+rgba_out = { bits = [22, 22], grade = "established" }
+w_out = { bits = [23, 23], grade = "established" }
+
+[registers.code_offset]
+offset = 0x4608
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 66"
+
+[registers.code_offset.fields]
+alu_offset = { bits = [5, 0], grade = "established" }
+alu_size = { bits = [12, 6], grade = "established" }
+tex_offset = { bits = [17, 13], grade = "established" }
+tex_size = { bits = [23, 18], grade = "established" }
+
+[registers.config]
+offset = 0x4600
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 66"
+
+[registers.config.fields]
+nlevel = { bits = [2, 0], grade = "established" }
+first_tex = { bits = [3, 3], grade = "established" }
+
+[registers.out_fmt]
+offset = 0x46a4
+access = "rw"
+width = 32
+count = 4
+stride = 0x4
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 67"
+
+[registers.out_fmt.fields]
+out_fmt = { bits = [4, 0], grade = "established" }
+c0_sel = { bits = [9, 8], grade = "established" }
+c1_sel = { bits = [11, 10], grade = "established" }
+c2_sel = { bits = [13, 12], grade = "established" }
+c3_sel = { bits = [15, 14], grade = "established" }
+out_sign = { bits = [19, 16], grade = "established" }
+
+[registers.pixsize]
+offset = 0x4604
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 68"
+
+[registers.pixsize.fields]
+pix_size = { bits = [4, 0], grade = "established" }
+
+[registers.tex_inst]
+offset = 0x4620
+access = "rw"
+width = 32
+count = 32
+stride = 0x4
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 68"
+
+[registers.tex_inst.fields]
+src_addr = { bits = [4, 0], grade = "established" }
+dst_addr = { bits = [10, 6], grade = "established" }
+tex_id = { bits = [14, 11], grade = "established" }
+inst = { bits = [17, 15], grade = "established" }
+omod = { bits = [18, 18], grade = "established" }
+
+[registers.w_fmt]
+offset = 0x46b4
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 69"
+
+[registers.w_fmt.fields]
+w_fmt = { bits = [1, 0], grade = "established" }
+w_src = { bits = [2, 2], grade = "established" }
+
+[registers.alu_const_a]
+offset = 0x4c0c
+access = "rw"
+width = 32
+count = 32
+stride = 0x10
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 69"
+
+[registers.alu_const_a.fields]
+ka = { bits = [23, 0], grade = "established" }
+
+[registers.alu_const_b]
+offset = 0x4c08
+access = "rw"
+width = 32
+count = 32
+stride = 0x10
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 69"
+
+[registers.alu_const_b.fields]
+kb = { bits = [23, 0], grade = "established" }
+
+[registers.alu_const_g]
+offset = 0x4c04
+access = "rw"
+width = 32
+count = 32
+stride = 0x10
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 69"
+
+[registers.alu_const_g.fields]
+kg = { bits = [23, 0], grade = "established" }
+
+[registers.alu_const_r]
+offset = 0x4c00
+access = "rw"
+width = 32
+count = 32
+stride = 0x10
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 70"
+
+[registers.alu_const_r.fields]
+kr = { bits = [23, 0], grade = "established" }

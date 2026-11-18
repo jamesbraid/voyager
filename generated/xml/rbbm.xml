@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<!-- generated from devices/rbbm/registers.toml by defs-gen - do not edit, change the source -->
+<!-- SPDX-License-Identifier: BSD-3-Clause -->
+<!-- defs-gen 2 -->
+<!-- input sha256 121d3d64a25ddc59b53ac488a3c0da210fe1d0d5744d583b956791ca012d1ad2 -->
+<genxml unit="rbbm" prefix="R300_RBBM" title="register backbone manager registers of the R3xx-class FireGL boards" from="Linux drivers/gpu/drm/radeon/radeon_reg.h">
+  <doc>Host-visible backbone registers beyond the status, reset and wait registers the display unit already holds. Names and offsets come from the public Linux radeon header, so the grade is inferred; no shipped IRIX binary read here uses them.</doc>
+  <struct name="ISYNC_CNTL" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/r500_reg.h, RADEON_ISYNC_CNTL" register="yes" offset="0x1724" access="rw" reset="unknown">
+  </struct>
+  <struct name="GUICNTL" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_RBBM_GUICNTL" register="yes" offset="0x172c" access="rw" reset="unknown">
+    <field name="host_data_swap" start="0" size="2" type="uint" grade="inferred"/>
+  </struct>
+</genxml>

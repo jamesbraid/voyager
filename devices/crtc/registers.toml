@@ -1,0 +1,274 @@
+unit = "crtc"
+prefix = "R300_CRTC"
+title = "second CRTC, cursor, palette and DAC registers of the R3xx-class FireGL boards"
+doc = "Registers of the second display head and its cursor, the palette port, DAC and panel-link registers beyond those the display unit holds. Names and offsets come from the public Linux radeon header, so the grade is inferred; bit layouts are not carried. Whether IRIX programs each one is read in the display notes where it does."
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h"
+public_from = ["Linux drivers/gpu/drm/radeon"]
+name_source = "public"
+name_cite = "Linux drivers/gpu/drm/radeon/radeon_reg.h"
+
+[registers.crtc_pitch]
+offset = 0x22c
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC_PITCH"
+
+[registers.crtc_offset]
+offset = 0x224
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC_OFFSET"
+
+[registers.crtc_offset_right]
+offset = 0x220
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC_OFFSET_RIGHT"
+
+[registers.crtc_vline_crnt_vline]
+offset = 0x210
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC_VLINE_CRNT_VLINE"
+
+[registers.crtc_crnt_frame]
+offset = 0x214
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC_CRNT_FRAME"
+
+[registers.crtc_gui_trig_vline]
+offset = 0x218
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC_GUI_TRIG_VLINE"
+
+[registers.crtc2_h_total_disp]
+offset = 0x300
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_H_TOTAL_DISP"
+
+[registers.crtc2_h_sync_strt_wid]
+offset = 0x304
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_H_SYNC_STRT_WID"
+
+[registers.crtc2_v_total_disp]
+offset = 0x308
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_V_TOTAL_DISP"
+
+[registers.crtc2_v_sync_strt_wid]
+offset = 0x30c
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_V_SYNC_STRT_WID"
+
+[registers.crtc2_vline_crnt_vline]
+offset = 0x310
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_VLINE_CRNT_VLINE"
+
+[registers.crtc2_crnt_frame]
+offset = 0x314
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_CRNT_FRAME"
+
+[registers.crtc2_gui_trig_vline]
+offset = 0x318
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_GUI_TRIG_VLINE"
+
+[registers.crtc2_offset]
+offset = 0x324
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_OFFSET"
+
+[registers.crtc2_offset_cntl]
+offset = 0x328
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_OFFSET_CNTL"
+
+[registers.crtc2_pitch]
+offset = 0x32c
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_PITCH"
+
+[registers.crtc2_status]
+offset = 0x3fc
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_STATUS"
+
+[registers.cur_offset]
+offset = 0x260
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR_OFFSET"
+
+[registers.cur_horz_vert_posn]
+offset = 0x264
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR_HORZ_VERT_POSN"
+
+[registers.cur_horz_vert_off]
+offset = 0x268
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR_HORZ_VERT_OFF"
+
+[registers.cur_clr0]
+offset = 0x26c
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR_CLR0"
+
+[registers.cur_clr1]
+offset = 0x270
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR_CLR1"
+
+[registers.cur2_offset]
+offset = 0x360
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR2_OFFSET"
+
+[registers.cur2_horz_vert_posn]
+offset = 0x364
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR2_HORZ_VERT_POSN"
+
+[registers.cur2_horz_vert_off]
+offset = 0x368
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR2_HORZ_VERT_OFF"
+
+[registers.cur2_clr0]
+offset = 0x36c
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR2_CLR0"
+
+[registers.cur2_clr1]
+offset = 0x370
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR2_CLR1"
+
+[registers.palette_index]
+offset = 0xb0
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_PALETTE_INDEX"
+
+[registers.palette_data]
+offset = 0xb4
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_PALETTE_DATA"
+
+[registers.dac_macro_cntl]
+offset = 0xd04
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_DAC_MACRO_CNTL"
+
+[registers.disp_misc_cntl]
+offset = 0xd00
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_DISP_MISC_CNTL"
+
+[registers.disp_pwr_man]
+offset = 0xd08
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_DISP_PWR_MAN"
+
+[registers.disp_output_cntl]
+offset = 0xd64
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_DISP_OUTPUT_CNTL"
+
+[registers.fp_gen_cntl]
+offset = 0x284
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_FP_GEN_CNTL"
+
+[registers.fp_h_sync_strt_wid]
+offset = 0x2c4
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_FP_H_SYNC_STRT_WID"
+
+[registers.fp_v_sync_strt_wid]
+offset = 0x2c8
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_FP_V_SYNC_STRT_WID"
+
+[registers.fp_horz_stretch]
+offset = 0x28c
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_FP_HORZ_STRETCH"
+
+[registers.fp_vert_stretch]
+offset = 0x290
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_FP_VERT_STRETCH"

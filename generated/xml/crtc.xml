@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<!-- generated from devices/crtc/registers.toml by defs-gen - do not edit, change the source -->
+<!-- SPDX-License-Identifier: BSD-3-Clause -->
+<!-- defs-gen 2 -->
+<!-- input sha256 8de5d72a19c60f074396ab93989685d8a6b14d2556e8c6fa2415d67524c77b30 -->
+<genxml unit="crtc" prefix="R300_CRTC" title="second CRTC, cursor, palette and DAC registers of the R3xx-class FireGL boards" from="Linux drivers/gpu/drm/radeon/radeon_reg.h">
+  <doc>Registers of the second display head and its cursor, the palette port, DAC and panel-link registers beyond those the display unit holds. Names and offsets come from the public Linux radeon header, so the grade is inferred; bit layouts are not carried. Whether IRIX programs each one is read in the display notes where it does.</doc>
+  <struct name="PALETTE_INDEX" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_PALETTE_INDEX" register="yes" offset="0xb0" access="rw" reset="unknown">
+  </struct>
+  <struct name="PALETTE_DATA" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_PALETTE_DATA" register="yes" offset="0xb4" access="rw" reset="unknown">
+  </struct>
+  <struct name="CRTC_VLINE_CRNT_VLINE" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC_VLINE_CRNT_VLINE" register="yes" offset="0x210" access="rw" reset="unknown">
+  </struct>
+  <struct name="CRTC_CRNT_FRAME" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC_CRNT_FRAME" register="yes" offset="0x214" access="rw" reset="unknown">
+  </struct>
+  <struct name="CRTC_GUI_TRIG_VLINE" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC_GUI_TRIG_VLINE" register="yes" offset="0x218" access="rw" reset="unknown">
+  </struct>
+  <struct name="CRTC_OFFSET_RIGHT" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC_OFFSET_RIGHT" register="yes" offset="0x220" access="rw" reset="unknown">
+  </struct>
+  <struct name="CRTC_OFFSET" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC_OFFSET" register="yes" offset="0x224" access="rw" reset="unknown">
+  </struct>
+  <struct name="CRTC_PITCH" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC_PITCH" register="yes" offset="0x22c" access="rw" reset="unknown">
+  </struct>
+  <struct name="CUR_OFFSET" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR_OFFSET" register="yes" offset="0x260" access="rw" reset="unknown">
+  </struct>
+  <struct name="CUR_HORZ_VERT_POSN" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR_HORZ_VERT_POSN" register="yes" offset="0x264" access="rw" reset="unknown">
+  </struct>
+  <struct name="CUR_HORZ_VERT_OFF" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR_HORZ_VERT_OFF" register="yes" offset="0x268" access="rw" reset="unknown">
+  </struct>
+  <struct name="CUR_CLR0" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR_CLR0" register="yes" offset="0x26c" access="rw" reset="unknown">
+  </struct>
+  <struct name="CUR_CLR1" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR_CLR1" register="yes" offset="0x270" access="rw" reset="unknown">
+  </struct>
+  <struct name="FP_GEN_CNTL" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_FP_GEN_CNTL" register="yes" offset="0x284" access="rw" reset="unknown">
+  </struct>
+  <struct name="FP_HORZ_STRETCH" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_FP_HORZ_STRETCH" register="yes" offset="0x28c" access="rw" reset="unknown">
+  </struct>
+  <struct name="FP_VERT_STRETCH" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_FP_VERT_STRETCH" register="yes" offset="0x290" access="rw" reset="unknown">
+  </struct>
+  <struct name="FP_H_SYNC_STRT_WID" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_FP_H_SYNC_STRT_WID" register="yes" offset="0x2c4" access="rw" reset="unknown">
+  </struct>
+  <struct name="FP_V_SYNC_STRT_WID" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_FP_V_SYNC_STRT_WID" register="yes" offset="0x2c8" access="rw" reset="unknown">
+  </struct>
+  <struct name="CRTC2_H_TOTAL_DISP" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_H_TOTAL_DISP" register="yes" offset="0x300" access="rw" reset="unknown">
+  </struct>
+  <struct name="CRTC2_H_SYNC_STRT_WID" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_H_SYNC_STRT_WID" register="yes" offset="0x304" access="rw" reset="unknown">
+  </struct>
+  <struct name="CRTC2_V_TOTAL_DISP" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_V_TOTAL_DISP" register="yes" offset="0x308" access="rw" reset="unknown">
+  </struct>
+  <struct name="CRTC2_V_SYNC_STRT_WID" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_V_SYNC_STRT_WID" register="yes" offset="0x30c" access="rw" reset="unknown">
+  </struct>
+  <struct name="CRTC2_VLINE_CRNT_VLINE" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_VLINE_CRNT_VLINE" register="yes" offset="0x310" access="rw" reset="unknown">
+  </struct>
+  <struct name="CRTC2_CRNT_FRAME" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_CRNT_FRAME" register="yes" offset="0x314" access="rw" reset="unknown">
+  </struct>
+  <struct name="CRTC2_GUI_TRIG_VLINE" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_GUI_TRIG_VLINE" register="yes" offset="0x318" access="rw" reset="unknown">
+  </struct>
+  <struct name="CRTC2_OFFSET" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_OFFSET" register="yes" offset="0x324" access="rw" reset="unknown">
+  </struct>
+  <struct name="CRTC2_OFFSET_CNTL" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_OFFSET_CNTL" register="yes" offset="0x328" access="rw" reset="unknown">
+  </struct>
+  <struct name="CRTC2_PITCH" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_PITCH" register="yes" offset="0x32c" access="rw" reset="unknown">
+  </struct>
+  <struct name="CUR2_OFFSET" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR2_OFFSET" register="yes" offset="0x360" access="rw" reset="unknown">
+  </struct>
+  <struct name="CUR2_HORZ_VERT_POSN" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR2_HORZ_VERT_POSN" register="yes" offset="0x364" access="rw" reset="unknown">
+  </struct>
+  <struct name="CUR2_HORZ_VERT_OFF" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR2_HORZ_VERT_OFF" register="yes" offset="0x368" access="rw" reset="unknown">
+  </struct>
+  <struct name="CUR2_CLR0" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR2_CLR0" register="yes" offset="0x36c" access="rw" reset="unknown">
+  </struct>
+  <struct name="CUR2_CLR1" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CUR2_CLR1" register="yes" offset="0x370" access="rw" reset="unknown">
+  </struct>
+  <struct name="CRTC2_STATUS" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_CRTC2_STATUS" register="yes" offset="0x3fc" access="rw" reset="unknown">
+  </struct>
+  <struct name="DISP_MISC_CNTL" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_DISP_MISC_CNTL" register="yes" offset="0xd00" access="rw" reset="unknown">
+  </struct>
+  <struct name="DAC_MACRO_CNTL" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_DAC_MACRO_CNTL" register="yes" offset="0xd04" access="rw" reset="unknown">
+  </struct>
+  <struct name="DISP_PWR_MAN" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_DISP_PWR_MAN" register="yes" offset="0xd08" access="rw" reset="unknown">
+  </struct>
+  <struct name="DISP_OUTPUT_CNTL" size="4" grade="inferred" from="Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_DISP_OUTPUT_CNTL" register="yes" offset="0xd64" access="rw" reset="unknown">
+  </struct>
+</genxml>

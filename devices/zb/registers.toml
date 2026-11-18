@@ -1,0 +1,175 @@
+unit = "zb"
+prefix = "R300_ZB"
+title = "Z buffer and hierarchical Z registers of the R300 and R350 3D engine"
+doc = "Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes the R300 and R350. Registers already defined in the display or pipes unit are not repeated."
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0"
+public_from = ["AMD Radeon R3xx 3D Register Reference", "Mesa 20.3.5 r300 driver"]
+name_source = "public"
+name_cite = "AMD Radeon R3xx 3D Register Reference, revision 1.0"
+
+[registers.cntl]
+offset = 0x4f00
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 93"
+
+[registers.cntl.fields]
+stencil_enable = { bits = [0, 0], grade = "established" }
+z_enable = { bits = [1, 1], grade = "established" }
+zwriteenable = { bits = [2, 2], grade = "established" }
+zsigned_compare = { bits = [3, 3], grade = "established" }
+stencil_front_back = { bits = [4, 4], grade = "established" }
+
+[registers.depthclearvalue]
+offset = 0x4f28
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 93"
+
+[registers.depthclearvalue.fields]
+depthclearvalue = { bits = [31, 0], grade = "established" }
+
+[registers.depthoffset]
+offset = 0x4f20
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 94"
+
+[registers.depthoffset.fields]
+depthoffset = { bits = [31, 5], grade = "established" }
+
+[registers.depthpitch]
+offset = 0x4f24
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 94"
+
+[registers.depthpitch.fields]
+depthpitch = { bits = [13, 2], grade = "established" }
+depthmacrotile = { bits = [16, 16], grade = "established" }
+depthmicrotile = { bits = [18, 17], grade = "established" }
+depthendian = { bits = [20, 19], grade = "established" }
+
+[registers.depthxy_offset]
+offset = 0x4f60
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 94"
+
+[registers.depthxy_offset.fields]
+depthx_offset = { bits = [11, 1], grade = "established" }
+depthy_offset = { bits = [27, 17], grade = "established" }
+
+[registers.format]
+offset = 0x4f10
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 95"
+
+[registers.format.fields]
+depthformat = { bits = [3, 0], grade = "established" }
+invert = { bits = [4, 4], grade = "established" }
+peq8 = { bits = [5, 5], grade = "established" }
+
+[registers.stencilrefmask]
+offset = 0x4f08
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 96"
+
+[registers.stencilrefmask.fields]
+stencilref = { bits = [7, 0], grade = "established" }
+stencilmask = { bits = [15, 8], grade = "established" }
+stencilwritemask = { bits = [23, 16], grade = "established" }
+
+[registers.zcache_ctlstat]
+offset = 0x4f18
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 97"
+
+[registers.zcache_ctlstat.fields]
+zc_flush = { bits = [0, 0], grade = "established" }
+zc_free = { bits = [1, 1], grade = "established" }
+zc_busy = { bits = [31, 31], grade = "established" }
+
+[registers.zstencilcntl]
+offset = 0x4f04
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 98"
+
+[registers.zstencilcntl.fields]
+zfunc = { bits = [2, 0], grade = "established" }
+stencilfunc = { bits = [5, 3], grade = "established" }
+stencilfail = { bits = [8, 6], grade = "established" }
+stencilzpass = { bits = [11, 9], grade = "established" }
+stencilzfail = { bits = [14, 12], grade = "established" }
+stencilfunc_bf = { bits = [17, 15], grade = "established" }
+stencilfail_bf = { bits = [20, 18], grade = "established" }
+stencilzpass_bf = { bits = [23, 21], grade = "established" }
+stencilzfail_bf = { bits = [26, 24], grade = "established" }
+
+[registers.ztop]
+offset = 0x4f14
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 99"
+
+[registers.ztop.fields]
+ztop = { bits = [0, 0], grade = "established" }
+
+[registers.zmask_offset]
+offset = 0x4f30
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Mesa 20.3.5 r300 driver, r300_reg.h, R300_ZB_ZMASK_OFFSET"
+name_source = "public"
+name_cite = "Mesa 20.3.5 r300 driver, r300_reg.h"
+
+[registers.zmask_pitch]
+offset = 0x4f34
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Mesa 20.3.5 r300 driver, r300_reg.h, R300_ZB_ZMASK_PITCH"
+name_source = "public"
+name_cite = "Mesa 20.3.5 r300 driver, r300_reg.h"
+
+[registers.zmask_wrindex]
+offset = 0x4f38
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Mesa 20.3.5 r300 driver, r300_reg.h, R300_ZB_ZMASK_WRINDEX"
+name_source = "public"
+name_cite = "Mesa 20.3.5 r300 driver, r300_reg.h"
+
+[registers.zmask_dword]
+offset = 0x4f3c
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Mesa 20.3.5 r300 driver, r300_reg.h, R300_ZB_ZMASK_DWORD"
+name_source = "public"
+name_cite = "Mesa 20.3.5 r300 driver, r300_reg.h"
+
+[registers.zmask_rdindex]
+offset = 0x4f40
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Mesa 20.3.5 r300 driver, r300_reg.h, R300_ZB_ZMASK_RDINDEX"
+name_source = "public"
+name_cite = "Mesa 20.3.5 r300 driver, r300_reg.h"

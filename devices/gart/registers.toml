@@ -1,0 +1,50 @@
+unit = "gart"
+prefix = "R300_GART"
+title = "AGP and PCI GART registers of the R3xx-class FireGL boards"
+doc = "The chip-side translation of bus addresses: the AGP control word and the PCI GART table registers of the public Linux driver. The shipped IRIX driver parks the aperture and never touches the table registers, so these describe the chip for a guest that uses them, not what IRIX does."
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h"
+public_from = ["Linux drivers/gpu/drm/radeon"]
+name_source = "public"
+name_cite = "Linux drivers/gpu/drm/radeon/radeon_reg.h"
+
+[registers.agp_cntl]
+offset = 0x174
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_AGP_CNTL"
+
+[registers.agp_cntl.fields]
+aperture_size = { bits = [5, 0], grade = "inferred" }
+
+[registers.aic_cntl]
+offset = 0x1d0
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_AIC_CNTL"
+
+[registers.aic_cntl.fields]
+pcigart_translate_en = { bits = [0, 0], grade = "inferred" }
+dis_out_of_pci_gart_access = { bits = [1, 1], grade = "inferred" }
+
+[registers.aic_pt_base]
+offset = 0x1d8
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_AIC_PT_BASE"
+
+[registers.aic_lo_addr]
+offset = 0x1dc
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_AIC_LO_ADDR"
+
+[registers.aic_hi_addr]
+offset = 0x1e0
+access = "rw"
+width = 32
+grade = "inferred"
+from = "Linux drivers/gpu/drm/radeon/radeon_reg.h, RADEON_AIC_HI_ADDR"

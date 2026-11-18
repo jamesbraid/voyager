@@ -1,0 +1,523 @@
+{
+ "license": "BSD-3-Clause",
+ "generator": "defs-gen 2",
+ "input_sha256": "27e3a56aa0329a5f09ed7dc6f590fcc82a75e49b2b88a9c924ec399bc0eb3377",
+ "schema": "defs-flat/1",
+ "source": "devices/su/registers.toml",
+ "profile": "public",
+ "rows": [
+  {
+   "unit": "su",
+   "kind": "register",
+   "name": "tex_wrap",
+   "offset": 17056,
+   "access": "rw",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": "unknown",
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t7c3",
+   "hi": 31,
+   "lo": 31,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t7c2",
+   "hi": 30,
+   "lo": 30,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t7c1",
+   "hi": 29,
+   "lo": 29,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t7c0",
+   "hi": 28,
+   "lo": 28,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t6c3",
+   "hi": 27,
+   "lo": 27,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t6c2",
+   "hi": 26,
+   "lo": 26,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t6c1",
+   "hi": 25,
+   "lo": 25,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t6c0",
+   "hi": 24,
+   "lo": 24,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t5c3",
+   "hi": 23,
+   "lo": 23,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t5c2",
+   "hi": 22,
+   "lo": 22,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t5c1",
+   "hi": 21,
+   "lo": 21,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t5c0",
+   "hi": 20,
+   "lo": 20,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t4c3",
+   "hi": 19,
+   "lo": 19,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t4c2",
+   "hi": 18,
+   "lo": 18,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t4c1",
+   "hi": 17,
+   "lo": 17,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t4c0",
+   "hi": 16,
+   "lo": 16,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t3c3",
+   "hi": 15,
+   "lo": 15,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t3c2",
+   "hi": 14,
+   "lo": 14,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t3c1",
+   "hi": 13,
+   "lo": 13,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t3c0",
+   "hi": 12,
+   "lo": 12,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t2c3",
+   "hi": 11,
+   "lo": 11,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t2c2",
+   "hi": 10,
+   "lo": 10,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t2c1",
+   "hi": 9,
+   "lo": 9,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t2c0",
+   "hi": 8,
+   "lo": 8,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t1c3",
+   "hi": 7,
+   "lo": 7,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t1c2",
+   "hi": 6,
+   "lo": 6,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t1c1",
+   "hi": 5,
+   "lo": 5,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t1c0",
+   "hi": 4,
+   "lo": 4,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t0c3",
+   "hi": 3,
+   "lo": 3,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t0c2",
+   "hi": 2,
+   "lo": 2,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t0c1",
+   "hi": 1,
+   "lo": 1,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "tex_wrap.t0c0",
+   "hi": 0,
+   "lo": 0,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 45"
+  },
+  {
+   "unit": "su",
+   "kind": "register",
+   "name": "poly_offset_front_scale",
+   "offset": 17060,
+   "access": "rw",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": "unknown",
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 44"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "poly_offset_front_scale.scale",
+   "hi": 31,
+   "lo": 0,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 44"
+  },
+  {
+   "unit": "su",
+   "kind": "register",
+   "name": "poly_offset_front_offset",
+   "offset": 17064,
+   "access": "rw",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": "unknown",
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 44"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "poly_offset_front_offset.offset",
+   "hi": 31,
+   "lo": 0,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 44"
+  },
+  {
+   "unit": "su",
+   "kind": "register",
+   "name": "poly_offset_back_scale",
+   "offset": 17068,
+   "access": "rw",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": "unknown",
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 44"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "poly_offset_back_scale.scale",
+   "hi": 31,
+   "lo": 0,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 44"
+  },
+  {
+   "unit": "su",
+   "kind": "register",
+   "name": "poly_offset_back_offset",
+   "offset": 17072,
+   "access": "rw",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": "unknown",
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 43"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "poly_offset_back_offset.offset",
+   "hi": 31,
+   "lo": 0,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 43"
+  },
+  {
+   "unit": "su",
+   "kind": "register",
+   "name": "poly_offset_enable",
+   "offset": 17076,
+   "access": "rw",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": "unknown",
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 44"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "poly_offset_enable.para_enable",
+   "hi": 2,
+   "lo": 2,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 44"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "poly_offset_enable.back_enable",
+   "hi": 1,
+   "lo": 1,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 44"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "poly_offset_enable.front_enable",
+   "hi": 0,
+   "lo": 0,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 44"
+  },
+  {
+   "unit": "su",
+   "kind": "register",
+   "name": "cull_mode",
+   "offset": 17080,
+   "access": "rw",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": "unknown",
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 43"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "cull_mode.face",
+   "hi": 2,
+   "lo": 2,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 43"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "cull_mode.cull_back",
+   "hi": 1,
+   "lo": 1,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 43"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "cull_mode.cull_front",
+   "hi": 0,
+   "lo": 0,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 43"
+  },
+  {
+   "unit": "su",
+   "kind": "register",
+   "name": "depth_scale",
+   "offset": 17088,
+   "access": "rw",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": "unknown",
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 43"
+  },
+  {
+   "unit": "su",
+   "kind": "register",
+   "name": "depth_offset",
+   "offset": 17092,
+   "access": "rw",
+   "width": 32,
+   "count": 1,
+   "stride": 4,
+   "space": null,
+   "reset": "unknown",
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 43"
+  },
+  {
+   "unit": "su",
+   "kind": "field",
+   "name": "depth_offset.offset",
+   "hi": 31,
+   "lo": 0,
+   "grade": "established",
+   "from": "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 43"
+  }
+ ]
+}

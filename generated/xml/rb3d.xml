@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<!-- generated from devices/rb3d/registers.toml by defs-gen - do not edit, change the source -->
+<!-- SPDX-License-Identifier: BSD-3-Clause -->
+<!-- defs-gen 2 -->
+<!-- input sha256 9bbc7124c5c41069a98513ea953dc08a33aaca0f429eb5e4385d8eaaedbf9edb -->
+<genxml unit="rb3d" prefix="R300_RB3D" title="colour buffer registers of the R300 and R350 3D engine" from="AMD Radeon R3xx 3D Register Reference, revision 1.0">
+  <doc>Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes the R300 and R350. Registers already defined in the display or pipes unit are not repeated.</doc>
+  <struct name="CCTL" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 12" register="yes" offset="0x4e00" access="rw" reset="unknown">
+    <field name="reserved" start="10" size="1" type="uint" grade="established"/>
+    <field name="aa_compression_enable" start="9" size="1" type="uint" grade="established"/>
+    <field name="clrcmp_flipe_enable" start="7" size="1" type="uint" grade="established"/>
+    <field name="num_multiwrites" start="5" size="2" type="uint" grade="established"/>
+  </struct>
+  <struct name="BLENDCNTL" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 8" register="yes" offset="0x4e04" access="rw" reset="unknown">
+    <field name="destblend" start="24" size="6" type="uint" grade="established"/>
+    <field name="srcblend" start="16" size="6" type="uint" grade="established"/>
+    <field name="comb_fcn" start="12" size="3" type="uint" grade="established"/>
+    <field name="discard_src_pixels" start="3" size="3" type="uint" grade="established"/>
+    <field name="read_enable" start="2" size="1" type="uint" grade="established"/>
+    <field name="separate_alpha_enable" start="1" size="1" type="uint" grade="established"/>
+    <field name="alpha_blend_enable" start="0" size="1" type="uint" grade="established"/>
+  </struct>
+  <struct name="ABLENDCNTL" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 5" register="yes" offset="0x4e08" access="rw" reset="unknown">
+    <field name="destblend" start="24" size="6" type="uint" grade="established"/>
+    <field name="srcblend" start="16" size="6" type="uint" grade="established"/>
+    <field name="comb_fcn" start="12" size="3" type="uint" grade="established"/>
+  </struct>
+  <struct name="COLOR_CHANNEL_MASK" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 14" register="yes" offset="0x4e0c" access="rw" reset="unknown">
+    <field name="alpha_mask" start="3" size="1" type="uint" grade="established"/>
+    <field name="red_mask" start="2" size="1" type="uint" grade="established"/>
+    <field name="green_mask" start="1" size="1" type="uint" grade="established"/>
+    <field name="blue_mask" start="0" size="1" type="uint" grade="established"/>
+  </struct>
+  <struct name="CONSTANT_COLOR" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 15" register="yes" offset="0x4e10" access="rw" reset="unknown">
+    <field name="alpha" start="24" size="8" type="uint" grade="established"/>
+    <field name="red" start="16" size="8" type="uint" grade="established"/>
+    <field name="green" start="8" size="8" type="uint" grade="established"/>
+    <field name="blue" start="0" size="8" type="uint" grade="established"/>
+  </struct>
+  <struct name="COLOR_CLEAR_VALUE" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 15" register="yes" offset="0x4e14" access="rw" reset="unknown">
+  </struct>
+  <struct name="ROPCNTL" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 16" register="yes" offset="0x4e18" access="rw" reset="unknown">
+    <field name="rop" start="8" size="4" type="uint" grade="established"/>
+    <field name="rop_enable" start="2" size="1" type="uint" grade="established"/>
+  </struct>
+  <struct name="CLRCMP_FLIPE" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 13" register="yes" offset="0x4e1c" access="rw" reset="unknown">
+    <field name="clrcmp_flipe" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="CLRCMP_CLR" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 12" register="yes" offset="0x4e20" access="rw" reset="unknown">
+    <field name="clrcmp_clr" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="CLRCMP_MSK" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 13" register="yes" offset="0x4e24" access="rw" reset="unknown">
+    <field name="clrcmp_msk" start="0" size="32" type="uint" grade="established"/>
+  </struct>
+  <struct name="COLOROFFSET" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 13" register="yes" offset="0x4e28" access="rw" count="4" stride="4" reset="unknown">
+    <field name="coloroffset" start="5" size="27" type="uint" grade="established"/>
+  </struct>
+  <struct name="COLORPITCH" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 13" register="yes" offset="0x4e38" access="rw" count="4" stride="4" reset="unknown">
+    <field name="colorformat" start="21" size="4" type="uint" grade="established"/>
+    <field name="colorendian" start="19" size="2" type="uint" grade="established"/>
+    <field name="colormicrotile" start="17" size="2" type="uint" grade="established"/>
+    <field name="colortile" start="16" size="1" type="uint" grade="established"/>
+    <field name="colorpitch" start="1" size="13" type="uint" grade="established"/>
+  </struct>
+  <struct name="DSTCACHE_CTLSTAT" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 15" register="yes" offset="0x4e4c" access="rw" reset="unknown">
+    <field name="dc_finish" start="4" size="1" type="uint" grade="established"/>
+    <field name="dc_free" start="2" size="2" type="uint" grade="established"/>
+    <field name="dc_flush" start="0" size="2" type="uint" grade="established"/>
+  </struct>
+  <struct name="DITHER_CTL" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 15" register="yes" offset="0x4e50" access="rw" reset="unknown">
+    <field name="alpha_dither_mode" start="2" size="2" type="uint" grade="established"/>
+    <field name="dither_mode" start="0" size="2" type="uint" grade="established"/>
+  </struct>
+  <struct name="CMASK_OFFSET" size="4" grade="inferred" from="Mesa 20.3.5 r300 driver, r300_reg.h, R300_RB3D_CMASK_OFFSET0 to 3" register="yes" offset="0x4e54" access="rw" count="4" stride="4" reset="unknown">
+  </struct>
+  <struct name="CMASK_PITCH" size="4" grade="inferred" from="Mesa 20.3.5 r300 driver, r300_reg.h, R300_RB3D_CMASK_PITCH0 to 3" register="yes" offset="0x4e64" access="rw" count="4" stride="4" reset="unknown">
+  </struct>
+  <struct name="CMASK_WRINDEX" size="4" grade="inferred" from="Mesa 20.3.5 r300 driver, r300_reg.h, R300_RB3D_CMASK_WRINDEX" register="yes" offset="0x4e74" access="rw" reset="unknown">
+  </struct>
+  <struct name="CMASK_DWORD" size="4" grade="inferred" from="Mesa 20.3.5 r300 driver, r300_reg.h, R300_RB3D_CMASK_DWORD" register="yes" offset="0x4e78" access="rw" reset="unknown">
+  </struct>
+  <struct name="CMASK_RDINDEX" size="4" grade="inferred" from="Mesa 20.3.5 r300 driver, r300_reg.h, R300_RB3D_CMASK_RDINDEX" register="yes" offset="0x4e7c" access="rw" reset="unknown">
+  </struct>
+  <struct name="AARESOLVE_OFFSET" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 5" register="yes" offset="0x4e80" access="rw" reset="unknown">
+    <field name="aaresolve_offset" start="5" size="27" type="uint" grade="established"/>
+  </struct>
+  <struct name="AARESOLVE_PITCH" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 5" register="yes" offset="0x4e84" access="rw" reset="unknown">
+    <field name="aaresolve_pitch" start="1" size="13" type="uint" grade="established"/>
+  </struct>
+  <struct name="AARESOLVE_CTL" size="4" grade="established" from="AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 5" register="yes" offset="0x4e88" access="rw" reset="unknown">
+    <field name="aaresolve_gamma" start="1" size="1" type="uint" grade="established"/>
+    <field name="aaresolve_mode" start="0" size="1" type="uint" grade="established"/>
+  </struct>
+</genxml>

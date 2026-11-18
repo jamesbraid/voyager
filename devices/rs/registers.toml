@@ -1,0 +1,71 @@
+unit = "rs"
+prefix = "R300_RS"
+title = "rasteriser interpolator registers of the R300 and R350 3D engine"
+doc = "Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes the R300 and R350. Registers already defined in the display or pipes unit are not repeated."
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0"
+public_from = ["AMD Radeon R3xx 3D Register Reference", "Mesa 20.3.5 r300 driver"]
+name_source = "public"
+name_cite = "AMD Radeon R3xx 3D Register Reference, revision 1.0"
+
+[registers.count]
+offset = 0x4300
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 32"
+
+[registers.count.fields]
+it_count = { bits = [6, 0], grade = "established" }
+ic_count = { bits = [10, 7], grade = "established" }
+w_count = { bits = [11, 11], grade = "established" }
+w_addr = { bits = [17, 12], grade = "established" }
+hires_en = { bits = [18, 18], grade = "established" }
+
+[registers.inst]
+offset = 0x4330
+access = "rw"
+width = 32
+count = 16
+stride = 0x4
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 32"
+
+[registers.inst.fields]
+tex_id = { bits = [2, 0], grade = "established" }
+tex_cn = { bits = [5, 3], grade = "established" }
+tex_addr = { bits = [10, 6], grade = "established" }
+col_id = { bits = [13, 11], grade = "established" }
+col_cn = { bits = [16, 14], grade = "established" }
+col_addr = { bits = [21, 17], grade = "established" }
+tex_adj = { bits = [22, 22], grade = "established" }
+col_bias = { bits = [24, 23], grade = "established" }
+
+[registers.inst_count]
+offset = 0x4304
+access = "rw"
+width = 32
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 33"
+
+[registers.inst_count.fields]
+inst_count = { bits = [3, 0], grade = "established" }
+w_en = { bits = [4, 4], grade = "established" }
+tx_offset = { bits = [7, 5], grade = "established" }
+
+[registers.ip]
+offset = 0x4310
+access = "rw"
+width = 32
+count = 8
+stride = 0x4
+grade = "established"
+from = "AMD Radeon R3xx 3D Register Reference, revision 1.0, p. 33"
+
+[registers.ip.fields]
+tex_ptr = { bits = [5, 0], grade = "established" }
+col_ptr = { bits = [8, 6], grade = "established" }
+col_fmt = { bits = [12, 9], grade = "established" }
+sel_s = { bits = [15, 13], grade = "established" }
+sel_t = { bits = [18, 16], grade = "established" }
+sel_r = { bits = [21, 19], grade = "established" }
+sel_q = { bits = [24, 22], grade = "established" }
