@@ -1,6 +1,6 @@
 [project]
 license = "BSD-3-Clause"
-name = "onyx4-voyager"
+name = "voyager"
 
 [gen]
 rust_crate = "voyager-defs"
