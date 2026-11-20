@@ -4,6 +4,15 @@ Verdict for the **Onyx4 UltimateVision G2 and G2N bricks under IRIX 6.5.30**, gr
 SGI Prism, which is a different attach with a different answer ([the inventory](../products/sgi-ati-inventory.md)).
 Grades are the ones in `AGENTS.md` section 5; "software expectation" marks what public driver code would do.
 
+## Read again from the IRIX 6.5.22 kernel
+
+The bridge, driver and framework objects of the 6.5.22 Onyx4 patch were read in full and carry the details this page summarises:
+[attach and first writes](r300-kernel-attach.md), [interrupts](r300-kernel-interrupts.md), [DMA and every bridge write](r300-kernel-dma.md),
+[vga.a, gfxs.a and the ioctl interface](r300-kernel-vga-gfx.md) and [topology, the brick type check and ImageSync](r300-kernel-topology.md). What
+they change here: the memory BARs and bus mastering come from the bridge; the DMA path is the bridge's direct 32-bit window with a translated-window
+fallback (a 64-bit path only on a PCI-X bus), and Device register bit 19 is the direct-window byte swap, left clear for the R300; the 6.5.22 interrupt
+handler acknowledges nothing; the L1 type 0x56/0x30 is the CG-brick.
+
 ## Verdict
 
 1. **IRIX drives the card as a plain PCI function; it never uses AGP.** **Established** for the shipped software
@@ -32,8 +41,9 @@ Grades are the ones in `AGENTS.md` section 5; "software expectation" marks what 
    - The kernel's pipe walker and `vga_check_for_pic` accept exactly two bridge parts as the card's parent: a PIC (part
      0xd102 for bus 0 or 0xd112 for bus 1) or an XBridge (0xd002); nothing else is accepted
      ([kernel-attach.md](kernel-attach.md#the-pipe-list-gfxsaklconfigo), `vga_check_for_pic`). **Established** as code.
-     Which of the two a G2 carries is **unknown**: the PROM prints the generic word `Bridge` for the widget, and a
-     revision 3 part is in neither the code nor a public table.
+     Which of the two a G2 carries is **inferred** to be a PIC, not established: the PROM prints the generic word `Bridge` for the widget, and a
+     revision 3 part is in neither the code nor a public table, but the only code that treats the graphics brick type specially is the PIC's
+     ([r300-kernel-topology.md](r300-kernel-topology.md#widgets-and-the-pic)).
    - Which of `fglrx_attach`'s two mapping paths an Onyx4 takes is **inferred**: the PROM inventory lists the VGA adapter
      directly under the bridge entry and no PCI-to-PCI bridge between them, so the card is the bridge's own device (the
      flag-0 path, BARs through the bridge's per-device windows). The routine's flag-1 path, one connection point
@@ -59,19 +69,16 @@ Grades are the ones in `AGENTS.md` section 5; "software expectation" marks what 
    none of the code read here enumerates one. **Unknown**; hardware-only residue, recorded in
    [questions/open-questions.md](../../questions/open-questions.md#host-attachment).
 
-## A new lead: `pic.o` names a bus `agp/N` for some brick types
+## `pic.o` names a bus `agp/N` for the graphics brick type: answered
 
-`pic_attach` (`pic.o`, 0x42c to 0x64c, read in full) calls `iobrick_l1type_get_nasid(nasid, widget)` for its widget.
-If the returned brick-type character is 0x56 or 0x30 it names its two bus vertices `agp/0` and `agp/1`; for every other
-value it names them `pci-x/0` and `pci-x/1`. **Established** as code. The strings are the only difference at that
-site, so the naming alone changes no register traffic. What 0x56 and 0x30 are is **unknown**: `iobrick_l1type_get_nasid`
-and its name-table routine are not defined in any object this workspace holds (they are undefined references in
-`kernel.o`, `xbridge.o` and `pic.o`), and no public table read for this entry maps the two characters to a brick, so a
-mapping to the G2 or G2N is not established. If a G2 is one of the two,
-IRIX would call its PIC buses AGP while still handling the card as PCI config space, which would argue the physical
-link is AGP-flavoured; if it is not, the strings belong to other I/O bricks. Neither is shown. Route: the L1 brick type
-a G2 reports (a published `hinv` or `/hw` listing, or the module's L1 `brick` line), and the defining object of
-`iobrick_l1type_get_nasid` if a kernel archive that holds it can be found.
+`pic_attach` (`pic.o`, 0x414) calls `iobrick_l1type_get_nasid(nasid, widget)` for its widget. If the returned brick-type character is 0x56 or
+0x30 it names its two bus vertices `agp/0` and `agp/1`; for every other value it names them `pci-x/0` and `pci-x/1`. **Established** as code.
+The defining object turned up in the IRIX 6.5.22 maintenance-release kernel set as `l1_command.o`: **0x56 ('V') and 0x30 ('0') are the same
+brick type, the CG-brick** (`iobrick_L1bricktype_to_name` returns "CGbrick" for it; the public PROM listings call the Onyx4 graphics entries
+`CGBRICK`, **observed**). The folding table and the full list of brick names are in
+[r300-kernel-topology.md](r300-kernel-topology.md#the-io-brick-l1-type-check-answered). The naming changes no register traffic and the bus is
+still handled as PCI(-X): `agp/N` is only the vertex name of a CG-brick's PIC buses, so it does not argue that the physical link is AGP. Which brick
+type a G2 and a G2N each report remains **unknown**.
 
 `fglrx.o` also carries ATI's generic `agpsupport.c` unit and buffer types `_FIREGL_AGP` and `_FIREGL_AGPBUF` in its
 allocator statistics; **established** that the code exists, and the X module's parking of the aperture (verdict 1) is why
@@ -91,8 +98,7 @@ TIO-CA AGP; see [the inventory](../products/sgi-ati-inventory.md).
 
 Configuration space for vendor 1002 and the 4e47 or 4e4b IDs, class 3; BAR 0 frame buffer, BAR 1 I/O, BAR 2 register
 window and an expansion ROM BAR, with the bridge's byte-lane modes per window
-([r300-acceptance-set.md](../model-contract/r300-acceptance-set.md)); bus-master DMA to plain bus addresses through the
-bridge's translation; interrupt lines A and B through the bridge; no AGP capability. A guest on this platform then
+([r300-acceptance-set.md](../model-contract/r300-acceptance-set.md)); bus-master DMA to plain bus addresses from the bridge's direct window (PCI 0x80000000 and up) or its translated window (0x40000000 and up, 16 KB pages); interrupt lines A and B through the bridge; no AGP capability. A guest on this platform then
 never meets the fast-write handshake and never programs the chip's GART.
 
 ## Does anything run without the card's option ROM?
@@ -152,7 +158,7 @@ read earlier; the 6.5.22 PROM was not read here.
 the connector pointer at +0x50 and zeros at +0x32 and +0x40; a PLL block and connector block at those pointers; and an x86 init
 entry at offset 3 that returns, installs an `int 0x10` handler, and answers AX = 0x4f02 and 0x4f03 with AL = 0x4f. The chip
 state the real init establishes is **unknown** and would have to be given by the model's reset values. That the minimal
-x86 stub above is enough is **inferred**: only the return value of the mode set is tested in the code read.
+x86 stub above is enough is **inferred**, and the test differs by caller. The kernel's `vga_set_vesa_mode` returns 0 when AL is not 0x4f after 4f02 and otherwise the BX of 4f03, and `vga_init_board` fails the attach on a zero return, so the stub must answer 4f02 with AL = 0x4f and 4f03 with a non-zero BX. The IP35 PROM only prints a note for a bad AL after 4f02 and carries on; it fails on a zero BX after 4f03 (BX is never compared with the requested mode; [ip35-prom-graphics.md](../firmware/ip35-prom-graphics.md)). Neither the PROM nor `vga.a` enables bus mastering or assigns the memory BARs: the bridge code in `pcibr.o` does both before any driver attach ([r300-kernel-attach.md](r300-kernel-attach.md#how-the-card-is-found)).
 
 **Holdings.** The Onyx4 patch carries two ROM images, so the claim that none is held is not right: `usr/gfx/ucode/VOYAGER/sg2.bin`
 (PCI 1002:4e47) and `sg3.bin` (1002:4e4b), each 45056 bytes, valid 0x55 0xaa and PCIR headers, 8-bit sum 0, PLL, connector
