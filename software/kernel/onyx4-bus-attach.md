@@ -94,3 +94,69 @@ window and an expansion ROM BAR, with the bridge's byte-lane modes per window
 ([r300-acceptance-set.md](../model-contract/r300-acceptance-set.md)); bus-master DMA to plain bus addresses through the
 bridge's translation; interrupt lines A and B through the bridge; no AGP capability. A guest on this platform then
 never meets the fast-write handshake and never programs the chip's GART.
+
+## Does anything run without the card's option ROM?
+
+No: the ROM is executed and parsed, so a model needs a ROM image or a replacement that satisfies the fields below. Read
+from the IRIX 6.5.22 binaries of the Onyx4 patch SG0005448 (`fglrx.o`, `vga.a`, `fglrx_drv.so`, `fglrx_dri64.so`; the same
+patch ships `sg2.bin` and `sg3.bin`, see the end) and from the 6.5.30 readings already in this workspace
+([kernel-attach.md](kernel-attach.md), [option-roms.md](../ucode/option-roms.md)). The IP35 PROM is the 6.5.30 image
+read earlier; the 6.5.22 PROM was not read here.
+
+1. **Kernel `vga.a`: executes it, and fails the attach without it.** **Established** (whole routines read in the 6.5.22
+   build). `vga_init_board` builds an x86 emulator context (`xf86InitInt10`), runs the ROM's init entry
+   (`xf86ExecX86int10`), then sets VESA mode 0x107 (1280x1024) through `vga_set_vesa_mode` (two emulated `int 0x10` calls,
+   AX = 0x4f02 then 0x4f03). `vga_shadow_bios` accepts an image only if bytes 0 and 1 are 0x55 0xaa (or bytes 3 and 2, as a
+   word-swapped image), then copies it. A missing ROM, a bad signature, a failed context or init, or a failed mode set logs
+   a message and `vga_attach` takes its failure path, which frees the board and returns an error (read from the branch structure; the cleanup call order was not traced further). The checksum routine `bios_checksum` is defined but no
+   member of `vga.a` calls it: the 8-bit sum is **not** checked here.
+2. **IP35 PROM: the same.** **Established** in the 6.5.30 image (see
+   [the PROM's VGA bring-up](kernel-attach.md#the-ip35-proms-vga-bring-up-ip35promimg)): it enables the ROM through
+   configuration offset 0x30, checks 0x55 0xaa, copies 64 KB to offset 0xc0000 of an emulated PC and calls the init entry
+   at offset 3 with the bus, device and function in AX, then the same VBE calls. No FCode image is looked for and none is in
+   the images (option-roms.md). Whether it does this for every graphics board or only the console pipe is still open.
+3. **Kernel `fglrx.o` `fglrx_attach`: probes and copies it, but a bad ROM is not fatal.** **Established.** It reads
+   configuration offset 0x30, writes all ones to size it, enables it, maps it, and on a 0x55 0xaa image copies it into
+   kernel memory. A missing, unmappable or badly signed ROM only logs ("ROM NOT VALID", "ROM present - but sig NOT VALID",
+   "cannot get to ROM space", with an "endian swapped" note) and the attach goes on. The copy is exported to user space as a
+   mappable region (map key 0x8050, in `fglrx_map`); that is the only use of it in the kernel object, which has no table
+   parser (**established** by the strings and by every access of the three record words that hold it).
+4. **X module `fglrx_drv.so`: parses it, and `PreInit` fails without it.** **Established** for `R200GetBIOSParameters`
+   (whole), the PLL routine (whole) and their caller `R200PreInit`. It reads 64 KB (0x10000 bytes) from the legacy video
+   BIOS address 0xc0000 (a "BIOS address override" option can change the base) into a buffer. If that fails it prints
+   "Failed to access Video BIOS!"; if bytes 0 and 1 are not 0x55 0xaa it fails silently; either returns 0, and `R200PreInit`
+   then prints "GetBIOSParameter failed" and abandons the card. The fields it reads, all in the legacy ATI table that the
+   word at ROM offset 0x48 points to (T, `option-roms.md`; slot names are Linux's, **inferred** for the meaning):
+   - ROM 0x00, 0x01 (signature), 0x48 and 0x49 (the pointer T);
+   - T+0x02 and T+0x03 (kept as two bytes);
+   - T+0x30, the PLL info pointer, then bytes at +0x08/+0x09, +0x0e to +0x19 of the PLL block (reference clock, divider and
+     output limits by their Linux layout; **inferred**). If the ROM is absent this routine instead uses built-in defaults
+     (prints "Video BIOS not detected, using default PLL parameters!" and loads the constants 2950, 12500, 35000, 65 and
+     10300), so the PLL part alone has an embedded fallback, but the caller above it does not;
+   - T+0x40, the LCD info pointer: when 0 the code prints "No Panel Info Table found in BIOS!" and carries on (**established**;
+     the shipped images have 0 here);
+   - T+0x32, the TV info pointer: when non-zero the block must start with the three bytes `$TV` ("Incorrect sig for BIOS TV
+     Info block" otherwise); the shipped images have 0;
+   - T+0x50, the connector info pointer, which is read and printed as "Connector Layout from BIOS" (entry layout not decoded
+     here: **unknown**; a zero pointer takes the other branch). The shipped images have it non-zero.
+5. **DRI module `fglrx_dri64.so`: no dependence found.** **Established** as a string scan: none of ROM, BIOS, ATOM, PCIR or
+   VBIOS occurs in it. It does not touch configuration space (it is user code), so it takes the board data from the X module.
+6. **Nothing embeds a replacement for the ROM's init.** **Inferred** from the above and the earlier readings: the kernel and X
+   module write only a handful of registers at start-up, none of the memory-controller timing, memory-type, DAC or clock
+   scripts that the ROM carries ([option-roms.md](../ucode/option-roms.md#asic-init-memory-controller-and-clock-scripts)); the
+   only embedded default is the five PLL constants above. The chip's starting state is whatever the ROM's emulated init left.
+
+**For a model.** It cannot run IRIX without a ROM image or a stand-in. The stand-in must be served at configuration offset
+0x30 (with the size-probe behaviour of item 3) and in the 0xc0000 shadow the PROM and the kernel build, and must contain: the
+0x55 0xaa signature (a replacement is free of the 8-bit checksum); the pointer at 0x48 to a table with the PLL pointer at +0x30,
+the connector pointer at +0x50 and zeros at +0x32 and +0x40; a PLL block and connector block at those pointers; and an x86 init
+entry at offset 3 that returns, installs an `int 0x10` handler, and answers AX = 0x4f02 and 0x4f03 with AL = 0x4f. The chip
+state the real init establishes is **unknown** and would have to be given by the model's reset values. That the minimal
+x86 stub above is enough is **inferred**: only the return value of the mode set is tested in the code read.
+
+**Holdings.** The Onyx4 patch carries two ROM images, so the claim that none is held is not right: `usr/gfx/ucode/VOYAGER/sg2.bin`
+(PCI 1002:4e47) and `sg3.bin` (1002:4e4b), each 45056 bytes, valid 0x55 0xaa and PCIR headers, 8-bit sum 0, PLL, connector
+tables present and LCD and TV tables absent. SHA-256 of the 6.5.22 patch copies: sg2.bin `91ea55cf0943250b91e12c3a002ccc356fdfbc12143ed93176fb4e5783714008`,
+sg3.bin `f060d7d7310f6662536581ea356193143b8893c88c5d4fccf94f1881f1dff864`. They are the flash images `sg2flash` writes
+(the 6.5.30 `sg2.bin` is 40960 bytes, so the revision differs). The patch is in the Library as `patchSG0005448.tardist`
+(roots `irix-mirrors`, `irix-artifacts`, under the 6.5.22 patch directories); the images stay out of this repository.
