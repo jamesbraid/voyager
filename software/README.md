@@ -2,6 +2,12 @@
 
 # software
 
+## firmware
+
+| Page | Title | Summary |
+|---|---|---|
+| [ip35-prom-graphics.md](firmware/ip35-prom-graphics.md) | How the IP35 PROM brings up the PCI graphics card | What the IP35 PROM does to an Onyx4 FireGL card before any kernel code runs, read in the PROM images of IRIX 6.5.22... |
+
 ## kernel
 
 | Page | Title | Summary |
