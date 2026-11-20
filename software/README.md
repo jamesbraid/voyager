@@ -21,6 +21,11 @@
 | [kernel-object-functions.md](kernel/kernel-object-functions.md) | Kernel object: open, release, detach and board-identity routines | `usr/cpu/sysgen/IP35boot/fglrx.o` is a relocatable 64-bit MIPS object with a symbol table and DWARF function names. |
 | [messages.md](kernel/messages.md) | Console messages in the FireGL kernel driver | This is the catalogue of the messages the ATI FireGL kernel driver (`fglrx.o`, from the IP35 kernel set of IRIX... |
 | [onyx4-bus-attach.md](kernel/onyx4-bus-attach.md) | How the R300 and R350 attach to an Onyx4 brick: PCI behind a Bridge-family chip, not AGP | Verdict for the Onyx4 UltimateVision G2 and G2N bricks under IRIX 6.5.30, graded per statement. |
+| [r300-kernel-attach.md](kernel/r300-kernel-attach.md) | R300 kernel attach in the IRIX 6.5.22 Onyx4 patch: discovery, windows and first writes | How the IRIX 6.5.22 kernel with Onyx4 patch SG0005448 finds an R300 or R350 under the brick's PCI bridge, maps it... |
+| [r300-kernel-dma.md](kernel/r300-kernel-dma.md) | R300 DMA in the IRIX 6.5.22 Onyx4 patch: how host memory reaches the card, and every bridge write behind it | How the 6.5.22 kernel makes host memory visible to the R300 (ring, scratch, buffers), which PIC register writes that... |
+| [r300-kernel-interrupts.md](kernel/r300-kernel-interrupts.md) | R300 interrupts in the IRIX 6.5.22 Onyx4 patch: sources, delivery through the PIC, and the acknowledge sequence | Which chip interrupt sources the 6.5.22 kernel (patch SG0005448 `fglrx.o`, bridge objects from the 6.5.22 base... |
+| [r300-kernel-topology.md](kernel/r300-kernel-topology.md) | Onyx4 G2 and G2N topology as the IRIX 6.5.22 kernel sees it: widgets, PIC buses, functions, the brick type check and ImageSync | What the kernel's bridge and brick code says about how an Onyx4 graphics brick is built: which crossbar widget... |
+| [r300-kernel-vga-gfx.md](kernel/r300-kernel-vga-gfx.md) | R300 kernel interfaces in the IRIX 6.5.22 Onyx4 patch: what vga.a does with the card, what gfxs.a registers, and the ioctls and maps exposed | What the console driver `vga.a`, the graphics framework `gfxs.a` and the FireGL driver `fglrx.o` of patch SG0005448... |
 
 ## linux-sn2
 
