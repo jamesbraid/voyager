@@ -14,6 +14,7 @@ objects are the 6.5.22 base release's, `l1_command.o` is from the same set, the 
   revision (bits 31:28); `pic_init` registers the widget driver for part **0xd102**, manufacturer **0x24** (**established**).
   `pcibr.o` also recognises 0xd112, 0xe000 and 0xe010 (PIC-family and a TIO-class part) and, for the older bridges, 0xd002 (XBridge) and
   0xc002 with manufacturer 0x36 (Bridge); the soft-state type halfword is 0 Bridge, 1 XBridge, 2 PIC, 3 the TIO part (**established**).
+- **The widget number is the host node's crossbar port.** A G2 hangs directly off a port (10 in the retained eight-node capture, beside the base I/O at 15 of the same node); a G2N is a second node whose own port 15 carries the PIC. See [ip35-prom-graphics.md](../firmware/ip35-prom-graphics.md#where-a-g2-attaches-and-which-controller-answers-the-type-request).
 - **Public captures place the PIC at widget 10 on a G2 and widget 15 on a G2N**, printed as "ASIC BRIDGE Rev 3" with two `CGBRICK`
   entries ([onyx4-bus-attach.md](onyx4-bus-attach.md#verdict) for the listing; **observed**). The kernel does not hard-wire a widget
   number: it takes whatever widget the PROM's configuration table gives.
