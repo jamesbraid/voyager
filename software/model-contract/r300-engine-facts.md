@@ -255,3 +255,25 @@ says rectangle k is bit k (software expectation), and it does not matter for the
 Open items (also in [open-questions.md](../../questions/open-questions.md)): the +2784 word and the 1440-or-1088 choice on
 an Onyx4; the values of the other rule writers; and a direct confirmation, from a whole IRIX routine that uses 2D
 registers, of which register SET_SCISSORS reaches.
+
+## 9. What the user-space stream settles (IRIX 6.5.22 build)
+
+Read from the 6.5.22 `fglrx_dri64.so` and `fglrx_drv.so` of patch SG0005448; the detail and grades are in
+[r300-stream-x-driver.md](r300-stream-x-driver.md), [r300-stream-pm4-packets.md](r300-stream-pm4-packets.md),
+[r300-stream-3d-state.md](r300-stream-3d-state.md), [r300-stream-clip-scissor.md](r300-stream-clip-scissor.md) and
+[r300-stream-kernel-contract.md](r300-stream-kernel-contract.md). Where a statement above says unknown and a page there answers it,
+the page there is the later reading.
+
+- **The scissor bias (section 8, open item).** The record word at +2784 (6.5.30; +0xac8 in 6.5.22) is a copy of `GB_TILE_CONFIG` read
+  through the mapped register aperture, and `__R300InitDrawable` clears its bit 16 (the 1/12 versus 1/16 subpixel select) right after
+  the read, so `__R300InitRegs` always stores the subpixel denominator 12 and **the 3D scissor and the clip rectangles both use the
+  bias 1440** on an Onyx4. The 1088 arm is not reached by any path read. Established for the code read in both builds.
+- **Clip-rule writers (section 8, open item).** Eight writer sites are read in full: the submit routine (0xfffe, then 0xffff), the
+  accumulation clear, the override-rendering restore, the multisample resolve and an imaging-draw state block (0xffffffff), and a
+  read-back state block (0xffff). No other value is written.
+- **Packets (section 2).** Opcodes 0x1b, 0x2b and 0x2d have layouts: 0x1b is three dwords of blit rectangle (source position,
+  destination position, size), 0x2b and 0x2d carry inline vertex data of six and three dwords per vertex for state-based
+  (`PRIM_WALK` 0) draws. Their microcode meaning is still unknown. 0x25, 0x29, 0x2a and 0x2c are not used by the R300 routines.
+- **Ring ownership (section 2).** The GL module writes the ring itself and writes `CP_RB_WPTR` through a user mapping; there is no
+  submit ioctl. The X module programs the ring registers, `SCRATCH_ADDR` (the status page) and `SCRATCH_UMSK` (0x3f) at start-up
+  (`FGLInitCP`), and the chip's read-pointer write-back is at status page +0x200 and the time stamp at +8.
