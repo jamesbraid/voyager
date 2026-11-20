@@ -54,7 +54,7 @@
 
 | Page | Title | Summary |
 |---|---|---|
-| [option-roms.md](ucode/option-roms.md) | Option ROM images | The three video option ROM images of the IRIX 6.5.30 Onyx4 install: `sg2.bin` (FireGL X1, R300), `sg3.bin` and... |
+| [option-roms.md](ucode/option-roms.md) | Option ROM images | The 6.5.22 images (45056 bytes) and their comparison with these are in devices/rom/. |
 
 ## xsgi
 
