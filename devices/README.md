@@ -12,6 +12,7 @@
 | [pipes/](pipes/README.md) | pipes: per-pipe select and Z-buffer registers | This unit holds the registers of the R3xx-class FireGL boards that decide which of the chip's two pixel pipes a... |
 | [rb3d/](rb3d/registers.md) | colour buffer registers of the R300 and R350 3D engine | Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes... |
 | [rbbm/](rbbm/registers.md) | register backbone manager registers of the R3xx-class FireGL boards | Host-visible backbone registers beyond the status, reset and wait registers the display unit already holds. |
+| [rom/](rom/README.md) | rom: FireGL option ROM images | The two video option ROM images that IRIX 6.5.22 ships for the Onyx4 FireGL X1 (`sg2.bin`, PCI 1002:4e47) and X2... |
 | [rs/](rs/registers.md) | rasteriser interpolator registers of the R300 and R350 3D engine | Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes... |
 | [sc/](sc/registers.md) | scan converter registers (clip rectangles, scissors, Hi-Z enable) of the R300 and R350 3D engine | Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes... |
 | [su/](su/registers.md) | setup unit registers of the R300 and R350 3D engine | Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes... |
