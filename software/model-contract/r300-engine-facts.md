@@ -182,3 +182,76 @@ there. In short:
   routines; the compositor's own registers and its wiring to the pipes' digital outputs are **unknown**. SGI
   multipipe software (`sgcombine`, `SGIOMPdmx_dri.so`) runs on top; its routines are stubs and wrappers as read, so the
   distribution of work between pipes is **inferred** to be in user space.
+
+## 8. Clip rectangles, the clip rule, the scissor and SET_SCISSORS
+
+Read from `fglrx_dri64.so` (IRIX 6.5.30, n64): `__R300DRMSubmitPM4` (0x8c7f80, whole routine),
+`__R300WriteScissorRegisters` (0x7d1ab0) and `__R300SetScissorStateNoGuardBand` (0x7d7e20), both whole. Register
+definitions: AMD R3xx 3D Register Reference rev 1.0 and R5xx Acceleration rev 1.5, the `SC` block
+([sc](../../devices/sc/registers.md)).
+
+**The rule bits (established, R3xx printed page 35 and R5xx register chapter printed page 203, same text).**
+`SC_CLIP_RULE` (0x43d0, bits 15:0): "the `inside` flags for each of the four clip rectangles form a 4-bit binary number.
+The corresponding bit in this 16-bit number specifies whether the pixel is visible." So bit n of the rule is the
+visibility of pixels whose inside-flags equal n. Neither document says which rectangle is flag bit 0; Mesa's `r300_reg.h`
+says rectangle k is bit k (software expectation), and it does not matter for the value below.
+
+1. **Which rectangles, and the 0xfffe rule.** **Established** for `__R300DRMSubmitPM4`, per submit:
+   - It writes `SC_CLIP_RULE` = **0xfffe** once, first (type-0 header 0x10f4). 0xfffe has every bit set except bit 0, so a
+     pixel is visible if it is inside **at least one** of the four rectangles and hidden only when outside all four: the
+     union of the rectangles.
+   - The submit record holds a count (word +24) and a pointer (+32) to 8-byte rectangles of four unsigned halfwords
+     `x0, y0, x1, y1` (x1 and y1 exclusive). For each batch of four it writes all four pairs, `SC_CLIPRECT_TL/BR_0` to
+     `_3` (0x43b0 to 0x43cc, each pair one type-0 write of two registers), and then emits the draw: a flush
+     (`RB2D_DSTCACHE_CTLSTAT` = 15), the indirect-buffer jump (0x738/0x73c) and a zero write to 0x4e4c. **A count of 1 to
+     3 fills the unused slots by repeating the last rectangle**, which leaves the union unchanged. A count above 4 runs
+     the whole group again for each further batch of four, so the draw is replayed per batch (pixels in rectangles
+     of different batches are drawn once per batch they fall in).
+   - **Count 0** uses one rectangle (0, 0, 0, 0), which becomes the one-pixel inclusive rectangle at the framebuffer
+     origin: the empty list is not "draw nothing" but "draw only pixel (0, 0)" (intent **inferred**, arithmetic
+     established). **A negative count** takes a separate path that writes rule **0xffff** with no rectangles (everything
+     visible) and then the same flush and jump.
+   - After the last batch it writes rule **0xffff** again and a `SET_SCISSORS` packet (below). A model must therefore
+     keep the rule per submit, not as a one-time setting: it is 0xfffe only between the first write and the last.
+   - Other R300 routines (`__R300ResolveMultisampledColorBuffer`, `__R300AccumClear`, `__R300SetOverrideRendering`,
+     `__R300_Imaging_DrawTexRectDWords`, `__R300FastReadPixels`) also contain the rule's register index; those writes
+     were found by constant scan only, values not read (**inferred**). The rectangle registers are written only by the
+     submit routine.
+2. **Coordinate convention.** **Established**: IRIX uses the **same bias of 1440 as Linux and Mesa, on both axes, with
+   no flip**. The arithmetic for each rectangle, in the packed 13-bit fields (x in bits 12:0, y in bits 25:13):
+   - `TL = (x0 | y0 << 13) + 0x00b405a0`, that is x0 + 1440 and y0 + 1440;
+   - `BR = ((x1 - 1) | (y1 - 1) << 13) + 0x00b405a0`, where x1 and y1 are first raised to at least 1, so the edge is
+     **inclusive** (exclusive extent minus one) and an empty or zero-size rectangle becomes the single pixel at x0 and y0.
+   The constant 0x00b405a0 is 1440 in both fields (1440 = 0x5a0; 1440 << 13 = 0xb40000). Mesa does the same for
+   non-R5xx chips (`r300_emit_scissor_state`, software expectation). The record's own origin (whether y is already
+   measured from the top) is not changed by this routine: **inferred** to be top-left, as the registers are.
+   (The routine's guard that clamps x0 and y0 at zero tests an unsigned halfword and never fires.)
+3. **SET_SCISSORS and the 3D scissor.**
+   - **What IRIX emits for SET_SCISSORS (established):** `__R300DRMSubmitPM4` writes the packet (header 0xc0011e00) at two
+     sites (the normal and the negative-count path), each with the words **0 and 0x1fff1fff**, once at the end of each
+     submit, to open the window fully. No other
+     R300 routine builds that header (a constant scan found the rest of the 0x1e00 hits unrelated).
+   - **What register it programs (inferred, not established):** AMD's packet definition (R5xx section 6.2.2.13, printed
+     page 47) says only "set the scissors" and gives the fields as x in bits 13:0 and y in bits 29:16. Those are the field
+     positions of the **2D engine** clip words `SC_TOP_LEFT` and `SC_BOT_RITE` that AMD gives for the 2D packets (R5xx
+     printed page 37, same bits), and Linux names those registers 0x16ec and 0x16f0 (`radeon_reg.h`, software expectation).
+     They are not the 3D scissor's layout (x in 12:0, y in 25:13, biased). So the packet is read as the 2D clip, and
+     **an engine that treats it as the 3D scissor is wrong in layout and in effect**; for IRIX's only values (0 and
+     0x1fff1fff) the difference is invisible, because both leave the 2D clip fully open.
+   - **What IRIX uses for the 3D scissor instead (established):** `__R300WriteScissorRegisters` writes `SC_SCISSOR0` (0x43e0)
+     and `SC_SCISSOR1` (0x43e4) as two separate type-0 single-register writes (headers 0x10f8 and 0x10f9) from state words
+     that `__R300SetScissorStateNoGuardBand` builds: the GL scissor rectangle minus the drawable origin, clamped to the
+     drawable, top-left as x and y, bottom-right as the exclusive edge minus one (inclusive), plus a **bias that is 1440 or
+     1088**. The routine adds 1440 when the word at +2800 of the driver record is 12 and 1088 otherwise
+     (`__R300UpdateScissorState` has the same split: **inferred** from its constants, not read in full). `__R300InitRegs`
+     sets that word to 16 when the high half of the record word at +2784 is non-zero and to 12 when it is zero
+     (**established**). What the +2784 word is, and which value an Onyx4 R300 or R350 ends up with, is **unknown**. The clip
+     rectangles above always use 1440, so a scissor of 1088 and a rectangle of 1440 meet only if the origin of the
+     visible area moves with it; an engine should take each bias as the programmed value, not assume 1440 everywhere.
+     A further adjustment for drawables larger than 2656 pixels is present in the code and not decoded.
+   - `SC_SCREENDOOR` (0x43e8) is not touched by SET_SCISSORS: constant scans put its writes in `__R300UpdateHWState`,
+     `__R300LoadContext` and the multisample routines (**inferred**, values not read).
+
+Open items (also in [open-questions.md](../../questions/open-questions.md)): the +2784 word and the 1440-or-1088 choice on
+an Onyx4; the values of the other rule writers; and a direct confirmation, from a whole IRIX routine that uses 2D
+registers, of which register SET_SCISSORS reaches.
