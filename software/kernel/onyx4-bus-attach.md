@@ -158,5 +158,5 @@ x86 stub above is enough is **inferred**: only the return value of the mode set 
 (PCI 1002:4e47) and `sg3.bin` (1002:4e4b), each 45056 bytes, valid 0x55 0xaa and PCIR headers, 8-bit sum 0, PLL, connector
 tables present and LCD and TV tables absent. SHA-256 of the 6.5.22 patch copies: sg2.bin `91ea55cf0943250b91e12c3a002ccc356fdfbc12143ed93176fb4e5783714008`,
 sg3.bin `f060d7d7310f6662536581ea356193143b8893c88c5d4fccf94f1881f1dff864`. They are the flash images `sg2flash` writes
-(the 6.5.30 `sg2.bin` is 40960 bytes, so the revision differs). The patch is in the Library as `patchSG0005448.tardist`
-(roots `irix-mirrors`, `irix-artifacts`, under the 6.5.22 patch directories); the images stay out of this repository.
+(the 6.5.30 `sg2.bin` is 40960 bytes, so the revision differs). Both ship in IRIX 6.5.22 patch SG0005448 (`patchSG0005448.tardist`);
+the images stay out of this repository.
