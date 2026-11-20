@@ -39,6 +39,11 @@
 |---|---|---|
 | [r300-acceptance-set.md](model-contract/r300-acceptance-set.md) | What a model of the R300 and R350 must accept, per operating system | The smallest set of configuration, register, command-packet and microcode traffic that the two software stacks send... |
 | [r300-engine-facts.md](model-contract/r300-engine-facts.md) | R300 and R350 engine facts for a model: command processor, GART, compression, display, interrupts, sync | What a model of the chip needs beyond the packet and register lists in r300-acceptance-set.md, with every statement... |
+| [r300-stream-3d-state.md](model-contract/r300-stream-3d-state.md) | The 3D state the R300 GL module programs per draw, vertex submission, fences and texture upload | What state `fglrx_dri64.so` (IRIX 6.5.22, patch SG0005448) loads before and between draws on an R300 or R350, in... |
+| [r300-stream-clip-scissor.md](model-contract/r300-stream-clip-scissor.md) | Clip rectangles, the clip rule, the 3D scissor and the scissor bias, as the R300 GL module programs them | Every routine of the R300 user-space stream that writes `SC_CLIP_RULE`, the four clip rectangles or the 3D scissor... |
+| [r300-stream-kernel-contract.md](model-contract/r300-stream-kernel-contract.md) | What the R300 user-space stream takes from the kernel: ioctls, shared memory, ring ownership | What a model of the card must provide so that the shipped user-space stack can feed it, as read in the IRIX 6.5.22... |
+| [r300-stream-pm4-packets.md](model-contract/r300-stream-pm4-packets.md) | The command-stream contract of the R300 GL module: every packet type and opcode it emits | What `fglrx_dri64.so` (IRIX 6.5.22, patch SG0005448, ELF64, symbols present) puts into the command stream on an R300... |
+| [r300-stream-x-driver.md](model-contract/r300-stream-x-driver.md) | The X driver's register programming: PreInit, ScreenInit, mode set, cursor, palette, 2D acceleration and the hand-off of the CP | What the XFree86 video driver `fglrx_drv.so` (IRIX 6.5.22, patch SG0005448, N32, 700156 bytes) does to the chip, in... |
 
 ## opengl
 
