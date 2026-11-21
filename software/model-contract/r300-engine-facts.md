@@ -48,9 +48,10 @@ This closes the open question about `__R300TCLInsertIndirectBuffer`.
   section 4, grades there: established for the routines read, **inferred** for the constant scan). Public names: 0x10,
   0x1e, 0x28, 0x29, 0x2a, 0x2f, 0x33 to 0x37 are in the R5xx packet summary (6.2.1, printed page 34); 0x26 is
   `WAIT_FOR_IDLE` in Linux `radeon_reg.h` (software expectation); 0x32 `3D_CLEAR_ZMASK` and 0x38 `3D_CLEAR_CMASK` are named
-  by Linux `r300d.h` and Mesa `r300_reg.h` (software expectation) and by neither AMD document. **0x1b, 0x2b and 0x2d have
-  no name in AMD's R5xx guide, Linux `radeon_reg.h`, `r100d.h` and `r300d.h`, or Mesa `r300_reg.h`:** **unknown**, accept
-  and observe them.
+  by Linux `r300d.h` and Mesa `r300_reg.h` (software expectation) and by neither AMD document. **0x1b is `BITBLT_MULTI` (0x9B) without its
+  settings word** (R5xx guide section 6.2, printed page 33, and 6.2.2.9; established). **0x2b and 0x2d have no name in AMD's R5xx guide, Linux
+  `radeon_reg.h`, `r100d.h` and `r300d.h`, or Mesa `r300_reg.h`;** the CP microcode's opcode table sends them to routines that write the
+  vertex-state normal and position ports ([r300-stream-pm4-packets.md](r300-stream-pm4-packets.md); inferred), names unknown.
 - **CP DMA.** **Established** (R5xx 5.7, printed pages 22 to 23): two DMA engines in the CP (GUI and video capture) read a
   table of 4-dword descriptors from frame-buffer memory (source, destination, command word with end-of-list, interrupt
   disable, address-space and increment controls, source and destination endian-swap fields, byte count), or take one
@@ -271,9 +272,10 @@ the page there is the later reading.
 - **Clip-rule writers (section 8, open item).** Eight writer sites are read in full: the submit routine (0xfffe, then 0xffff), the
   accumulation clear, the override-rendering restore, the multisample resolve and an imaging-draw state block (0xffffffff), and a
   read-back state block (0xffff). No other value is written.
-- **Packets (section 2).** Opcodes 0x1b, 0x2b and 0x2d have layouts: 0x1b is three dwords of blit rectangle (source position,
-  destination position, size), 0x2b and 0x2d carry inline vertex data of six and three dwords per vertex for state-based
-  (`PRIM_WALK` 0) draws. Their microcode meaning is still unknown. 0x25, 0x29, 0x2a and 0x2c are not used by the R300 routines.
+- **Packets (section 2).** Opcodes 0x1b, 0x2b and 0x2d have layouts: 0x1b is `BITBLT_MULTI` without its settings word, three dwords
+  of blit rectangle (source position, destination position, width and height, x and width in the high halves), 0x2b and 0x2d carry inline
+  vertex data of six and three dwords per vertex for state-based (`PRIM_WALK` 0) draws, feeding the vertex-state normal and position ports
+  (microcode dispatch read in [r300-stream-pm4-packets.md](r300-stream-pm4-packets.md); inferred). 0x25, 0x29, 0x2a and 0x2c are not used by the R300 routines.
 - **Ring ownership (section 2).** The GL module writes the ring itself and writes `CP_RB_WPTR` through a user mapping; there is no
   submit ioctl. The X module programs the ring registers, `SCRATCH_ADDR` (the status page) and `SCRATCH_UMSK` (0x3f) at start-up
   (`FGLInitCP`), and the chip's read-pointer write-back is at status page +0x200 and the time stamp at +8.

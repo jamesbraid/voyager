@@ -64,7 +64,7 @@ Type-0 (register write, with the one-register-write form), type-2 (NOP padding) 
 | 0x2a 3D_DRAW_INDX, 0x36 3D_DRAW_INDX_2 | indexed draws | 0x36 yes, 0x2a not seen in R300 routines | both | IRIX inferred, Linux expectation |
 | 0x2f 3D_LOAD_VBPNTR, 0x33 INDX_BUFFER | vertex and index arrays | yes | yes | IRIX inferred, Linux expectation |
 | 0x32 CLEAR_ZMASK, 0x37 CLEAR_HIZ, 0x38 CLEAR_CMASK | Hyper-Z clears | yes | yes (filtered by owner) | IRIX inferred, Linux expectation |
-| 0x1b, 0x2b, 0x2d | seen in IRIX R300 routines | yes | no | unknown (no public name checked) |
+| 0x1b BITBLT_MULTI (no settings word), 0x2b, 0x2d | blit rectangle; inline vertex-state data | yes | no | 0x1b established (AMD guide); 0x2b, 0x2d inferred from the microcode table, names unknown |
 
 Indirect buffers: type-0 pair at 0x738 and 0x73c (`CP_IB_BASE`, `CP_IB_BUFSZ`: address, dwords), accepted in both stacks,
 established for IRIX (`__R300DRMSubmitPM4`) and expectation for Linux. IRIX also writes a pair at 0x730 and 0x734 from

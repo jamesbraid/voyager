@@ -51,6 +51,7 @@
 | [r300-stream-clip-scissor.md](model-contract/r300-stream-clip-scissor.md) | Clip rectangles, the clip rule, the 3D scissor and the scissor bias, as the R300 GL module programs them | Every routine of the R300 user-space stream that writes `SC_CLIP_RULE`, the four clip rectangles or the 3D scissor... |
 | [r300-stream-kernel-contract.md](model-contract/r300-stream-kernel-contract.md) | What the R300 user-space stream takes from the kernel: ioctls, shared memory, ring ownership | What a model of the card must provide so that the shipped user-space stack can feed it, as read in the IRIX 6.5.22... |
 | [r300-stream-pm4-packets.md](model-contract/r300-stream-pm4-packets.md) | The command-stream contract of the R300 GL module: every packet type and opcode it emits | What `fglrx_dri64.so` (IRIX 6.5.22, patch SG0005448, ELF64, symbols present) puts into the command stream on an R300... |
+| [r300-stream-state-loaders.md](model-contract/r300-stream-state-loaders.md) | The register lists of the R300 state loaders, routine by routine | What `R300InitRegs`, `R300UpdateHWState`, `R300LoadContext` and `R300InitHardwareStateMachineTCL` put into the... |
 | [r300-stream-x-driver.md](model-contract/r300-stream-x-driver.md) | The X driver's register programming: PreInit, ScreenInit, mode set, cursor, palette, 2D acceleration and the hand-off of the CP | What the XFree86 video driver `fglrx_drv.so` (IRIX 6.5.22, patch SG0005448, N32, 700156 bytes) does to the chip, in... |
 
 ## opengl

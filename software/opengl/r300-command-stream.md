@@ -48,8 +48,8 @@ type-3 header: top bits 11, bits 29:16 dword count minus one, bits 15:8 opcode) 
 - **Type-3 opcodes in the R300 draw, clear and blit routines.** Constants of the form 0xc000XX00 are built in R300
   routines for opcodes 0x10 (NOP), 0x1e (SET_SCISSORS), 0x26 (WAIT_FOR_IDLE), 0x28 (3D_DRAW_VBUF), 0x2f
   (3D_LOAD_VBPNTR), 0x32 (3D_CLEAR_ZMASK), 0x33 (INDX_BUFFER), 0x34 (3D_DRAW_VBUF_2), 0x35 (3D_DRAW_IMMD_2), 0x36
-  (3D_DRAW_INDX_2), 0x37 (3D_CLEAR_HIZ) and 0x38 (3D_CLEAR_CMASK); opcodes 0x1b, 0x2b and 0x2d also appear and are
-  **unknown** (no public name checked). **Inferred** from a constant scan of the whole `.text` (not whole-routine reads);
+  (3D_DRAW_INDX_2), 0x37 (3D_CLEAR_HIZ) and 0x38 (3D_CLEAR_CMASK); opcodes 0x1b, 0x2b and 0x2d also appear: 0x1b is `BITBLT_MULTI` without its settings word
+  (AMD R5xx guide), 0x2b and 0x2d feed the vertex-state ports ([r300-stream-pm4-packets.md](../model-contract/r300-stream-pm4-packets.md)). **Inferred** from a constant scan of the whole `.text` (not whole-routine reads);
   the names are Linux's. Which routines build which is in the symbol names (`__R300TCLProcessIndexBufferPrimitive` with
   0x33/0x36, `__R300FastZStencilClear` with 0x32/0x37, `__R300ClearCMask` with 0x38).
 - **Register writes use type-0 packets, many through the one-register-write form.** The vertex-program data upload uses the

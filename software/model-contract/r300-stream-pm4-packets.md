@@ -36,12 +36,12 @@ expectation.
 | Opcode | AMD name | Header values seen | Body (from the routine named) | Grade |
 |---|---|---|---|---|
 | 0x10 | `NOP` | 0xc0001000, 0xc0031000, and 0xfffd1000 in the ring wrap | one dword of 0 after the submit terminator in `__glATISubmitBM`; 4 dwords as placeholders in the fast draw-array paths, to be overwritten when a vertex-buffer-embedded packet is patched in (`__R300TCLProcessFast*`, `__R300TCLWriteNOPCmdCountTIMMO`); up to 0x3fff dwords per packet (header and 0x3ffe body dwords) as ring-wrap filler (`firegl_PM4Alloc`) | established |
-| 0x1b | **none in AMD, Linux or Mesa** | 0xc0021b00 | **three dwords** (see below) | established layout, unknown meaning |
+| 0x1b | `BITBLT_MULTI` (0x9B) without its settings word (AMD, section 6.2 and 6.2.2.9) | 0xc0021b00 | **three dwords**: source position, destination position, width and height, with x and width in the high halves (`__R300BltData`) | established |
 | 0x1e | `SET_SCISSORS` | 0xc0011e00 | the two words 0 and 0x1fff1fff (`__R300DRMSubmitPM4`) | established |
 | 0x26 | `WAIT_FOR_IDLE` (Linux) | 0xc0002600 | one dword, 0 (`__R300DRMSubmitPM4`, when the submit's wait flag is set) | established |
 | 0x28 | `3D_DRAW_VBUF` | 0xc0012800 and (n + 1) << 16 \| 0xc0002800 | the first body dword is the vertex format (0); the second is `VAP_VF_CNTL` (below); a longer form in `__R300TCLProcessNativePrimitive` | established |
-| 0x2b | **none in AMD, Linux or Mesa** | (6n - 1) << 16 \| 0xc0002b00 | 6 dwords per vertex, interleaved position (3 floats) and normal (3 floats) (`__R300TCLDrawArraysV3FN3F`) | established layout, unknown meaning |
-| 0x2d | **none in AMD, Linux or Mesa** | (3n - 1) << 16 \| 0xc0002d00 | 3 dwords per vertex, three floats of position (`__R300TCLDrawArraysV3F`, `...V3FN3F`) | established layout, unknown meaning |
+| 0x2b | none in AMD, Linux or Mesa; the CP microcode dispatch table sends it to a routine that writes `VAP_VTX_ST_NORM_0_X/Y/Z` then `VAP_VTX_ST_POS_0_X/Y/Z_3` per vertex | (6n - 1) << 16 \| 0xc0002b00 | 6 dwords per vertex, interleaved position (3 floats) and normal (3 floats) (`__R300TCLDrawArraysV3FN3F`) | established layout, inferred meaning |
+| 0x2d | none in AMD, Linux or Mesa; the microcode dispatch table sends it to a routine that writes `VAP_VTX_ST_POS_0_X/Y/Z_3` per vertex | (3n - 1) << 16 \| 0xc0002d00 | 3 dwords per vertex, three floats of position (`__R300TCLDrawArraysV3F`, `...V3FN3F`) | established layout, inferred meaning |
 | 0x2f | `3D_LOAD_VBPNTR` | n << 16 \| 0xc0002f00 | see below | established |
 | 0x32 | `3D_CLEAR_ZMASK` (Linux) | 0xc0023200 | three dwords: start, length in blocks, 0 (`__R300FastZStencilClear`) | established |
 | 0x33 | `INDX_BUFFER` | 0xc0023300 | three dwords: destination and skip, buffer address, count (`__R300TCLProcessIndexBufferPrimitive`) | established |
@@ -92,25 +92,52 @@ of index dwords plus skip. The packet follows a `3D_DRAW_INDX_2`. AMD section 6.
 buffer 2 (R5xx, **established**); this packet's buffer is therefore read through `CP_IB2_BASE`/`CP_IB2_BUFSZ` (0x730/0x734), consistent with the type-0
 write of those registers by `__R300TCLInsertIndirectBuffer`.
 
-### The unnamed packets 0x1b, 0x2b and 0x2d
+### Opcodes 0x1b, 0x2b and 0x2d
 
-- **0x1b** is built only in `__R300BltData` (and in `__R300DepthFetch16`; also in a `__glim_R100TCLDrawRangeElements` copy that belongs to
-  another chip). It follows the 2D-engine set-up that `__R300BltData` emits (a write of `DP_GUI_MASTER_CNTL` 0x146c with the value
-  0x52cc32fb and writes of several other 2D-engine registers) and carries **three dwords** that are, in order, a
-  source position (y in the high half), a destination position and a (height, width) pair, so it plays the part of the 2D blit
-  rectangle registers `SRC_Y_X`, `DST_Y_X` and `DST_HEIGHT_WIDTH` in one packet. **Established** for the three-dword shape and the
-  position and size content (the routine builds each word from the coordinates it was given, split at 1024 pixels so a
-  blit never exceeds 1024 columns); **unknown** for the packet's name and any further semantics. The 6.5.30 and earlier pages listed this opcode as unknown.
-- **0x2b and 0x2d** carry vertex data inline in the stream, as `__R300TCLDrawArraysV3F` and `...V3FN3F` use them: `VAP_VF_CNTL`
-  is first written with a type-0 packet (header 0x821, value `table[mode]`, no count and no walk bits), a normal vector for
-  every vertex is written as three dwords at 0x2310 (`VAP_VTX_ST_NORM_0_X`, three-register type-0 write, header 0x208c4) **when every vertex has the same normal**, and
-  then 0x2d carries only the positions (3 dwords per vertex); otherwise 0x2b carries position and normal interleaved (6 dwords per
-  vertex). A type-0 write of 0 to 0x24ac (`VAP_VTX_ST_END_OF_PKT`, header 0x92b) ends the primitive. **Established** for these sequences in
-  `__R300TCLDrawArraysV3FN3F` (read in full). `VF_CNTL` here has walk 0, which AMD defines as "state-based vertex data (vertex data
-  and tokens embedded in command stream)", so these two packets are very probably how the microcode delivers such data to the VAP
-  vertex-state ports (0x24a0 position, 0x2310 normal): **inferred**. Also **inferred** that the vertex count is taken by the CP from the
-  packet length, since no count is placed in `VF_CNTL`. The packets are not in AMD's list, Linux or Mesa: **unknown** as to the ME's own definition; a model
-  that accepts them and routes the data to the VAP vertex-state port satisfies the stream.
+The stream emits these three opcodes and the R5xx guide's packet summary (6.2.1, printed pages 33 and 34) does not list them. The guide
+and the CP microcode table the driver loads settle what they are.
+
+- **0x1b is `BITBLT_MULTI` (0x9B) with the opcode's top bit clear.** Section 6.2 of the R5xx *Acceleration* guide rev 1.5 (printed page 33)
+  says the most significant bit of IT_OPCODE tells whether the packet carries the GUI_CONTROL settings word (1) or omits it (0), and
+  the summary lists `NEXTCHAR` (0x19), `PLY_NEXTSCAN` (0x1D) and `SET_SCISSORS` (0x1E) in their top-bit-clear form too.
+  `BITBLT_MULTI` (6.2.2.9, printed pages 44 and 45) has a data block of three dwords per rectangle: source x and y, destination x and y
+  (x in bits 31:16, y in bits 15:0) and the width and height (width in 29:16, height in 13:0). `__R300BltData` (`fglrx_dri64.so`, 0x901660) builds exactly three
+  dwords after a register-programmed set-up. Which half holds what, from the routine: the in-row position `pos & 0x3ff` is shifted left by 16, so x is
+  the high half and y the low half (y is 0 in the short form); the width `n` is `n << 16` with the height 1 in the low bits, and the
+  long form is `0x4000000 | rows`, a width of 1024 in the high half and the row count in the low half. An earlier version of this page had the
+  halves the other way round (y high, height and width swapped); the routine and the guide agree on x and width high.
+  The set-up before the packet is the 2D register state the omitted settings word would have carried: `DP_GUI_MASTER_CNTL` (0x146c) = 0x52cc32fb,
+  `SRC_OFFSET` and `SRC_PITCH` (0x15ac, 0x15b0), `DST_OFFSET` and `DST_PITCH` (0x1404, 0x1408), `SC_LEFT`, `SC_RIGHT`, `SC_TOP` and `SC_BOTTOM`
+  (0x1640 to 0x164c; 0, 0x1fff, 0, 0x1fff) and zero to 0x1704 (`FLUSH_1`) and 0x1700; names from the public Linux `radeon_reg.h`.
+  Read against the GUI_CONTROL field table of the guide (printed pages 35 and 36), the value 0x52cc32fb is: source and destination pitch-offset
+  controls and destination clipping set (bits 0, 1 and 3), no brush (bits 7:4 = 15, the public header's `BRUSH_NONE`), destination type 2 (8 bpp
+  pseudocolor), source type 3 (same as destination), ROP3 0xCC (source copy, bits 23:16), source loaded from video memory (bits 26:24 = 2) and
+  bits 28 and 30 (clear-compare function and write-mask disable). So the packet is a byte-per-pixel linear copy through the 2D engine, 1024 bytes
+  to a row, which is why the routine splits a copy at 1024 and sets both pitches to 0x400. **Established** (the guide's header rule and field
+  tables, and the routine's body read in full); the guide describes the register through the packet field, the bit-for-bit match to the register is
+  **inferred** from the field names the public driver also uses.
+- **0x2b and 0x2d are not in any AMD, Linux or Mesa packet list; the CP microcode defines them.** The microcode image `fglrx_drv.so` loads
+  for chip codes 44, 45 and 52 (`aPM4_Microcode_R300`, 256 entries of an 8-byte pair, see [kernel-attach.md](../kernel/kernel-attach.md)) starts with a
+  byte table in words 4 to 14: 44 bytes, one per type-3 opcode from 0x10 to 0x3b (opcode with the top bit cleared, minus 0x10), read low byte of each
+  word first. Each byte is the entry number of a handler. Read this way the table is consistent with everything the guide and the stream say
+  about it: unsupported opcodes (0x20 to 0x23 `PRED_EXEC` to `WAIT_MEM`, and the gaps) all point at one do-nothing entry (0x4f); `BITBLT` (0x12)
+  and `BITBLT_MULTI` (0x1b) share entry 0x5a; `3D_DRAW_VBUF` (0x28 to 0x2a) share 0x9c and the three `_2` draws (0x34 to 0x36) share 0x9d;
+  the three clear packets (0x32 `3D_CLEAR_ZMASK`, 0x37 `3D_CLEAR_HIZ`, 0x38 `3D_CLEAR_CMASK`) go to entries 0xd1, 0xd6 and 0xdb, which have the same
+  five-entry shape; `WAIT_FOR_IDLE` (0x26) goes to 0xe6 and `3D_LOAD_VBPNTR` (0x2f) to 0xe0. Under that reading 0x2b goes to entry 0xe9 and
+  0x2d to entry 0xf0. Entry 0xe9 to 0xef is a loop of six register writes whose low 13 bits are the register dword indexes 0x8c4, 0x8c5 and 0x8c6
+  (byte 0x2310 to 0x2318, `VAP_VTX_ST_NORM_0_X/Y/Z`) and 0x928, 0x929 and 0x92a (0x24a0 to 0x24a8, `VAP_VTX_ST_POS_0_X/Y/Z_3`); entry 0xf0 to 0xf3
+  is the same loop with the three position writes only. The same reading gives a list of real R300 3D registers wherever the microcode names one: the every-other-entry list at entries 0x15 to 0x37 holds the dword indexes
+  0x854 to 0x857 (byte 0x2150 to 0x215c, `VAP_PROG_STREAM_CNTL_0` and after), 0x824 and 0x825 (`VAP_OUT_VTX_FMT_0/1`), 0x830 (`VAP_VTX_NUM_ARRAYS`), 0x10c0 and 0x10c1
+  (`RS_COUNT`, `RS_INST_COUNT`), 0x1041 (`TX_ENABLE`), 0x1184 to 0x1187 and 0x1180 (`US_CODE_ADDR_0..3`, `US_CONFIG`), and 0x1393, 0x138a and 0x138e
+  (`RB3D_DSTCACHE_CTLSTAT`, `RB3D_COLOROFFSET0`, `RB3D_COLORPITCH0`). Eighteen out of eighteen decode to registers of the guide, which is what supports the
+  decode. That gives: 0x2b delivers six dwords per vertex, three to the normal port and three to the position port; 0x2d
+  delivers three, to the position port only, which matches what `__R300TCLDrawArraysV3FN3F` and `__R300TCLDrawArraysV3F` pack, and the
+  `VF_CNTL` and `END_OF_PKT` type-0 writes around them in the stream. **Inferred**: the microcode's instruction format is unpublished (the guide
+  describes only how it is loaded, section 5.12, printed page 27), so the instruction decode (register index in the low 13 bits) and
+  the byte order of the dispatch table are read from structure, not from a document; the consistency checks above are what supports them. The
+  R200 table `aPM4_Microcode_R6x` sends 0x2b and 0x2d to different entries (0xf2 and 0xf9), so neither is a packet that only the shipped R300 table has.
+  The packets have no public name: a model accepts them, takes the count from the packet length and feeds the two ports as above. Their
+  names stay **unknown**.
 
 ## 3. Type-0 registers written from the stream
 

@@ -11,6 +11,10 @@ and more). The register sets below come from every type-0 header constant in the
 listing), so which registers each loader writes is **inferred**; the routines read **in full** for this page are named where a
 value is **established**. The meaning of a shadow word is given only when a read routine shows the register it feeds.
 
+**Superseded in part.** [r300-stream-state-loaders.md](r300-stream-state-loaders.md) reads the four loader routines in full and lists every register each
+one writes, with the dirty bit or step and the shadow word. Where sections 3 and 4 below disagree with it, that page wins; in particular `__R300InitRegs`
+writes only the six zero-fill packets of section 2, and `__R300InitHardwareStateMachineTCL` writes no register at all.
+
 ## 1. Where state lives and how it reaches the chip
 
 - **Shadow state.** The GL context holds a shadow of the hardware registers in words from about +0x54ec0 to +0x55b00, plus a state-dirty
