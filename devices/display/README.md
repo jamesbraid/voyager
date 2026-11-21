@@ -44,3 +44,7 @@ Release IRIX 6.5.30m, `fglrx_drv.so` (X module). Ratings: **established** (routi
 - [software/xsgi/libfglrxdrm-functions.md](../../software/xsgi/libfglrxdrm-functions.md): the DRM helper library.
 - [software/xsgi/hw-explanations-voyager-w1.md](../../software/xsgi/hw-explanations-voyager-w1.md): hardware-facing routine explanations.
 - [software/ucode/option-roms.md](../../software/ucode/option-roms.md): the option ROM images that program these blocks at power-on.
+
+## Review note
+
+Independent review of the colour output chain section against `fglrx_drv.so`. `FGLSetGammaData` (0x42fe00) was disassembled: its constants are 100.0 (hundredths), 1.0 (numerator of the exponent), 0.00390625 (1/256, the multiplier on the index), 1023.0 and 0.5, followed by truncation, so entry i is pow(i / 256, 1/g) x 1023 + 0.5 truncated, and at g = 1.0 the last entry is 1019. The string `/etc/config/system.glGammaVal` is in the module. Not re-checked: `R200SGIVCSetDefGamma`, `Rage6SetGamma16Correction`, the depth and GLX visual claims.

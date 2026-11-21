@@ -103,3 +103,7 @@ settled by the R3xx guide, which lacks them (**unknown**).
 Every register the four routines write is named above or marked unnamed, and the loaders write the units in this order of dependence: texture and shader memories
 in `__R300InitRegs`, everything else in `__R300LoadContext`, only what changed in `__R300UpdateHWState`. The registers written by the routines they call through
 function pointers (the texture, shader, point-sprite, user-clip-plane, material and matrix updaters) are not in this page; their routines are the next ones to read.
+
+## Review note
+
+Independent review of a sample against `fglrx_dri64.so`. Confirmed: `__R300InitRegs` emits exactly six packet headers in the order 0x10a4, 0x1100, 0x1040, 0x1188, 0x11b0, 0x1300; in `__R300UpdateHWState` the shadow words are at the context plus 0x50000 plus the offsets given, bit 0x100 writes 0x1393 = 10, bit 0x2000000 writes 0x13c6 = 3, and bit 1 writes the fog colour (0x12f2, count 3, from +0x54edc to +0x54ee4), `FG_FOG_BLEND`, `GA_FOG_OFFSET`, `GA_FOG_SCALE` and `GB_SELECT` from the shadows named. The registers at 0x4f78 to 0x4f88 are in no revision of the AMD R3xx or R5xx guides held. Not re-checked: `__R300LoadContext` step by step, the remaining dirty-bit rows and the helper routines.

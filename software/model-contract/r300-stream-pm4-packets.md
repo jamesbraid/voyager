@@ -198,3 +198,7 @@ and the previously unknown 0x1b, 0x2b and 0x2d have layouts (not names). Open: t
 contents are in no document; routes tried: AMD R5xx and R3xx guides, Linux 2.6.30 `r300_cmdbuf.c`, Mesa 7.11.2 `r300_cmdbuf.c`,
 all silent); the register-packed array descriptor words of `3D_LOAD_VBPNTR`; whether any routine builds a type-3 header from variables that the scan
 cannot see (the draw paths that use `(n << 16)` forms were read; a full list of such builders is not made).
+
+## Review note
+
+Independent review of the section on opcodes 0x1b, 0x2b and 0x2d against `fglrx_drv.so`, `fglrx_dri64.so` and the R5xx *Acceleration* guide rev 1.5. Confirmed: the dispatch byte table in words 4 to 14 of `aPM4_Microcode_R300` (low byte first) sends opcodes 0x12 and 0x1b to entry 0x5a, 0x28 to 0x2a to 0x9c, 0x32, 0x37 and 0x38 to 0xd1, 0xd6 and 0xdb, 0x26 to 0xe6, 0x2f to 0xe0, 0x2b to 0xe9 and 0x2d to 0xf0; entries 0xe9 to 0xef write register indexes 0x8c4 to 0x8c6 and 0x928 to 0x92a and entries 0xf0 to 0xf3 the last three; the eighteen register indexes of entries 0x15 to 0x37 are as listed; the `aPM4_Microcode_R6x` table sends 0x2b and 0x2d to 0xf2 and 0xf9. The guide's rule that the opcode's top bit selects the GUI_CONTROL word, the `BITBLT_MULTI` data block (x in 31:16, width in 29:16) and the GUI_CONTROL field decode of 0x52cc32fb all match, and `__R300BltData` (0x901660) emits header 0xc0021b00 after storing that value, with x and width in the high halves. The grades stand as written. Not re-checked: the 6.5.22 cross-references.

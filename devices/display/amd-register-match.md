@@ -134,3 +134,7 @@ are not in it either: it describes the 2D engine through the type-3 packet field
 and 36), and the register offsets of that block come only from the public headers. Where those placed an unnamed offset beside named ones the entry in
 [registers.md](bit-layouts.md) says so: 0x878 to 0x884 are the unnamed gap of the TV-encoder block, 0x294 sits in the flat-panel and TMDS group, and 0x1700
 sits before `FLUSH_1`.
+
+## Review note
+
+Independent review of the added "not located" paragraph. The R3xx guide, the M56 reference and every revision of the R5xx guide held (1.1 to 1.5) were text-searched for 0x294, 0x878 to 0x884, 0x1700, 0x26ac and the 0x4f78 to 0x4f88 range: no hits. Not re-checked: the Linux, Mesa and X.Org header claims and line numbers (xf86-video-ati 6.14.6 `radeon_reg.h` lines 1127 to 1133 for the memory-controller indirect index mask, write-enable bit and `R300_MC_READ_CNTL_CD_mcind`), because those sources could not be fetched in this pass; they remain the author's.
