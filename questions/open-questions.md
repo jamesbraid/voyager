@@ -148,7 +148,7 @@ repository owner's approval first, and its reads must be read-only and exclude r
 
 - [capture-proposal] **How the combined swap-ready reaches the R300 flip.**
   Unknown: what makes the pipes of a swap group show their new frames together after the card's swap-ready sum completes. Tried: the kernel (`is1_fire_swapready`, `is1_release_swapready`, `is1_intr`),
-  the X module (`SGIGLXSwapBarrierInit` and its callbacks), the DRI and GLX bind routines and `olsgsys`'s swap test (the swap path page); no code writes a head
+  the X module (`SGIGLXSwapBarrierInit` and its callbacks), the DRI and GLX bind routines and `olsgsys`'s swap test ([r300-swap-framelock.md](../software/kernel/r300-swap-framelock.md)); no code writes a head
   register at the release. Smallest test: on an Onyx4 with an ImageSync card and two pipes, run only IRIX's own `olsgsys` swap test and, before and after each swap call, read the heads' status
   (0x5c, 0x3fc), line counters (0x210, 0x310), the scan-out offset registers and the card's 0x1c, 0x20, 0x24, 0x60, 0x74 (not 0x2c), logging with timestamps. That shows
   which register moves at the release. Safety: reads only through the existing mapping the diagnostic already makes; no writes; no PLL index writes. User effort: boot and run one diagnostic.

@@ -4,7 +4,7 @@ What the IRIX kernel driver and SGI's own diagnostics say about the ImageSync op
 sits in a host PCI slot of an Onyx4 and synchronises the graphics pipes. The per-routine reading of the 6.5.30 driver is
 [image-sync-functions.md](image-sync-functions.md); this page is the register-level model that reading and the diagnostics
 (`olsg`, `olsgsys`) together support, with the 6.5.22 build's differences. Swap groups and barriers are in
-r300-swap-framelock.md; what a model must do to pass the tests is in
+[r300-swap-framelock.md](r300-swap-framelock.md); what a model must do to pass the tests is in
 [olsg-sync-tests.md](../diagnostics/olsg-sync-tests.md).
 
 Grades: **established** (a whole routine or table read in a shipped binary), **software expectation** (public Linux or AMD
@@ -118,7 +118,7 @@ driver's register accessors `FGLRXReadRegister` and `FGLRXWriteRegister` on the 
 - **Format update** (`is1_update_format`, ioctl 10004): the format request's fields go to 0x14, then (after bit 0 of 0x40 clears) 0x44, 0x48, 0x4c, then 0 to 0x40
   and 0x5c; the sync-source builders write 0x24 and 0x28; the swap-sample routine writes 0x78 or 0x7c. A format change ends by marking the
   master pipe for resync.
-- **Swap gating** is software plus the swap-ready registers, not a stall in the R300: see r300-swap-framelock.md.
+- **Swap gating** is software plus the swap-ready registers, not a stall in the R300: see [r300-swap-framelock.md](r300-swap-framelock.md).
 - **Vsync stamps.** No ImageSync register carries a stamp. The pipes' own vsync counter is the kernel's per-board interrupt counter and the
   `GEN_INT_STATUS` bit 0 source ([r300-kernel-interrupts.md](r300-kernel-interrupts.md)); `glXGetVideoSyncSGI` and `glXWaitVideoSyncSGI` in the DRI module
   (`XGLGetVideoSyncSGI` 0x531000 and `XGLWaitVideoSyncSGI` 0x531080 in `fglrx_dri64.so`) are the user entry points (**inferred**: the callee ioctls were not

@@ -33,6 +33,7 @@
 | [r300-kernel-interrupts.md](kernel/r300-kernel-interrupts.md) | R300 interrupts in the IRIX 6.5.22 Onyx4 patch: sources, delivery through the PIC, and the acknowledge sequence | Which chip interrupt sources the 6.5.22 kernel (patch SG0005448 `fglrx.o`, bridge objects from the 6.5.22 base... |
 | [r300-kernel-topology.md](kernel/r300-kernel-topology.md) | Onyx4 G2 and G2N topology as the IRIX 6.5.22 kernel sees it: widgets, PIC buses, functions, the brick type check and ImageSync | What the kernel's bridge and brick code says about how an Onyx4 graphics brick is built: which crossbar widget... |
 | [r300-kernel-vga-gfx.md](kernel/r300-kernel-vga-gfx.md) | R300 kernel interfaces in the IRIX 6.5.22 Onyx4 patch: what vga.a does with the card, what gfxs.a registers, and the ioctls and maps exposed | What the console driver `vga.a`, the graphics framework `gfxs.a` and the FireGL driver `fglrx.o` of patch SG0005448... |
+| [r300-swap-framelock.md](kernel/r300-swap-framelock.md) | R300 swap groups, swap barriers and frame lock on Onyx4, the status lines software can see, and the absence of video-in | How `glXJoinSwapGroupSGIX`, `glXBindSwapBarrierSGIX` and frame lock reach the ImageSync card and the R300 pipes... |
 
 ## linux-sn2
 
