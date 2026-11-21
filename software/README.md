@@ -2,6 +2,12 @@
 
 # software
 
+## diagnostics
+
+| Page | Title | Summary |
+|---|---|---|
+| [olsg-sync-tests.md](diagnostics/olsg-sync-tests.md) | What SGI's Onyx4 diagnostics ask of the ImageSync card and the R300 heads, and what a model must do to pass | The Onyx4 field diagnostics are two programs, `olsg` (n64, the "vger" tests that talk to the hardware directly) and... |
+
 ## firmware
 
 | Page | Title | Summary |
@@ -21,6 +27,7 @@
 | [kernel-object-functions.md](kernel/kernel-object-functions.md) | Kernel object: open, release, detach and board-identity routines | `usr/cpu/sysgen/IP35boot/fglrx.o` is a relocatable 64-bit MIPS object with a symbol table and DWARF function names. |
 | [messages.md](kernel/messages.md) | Console messages in the FireGL kernel driver | This is the catalogue of the messages the ATI FireGL kernel driver (`fglrx.o`, from the IP35 kernel set of IRIX... |
 | [onyx4-bus-attach.md](kernel/onyx4-bus-attach.md) | How the R300 and R350 attach to an Onyx4 brick: PCI behind a Bridge-family chip, not AGP | Verdict for the Onyx4 UltimateVision G2 and G2N bricks under IRIX 6.5.30, graded per statement. |
+| [r300-imagesync-card.md](kernel/r300-imagesync-card.md) | Onyx4 ImageSync card: registers, how it drives the R300 heads, and its timing reference | What the IRIX kernel driver and SGI's own diagnostics say about the ImageSync option card (PCI 10a9:100c and... |
 | [r300-kernel-attach.md](kernel/r300-kernel-attach.md) | R300 kernel attach in the IRIX 6.5.22 Onyx4 patch: discovery, windows and first writes | How the IRIX 6.5.22 kernel with Onyx4 patch SG0005448 finds an R300 or R350 under the brick's PCI bridge, maps it... |
 | [r300-kernel-dma.md](kernel/r300-kernel-dma.md) | R300 DMA in the IRIX 6.5.22 Onyx4 patch: how host memory reaches the card, and every bridge write behind it | How the 6.5.22 kernel makes host memory visible to the R300 (ring, scratch, buffers), which PIC register writes that... |
 | [r300-kernel-interrupts.md](kernel/r300-kernel-interrupts.md) | R300 interrupts in the IRIX 6.5.22 Onyx4 patch: sources, delivery through the PIC, and the acknowledge sequence | Which chip interrupt sources the 6.5.22 kernel (patch SG0005448 `fglrx.o`, bridge objects from the 6.5.22 base... |

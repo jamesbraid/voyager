@@ -140,3 +140,20 @@ Added from the IRIX and Linux command-stream pass ([r300-command-stream.md](../s
 - [software-now] **Which CRTC drives which channel of a pipe, and which output is which.** Two CRTCs and two channels per pipe are established; the mapping to DAC 1, DAC 2 and the panel link, and to the SG2 and SG2.1 connector sets, is not ([r300-engine-facts.md](../software/model-contract/r300-engine-facts.md#5-display-crtc-dac-dual-head-set-up)). Next: the X module's output-detect routines (`R200CrtIsPhysicallyConnected` and its neighbours) and the option ROM connector tables.
 - [software-now] **The compositor's registers and the ImageSync register block.** The kernel reaches the compositor through a serial bus on the board and reads its tile and identity registers; its register layout, and the ImageSync registers at offsets 0x1c to 0x74, are not decoded ([r300-engine-facts.md](../software/model-contract/r300-engine-facts.md#7-what-imagesync-and-the-compositor-connect-to)). Next: read the callers of `fglrxCompositorI2cRegRead` and the ImageSync set-up routines for register meanings.
 - [software-now] **Where SET_SCISSORS lands.** The scissor bias is settled: 1440 for both the 3D scissor and the clip rectangles on an Onyx4, because the stack clears bit 16 of its copy of `GB_TILE_CONFIG` ([r300-stream-clip-scissor.md](../software/model-contract/r300-stream-clip-scissor.md)). Still open: which register `SET_SCISSORS` (0xc0011e00 with 0 and 0x1fff1fff, once per submit) programs (inferred to be the 2D clip). Routes tried: AMD R5xx 6.2.2.13 and printed page 37, Linux and Mesa, whole reads of every `SC_CLIP_RULE` and scissor writer in the 6.5.22 R300 stack. Next: find a 2D-engine routine in the shipped stack that relies on the clip after a submit.
+
+## ImageSync capture proposals
+
+Nothing here is a request to touch hardware. Each is a proposal in the form the project requires: the unknown, what was tried, what the smallest test is. A physical test needs the
+repository owner's approval first, and its reads must be read-only and exclude read-to-clear registers (the card's 0x2c status is treated as read-to-clear and is excluded).
+
+- [capture-proposal] **How the combined swap-ready reaches the R300 flip.**
+  Unknown: what makes the pipes of a swap group show their new frames together after the card's swap-ready sum completes. Tried: the kernel (`is1_fire_swapready`, `is1_release_swapready`, `is1_intr`),
+  the X module (`SGIGLXSwapBarrierInit` and its callbacks), the DRI and GLX bind routines and `olsgsys`'s swap test (the swap path page); no code writes a head
+  register at the release. Smallest test: on an Onyx4 with an ImageSync card and two pipes, run only IRIX's own `olsgsys` swap test and, before and after each swap call, read the heads' status
+  (0x5c, 0x3fc), line counters (0x210, 0x310), the scan-out offset registers and the card's 0x1c, 0x20, 0x24, 0x60, 0x74 (not 0x2c), logging with timestamps. That shows
+  which register moves at the release. Safety: reads only through the existing mapping the diagnostic already makes; no writes; no PLL index writes. User effort: boot and run one diagnostic.
+- [capture-proposal] **Bit meanings of the card's control, format, vertical, status and PFD registers, the BAR size and the PLL part.** Tried: kernel word builders (field positions known, meanings
+  not), the diagnostics (values written, behaviour tested), strings. Smallest test: a read-only dump of 0x00 to 0x34 (excluding 0x2c) and 0x60 with the card idle, locked to internal clock, and locked to
+  an external source, plus the PCI configuration and BAR size probe the diagnostic's configuration dump already prints. User effort: two states of the card.
+- [acquisition] **The video test's golden CRC files** (`/usr/diags/SG/data/Simple_Video_Gold_data`, `Vertical_Ramp_Gold_data`, `Horizontal_Ramp_Gold_data`) are not in patch SG0005448 or any held file.
+  Next: find the installable product that carries `usr/diags/SG/data` on the 6.5.22 or 6.5.30 media or an Onyx4 diagnostics patch, and read the three files. No hardware is needed.
