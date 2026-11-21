@@ -77,7 +77,7 @@ All **established** for the control flow; the register meanings are the public R
 2. **R300 heads**: real-time vertical blank in 0x5c and 0x3fc, the line counters 0x210 and 0x310, enable edges at 0x50 and 0x3f8, `GEN_INT_STATUS` bit 25 / `GEN_INT_CNTL` bit 25 / fire bit 26 with
    the acknowledge write, and (for `olsgsys`) the DAC CRC registers 0xd18 and 0xd1c enabled through 0x58 bits 19 and 20.
 3. **Swap barrier semantics**: no pipe in a swap group shows its new frame until every pipe has requested its swap (CRC compare), then all do. This is the behaviour described in
-   [r300-swap-framelock.md](r300-swap-framelock.md).
+   [r300-swap-framelock.md](../kernel/r300-swap-framelock.md).
 4. **Golden CRCs**: the video test needs the three `*_Gold_data` tables, which are not held. Without them the model can pass the interrupt, PIO, PLL, swap and sync tests, and the video test only if
    its CRC and rasteriser agree with the real chip. This is the largest open item; see the capture and acquisition proposals in
    [open-questions.md](../../questions/open-questions.md#imagesync-capture-proposals).
