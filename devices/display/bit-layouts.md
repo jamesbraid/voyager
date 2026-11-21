@@ -340,8 +340,9 @@ because the header lists only what it can ground to a name or a field layout. Th
 | 0x294 | inferred | bits 13:12 switch together with stereo; carried in the header as `unnamed_0294` |
 | 0x350, 0x358 | inferred | public tile-origin names (`common`), same value shape as the public driver writes |
 | 0x354 | inferred | right-eye counterpart of 0x350 by pairing and by the stereo guard; no public name |
-| 0x878, 0x87c, 0x880, 0x884 | unknown | the stored constants are read, their effect is not; settling tests are in the entries |
-| 0x1700, 0x26ac | unknown | the stored constants are read, their role is not |
+| 0x878, 0x87c, 0x880, 0x884 | unknown (block: inferred) | in the unnamed gap of the TV-encoder block (0x840 to 0x88c); no AMD guide or public header names the four; the stored constants are read, their effect is not |
+| 0x1700 | inferred (neighbourhood) | unnamed flush-style slot before `FLUSH_1` (0x1704); written 0 beside `FLUSH_1` in `__R300BltData`; no source names it |
+| 0x26ac | unknown | only chip codes 8, 47 and 49 run the write (R200 family), not the Onyx4's R300 or R350; no source names it |
 
 ## Registers read in full
 
@@ -955,6 +956,7 @@ r300 headers and the xf86-video-ati 6.14.6 `radeon_reg.h` were searched for the 
   bits 13:12. On the other path bits 13:12 come from bits 1:0 of a4 shifted left 12 (store at 0x4454e8). The bits
   13:12 field is the one `_r6x_EnableStereo` switches. Inferred: the same field as the entry above; the
   meaning of a3 and a4 is not traced.
+  Searched for a name (found none): the AMD R3xx 3D guide (rev 1.0), the R5xx *Acceleration* guide (rev 1.1 to 1.5) and the M56 reference (which has no register at 0x294 in any of its blocks) do not list the offset, and Linux, Mesa, xf86-video-ati (6.8.2, 6.14.6), radeonhd and avivo do not name it. It sits between the public `FP_VERT_STRETCH` (0x290) and `TMDS_TRANSMITTER_CNTL` (0x2a4, xf86-video-ati `radeon_reg.h` lines 903 and 1646), in the flat-panel and TMDS group, and `R6TMDSTransmitLinux` is a TMDS routine; that placement is **inferred**, the role stays unknown.
 - **0x350** in `fglrx_drv.so`: the public `R300_CRTC_TILE_X0_Y0` (common: `radeon_reg.h` of the pinned Linux tree, line 532, and of
   xf86-video-ati 6.14.6, line 486). `R200AdjustFrame` at 0x422680 (1048 bytes) writes it at 0x4229f4 on the path that the branch at 0x422768
   takes when the byte at +90 of the record in s0 is zero, after a dummy read at 0x4229ec. The value is a0, which the
@@ -984,6 +986,7 @@ r300 headers and the xf86-video-ati 6.14.6 `radeon_reg.h` were searched for the 
   a3 = 7 and a5 = 0 (value 0x1c); a2 of 1, 3 or 4 gives a3 = 6 and a5 = 1 (value 0x58); any other value gives 0. For a2 = 5
   the store of a3 = 7 sits in the delay slot of the branch at 0x44428c, so it runs before the branch lands. Unknown.
   Settling test: find every writer of the driver word at +184 and the configuration option that feeds it (the multi-view mode), then search the AMD R3xx and R5xx references and the Linux and X.Org register tables for offset 0x878 under any name; a match gives the fields a name and grades them inferred, and the mode-to-value table above becomes the evidence for each field.
+  Named in no source searched (AMD R3xx and R5xx guides and M56 reference by offset; Linux, Mesa and the three X.Org trees by offset and by name). It sits in the TV-encoder block: xf86-video-ati `radeon_reg.h` names every offset from 0x840 to 0x874 (`TV_HOST_READ_DATA` to `TV_MODULATOR_CNTL2`) and then 0x888 and 0x88c, leaving 0x878 to 0x884 as the unnamed gap, and `Set_MV_Mode` also writes `TV_PRE_DAC_MUX_CNTL` (0x888) and `TV_DAC_CNTL` (0x88c); that block membership is **inferred**, the fields stay unknown.
 - **0x87c** in `fglrx_drv.so`: no public name. `Set_MV_Mode` stores at 0x444260 the value w0 | (w1 << 2) |
   (w2 << 4) | (w3 << 6) | (w4 << 8), where w0 to w4 are the words at 0x469180, +4, +8, +12 and +16 (in
   the `.bss` table that the routine addresses through gp). The routine does not write those words, so their
@@ -1010,6 +1013,7 @@ r300 headers and the xf86-video-ati 6.14.6 `radeon_reg.h` were searched for the 
   at 0x40b0b8), so it runs whether or not the branch is taken. s1 is the aperture pointer that 0x40b0b4 loads from +48
   of the driver record. The name `extSECAM_K` at 0x1700 in the Radeon driver stack header 6 belongs to the
   video-input register set, not this aperture, so it is not a match. Unknown: the role is not read.
+  The 64-bit GL module also writes 0x1700, with the value 0, in `__R300BltData` (`fglrx_dri64.so` at 0x901660), in the same set-up as a zero write to `FLUSH_1` (0x1704); the public header names `FLUSH_1` to `FLUSH_7` (0x1704 to 0x171c) and nothing at 0x1700, so 0x1700 is **inferred** to be the unnamed flush-style slot ahead of them. No AMD guide lists it.
 - **0x26ac** in `fglrx_drv.so`: no public name. `FGLInitCP` at 0x42c4c0 (720 bytes) reads the word at 0x42c640,
   ORs 0x110 into it (bits 8 and 4) and writes it back at 0x42c648, then runs a sync. The access is reached when
   the compares at 0x42c620, 0x42c628 and 0x42c638 send control to 0x42c640: the word at +160 of the record in s3
@@ -1540,6 +1544,7 @@ Four values that this page already records are decoded by the header and checked
 
 ### What is still unknown, and what would settle it
 
+  The write runs only for chip codes 8, 47 and 49, which [x-video-driver.md](../../software/xsgi/x-video-driver.md#chip-code-from-the-pci-device-id) maps to R200, RV250 and RV280: it does not run for the R300 (44) or R350 (52) of the Onyx4, so for the Onyx4 chips this offset is **unknown: no shipped software that runs on them depends on it**. No source names it; the public 2D and rasteriser registers around it are `RE_TOP_LEFT` (0x26c0) and `RE_MISC` (0x26c4).
 - **Reset values of every register.** No capture of a board at reset was read. A register dump on a powered board
   before the driver attaches, or the vendor reference for the same chip, would settle them.
 - **Meaning of bits `board_probe` (0x28 bit 13) and `board_strap` (0xe4 bit 27).** The kernel object tests them to

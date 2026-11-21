@@ -126,8 +126,11 @@ facts about M56's layout and none of them changes an earlier name.
 
 ## Still not located
 
-0x294, 0x878, 0x87c, 0x880, 0x884, 0x1700 and 0x26ac are in neither document. Routes tried now: both documents by offset and
-by name, and the R5xx acceleration guide's text for those offsets (no match). The 2D engine and cache registers in
-`mmio.tsv` (0x1404 to 0x16e8, 0x3428, 0x342c) and 0x1c3c are also in neither: the R3xx guide covers only the 3D block
-and M56 has no 2D registers. *Radeon R5xx Acceleration* v1.5 is the document that covers the 2D engine; matching them
-against it is the next route.
+0x294, 0x878, 0x87c, 0x880, 0x884, 0x1700 and 0x26ac are in none of the documents. Searched by offset and by name: the R3xx guide, the M56 reference
+and every revision of the R5xx *Acceleration* guide held (1.1 to 1.5; only 1.5 was used for the tables above, the older ones were searched for these offsets and
+for the packet opcodes and found the same), and the Linux, Mesa, xf86-video-ati (6.8.2 and 6.14.6), radeonhd and avivo headers. The R5xx guide gives its
+`MMReg` offsets only for the CP, 3D and related blocks, so the 2D engine and cache registers in `mmio.tsv` (0x1404 to 0x16e8, 0x3428, 0x342c) and 0x1c3c
+are not in it either: it describes the 2D engine through the type-3 packet fields (for example `GUI_CONTROL`, which sets `DP_GUI_MASTER_CNTL`, printed pages 35
+and 36), and the register offsets of that block come only from the public headers. Where those placed an unnamed offset beside named ones the entry in
+[registers.md](bit-layouts.md) says so: 0x878 to 0x884 are the unnamed gap of the TV-encoder block, 0x294 sits in the flat-panel and TMDS group, and 0x1700
+sits before `FLUSH_1`.
