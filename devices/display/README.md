@@ -20,6 +20,7 @@ Offsets are in the register aperture. Several registers are known only by their 
 
 ## Also here
 
+- [tiled-scanout.md](tiled-scanout.md): the macro-tiled and micro-tiled front buffer layout (address of a pixel at a given pitch and size) and how the first display controller scans it out, with the 0x228 and 0x350 values the X server writes.
 - [amd-register-match.md](amd-register-match.md) and [amd-register-match.tsv](amd-register-match.tsv) compare the offsets the shipped drivers reach against AMD's published references.
 
 ## Used by
