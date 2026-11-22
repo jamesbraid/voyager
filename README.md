@@ -10,6 +10,7 @@ radeon drivers. Where the radeon drivers and IRIX disagree, IRIX wins.
 ## What's covered
 
 - **Registers:** display, interrupt and engine registers, plus the per-pipe select and Z-buffer ones.
+- **R420 delta:** what an R300-based model adds for the R420 of the Prism's FireGL X3, from public sources: [r350-r420-delta.md](devices/display/r350-r420-delta.md).
 - **Kernel driver:** how it finds and maps the card, its first writes, ioctls and interrupts. The card topology
   and bus rate are still open.
 - **X server:** the X module, the FireGL DRM library and the helper modules, read routine by routine.

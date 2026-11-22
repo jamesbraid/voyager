@@ -22,6 +22,7 @@ Offsets are in the register aperture. Several registers are known only by their 
 
 - [tiled-scanout.md](tiled-scanout.md): the macro-tiled and micro-tiled front buffer layout (address of a pixel at a given pitch and size) and how the first display controller scans it out, with the 0x228 and 0x350 values the X server writes.
 - [interrupts-and-waits.md](interrupts-and-waits.md): which interrupt sources the drivers enable and acknowledge, how the card's interrupt reaches IRIX, and every wait the X server and DRM library make after the mode set (ring read-pointer write-back, status polls), with the likely hang points.
+- [r350-r420-delta.md](r350-r420-delta.md): how R350 and R420 differ from the R300 in public Linux and Mesa code (pipe count, shader banks, memory-controller port, microcode), and what an R300-based model adds.
 - [amd-register-match.md](amd-register-match.md) and [amd-register-match.tsv](amd-register-match.tsv) compare the offsets the shipped drivers reach against AMD's published references.
 
 ## Colour output chain and the default gamma
