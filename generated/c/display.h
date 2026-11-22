@@ -655,7 +655,7 @@
 /*
  * Read pointer of the ring. The CP start routine reads it and copies it into the write pointer, so the ring starts empty.
  */
-/* cp_rb_rptr: r32, reset unknown; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
+/* cp_rb_rptr: r32, reset unknown */
 #define VOYAGER_CP_RB_RPTR_OFFSET                    0x710u /* inferred */
 
 /* cp_rb_wptr: rw32, reset 0x0; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
@@ -744,7 +744,7 @@
 /*
  * Microengine control. The default value 0x40000000 sets ME_MODE to 1, free-running. The status fields have no default.
  */
-/* cp_me_cntl: rw32, reset 0x40000000; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
+/* cp_me_cntl: rw32, reset 0x40000000 */
 #define VOYAGER_CP_ME_CNTL_OFFSET                    0x7d0u /* inferred */
 
 /* cp_me_ram_addr: rw32, reset unknown; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
@@ -948,7 +948,7 @@
 #define VOYAGER_RB2D_DSTCACHE_CTLSTAT_DC_FLUSH_MASK  0x3u
 #define VOYAGER_RB2D_DSTCACHE_CTLSTAT_DC_FLUSH_INPLACE (VOYAGER_RB2D_DSTCACHE_CTLSTAT_DC_FLUSH_MASK << VOYAGER_RB2D_DSTCACHE_CTLSTAT_DC_FLUSH_SHIFT)
 
-/* gb_tile_config: rw32, reset 0x11; public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver */
+/* gb_tile_config: rw32, reset 0x11 */
 #define VOYAGER_GB_TILE_CONFIG_OFFSET                0x4018u /* established */
 #define VOYAGER_GB_TILE_CONFIG_TILE_SIZE_SHIFT       4 /* established */
 #define VOYAGER_GB_TILE_CONFIG_TILE_SIZE_MASK        0x3u

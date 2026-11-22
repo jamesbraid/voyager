@@ -2211,8 +2211,7 @@
    "stride": 4,
    "space": null,
    "reset": "unknown",
-   "grade": "inferred",
-   "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
+   "grade": "inferred"
   },
   {
    "unit": "display",
@@ -2496,8 +2495,7 @@
    "stride": 4,
    "space": null,
    "reset": 1073741824,
-   "grade": "inferred",
-   "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
+   "grade": "inferred"
   },
   {
    "unit": "display",
@@ -3243,8 +3241,7 @@
    "stride": 4,
    "space": null,
    "reset": 17,
-   "grade": "established",
-   "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
+   "grade": "established"
   },
   {
    "unit": "display",
@@ -3252,8 +3249,7 @@
    "name": "gb_tile_config.tile_size",
    "hi": 5,
    "lo": 4,
-   "grade": "established",
-   "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
+   "grade": "established"
   },
   {
    "unit": "display",
@@ -3285,8 +3281,7 @@
    "name": "gb_tile_config.pipe_count",
    "hi": 3,
    "lo": 1,
-   "grade": "established",
-   "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
+   "grade": "established"
   },
   {
    "unit": "display",
@@ -3318,8 +3313,7 @@
    "name": "gb_tile_config.enable",
    "hi": 0,
    "lo": 0,
-   "grade": "established",
-   "from": "public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver"
+   "grade": "established"
   },
   {
    "unit": "display",

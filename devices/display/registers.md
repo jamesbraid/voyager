@@ -65,14 +65,14 @@ Every item has a grade: established, inferred or unknown. A grade says how the i
 | `cp_rb_base` | 0x700 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_rb_cntl` | 0x704 | rw | 32 |  |  | 0x0 | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_rb_rptr_addr` | 0x70c | rw | 32 |  |  | 0x0 | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
-| `cp_rb_rptr` | 0x710 | r | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
+| `cp_rb_rptr` | 0x710 | r | 32 |  |  | unknown | inferred |  |
 | `cp_rb_wptr` | 0x714 | rw | 32 |  |  | 0x0 | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_rb_wptr_delay` | 0x718 | rw | 32 |  |  | 0x0 | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_csq_cntl` | 0x740 | rw | 32 |  |  | 0x0 | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `scratch_umsk` | 0x770 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `scratch_addr` | 0x774 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_stat` | 0x7c0 | r | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
-| `cp_me_cntl` | 0x7d0 | rw | 32 |  |  | 0x40000000 | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
+| `cp_me_cntl` | 0x7d0 | rw | 32 |  |  | 0x40000000 | inferred |  |
 | `cp_me_ram_addr` | 0x7d4 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_me_ram_datah` | 0x7dc | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `cp_me_ram_datal` | 0x7e0 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
@@ -99,7 +99,7 @@ Every item has a grade: established, inferred or unknown. A grade says how the i
 | `wait_until` | 0x1720 | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `vap_cntl_status` | 0x2140 | rw | 32 |  |  | unknown | established | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 | `rb2d_dstcache_ctlstat` | 0x342c | rw | 32 |  |  | unknown | inferred | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
-| `gb_tile_config` | 0x4018 | rw | 32 |  |  | 0x11 | established | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
+| `gb_tile_config` | 0x4018 | rw | 32 |  |  | 0x11 | established |  |
 | `ga_soft_reset` | 0x429c | rw | 32 |  |  | unknown | established | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |
 
 ### Register `clock_cntl_index`
@@ -630,9 +630,9 @@ Microengine control. The default value 0x40000000 sets ME_MODE to 1, free-runnin
 
 | Bits | Field | Grade | Values | Source | Description |
 |---|---|---|---|---|---|
-| 5:4 | `tile_size` | established | size_8=0, size_16=1, size_32=2 | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |  |
-| 3:1 | `pipe_count` | established | rv300=0, r300=3, r420=7 | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |  |
-| 0 | `enable` | established |  | public Linux radeon and Mesa R300 register headers, and the AMD R3xx 3D register guide, checked against the shipped graphics driver |  |
+| 5:4 | `tile_size` | established | size_8=0, size_16=1, size_32=2 |  |  |
+| 3:1 | `pipe_count` | established | rv300=0, r300=3, r420=7 |  |  |
+| 0 | `enable` | established |  |  |  |
 
 ### Register `ga_soft_reset`
 
