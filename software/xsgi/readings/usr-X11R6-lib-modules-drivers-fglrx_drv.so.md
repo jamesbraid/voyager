@@ -702,6 +702,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `beq` branch at 0x40cc88 targets 0x40cc28 and is always taken.
   The return at 0x40cc68 has v0 = ?.
 
+- `r200CalcDefaultOffset` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x40cbc0
+  **Inferred.** Packs a surface's tiling mode, pitch and address into the one-word pitch-and-offset form the 2D engine takes. The surface format code at a1+8 (1 to 4, compares at 0x40cbe0 to 0x40cbf8) becomes a 2-bit field in bits 30 and 31 as 0, 1, 2 or 3, the pitch word at a1+24 divided by 64 goes into bits 22 to 29 (0x40cc3c to 0x40cc5c) and the 64-bit address at a1+40 shifted right by 10 fills the low 22 bits (0x40cc34 to 0x40cc40); the three parts are or-ed together (0x40cc64 to 0x40cc6c). Any other format code logs an error with `xf86DrvMsg` (call at 0x40cc18) and uses 0.
+
 - `R200MMIOAccelInit` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x40cdc0 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/drivers/fglrx_drv.so`.
@@ -1233,8 +1236,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x40ef00 has v0 = ret(R200AdjustFrame).
 
 - `R200_DGASetViewport` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x40eec0
-  **Inferred.** Calls `R200AdjustFrame` through the `jalr` at 0x40eee8 with a0 loaded through the word at a0+8 (the render shows a0=[[a0+8]]) and a1 to a3 as received. The word at +0xf8 is loaded at 0x40eedc, but the render does not show its base. The store at 0x40eef8 writes the word at +0x195c after that call; the render does not show its base register. The return at 0x40ef00 gives back the v0 of `R200AdjustFrame`. Role (from name): a DGA viewport change forwarded to the frame-adjust routine.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Pans the display for a direct-graphics client. It calls `R200AdjustFrame` (call at 0x40eee8) with the screen index from screen +8 and the x and y offsets it was given, then clears the pending-flip word at driver-private +6492 (store at 0x40eef8) so the driver does not treat the old pan request as outstanding.
 
 - `R200_DGAFillRect` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x40ef40 (n32).
   Evidence grade: inferred.
@@ -3325,8 +3327,7 @@ One entry per routine, filed here from the reading batches by binary.
   The instructions from 0x4159f8 to 0x4159fc are not reached by any path from the entry, and their branches are not listed.
 
 - `R200I2cInit` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x4159c0
-  **Inferred.** Role (from name): sets up the I2C bus for the R200. It calls `xf86CreateI2CBusRec` (0x4159d4) and stores the result at [a0+248]+412 (0x4159e0, in the branch delay slot, so the store happens before the null test). When the result is zero it returns 0 at 0x4159f0. Otherwise it stores a word at offset 0 of the new record (0x415a08) and words at offsets 0x4, 0xc, 0x10 and 0x34 (0x415a18 to 0x415a44), then calls `xf86I2CBusInit` on [a0+248]+412 (0x415a48). It returns 1 at 0x415a64 when the init result is nonzero and 0 at 0x415a78 when it is zero.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Creates the I2C bus record the driver uses to read monitor data. It allocates the record with `xf86CreateI2CBusRec` (call at 0x4159d4) and stores it at driver-private +412 (0x4159e0), returning 0 if allocation fails. It then fills in a bus name from the read-only data at gp-30052, the screen index at record +4, two callback addresses at +12 and +16 and the constant 5 at +52 (0x415a04 to 0x415a44), registers the bus with `xf86I2CBusInit` (call at 0x415a48) and returns 1 when that succeeds.
 
 - `R200PreInitDDC` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x415a80 (n32).
   Evidence grade: inferred.
@@ -3889,8 +3890,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x417348 has v0 = 0x0.
 
 - `R200PreInitAccel` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x417200
-  **Inferred.** It gets the entity private with `xf86GetEntityPrivate` (0x417230), writes a word at +0x18f0 of the driver private (0x417250, 0x417298, 0x4172c0), and tests the option list: `xf86IsOptionSet` (0x417294) and `xf86ReturnOptValBool` (0x4172ac) are called with the `R200Options` table. It reports through `xf86DrvMsg` (0x417268, 0x4172f4, 0x417330), and when the word at +6384 of the private is zero it loads a submodule with `xf86LoadSubModule` (0x417310) from the data at 0x467bc8. It returns 1 at 0x417280 on one path and 0 at 0x417348 on another. Role (from name): the name and the option and submodule calls suggest a pre-initialisation step that enables the 2D acceleration path. Which option selects which path is not derived here.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Decides whether the 2D acceleration module is used. For a screen with the byte flag at private +90 set it copies the acceleration flag at +6384 from the first screen's record found through `xf86GetEntityPrivate` (call at 0x417230, store at 0x417250) and returns 1. Otherwise it clears +6384, reads option index 0 (`xf86IsOptionSet` at 0x417294, `xf86ReturnOptValBool` at 0x4172ac), sets +6384 to 1 when the option is true (0x4172bc to 0x4172c0), logs the choice (call at 0x4172f4), and only when the flag is still 0 loads the acceleration helper module with `xf86LoadSubModule` (call at 0x417310), returning 0 after an error message if that load fails (0x417320 to 0x41733c).
 
 - `R200PreInitInt10` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x417380 (n32).
   Evidence grade: inferred.
@@ -3922,8 +3922,7 @@ One entry per routine, filed here from the reading batches by binary.
   The instructions from 0x41743c to 0x41743c are not reached by any path from the entry, and their branches are not listed.
 
 - `R200PreInitInt10` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x417380
-  **Inferred.** A 236-byte routine. It calls `xf86LoadSubModule` (call at 0x417398); a zero result branches to 0x4173e4 (branch at 0x4173a0). Otherwise it logs with `xf86DrvMsg` (call at 0x4173b8) and calls `xf86InitInt10` (call at 0x4173c8). It then tests the word at private offset 0x38 (branch at 0x4173d4). When that word is nonzero it calls `xf86FreeInt10` (call at 0x4173dc) and returns 1 (0x4173f0), so the free is not a failure path. When it is zero it calls `Xalloc` with a0 = 0x10000 (call at 0x417408). A zero Xalloc result logs with `xf86DrvMsg` (call at 0x41742c); a nonzero one continues to `xf86memcpy` with a2 = 0x10000 (call at 0x41745c). The copy source is the word reached through the `xf86InitInt10` result, plus 786432 (0xc0000). Role (from name): int10 pre-initialisation; the 0xc0000 offset may be the legacy video BIOS window, but the render does not say.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Sets up the video BIOS emulation interface and keeps a copy of the legacy BIOS image. It loads a helper module with `xf86LoadSubModule` (call at 0x417398, name at gp-29976), logs through `xf86DrvMsg` (0x4173b8), starts the emulation with `xf86InitInt10` (0x4173c8) and frees any earlier one with `xf86FreeInt10` (0x4173dc). It then allocates 0x10000 bytes with `Xalloc` (call at 0x417408), stores the buffer at driver-private +56 and copies 0x10000 bytes from the BIOS area at offset 0xc0000 of the mapped memory with `xf86memcpy` (call at 0x41745c); allocation failure is reported at 0x41742c.
 
 - `R200PreInitDRI` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x417480 (n32).
   Evidence grade: inferred.
@@ -4213,6 +4212,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `beq` branch at 0x418154 targets 0x418108 and is always taken.
   The return at 0x41813c has v0 = 0x1.
 
+- `R200PreInitHPV` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x4180c0
+  **Inferred.** Reads the boolean configuration option with index 65 into the driver-private flag at +9324. If the option is present (`xf86IsOptionSet`, call at 0x4180e0) it fetches the value with `xf86GetOptValBool` (call at 0x4180f8) and logs the result at severity 1 (configured), and if it is absent it logs at severity 2 (default); the message text comes from the data at gp-29960 and gp-29952 (0x418110, 0x418128).
+
 - `R200PreInitFSAA` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x418180 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/drivers/fglrx_drv.so`.
@@ -4377,8 +4379,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x418994 has v0 = ret(vbeDoEDID).
 
 - `R200ProbeDDC` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x418940
-  **Inferred.** Role (from name): reads the monitor's EDID over DDC through VBE. It calls `xf86LoadSubModule` (0x418950). When that returns 0 the routine returns it at 0x418960. Otherwise it calls `VBEInit` (0x418970) and `vbeDoEDID` (0x418980), stores the `vbeDoEDID` result through a pointer loaded from the global table (0x418998, in the return's delay slot; the target's name, `ConfiguredMonitor`, comes from the symbol and is not in the facts), and returns the `vbeDoEDID` result (0x418994).
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Reads the monitor's EDID through the video BIOS. It loads a helper module with `xf86LoadSubModule` (call at 0x418950, name at gp-29940), initialises it with `VBEInit` (0x418970), fetches the EDID block with `vbeDoEDID` (0x418980) and stores the result in the global `ConfiguredMonitor` (store at 0x418998), so later mode validation can use the monitor's own timing data.
 
 - `R200LoadPalette` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x4195c0 (n32).
   Evidence grade: inferred.
@@ -5806,6 +5807,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `bgez` branch at 0x41e230 targets 0x41e248, is taken when at(=([a1+64] << 0x21)) >= 0 (signed), and falls through when at(=([a1+64] << 0x21)) < 0 (signed).
   The return at 0x41e240 has v0 = ([a1+64] | 0x1000000).
   The return at 0x41e248 has v0 = ?.
+
+- `R200InitCommonRegisters` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x41e200
+  **Established.** Clears the part of a register image that every mode shares and copies one mode flag word into it. It stores zero at offsets +0, +4, +8, +12, +24, +28, +32, +40, +44 and +56 of the image in a0 (0x41e200 to 0x41e224), copies the word at a1+64 to +48 (0x41e228, 0x41e234) and, when bit 30 of that word is set (`dsll32` test at 0x41e22c), also sets bit 24 in the stored copy (0x41e238 to 0x41e244).
 
 - `R200InitCrtcRegisters` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x41e280 (n32).
   Evidence grade: inferred.
@@ -9344,7 +9348,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x4317c8 has v0 = ?.
 
 - `InOverlay` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x4317c0
-  **Inferred.** Predicate on a visual or window record: it loads the byte at a0 +2 (0x4317c0), XORs it with 8 and compares with 1 unsigned (0x4317c4 to 0x4317cc), so it returns 1 exactly when that byte is 8. Reading that byte as the overlay depth is an inference from the name.
+  **Established.** Predicate that says whether a drawable lives in the overlay plane. It loads the byte at offset 2 of the argument (`lbu` at 0x4317c0), compares it with 8 using `xori` (0x4317c4) and returns 1 when they are equal and 0 otherwise (`sltiu` at 0x4317cc). It has no side effects and calls nothing.
 
 - `FIREGL_ClipNotify` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x432bc0 (n32).
   Evidence grade: inferred.
@@ -10877,8 +10881,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x436654 has v0 = 0x0.
 
 - `CMapSwitchMode` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x4365c0
-  **Inferred.** A 156-byte routine that loads through a chain of fields at +0x34, +0x168, +0x0 and +0x20, then calls an unidentified function at 0x436604 with a0 to a3 passed through. It returns 0 when that call returns 0. Otherwise it reads miInstalledMaps indexed by a0 and, when that word is nonzero, calls CMapReinstallMap on it, then returns 1. The render does not name the structures in the field chain or the table that supplies the callee. Role (from name): a colormap switch for a screen. The unidentified callee's behavior is not shown.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Mode switch hook of the colour map layer. It calls the original mode switch routine saved at offset 32 of the screen's colour map private record (load at 0x436600, call at 0x436604) and returns 0 if that fails (0x43664c). On success, when `miInstalledMaps` holds a map for the screen (0x436610 to 0x436620), it reinstalls the map with `CMapReinstallMap` at 0x436780 (call at 0x43662c) so the palette is reloaded for the new mode, and returns 1 (0x436638).
 
 - `CMapSetDGAMode` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x436680 (n32).
   Evidence grade: inferred.
@@ -11232,8 +11235,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x437b84 has v0 = ret(?).
 
 - `FIREGL_EnableDisableFBAccess` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x437b00
-  **Inferred.** Role (from name): enables or disables framebuffer access for screen number a0. It loads a pointer from screenInfo+52 indexed by a0 (the loads from 0x437b24), reads the word at offset 0 of that pointer (the `lw` at 0x437b2c), uses it to index xf86Screens, and loads the private block at +0xf8 (0x437b54). It calls FIREGL_OverlaySetRootClip (the `bgezall` at 0x437b5c) with the pointer from screenInfo as a0, the flag a1 and a3 unchanged. a2 holds 0x375e8, which the prologue also adds to t9 to form the global pointer, so it is probably not a real argument. It then makes an unresolved call at 0x437b70 through the pointer at +0x2070 of the private block (the `lw` at 0x437b68), with a0 set to the original a0 and a1 passed on, and returns that call's result. The render does not show what the callees do with the flag.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Wrapper installed over the server's frame-buffer access switch. It looks up the screen from `screenInfo` and `xf86Screens` (0x437b14 to 0x437b54), rebuilds the overlay root clip with `FIREGL_OverlaySetRootClip` at 0x43cbc0 (call at 0x437b5c), then calls the original handler saved in the driver-private record at +8304 with the screen index and the enable flag in a1 (load at 0x437b68, call at 0x437b70).
 
 - `FIREGL_EnableDisableFBAccess` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x437b00
   **Inferred.** Role (from name): per-screen switch for framebuffer access. It loads the word at `screenInfo`+0x34+4*a0 and passes it as a0 to `FIREGL_OverlaySetRootClip` (0x43cbc0, call at 0x437b5c), with a1 and a3 as received and a2 = 0x375e8. It reads a record at +0xf8 and the word at +0x2070, and makes a second, indirect call at 0x437b70 with a0 and a1 as received; the render does not name its target. The return at 0x437b84 gives that call's result. The render shows no branches, so there is no bounds test on a0.

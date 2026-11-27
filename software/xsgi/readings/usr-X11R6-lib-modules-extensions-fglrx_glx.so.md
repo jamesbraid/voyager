@@ -2138,6 +2138,12 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x6e9230 has v0 = one of ?, ret(?).
   The instructions from 0x6e9238 to 0x6e923c are not reached by any path from the entry, and their branches are not listed.
 
+- `__R300TCLCreateDMABuffers` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x6ec540
+  **Inferred.** Prepares the buffer-size fields used by the vertex path and calls out to allocate it. It stores the size 0x40000 at context +0x46e28 (0x6ec558) and the value 16384 (0x4000) at +0x46e2c (0x6ec564), calls the context callback at +52 (jalr at 0x6ec574) and then lowers the command limit at +0x46d5c by 120 bytes (0x6ec588 to 0x6ec58c), keeping room at the end of the buffer for the closing packets.
+
+- `__R300TCLLoadContext` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x6ec780
+  **Inferred.** Loads the current immediate-mode state into the hardware vertex engine when a context becomes active. It runs `__R300TCLUpdateCurrentState` (call at 0x6ec7a4), writes the user clip planes with `__R300TCLWriteUserClipPlaneData` when the count at context +3704 is nonzero (0x6ec7b8), then either writes material data with `__R300TCLWriteMaterialData` (0x6ec7e8) or, when the material field in the word at +3564 is zero, sends one packet of four floats from context +1820 to +1832 with header 0x308cc (0x6ec848 to 0x6ec888). It sets the byte at context +0x47cac, calls `__R300TCLWriteVertexShaderData` when a vertex program is bound (0x6ec8b0) and finishes with `__ATITCLWriteFFXData` (0x6ec8c0).
+
 - `GetArgRGB` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x6f5340 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
@@ -3023,6 +3029,51 @@ One entry per routine, filed here from the reading batches by binary.
   The `bne` branch at 0x74ec84 targets 0x74ec6c, is taken when s0(?) != 0, and falls through when s0(?) == 0.
   The return at 0x74eca0 has v0 = one of ?, ret(?).
 
+- `__R300TCLWriteVertexShaderData` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x757c80
+  **Inferred.** Sends the bound vertex program and its constants to the chip. Under the DRM lock when the context flag at +0xc99c is set (calls to `fglX11GLDRMLock` at 0x757cc4 and `fglX11GLDRMUnlock` at 0x757df8) it first writes every cached program in the list at context +0xccbc with `WriteProgram` at 0x74c7c0 (call at 0x757ce0). For the current program (record at +0xccc8, byte flag at +20) it then writes a three-word packet at register index 0x8b4 (byte offset 0x22d0, `VAP_PVS_CODE_CNTL_0`) from the context words at +0x40000 plus 29144, 29140 and 29148 (0x471d8, 0x471d4, 0x471dc), calls `__R300TCLConfigureVAP_CNTL` (call at 0x757dc0) and uploads constants with `WriteConstants` at 0x74cb00 (call at 0x757de4).
+
+- `__R300ClearCMask` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x758380
+  **Inferred.** Clears the colour-mask memory and loads the matching clear colour. It scales the four clear-colour floats at context +3768 to +3780 by a constant from the global table, truncates them and packs them as four bytes (shifts 16, 8, 0 and 24, 0x7583a8 to 0x758404). After waiting for 8 words of command space it writes `RB3D_DSTCACHE_CTLSTAT` (5011) with 10, `RB3D_COLOR_CLEAR_VALUE` (4997, byte offset 0x4e14) with the packed value and the type-3 header 0xc0023800 with the surface words +176 and +180 divided by the pipe count (0x758480 to 0x7584c0). It then marks the surface cleared by storing 2 at +172 and keeps the four floats at +184 to +196.
+
+- `__R300ForceCmaskClearWithoutQSList` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x758bc0
+  **Inferred.** Runs the colour-mask clear for a context that has no command list queued. It asks the X driver for a list buffer with `fglX11GetQsList` (call at 0x758bfc, size argument 296 stored at 0x758bd8 to 0x758bdc, drawable from context +924), returns 0 if none comes back, otherwise calls `__R300ForceCmaskClear` at 0x758ac0 to fill the buffer (0x758c20) and submits what was written with `fglX11SendQsList` (call at 0x758c38, length passed as the pointer difference). The result is 1 exactly when the submit returns 0 (`sltiu` at 0x758c48).
+
+- `__R300StencilFetch` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x75cdc0
+  **Established.** Software read of one stencil value from the depth-stencil buffer. It asks the buffer's span-address routine, found through the function slot at context +0xc824 (load at 0x75cde4, call at 0x75cdf4), for the address of the pixel at the coordinates in a1 and a2, and returns the byte at offset 3 of that word (`lbu` at 0x75ce00), which is the 8-bit stencil field.
+
+- `__R300StencilStore` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x75ce40
+  **Established.** Software write of one stencil value under the stencil write mask. It finds the pixel address with the same span-address routine as the fetch (slot at context +0xc824, call at 0x75ce80), loads the 16-bit write mask from context +3350 (`lh` at 0x75ce90) and updates the byte at offset 3 of the word as (value & mask) | (old & ~mask) (0x75ce9c to 0x75ceb4).
+
+- `__R300DepthFetch` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x75fcc0
+  **Established.** Software read of one depth value from a 24-bit depth buffer. It gets the pixel address from the span-address routine in the function slot at context +0xc820 (load at 0x75fce4, call at 0x75fcf4), loads the 32-bit word there and shifts it right by 8 (0x75fd10) so the stencil byte is dropped and the 24-bit depth is returned.
+
+- `__R300DepthFetch16` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x75fd40
+  **Established.** Software read of one depth value from a 16-bit depth buffer. It uses the same span-address routine slot (context +0xc820, call at 0x75fd74) as the 24-bit reader, then returns the unsigned halfword at that address with `lhu` (0x75fd80), with no shifting or masking.
+
+- `__R300OverlayBlit` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x761bc0
+  **Inferred.** Runs an overlay colour blit with the buffer queue drained first. It calls `__glATISubmitBM` (call at 0x761be8) so earlier commands are submitted, then calls `__R300ColorBltFuncOV` at 0x761580 (call at 0x761c0c) with the lock object from context +0x40000-29280 and the cursor from +0x46d58, and stores the cursor it returns back at +0x46d58 (0x761c24).
+
+- `__R300ColorBltOV` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x761c40
+  **Inferred.** Wrapper for the overlay variant of the colour blit. It calls `__GLATIBlt` (0x761c64) with the worker address 0x761580 (0x760000 plus 5504, built at 0x761c58 to 0x761c68), which is `__R300ColorBltFuncOV`, and moves the descriptor from a2 into a3. The 60-byte body holds no branches and no register writes.
+
+- `__R300Zblt` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x761c80
+  **Inferred.** Depth blit entry. Like the colour blit wrappers it holds no logic: it hands the blit descriptor in a2 on as a3 and passes the worker address 0x75fdc0 (0x760000 minus 576, built at 0x761c98 to 0x761ca8) as the third argument of `__GLATIBlt` (call at 0x761ca4). The worker address lies just after `__R300DepthFetch16`.
+
+- `__R300ColorBlt3D` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x761cc0
+  **Inferred.** Selects the engine routine for a three-dimensional colour blit and hands it to the shared blit driver `__GLATIBlt`. When bit 0 of the descriptor word at a2+12 is set (0x761cc4 to 0x761cc8) it passes `__R300ResolveMultisampledColorBuffer` as the worker (0x761cf0), otherwise it passes the static routine at 0x760900, address built from 0x760000 plus 2304 (0x761d08 to 0x761d10). Both paths call `__GLATIBlt` at 0x761cec or 0x761d0c with the original descriptor as the fourth argument.
+
+- `__R300ColorBlt2D` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x761e40
+  **Inferred.** Thin wrapper that runs a two-dimensional colour blit through the shared driver `__GLATIBlt` (call at 0x761e64). It builds the address 0x760400 (0x760000 plus 1024, 0x761e58 to 0x761e68), which is `__R300ColorBlt2DFunc`, passes it as the third argument and copies the blit descriptor from a2 into a3. It tests no flags and writes no packet itself.
+
+- `__R300ColorBlt2DSync` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x761e80
+  **Inferred.** Runs a two-dimensional colour blit and, unless the descriptor opts out, queues an idle wait for it. It calls the worker at 0x760400 with the command cursor from context +0x46d58 (call at 0x761ec0), then tests bit 23 of the descriptor word at +12 (`dsll32` at 0x761ecc). When the bit is clear it appends header 3339 (0x342c) with 3 and header 1480 (0x1720) with 0x30000 (0x761f00 to 0x761f1c), saves the cursor back, calls `__glATISubmitBM` (0x761ee4) and returns 1.
+
+- `__R300HWBltFunc` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x764980
+  **Inferred.** Common worker that performs a hardware blit by drawing a textured rectangle. It gets the destination rectangle from `__R300HWBlt_SetupDestRectangle` (call at 0x7649f8) and then emits, at the cursor in a1, register pairs for `TX_INVALTAGS` (0), `RB3D_DSTCACHE_CTLSTAT` (10), `ZB_ZCACHE_CTLSTAT` (3) and `GB_ENABLE` (0) (0x764a2c to 0x764a64). It continues through `__R300NoGCSetOverrideRendering` (0x764a68), `__R300UpdateMultisampleRegsForBlt` (0x764a84), a `RB3D_CCTL` write, a pixel shader choice between `__R300OVSetupShader` and `__R300SetCopyTexturePixelShader` (0x764acc, 0x764cec), `__R300HWBlt_SetupPitchAndOffset` (0x764ae8), `__R300HWBlt_SetupTextureOffsetForBlit` (0x764b1c), `SetupTextureUnitForBlt` (0x764b70) and the rectangle draw `__R300DrawCopyRectangle` (0x764c00). It closes with the same cache flush pair writes (0x764c18 to 0x764c38) and returns the new cursor.
+
+- `__R300DrawBuffer` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x764e80
+  **Inferred.** Splits a request to draw into both front and back into two single-buffer selections. It acts only when the byte at context +25744 is nonzero, the requested mode a1 equals 1032 (front and back) and a count field is at most 32 (0x764e84 to 0x764eb8). It then calls `glDrawBuffersATI` with 2 buffers, 1024 and 1026 (call at 0x764eec), stores 1032 and 0 at context +3836 and +3840 (0x764f08 to 0x764f0c) and returns 1; in every other case it returns 0.
+
 - `__R300WriteColorChannelMask` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x766640 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
@@ -3103,6 +3154,12 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x767d10 has v0 = 0x0.
   The return at 0x767d18 has v0 = 0x0.
 
+- `__R300ForceZmaskClear` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x767e00
+  **Inferred.** Emits a type-3 packet that clears the depth-buffer mask memory. It first calls `__R300GetPipeCount` (0x767e18) to get the number of render pipes, then writes four words at the cursor a2: the header 0xc0023200 (type 3, opcode 0x32, the public clear-Z-mask opcode), the surface word at +108, the surface word at +112 divided by 16 and by the pipe count, and 0xffffffff (0x767e34 to 0x767e5c). It returns the cursor plus 16.
+
+- `__R300InitializeZMaskRAM` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x767e80
+  **Inferred.** Clears the depth-mask memory of a surface the first time it is used. It acts only when the surface state word at +200 equals 2 (0x767e8c to 0x767ea8). It gets a command list of 296 bytes with `fglX11GetQsList` (call at 0x767ed0), fills it by calling `__R300ForceZmaskClear` at 0x767e00 (call at 0x767ef4), submits it with `fglX11SendQsList` (call at 0x767f14) and stores 3 in the surface state word (0x767f28 to 0x767f2c).
+
 - `NotSoFastZStencilClear` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x767f40 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
@@ -3178,6 +3235,12 @@ One entry per routine, filed here from the reading batches by binary.
   The `bne` branch at 0x7682a0 targets 0x767f90, is taken when a5(=[[a0+232864]+749]:1) != 0, and falls through when a5(=[[a0+232864]+749]:1) == 0.
   The `beq` branch at 0x7682b8 targets 0x767fa4 and is always taken.
   The return at 0x768258 has v0 = ret(__R300CompleteOverrideRendering).
+
+- `__R300ClearZStencilBuffers` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x769a00
+  **Inferred.** Top-level depth and stencil clear. The GL clear mask in a1 selects depth with bit 0x100 and stencil with bit 0x400 (0x769ad4 to 0x769ad8). It aborts any batched fill pass with `__R300AbortZFillPassBatching` (call at 0x769ac0), then chooses between three paths: `__R300FastZStencilClear` at 0x769240 (call at 0x769c94), the scissored variant `__R300ScissoredFastZStencilClear` at 0x7682c0 (call at 0x769d5c) once `CanUseZHierarchy` at 0x767c80 (calls at 0x769c50 and 0x769d44) agrees, or `NotSoFastZStencilClear` at 0x767f40 (call at 0x769af4). It sets the byte flags at context +24670 and +24669 and the word at +24612 (0x769ae4, 0x769b0c, 0x769dbc) to record which hierarchy state resulted.
+
+- `__R300NoGCDrawRectangle` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x76a280
+  **Inferred.** Draws a screen rectangle with no graphics context by sending it as one large point. It scales the width and height in $f14 to $f17 by a factor from context +2168 and a global constant, packs them as two 16-bit values into a `GA_POINT_SIZE` write (register index 4231, byte offset 0x421c, stores at 0x76a2b0 to 0x76a328), then writes the type-3 header 0xc0053500 (opcode 0x35, the public immediate draw opcode) and a vertex at the rectangle centre with zero z and w (stores at 0x76a2d4 to 0x76a2f8).
 
 - `SendTexCoords` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x76bc80 (n32).
   Evidence grade: inferred.
@@ -3284,6 +3347,60 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x76e7b0 has v0 = ret(__R300VarrayAddPSC).
   The return at 0x76e808 has v0 = ret(__R300VarrayAddPSC).
   The instructions from 0x76e7b8 to 0x76e7bc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300UpdateEnvColorState` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x778ac0
+  **Inferred.** Converts each texture unit's environment colour into the signed 16-bit fixed format the hardware takes. For every unit up to the smaller of the counts at context +32136 and +0xc05c (0x778ae8 to 0x778b0c), stepping 1288 bytes per unit, it calls `FloatToS16E7` once for each of the four floats at unit +5216 to +5228 (calls at 0x778b50 to 0x778b84) and stores the results into a 16-byte slot per unit near context +0x47a20. It ends by setting dirty bit 0x400000 in the word at context +0x46e44 (0x778bb0 to 0x778bc0).
+
+- `__R300UpdateBufferState` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x778c00
+  **Established.** Revalidates the render buffer registers after a buffer change. It takes the buffer lock with `__glATILockRenderBuffers` (call at 0x778c24), runs `__R300ValidateBufferRegs` at 0x77fd00 (call at 0x778c30), releases the lock with `__glATIUnlockRenderBuffers` (0x778c3c), sets dirty bits 0x2000140 in the word at context +0x46e44 (0x778c50 to 0x778c68) and calls `__R300UpdateScissorState` to rebuild the clip window.
+
+- `__R300UpdateViewportState` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x778c80
+  **Inferred.** Copies the six viewport scale and offset floats from context +3376 to +3400 into the words that `__R300WriteViewportTransform` later emits (+0x47290 to +0x472a4, stores at 0x778c94 to 0x778cc4). It then fills the four guard-band adjust floats at context +0x472b0 to +0x472bc, either with a constant from the global table (0x778d24 to 0x778d30) or with ratios computed from the viewport width, height and offsets by add, subtract and divide (0x778d70 to 0x778e08), calls `__R300UpdateScissorState` at 0x778d34 and sets dirty bit 0x80 in the word at context +0x46e44.
+
+- `__R300FlushTexelCache` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x77a380
+  **Established.** Queues an invalidate of the texture cache tags. It first makes sure two dwords are free between the cursor at context +0x46d58 and the limit at +0x46d5c, calling `__glATISubmitBM` in a loop until they are (0x77a3c8 to 0x77a3e4). It then writes register index 4160 (`TX_INVALTAGS`, byte offset 0x4100) with the value 0 and moves the cursor on by 8 bytes (0x77a3f4 to 0x77a40c).
+
+- `__R300PartitionTextureCache` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x77b700
+  **Inferred.** Splits the texture cache among the enabled texture units. It counts the set bits of the unit enable mask at context +0x47138 (loop at 0x77b72c to 0x77b758), uses the count times 32 as a row offset into one of two tables of per-unit cache codes in the data segment, picked by whether a1 is nonzero (offsets -22240 and -21952 from the table pointer, 0x77b764 and 0x77b7c0), and for each of the 8 units whose mask bit is set writes the 5-bit code from the row into bits 27 to 31 of that unit's state word, the words starting at context +0x473a4 (loop at 0x77b780 to 0x77b7b4).
+
+- `__R300DetermineFogCoordinateIndex` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x77b800
+  **Inferred.** Finds which texture coordinate slot carries the fog coordinate. It walks the per-unit words starting at context +3572, up to the unit count at +32124, looking for the first one that is zero (loop at 0x77b828 to 0x77b838), stores that index (or -1 when the count is not positive, 0x77b844) at context +3300, and writes its low three bits into bits 21 to 23 of the word at +25684 and bits 3 to 5 of the word at +25532 (0x77b848 to 0x77b878).
+
+- `__R300WriteColorOffsetRegisters` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x77be00
+  **Inferred.** Emits the colour-buffer offset register packet and remembers where its value word landed. It appends a 16-byte shadow entry (the address a1+4 of the value word and the low byte of a4 as a tag) to the list at context +0x7e44, doubling the list through the callback at context +8 when it is full (0x77be58 to 0x77beb4). It then writes header ((a3-1)<<16)|0x138a (`RB3D_COLOROFFSET0`, byte offset 0x4e28) and the value a2 at a1 and a1+4 (0x77be60 to 0x77be78) and returns a1+8.
+
+- `__R300WriteColorPitchRegisters` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x77bf40
+  **Inferred.** Companion of the colour offset writer for the pitch register. Its shadow entry always carries the constant tag 1 (0x77bf50) instead of a caller tag, with the address a1+4 of the value word. The packet is header ((a3-1)<<16)|0x138e (`RB3D_COLORPITCH0`, byte offset 0x4e38) followed by the word a2 (0x77bfa0 to 0x77bfb8). The routine returns a1+8, and it grows a full shadow list through the context callback at +8 (call at 0x77bff4).
+
+- `__R300WriteDrawRectRegisters` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x77c280
+  **Inferred.** Writes no register packet at all; it only records a shadow entry for a draw rectangle. When the byte-sized flag word at context +0x6c64 is nonzero (0x77c290, branch at 0x77c2a8) it stores the address a1, the tag 27 and the two floating-point arguments held in $f14 and $f15 into the next 16-byte entry of the shadow list at context +0x7e44 (0x77c2b0 to 0x77c2c8). A full list is doubled through the callback at context +8 (call at 0x77c31c).
+
+- `__R300WriteMaskCorrectRectAbort` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x77c580
+  **Inferred.** Shadow-list recorder for the rectangle-abort case of mask correction. Only when the flag at context +0x6c64 is nonzero (0x77c590, branch at 0x77c5a8) does it write one 16-byte entry holding the address a1, the tag 28 (0x77c59c) and the single float argument in $f14 (0x77c5b4). It emits no hardware word. Compared with the draw rectangle recorder at 0x77c280 it carries one float where that one carries two. A full list is doubled by the callback at context +8 (call at 0x77c61c).
+
+- `__R300UpdateQueueAtSwap` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x77ecc0
+  **Established.** Entry used when a buffer swap is queued: it forwards to the shared queue updater `__R300UpdateQueue` at 0x77e0c0 (call at 0x77ed18) with the swap flag 1 (0x77ed1c). It advances the descriptor pointer a1 by 32 bytes, passes the descriptor words at +48, +52, +20, +24 and the byte at +56 (loads at 0x77ecdc to 0x77ecfc) and spills four of its own arguments to the stack for the callee (stores at 0x77ed00 to 0x77ed14).
+
+- `__R300UpdateQueueAtSubmit` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x77ed40
+  **Inferred.** Entry used when a command submit queues buffer updates. It first locates the colour drawable buffers with `__R300LocateColorDrawableBufs` at 0x77dc40 (call at 0x77ed7c), then tests bits 0x20 and 0x40 of the word at context +0x36ecc (0x77ed8c to 0x77eda4) to pick one of two context fields (+0x38... via -31120 or -31228 from context +0x40000) as the queue index, and forwards to `__R300UpdateQueue` at 0x77e0c0 with the swap flag 0 (call at 0x77ee00, flag set at 0x77ede4).
+
+- `__R300CalcHWDepthClearValue` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x77fc40
+  **Inferred.** Converts the current depth clear value into the integer the depth buffer stores. It enters floating-point mode with `__glSetFPUMode(3)` (call at 0x77fc64), picks the largest representable value from the depth bit count at context +0x38b10 (0xffff for 16, 0xffffff for 24, 0xffffffff for 32 or any other, compares at 0x77fc88 to 0x77fc98), multiplies it as a double by the clear depth at context +0xcf0 (0x77fcac to 0x77fcb4), truncates to a 64-bit integer and restores the mode with `__glUnsetFPUMode` (call at 0x77fcc4).
+
+- `__R300UpdatePolygonState` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x780900
+  **Inferred.** Translates the GL front and back polygon modes into the mode fields of the context's polygon-control word. It reads the two GL enumerants at context +2520 and +2524 (6912 point, 6913 line, 6914 fill, compared at 0x780928 to 0x78097c) and edits the word at context +0x47180: when both are fill it clears the two low bits (0x7809bc to 0x7809c8), otherwise it sets bit 0 and writes the front mode in bits 4 to 6 (0x10 line, 0x20 fill) and the back mode in bits 7 to 9 (0x80 line, 0x100 fill). It then calls `__R300UpdatePolygonOffsetState` (0x780990) and sets dirty bit 0x2000 in the word at context +0x46e44.
+
+- `__R300SetScissorStateNoGuardBand` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x781700
+  **Inferred.** Rebuilds the two scissor corner words without the guard band margin. It takes the drawable rectangle at context +0x35ce0 to +0x35cec, subtracts the window origin at +0x745c and +0x7460 and makes the right and bottom edges inclusive (0x781718 to 0x781740), clamps against the limits at +0x7474 and +0x7478 (0x781750 to 0x781788), adds the register bias 1088, or 1440 when the word at the hardware record +2168 equals 12 (0x781794, 0x7818ac), and packs x in bits 0 to 12 and y in bits 13 to 25 of the corner words at context +0x471a0 and +0x47154 (0x7817ac to 0x7817f0). When the flag at context +0x46940 is set it overwrites both words with x = 1 and y = 1 (0x781854 to 0x781878).
+
+- `__R300TemporarilyDisableGuardBandClipping` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x781900
+  **Inferred.** Switches the scissor to the no-guard-band form and emits it immediately. Unless one of the byte flags at context +24682 and +24683 is set it does nothing (0x781904 to 0x781920). Otherwise it calls `__R300SetScissorStateNoGuardBand` at 0x781700 (call at 0x781948), makes sure 4 dwords are free in the command buffer, submitting with `__glATISubmitBM` while they are not (0x781980), calls `__R300WriteScissorRegisters` at 0x77bc80 (0x7819ac) and stores the returned cursor at context +0x46d58.
+
+- `__R300ReenableGuardBandClipping` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x781a00
+  **Inferred.** Undoes the temporary guard-band switch. After the same two byte-flag tests at context +24682 and +24683 (0x781a04 to 0x781a20) it saves the dirty word at context +0x46e44 on the stack (0x781a54), calls `__R300UpdateScissorState` at 0x781480 (call at 0x781a58), waits for 4 free dwords, emits the scissor with `__R300WriteScissorRegisters` (0x781ab0), stores the new cursor and writes the saved dirty word back (0x781ac8 to 0x781acc), so the rebuild leaves no extra dirty bits behind.
+
+- `__R300SetHWClipping` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x784a00
+  **Inferred.** Turns hardware clipping on or off in the vertex clip control word. It compares (a1 == 0) with bit 16 of the word at context +0x471bc (0x784a14 to 0x784a3c) and, only when they differ, stores the new bit there (0x784a60 to 0x784a70), waits for 2 free dwords and writes register index 2183 (`VAP_CLIP_CNTL`, byte offset 0x221c) with the word (0x784aac to 0x784ac8).
 
 - `AddNormalArray` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x789900 (n32).
   Evidence grade: inferred.
@@ -4491,6 +4608,30 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x7a4670 has v0 = 0x1403.
   The return at 0x7a4684 has v0 = ?.
 
+- `__R300TCLArrayElementGeneral` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7ab580
+  **Established.** Fallback array-element handler for vertex formats the specialised R300 routines do not cover. It does no work of its own: the 52-byte body shifts the index argument from a1 into a0 and jumps through the global table entry to `__glim_ArrayElement` (call at 0x7ab59c), so the generic dispatcher issues the element.
+
+- `__glim_R300TCLArrayElement` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7ab5c0
+  **Established.** Entry point for an array element when the R300 hardware vertex path is active. It reads the current context pointer from absolute address 0x1010 (0x7ab5c4), loads the format index at context +0xbfa0 (0x7ab5e4), scales it by 4 and indexes the table `R300ArrayElementTable` (0x7ab5e8 to 0x7ab5f4), then jumps to the selected handler with the element index moved from a0 to a1 (0x7ab5f8 to 0x7ab600).
+
+- `__R300TCLArrayElementV3F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b1280
+  **Established.** Sends one position-only vertex of a float array to the command stream. It multiplies the element index in a1 by the array stride at context +0x7ec4 (0x7b1288), adds the array base at +0x7e98 (0x7b1298) and writes the header 0x20928 (three values for the register at byte offset 0x24a0, `VAP_VTX_ST_POS_0_X_3`) followed by the three words at element +0, +4 and +8 (0x7b12a4 to 0x7b12c4). The cursor at +0x46d58 advances 16 bytes, and when it passes the limit at +0x46d5c `__R300HandleBrokenPrimitive` is called (0x7b1308).
+
+- `__R300TCLArrayElementV3F_vcount` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b1340
+  **Established.** Counting twin of the plain float position element writer. The emission is the same, a 16-byte packet of header 0x20928 and the three position words (stores at 0x7b1374 to 0x7b1390), but it first adds 1 to the vertex counter at context +0x39268 (load at 0x7b1358, store at 0x7b1368), which the plain variant never touches. The cursor limit check at +0x46d5c leads to `__R300HandleBrokenPrimitive` (call at 0x7b13cc).
+
+- `__R300TCLArrayElementV3DC4UB` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b1780
+  **Established.** Array element with double positions and a four-byte colour. It reads the colour from the colour array (base +0x87d8, stride +0x8804) and packs its four bytes into one word in reverse order, byte 3 on top (loads at 0x7b17d0 to 0x7b17e4, `or` chain to 0x7b1804), writing it after the register index 2343 (`VAP_VTX_ST_USR_CLR_PKD`, byte offset 0x249c). It then writes header 0x20928 and converts three doubles of the position to floats with `cvt.s.d` (0x7b180c to 0x7b1828), stores the colour packet address at context +204 and advances the cursor 24 bytes.
+
+- `__R300TCLArrayElementV3FN3FT02F_vcount` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b4940
+  **Established.** Array element carrying texture coordinate, normal and position, with the vertex count kept. After bumping the counter at context +0x39268 (0x7b4998 to 0x7b499c) it writes three packets in one 44-byte step: header 0x108e8 (two values for the register at 0x23a0, `VAP_VTX_ST_TEX_0_S`) with the pair from the texture array at +0x80e8, header 0x208c4 (three values for 0x2310, `VAP_VTX_ST_NORM_0_X`) with the triple from the normal array at +0x7fc0, and header 0x20928 with the position triple (stores at 0x7b49a8 to 0x7b4a10). It saves the packet addresses at context +244 and +208.
+
+- `__R300TCLDrawArraysV3F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7bc300
+  **Inferred.** Draws a run of float positions in one immediate packet. It needs 3*count + 5 free dwords and calls `__glATISubmitBM` until they are free (0x7bc310 to 0x7bc358, 0x7bc46c). It then writes `VAP_VF_CNTL` (register index 2081, byte offset 0x2084) with the per-primitive value from the table at context +24700, the type-3 header 0xc0002d00 with a length of 3*count words, copies each vertex's three words from the array at +0x7e98 (loop at 0x7bc3c8 to 0x7bc3e8) and ends with register index 2347 (`VAP_VTX_ST_END_OF_PKT`, byte offset 0x24ac) set to 0 (0x7bc414 to 0x7bc41c). If the space never appears it hands off to `__glR300BreakDrawArrays` at 0x7bc100 (call at 0x7bc4b4).
+
+- `__R300TCLDrawArraysV3D` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7bcf40
+  **Inferred.** Draws a run of double-precision positions. Unlike the float version it writes one register header per vertex: after the `VAP_VF_CNTL` write (index 2081, value from the table at context +24700) each vertex becomes the header 0x20928 followed by three doubles from the array at +0x7e98 narrowed to float with `cvt.s.d` (loop at 0x7bd000 to 0x7bd030), 16 bytes per vertex, and the packet ends with register index 2347 set to 0 (0x7bd054). It needs 4*count + 4 free dwords (0x7bcf60) and falls back to `__glR300BreakDrawArrays` (call at 0x7bd0e0) with the value 4 for the vertex size.
+
 - `load_xyzw` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7cdac0 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
@@ -4695,6 +4836,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `swc1` at 0x7cde48 stores 4 bytes to [a2] +0x5c.
   The `sw` at 0x7cde54 stores 4 bytes to a2 (arg2 at entry) +0x0.
   The return at 0x7cde50 has v0 = (a0 + ([a1+20] << 0x4)).
+
+- `__R300WaitUberBuf` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7e7e00
+  **Established.** Appends a destination cache flush and an idle wait. It first guarantees 4 free dwords at context +0x46d58, submitting with `__glATISubmitBM` in a loop while fewer remain (0x7e7e48 to 0x7e7e64), then writes register index 5011 (`RB3D_DSTCACHE_CTLSTAT`) with the value 3 and register index 1480 (0x1720, the wait-until register) with the word from at (0x7e7e74 to 0x7e7e90) and moves the cursor on by 16 bytes.
 
 - `rewindToNextOpCode` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7f3cc0 (n32).
   Evidence grade: inferred.
@@ -5158,6 +5302,12 @@ One entry per routine, filed here from the reading batches by binary.
   The indirect jump at 0x7f6968 uses the jump table at 0xb76ff0 with targets 0x7f6cf4, 0x7f6cf4, 0x7f6c9c, 0x7f6cf4, 0x7f6d1c, 0x7f6cf4, 0x7f6d10, 0x7f6d00, 0x7f6cf4, 0x7f6d10.
   The indirect jump at 0x7f6968 uses the jump table at 0xb76ff0 with targets 0x7f6cf4, 0x7f6cf4, 0x7f6c9c, 0x7f6cf4, 0x7f6d1c, 0x7f6cf4, 0x7f6d10, 0x7f6d00, 0x7f6cf4, 0x7f6d10.
 
+- `__R300TCLSendTIMMOBuffer` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x80aa00
+  **Inferred.** Hands a finished immediate-mode vertex buffer to the command stream. It reads the buffer's end pointer at context +0x30000+28464 and the buffer record at +28508, checks for the marker word 0xeaeaeaea at the buffer end (0x80aa1c to 0x80aa44) and picks the end of data accordingly, stores it at +28476, calls `__R300TCLSetCurrentStateTIMMO` at 0x809180 (call at 0x80aa68) and, when data is present (0x80aa7c), calls `__R300TCLIndirectBufferTIMMO` at 0x808f80 (call at 0x80aa94) and records the new start in +28480 and +28720.
+
+- `__R300TCLWritePointSpriteData` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x813e00
+  **Inferred.** Uploads the point sprite parameters as one vertex program constant. It makes sure 7 dwords are free (submit loop at 0x813e48), writes register index 2176 (`VAP_PVS_VECTOR_INDX_REG`, byte offset 0x2200) with the constant slot 1030, then the header 0x38882 for four values and the floats from context +24880, +24884, +2456 and +24888 (0x813e70 to 0x813ec4), and moves the cursor on by 28 bytes.
+
 - `GetOcclusionQuery` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x817280 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
@@ -5198,6 +5348,15 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x817498 has v0 = one of [[a1+8]+52], ?.
   The return at 0x8174ec has v0 = ?.
   The instructions from 0x8172f4 to 0x8172fc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300DrawPixels` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x818380
+  **Established.** The 52-byte glDrawPixels entry for the R300 path. It makes no decisions: it jumps to `__R300DrawPixelsOp` at 0x8183c0 (call at 0x81839c) through the global table, adding the extra final argument a7 = 0 in the delay slot at 0x8183a0 so the common routine runs its normal, non-fast variant.
+
+- `__R300FastDrawPixels` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x81da40
+  **Inferred.** Selects a fast glDrawPixels route for simple transfers and returns 0 when none applies. Zero width or height (0x81da54, 0x81da5c) returns at once. For stencil-index data (format 6401) and depth data (6400) with byte or unsigned byte type (5120, 5121, compares at 0x81da94 to 0x81dab4) it calls `__R300DrawPixels_FastDownload` at 0x81ba40 (calls at 0x81db10, 0x81dc00 and 0x81dc98) with a6 = 1 or 0, and for colour-index data with an empty palette it calls `__R300DrawPixels_FastDownloadCI` at 0x81d440 (0x81dccc). It first checks pixel zoom and transfer state with `__glCheckForARBImagingOperations` (call at 0x81dae0).
+
+- `__R300ReadPixelsUseLock` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x81f600
+  **Inferred.** Chooses how glReadPixels reads the framebuffer while the hardware lock is held. It returns 0 for a zero third or fourth argument (0x81f61c, 0x81f624) and when the fourth argument is below 9 (0x81f630 to 0x81f654). Formats 6407, 6408, 0x80e0 and 0x80e1 with unsigned byte type 5121 and the transfer-state byte at context +2768 clear go to `__R300ReadPixels_UseLockUpload` at 0x81eb00 (call at 0x81f784). Colour-index data (6400) with no transfer state set goes to `__R300ReadPixels_UseLockUploadCI` at 0x81e480 (call at 0x81f6dc). Everything else is sent to `__glATIReadPixelsIndirect` (call at 0x81f734).
 
 - `LoadIVM` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x8200c0 (n32).
   Evidence grade: inferred.
@@ -6064,6 +6223,12 @@ One entry per routine, filed here from the reading batches by binary.
   Range: 0x866a40-0x866a64 (36 bytes).
   It occupies 36 bytes.
   The return at 0x866a5c has v0 = ?.
+
+- `__R300TCLWriteUserClipPlaneData` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x88cd00
+  **Inferred.** Uploads the enabled user clip planes to the vertex engine as program constants. It loops over 6 planes (compare at 0x88ce10), testing bit i of the enable mask at context +3704 (0x88cd68 to 0x88cd74), and for each enabled plane waits for 7 free dwords, writes `VAP_PVS_VECTOR_INDX_REG` (register index 2176, byte offset 0x2200) with the constant slot 1024 + i, then the header 0x38882 and the four plane-equation floats read at 16 bytes per plane from the array at context +3560 (0x88cdc4 to 0x88cdfc).
+
+- `__R300TCLWriteFogCoord` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x890240
+  **Established.** Immediate-mode path that sends one fog coordinate to the vertex engine. It takes the absolute value of the float argument in $f13 (compare against zero at 0x890248, negate at 0x890270), writes the register index 2313 (0x2424, `VAP_VTX_ST_DISC_FOG`) and the value at the command cursor held at context +0x46d58 (0x890274 to 0x890278), and advances the cursor by 8. When the new cursor passes the limit at +0x46d5c it calls `__R300HandleBrokenPrimitive` (0x8902a8).
 
 - `ParseSymbol` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x89b380 (n32).
   Evidence grade: inferred.

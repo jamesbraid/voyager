@@ -97782,7 +97782,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x764e08 has v0 = [ret(?)+3]:1.
 
 - `__R300StencilFetch` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x764dc0
-  **Established.** Software read of one stencil value from the depth-stencil buffer. It asks the buffer's span-address routine, found through the table slot at offset -14300 from the context base (load at 0x764de4, call at 0x764df4), for the address of the pixel at the coordinates in a1 and a2, and returns the byte at offset 3 of that word (`lbu` at 0x764e00), which is the 8-bit stencil field.
+  **Established.** Software read of one stencil value from the depth-stencil buffer. It asks the buffer's span-address routine, found through the function slot at context +0xc824 (load at 0x764de4, call at 0x764df4), for the address of the pixel at the coordinates in a1 and a2, and returns the byte at offset 3 of that word (`lbu` at 0x764e00), which is the 8-bit stencil field.
 
 - `__R300StencilStore` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x764e40 (n32).
   Evidence grade: inferred.
@@ -97799,7 +97799,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x764eb8 has v0 = ret(?).
 
 - `__R300StencilStore` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x764e40
-  **Established.** Software write of one stencil value under the stencil write mask. It finds the pixel address with the same span-address routine as the fetch (slot at -14300, call at 0x764e80), loads the 16-bit write mask from context +3350 (`lh` at 0x764e90) and updates the byte at offset 3 of the word as (value & mask) | (old & ~mask) (0x764e9c to 0x764eb4).
+  **Established.** Software write of one stencil value under the stencil write mask. It finds the pixel address with the same span-address routine as the fetch (slot at context +0xc824, call at 0x764e80), loads the 16-bit write mask from context +3350 (`lh` at 0x764e90) and updates the byte at offset 3 of the word as (value & mask) | (old & ~mask) (0x764e9c to 0x764eb4).
 
 - `__R300DepthStoreNEVER` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x764ec0 (n32).
   Evidence grade: inferred.
@@ -98834,7 +98834,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x767d0c has v0 = ?.
 
 - `__R300DepthFetch` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x767cc0
-  **Established.** Software read of one depth value from a 24-bit depth buffer. It gets the pixel address from the span-address routine in the table slot at -14304 (load at 0x767ce4, call at 0x767cf4), loads the 32-bit word there and shifts it right by 8 (0x767d10) so the stencil byte is dropped and the 24-bit depth is returned.
+  **Established.** Software read of one depth value from a 24-bit depth buffer. It gets the pixel address from the span-address routine in the function slot at context +0xc820 (load at 0x767ce4, call at 0x767cf4), loads the 32-bit word there and shifts it right by 8 (0x767d10) so the stencil byte is dropped and the 24-bit depth is returned.
 
 - `__R300DepthFetch16` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x767d40 (n32).
   Evidence grade: inferred.
@@ -98849,7 +98849,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x767d88 has v0 = [ret(?)]:2.
 
 - `__R300DepthFetch16` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x767d40
-  **Established.** Software read of one depth value from a 16-bit depth buffer. It uses the same span-address routine slot (-14304, call at 0x767d74) as the 24-bit reader, then returns the unsigned halfword at that address with `lhu` (0x767d80), with no shifting or masking.
+  **Established.** Software read of one depth value from a 16-bit depth buffer. It uses the same span-address routine slot (context +0xc820, call at 0x767d74) as the 24-bit reader, then returns the unsigned halfword at that address with `lhu` (0x767d80), with no shifting or masking.
 
 - `ZBltFunc` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x767dc0 (n32).
   Evidence grade: inferred.
@@ -107038,6 +107038,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `beq` branch at 0x7837d0 targets 0x78375c and is always taken.
   The return at 0x7837b8 has v0 = 0x41a0a0.
 
+- `__R300PartitionTextureCache` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x783700
+  **Inferred.** Splits the texture cache among the enabled texture units. It counts the set bits of the unit enable mask at context +0x47138 (loop at 0x78372c to 0x783758), uses the count times 32 as a row offset into one of two tables of per-unit cache codes in the data segment, picked by whether a1 is nonzero (offsets -22240 and -21952 from the table pointer, 0x783764 and 0x7837c0), and for each of the 8 units whose mask bit is set writes the 5-bit code from the row into bits 27 to 31 of that unit's state word, the words starting at context +0x473a4 (loop at 0x783780 to 0x7837b4).
+
 - `__R300DetermineFogCoordinateIndex` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x783800 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/dri/fglrx_dri.so`.
@@ -108943,6 +108946,9 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x789874 has v0 = ?.
   The return at 0x789880 has v0 = ?.
   The instructions from 0x78987c to 0x78987c are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300SetScissorStateNoGuardBand` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x789700
+  **Inferred.** Rebuilds the two scissor corner words without the guard band margin. It takes the drawable rectangle at context +0x35ce0 to +0x35cec, subtracts the window origin at +0x745c and +0x7460 and makes the right and bottom edges inclusive (0x789718 to 0x789740), clamps against the limits at +0x7474 and +0x7478 (0x789750 to 0x789788), adds the register bias 1088, or 1440 when the word at the hardware record +2168 equals 12 (0x789794, 0x7898ac), and packs x in bits 0 to 12 and y in bits 13 to 25 of the corner words at context +0x471a0 and +0x47154 (0x7897ac to 0x7897f0). When the flag at context +0x46940 is set it overwrites both words with x = 1 and y = 1 (0x789854 to 0x789878).
 
 - `__R300TemporarilyDisableGuardBandClipping` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x789900 (n32).
   Evidence grade: inferred.

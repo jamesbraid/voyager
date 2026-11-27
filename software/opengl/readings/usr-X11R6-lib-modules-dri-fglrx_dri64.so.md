@@ -29183,6 +29183,18 @@ One entry per routine, filed here from the reading batches by binary.
   **Inferred.** Calls fglX11DrawableBufToBltSurface [call 1], then __glATISubmitBM [call 3, @0x7b1ddc fall nonzero] and accumMultiBlt [call 6, @0x7b1ddc fall nonzero]; both sides of the byte test at 0x7b1ddc rejoin before those calls. It converts a float with FloatToS16E7 only when the word at +345520 behind [a0] is zero [call 10, @0x7b1e00 taken zero]. The return at 0x7b1f88 returns the result of __glATISubmitBM [@0x7b1f88]. Role (from name): adds the accumulation buffer into the drawable.
   Reviewed: 2026-11-12
 
+- `__R300StencilFetch` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7b22b0
+  **Established.** Reads one stencil value from the depth-stencil buffer in the 64-bit build. It takes the span-address routine from the function slot at context +0xf1a0 (load at 0x7b22d4, call at 0x7b22e4), passes it the pixel coordinates from a1 and a2 and the buffer record at a0+16 (0x7b22e8), and returns the byte at offset 3 of the word it points to (`lbu` at 0x7b22f0).
+
+- `__R300StencilStore` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7b2300
+  **Established.** Writes one stencil value under the write mask in the 64-bit build. It finds the pixel with the span-address routine in the context slot at +0xf1a0 (call at 0x7b2340), reads the 16-bit write mask from context +0xe66 (`lh` at 0x7b2350) and stores the byte at offset 3 as (value & mask) | (old & ~mask) (0x7b235c to 0x7b2374).
+
+- `__R300DepthFetch` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7b4d50
+  **Established.** Reads one 24-bit depth value in the 64-bit build. The address comes from the span-address routine in the context slot at +0xf198 (load at 0x7b4d74, call at 0x7b4d84); the routine loads the 32-bit word there (`lw` at 0x7b4d90) and shifts it right by 8 (0x7b4da0) so only the depth bits remain.
+
+- `__R300DepthFetch16` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7b4db0
+  **Established.** Reads one 16-bit depth value in the 64-bit build. It calls the span-address routine from the context slot at +0xf198 (load at 0x7b4dd4, call at 0x7b4de4) and returns the unsigned halfword at the returned address, loaded with `lhu` at 0x7b4df0, unchanged.
+
 - `ZBltFunc` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7b4e00
   **Inferred.** Calls __R300HWBltFunc [call 1] on the first path. When the word at a2+16 is nonzero, it calls fglX11CMMAllocBltSurface [call 2] [@0x7b5248 fall nonzero]. Later calls to __R300HWBltFunc are [call 3] and [call 4]. The return at 0x7b5000 gives either the result of __R300HWBltFunc or a1+32 [@0x7b5000]. Role (from name): a Z-buffer blit.
   Reviewed: 2026-11-12
@@ -29207,9 +29219,21 @@ One entry per routine, filed here from the reading batches by binary.
   **Inferred.** Writes a block of state words into a0 at offsets from 0x0 to 0x74 [@0x7b6d38] [@0x7b6e1c] [@0x7b6e4c]. It returns a0+120 [@0x7b6e50]. Role (from name): sets up the null shader state block.
   Reviewed: 2026-11-12
 
+- `__R300ColorBltOV` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7b6ee0
+  **Inferred.** Overlay colour blit entry of the 64-bit build. It forwards to `__GLATIBlt` (call at 0x7b6f08) after moving the descriptor from a2 into a3 and building the worker address 0x7b6820, the routine `__R300ColorBltFuncOV`, as 0x7b0000 plus 26656 (0x7b6ef8 to 0x7b6f0c). The function is 64 bytes long and contains no conditional code.
+
+- `__R300Zblt` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7b6f20
+  **Inferred.** Depth blit entry of the 64-bit build, the same shape as the colour wrappers. It loads `__GLATIBlt` and the base 0x7b0000 from the global table (0x7b6f34 to 0x7b6f38), adds 19968 to get the worker at 0x7b4e00 (0x7b6f40, 0x7b6f4c), moves the descriptor from a2 into a3 and calls the driver at 0x7b6f48. It writes nothing itself.
+
+- `__R300ColorBlt3D` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7b6f60
+  **Inferred.** The 64-bit build's three-dimensional colour blit selector. It tests bit 0 of the descriptor word at a2+24 (0x7b6f64 to 0x7b6f68; the 32-bit build reads +12) and calls the shared driver `__GLATIBlt` through the global table either with `__R300ResolveMultisampledColorBuffer` as the worker (load at 0x7b6f90) or, with the bit clear, with the static routine at 0x7b59e0 (0x7b0000 plus 23008, 0x7b6fa8 to 0x7b6fb4). The descriptor is passed on as the fourth argument.
+
 - `__R300ColorBlt3DSync` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7b6fd0
   **Inferred.** Calls __glATISubmitBM [call 1], then calls __R300HWBltFunc [call 2] and __glATISubmitBM [call 3]. It returns the constant 0x1 [@0x7b70b8]. Role (from name): syncs a 3D colour blit with the submit queue.
   Reviewed: 2026-11-12
+
+- `__R300ColorBlt2D` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7b70c0
+  **Inferred.** Two-dimensional colour blit entry of the 64-bit build. Its only work is to call `__GLATIBlt` (load at 0x7b70d4, call at 0x7b70e8) with the blit descriptor moved from a2 to a3 and the worker `__R300ColorBlt2DFunc` at 0x7b5490, formed as 0x7b0000 plus 21648 (0x7b70d8, 0x7b70e0 and the add in the delay slot at 0x7b70ec). There is no branch and no hardware write.
 
 - `__R300HWBlt_SetupTextureOffsetForBlit` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7b9af0
   **Inferred.** Loads the 8-byte value at a1 [@0x7b9af0]. It stores a first pair of words into a0 at offsets 0x0 and 0x4 [@0x7b9b34], and a second pair, ending at offset 0xc, only when a5 is nonzero [@0x7b9b64] [@0x7b9b40 fall nonzero]. The branch at 0x7b9b1c is taken when bit 0x2 of the word at [a1]+28 is clear [@0x7b9b1c taken zero]. It returns a0+8 or a0+16 [@0x7b9bb0] [@0x7b9bf4]. Role (from facts): appends one or two word pairs at a0 from the descriptor at a1 [@0x7b9af0] and returns the advanced position, 8 bytes past a0 for one pair or 16 for two [@0x7b9bb0].
@@ -29537,6 +29561,9 @@ One entry per routine, filed here from the reading batches by binary.
   Role (from facts): refreshes the hardware state through the colour, cmask, scissor and viewport helpers [call 4] [call 5] [call 6] [call 7] and the point-sprite and clip helpers [call 9] [call 10], and calls the batch submit [call 3] [call 11] to make room before the writes.
   Reviewed: 2026-11-12
 
+- `__R300FlushTexelCache` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7d0170
+  **Established.** Queues a texture cache tag invalidate in the 64-bit build. It reads the command cursor at context +0x54aa8 and limit at +0x54ab0 and loops on `__glATISubmitBM` until 2 dwords are free (0x7d0180 to 0x7d01e4), then writes register index 4160 (`TX_INVALTAGS`, byte offset 0x4100) with 0 (0x7d01f0 to 0x7d01f8) and advances the 8-byte cursor by 8 (0x7d0204 to 0x7d020c).
+
 - `__R300WriteViewportTransform` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7d1910
   **Inferred.** It stores a word at a1+0 [@0x7d1994], then loads words from the context block at a0+0x550c8 [@0x7d1998] and a0+0x550c4 [@0x7d19a0] and stores them at a1+4 [@0x7d199c] and a1+8 [@0x7d19a4]. Further words from a0+0x550d0 through a0+0x550f0 are copied the same way [@0x7d19a8] [@0x7d19f0] up to a1+0x2c [@0x7d19fc]. It returns a1+48 [@0x7d1a00].
   Role (from facts): copies viewport transform words into the output block at a1 [@0x7d199c] [@0x7d19a4] and returns the address past them [@0x7d1a00].
@@ -29576,6 +29603,9 @@ One entry per routine, filed here from the reading batches by binary.
   **Inferred.** It calls __glATISubmitBM [call 1, @0x7d52b4 fall] and calls __R300WriteColorOffsetRegisters [call 2] and __R300WriteColorPitchRegisters [call 3]. It calls __R300UpdateHWTexState [call 5], __R300WriteViewportTransform [call 7], __R300WriteCmaskEnableRegistersAbort [call 8], SendColorMask [call 9], __R300WriteScissorRegisters [call 10], __R300WriteDepthOffsetRegisters [call 11] and __R300WriteDepthPitchRegisters [call 12]. It calls __R300LoadLargePSProgToHwRegs [call 13], then __glATISubmitBM [call 16, @0x7d6320 taken nonzero]. When the value returned by call 13 is zero [@0x7d5dfc taken zero] it calls __R300LoadCachedPSProgToHwRegs [call 23], __R300LoadAllCachedPSProgInstToHwRegs [call 24] and __R300TCLWritePointSpriteData [call 25]. Falling through [@0x7d6320 fall] reaches those calls too.
   Role (from facts): sets up the colour, depth, scissor, viewport and cmask register groups [call 2] [call 3] [call 7] [call 8] [call 10] [call 11] [call 12], calls the batch submit [call 1] [call 16] in loops that run while the buffer is short of room, and programs the shader and point-sprite data [call 23] [call 24] [call 25].
   Reviewed: 2026-11-12
+
+- `__R300CalcHWDepthClearValue` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7d6360
+  **Inferred.** Turns the GL clear depth into the integer written to the depth buffer, in the 64-bit build. It brackets the work with `__glSetFPUMode(3)` (call at 0x7d6384) and `__glUnsetFPUMode` (call at 0x7d63e4), picks the maximum value from the depth bit count at context +0x42d40 (0xffff for 16, 0xffffff for 24, 0xffffffff for 32 or any other, compares at 0x7d63a8 to 0x7d63b8), and multiplies it as a double by the clear depth at context +0xe40 (0x7d63cc to 0x7d63d4) before truncating to a long (0x7d63dc).
 
 - `AddNormalArray` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7e00e0 (n64).
   Evidence grade: inferred.
@@ -31231,6 +31261,9 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x87923c has v0 = one of [[a1+8]:8+60], ?.
   The instructions from 0x87927c to 0x87927c are not reached by any path from the entry, and their branches are not listed.
   The instructions from 0x8792b8 to 0x8792bc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300DrawPixels` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x87a3e0
+  **Established.** The 52-byte glDrawPixels entry of the 64-bit build. It calls `__R300DrawPixelsOp` at 0x87a420 (call at 0x87a3fc, address from the global table at -3336 from gp) and puts the constant 0 in a7 as the extra last argument (0x87a400), which selects the ordinary non-fast variant of the common routine.
 
 - `LoadIVM` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x882780 (n64).
   Evidence grade: inferred.
