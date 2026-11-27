@@ -163,8 +163,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x40a9c8 has v0 = ret(R200WaitForIdle).
 
 - `R200RestoreAccelState` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x40a980
-  **Inferred.** Reads the pointer at +0xf8 of its argument block, then calls `R200SelectBuffer` at 0x40a9a8 with a1 = the address at offset 0x2428 (9256) of that block and a2 = the constant 0x64768. It then calls `R200WaitForIdle` at 0x40a9b4 and returns that call's value at 0x40a9c8. Role (from name): re-selects the buffer and waits for the engine to go idle.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Puts the 2D engine back into a known state after the 3D client used it. It calls `R200SelectBuffer` (call at 0x40a9a8) with the screen and the buffer descriptor at driver-private +9256, then waits for the engine to drain with `R200WaitForIdle` (call at 0x40a9b4) on the same screen, and returns.
 
 - `R200RestoreCPAccelState` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x40aa00 (n32).
   Evidence grade: inferred.
@@ -927,8 +926,7 @@ One entry per routine, filed here from the reading batches by binary.
   The instructions from 0x40db74 to 0x40db7c are not reached by any path from the entry, and their branches are not listed.
 
 - `R200SetCursorPosition` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x40d280
-  **Inferred.** Role (from name): moves the hardware cursor to a requested position. What the render shows is a clamp and a set of stores. A value in a2 is compared with the word at +8 of the bounds record `[[a0+248]+6396]` and a value derived from a1 with the word at +12 (the `bne` branches at 0x40d418 and 0x40d42c), and the clamped values are packed into words stored into `[[a0+248]+48]` at offsets 0x360, 0x364 and 0x368 (0x40d458 to 0x40d488). Those stores are on the path where the byte at `[a0+248]+0x5a` is nonzero (the `beq` at 0x40d44c); when it is zero a different path stores at offsets 0x260, 0x264 and 0x268 (0x40d630 to 0x40d664). The only named callee the render shows is `R200CloneAdjustFrame` at 0x40d5e8, called on one branch with `[a0+12]` as a0 and `[[a0+248]+112]` as its sixth argument (a5). The two returns at 0x40d534 and 0x40d564 yield values the render does not resolve.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Moves the hardware cursor to the pointer position (a1 = x, a2 = y) by writing three cursor registers per display controller through the register window at driver-private +48. It adds the frame origin at screen +176 and +180, clips the position against the visible frame at private +112 and +116 (calling `R200CloneAdjustFrame` at 0x40d5e8 to pan when the pointer leaves it), then stores ((x_clip << 16) | y_clip) with bit 31 set as the in-image offset word (0x40d458, 0x40d630), the same packing of the visible position as the position word (0x40d474, 0x40d64c) and the cursor image address plus a row offset of 16 bytes per clipped row as the offset word (0x40d488, 0x40d664). Controller 1 uses register offsets 0x260 to 0x268 and controller 2 uses 0x360 to 0x368, picked by the flag bytes at private +90 and +93.
 
 - `R200LoadCursorImage` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x40dc00 (n32).
   Evidence grade: inferred.
@@ -1078,8 +1076,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x40e42c has v0 = ?.
 
 - `R200UseHWCursor` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x40e400
-  **Inferred.** Takes a screen index from its argument, looks up that screen's record in `xf86Screens` (0x40e414 to 0x40e420), follows the driver-private pointer at +0xf8 (0x40e424), and loads the word at +0x1900 of it (0x40e428) before returning at 0x40e42c. The result is a per-screen value that the name suggests is the hardware-cursor choice. What sets the word at +0x1900 is not derived here.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Reports whether the hardware cursor is in use on a screen. It indexes the global screen array `xf86Screens` with the screen index at a0+0 (0x40e40c to 0x40e41c), follows the screen's driver-private pointer at +248 and reads the word at private +6400, returning 1 when it is nonzero and 0 otherwise (`sltu` at 0x40e430). It touches no hardware.
 
 - `R200SetupDGAMode` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x40e640 (n32).
   Evidence grade: inferred.
@@ -1778,8 +1775,7 @@ One entry per routine, filed here from the reading batches by binary.
   The instructions from 0x410cb4 to 0x410cbc are not reached by any path from the entry, and their branches are not listed.
 
 - `R200MapFB` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x410bc0
-  **Inferred.** Role (from name): maps the framebuffer for the R200 driver. Reads the private block at +0xf8 of the argument and branches at 0x410bd8 on the word at [priv+52]. When that word is nonzero, `xf86DrvMsg` at 0x410c7c is followed by `xf86exit` with status 1 at 0x410c88. When it is zero and the word at [priv+24] is nonzero (branch at 0x410be4), `fbdevHWMapVidmem` at 0x410bf0 is called with the value at [priv+68] as its fifth argument (a4). When both are zero, the 8-byte value at [priv+9256] is tested at 0x410c18. If it is nonzero, `drmMap` at 0x410c28 is called with [priv+6572] as a0, that 8-byte value as a1 and the address priv+52 as a3, and a nonzero `drmMap` result leads to an `xf86DrvMsg` call at 0x410c44 and a return of 0 at 0x410c64. If it is zero, `xf86MapPciMem` at 0x410cd0 is called with a1 = 1 and the values at [priv+8] (a2), [priv+36] (a3) and [priv+68] (a4).
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Maps the frame buffer into the X server and records the pointer in the driver-private record at +52. If a mapping already exists it logs an error with `xf86DrvMsg` and calls `xf86exit(1)` (0x410c6c to 0x410c8c). On a frame-buffer device (word +24 nonzero) it uses `fbdevHWMapVidmem` (call at 0x410bf0). Otherwise, when the DRM handle at +9256 is set, it calls `drmMap` with the device file at +6572 and size +68 (call at 0x410c28), and without DRM it calls `xf86MapPciMem` with base +8 and size +36 (call at 0x410cd0). It returns 1 for a nonzero mapping.
 
 - `R200UnmapFB` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x410d00 (n32).
   Evidence grade: inferred.
@@ -1807,8 +1803,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x410d68 has v0 = 0x1.
 
 - `R200UnmapFB` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x410d00
-  **Inferred.** A 184-byte routine that works on the private record at arg0+248. When the word at +52 is zero, the beq at 0x410d14 branches to 0x410d70; the xf86DrvMsg call at 0x410d84 (message type 5) and the xf86exit call at 0x410d90 (status 1) lie after that target. When the word at +52 is nonzero and the word at +24 is nonzero, it calls fbdevHWUnmapVidmem at 0x410d30. When the word at +52 is nonzero and the word at +24 is zero, it calls drmUnmap at 0x410d50 if the doubleword at +9256 (an 8-byte load) is nonzero, and xf86UnMapVidMem at 0x410da8 if it is zero. The return at 0x410d68 gives 1, after a word store to +52 at 0x410d60; the render does not show the value stored. The render lists the xf86UnMapVidMem call after the xf86exit call in address order only and shows no branch between them, so this entry does not describe the flow there. Role (from name): unmapping the framebuffer and DRM mappings.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Undoes the frame-buffer mapping made by `R200MapFB`. With a mapping present at private +52 it unmaps through `fbdevHWUnmapVidmem` (call at 0x410d30), `drmUnmap` with the size at +68 (0x410d50) or `xf86UnMapVidMem` (0x410da8), choosing by the same frame-buffer-device and DRM tests, then zeroes the pointer and returns 1 (0x410d5c to 0x410d60). With no mapping it logs through `xf86DrvMsg` and calls `xf86exit(1)` (0x410d70 to 0x410d94).
 
 - `R200Blank` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x410ec0 (n32).
   Evidence grade: inferred.
@@ -5450,8 +5445,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x41d67c has v0 = ret(R200INPLL).
 
 - `R200SavePLL2Registers` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x41d600
-  **Inferred.** Calls `R200INPLL` four times at 0x41d624, 0x41d638, 0x41d64c and 0x41d660 with a1 set to 0x2b, 0x2c, 0x2e and 0x2d in that order and a0 as received. Stores at 0x41d634, 0x41d648, 0x41d65c and 0x41d674 write the results to offsets +0x368, +0x36c, +0x370 and +0x374 respectively; the render does not show the base register of these stores (a1 at entry is not shown). The return at 0x41d67c gives the v0 of the last `R200INPLL` call. Role (from name): saving PLL register values.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Saves four registers of the second pixel clock PLL into a save record. It calls the PLL read routine `R200INPLL` with indices 43, 44, 46 and 45 (calls at 0x41d624, 0x41d638, 0x41d660 and 0x41d664) and stores the four results at record offsets +872, +876, +880 and +884. It returns no value.
 
 - `R200SavePalette` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x41d6c0 (n32).
   Evidence grade: inferred.
@@ -6585,8 +6579,7 @@ One entry per routine, filed here from the reading batches by binary.
   The instructions from 0x420a7c to 0x420a80 are not reached by any path from the entry, and their branches are not listed.
 
 - `R200InitPLLRegisters` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x420900
-  **Inferred.** A 388-byte routine that stores seven words at offsets +0x33c, +0x340, +0x344, +0x348, +0x34c, +0x350 and +0x354; the render does not name the store base. It loads halfwords and words from arg1 (+0, +2, +4, +8) and performs nine 64-bit loads (ld at 0x420940 through 0x42095c and at 0x42097c). A loop branches back from 0x420a08 to 0x4209e8, and a bnel at 0x420a14 compares the word at arg1+8 with another register. It calls R200Div through [0x4112c0] at 0x420a34 with a1 taken from the halfword at arg1+0, a3 = the word at arg1+8 and a7 = 0x45f190, and returns its result at 0x420a74. Role (from name): PLL register setup. The body does not show which hardware register each stored word feeds.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Chooses the first pixel clock PLL dividers for a requested clock (the double in $f14, scaled by a constant at gp-28720 and capped at the limit word a1+8) and fills the register image at a0. It copies a table of nine 8-byte divider pairs from a read-only block (loads at 0x420940 to 0x42097c), derives the reference divider as (a1+4 / 2) / 6 with a reciprocal multiply (0x4209bc to 0x4209d0), then tries each divider until the product lies between the limits at a1+4 and a1+8 (loop at 0x4209f4 to 0x420a18). It stores the product at +832, the reference divider at +828, the feedback result at +836, the post divider at +840 and the packed word ((post bits << 16) | feedback) at +848, with +844 taking a1[2] and +852 zero (0x420a1c to 0x420a6c).
 
 - `R200InitPLL2Registers` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x420ac0 (n32).
   Evidence grade: inferred.
@@ -6627,8 +6620,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x420c34 has v0 = ret(R200Div).
 
 - `R200InitPLL2Registers` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x420ac0
-  **Inferred.** A 400-byte routine that reads the words at a1+4 and a1+8 and the halfwords at a1+0 and a1+2. It makes eight 8-byte loads near its start (0x420afc to 0x420b18); the render does not show their addresses. It calls R200Div through the pointer at 0x4112c0 once, at 0x420bf4, with a1 set to the halfword at a1+0, and stores words at a0+0x358 through a0+0x370 (seven distinct offsets, with +0x35c stored on two paths). It returns the result of R200Div. Role (from name): PLL-2 register values computed from the mode. The render does not show which constant feeds which register, so the mapping is unknown.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Second-controller twin of the first PLL set-up with its own divider table and its own register image words. The table is eight 8-byte pairs copied from the read-only block at offset -3624 (0x420afc to 0x420b3c) instead of nine from -3696, and the result lands in the image at a0 +856 (reference divider), +860 (product), +864 (feedback), +868 (post divider), +872 (a1[2]), +876 (packed post and feedback word) and +880 (zero), stores at 0x420ba8 to 0x420c20. The product must fall between the limits in a1+4 and a1+8 as in the first routine.
 
 - `R200InitPLL2RegistersDVO` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x420c80 (n32).
   Evidence grade: inferred.
@@ -6666,8 +6658,7 @@ One entry per routine, filed here from the reading batches by binary.
   The instructions from 0x420de4 to 0x420de8 are not reached by any path from the entry, and their branches are not listed.
 
 - `R200InitPLL2RegistersDVO` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x420c80
-  **Inferred.** Role (from name): computes the PLL2 divider fields for the DVO output from a mode record. What the render shows is that it reads the halfword at `[a1]` and the words at `[a1+4]` and `[a1+8]`, loads 64-bit words with `ld` from a constant table into a stack array, compares `[a1+8]` and `[a1+4]` with values derived from them (the branches at 0x420cfc, 0x420d1c and 0x420d70), and calls `R200Div` at 0x4112c0 from 0x420d9c with `[a1]` in a1 and `[a1+8]` in a3. Register a6 is shown holding the constant 0xaaaaaaab, which the render does not identify further. Seven words are stored at offsets 0x358, 0x35c, 0x360, 0x364, 0x368, 0x36c and 0x370 from a base register (0x420d64 to 0x420dd4). The return at 0x420ddc yields the `R200Div` result.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Variant of the second PLL set-up for a digital video output. It uses a shorter divider table, seven 8-byte pairs copied from the read-only block at offset -3560 (loads at 0x420c8c to 0x420cdc), and the same selection rule: scale the clock in $f14, cap it at a1+8, derive the reference divider, then take the first divider whose product lies between a1+4 and a1+8 (0x420d5c to 0x420d84). The register image words are +856, +860, +864, +868, +872, +876 and +880, the same slots as the plain second-PLL routine (stores at 0x420d64 to 0x420dd4).
 
 - `R200InitCenterMode` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x420e00 (n32).
   Evidence grade: inferred.
@@ -6694,8 +6685,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x420ee4 has v0 = 0x800000.
 
 - `R200InitCenterMode` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x420e00
-  **Inferred.** Fills a block of register values for centred display modes. It reads eight or more words of the driver private at +0x164 to +0x180 and two fields of the mode record in a2 (+0x4c and +0x68). It stores six words into the argument block at +0x4, +0x8, +0x54, +0x58, +0x5c and +0x60 (0x420e40 to 0x420ee8), and returns the constant 0x800000 at 0x420ee4. Which register each stored word feeds, and how the private words combine into it, is not derived here.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Fills the panel centring words of a register image so a smaller mode sits in the middle of a fixed-size flat panel. From the mode (width at +76, height at +104) and the panel timing in the driver-private record (+356 to +384) it packs word +84 as ((mode width/8 - 1) << 16) | ((panel total/8 - 1) & 0x3ff), word +4 as the horizontal offset repeated in both halves, word +88 as the horizontal start plus half the margin minus 8 in the low 13 bits with a 6-bit field above, and words +92, +8 and +96 as the matching vertical values (stores at 0x420e40, 0x420e78, 0x420e84, 0x420ea8, 0x420ed8, 0x420ee8).
 
 - `StartFrameLock` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x420f00 (n32).
   Evidence grade: inferred.
@@ -7313,8 +7303,7 @@ One entry per routine, filed here from the reading batches by binary.
   The instructions from 0x4237b8 to 0x4237bc are not reached by any path from the entry, and their branches are not listed.
 
 - `R200DisplayPowerManagementSet` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x4234c0
-  **Inferred.** Role (from name): applies a display power state; the facts show only the branching and stores below. The argument a1 is compared with 0x0, 0x1, 0x2 and 0x3 by the branches from 0x4234dc to 0x4234f8, and the branches that follow compare the fields at `[[a0+248]+76]` and `[[a0+248]+96]` with 0x2 to 0x5. The routine loads and stores words in a block reached through `[[a0+248]+48]` (offsets such as 0x3f8, 0x88c, 0x800, 0x288 and 0x54), and the byte flags at `[a0+248]` offsets 0x59, 0x5a and 0x5d are tested to choose paths. It calls `R200INPLL` twice (0x423974 and 0x42399c) with register index 0x2d, and calls `xf86usleep` (0x423ac0); the render leaves a0 unknown there and shows a value loaded from `[[a0+248]+388]` in a1. The return value is `[[a0+248]+48]` on most paths, with `R200INPLL`'s result or an unshown value on one.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Sets the DPMS power state of the display controllers through the register window at driver-private +48. The level in a1 is compared with 0 (on), 1 (standby), 2 (suspend) and 3 (off) at 0x4234dc to 0x4234f8. When the controller flag at +90 is set it edits the word at register offset 0x3f8: on clears with mask 0xcf7fffff (0x423530), standby sets 0x10800000 (0x42353c), suspend sets 0x20800000 (0x423634) and off sets 0x30800000 (0x423510). For the controller flagged at +93 it clears the bits 0x700 of the word at offset 0x54 when switching on (0x423724 to 0x423734), and for the panel and transmitter types at +76 and +96 it edits the low bits of the words at 0x800 and 0x88c (0x4235e0 to 0x42360c, 0x423694 to 0x4236c0).
 
 - `R200Setup` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x424480 (n32).
   Evidence grade: inferred.
@@ -8218,8 +8207,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x4291e4 has v0 = 0x1.
 
 - `R200AGPInit` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x429180
-  **Inferred.** Calls `xf86GetEntityPrivate` (call at 0x4291a0) for the entity whose index is in `gR200EntityIndex`, then calls `xf86EnablePciBusMaster` (0x4291b8) on the handle at `[a0+248]+4` with a1 = 1. After that call it stores four words at offsets 0xe4, 0xe0, 0xdc and 0xd8 (0x4291cc to 0x4291e0); the render does not show the stored values or the base register of those stores, though the entity record is the likely target. It returns 1 at 0x4291e4. Role (from name): AGP initialization.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Prepares the AGP state of a screen without opening the AGP aperture. It fetches the entity private for `gR200EntityIndex` with `xf86GetEntityPrivate` (call at 0x4291a0), turns on PCI bus mastering for the device with `xf86EnablePciBusMaster(device, 1)` (call at 0x4291b8), then clears the AGP fields of the driver-private record at +216, +224 and +228 and stores -1 at +220 (0x4291cc to 0x4291e0). It returns 1.
 
 - `FIREGL_DRIValidateTree` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x429200 (n32).
   Evidence grade: inferred.
@@ -8548,8 +8536,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x42be18 has v0 = sym(aPM4_Microcode_R300)+2032.
 
 - `PM4LoadMicroCode` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42bcc0
-  **Inferred.** A 352-byte routine that picks a PM4 microcode table from the chip id at a0+160 and copies words from it to two fixed offsets, +0x7dc and +0x7e0, of the block at [[a0+7660]+4], alternating between the two. Chip id 0x31 selects the `aPM4_Microcode_R6x` table (branch at 0x42bd08). Chip ids 0x2c, 0x2d and 0x34 take the `aPM4_Microcode_R300` copy path (branches at 0x42bd10, 0x42bd18 and 0x42bd20). Ids 0x8 and 0x2f branch to 0x42bd9c, which the render does not decode further, and any other id returns at 0x42be18 without copying. The return values are the table base plus 2032: R300 at 0x42bd94 and 0x42be18, R6x at 0x42be10. Role (from name): loading PM4 microcode.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Uploads the command processor microcode through the register window at the pointer stored in the screen's private record at +7660. It writes 0x401f0000 to register offset 0x7d0 (0x42bcc8), zero to 0x7d4 (0x42bcd8), then chooses a table by the chip code at record +160: code 49 and the codes 8 and 47 take `aPM4_Microcode_R6x` (0x42bda0), codes 44, 45 and 52 take `aPM4_Microcode_R300` (0x42bd28). Each 8-byte entry goes high word to 0x7dc and low word to 0x7e0 with a `sync` after every store (0x42bd30 to 0x42bd90), 2048 bytes per table; any other code returns at 0x42be18 without loading.
 
 - `vR200_PM4Init` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42be40 (n32).
   Evidence grade: inferred.
@@ -9072,8 +9059,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x42f6c0 has v0 = [a0+40].
 
 - `ProcFGLGetPLLValue` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42f600
-  **Inferred.** Role (from name): protocol request handler that returns a PLL register value to a client. It compares the screen index at [[a0+8]+4] with the word at `sym(screenInfo)`+48 (0x42f620). An index not below that word goes to `ErrorF` (0x42f638) and returns the word at [a0+40] (0x42f64c). Otherwise it calls `R200INPLL` (0x42f690) with an `xf86Screens` entry chosen through `screenInfo` as a0, the word at [[a0+8]+8] as a1 and 1 as a2, then `WriteToClient` with length 0x20 and a stack buffer (0x42f6a8), and returns the word at [a0+40] (0x42f6c0). The facts do not show how the `R200INPLL` result reaches the reply.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Server-side handler of the extension request that reads a PLL register for a client. It rejects a screen number at request +4 that is not below the screen count at `screenInfo`+48 with an `ErrorF` message (0x42f614 to 0x42f638), otherwise reads the PLL register whose index is at request +8 with `R200INPLL` (call at 0x42f690) and sends a 32-byte reply holding the byte 1, the sequence number halfword from client +28 and the value at offset 8 through `WriteToClient` (0x42f680 to 0x42f6a8).
 
 - `ProcFGLCheckBuffers` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42f700 (n32).
   Evidence grade: inferred.
@@ -15177,8 +15163,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x449494 has v0 = ret(ErrorF).
 
 - `R200SetScrnGlock` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x449400
-  **Inferred.** Role (from name): stores a genlock state for one screen. It loads `sym(vcScreenPrivateIndex)` and a pointer at [a0+360] (0x44941c to 0x44942c). It compares a2 with -2 (0x44943c, branching to 0x44949c) and with -1 (0x449444, branching to 0x449468); `ErrorF` at 0x449458 is on the fall-through of the -1 compare. It stores words at offsets 0x18 (0x449440) and 0x1c (0x449484) and calls `is1SetGenlock` with a0 = [a0] and a1 = 0 (0x449470); the facts show no other flag value. The returns are the `is1SetGenlock` result (0x449488) and the `ErrorF` result (0x449494).
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Stores a genlock request in the video-card screen record and acts on it. It writes the argument a2 to record +24 (0x449440), then for -2 calls `is1SetGenlock` with 1 and for -1 with 0 (calls at 0x449470, branches at 0x44943c and 0x449444), keeping the result in record +28 (0x449484). Any other value is reported with `ErrorF` (0x449458) and changes nothing else.
 
 - `R200GenlockHandler` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x4494c0 (n32).
   Evidence grade: inferred.
@@ -15988,8 +15973,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x44d318 has v0 = -0x1.
 
 - `R200DestroyHyperpipeConfig` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x44d240
-  **Inferred.** Role (from name): tears down the hyperpipe configuration for a screen. It loads the screen record from `xf86Screens` and a word at +0x19ac (6572) of the driver record and passes them to `checkdrmFD` (0x44d284). A nonzero result returns -1 (0x44d29c); zero continues to `xf86ioctl` with request 0x66670017 (0x44d2c0). A negative ioctl result calls `xf86strerror` and `ErrorF` (0x44d304) and returns -1 (0x44d318); otherwise the routine returns 0 (0x44d2d8). What the request asks the driver to do is unknown.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Asks the kernel to tear down a hyperpipe configuration. It finds the screen's driver-private record through `xf86Screens`, verifies the DRM file descriptor at private +6572 with `checkdrmFD` (call at 0x44d284) and, if that passes, sends the request code 0x66670017 with the configuration id in a1 as argument to `xf86ioctl` (0x44d2b8 to 0x44d2c4). It returns 0 on success; on failure it prints the reason from `xf86strerror` through `ErrorF` (0x44d2e0 to 0x44d308) and returns -1.
 
 - `R200_lockCloseScreen` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x44d8c0 (n32).
   Evidence grade: inferred.
