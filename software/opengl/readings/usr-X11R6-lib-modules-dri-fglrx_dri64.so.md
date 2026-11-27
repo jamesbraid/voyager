@@ -29159,6 +29159,9 @@ One entry per routine, filed here from the reading batches by binary.
   **Inferred.** Reads a byte at a0+0xa04 [@0x7ada58] and a byte at a2+0x47 [@0x7ada64]. Calls Screendoor [call 1]. The word at a0+1944 is compared with 4 at 0x7ad99c [@0x7ad99c taken]. It returns a1+56 [@0x7ada50]. Role (from name): updates the multisample registers used by a blit.
   Reviewed: 2026-11-12
 
+- `__R300ForceCmaskClear` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7adb70
+  **Inferred.** Colour-mask clear packet writer of the 64-bit build. The pipe count of 1 or 2 comes from the low nibble of the context word at +2784 shifted right once (0x7adb70 to 0x7adbb4). It writes the header 0xc0023800, the surface word at +244, the surface word at +248 divided by 16 and by the pipe count, and 0 (0x7adbc8 to 0x7adbf4), records the value 2 in the surface word at +240 (0x7adbc4) and returns the cursor plus 16.
+
 - `__R300ResolveMultisampledColorBuffer` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7adcd0
   **Inferred.** Calls __R300ForceCmaskClear [call 1] late in the routine and skips it when the word at a2+24 shifted left by 0x26 is non-negative [@0x7af0e8 fall]. It has two returns: one at 0x7af110 gives a value built from a1 or the call result [@0x7af110], and one at 0x7af15c returns a1 [@0x7af15c]. Role (from name): resolves a multisampled colour buffer, forcing a compression-mask clear on one path.
   Reviewed: 2026-11-12
@@ -29242,6 +29245,9 @@ One entry per routine, filed here from the reading batches by binary.
 - `__R300HWBltFunc` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7b9c40
   **Inferred.** Calls __R300HWBlt_SetupDestRectangle [call 1]. When its result is zero the routine returns a1 [@0x7b9cc0 taken zero] [@0x7b9fa0]. Otherwise it calls __R300NoGCSetOverrideRendering [call 2, @0x7b9cc0 fall nonzero] and __R300UpdateMultisampleRegsForBlt [call 3, @0x7b9cc0 fall nonzero]. It sets the copy shader with __R300SetCopyTexturePixelShader [call 10, @0x7b9d78 taken] at this point, before the pitch call, and calls __R300OVSetupShader [call 4, @0x7b9d80 fall] on the other flag test. __R300HWBlt_SetupPitchAndOffset [call 5, @0x7b9cc0 fall nonzero] follows, then __R300HWBlt_SetupTextureOffsetForBlit [call 6, @0x7b9cc0 fall nonzero] and SetupTextureUnitForBlt [call 7, @0x7b9cc0 fall nonzero]. It draws with __R300DrawCopyRectangle [call 8, @0x7b9cc0 fall nonzero]. It returns ret(__R300DrawCopyRectangle)+16 [@0x7b9f14] or a1 [@0x7b9fa0]. Role (from name): the hardware blit that copies a rectangle.
   Reviewed: 2026-11-12
+
+- `__R300DrawBuffer` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7ba140
+  **Inferred.** Splits a draw-to-front-and-back request into two single buffers in the 64-bit build. It runs only when the byte at context +0x6628 is nonzero (0x7ba144) and the requested mode a1 equals 1032 (0x7ba14c), then calls `glDrawBuffersATI` with a count of 2 and the pair 1024 and 1026 (call at 0x7ba1ac), stores 1032 and 0 in the context words at +0x1068 and +0x106c (0x7ba1c8 to 0x7ba1cc) and returns 1; otherwise it returns 0.
 
 - `__R300NoGCSetOverrideRendering` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7ba780
   **Inferred.** Tests the flag word at a1+24 with shifted-bit branches, including [@0x7ba820 taken] and [@0x7ba82c taken]. It returns a0 plus an offset that depends on those tests [@0x7ba9dc] [@0x7ba9f4]. Role (from name): sets the override rendering state for the no-context blit path.
@@ -29346,6 +29352,9 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x7bd770 has v0 = 0x0.
   The return at 0x7bd778 has v0 = 0x0.
   The return at 0x7bd780 has v0 = 0x0.
+
+- `__R300ForceZmaskClear` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7bd800
+  **Inferred.** Depth-mask clear packet writer of the 64-bit build. It obtains the render pipe count from `__R300GetPipeCount` at 0x7bd7a0 (call at 0x7bd81c) and writes four words at the cursor in a2: the type-3 header 0xc0023200, the surface word at +176, the surface word at +180 divided by 16 and by the pipe count, and 0xffffffff (stores at 0x7bd840 to 0x7bd868). It returns the cursor plus 16. The surface fields sit at +176 and +180 here, where the 32-bit build reads +108 and +112.
 
 - `NotSoFastZStencilClear` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7bd940 (n64).
   Evidence grade: inferred.
@@ -29574,6 +29583,12 @@ One entry per routine, filed here from the reading batches by binary.
   Role (from facts): writes a four-word scissor record at a1 [@0x7d1b58] [@0x7d1b64] [@0x7d1b68] [@0x7d1b7c] and returns the address past it [@0x7d1b84].
   Reviewed: 2026-11-12
 
+- `__R300WriteColorOffsetRegisters` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7d1c80
+  **Inferred.** Emits the colour offset register packet in the 64-bit build and records where its value word went. The shadow record is 24 bytes at the cursor stored at context +0x55f00: the 64-bit address a1+4 of the value word, then the low byte of a4 as a tag at +8 (stores at 0x7d1c94 to 0x7d1ca4), and the cursor moves on by 24 (0x7d1cc4 to 0x7d1cec). The packet itself is header ((a3-1)<<16)|0x138a (`RB3D_COLOROFFSET0`, byte offset 0x4e28) and the value a2 at a1 and a1+4, and the routine returns a1+8 (0x7d1cf8 to 0x7d1d14). A full record list is handed to the context callback at +16 (call at 0x7d1d98).
+
+- `__R300WriteColorPitchRegisters` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7d1de0
+  **Inferred.** Pitch register twin of the colour offset writer in the 64-bit build. It records a 24-byte shadow entry with the fixed tag 1 (store at 0x7d1df4, spacing 24 at 0x7d1e24) in the list whose cursor is at context +0x55f00, then writes header ((a3-1)<<16)|0x138e (`RB3D_COLORPITCH0`, byte offset 0x4e38) followed by the value a2 (0x7d1e5c to 0x7d1e74), and returns a1+8. A full list is grown through the callback at context +16 (call at 0x7d1ed4).
+
 - `__R300WriteDepthOffsetRegisters` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7d1f40
   **Inferred.** It stores two words at a1+0 [@0x7d1fc0] and a1+4 [@0x7d1fc8] on one path, and the same two words again on the other path [@0x7d2090] [@0x7d2094]. It returns a1+8 [@0x7d1fd0] [@0x7d20a0].
   Role (from facts): writes a two-word depth offset record at a1 [@0x7d1fc0] [@0x7d1fc8] and returns the address past it [@0x7d1fd0] [@0x7d20a0].
@@ -29606,6 +29621,9 @@ One entry per routine, filed here from the reading batches by binary.
 
 - `__R300CalcHWDepthClearValue` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7d6360
   **Inferred.** Turns the GL clear depth into the integer written to the depth buffer, in the 64-bit build. It brackets the work with `__glSetFPUMode(3)` (call at 0x7d6384) and `__glUnsetFPUMode` (call at 0x7d63e4), picks the maximum value from the depth bit count at context +0x42d40 (0xffff for 16, 0xffffff for 24, 0xffffffff for 32 or any other, compares at 0x7d63a8 to 0x7d63b8), and multiplies it as a double by the clear depth at context +0xe40 (0x7d63cc to 0x7d63d4) before truncating to a long (0x7d63dc).
+
+- `__R300SetHWClipping` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7db0a0
+  **Inferred.** Switches hardware clipping on or off in the 64-bit build. It compares (a1 == 0) with bit 16 of the shadow word at context +0x54ff0 (0x7db0b4 to 0x7db0c4) and, only when they differ, stores the new bit there (0x7db110), calls `__glATISubmitBM` until the command buffer has room (0x7db118 to 0x7db12c), then writes register index 2183 (`VAP_CLIP_CNTL`, byte offset 0x221c) with the word at the cursor held at context +0x54aa8 (0x7db148 to 0x7db158) and advances the cursor by 8 (0x7db164 to 0x7db16c).
 
 - `AddNormalArray` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x7e00e0 (n64).
   Evidence grade: inferred.
@@ -30828,6 +30846,9 @@ One entry per routine, filed here from the reading batches by binary.
   **Inferred.** When a0 is zero the routine skips the context writes [@0x837d98 taken zero]. It also skips them when bit 28 of the word at a0+0xf5c is clear [@0x837db4 taken zero]. Otherwise [@0x837db4 fall nonzero] it writes the word at a0+0xe2b0 [@0x837e04], the byte at a0+0x148 [@0x837e08], the word at a0+0x144 [@0x837e0c] and the word at a0+0xe2cc [@0x837e18] before the record writes. Words are written to a1 from +0x0 [@0x837e30] through +0x40 [@0x837e34].
   Role (from facts): fills a record at a1 and returns a1 plus 68 [@0x837eb8], and, when a0 is nonzero [@0x837d98 fall nonzero], writes fields of the context at a0 [@0x837e04].
   Reviewed: 2026-11-12
+
+- `__R300WaitUberBuf` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x847580
+  **Established.** Appends a destination cache flush and an idle wait in the 64-bit build. Using the cursor at context +0x54aa8 and the limit at +0x54ab0 it first calls `__glATISubmitBM` until 4 dwords are free (loop at 0x8475c4 to 0x8475e8), then writes register index 5011 (`RB3D_DSTCACHE_CTLSTAT`) with 3 and register index 1480 (0x1720, the wait-until register) with 0x30000 (0x8475f4 to 0x847610), and advances the cursor by 16 (0x847620 to 0x847624).
 
 - `__R300SetOverrideRendering_Imaging` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x8485e0
   **Inferred.** Writes words to a1 from +0x0 [@0x848630]. When a2 is nonzero [@0x848638 fall nonzero] it loads the words at a2+0x4c [@0x848648] and a2+0x18 [@0x848650] and writes the first one to a1 [@0x84864c]. When bit 0x1000 of the word at a2+0x18 is set [@0x848658 fall] it writes two more words, the last at +0x14 [@0x848668]. In the path where the cursor test falls through [@0x848808 fall] it stores 4 bytes at a0+0x55f08 [@0x848844] and 8 bytes at a0+0x55ef8 [@0x848888].
@@ -32060,6 +32081,9 @@ One entry per routine, filed here from the reading batches by binary.
   Range: 0x8cc280-0x8cc2a4 (36 bytes).
   It occupies 36 bytes.
   The return at 0x8cc29c has v0 = ?.
+
+- `__R300TCLWriteFogCoord` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x8f6650
+  **Established.** Sends one fog coordinate in immediate mode in the 64-bit build. It forces the float argument in $f13 to its absolute value (compare at 0x8f6658, `neg.s` at 0x8f6680), writes register index 2313 (`VAP_VTX_ST_DISC_FOG`, byte offset 0x2424) and the value at the cursor held at context +0x54aa8 (0x8f6670 to 0x8f6688), advances the cursor by 8 and, when it passes the limit at +0x54ab0, calls `__R300HandleBrokenPrimitive` at 0x8f11e0 (call at 0x8f66c8).
 
 - `ParseSymbol` in `usr/X11R6/lib/modules/dri/fglrx_dri64.so` at 0x901880 (n64).
   Evidence grade: inferred.
