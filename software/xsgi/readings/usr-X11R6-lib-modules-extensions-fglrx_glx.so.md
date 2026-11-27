@@ -9220,3 +9220,5996 @@ One entry per routine, filed here from the reading batches by binary.
   The `bc1f` branch at 0xa299a0 targets 0xa299cc, is taken when not (f8 < f4(=0xffffffffc1000000) (c.lt.s at 0xa29998)), and falls through when f8 < f4(=0xffffffffc1000000) (c.lt.s at 0xa29998).
   The return at 0xa299c4 has v0 = ?.
   The return at 0xa299e0 has v0 = ?.
+
+- `__R300UpdateUSProgForAAStipple` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x6f9e00 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x6f9e00-0x6fa9f4 (3060 bytes).
+  It occupies 3060 bytes.
+  The `lw` at 0x6f9e04 loads 4 bytes from a0 (arg0 at entry) +0xdf0.
+  9 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x474b8, including `lw` at 0x6f9e44, `lw` at 0x6fa6e4, `lw` at 0x6fa6f0.
+  The `lw` at 0x6f9e60 loads 4 bytes from a0 (arg0 at entry) +0xcc48.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x468f0, including `lw` at 0x6f9e6c, `lw` at 0x6f9eb4.
+  The `lbu` at 0x6f9ea8 loads 1 byte from a0 (arg0 at entry) +0xc9b0.
+  The `lw` at 0x6f9ec0 loads 4 bytes from [a0+292024] +0x788.
+  The `lw` at 0x6f9edc loads 4 bytes from [a0+292024] +0x4.
+  The `lw` at 0x6f9ef0 loads 4 bytes from [a0+292024] +0x4f8.
+  The `lw` at 0x6f9f00 loads 4 bytes from [a0+292024] +0x4fc.
+  The `lw` at 0x6f9f10 loads 4 bytes from [a0+292024] +0x4f0.
+  11 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x474a4, including `lw` at 0x6f9f40, `lw` at 0x6fa13c, `lw` at 0x6fa148.
+  The `lw` at 0x6f9f44 loads 4 bytes from [a0+292004] +0x788.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x474b0, including `lw` at 0x6f9f60, `lw` at 0x6f9f80, `lw` at 0x6fa8e4.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x474a4, including `sw` at 0x6f9f84, `sw` at 0x6fa8ec.
+  The `lw` at 0x6f9f88 loads 4 bytes from [a0+292016] +0x4.
+  The `lw` at 0x6f9fa0 loads 4 bytes from [a0+292016] +0x4f8.
+  The `lw` at 0x6f9fb0 loads 4 bytes from [a0+292016] +0x4fc.
+  The `lw` at 0x6f9fc0 loads 4 bytes from [a0+292016] +0x4f0.
+  54 such `lw` accesses load 4 bytes from ?, including `lw` at 0x6f9ff0, `lw` at 0x6fa064, `lw` at 0x6fa224.
+  57 such `sw` accesses store 4 bytes to ?, including `sw` at 0x6fa054, `sw` at 0x6fa0d0, `sw` at 0x6fa214.
+  8 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46e44, including `lw` at 0x6fa094, `lw` at 0x6fa0ac, `lw` at 0x6fa65c.
+  3 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x46e44, including `sw` at 0x6fa0bc, `sw` at 0x6fa688, `sw` at 0x6fa6e0.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x6fa0d4, `lw` at 0x6fa0fc.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x6fa0d8, `lw` at 0x6fa100.
+  The `sw` at 0x6fa11c stores 4 bytes to [a0+290136] +0x0.
+  The `lw` at 0x6fa120 loads 4 bytes from a0 (arg0 at entry) +0x479d4.
+  The `sw` at 0x6fa130 stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x6fa138 stores 4 bytes to [a0+290136] +0x4.
+  The `lw` at 0x6fa140 loads 4 bytes from [a0+292004] +0x7d4.
+  2 such `sw` accesses store 4 bytes to [a0+290136] +0xc, including `sw` at 0x6fa144, `sw` at 0x6fa6ec.
+  The `lw` at 0x6fa154 loads 4 bytes from [a0+292004] +0x7d8.
+  2 such `sw` accesses store 4 bytes to [a0+290136] +0x10, including `sw` at 0x6fa158, `sw` at 0x6fa700.
+  The `lw` at 0x6fa168 loads 4 bytes from [a0+292004] +0x7dc.
+  2 such `sw` accesses store 4 bytes to [a0+290136] +0x14, including `sw` at 0x6fa16c, `sw` at 0x6fa714.
+  The `lw` at 0x6fa17c loads 4 bytes from [a0+292004] +0x7e0.
+  2 such `sw` accesses store 4 bytes to [a0+290136] +0x18, including `sw` at 0x6fa180, `sw` at 0x6fa728.
+  The `lw` at 0x6fa190 loads 4 bytes from [a0+292004] +0x7e4.
+  2 such `sw` accesses store 4 bytes to [a0+290136] +0x1c, including `sw` at 0x6fa194, `sw` at 0x6fa73c.
+  The `lw` at 0x6fa1a4 loads 4 bytes from [a0+292004] +0x7e8.
+  2 such `sw` accesses store 4 bytes to [a0+290136] +0x20, including `sw` at 0x6fa1a8, `sw` at 0x6fa750.
+  The `lw` at 0x6fa1b8 loads 4 bytes from [a0+292004] +0x7ec.
+  2 such `sw` accesses store 4 bytes to [a0+290136] +0x24, including `sw` at 0x6fa1bc, `sw` at 0x6fa764.
+  The `lw` at 0x6fa1cc loads 4 bytes from [a0+292004] +0x7f0.
+  2 such `sw` accesses store 4 bytes to [a0+290136] +0x28, including `sw` at 0x6fa1d0, `sw` at 0x6fa778.
+  The `sw` at 0x6fa1e0 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x6fa324 loads 4 bytes from a0 (arg0 at entry) +0x47c80.
+  The `lw` at 0x6fa6e8 loads 4 bytes from [a0+292024] +0x7d4.
+  The `lw` at 0x6fa6fc loads 4 bytes from [a0+292024] +0x7d8.
+  The `lw` at 0x6fa710 loads 4 bytes from [a0+292024] +0x7dc.
+  The `lw` at 0x6fa724 loads 4 bytes from [a0+292024] +0x7e0.
+  The `lw` at 0x6fa738 loads 4 bytes from [a0+292024] +0x7e4.
+  The `lw` at 0x6fa74c loads 4 bytes from [a0+292024] +0x7e8.
+  The `lw` at 0x6fa760 loads 4 bytes from [a0+292024] +0x7ec.
+  The `lw` at 0x6fa774 loads 4 bytes from [a0+292024] +0x7f0.
+  The `lw` at 0x6fa8c0 loads 4 bytes from a0 (arg0 at entry) +0x0.
+  The `sw` at 0x6fa8e0 stores 4 bytes to a0 (arg0 at entry) +0x474b0.
+  The `bgezall` at 0x6f9e84 calls __R300UpdateUSProgForAAStippleVL [0x6f9c00] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=?, a3=a3 at entry (arg3).
+  The `jalr` at 0x6f9f78 calls memcpy with a0=[a0+292016], a1=[a0+292004], a2=0x10a8, a3=a3 at entry (arg3).
+  The `bgezall` at 0x6fa078 calls UpdateRSProgForAAStipple [0x6f9ac0] with a0=a0 at entry (arg0), a1=?, a2=a1 at entry (arg1), a3=?.
+  The `bgezall` at 0x6fa08c calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=a0 at entry (arg0), a1=?, a2=0x1, a3=?.
+  The `jalr` at 0x6fa0a4 calls __R300LoadCachedPSProgToHwRegs [0x6f1380] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `bgezall` at 0x6fa0cc calls __R300AdjustPixelShaderInput [0x6f35c0] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x6fa0f4 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `bgezall` at 0x6fa640 calls UpdateRSProgForAAStipple [0x6f9ac0] with a0=a0 at entry (arg0), a1=?, a2=a1 at entry (arg1), a3=?.
+  The `bgezall` at 0x6fa654 calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=a0 at entry (arg0), a1=?, a2=0x1, a3=?.
+  The `jalr` at 0x6fa66c calls __R300LoadCachedPSProgToHwRegs [0x6f1380] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x6fa6ac calls __R300FPCompileCurrentProgram [0x702a40] with a0=a0 at entry (arg0), a1=0x0, a2=?, a3=a3 at entry (arg3).
+  The `jalr` at 0x6fa6c4 calls __R300LoadCachedPSProgToHwRegs [0x6f1380] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x6fa8c4 calls (unknown callee) with a0=0x10a8, a1=[a0+289008], a2=?, a3=a3 at entry (arg3).
+  The `jalr` at 0x6fa8dc calls memcpy with a0=ret(?), a1=[a0+292004], a2=0x10a8, a3=?.
+  The `jalr` at 0x6fa968 calls __R300FSCompileCurrentShader [0x897bc0] with a0=a0 at entry (arg0), a1=?, a2=?, a3=a3 at entry (arg3).
+  The `bgezall` at 0x6fa984 calls __R300ProgramPixelShader [0x6f8c40] with a0=a0 at entry (arg0), a1=?, a2=?, a3=a3 at entry (arg3).
+  The `bgezall` at 0x6fa99c calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=a0 at entry (arg0), a1=[a0+292004], a2=0x0, a3=?.
+  The `beq` branch at 0x6f9e3c targets 0x6f9e6c, is taken when a2(?) == 0, and falls through when a2(?) != 0.
+  The `beq` branch at 0x6f9e48 targets 0x6f9e6c, is taken when a1(=[a0+292024]) == 0, and falls through when a1(=[a0+292024]) != 0.
+  The `beq` branch at 0x6f9e58 targets 0x6f9ea8, is taken when a0(?) == 0, and falls through when a0(?) != 0.
+  The `beq` branch at 0x6f9e64 targets 0x6f9eb4, is taken when a0(=[a0+52296]) == 0, and falls through when a0(=[a0+52296]) != 0.
+  The `beq` branch at 0x6f9e70 targets 0x6f9f40, is taken when a1(=[a0+289008]) == 0, and falls through when a1(=[a0+289008]) != 0.
+  The `bne` branch at 0x6f9eac targets 0x6f9e6c, is taken when ra(=[a0+51632]:1) != 0, and falls through when ra(=[a0+51632]:1) == 0.
+  The `bne` branch at 0x6f9eb8 targets 0x6f9e78, is taken when at(=[a0+289008]) != 0, and falls through when at(=[a0+289008]) == 0.
+  The `beq` branch at 0x6f9ec4 targets 0x6f9e8c, is taken when a0(=[[a0+292024]+1928]) == s2(=a1), and falls through when a0(=[[a0+292024]+1928]) != s2(=a1).
+  The `beq` branch at 0x6f9ecc targets 0x6fa68c, is taken when s2(=a1) == 0, and falls through when s2(=a1) != 0.
+  The `bne` branch at 0x6f9ed4 targets 0x6fa058, is taken when a0(=[[a0+292024]+1928]) != 0, and falls through when a0(=[[a0+292024]+1928]) == 0.
+  The `beq` branch at 0x6f9ee8 targets 0x6f9e8c, is taken when a2(?) == v0(=0x1f), and falls through when a2(?) != v0(=0x1f).
+  The `beq` branch at 0x6f9ef8 targets 0x6f9e90, is taken when t9(=[[a0+292024]+1272]) == v1(=0x20), and falls through when t9(=[[a0+292024]+1272]) != v1(=0x20).
+  The `beq` branch at 0x6f9f08 targets 0x6f9e90, is taken when a0(=[[a0+292024]+1276]) == a3(=0x40), and falls through when a0(=[[a0+292024]+1276]) != a3(=0x40).
+  The `bne` branch at 0x6f9f20 targets 0x6f9fd8, is taken when t8(?) < 0x4 (signed), and falls through when t8(?) >= 0x4 (signed).
+  The `beq` branch at 0x6f9f2c targets 0x6fa200 and is always taken.
+  The `beq` branch at 0x6f9f48 targets 0x6f9e90, is taken when a0(=[[a0+292004]+1928]) == s2(=a1), and falls through when a0(=[[a0+292004]+1928]) != s2(=a1).
+  The `beq` branch at 0x6f9f50 targets 0x6fa68c, is taken when s2(=a1) == 0, and falls through when s2(=a1) != 0.
+  The `bne` branch at 0x6f9f58 targets 0x6fa05c, is taken when a0(=[[a0+292004]+1928]) != 0, and falls through when a0(=[[a0+292004]+1928]) == 0.
+  The `beq` branch at 0x6f9f68 targets 0x6fa8c0, is taken when a0(=[a0+292016]) == 0, and falls through when a0(=[a0+292016]) != 0.
+  The `beq` branch at 0x6f9f98 targets 0x6f9e8c, is taken when a2(?) == at(=0x1f), and falls through when a2(?) != at(=0x1f).
+  The `beq` branch at 0x6f9fa8 targets 0x6f9e90, is taken when t9(=[[a0+292016]+1272]) == v0(=0x20), and falls through when t9(=[[a0+292016]+1272]) != v0(=0x20).
+  The `beq` branch at 0x6f9fb8 targets 0x6f9e90, is taken when v1(=[[a0+292016]+1276]) == a0(=0x40), and falls through when v1(=[[a0+292016]+1276]) != a0(=0x40).
+  The `beq` branch at 0x6f9fd0 targets 0x6fa1f8, is taken when t8(?) >= 0x4 (signed), and falls through when t8(?) < 0x4 (signed).
+  The `beq` branch at 0x6fa000 targets 0x6fa00c, is taken when ra(?) == 0, and falls through when ra(?) != 0.
+  The `beq` branch at 0x6fa014 targets 0x6fa784, is taken when at(?) == 0, and falls through when at(?) != 0.
+  The `beq` branch at 0x6fa01c targets 0x6fa958, is taken when a1(=one of 0x0, 0x1) == 0, and falls through when a1(=one of 0x0, 0x1) != 0.
+  The `beq` branch at 0x6fa02c targets 0x6f9e8c, is taken when a2(?) == v1(=0x1e), and falls through when a2(?) != v1(=0x1e).
+  The `beq` branch at 0x6fa050 targets 0x6fa218 and is always taken.
+  The `bgez` branch at 0x6fa09c targets 0x6fa0c0, is taken when ra(=([a0+290372] << 0x2b)) >= 0 (signed), and falls through when ra(=([a0+290372] << 0x2b)) < 0 (signed).
+  The `beq` branch at 0x6fa0e8 targets 0x6fa118, is taken when a0(?) >= 0xb (unsigned), and falls through when a0(?) < 0xb (unsigned).
+  The `bne` branch at 0x6fa110 targets 0x6fa0f4, is taken when a1(?) < 0xb (unsigned), and falls through when a1(?) >= 0xb (unsigned).
+  The `beq` branch at 0x6fa134 targets 0x6fa6e4, is taken when (s2(=one of 0x0, 0x1) & 0xff) == 0, and falls through when (s2(=one of 0x0, 0x1) & 0xff) != 0.
+  The `blez` branch at 0x6fa238 targets 0x6fa304, is taken when a6(?) <= 0 (signed), and falls through when a6(?) > 0 (signed).
+  The `beq` branch at 0x6fa25c targets 0x6fa278, is taken when (a1(?) & 0x3) == 0, and falls through when (a1(?) & 0x3) != 0.
+  The `bne` branch at 0x6fa270 targets 0x6fa264, is taken when v0(?) != 0, and falls through when v0(?) == 0.
+  The `beq` branch at 0x6fa27c targets 0x6fa304, is taken when v0(?) == 0, and falls through when v0(?) != 0.
+  The `bne` branch at 0x6fa284 targets 0x6fa9ac, is taken when a4(?) != 0, and falls through when a4(?) == 0.
+  The `beq` branch at 0x6fa2c4 targets 0x6fa7a0, is taken when a2(?) == at(?), and falls through when a2(?) != at(?).
+  The `bne` branch at 0x6fa2ec targets 0x6fa2a4, is taken when a3(?) != at(?), and falls through when a3(?) == at(?).
+  The `beq` branch at 0x6fa304 targets 0x6fa7a8, is taken when t3(?) == 0, and falls through when t3(?) != 0.
+  The `beq` branch at 0x6fa380 targets 0x6fa8ac, is taken when a6(?) == 0, and falls through when a6(?) != 0.
+  The `beq` branch at 0x6fa3c0 targets 0x6fa62c, is taken when ra(?) == 0, and falls through when ra(?) != 0.
+  The `bne` branch at 0x6fa3ec targets 0x6fa46c, is taken when a3(?) < 0x2 (signed), and falls through when a3(?) >= 0x2 (signed).
+  The `bne` branch at 0x6fa410 targets 0x6fa9d0, is taken when v0(?) < 0x1 (signed), and falls through when v0(?) >= 0x1 (signed).
+  The `bne` branch at 0x6fa444 targets 0x6fa424, is taken when v1(?) != at(?), and falls through when v1(?) == at(?).
+  The `beq` branch at 0x6fa46c targets 0x6fa4c4, is taken when a2(?) == v0(?), and falls through when a2(?) != v0(?).
+  The `beq` branch at 0x6fa478 targets 0x6fa4c0, is taken when t8(?) >= 0x3 (signed), and falls through when t8(?) < 0x3 (signed).
+  The `bne` branch at 0x6fa4b8 targets 0x6fa49c, is taken when v0(?) != a0(?), and falls through when v0(?) == a0(?).
+  The `beq` branch at 0x6fa51c targets 0x6fa8f0, is taken when a6(?) == 0, and falls through when a6(?) != 0.
+  The `beq` branch at 0x6fa544 targets 0x6fa92c, is taken when (a3(=one of 0x0, 0x1) & 0xff) == 0, and falls through when (a3(=one of 0x0, 0x1) & 0xff) != 0.
+  The `bgez` branch at 0x6fa664 targets 0x6fa0c0, is taken when ra(=([a0+290372] << 0x2b)) >= 0 (signed), and falls through when ra(=([a0+290372] << 0x2b)) < 0 (signed).
+  The `beq` branch at 0x6fa684 targets 0x6fa0c0 and is always taken.
+  The `beq` branch at 0x6fa68c targets 0x6fa980, is taken when a2(?) == 0, and falls through when a2(?) != 0.
+  The `beq` branch at 0x6fa69c targets 0x6fa964, is taken when v1(?) == 0, and falls through when v1(?) != 0.
+  The `bgez` branch at 0x6fa6bc targets 0x6fa0c0, is taken when a0(=([a0+290372] << 0x2b)) >= 0 (signed), and falls through when a0(=([a0+290372] << 0x2b)) < 0 (signed).
+  The `beq` branch at 0x6fa6dc targets 0x6fa0c0 and is always taken.
+  The `beq` branch at 0x6fa77c targets 0x6fa1d8 and is always taken.
+  The `beq` branch at 0x6fa78c targets 0x6f9ff0, is taken when v1(?) >= t8(?) (signed), and falls through when v1(?) < t8(?) (signed).
+  The `beq` branch at 0x6fa798 targets 0x6fa200 and is always taken.
+  The `beq` branch at 0x6fa7a0 targets 0x6fa2f4 and is always taken.
+  The `beq` branch at 0x6fa7ac targets 0x6fa308, is taken when t8(?) >= 0x3 (signed), and falls through when t8(?) < 0x3 (signed).
+  The `beq` branch at 0x6fa7c8 targets 0x6fa800, is taken when (a1(?) & 0x3) == 0, and falls through when (a1(?) & 0x3) != 0.
+  The `bne` branch at 0x6fa7f8 targets 0x6fa7d0, is taken when a0(?) != 0, and falls through when a0(?) == 0.
+  The `beq` branch at 0x6fa804 targets 0x6fa8a4, is taken when a5(?) == 0, and falls through when a5(?) != 0.
+  The `bne` branch at 0x6fa89c targets 0x6fa80c, is taken when v0(?) != a2(?), and falls through when v0(?) == a2(?).
+  The `beq` branch at 0x6fa8a4 targets 0x6fa30c and is always taken.
+  The `beq` branch at 0x6fa8b0 targets 0x6fa3bc and is always taken.
+  The `beq` branch at 0x6fa8e8 targets 0x6f9f88 and is always taken.
+  The `bne` branch at 0x6fa8f0 targets 0x6fa978, is taken when a4(?) != 0, and falls through when a4(?) == 0.
+  The `bne` branch at 0x6fa908 targets 0x6fa524, is taken when a2(?) != 0, and falls through when a2(?) == 0.
+  The `beq` branch at 0x6fa914 targets 0x6fa8fc, is taken when a0(?) >= a7(?) (unsigned), and falls through when a0(?) < a7(?) (unsigned).
+  The `bne` branch at 0x6fa91c targets 0x6fa528, is taken when a2(?) != 0, and falls through when a2(?) == 0.
+  The `beq` branch at 0x6fa924 targets 0x6fa978 and is always taken.
+  The `beq` branch at 0x6fa950 targets 0x6fa584 and is always taken.
+  The `beq` branch at 0x6fa95c targets 0x6fa200 and is always taken.
+  The `beq` branch at 0x6fa970 targets 0x6fa6b8 and is always taken.
+  The `beq` branch at 0x6fa978 targets 0x6fa594 and is always taken.
+  The `beq` branch at 0x6fa9a4 targets 0x6fa6b8 and is always taken.
+  The `beq` branch at 0x6fa9c8 targets 0x6fa304 and is always taken.
+  The `beq` branch at 0x6fa9ec targets 0x6fa468 and is always taken.
+  The return at 0x6f9ea0 has v0 = one of ?, 0x1f, [a0+3568], 0x20.
+  The return at 0x6fa1f0 has v0 = [a0+290136].
+  The instructions from 0x6f9f34 to 0x6f9f3c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x6fa8b8 to 0x6fa8bc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300ActivateILProgramDP` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x706d40 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x706d40-0x7073f4 (1716 bytes).
+  It occupies 1716 bytes.
+  The `lw` at 0x706d44 loads 4 bytes from a0 (arg0 at entry) +0x57c.
+  The `lw` at 0x706d4c loads 4 bytes from a1 (arg1 at entry) +0x620.
+  The `lw` at 0x706d60 loads 4 bytes from a1 (arg1 at entry) +0x61c.
+  The `lw` at 0x706d7c loads 4 bytes from a0 (arg0 at entry) +0x6c4.
+  The `sw` at 0x706da0 stores 4 bytes to a2 (arg2 at entry) +0x0.
+  The `lw` at 0x706da4 loads 4 bytes from a1 (arg1 at entry) +0x124.
+  The `sw` at 0x706da8 stores 4 bytes to a2 (arg2 at entry) +0x4.
+  The `lw` at 0x706dac loads 4 bytes from a1 (arg1 at entry) +0x128.
+  The `sw` at 0x706db0 stores 4 bytes to a2 (arg2 at entry) +0x8.
+  The `lw` at 0x706db4 loads 4 bytes from a1 (arg1 at entry) +0x868.
+  The `sw` at 0x706dbc stores 4 bytes to a2 (arg2 at entry) +0x10.
+  The `sw` at 0x706dc0 stores 4 bytes to a2 (arg2 at entry) +0xc.
+  The `lw` at 0x706dc8 loads 4 bytes from a1 (arg1 at entry) +0x86c.
+  The `sw` at 0x706dd0 stores 4 bytes to a2 (arg2 at entry) +0x18.
+  The `sw` at 0x706dd4 stores 4 bytes to a2 (arg2 at entry) +0x14.
+  The `lw` at 0x706dd8 loads 4 bytes from a1 (arg1 at entry) +0x12c.
+  The `sw` at 0x706ddc stores 4 bytes to a2 (arg2 at entry) +0x1c.
+  The `lw` at 0x706de0 loads 4 bytes from a1 (arg1 at entry) +0x130.
+  The `sw` at 0x706de4 stores 4 bytes to a2 (arg2 at entry) +0x20.
+  The `lw` at 0x706de8 loads 4 bytes from a1 (arg1 at entry) +0x134.
+  The `sw` at 0x706dec stores 4 bytes to a2 (arg2 at entry) +0x24.
+  The `lw` at 0x706df4 loads 4 bytes from a1 (arg1 at entry) +0x138.
+  The `sw` at 0x706dfc stores 4 bytes to a2 (arg2 at entry) +0x2c.
+  The `sw` at 0x706e00 stores 4 bytes to a2 (arg2 at entry) +0x28.
+  The `lw` at 0x706e04 loads 4 bytes from a1 (arg1 at entry) +0x938.
+  The `sw` at 0x706e08 stores 4 bytes to a2 (arg2 at entry) +0x30.
+  The `lw` at 0x706e0c loads 4 bytes from a1 (arg1 at entry) +0x8b4.
+  The `sw` at 0x706e10 stores 4 bytes to a2 (arg2 at entry) +0x34.
+  4 such `lw` accesses load 4 bytes from a1 (arg1 at entry) +0x93c, including `lw` at 0x706e14, `lw` at 0x706e28, `lw` at 0x706e48.
+  The `sw` at 0x706e24 stores 4 bytes to a2 (arg2 at entry) +0x38.
+  87 such `lw` accesses load 4 bytes from ?, including `lw` at 0x706e40, `lw` at 0x706e5c, `lw` at 0x706f0c.
+  88 such `sw` accesses store 4 bytes to ?, including `sw` at 0x706e44, `sw` at 0x706e60, `sw` at 0x706f18.
+  The `sw` at 0x706e90 stores 4 bytes to (a2 + ([a1+2364] << 0x2)) +0x3c.
+  The `lw` at 0x706e94 loads 4 bytes from a1 (arg1 at entry) +0x8f8.
+  The `sw` at 0x706e98 stores 4 bytes to (a2 + ([a1+2364] << 0x2)) +0x40.
+  The `lw` at 0x706e9c loads 4 bytes from a1 (arg1 at entry) +0x8fc.
+  The `sw` at 0x706ea0 stores 4 bytes to (a2 + ([a1+2364] << 0x2)) +0x44.
+  The `lw` at 0x706ea4 loads 4 bytes from a1 (arg1 at entry) +0x900.
+  The `sw` at 0x706ea8 stores 4 bytes to (a2 + ([a1+2364] << 0x2)) +0x48.
+  The `lw` at 0x706eac loads 4 bytes from a1 (arg1 at entry) +0x904.
+  The `sw` at 0x706eb0 stores 4 bytes to (a2 + ([a1+2364] << 0x2)) +0x4c.
+  The `lw` at 0x706eb4 loads 4 bytes from a1 (arg1 at entry) +0x908.
+  The `sw` at 0x706eb8 stores 4 bytes to (a2 + ([a1+2364] << 0x2)) +0x50.
+  The `lw` at 0x706ebc loads 4 bytes from a1 (arg1 at entry) +0x90c.
+  The `sw` at 0x706ec0 stores 4 bytes to (a2 + ([a1+2364] << 0x2)) +0x54.
+  The `lw` at 0x706ec4 loads 4 bytes from a1 (arg1 at entry) +0x910.
+  The `sw` at 0x706ec8 stores 4 bytes to (a2 + ([a1+2364] << 0x2)) +0x58.
+  The `lw` at 0x706ecc loads 4 bytes from a1 (arg1 at entry) +0x914.
+  The `sw` at 0x706ed0 stores 4 bytes to (a2 + ([a1+2364] << 0x2)) +0x5c.
+  The `sw` at 0x706f00 stores 4 bytes to (a2 + ([a1+2364] << 0x2)) +0x60.
+  The `sw` at 0x706fc0 stores 4 bytes to (([a1+1568] << 0x2) + (a2 + ([a1+2364] << 0x2))+96) +0x4.
+  The `sw` at 0x70708c stores 4 bytes to (([a1+1568] << 0x2) + (([a1+1568] << 0x2) + (a2 + ([a1+2364] << 0x2))+96)+4) +0x4.
+  The `sw` at 0x707158 stores 4 bytes to (([a1+1568] << 0x2) + (([a1+1568] << 0x2) + (([a1+1568] << 0x2) + (a2 + ([a1+2364] << 0x2))+96)+4)+4) +0x4.
+  The `bgezall` at 0x706d80 calls __R300LoadILProgramVL [0x706700] with a0=a2 at entry (arg2), a1=a1 at entry (arg1), a2=[a0+1732], a3=a3 at entry (arg3), a7=a1 at entry (arg1).
+  The `beq` branch at 0x706d6c targets 0x706d98, is taken when v1(=[a0+1404]) == 0, and falls through when v1(=[a0+1404]) != 0.
+  The `blez` branch at 0x706e2c targets 0x706e80, is taken when t0(=[a1+2364]) <= 0 (signed), and falls through when t0(=[a1+2364]) > 0 (signed).
+  The `beq` branch at 0x706e54 targets 0x706e80, is taken when v0(?) >= t0(=[a1+2364]) (signed), and falls through when v0(?) < t0(=[a1+2364]) (signed).
+  The `bne` branch at 0x706e78 targets 0x706e40, is taken when v0(?) < t0(=[a1+2364]) (signed), and falls through when v0(?) >= t0(=[a1+2364]) (signed).
+  The `blez` branch at 0x706ed4 targets 0x707224, is taken when t2(=[a1+1568]) <= 0 (signed), and falls through when t2(=[a1+1568]) > 0 (signed).
+  The `beq` branch at 0x706efc targets 0x706f1c, is taken when (t2(=[a1+1568]) & 0x3) == 0, and falls through when (t2(=[a1+1568]) & 0x3) != 0.
+  The `bne` branch at 0x706f14 targets 0x706f04, is taken when v1(?) != 0, and falls through when v1(?) == 0.
+  The `beq` branch at 0x706f20 targets 0x706fb0, is taken when v0(?) == 0, and falls through when v0(?) != 0.
+  The `bne` branch at 0x706f28 targets 0x707340, is taken when at(?) != 0, and falls through when at(?) == 0.
+  The `beq` branch at 0x706f78 targets 0x707318, is taken when a1(?) == at(=(([a1+1568] << 0x2) + a1)-16), and falls through when a1(?) != at(=(([a1+1568] << 0x2) + a1)-16).
+  The `bne` branch at 0x706fa4 targets 0x706f54, is taken when a1(?) != at(=(([a1+1568] << 0x2) + a1)-16), and falls through when a1(?) == at(=(([a1+1568] << 0x2) + a1)-16).
+  The `beq` branch at 0x706fc8 targets 0x706fe8, is taken when (t2(=[a1+1568]) & 0x3) == 0, and falls through when (t2(=[a1+1568]) & 0x3) != 0.
+  The `bne` branch at 0x706fe0 targets 0x706fd0, is taken when v0(?) != 0, and falls through when v0(?) == 0.
+  The `beq` branch at 0x706fec targets 0x70707c, is taken when v0(?) == 0, and falls through when v0(?) != 0.
+  The `bne` branch at 0x706ff4 targets 0x707364, is taken when v1(?) != 0, and falls through when v1(?) == 0.
+  The `beq` branch at 0x707044 targets 0x707320, is taken when a1(?) == at(=(([a1+1568] << 0x2) + a1)-16), and falls through when a1(?) != at(=(([a1+1568] << 0x2) + a1)-16).
+  The `bne` branch at 0x707070 targets 0x707020, is taken when a1(?) != at(=(([a1+1568] << 0x2) + a1)-16), and falls through when a1(?) == at(=(([a1+1568] << 0x2) + a1)-16).
+  The `beq` branch at 0x707094 targets 0x7070b4, is taken when (t2(=[a1+1568]) & 0x3) == 0, and falls through when (t2(=[a1+1568]) & 0x3) != 0.
+  The `bne` branch at 0x7070ac targets 0x70709c, is taken when v0(?) != 0, and falls through when v0(?) == 0.
+  The `beq` branch at 0x7070b8 targets 0x707148, is taken when v0(?) == 0, and falls through when v0(?) != 0.
+  The `bne` branch at 0x7070c0 targets 0x707388, is taken when v1(?) != 0, and falls through when v1(?) == 0.
+  The `beq` branch at 0x707110 targets 0x707328, is taken when a1(?) == at(=(([a1+1568] << 0x2) + a1)-16), and falls through when a1(?) != at(=(([a1+1568] << 0x2) + a1)-16).
+  The `bne` branch at 0x70713c targets 0x7070ec, is taken when a1(?) != at(=(([a1+1568] << 0x2) + a1)-16), and falls through when a1(?) == at(=(([a1+1568] << 0x2) + a1)-16).
+  The `beq` branch at 0x707160 targets 0x707180, is taken when (t2(=[a1+1568]) & 0x3) == 0, and falls through when (t2(=[a1+1568]) & 0x3) != 0.
+  The `bne` branch at 0x707178 targets 0x707168, is taken when v0(?) != 0, and falls through when v0(?) == 0.
+  The `beq` branch at 0x707184 targets 0x70721c, is taken when v0(?) == 0, and falls through when v0(?) != 0.
+  The `bne` branch at 0x70718c targets 0x7073ac, is taken when v1(?) != 0, and falls through when v1(?) == 0.
+  The `beq` branch at 0x7071e4 targets 0x707330, is taken when a1(?) == at(=(([a1+1568] << 0x2) + a1)-16), and falls through when a1(?) != at(=(([a1+1568] << 0x2) + a1)-16).
+  The `bne` branch at 0x707210 targets 0x7071c0, is taken when a1(?) != at(=(([a1+1568] << 0x2) + a1)-16), and falls through when a1(?) == at(=(([a1+1568] << 0x2) + a1)-16).
+  The `blez` branch at 0x707224 targets 0x707304, is taken when ra(=[a1+1564]) <= 0 (signed), and falls through when ra(=[a1+1564]) > 0 (signed).
+  The `beq` branch at 0x707244 targets 0x707264, is taken when v0(?) == 0, and falls through when v0(?) != 0.
+  The `bne` branch at 0x70725c targets 0x70724c, is taken when v0(?) != 0, and falls through when v0(?) == 0.
+  The `beq` branch at 0x707268 targets 0x7072fc, is taken when v0(?) == 0, and falls through when v0(?) != 0.
+  The `bne` branch at 0x707274 targets 0x7073d0, is taken when v0(?) < 0x2 (signed), and falls through when v0(?) >= 0x2 (signed).
+  The `beq` branch at 0x7072c4 targets 0x707338, is taken when a1(?) == at(=(([a1+1564] << 0x2) + a1)-16), and falls through when a1(?) != at(=(([a1+1564] << 0x2) + a1)-16).
+  The `bne` branch at 0x7072f0 targets 0x7072a0, is taken when a1(?) != at(=(([a1+1564] << 0x2) + a1)-16), and falls through when a1(?) == at(=(([a1+1564] << 0x2) + a1)-16).
+  The `beq` branch at 0x707318 targets 0x706fac and is always taken.
+  The `beq` branch at 0x707320 targets 0x707078 and is always taken.
+  The `beq` branch at 0x707328 targets 0x707144 and is always taken.
+  The `beq` branch at 0x707330 targets 0x707218 and is always taken.
+  The `beq` branch at 0x707338 targets 0x7072f8 and is always taken.
+  The `beq` branch at 0x70735c targets 0x706fb0 and is always taken.
+  The `beq` branch at 0x707380 targets 0x70707c and is always taken.
+  The `beq` branch at 0x7073a4 targets 0x707148 and is always taken.
+  The `beq` branch at 0x7073c8 targets 0x70721c and is always taken.
+  The `beq` branch at 0x7073ec targets 0x7072fc and is always taken.
+  The return at 0x706d90 has v0 = ret(__R300LoadILProgramVL).
+  The return at 0x707310 has v0 = ?.
+
+- `__R300UpdateMultisampleRegsForBlt` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7588c0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7588c0-0x758ac0 (512 bytes).
+  It occupies 512 bytes.
+  The `lw` at 0x7588f8 loads 4 bytes from a0 (arg0 at entry) +0x544.
+  3 such `lw` accesses load 4 bytes from a3 (arg3 at entry) +0x0, including `lw` at 0x75891c, `lw` at 0x758a88, `lw` at 0x758aa8.
+  3 such `sw` accesses store 4 bytes to a3 (arg3 at entry) +0x0, including `sw` at 0x758938, `sw` at 0x758aa4, `sw` at 0x758abc.
+  The `sw` at 0x75894c stores 4 bytes to a1 (arg1 at entry) +0x0.
+  The `sw` at 0x758950 stores 4 bytes to a1 (arg1 at entry) +0x4.
+  The `sw` at 0x758958 stores 4 bytes to a1 (arg1 at entry) +0x8.
+  The `sw` at 0x75895c stores 4 bytes to a1 (arg1 at entry) +0xc.
+  The `sw` at 0x758964 stores 4 bytes to a1 (arg1 at entry) +0x10.
+  The `sw` at 0x758968 stores 4 bytes to a1 (arg1 at entry) +0x14.
+  The `sw` at 0x758970 stores 4 bytes to a1 (arg1 at entry) +0x18.
+  The `sw` at 0x758974 stores 4 bytes to a1 (arg1 at entry) +0x1c.
+  The `sw` at 0x75897c stores 4 bytes to a1 (arg1 at entry) +0x20.
+  The `lw` at 0x758980 loads 4 bytes from a2 (arg2 at entry) +0x40.
+  The `sw` at 0x758988 stores 4 bytes to a1 (arg1 at entry) +0x28.
+  The `sw` at 0x75898c stores 4 bytes to a1 (arg1 at entry) +0x24.
+  The `lw` at 0x758990 loads 4 bytes from a2 (arg2 at entry) +0x14.
+  The `sw` at 0x758998 stores 4 bytes to a1 (arg1 at entry) +0x30.
+  The `sw` at 0x75899c stores 4 bytes to a1 (arg1 at entry) +0x34.
+  The `sw` at 0x7589a8 stores 4 bytes to a1 (arg1 at entry) +0x2c.
+  The `lbu` at 0x7589b4 loads 1 byte from a0 (arg0 at entry) +0x7a4.
+  The `lbu` at 0x7589c0 loads 1 byte from a2 (arg2 at entry) +0x37.
+  The `lw` at 0x7589cc loads 4 bytes from a0 (arg0 at entry) +0x770.
+  The `lwc1` at 0x7589d0 loads 4 bytes from [a0+1904] +0x0.
+  2 such `lw` accesses load 4 bytes from ?, including `lw` at 0x758a08, `lw` at 0x758a18.
+  The `lw` at 0x758a0c loads 4 bytes from table(0xb764b8) +0x0.
+  The `lw` at 0x758a40 loads 4 bytes from a2 (arg2 at entry) +0x38.
+  The `lbu` at 0x758a70 loads 1 byte from a0 (arg0 at entry) +0x859.
+  The `lw` at 0x758a84 loads 4 bytes from a0 (arg0 at entry) +0x550.
+  The `bgezall` at 0x758a38 calls Screendoor [0x758280] with a0=a0 at entry (arg0), a1=0x0, a2=?, a3=0x0, a6=0x3; fp f14=0x3f800000.
+  The `beq` branch at 0x7588f0 targets 0x758908, is taken when a0 == 0, and falls through when a0 != 0.
+  The `beq` branch at 0x7588fc targets 0x7589b4, is taken when a0(=[a0+1348]) == v0(=0x4), and falls through when a0(=[a0+1348]) != v0(=0x4).
+  The `beq` branch at 0x758904 targets 0x7589b4, is taken when a0(=[a0+1348]) == a6(=0x3), and falls through when a0(=[a0+1348]) != a6(=0x3).
+  The `beq` branch at 0x7589b8 targets 0x75890c, is taken when v1(=[a0+1956]:1) == 0, and falls through when v1(=[a0+1956]:1) != 0.
+  The `beq` branch at 0x7589c4 targets 0x75890c, is taken when a0(=[a2+55]:1) == 0, and falls through when a0(=[a2+55]:1) != 0.
+  The `bne` branch at 0x758a68 targets 0x758aa8, is taken when a6(=[a2+56]) != t0(=0x2), and falls through when a6(=[a2+56]) == t0(=0x2).
+  The `beq` branch at 0x758a74 targets 0x758aa8, is taken when v0(=[a0+2137]:1) == a7(=0x1), and falls through when v0(=[a0+2137]:1) != a7(=0x1).
+  The `beq` branch at 0x758a7c targets 0x758aa8, is taken when v0(=[a0+2137]:1) == t0(=0x2), and falls through when v0(=[a0+2137]:1) != t0(=0x2).
+  The `beq` branch at 0x758aa0 targets 0x75893c and is always taken.
+  The `beq` branch at 0x758ab8 targets 0x75893c and is always taken.
+  The return at 0x7589ac has v0 = a1+56.
+
+- `__R300ResolveMultisampledColorBuffer` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x758c80 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x758c80-0x75a1d8 (5464 bytes).
+  It occupies 5464 bytes.
+  The `lw` at 0x758c84 loads 4 bytes from a2 (arg2 at entry) +0x0.
+  The `lw` at 0x758c88 loads 4 bytes from [a2] +0x0.
+  The `lw` at 0x758c8c loads 4 bytes from a0 (arg0 at entry) +0x2d0.
+  The `lw` at 0x758c90 loads 4 bytes from a2 (arg2 at entry) +0x4.
+  The `lw` at 0x758c98 loads 4 bytes from [a0+720] +0x10.
+  The `lw` at 0x758cb0 loads 4 bytes from [[a0+720]+16] +0x84.
+  The `lw` at 0x758cb4 loads 4 bytes from [a2] +0x4.
+  The `lbu` at 0x758cc0 loads 1 byte from a0 (arg0 at entry) +0x859.
+  The `lw` at 0x758d20 loads 4 bytes from a0 (arg0 at entry) +0x338.
+  The `lw` at 0x759a80 loads 4 bytes from [a2] +0x38.
+  The `lw` at 0x759a98 loads 4 bytes from [a2+4] +0x24.
+  The `lw` at 0x759a9c loads 4 bytes from [a2+4] +0x2c.
+  2 such `lw` accesses load 4 bytes from [a2+4] +0x1c, including `lw` at 0x759aa0, `lw` at 0x759e3c.
+  The `lw` at 0x759abc loads 4 bytes from [a2] +0xc.
+  The `lw` at 0x759ac4 loads 4 bytes from [a2+4] +0xc.
+  The `lw` at 0x759af0 loads 4 bytes from [a2+4] +0x28.
+  The `lw` at 0x759af4 loads 4 bytes from [a2+4] +0x20.
+  The `sw` at 0x759af8 stores 4 bytes to a1 (arg1 at entry) +0x2c.
+  The `sw` at 0x759b00 stores 4 bytes to a1 (arg1 at entry) +0x8.
+  The `sw` at 0x759b08 stores 4 bytes to a1 (arg1 at entry) +0x10.
+  The `sw` at 0x759b14 stores 4 bytes to a1 (arg1 at entry) +0x4.
+  The `sw` at 0x759b1c stores 4 bytes to a1 (arg1 at entry) +0x24.
+  The `sw` at 0x759b2c stores 4 bytes to a1 (arg1 at entry) +0x0.
+  The `sw` at 0x759b34 stores 4 bytes to a1 (arg1 at entry) +0x14.
+  The `sw` at 0x759b40 stores 4 bytes to a1 (arg1 at entry) +0xc.
+  The `sw` at 0x759b50 stores 4 bytes to a1 (arg1 at entry) +0x18.
+  The `sw` at 0x759b5c stores 4 bytes to a1 (arg1 at entry) +0x20.
+  The `sw` at 0x759b6c stores 4 bytes to a1 (arg1 at entry) +0x28.
+  The `sw` at 0x759b74 stores 4 bytes to a1 (arg1 at entry) +0x1c.
+  The `lw` at 0x759b78 loads 4 bytes from a0 (arg0 at entry) +0x770.
+  The `lwc1` at 0x759b7c loads 4 bytes from [a0+1904] +0x0.
+  The `sw` at 0x759b88 stores 4 bytes to a1 (arg1 at entry) +0x40.
+  The `sw` at 0x759b98 stores 4 bytes to a1 (arg1 at entry) +0x50.
+  The `sw` at 0x759ba0 stores 4 bytes to a1 (arg1 at entry) +0x3c.
+  The `sw` at 0x759bb0 stores 4 bytes to a1 (arg1 at entry) +0x38.
+  The `lw` at 0x759bbc loads 4 bytes from table(0xb764b4) +0x0.
+  The `sw` at 0x759bc4 stores 4 bytes to a1 (arg1 at entry) +0x4c.
+  The `sw` at 0x759bcc stores 4 bytes to a1 (arg1 at entry) +0x30.
+  The `sw` at 0x759bdc stores 4 bytes to a1 (arg1 at entry) +0x44.
+  The `sw` at 0x759be8 stores 4 bytes to a1 (arg1 at entry) +0x34.
+  The `sw` at 0x759bf0 stores 4 bytes to a1 (arg1 at entry) +0x48.
+  The `lw` at 0x759bf4 loads 4 bytes from a0 (arg0 at entry) +0x868.
+  The `sw` at 0x759bf8 stores 4 bytes to a1 (arg1 at entry) +0x184.
+  The `sw` at 0x759bfc stores 4 bytes to a1 (arg1 at entry) +0x17c.
+  The `sw` at 0x759c00 stores 4 bytes to a1 (arg1 at entry) +0x174.
+  The `sw` at 0x759c04 stores 4 bytes to a1 (arg1 at entry) +0x16c.
+  The `sw` at 0x759c08 stores 4 bytes to a1 (arg1 at entry) +0x164.
+  The `sw` at 0x759c0c stores 4 bytes to a1 (arg1 at entry) +0x15c.
+  The `sw` at 0x759c10 stores 4 bytes to a1 (arg1 at entry) +0x154.
+  The `sw` at 0x759c14 stores 4 bytes to a1 (arg1 at entry) +0x12c.
+  The `sw` at 0x759c18 stores 4 bytes to a1 (arg1 at entry) +0x108.
+  The `sw` at 0x759c1c stores 4 bytes to a1 (arg1 at entry) +0xf8.
+  The `sw` at 0x759c20 stores 4 bytes to a1 (arg1 at entry) +0xd8.
+  The `sw` at 0x759c24 stores 4 bytes to a1 (arg1 at entry) +0xd0.
+  The `sw` at 0x759c28 stores 4 bytes to a1 (arg1 at entry) +0xa4.
+  The `sw` at 0x759c2c stores 4 bytes to a1 (arg1 at entry) +0x9c.
+  The `sw` at 0x759c30 stores 4 bytes to a1 (arg1 at entry) +0x98.
+  The `sw` at 0x759c34 stores 4 bytes to a1 (arg1 at entry) +0x94.
+  The `sw` at 0x759c38 stores 4 bytes to a1 (arg1 at entry) +0x7c.
+  The `sw` at 0x759c3c stores 4 bytes to a1 (arg1 at entry) +0x74.
+  The `sw` at 0x759c40 stores 4 bytes to a1 (arg1 at entry) +0x5c.
+  The `sw` at 0x759c48 stores 4 bytes to a1 (arg1 at entry) +0x58.
+  The `sw` at 0x759c50 stores 4 bytes to a1 (arg1 at entry) +0x6c.
+  The `sw` at 0x759c58 stores 4 bytes to a1 (arg1 at entry) +0x84.
+  The `sw` at 0x759c60 stores 4 bytes to a1 (arg1 at entry) +0xa0.
+  The `sw` at 0x759c68 stores 4 bytes to a1 (arg1 at entry) +0x64.
+  The `sw` at 0x759c70 stores 4 bytes to a1 (arg1 at entry) +0x78.
+  The `sw` at 0x759c78 stores 4 bytes to a1 (arg1 at entry) +0x8c.
+  The `sw` at 0x759c84 stores 4 bytes to a1 (arg1 at entry) +0xac.
+  The `sw` at 0x759c8c stores 4 bytes to a1 (arg1 at entry) +0x60.
+  The `sw` at 0x759c94 stores 4 bytes to a1 (arg1 at entry) +0x70.
+  The `sw` at 0x759c9c stores 4 bytes to a1 (arg1 at entry) +0x88.
+  The `sw` at 0x759ca0 stores 4 bytes to a1 (arg1 at entry) +0x54.
+  The `sw` at 0x759ca8 stores 4 bytes to a1 (arg1 at entry) +0x68.
+  The `sw` at 0x759cb0 stores 4 bytes to a1 (arg1 at entry) +0x80.
+  The `sw` at 0x759cbc stores 4 bytes to a1 (arg1 at entry) +0x90.
+  The `sw` at 0x759cc8 stores 4 bytes to a1 (arg1 at entry) +0xa8.
+  The `sw` at 0x759cd0 stores 4 bytes to a1 (arg1 at entry) +0xc0.
+  The `sw` at 0x759cd8 stores 4 bytes to a1 (arg1 at entry) +0x10c.
+  The `sw` at 0x759ce0 stores 4 bytes to a1 (arg1 at entry) +0x120.
+  The `sw` at 0x759ce8 stores 4 bytes to a1 (arg1 at entry) +0x130.
+  The `sw` at 0x759cf4 stores 4 bytes to a1 (arg1 at entry) +0x13c.
+  The `sw` at 0x759cfc stores 4 bytes to a1 (arg1 at entry) +0x148.
+  The `sw` at 0x759d04 stores 4 bytes to a1 (arg1 at entry) +0x160.
+  The `sw` at 0x759d0c stores 4 bytes to a1 (arg1 at entry) +0x180.
+  The `sw` at 0x759d18 stores 4 bytes to a1 (arg1 at entry) +0xc8.
+  The `sw` at 0x759d20 stores 4 bytes to a1 (arg1 at entry) +0xd4.
+  The `sw` at 0x759d28 stores 4 bytes to a1 (arg1 at entry) +0xe4.
+  The `sw` at 0x759d30 stores 4 bytes to a1 (arg1 at entry) +0xe8.
+  The `sw` at 0x759d38 stores 4 bytes to a1 (arg1 at entry) +0xec.
+  The `sw` at 0x759d40 stores 4 bytes to a1 (arg1 at entry) +0xf0.
+  The `sw` at 0x759d48 stores 4 bytes to a1 (arg1 at entry) +0xf4.
+  The `sw` at 0x759d50 stores 4 bytes to a1 (arg1 at entry) +0xfc.
+  The `sw` at 0x759d58 stores 4 bytes to a1 (arg1 at entry) +0x100.
+  The `sw` at 0x759d60 stores 4 bytes to a1 (arg1 at entry) +0x104.
+  The `sw` at 0x759d68 stores 4 bytes to a1 (arg1 at entry) +0x110.
+  The `sw` at 0x759d70 stores 4 bytes to a1 (arg1 at entry) +0x124.
+  The `sw` at 0x759d78 stores 4 bytes to a1 (arg1 at entry) +0x134.
+  The `sw` at 0x759d80 stores 4 bytes to a1 (arg1 at entry) +0x140.
+  The `sw` at 0x759d88 stores 4 bytes to a1 (arg1 at entry) +0x150.
+  The `sw` at 0x759d90 stores 4 bytes to a1 (arg1 at entry) +0x170.
+  The `sw` at 0x759d94 stores 4 bytes to a1 (arg1 at entry) +0xb0.
+  The `sw` at 0x759da0 stores 4 bytes to a1 (arg1 at entry) +0xb4.
+  The `sw` at 0x759da4 stores 4 bytes to a1 (arg1 at entry) +0xb8.
+  The `sw` at 0x759dac stores 4 bytes to a1 (arg1 at entry) +0xbc.
+  The `sw` at 0x759db4 stores 4 bytes to a1 (arg1 at entry) +0xc4.
+  The `sw` at 0x759dbc stores 4 bytes to a1 (arg1 at entry) +0xcc.
+  The `sw` at 0x759dc4 stores 4 bytes to a1 (arg1 at entry) +0xdc.
+  The `sw` at 0x759dcc stores 4 bytes to a1 (arg1 at entry) +0xe0.
+  The `sw` at 0x759dd0 stores 4 bytes to a1 (arg1 at entry) +0x114.
+  The `sw` at 0x759dd4 stores 4 bytes to a1 (arg1 at entry) +0x118.
+  The `sw` at 0x759dd8 stores 4 bytes to a1 (arg1 at entry) +0x11c.
+  The `sw` at 0x759de0 stores 4 bytes to a1 (arg1 at entry) +0x128.
+  The `sw` at 0x759de8 stores 4 bytes to a1 (arg1 at entry) +0x138.
+  The `sw` at 0x759df0 stores 4 bytes to a1 (arg1 at entry) +0x144.
+  The `sw` at 0x759df8 stores 4 bytes to a1 (arg1 at entry) +0x158.
+  The `sw` at 0x759e00 stores 4 bytes to a1 (arg1 at entry) +0x178.
+  The `sw` at 0x759e08 stores 4 bytes to a1 (arg1 at entry) +0x14c.
+  The `sw` at 0x759e10 stores 4 bytes to a1 (arg1 at entry) +0x168.
+  The `lw` at 0x759e14 loads 4 bytes from [a2] +0x4c.
+  The `sw` at 0x759e1c stores 4 bytes to a1 (arg1 at entry) +0x188.
+  The `sw` at 0x759e2c stores 4 bytes to a1 (arg1 at entry) +0x18c.
+  The `lw` at 0x759e30 loads 4 bytes from [a2] +0x10.
+  The `sw` at 0x759e80 stores 4 bytes to a1 (arg1 at entry) +0x190.
+  The `sw` at 0x759e8c stores 4 bytes to a1 (arg1 at entry) +0x198.
+  The `sw` at 0x759e9c stores 4 bytes to a1 (arg1 at entry) +0x194.
+  The `lw` at 0x759ea4 loads 4 bytes from [a2] +0x40.
+  The `sw` at 0x759eb0 stores 4 bytes to a1 (arg1 at entry) +0x1a0.
+  The `sw` at 0x759eb4 stores 4 bytes to a1 (arg1 at entry) +0x19c.
+  The `lw` at 0x759eb8 loads 4 bytes from [a2] +0x14.
+  The `sw` at 0x759ec0 stores 4 bytes to a1 (arg1 at entry) +0x1a4.
+  The `lw` at 0x759ec4 loads 4 bytes from [[[a0+720]+16]+132] +0x5c.
+  The `sw` at 0x759edc stores 4 bytes to a1 (arg1 at entry) +0x1ac.
+  The `sw` at 0x759ee4 stores 4 bytes to a1 (arg1 at entry) +0x1a8.
+  The `lw` at 0x759ee8 loads 4 bytes from [a2+4] +0x4c.
+  The `sw` at 0x759ef4 stores 4 bytes to a1 (arg1 at entry) +0x1b0.
+  The `sw` at 0x759f08 stores 4 bytes to a1 (arg1 at entry) +0x1b4.
+  The `lw` at 0x759f14 loads 4 bytes from [a2+4] +0x10.
+  The `sw` at 0x759f20 stores 4 bytes to a1 (arg1 at entry) +0x1e0.
+  The `sw` at 0x759f24 stores 4 bytes to a1 (arg1 at entry) +0x1dc.
+  The `sw` at 0x759f2c stores 4 bytes to a1 (arg1 at entry) +0x1c0.
+  The `sw` at 0x759f34 stores 4 bytes to a1 (arg1 at entry) +0x1d8.
+  The `sw` at 0x759f38 stores 4 bytes to a1 (arg1 at entry) +0x1d4.
+  The `sw` at 0x759f40 stores 4 bytes to a1 (arg1 at entry) +0x1cc.
+  The `sw` at 0x759f48 stores 4 bytes to a1 (arg1 at entry) +0x1b8.
+  The `sw` at 0x759f54 stores 4 bytes to a1 (arg1 at entry) +0x1c8.
+  The `sw` at 0x759f60 stores 4 bytes to a1 (arg1 at entry) +0x1c4.
+  The `sw` at 0x759f68 stores 4 bytes to a1 (arg1 at entry) +0x1e8.
+  The `sw` at 0x759f74 stores 4 bytes to a1 (arg1 at entry) +0x1e4.
+  The `sw` at 0x759f80 stores 4 bytes to a1 (arg1 at entry) +0x1bc.
+  The `sw` at 0x759f88 stores 4 bytes to a1 (arg1 at entry) +0x1d0.
+  The `lwc1` at 0x759f8c loads 4 bytes from [a2] +0x64.
+  The `lwc1` at 0x759f90 loads 4 bytes from [a2] +0x68.
+  The `lwc1` at 0x759f94 loads 4 bytes from [a2] +0x6c.
+  The `lwc1` at 0x759f98 loads 4 bytes from [a2] +0x60.
+  The `sw` at 0x759fec stores 4 bytes to a1 (arg1 at entry) +0x1ec.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x22c, including `sw` at 0x759ffc, `sw` at 0x75a160.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x228, including `sw` at 0x75a000, `sw` at 0x75a158.
+  The `sw` at 0x75a008 stores 4 bytes to a1 (arg1 at entry) +0x220.
+  The `swc1` at 0x75a00c stores 4 bytes to a1 (arg1 at entry) +0x21c.
+  The `swc1` at 0x75a010 stores 4 bytes to a1 (arg1 at entry) +0x218.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x208, including `sw` at 0x75a018, `sw` at 0x75a134.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x204, including `sw` at 0x75a020, `sw` at 0x75a194.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x200, including `sw` at 0x75a028, `sw` at 0x75a13c.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x1f8, including `sw` at 0x75a030, `sw` at 0x75a148.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x1f4, including `sw` at 0x75a034, `sw` at 0x75a19c.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x1f0, including `sw` at 0x75a03c, `sw` at 0x75a150.
+  The `sw` at 0x75a044 stores 4 bytes to a1 (arg1 at entry) +0x224.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x214, including `sw` at 0x75a054, `sw` at 0x75a188.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x210, including `sw` at 0x75a060, `sw` at 0x75a124.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x20c, including `sw` at 0x75a06c, `sw` at 0x75a12c.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x1fc, including `sw` at 0x75a078, `sw` at 0x75a140.
+  The `lw` at 0x75a084 loads 4 bytes from a2 (arg2 at entry) +0xc.
+  The `lw` at 0x75a0a4 loads 4 bytes from a0 (arg0 at entry) +0x28.
+  The `lw` at 0x75a0c0 loads 4 bytes from a0 (arg0 at entry) +0x550.
+  The `sw` at 0x75a110 stores 4 bytes to a1 (arg1 at entry) +0x234.
+  The `sw` at 0x75a114 stores 4 bytes to a1 (arg1 at entry) +0x230.
+  The `swc1` at 0x75a118 stores 4 bytes to a1 (arg1 at entry) +0x224.
+  The `swc1` at 0x75a11c stores 4 bytes to a1 (arg1 at entry) +0x220.
+  The `sw` at 0x75a170 stores 4 bytes to a1 (arg1 at entry) +0x21c.
+  The `sw` at 0x75a17c stores 4 bytes to a1 (arg1 at entry) +0x218.
+  The `sw` at 0x75a1bc stores 4 bytes to (a1 + one of 0x230, 0x238) +0x0.
+  The `sw` at 0x75a1cc stores 4 bytes to (a1 + one of 0x234, 0x23c) +0x0.
+  The `bgezall` at 0x75a0a0 calls __R300ForceCmaskClear [0x758ac0] with a0=a0 at entry (arg0), a1=[a0+40], a2=(a1 + one of 0x230, 0x238, 0x240), a3=one of 0x400300, 0xffffff, a4=one of 0xffffffffc0023500, 0x3ffffff, a5=(a1 + one of 0x230, 0x238, 0x240), a7=one of 0xffffffffc0023500, 0xffffffffffbfffff, 0x10f8; fp f12=0x437f0000.
+  The `beq` branch at 0x758cac targets 0x75a100, is taken when t3(=[[a2]]) == 0, and falls through when t3(=[[a2]]) != 0.
+  The `beq` branch at 0x758cb8 targets 0x75a100, is taken when t3(=[[a2]+4]) == 0, and falls through when t3(=[[a2]+4]) != 0.
+  The `beq` branch at 0x758cc4 targets 0x759a80, is taken when a7(=[a0+2137]:1) == 0, and falls through when a7(=[a0+2137]:1) != 0.
+  The `beq` branch at 0x758ccc targets 0x759a80, is taken when a7(=[a0+2137]:1) == t9(=0x3), and falls through when a7(=[a0+2137]:1) != t9(=0x3).
+  The `beq` branch at 0x758cd4 targets 0x759a80, is taken when a7(=[a0+2137]:1) == t8(=0x4), and falls through when a7(=[a0+2137]:1) != t8(=0x4).
+  The `beq` branch at 0x758d30 targets 0x759a80, is taken when at(?) == t1(=[a0+824]), and falls through when at(?) != t1(=[a0+824]).
+  The `beq` branch at 0x758d80 targets 0x759a80, is taken when a4(?) == t1(=[a0+824]), and falls through when a4(?) != t1(=[a0+824]).
+  The `beq` branch at 0x758dd0 targets 0x759a80, is taken when t8(?) == t1(=[a0+824]), and falls through when t8(?) != t1(=[a0+824]).
+  The `beq` branch at 0x758e20 targets 0x759a80, is taken when at(?) == t1(=[a0+824]), and falls through when at(?) != t1(=[a0+824]).
+  The `beq` branch at 0x758e70 targets 0x759a80, is taken when v1(?) == t1(=[a0+824]), and falls through when v1(?) != t1(=[a0+824]).
+  The `beq` branch at 0x758ec0 targets 0x759a80, is taken when a3(?) == t1(=[a0+824]), and falls through when a3(?) != t1(=[a0+824]).
+  The `beq` branch at 0x758f10 targets 0x759a80, is taken when a4(?) == t1(=[a0+824]), and falls through when a4(?) != t1(=[a0+824]).
+  The `beq` branch at 0x758f60 targets 0x759a80, is taken when t8(?) == t1(=[a0+824]), and falls through when t8(?) != t1(=[a0+824]).
+  The `beq` branch at 0x758fb0 targets 0x759a80, is taken when at(?) == t1(=[a0+824]), and falls through when at(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759000 targets 0x759a80, is taken when v1(?) == t1(=[a0+824]), and falls through when v1(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759060 targets 0x759a80, is taken when a3(?) == t1(=[a0+824]), and falls through when a3(?) != t1(=[a0+824]).
+  The `beq` branch at 0x7590b0 targets 0x759a80, is taken when at(?) == t1(=[a0+824]), and falls through when at(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759114 targets 0x759a80, is taken when a3(?) == t1(=[a0+824]), and falls through when a3(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759164 targets 0x759a80, is taken when at(?) == t1(=[a0+824]), and falls through when at(?) != t1(=[a0+824]).
+  The `beq` branch at 0x7591b4 targets 0x759a80, is taken when a3(?) == t1(=[a0+824]), and falls through when a3(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759218 targets 0x759a80, is taken when at(?) == t1(=[a0+824]), and falls through when at(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759268 targets 0x759a80, is taken when a3(?) == t1(=[a0+824]), and falls through when a3(?) != t1(=[a0+824]).
+  The `beq` branch at 0x7592b8 targets 0x759a80, is taken when at(?) == t1(=[a0+824]), and falls through when at(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759308 targets 0x759a80, is taken when a3(?) == t1(=[a0+824]), and falls through when a3(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759358 targets 0x759a80, is taken when at(?) == t1(=[a0+824]), and falls through when at(?) != t1(=[a0+824]).
+  The `beq` branch at 0x7593a8 targets 0x759a80, is taken when a3(?) == t1(=[a0+824]), and falls through when a3(?) != t1(=[a0+824]).
+  The `beq` branch at 0x7593f8 targets 0x759a80, is taken when at(?) == t1(=[a0+824]), and falls through when at(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759440 targets 0x759a80, is taken when a3(?) == t1(=[a0+824]), and falls through when a3(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759488 targets 0x759a80, is taken when a4(?) == t1(=[a0+824]), and falls through when a4(?) != t1(=[a0+824]).
+  The `beq` branch at 0x7594d0 targets 0x759a80, is taken when a4(?) == t1(=[a0+824]), and falls through when a4(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759520 targets 0x759a80, is taken when a4(?) == t1(=[a0+824]), and falls through when a4(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759570 targets 0x759a80, is taken when t8(?) == t1(=[a0+824]), and falls through when t8(?) != t1(=[a0+824]).
+  The `beq` branch at 0x7595c0 targets 0x759a80, is taken when at(?) == t1(=[a0+824]), and falls through when at(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759610 targets 0x759a80, is taken when v1(?) == t1(=[a0+824]), and falls through when v1(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759660 targets 0x759a80, is taken when a3(?) == t1(=[a0+824]), and falls through when a3(?) != t1(=[a0+824]).
+  The `beq` branch at 0x7596b0 targets 0x759a80, is taken when a4(?) == t1(=[a0+824]), and falls through when a4(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759700 targets 0x759a80, is taken when t8(?) == t1(=[a0+824]), and falls through when t8(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759750 targets 0x759a80, is taken when at(?) == t1(=[a0+824]), and falls through when at(?) != t1(=[a0+824]).
+  The `beq` branch at 0x7597a0 targets 0x759a80, is taken when v1(?) == t1(=[a0+824]), and falls through when v1(?) != t1(=[a0+824]).
+  The `beq` branch at 0x7597f0 targets 0x759a80, is taken when a3(?) == t1(=[a0+824]), and falls through when a3(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759840 targets 0x759a80, is taken when a4(?) == t1(=[a0+824]), and falls through when a4(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759890 targets 0x759a80, is taken when t8(?) == t1(=[a0+824]), and falls through when t8(?) != t1(=[a0+824]).
+  The `beq` branch at 0x7598e0 targets 0x759a80, is taken when at(?) == t1(=[a0+824]), and falls through when at(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759930 targets 0x759a80, is taken when v1(?) == t1(=[a0+824]), and falls through when v1(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759980 targets 0x759a80, is taken when a3(?) == t1(=[a0+824]), and falls through when a3(?) != t1(=[a0+824]).
+  The `beq` branch at 0x7599d0 targets 0x759a80, is taken when a4(?) == t1(=[a0+824]), and falls through when a4(?) != t1(=[a0+824]).
+  The `beq` branch at 0x759a20 targets 0x759a80, is taken when t8(?) == t1(=[a0+824]), and falls through when t8(?) != t1(=[a0+824]).
+  The `bne` branch at 0x759a78 targets 0x75a1d0, is taken when at(?) != t1(=[a0+824]), and falls through when at(?) == t1(=[a0+824]).
+  The `bne` branch at 0x759a90 targets 0x75a0c0, is taken when t8(?) < 0x1 (unsigned), and falls through when t8(?) >= 0x1 (unsigned).
+  The `beq` branch at 0x759ab4 targets 0x75a0d4, is taken when a7(=[a0+2137]:1) == 0, and falls through when a7(=[a0+2137]:1) != 0.
+  The `beq` branch at 0x759ecc targets 0x75a0f8, is taken when (a4(=[[[[a0+720]+16]+132]+92]) & 0x8) == 0, and falls through when (a4(=[[[[a0+720]+16]+132]+92]) & 0x8) != 0.
+  The `beq` branch at 0x759fe8 targets 0x759ff8, is taken when t0(=one of 0x0, 0x1) == 0, and falls through when t0(=one of 0x0, 0x1) != 0.
+  The `beq` branch at 0x759ff0 targets 0x75a110, is taken when a1(?) == 0, and falls through when a1(?) != 0.
+  The `beq` branch at 0x75a074 targets 0x75a084, is taken when t0(=one of 0x0, 0x1) == 0, and falls through when t0(=one of 0x0, 0x1) != 0.
+  The `beq` branch at 0x75a07c targets 0x75a1ac, is taken when a1(?) == 0, and falls through when a1(?) != 0.
+  The `bgez` branch at 0x75a08c targets 0x75a0b0, is taken when a1(=([a2+12] << 0x26)) >= 0 (signed), and falls through when a1(=([a2+12] << 0x26)) < 0 (signed).
+  The `beq` branch at 0x75a0c4 targets 0x759a98, is taken when at(=[a0+1360]) == 0, and falls through when at(=[a0+1360]) != 0.
+  The `beq` branch at 0x75a0cc targets 0x759a98 and is always taken.
+  The `beq` branch at 0x75a0f0 targets 0x759af0 and is always taken.
+  The `beq` branch at 0x75a0f8 targets 0x759ed8 and is always taken.
+  The `beq` branch at 0x75a1a4 targets 0x75a07c and is always taken.
+  The `beq` branch at 0x75a1c8 targets 0x75a084 and is always taken.
+  The `beq` branch at 0x75a1d0 targets 0x759a94 and is always taken.
+  The return at 0x75a0b8 has v0 = one of (a1 + one of 0x230, 0x238, 0x240), ret(__R300ForceCmaskClear).
+  The return at 0x75a108 has v0 = a1.
+
+- `__R300AccumAccumulate` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x75b5c0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x75b5c0-0x75b97c (956 bytes).
+  It occupies 956 bytes.
+  The `lw` at 0x75b5c8 loads 4 bytes from a0 (arg0 at entry) +0x0.
+  The `lw` at 0x75b5dc loads 4 bytes from [a0] +0x38da0.
+  The `lw` at 0x75b5e0 loads 4 bytes from [[a0]+232864] +0x544.
+  The `lw` at 0x75b608 loads 4 bytes from [a0] +0xc0ec.
+  The `lw` at 0x75b624 loads 4 bytes from [[a0]+49388] +0x8.
+  The `lw` at 0x75b640 loads 4 bytes from [a0] +0x386c8.
+  The `lw` at 0x75b658 loads 4 bytes from [[a0]+232864] +0x278.
+  The `lbu` at 0x75b6a4 loads 1 byte from ?.
+  The `lbu` at 0x75b6b0 loads 1 byte from [[a0]+231112] +0x88.
+  The `lw` at 0x75b6c4 loads 4 bytes from [a0] +0x468f0.
+  The `lw` at 0x75b6e0 loads 4 bytes from [a0] +0xc968.
+  2 such `lw` accesses load 4 bytes from [a0] +0x46d1c, including `lw` at 0x75b6f0, `lw` at 0x75b708.
+  The `lw` at 0x75b6fc loads 4 bytes from [a0] +0xc978.
+  The `lw` at 0x75b720 loads 4 bytes from [a0] +0x46d58.
+  The `sw` at 0x75b72c stores 4 bytes to [[a0]+290136] +0x0.
+  The `sw` at 0x75b734 stores 4 bytes to [[a0]+290136] +0x4.
+  The `sw` at 0x75b73c stores 4 bytes to [[a0]+290136] +0x8.
+  The `sw` at 0x75b740 stores 4 bytes to [[a0]+290136] +0xc.
+  The `sw` at 0x75b748 stores 4 bytes to [[a0]+290136] +0x10.
+  The `sw` at 0x75b750 stores 4 bytes to [[a0]+290136] +0x14.
+  The `lw` at 0x75b754 loads 4 bytes from [a0] +0x47bf4.
+  The `sw` at 0x75b770 stores 4 bytes to [[a0]+290136] +0x18.
+  The `sw` at 0x75b77c stores 4 bytes to [[a0]+290136] +0x1c.
+  The `sw` at 0x75b7e0 stores 4 bytes to [a0] +0x46d58.
+  2 such `lw` accesses load 4 bytes from [a0] +0x63bc, including `lw` at 0x75b7e4, `lw` at 0x75b84c.
+  2 such `sw` accesses store 4 bytes to [a0] +0x63bc, including `sw` at 0x75b800, `sw` at 0x75b860.
+  2 such `lw` accesses load 4 bytes from [a0] +0x474a4, including `lw` at 0x75b80c, `lw` at 0x75b898.
+  2 such `sb` accesses store 1 byte to [a0] +0x46d90, including `sb` at 0x75b820, `sb` at 0x75b838.
+  The `sw` at 0x75b870 stores 4 bytes to [a0] +0x6440.
+  The `sw` at 0x75b88c stores 4 bytes to [a0] +0x48508.
+  2 such `lw` accesses load 4 bytes from [a0] +0x46e44, including `lw` at 0x75b8a4, `lw` at 0x75b8bc.
+  The `sw` at 0x75b8d0 stores 4 bytes to [a0] +0x46e44.
+  The `lbu` at 0x75b8d4 loads 1 byte from [[a0]+232864] +0x7a4.
+  The `lbu` at 0x75b8e0 loads 1 byte from [[[a0]+49388]+8] +0x65.
+  2 such `lw` accesses load 4 bytes from [[a0]+232864] +0x50, including `lw` at 0x75b90c, `lw` at 0x75b91c.
+  The `jalr` at 0x75b63c calls fglX11DrawableBufToBltSurface with a0=[[a0]+232864], a1=?, a2=sp-448, a3=?.
+  The `jalr` at 0x75b650 calls fglX11DrawableBufToBltSurface with a0=[[a0]+232864], a1=[[a0]+231112], a2=sp-312, a3=?.
+  The `jalr` at 0x75b66c calls (unknown callee) with a0=[[a0]+232864], a1=sp-176, a2=sp-172, a3=sp-168, a4=sp-164.
+  The `jalr` at 0x75b6bc calls __glATISubmitBM [0xab9b80] with a0=[a0], a1=?, a2=?, a3=?.
+  The `jalr` at 0x75b6f4 calls (unknown callee) with a0=[a0], a1=[[a0]+290076], a2=0x0, a3=sp-160, a4=0x1.
+  The `jalr` at 0x75b70c calls (unknown callee) with a0=[a0], a1=0x0, a2=[[a0]+290076], a3=?.
+  The `bgezall` at 0x75b7d4 calls accumMultiBlt [0x75b080] with a0=[[a0]+232864], a1=[[a0]+290136]+32, a2=sp-136, a3=0x1, a4=0x1, a5=0x69010, a6=sp-312.
+  The `jalr` at 0x75b7fc calls __R300ProgramPixelShader [0x6f8c40] with a0=[a0], a1=?, a2=?, a3=?, a5=0xfffffffffbffffff.
+  The `jalr` at 0x75b810 calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=[a0], a1=[[a0]+292004], a2=0x0, a3=?.
+  The `jalr` at 0x75b824 calls __glATISubmitBM [0xab9b80] with a0=[a0], a1=?, a2=?, a3=?, a6=0x1.
+  The `jalr` at 0x75b86c calls FloatToS16E7 [0x6ef3c0] with a0=[[a0]+289008], a1=?, a2=?, a3=?, a7=[a0]+294652; fp f12=f13.
+  The `jalr` at 0x75b888 calls __R300ProgramPixelShader [0x6f8c40] with a0=[a0], a1=?, a2=?, a3=?.
+  The `jalr` at 0x75b89c calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=[a0], a1=[[a0]+292004], a2=0x0, a3=?.
+  The `jalr` at 0x75b8b4 calls __R300LoadCachedPSProgToHwRegs [0x6f1380] with a0=[a0], a1=?, a2=?, a3=?.
+  The `jalr` at 0x75b8ec calls __glATISubmitBM [0xab9b80] with a0=[a0], a1=[[[a0]+232864]+1348], a2=0x3, a3=a3 at entry (arg3).
+  The `jalr` at 0x75b910 calls fglX11ResolveFSAAColorBuffer with a0=[a0], a1=[[a0]+232864], a2=[[[a0]+49388]+8], a3=[[[a0]+232864]+80], a4=0x0, a5=0x0, a6=0x0.
+  The `beq` branch at 0x75b620 targets 0x75b8d4, is taken when a1(=[[[a0]+232864]+1348]) == at(=0x4), and falls through when a1(=[[[a0]+232864]+1348]) != at(=0x4).
+  The `beq` branch at 0x75b628 targets 0x75b8d4, is taken when a1(=[[[a0]+232864]+1348]) == a2(=0x3), and falls through when a1(=[[[a0]+232864]+1348]) != a2(=0x3).
+  The `beq` branch at 0x75b6a8 targets 0x75b920, is taken when t8(?) == 0, and falls through when t8(?) != 0.
+  The `beq` branch at 0x75b6b4 targets 0x75b940, is taken when v1(=[[[a0]+231112]+136]:1) == 0, and falls through when v1(=[[[a0]+231112]+136]:1) != 0.
+  The `beq` branch at 0x75b6c8 targets 0x75b848, is taken when a0(=[[a0]+289008]) == 0, and falls through when a0(=[[a0]+289008]) != 0.
+  The `bgez` branch at 0x75b8ac targets 0x75b718, is taken when t3(=([[a0]+290372] << 0x2b)) >= 0 (signed), and falls through when t3(=([[a0]+290372] << 0x2b)) < 0 (signed).
+  The `beq` branch at 0x75b8cc targets 0x75b718 and is always taken.
+  The `beq` branch at 0x75b8d8 targets 0x75b630, is taken when ra(=[[[a0]+232864]+1956]:1) == 0, and falls through when ra(=[[[a0]+232864]+1956]:1) != 0.
+  The `beq` branch at 0x75b8e4 targets 0x75b62c, is taken when at(=[[[[a0]+49388]+8]+101]:1) == 0, and falls through when at(=[[[[a0]+49388]+8]+101]:1) != 0.
+  The `beq` branch at 0x75b918 targets 0x75b62c and is always taken.
+  The `beq` branch at 0x75b938 targets 0x75b6b0 and is always taken.
+  The `beq` branch at 0x75b974 targets 0x75b6b8 and is always taken.
+  The return at 0x75b840 has v0 = ret(__glATISubmitBM).
+
+- `__R300AccumClear` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x75b980 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x75b980-0x75bea8 (1320 bytes).
+  It occupies 1320 bytes.
+  The `lw` at 0x75b988 loads 4 bytes from a0 (arg0 at entry) +0x0.
+  2 such `lw` accesses load 4 bytes from [a0] +0x38da0, including `lw` at 0x75b9a0, `lw` at 0x75bc04.
+  The `lw` at 0x75b9b4 loads 4 bytes from [[a0]+232864] +0x280.
+  The `lwc1` at 0x75b9e0 loads 4 bytes from [a0] +0xcf8.
+  The `lwc1` at 0x75b9e4 loads 4 bytes from [a0] +0xcfc.
+  The `lwc1` at 0x75b9e8 loads 4 bytes from [a0] +0xd00.
+  The `lwc1` at 0x75b9ec loads 4 bytes from [a0] +0xd04.
+  The `lw` at 0x75b9f0 loads 4 bytes from [a0] +0x4718c.
+  The `lw` at 0x75b9f8 loads 4 bytes from [a0] +0x7460.
+  The `lw` at 0x75ba00 loads 4 bytes from [a0] +0x745c.
+  The `lw` at 0x75ba08 loads 4 bytes from [a0] +0x35ce8.
+  The `lw` at 0x75ba0c loads 4 bytes from [a0] +0x35cec.
+  The `lw` at 0x75ba10 loads 4 bytes from [a0] +0x35ce0.
+  The `lw` at 0x75ba14 loads 4 bytes from [a0] +0x35ce4.
+  The `lw` at 0x75ba3c loads 4 bytes from a0 (arg0 at entry) +0x8.
+  The `lbu` at 0x75ba50 loads 1 byte from [a0+8] +0x88.
+  The `lw` at 0x75ba64 loads 4 bytes from [a0] +0x468f0.
+  The `lw` at 0x75ba88 loads 4 bytes from [a0] +0xc968.
+  2 such `lw` accesses load 4 bytes from [a0] +0x46d20, including `lw` at 0x75ba98, `lw` at 0x75baac.
+  The `lw` at 0x75baa4 loads 4 bytes from [a0] +0xc978.
+  The `lw` at 0x75babc loads 4 bytes from [a0] +0x46d58.
+  The `lw` at 0x75bacc loads 4 bytes from [a0] +0x47bf4.
+  The `sw` at 0x75bad4 stores 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x0.
+  The `sw` at 0x75badc stores 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x4.
+  The `lw` at 0x75bae4 loads 4 bytes from [a0] +0x47eec.
+  The `lw` at 0x75bafc loads 4 bytes from [a0] +0x47ef0.
+  The `sw` at 0x75bb10 stores 4 bytes to ret(__R300WriteAccumPitchRegisters) +0x0.
+  The `sw` at 0x75bb18 stores 4 bytes to ret(__R300WriteAccumPitchRegisters) +0x10.
+  The `sw` at 0x75bb30 stores 4 bytes to ret(__R300WriteAccumPitchRegisters) +0x14.
+  The `sw` at 0x75bb3c stores 4 bytes to ret(__R300WriteAccumPitchRegisters) +0x4.
+  The `sw` at 0x75bb4c stores 4 bytes to ret(__R300WriteAccumPitchRegisters) +0x8.
+  The `sw` at 0x75bb5c stores 4 bytes to ret(__R300WriteAccumPitchRegisters) +0xc.
+  The `sw` at 0x75bb68 stores 4 bytes to [a0] +0x470b4.
+  The `lw` at 0x75bb74 loads 4 bytes from [a0] +0x47140.
+  The `sw` at 0x75bb80 stores 4 bytes to [a0] +0x470bc.
+  The `sw` at 0x75bb84 stores 4 bytes to [a0] +0x470c0.
+  The `sw` at 0x75bb90 stores 4 bytes to [a0] +0x471a8.
+  The `sw` at 0x75bba4 stores 4 bytes to [a0] +0x47140.
+  The `sw` at 0x75bbc4 stores 4 bytes to ret(__R300WriteCmaskEnableRegistersAbort) +0x0.
+  The `lw` at 0x75bbc8 loads 4 bytes from [a0] +0x470b4.
+  The `sw` at 0x75bbd0 stores 4 bytes to ret(__R300WriteCmaskEnableRegistersAbort) +0x8.
+  The `sw` at 0x75bbd4 stores 4 bytes to ret(__R300WriteCmaskEnableRegistersAbort) +0x4.
+  The `lw` at 0x75bbd8 loads 4 bytes from [a0] +0x470bc.
+  The `sw` at 0x75bbe0 stores 4 bytes to ret(__R300WriteCmaskEnableRegistersAbort) +0x10.
+  The `sw` at 0x75bbe4 stores 4 bytes to ret(__R300WriteCmaskEnableRegistersAbort) +0xc.
+  The `lw` at 0x75bbe8 loads 4 bytes from [a0] +0x470c0.
+  The `sw` at 0x75bbf0 stores 4 bytes to ret(__R300WriteCmaskEnableRegistersAbort) +0x18.
+  The `sw` at 0x75bbf4 stores 4 bytes to ret(__R300WriteCmaskEnableRegistersAbort) +0x14.
+  The `lw` at 0x75bbf8 loads 4 bytes from [a0] +0x471a8.
+  The `sw` at 0x75bbfc stores 4 bytes to ret(__R300WriteCmaskEnableRegistersAbort) +0x1c.
+  The `lw` at 0x75bc14 loads 4 bytes from [[a0]+232864] +0x878.
+  8 such `sw` accesses store 4 bytes to ?, including `sw` at 0x75bc78, `sw` at 0x75bc8c, `sw` at 0x75bc98.
+  8 such `swc1` accesses store 4 bytes to ?, including `swc1` at 0x75bca4, `swc1` at 0x75bcac, `swc1` at 0x75bcb0.
+  The `lw` at 0x75bd04 loads 4 bytes from [a0] +0x472d4.
+  The `sw` at 0x75bd28 stores 4 bytes to [a0] +0x46d58.
+  2 such `lw` accesses load 4 bytes from [a0] +0x63bc, including `lw` at 0x75bd48, `lw` at 0x75bdc4.
+  2 such `sw` accesses store 4 bytes to [a0] +0x63bc, including `sw` at 0x75bd64, `sw` at 0x75bdd8.
+  2 such `lw` accesses load 4 bytes from [a0] +0x474a4, including `lw` at 0x75bd70, `lw` at 0x75be74.
+  The `lw` at 0x75bda0 loads 4 bytes from ?.
+  The `sw` at 0x75bdec stores 4 bytes to [a0] +0x6440.
+  The `sw` at 0x75be04 stores 4 bytes to [a0] +0x495b0.
+  The `sw` at 0x75be0c stores 4 bytes to [a0] +0x49630.
+  The `sw` at 0x75be1c stores 4 bytes to [a0] +0x496b0.
+  The `lw` at 0x75be28 loads 4 bytes from [a0] +0x496f0.
+  The `sw` at 0x75be34 stores 4 bytes to [a0] +0x49530.
+  The `sw` at 0x75be48 stores 4 bytes to [a0] +0x496f0.
+  2 such `lw` accesses load 4 bytes from [a0] +0x46e44, including `lw` at 0x75be78, `lw` at 0x75be90.
+  The `sw` at 0x75bea4 stores 4 bytes to [a0] +0x46e44.
+  The `jalr` at 0x75b9d4 calls (unknown callee) with a0=[[a0]+232864], a1=[a0], a2=a2 at entry (arg2), a3=a3 at entry (arg3).
+  The `jalr` at 0x75ba34 calls __glATISubmitBM [0xab9b80] with a0=[a0], a1=?, a2=?, a3=?.
+  The `jalr` at 0x75ba5c calls __R300SetOverrideRendering [0x767140] with a0=[a0], a1=0x1, a2=0x0, a3=0x0, a5=sp-296.
+  The `jalr` at 0x75ba9c calls (unknown callee) with a0=[a0], a1=[[a0]+290080], a2=0x0, a3=sp-176, a4=0x1, a5=[[a0]+289008].
+  The `jalr` at 0x75bab0 calls (unknown callee) with a0=[a0], a1=0x0, a2=[[a0]+290080], a3=?.
+  The `jalr` at 0x75bac0 calls __R300TCLFFXProgramNullShader [0x7d8a40] with a0=[a0], a1=[[a0]+290136], a2=?, a3=?.
+  The `jalr` at 0x75baec calls __R300WriteAccumOffsetRegisters [0x77c380] with a0=[a0], a1=ret(__R300TCLFFXProgramNullShader)+8, a2=[[a0]+294636], a3=?.
+  The `jalr` at 0x75bb00 calls __R300WriteAccumPitchRegisters [0x77c480] with a0=[a0], a1=ret(__R300WriteAccumOffsetRegisters), a2=[[a0]+294640], a3=?.
+  The `jalr` at 0x75bba0 calls __R300WriteCmaskEnableRegistersAbort [0x77c680] with a0=[a0], a1=ret(__R300WriteAccumPitchRegisters)+24, a2=?, a3=-0x61, a4=0xffffff, a5=0x6666666, a6=0x66666666, a7=-0x1.
+  The `jalr` at 0x75bc20 calls __R300WriteDrawRectRegisters [0x77c280] with a0=[a0], a1=ret(__R300WriteCmaskEnableRegistersAbort)+32, a2=0x1004, a3=[[a0]+290996], a4=0x1008.
+  The `jalr` at 0x75bd24 calls __ATITCLFFXRestoreShader [0xac0000] with a0=[a0], a1=?, a2=?, a3=?, a6=0xa, a7=0x1393.
+  The `jalr` at 0x75bd60 calls __R300ProgramPixelShader [0x6f8c40] with a0=[a0], a1=?, a2=?, a3=?.
+  The `jalr` at 0x75bd74 calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=[a0], a1=[[a0]+292004], a2=0x0, a3=?.
+  The `jalr` at 0x75bd88 calls __R300CompleteOverrideRendering [0x767900] with a0=[a0], a1=sp-296, a2=?, a3=?.
+  The `jalr` at 0x75bd94 calls __glATISubmitBM [0xab9b80] with a0=[a0], a1=?, a2=?, a3=?.
+  The `jalr` at 0x75bda4 calls (unknown callee) with a0=?, a1=?, a2=?, a3=?.
+  The `jalr` at 0x75bde8 calls FloatToS16E7 [0x6ef3c0] with a0=([[a0]+25532] | 0x4000000), a1=0x4000000, a2=?, a3=?, a5=[[a0]+289008]; fp f12=[[a0]+3320].
+  The `jalr` at 0x75be00 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[[a0]+3324].
+  The `jalr` at 0x75be10 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[[a0]+3328].
+  The `jalr` at 0x75be20 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[[a0]+3332].
+  The `jalr` at 0x75be44 calls __R300ValidateShaderProgram [0x6ef740] with a0=[a0], a1=?, a2=0x1, a3=?.
+  The `jalr` at 0x75be5c calls __R300ProgramPixelShader [0x6f8c40] with a0=[a0], a1=?, a2=?, a3=?.
+  The `jalr` at 0x75be70 calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=[a0], a1=[[a0]+292004], a2=?, a3=?.
+  The `jalr` at 0x75be88 calls __R300LoadCachedPSProgToHwRegs [0x6f1380] with a0=[a0], a1=?, a2=?, a3=?.
+  The `beq` branch at 0x75ba68 targets 0x75bdc0, is taken when a5(=[[a0]+289008]) == 0, and falls through when a5(=[[a0]+289008]) != 0.
+  The `beq` branch at 0x75be30 targets 0x75be54, is taken when t9(=[[a0]+300784]) == a2(=0x1), and falls through when t9(=[[a0]+300784]) != a2(=0x1).
+  The `beq` branch at 0x75be4c targets 0x75be58 and is always taken.
+  The `bgez` branch at 0x75be80 targets 0x75bab8, is taken when ra(=([[a0]+290372] << 0x2b)) >= 0 (signed), and falls through when ra(=([[a0]+290372] << 0x2b)) < 0 (signed).
+  The `beq` branch at 0x75bea0 targets 0x75bab8 and is always taken.
+  The return at 0x75bdb4 has v0 = ret(?).
+  The instructions from 0x75bdbc to 0x75bdbc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300AccumLoad` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x75bec0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x75bec0-0x75c274 (948 bytes).
+  It occupies 948 bytes.
+  The `lw` at 0x75bec8 loads 4 bytes from a0 (arg0 at entry) +0x0.
+  The `lw` at 0x75bedc loads 4 bytes from [a0] +0x38da0.
+  The `lw` at 0x75bee0 loads 4 bytes from [[a0]+232864] +0x544.
+  The `lw` at 0x75bf08 loads 4 bytes from [a0] +0xc0ec.
+  The `lw` at 0x75bf24 loads 4 bytes from [[a0]+49388] +0x8.
+  The `lw` at 0x75bf40 loads 4 bytes from [a0] +0x386c8.
+  The `lw` at 0x75bf58 loads 4 bytes from [[a0]+232864] +0x278.
+  The `lbu` at 0x75bfa4 loads 1 byte from ?.
+  The `lbu` at 0x75bfb0 loads 1 byte from [[a0]+231112] +0x88.
+  The `lw` at 0x75bfc4 loads 4 bytes from [a0] +0x468f0.
+  The `lw` at 0x75bfe0 loads 4 bytes from [a0] +0xc968.
+  2 such `lw` accesses load 4 bytes from [a0] +0x46d24, including `lw` at 0x75bff0, `lw` at 0x75c008.
+  The `lw` at 0x75bffc loads 4 bytes from [a0] +0xc978.
+  The `lw` at 0x75c024 loads 4 bytes from [a0] +0x46d58.
+  The `sw` at 0x75c030 stores 4 bytes to [[a0]+290136] +0x0.
+  The `sw` at 0x75c038 stores 4 bytes to [[a0]+290136] +0x4.
+  The `lw` at 0x75c03c loads 4 bytes from [a0] +0x47bf4.
+  The `sw` at 0x75c044 stores 4 bytes to [[a0]+290136] +0x10.
+  The `sw` at 0x75c048 stores 4 bytes to [[a0]+290136] +0x14.
+  The `sw` at 0x75c050 stores 4 bytes to [[a0]+290136] +0x18.
+  The `sw` at 0x75c058 stores 4 bytes to [[a0]+290136] +0x1c.
+  The `sw` at 0x75c070 stores 4 bytes to [[a0]+290136] +0x8.
+  The `sw` at 0x75c07c stores 4 bytes to [[a0]+290136] +0xc.
+  The `sw` at 0x75c0dc stores 4 bytes to [a0] +0x46d58.
+  2 such `lw` accesses load 4 bytes from [a0] +0x63bc, including `lw` at 0x75c0e0, `lw` at 0x75c144.
+  2 such `sw` accesses store 4 bytes to [a0] +0x63bc, including `sw` at 0x75c0fc, `sw` at 0x75c158.
+  2 such `lw` accesses load 4 bytes from [a0] +0x474a4, including `lw` at 0x75c108, `lw` at 0x75c190.
+  The `sw` at 0x75c168 stores 4 bytes to [a0] +0x6440.
+  The `sw` at 0x75c184 stores 4 bytes to [a0] +0x4a658.
+  2 such `lw` accesses load 4 bytes from [a0] +0x46e44, including `lw` at 0x75c19c, `lw` at 0x75c1b4.
+  The `sw` at 0x75c1c8 stores 4 bytes to [a0] +0x46e44.
+  The `lbu` at 0x75c1cc loads 1 byte from [[a0]+232864] +0x7a4.
+  The `lbu` at 0x75c1d8 loads 1 byte from [[[a0]+49388]+8] +0x65.
+  2 such `lw` accesses load 4 bytes from [[a0]+232864] +0x50, including `lw` at 0x75c204, `lw` at 0x75c214.
+  The `jalr` at 0x75bf3c calls fglX11DrawableBufToBltSurface with a0=[[a0]+232864], a1=?, a2=sp-448, a3=?.
+  The `jalr` at 0x75bf50 calls fglX11DrawableBufToBltSurface with a0=[[a0]+232864], a1=[[a0]+231112], a2=sp-312, a3=?.
+  The `jalr` at 0x75bf6c calls (unknown callee) with a0=[[a0]+232864], a1=sp-176, a2=sp-172, a3=sp-168, a4=sp-164.
+  The `jalr` at 0x75bfbc calls __glATISubmitBM [0xab9b80] with a0=[a0], a1=?, a2=?, a3=?.
+  The `jalr` at 0x75bff4 calls (unknown callee) with a0=[a0], a1=[[a0]+290084], a2=0x0, a3=sp-160, a4=0x1.
+  The `jalr` at 0x75c00c calls (unknown callee) with a0=[a0], a1=0x0, a2=[[a0]+290084], a3=?.
+  The `bgezall` at 0x75c0d0 calls accumMultiBlt [0x75b080] with a0=[[a0]+232864], a1=[[a0]+290136]+32, a2=sp-136, a3=0x0, a4=0x1, a5=0x29010.
+  The `jalr` at 0x75c0f8 calls __R300ProgramPixelShader [0x6f8c40] with a0=[a0], a1=?, a2=?, a3=?, a5=0xfffffffffbffffff.
+  The `jalr` at 0x75c10c calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=[a0], a1=[[a0]+292004], a2=0x0, a3=?.
+  The `jalr` at 0x75c11c calls __glATISubmitBM [0xab9b80] with a0=[a0], a1=?, a2=?, a3=?.
+  The `jalr` at 0x75c164 calls FloatToS16E7 [0x6ef3c0] with a0=[[a0]+289008], a1=?, a2=?, a3=?, a6=[a0]+303180, a7=([[a0]+25532] | 0x4000000); fp f12=f13.
+  The `jalr` at 0x75c180 calls __R300ProgramPixelShader [0x6f8c40] with a0=[a0], a1=?, a2=?, a3=?.
+  The `jalr` at 0x75c194 calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=[a0], a1=[[a0]+292004], a2=0x0, a3=?.
+  The `jalr` at 0x75c1ac calls __R300LoadCachedPSProgToHwRegs [0x6f1380] with a0=[a0], a1=?, a2=?, a3=?.
+  The `jalr` at 0x75c1e4 calls __glATISubmitBM [0xab9b80] with a0=[a0], a1=[[[a0]+232864]+1348], a2=0x3, a3=a3 at entry (arg3).
+  The `jalr` at 0x75c208 calls fglX11ResolveFSAAColorBuffer with a0=[a0], a1=[[a0]+232864], a2=[[[a0]+49388]+8], a3=[[[a0]+232864]+80], a4=0x0, a5=0x0, a6=0x0.
+  The `beq` branch at 0x75bf20 targets 0x75c1cc, is taken when a1(=[[[a0]+232864]+1348]) == at(=0x4), and falls through when a1(=[[[a0]+232864]+1348]) != at(=0x4).
+  The `beq` branch at 0x75bf28 targets 0x75c1cc, is taken when a1(=[[[a0]+232864]+1348]) == a2(=0x3), and falls through when a1(=[[[a0]+232864]+1348]) != a2(=0x3).
+  The `beq` branch at 0x75bfa8 targets 0x75c218, is taken when t8(?) == 0, and falls through when t8(?) != 0.
+  The `beq` branch at 0x75bfb4 targets 0x75c238, is taken when v1(=[[[a0]+231112]+136]:1) == 0, and falls through when v1(=[[[a0]+231112]+136]:1) != 0.
+  The `beq` branch at 0x75bfc8 targets 0x75c140, is taken when a0(=[[a0]+289008]) == 0, and falls through when a0(=[[a0]+289008]) != 0.
+  The `bgez` branch at 0x75c1a4 targets 0x75c018, is taken when t2(=([[a0]+290372] << 0x2b)) >= 0 (signed), and falls through when t2(=([[a0]+290372] << 0x2b)) < 0 (signed).
+  The `beq` branch at 0x75c1c4 targets 0x75c018 and is always taken.
+  The `beq` branch at 0x75c1d0 targets 0x75bf30, is taken when t9(=[[[a0]+232864]+1956]:1) == 0, and falls through when t9(=[[[a0]+232864]+1956]:1) != 0.
+  The `beq` branch at 0x75c1dc targets 0x75bf2c, is taken when ra(=[[[[a0]+49388]+8]+101]:1) == 0, and falls through when ra(=[[[[a0]+49388]+8]+101]:1) != 0.
+  The `beq` branch at 0x75c210 targets 0x75bf2c and is always taken.
+  The `beq` branch at 0x75c230 targets 0x75bfb0 and is always taken.
+  The `beq` branch at 0x75c26c targets 0x75bfb8 and is always taken.
+  The return at 0x75c130 has v0 = ret(__glATISubmitBM).
+  The instructions from 0x75c138 to 0x75c13c are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300AccumMult` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x75c600 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x75c600-0x75c8bc (700 bytes).
+  It occupies 700 bytes.
+  The `lw` at 0x75c620 loads 4 bytes from a0 (arg0 at entry) +0x0.
+  The `lw` at 0x75c634 loads 4 bytes from [a0] +0x386c8.
+  The `lw` at 0x75c638 loads 4 bytes from [a0] +0x38da0.
+  The `lw` at 0x75c658 loads 4 bytes from [[a0]+232864] +0x278.
+  The `lbu` at 0x75c68c loads 1 byte from [[a0]+231112] +0x88.
+  The `lw` at 0x75c6a0 loads 4 bytes from [a0] +0x468f0.
+  The `lw` at 0x75c6c4 loads 4 bytes from [a0] +0xc968.
+  2 such `lw` accesses load 4 bytes from [a0] +0x46d28, including `lw` at 0x75c6d4, `lw` at 0x75c6ec.
+  The `lw` at 0x75c6e0 loads 4 bytes from [a0] +0xc978.
+  The `lw` at 0x75c700 loads 4 bytes from [a0] +0x46d58.
+  The `sw` at 0x75c70c stores 4 bytes to [[a0]+290136] +0x0.
+  The `sw` at 0x75c714 stores 4 bytes to [[a0]+290136] +0x4.
+  The `lw` at 0x75c718 loads 4 bytes from [a0] +0x47bf4.
+  The `sw` at 0x75c720 stores 4 bytes to [[a0]+290136] +0x10.
+  The `sw` at 0x75c724 stores 4 bytes to [[a0]+290136] +0x14.
+  The `sw` at 0x75c72c stores 4 bytes to [[a0]+290136] +0x18.
+  The `sw` at 0x75c738 stores 4 bytes to [[a0]+290136] +0x1c.
+  The `sw` at 0x75c74c stores 4 bytes to [[a0]+290136] +0x8.
+  The `sw` at 0x75c758 stores 4 bytes to [[a0]+290136] +0xc.
+  The `sw` at 0x75c7b4 stores 4 bytes to [a0] +0x46d58.
+  2 such `lw` accesses load 4 bytes from [a0] +0x63bc, including `lw` at 0x75c7b8, `lw` at 0x75c810.
+  2 such `sw` accesses store 4 bytes to [a0] +0x63bc, including `sw` at 0x75c7d4, `sw` at 0x75c824.
+  2 such `lw` accesses load 4 bytes from [a0] +0x474a4, including `lw` at 0x75c7e0, `lw` at 0x75c85c.
+  The `sw` at 0x75c834 stores 4 bytes to [a0] +0x6440.
+  The `sw` at 0x75c850 stores 4 bytes to [a0] +0x4c7a8.
+  2 such `lw` accesses load 4 bytes from [a0] +0x46e44, including `lw` at 0x75c868, `lw` at 0x75c880.
+  The `sw` at 0x75c894 stores 4 bytes to [a0] +0x46e44.
+  The `jalr` at 0x75c650 calls fglX11DrawableBufToBltSurface with a0=[[a0]+232864], a1=[[a0]+231112], a2=sp-304, a3=a3 at entry (arg3).
+  The `jalr` at 0x75c66c calls (unknown callee) with a0=[[a0]+232864], a1=sp-168, a2=sp-164, a3=sp-160, a4=sp-156.
+  The `jalr` at 0x75c698 calls __glATISubmitBM [0xab9b80] with a0=[a0], a1=?, a2=?, a3=?.
+  The `jalr` at 0x75c6d8 calls (unknown callee) with a0=[a0], a1=[[a0]+290088], a2=0x0, a3=sp-152, a4=0x1.
+  The `jalr` at 0x75c6f0 calls (unknown callee) with a0=[a0], a1=0x0, a2=[[a0]+290088], a3=?.
+  The `bgezall` at 0x75c7a8 calls accumMultiBlt [0x75b080] with a0=[[a0]+232864], a1=[[a0]+290136]+32, a2=sp-128, a3=0x0.
+  The `jalr` at 0x75c7d0 calls __R300ProgramPixelShader [0x6f8c40] with a0=[a0], a1=?, a2=?, a3=?, a5=0xfffffffffbffffff.
+  The `jalr` at 0x75c7e4 calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=[a0], a1=[[a0]+292004], a2=0x0, a3=?.
+  The `jalr` at 0x75c7f4 calls __glATISubmitBM [0xab9b80] with a0=[a0], a1=?, a2=?, a3=?.
+  The `jalr` at 0x75c830 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?, a6=[a0]+311708, a7=([[a0]+25532] | 0x4000000); fp f12=f13.
+  The `jalr` at 0x75c84c calls __R300ProgramPixelShader [0x6f8c40] with a0=[a0], a1=?, a2=?, a3=?.
+  The `jalr` at 0x75c860 calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=[a0], a1=[[a0]+292004], a2=0x0, a3=?.
+  The `jalr` at 0x75c878 calls __R300LoadCachedPSProgToHwRegs [0x6f1380] with a0=[a0], a1=?, a2=?, a3=?.
+  The `beq` branch at 0x75c690 targets 0x75c898, is taken when t8(=[[[a0]+231112]+136]:1) == 0, and falls through when t8(=[[[a0]+231112]+136]:1) != 0.
+  The `beq` branch at 0x75c6a4 targets 0x75c810, is taken when t9(=[[a0]+289008]) == 0, and falls through when t9(=[[a0]+289008]) != 0.
+  The `bgez` branch at 0x75c870 targets 0x75c6f8, is taken when t2(=([[a0]+290372] << 0x2b)) >= 0 (signed), and falls through when t2(=([[a0]+290372] << 0x2b)) < 0 (signed).
+  The `beq` branch at 0x75c890 targets 0x75c6f8 and is always taken.
+  The `beq` branch at 0x75c8b4 targets 0x75c694 and is always taken.
+  The return at 0x75c808 has v0 = ret(__glATISubmitBM).
+
+- `__R300AccumAdd` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x75c8c0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x75c8c0-0x75cb7c (700 bytes).
+  It occupies 700 bytes.
+  The `lw` at 0x75c8e0 loads 4 bytes from a0 (arg0 at entry) +0x0.
+  The `lw` at 0x75c8f4 loads 4 bytes from [a0] +0x386c8.
+  The `lw` at 0x75c8f8 loads 4 bytes from [a0] +0x38da0.
+  The `lw` at 0x75c918 loads 4 bytes from [[a0]+232864] +0x278.
+  The `lbu` at 0x75c94c loads 1 byte from [[a0]+231112] +0x88.
+  The `lw` at 0x75c960 loads 4 bytes from [a0] +0x468f0.
+  The `lw` at 0x75c984 loads 4 bytes from [a0] +0xc968.
+  2 such `lw` accesses load 4 bytes from [a0] +0x46d2c, including `lw` at 0x75c994, `lw` at 0x75c9ac.
+  The `lw` at 0x75c9a0 loads 4 bytes from [a0] +0xc978.
+  The `lw` at 0x75c9c0 loads 4 bytes from [a0] +0x46d58.
+  The `sw` at 0x75c9cc stores 4 bytes to [[a0]+290136] +0x0.
+  The `sw` at 0x75c9d4 stores 4 bytes to [[a0]+290136] +0x4.
+  The `lw` at 0x75c9d8 loads 4 bytes from [a0] +0x47bf4.
+  The `sw` at 0x75c9e0 stores 4 bytes to [[a0]+290136] +0x10.
+  The `sw` at 0x75c9e4 stores 4 bytes to [[a0]+290136] +0x14.
+  The `sw` at 0x75c9ec stores 4 bytes to [[a0]+290136] +0x18.
+  The `sw` at 0x75c9f8 stores 4 bytes to [[a0]+290136] +0x1c.
+  The `sw` at 0x75ca0c stores 4 bytes to [[a0]+290136] +0x8.
+  The `sw` at 0x75ca18 stores 4 bytes to [[a0]+290136] +0xc.
+  The `sw` at 0x75ca74 stores 4 bytes to [a0] +0x46d58.
+  2 such `lw` accesses load 4 bytes from [a0] +0x63bc, including `lw` at 0x75ca78, `lw` at 0x75cad0.
+  2 such `sw` accesses store 4 bytes to [a0] +0x63bc, including `sw` at 0x75ca94, `sw` at 0x75cae4.
+  2 such `lw` accesses load 4 bytes from [a0] +0x474a4, including `lw` at 0x75caa0, `lw` at 0x75cb1c.
+  The `sw` at 0x75caf4 stores 4 bytes to [a0] +0x6440.
+  The `sw` at 0x75cb10 stores 4 bytes to [a0] +0x4b700.
+  2 such `lw` accesses load 4 bytes from [a0] +0x46e44, including `lw` at 0x75cb28, `lw` at 0x75cb40.
+  The `sw` at 0x75cb54 stores 4 bytes to [a0] +0x46e44.
+  The `jalr` at 0x75c910 calls fglX11DrawableBufToBltSurface with a0=[[a0]+232864], a1=[[a0]+231112], a2=sp-304, a3=a3 at entry (arg3).
+  The `jalr` at 0x75c92c calls (unknown callee) with a0=[[a0]+232864], a1=sp-168, a2=sp-164, a3=sp-160, a4=sp-156.
+  The `jalr` at 0x75c958 calls __glATISubmitBM [0xab9b80] with a0=[a0], a1=?, a2=?, a3=?.
+  The `jalr` at 0x75c998 calls (unknown callee) with a0=[a0], a1=[[a0]+290092], a2=0x0, a3=sp-152, a4=0x1.
+  The `jalr` at 0x75c9b0 calls (unknown callee) with a0=[a0], a1=0x0, a2=[[a0]+290092], a3=?.
+  The `bgezall` at 0x75ca68 calls accumMultiBlt [0x75b080] with a0=[[a0]+232864], a1=[[a0]+290136]+32, a2=sp-128, a3=0x0.
+  The `jalr` at 0x75ca90 calls __R300ProgramPixelShader [0x6f8c40] with a0=[a0], a1=?, a2=?, a3=?, a5=0xfffffffffbffffff.
+  The `jalr` at 0x75caa4 calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=[a0], a1=[[a0]+292004], a2=0x0, a3=?.
+  The `jalr` at 0x75cab4 calls __glATISubmitBM [0xab9b80] with a0=[a0], a1=?, a2=?, a3=?.
+  The `jalr` at 0x75caf0 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?, a6=[a0]+307444, a7=([[a0]+25532] | 0x4000000); fp f12=f13.
+  The `jalr` at 0x75cb0c calls __R300ProgramPixelShader [0x6f8c40] with a0=[a0], a1=?, a2=?, a3=?.
+  The `jalr` at 0x75cb20 calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=[a0], a1=[[a0]+292004], a2=0x0, a3=?.
+  The `jalr` at 0x75cb38 calls __R300LoadCachedPSProgToHwRegs [0x6f1380] with a0=[a0], a1=?, a2=?, a3=?.
+  The `beq` branch at 0x75c950 targets 0x75cb58, is taken when t8(=[[[a0]+231112]+136]:1) == 0, and falls through when t8(=[[[a0]+231112]+136]:1) != 0.
+  The `beq` branch at 0x75c964 targets 0x75cad0, is taken when t9(=[[a0]+289008]) == 0, and falls through when t9(=[[a0]+289008]) != 0.
+  The `bgez` branch at 0x75cb30 targets 0x75c9b8, is taken when t2(=([[a0]+290372] << 0x2b)) >= 0 (signed), and falls through when t2(=([[a0]+290372] << 0x2b)) < 0 (signed).
+  The `beq` branch at 0x75cb50 targets 0x75c9b8 and is always taken.
+  The `beq` branch at 0x75cb74 targets 0x75c954 and is always taken.
+  The return at 0x75cac8 has v0 = ret(__glATISubmitBM).
+
+- `ZBltFunc` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x75fdc0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x75fdc0-0x7603f8 (1592 bytes).
+  It occupies 1592 bytes.
+  The `lw` at 0x75fdc8 loads 4 bytes from a2 (arg2 at entry) +0x4.
+  The `lw` at 0x75fdd0 loads 4 bytes from a2 (arg2 at entry) +0x0.
+  The `lw` at 0x75fdd4 loads 4 bytes from [a2+4] +0x4c.
+  The `lw` at 0x75fdd8 loads 4 bytes from [a2] +0x4c.
+  3 such `lw` accesses load 4 bytes from [a2+4] +0x28, including `lw` at 0x75fdf8, `lw` at 0x7601d4, `lw` at 0x76023c.
+  The `lw` at 0x75fdfc loads 4 bytes from [a2] +0x20.
+  3 such `lw` accesses load 4 bytes from [a2+4] +0x2c, including `lw` at 0x75fe00, `lw` at 0x7601e8, `lw` at 0x760250.
+  The `lw` at 0x75fe04 loads 4 bytes from [a2] +0x24.
+  5 such `lw` accesses load 4 bytes from [a2+4] +0x20, including `lw` at 0x75fe14, `lw` at 0x75ffe4, `lw` at 0x760080.
+  9 such `lw` accesses load 4 bytes from [a2+4] +0x24, including `lw` at 0x75fe2c, `lw` at 0x75fe68, `lw` at 0x75ffb4.
+  4 such `lw` accesses load 4 bytes from [a2] +0x28, including `lw` at 0x75fe40, `lw` at 0x75ffc4, `lw` at 0x76006c.
+  5 such `lw` accesses load 4 bytes from [a2] +0x2c, including `lw` at 0x75fe48, `lw` at 0x75ffe0, `lw` at 0x760090.
+  7 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x1c, including `sw` at 0x75fe8c, `sw` at 0x75fef4, `sw` at 0x760030.
+  7 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x18, including `sw` at 0x75fe94, `sw` at 0x75fefc, `sw` at 0x76002c.
+  7 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x14, including `sw` at 0x75fe9c, `sw` at 0x75ff04, `sw` at 0x760024.
+  7 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x10, including `sw` at 0x75fea4, `sw` at 0x75ff0c, `sw` at 0x760020.
+  7 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0xc, including `sw` at 0x75fea8, `sw` at 0x75ff10, `sw` at 0x76001c.
+  7 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x8, including `sw` at 0x75feac, `sw` at 0x75ff18, `sw` at 0x760018.
+  7 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x4, including `sw` at 0x75feb0, `sw` at 0x75ff1c, `sw` at 0x760014.
+  7 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x0, including `sw` at 0x75feb8, `sw` at 0x75ff24, `sw` at 0x760010.
+  7 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x868, including `lw` at 0x75fedc, `lw` at 0x75ff48, `lw` at 0x760054.
+  The `lw` at 0x7601c0 loads 4 bytes from a2 (arg2 at entry) +0x8.
+  The `sw` at 0x7601e0 stores 4 bytes to [a2+8] +0x0.
+  The `sw` at 0x7601f4 stores 4 bytes to [a2+8] +0x4.
+  The `lw` at 0x7601f8 loads 4 bytes from [a2] +0x18.
+  The `sw` at 0x7601fc stores 4 bytes to [a2+8] +0x18.
+  The `lw` at 0x760200 loads 4 bytes from [a2] +0x70.
+  The `sw` at 0x760204 stores 4 bytes to [a2+8] +0x70.
+  The `lw` at 0x760208 loads 4 bytes from [a2] +0x1c.
+  The `sw` at 0x76020c stores 4 bytes to [a2+8] +0x1c.
+  The `lw` at 0x760210 loads 4 bytes from [a2] +0x80.
+  The `sw` at 0x760218 stores 4 bytes to [a2+8] +0x80.
+  The `lw` at 0x760224 loads 4 bytes from a0 (arg0 at entry) +0x39c.
+  4 such `sw` accesses store 4 bytes to ?, including `sw` at 0x760230, `sw` at 0x760234, `sw` at 0x760244.
+  The `bgezall` at 0x75ff80 calls __R300HWBltFunc [0x764980] with a0=a0 at entry (arg0), a1=a1+32, a2=sp-128, a3=?, a5=0x1.
+  The `jalr` at 0x760220 calls fglX11CMMAllocBltSurface with a0=[a0+924], a1=[a2+8], a2=0x0, a3=[[a2]+112], a4=[[a2]+24], a6=[[a2+4]+36].
+  The `bgezall` at 0x760274 calls __R300HWBltFunc [0x764980] with a0=a0 at entry (arg0), a1=?, a2=sp-128, a3=?.
+  The `bgezall` at 0x76029c calls __R300HWBltFunc [0x764980] with a0=a0 at entry (arg0), a1=ret(__R300HWBltFunc), a2=sp-128, a3=?.
+  The `bne` branch at 0x75fdf0 targets 0x75fef0, is taken when v1(=[[a2]+76]) != a3(=[[a2+4]+76]), and falls through when v1(=[[a2]+76]) == a3(=[[a2+4]+76]).
+  The `beq` branch at 0x75fe0c targets 0x75ffac, is taken when a7(=[[a2]+32]) >= v0(=[[a2+4]+40]) (signed), and falls through when a7(=[[a2]+32]) < v0(=[[a2+4]+40]) (signed).
+  The `beq` branch at 0x75fe1c targets 0x7602b0, is taken when t0(=[[a2+4]+32]) >= a7(=[[a2]+32]) (signed), and falls through when t0(=[[a2+4]+32]) < a7(=[[a2]+32]) (signed).
+  The `beq` branch at 0x75fe24 targets 0x75fe40, is taken when a5(?) == 0, and falls through when a5(?) != 0.
+  The `bne` branch at 0x75fe38 targets 0x75ffc4, is taken when a7(=[[a2+4]+36]) < a6(=[[a2]+36]) (signed), and falls through when a7(=[[a2+4]+36]) >= a6(=[[a2]+36]) (signed).
+  The `beq` branch at 0x75fe4c targets 0x75fe58, is taken when a5(=[[a2]+40]) >= v0(=[[a2+4]+40]) (signed), and falls through when a5(=[[a2]+40]) < v0(=[[a2+4]+40]) (signed).
+  The `bne` branch at 0x75fe54 targets 0x760090, is taken when a5(?) != 0, and falls through when a5(?) == 0.
+  The `beq` branch at 0x75fe60 targets 0x75fe80, is taken when a7(?) == 0, and falls through when a7(?) != 0.
+  The `bne` branch at 0x75fe78 targets 0x76014c, is taken when t0(=[[a2+4]+36]) < v0(=[[a2]+44]) (signed), and falls through when t0(=[[a2+4]+36]) >= v0(=[[a2]+44]) (signed).
+  The `beq` branch at 0x75fee8 targets 0x7601c0 and is always taken.
+  The `beq` branch at 0x75ffac targets 0x76006c, is taken when a5(?) == 0, and falls through when a5(?) != 0.
+  The `beq` branch at 0x75ffbc targets 0x76006c, is taken when a7(=[[a2+4]+36]) >= a6(=[[a2]+36]) (signed), and falls through when a7(=[[a2+4]+36]) < a6(=[[a2]+36]) (signed).
+  The `beq` branch at 0x75ffdc targets 0x75fff0, is taken when a5(=[[a2]+40]) >= v0(=[[a2+4]+40]) (signed), and falls through when a5(=[[a2]+40]) < v0(=[[a2+4]+40]) (signed).
+  The `bne` branch at 0x75ffec targets 0x760090, is taken when v1(=[[a2+4]+32]) < a5(=[[a2]+40]) (signed), and falls through when v1(=[[a2+4]+32]) >= a5(=[[a2]+40]) (signed).
+  The `beq` branch at 0x75fff8 targets 0x760008, is taken when v1(?) == 0, and falls through when v1(?) != 0.
+  The `bne` branch at 0x760000 targets 0x76014c, is taken when v0(?) != 0, and falls through when v0(?) == 0.
+  The `beq` branch at 0x760064 targets 0x7601c0 and is always taken.
+  The `beq` branch at 0x760078 targets 0x760128, is taken when a5(=[[a2]+40]) >= v0(=[[a2+4]+40]) (signed), and falls through when a5(=[[a2]+40]) < v0(=[[a2+4]+40]) (signed).
+  The `beq` branch at 0x760088 targets 0x760128, is taken when t1(=[[a2+4]+32]) >= a5(=[[a2]+40]) (signed), and falls through when t1(=[[a2+4]+32]) < a5(=[[a2]+40]) (signed).
+  The `beq` branch at 0x7600a4 targets 0x7600c0, is taken when v0(=[[a2]+44]) >= a0(=[[a2+4]+44]) (signed), and falls through when v0(=[[a2]+44]) < a0(=[[a2+4]+44]) (signed).
+  The `bne` branch at 0x7600bc targets 0x760148, is taken when t3(=[[a2+4]+36]) < v0(=[[a2]+44]) (signed), and falls through when t3(=[[a2+4]+36]) >= v0(=[[a2]+44]) (signed).
+  The `beq` branch at 0x760120 targets 0x7601c0 and is always taken.
+  The `beq` branch at 0x760130 targets 0x760370, is taken when v0(=[[a2]+44]) >= a0(=[[a2+4]+44]) (signed), and falls through when v0(=[[a2]+44]) < a0(=[[a2+4]+44]) (signed).
+  The `beq` branch at 0x760140 targets 0x760374, is taken when a4(=[[a2+4]+36]) >= v0(=[[a2]+44]) (signed), and falls through when a4(=[[a2+4]+36]) < v0(=[[a2]+44]) (signed).
+  The `beq` branch at 0x7601c4 targets 0x75ff90, is taken when v1(=[a2+8]) == 0, and falls through when v1(=[a2+8]) != 0.
+  The `beq` branch at 0x760228 targets 0x7603d8, is taken when v0(=ret(fglX11CMMAllocBltSurface)) == 0, and falls through when v0(=ret(fglX11CMMAllocBltSurface)) != 0.
+  The `beq` branch at 0x7602a8 targets 0x75ff90 and is always taken.
+  The `beq` branch at 0x7602b0 targets 0x7602c8, is taken when a5(?) == 0, and falls through when a5(?) != 0.
+  The `bne` branch at 0x7602c0 targets 0x75ffc4, is taken when a7(=[[a2+4]+36]) < a6(=[[a2]+36]) (signed), and falls through when a7(=[[a2+4]+36]) >= a6(=[[a2]+36]) (signed).
+  The `beq` branch at 0x7602d4 targets 0x7602e0, is taken when a5(=[[a2]+40]) >= v0(=[[a2+4]+40]) (signed), and falls through when a5(=[[a2]+40]) < v0(=[[a2+4]+40]) (signed).
+  The `bne` branch at 0x7602dc targets 0x760090, is taken when a5(?) != 0, and falls through when a5(?) == 0.
+  The `beq` branch at 0x7602e4 targets 0x760300, is taken when a7(?) == 0, and falls through when a7(?) != 0.
+  The `bne` branch at 0x7602f8 targets 0x76014c, is taken when t0(=[[a2+4]+36]) < v0(=[[a2]+44]) (signed), and falls through when t0(=[[a2+4]+36]) >= v0(=[[a2]+44]) (signed).
+  The `beq` branch at 0x760368 targets 0x75ff60 and is always taken.
+  The `beq` branch at 0x7603d0 targets 0x75ff60 and is always taken.
+  The return at 0x75ffa4 has v0 = one of ret(__R300HWBltFunc), a1+32.
+  The return at 0x7603f0 has v0 = ?.
+
+- `ColorBltFunc` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x760900 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x760900-0x761578 (3192 bytes).
+  It occupies 3192 bytes.
+  The `lw` at 0x760908 loads 4 bytes from a2 (arg2 at entry) +0x0.
+  4 such `lw` accesses load 4 bytes from [a2] +0x20, including `lw` at 0x76090c, `lw` at 0x760b18, `lw` at 0x760cb0.
+  2 such `lw` accesses load 4 bytes from [a2] +0x28, including `lw` at 0x760910, `lw` at 0x760b20.
+  The `lw` at 0x760918 loads 4 bytes from a2 (arg2 at entry) +0x8.
+  The `lw` at 0x760924 loads 4 bytes from a2 (arg2 at entry) +0x4.
+  5 such `lw` accesses load 4 bytes from [a2] +0x24, including `lw` at 0x760954, `lw` at 0x7609d4, `lw` at 0x760b24.
+  7 such `lw` accesses load 4 bytes from [a2] +0x2c, including `lw` at 0x760958, `lw` at 0x760a20, `lw` at 0x760b30.
+  2 such `lw` accesses load 4 bytes from [a2] +0x0, including `lw` at 0x760968, `lw` at 0x760990.
+  2 such `lw` accesses load 4 bytes from [a2] +0x4, including `lw` at 0x760978, `lw` at 0x7609b0.
+  The `lw` at 0x7609bc loads 4 bytes from [a2+4] +0x4c.
+  2 such `lw` accesses load 4 bytes from [a2] +0x4c, including `lw` at 0x7609c0, `lw` at 0x760cec.
+  4 such `lw` accesses load 4 bytes from [a2+4] +0x28, including `lw` at 0x7609cc, `lw` at 0x760d2c, `lw` at 0x761110.
+  4 such `lw` accesses load 4 bytes from [a2+4] +0x2c, including `lw` at 0x7609d0, `lw` at 0x760d34, `lw` at 0x761120.
+  6 such `lw` accesses load 4 bytes from [a2+4] +0x20, including `lw` at 0x7609e4, `lw` at 0x760d1c, `lw` at 0x760f9c.
+  10 such `lw` accesses load 4 bytes from [a2+4] +0x24, including `lw` at 0x7609fc, `lw` at 0x760a30, `lw` at 0x760d24.
+  8 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x18, including `sw` at 0x760a54, `sw` at 0x760ae8, `sw` at 0x760fd8.
+  8 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x14, including `sw` at 0x760a5c, `sw` at 0x760ae0, `sw` at 0x760fe0.
+  8 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x10, including `sw` at 0x760a64, `sw` at 0x760ad8, `sw` at 0x760fe8.
+  8 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0xc, including `sw` at 0x760a68, `sw` at 0x760ad0, `sw` at 0x760fec.
+  8 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x8, including `sw` at 0x760a70, `sw` at 0x760acc, `sw` at 0x760ff4.
+  8 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x4, including `sw` at 0x760a74, `sw` at 0x760ac4, `sw` at 0x760ff8.
+  8 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x0, including `sw` at 0x760a7c, `sw` at 0x760ac0, `sw` at 0x761000.
+  8 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x1c, including `sw` at 0x760a84, `sw` at 0x760ab8, `sw` at 0x761008.
+  The `ld` at 0x760b3c loads 8 bytes from [a2] +0x0.
+  The `ld` at 0x760b50 loads 8 bytes from [a2] +0x8.
+  6 such `ld` accesses load 8 bytes from ?, including `ld` at 0x760b78, `ld` at 0x760b8c, `ld` at 0x760ba0.
+  6 such `sd` accesses store 8 bytes to ?, including `sd` at 0x760b7c, `sd` at 0x760b90, `sd` at 0x760ba4.
+  The `ld` at 0x760ba8 loads 8 bytes from [a2+4] +0x0.
+  The `ld` at 0x760bd4 loads 8 bytes from [a2+4] +0x8.
+  2 such `lw` accesses load 4 bytes from [a2] +0x10, including `lw` at 0x760c20, `lw` at 0x760cfc.
+  The `lw` at 0x760c3c loads 4 bytes from [a2] +0xc.
+  4 such `lw` accesses load 4 bytes from [a2] +0x1c, including `lw` at 0x760c5c, `lw` at 0x760d04, `lw` at 0x76114c.
+  3 such `sw` accesses store 4 bytes to ?, including `sw` at 0x760d48, `sw` at 0x760d80, `sw` at 0x7614e8.
+  The `lw` at 0x760d4c loads 4 bytes from [a2+4] +0x0.
+  The `lw` at 0x760d64 loads 4 bytes from a0 (arg0 at entry) +0x878.
+  9 such `lw` accesses load 4 bytes from ?, including `lw` at 0x760e3c, `lw` at 0x760e44, `lw` at 0x760e80.
+  3 such `sw` accesses store 4 bytes to [a2+8] +0x1c, including `sw` at 0x761108, `sw` at 0x761150, `sw` at 0x761544.
+  The `sw` at 0x761118 stores 4 bytes to [a2+8] +0x0.
+  The `sw` at 0x761128 stores 4 bytes to [a2+8] +0x4.
+  The `lw` at 0x76112c loads 4 bytes from [a2] +0x18.
+  2 such `sw` accesses store 4 bytes to [a2+8] +0x18, including `sw` at 0x761140, `sw` at 0x761534.
+  The `lw` at 0x761144 loads 4 bytes from [a2] +0x70.
+  2 such `sw` accesses store 4 bytes to [a2+8] +0x70, including `sw` at 0x761148, `sw` at 0x76153c.
+  The `sw` at 0x761164 stores 4 bytes to [a2+8] +0x80.
+  The `lw` at 0x761170 loads 4 bytes from a0 (arg0 at entry) +0x39c.
+  The `sw` at 0x761180 stores 4 bytes to [a2+8] +0x20.
+  The `sw` at 0x761184 stores 4 bytes to [a2+8] +0x24.
+  The `sw` at 0x761194 stores 4 bytes to [a2+8] +0x28.
+  The `sw` at 0x7611ac stores 4 bytes to [a2+8] +0x2c.
+  The `lw` at 0x761370 loads 4 bytes from a2 (arg2 at entry) +0xc.
+  The `bgezall` at 0x760c60 calls __R300ComputeTiledAlignment [0x75ccc0] with a0=?, a1=[[a2]+28], a2=sp-192, a3=sp-188, a7=[[a2]]:8.
+  The `jalr` at 0x760d08 calls __R300ComputeTiledAddr [0x783cc0] with a0=[[a2]+76], a1=?, a2=[[a2]+16], a3=[[a2]+28].
+  The `jalr` at 0x760e90 calls __R300ComputeTiledAddr [0x783cc0] with a0=?, a1=?, a2=?, a3=?.
+  The `bgezall` at 0x760f08 calls __R300HWBltFunc [0x764980] with a0=a0 at entry (arg0), a1=?, a2=sp-528, a3=?, a7=0x1.
+  The `jalr` at 0x76116c calls fglX11CMMAllocBltSurface with a0=[a0+924], a1=[a2+8], a2=0x0, a3=0x1401.
+  The `bgezall` at 0x761234 calls __R300HWBltFunc [0x764980] with a0=a0 at entry (arg0), a1=a1+32, a2=sp-528, a3=?.
+  The `bgezall` at 0x761260 calls __R300HWBltFunc [0x764980] with a0=a0 at entry (arg0), a1=ret(__R300HWBltFunc), a2=sp-528, a3=?.
+  The `bgezall` at 0x76139c calls __R300HWBltFunc [0x764980] with a0=a0 at entry (arg0), a1=a1+32, a2=sp-528, a3=?.
+  The `bgezall` at 0x761520 calls __R300HWBltFunc [0x764980] with a0=a0 at entry (arg0), a1=?, a2=sp-528, a3=0x100010, a4=0x1.
+  The `beq` branch at 0x76094c targets 0x760990, is taken when v1(?) >= 0x801 (signed), and falls through when v1(?) < 0x801 (signed).
+  The `beq` branch at 0x760964 targets 0x760994, is taken when a0(?) >= 0x801 (signed), and falls through when a0(?) < 0x801 (signed).
+  The `beq` branch at 0x760970 targets 0x760998, is taken when v0(=[[a2]]) >= 0x801 (unsigned), and falls through when v0(=[[a2]]) < 0x801 (unsigned).
+  The `beq` branch at 0x760980 targets 0x760998, is taken when a4(=[[a2]+4]) >= 0x801 (unsigned), and falls through when a4(=[[a2]+4]) < 0x801 (unsigned).
+  The `beq` branch at 0x760988 targets 0x760998 and is always taken.
+  The `bne` branch at 0x76099c targets 0x7609a8, is taken when at(=[[a2]+40]) < 0xa60 (signed), and falls through when at(=[[a2]+40]) >= 0xa60 (signed).
+  The `beq` branch at 0x7609a8 targets 0x7613c0, is taken when v0(=[[a2]]) == 0, and falls through when v0(=[[a2]]) != 0.
+  The `beq` branch at 0x7609b4 targets 0x7613c0, is taken when a6(=[[a2]+4]) == 0, and falls through when a6(=[[a2]+4]) != 0.
+  The `bne` branch at 0x7609c4 targets 0x760ab0, is taken when t0(=[[a2]+76]) != t1(=[[a2+4]+76]), and falls through when t0(=[[a2]+76]) == t1(=[[a2+4]+76]).
+  The `beq` branch at 0x7609dc targets 0x760f78, is taken when a7(=[[a2]+32]) >= v0(=[[a2+4]+40]) (signed), and falls through when a7(=[[a2]+32]) < v0(=[[a2+4]+40]) (signed).
+  The `beq` branch at 0x7609ec targets 0x7612ac, is taken when t1(=[[a2+4]+32]) >= a7(=[[a2]+32]) (signed), and falls through when t1(=[[a2+4]+32]) < a7(=[[a2]+32]) (signed).
+  The `beq` branch at 0x7609f4 targets 0x760a10, is taken when a0(?) == 0, and falls through when a0(?) != 0.
+  The `bne` branch at 0x760a04 targets 0x760f94, is taken when a0(=[[a2+4]+36]) < t0(=[[a2]+36]) (signed), and falls through when a0(=[[a2+4]+36]) >= t0(=[[a2]+36]) (signed).
+  The `beq` branch at 0x760a10 targets 0x760a20, is taken when t9(?) == 0, and falls through when t9(?) != 0.
+  The `bne` branch at 0x760a18 targets 0x761050, is taken when ra(?) != 0, and falls through when ra(?) == 0.
+  The `beq` branch at 0x760a28 targets 0x760a40, is taken when at(=[[a2]+44]) >= a1(=[[a2+4]+44]) (signed), and falls through when at(=[[a2]+44]) < a1(=[[a2+4]+44]) (signed).
+  The `bne` branch at 0x760a38 targets 0x761100, is taken when a1(=[[a2+4]+36]) < at(=[[a2]+44]) (signed), and falls through when a1(=[[a2+4]+36]) >= at(=[[a2]+44]) (signed).
+  The `bne` branch at 0x760a40 targets 0x761108, is taken when s4(=[a2+8]) != 0, and falls through when s4(=[a2+8]) == 0.
+  The `beq` branch at 0x760aa8 targets 0x76120c and is always taken.
+  The `beq` branch at 0x760b10 targets 0x761360, is taken when v1(?) == 0, and falls through when v1(?) != 0.
+  The `bgtz` branch at 0x760b94 targets 0x760b70, is taken when a6(?) > 0 (signed), and falls through when a6(?) <= 0 (signed).
+  The `bgtz` branch at 0x760c0c targets 0x760be8, is taken when a6(?) > 0 (signed), and falls through when a6(?) <= 0 (signed).
+  The `beq` branch at 0x760c24 targets 0x7614c0, is taken when at(=[[a2]+16]) == 0, and falls through when at(=[[a2]+16]) != 0.
+  The `beq` branch at 0x760c2c targets 0x761280, is taken when s8(?) == 0, and falls through when s8(?) != 0.
+  The `beq` branch at 0x760c34 targets 0x761284, is taken when a0(?) == 0, and falls through when a0(?) != 0.
+  The `bne` branch at 0x760c80 targets 0x760d84, is taken when s4(?) < s8(?) (unsigned), and falls through when s4(?) >= s8(?) (unsigned).
+  The `bne` branch at 0x760c90 targets 0x760d90, is taken when a3(?) < a5(?) (unsigned), and falls through when a3(?) >= a5(?) (unsigned).
+  The `bne` branch at 0x760d5c targets 0x7614e8, is taken when at(=[[a2+4]]) < 0xa61 (unsigned), and falls through when at(=[[a2+4]]) >= 0xa61 (unsigned).
+  The `beq` branch at 0x760d7c targets 0x7614ec and is always taken.
+  The `beq` branch at 0x760d8c targets 0x7613e4, is taken when a3(?) >= a5(?) (unsigned), and falls through when a3(?) < a5(?) (unsigned).
+  The `beq` branch at 0x760d98 targets 0x760f48, is taken when a6(?) == 0, and falls through when a6(?) != 0.
+  The `beq` branch at 0x760dcc targets 0x760dd8, is taken when s6(?) == 0, and falls through when s6(?) != 0.
+  The `beq` branch at 0x760dd8 targets 0x760f28, is taken when s8(?) == 0, and falls through when s8(?) != 0.
+  The `bne` branch at 0x760df4 targets 0x760e00, is taken when s2(?) < at(?) (unsigned), and falls through when s2(?) >= at(?) (unsigned).
+  The `beq` branch at 0x760e28 targets 0x760e34, is taken when s1(?) >= s4(?) (unsigned), and falls through when s1(?) < s4(?) (unsigned).
+  The `bne` branch at 0x760f20 targets 0x760e00, is taken when s0(?) < s8(?) (unsigned), and falls through when s0(?) >= s8(?) (unsigned).
+  The `bne` branch at 0x760f38 targets 0x760dcc, is taken when s6(?) < t8(?) (unsigned), and falls through when s6(?) >= t8(?) (unsigned).
+  The `beq` branch at 0x760f78 targets 0x761038, is taken when a0(?) == 0, and falls through when a0(?) != 0.
+  The `beq` branch at 0x760f88 targets 0x761038, is taken when a0(=[[a2+4]+36]) >= t0(=[[a2]+36]) (signed), and falls through when a0(=[[a2+4]+36]) < t0(=[[a2]+36]) (signed).
+  The `beq` branch at 0x760f94 targets 0x760fac, is taken when a3(?) == 0, and falls through when a3(?) != 0.
+  The `bne` branch at 0x760fa4 targets 0x761050, is taken when a4(=[[a2+4]+32]) < at(=[[a2]+40]) (signed), and falls through when a4(=[[a2+4]+32]) >= at(=[[a2]+40]) (signed).
+  The `beq` branch at 0x760fb4 targets 0x760fc4, is taken when at(=[[a2]+44]) >= a1(=[[a2+4]+44]) (signed), and falls through when at(=[[a2]+44]) < a1(=[[a2+4]+44]) (signed).
+  The `bne` branch at 0x760fbc targets 0x761100, is taken when at(?) != 0, and falls through when at(?) == 0.
+  The `bne` branch at 0x760fc4 targets 0x761108, is taken when s4(=[a2+8]) != 0, and falls through when s4(=[a2+8]) == 0.
+  The `beq` branch at 0x76102c targets 0x76120c and is always taken.
+  The `beq` branch at 0x761038 targets 0x7610e0, is taken when t8(?) == 0, and falls through when t8(?) != 0.
+  The `beq` branch at 0x761048 targets 0x7610e0, is taken when t9(=[[a2+4]+32]) >= at(=[[a2]+40]) (signed), and falls through when t9(=[[a2+4]+32]) < at(=[[a2]+40]) (signed).
+  The `beq` branch at 0x761058 targets 0x761070, is taken when at(=[[a2]+44]) >= a1(=[[a2+4]+44]) (signed), and falls through when at(=[[a2]+44]) < a1(=[[a2+4]+44]) (signed).
+  The `bne` branch at 0x761068 targets 0x761100, is taken when a0(=[[a2+4]+36]) < at(=[[a2]+44]) (signed), and falls through when a0(=[[a2+4]+36]) >= at(=[[a2]+44]) (signed).
+  The `bne` branch at 0x761070 targets 0x761108, is taken when s4(=[a2+8]) != 0, and falls through when s4(=[a2+8]) == 0.
+  The `beq` branch at 0x7610d8 targets 0x76120c and is always taken.
+  The `beq` branch at 0x7610e8 targets 0x7613f0, is taken when at(=[[a2]+44]) >= a1(=[[a2+4]+44]) (signed), and falls through when at(=[[a2]+44]) < a1(=[[a2+4]+44]) (signed).
+  The `beq` branch at 0x7610f8 targets 0x7613f0, is taken when t3(=[[a2+4]+36]) >= at(=[[a2]+44]) (signed), and falls through when t3(=[[a2+4]+36]) < at(=[[a2]+44]) (signed).
+  The `beq` branch at 0x761100 targets 0x761454, is taken when s4(=[a2+8]) == 0, and falls through when s4(=[a2+8]) != 0.
+  The `beq` branch at 0x761134 targets 0x761530, is taken when at(=[[a2]+24]) == v0(=0x9), and falls through when at(=[[a2]+24]) != v0(=0x9).
+  The `beq` branch at 0x761178 targets 0x761550, is taken when v0(=ret(fglX11CMMAllocBltSurface)) == 0, and falls through when v0(=ret(fglX11CMMAllocBltSurface)) != 0.
+  The `beq` branch at 0x76120c targets 0x760b10, is taken when s4(=[a2+8]) == 0, and falls through when s4(=[a2+8]) != 0.
+  The `beq` branch at 0x761270 targets 0x760f48 and is always taken.
+  The `beq` branch at 0x7612ac targets 0x7612c4, is taken when a0(?) == 0, and falls through when a0(?) != 0.
+  The `bne` branch at 0x7612bc targets 0x760f94, is taken when a0(=[[a2+4]+36]) < t0(=[[a2]+36]) (signed), and falls through when a0(=[[a2+4]+36]) >= t0(=[[a2]+36]) (signed).
+  The `beq` branch at 0x7612c8 targets 0x7612d8, is taken when at(=[[a2]+40]) >= v0(=[[a2+4]+40]) (signed), and falls through when at(=[[a2]+40]) < v0(=[[a2+4]+40]) (signed).
+  The `bne` branch at 0x7612d0 targets 0x761050, is taken when a5(?) != 0, and falls through when a5(?) == 0.
+  The `beq` branch at 0x7612e0 targets 0x761300, is taken when at(=[[a2]+44]) >= a1(=[[a2+4]+44]) (signed), and falls through when at(=[[a2]+44]) < a1(=[[a2+4]+44]) (signed).
+  The `bne` branch at 0x7612f8 targets 0x761100, is taken when t0(=[[a2+4]+36]) < at(=[[a2]+44]) (signed), and falls through when t0(=[[a2+4]+36]) >= at(=[[a2]+44]) (signed).
+  The `bne` branch at 0x761358 targets 0x760b18, is taken when v1(=one of 0x0, 0x1) != 0, and falls through when v1(=one of 0x0, 0x1) == 0.
+  The `bgez` branch at 0x761378 targets 0x761388, is taken when v1(=([a2+12] << 0x2a)) >= 0 (signed), and falls through when v1(=([a2+12] << 0x2a)) < 0 (signed).
+  The `beq` branch at 0x7613ac targets 0x760f48 and is always taken.
+  The `beq` branch at 0x7613e4 targets 0x760d94 and is always taken.
+  The `beq` branch at 0x76144c targets 0x760b10 and is always taken.
+  The `beq` branch at 0x7614b4 targets 0x76120c and is always taken.
+  The `beq` branch at 0x761528 targets 0x760f48 and is always taken.
+  The `beq` branch at 0x761548 targets 0x761158 and is always taken.
+  The return at 0x760f70 has v0 = one of a1+32, ?, ret(__R300HWBltFunc).
+  The return at 0x7612a4 has v0 = a1+32.
+  The return at 0x7613dc has v0 = a1.
+  The return at 0x7614e0 has v0 = a1+32.
+  The return at 0x761570 has v0 = a1.
+  The instructions from 0x761034 to 0x761034 are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x761278 to 0x76127c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x7613b4 to 0x7613bc are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x7613ec to 0x7613ec are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x7614bc to 0x7614bc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300ColorBltFuncOV` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x761580 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x761580-0x761858 (728 bytes).
+  It occupies 728 bytes.
+  The `lw` at 0x76158c loads 4 bytes from a2 (arg2 at entry) +0x0.
+  The `lw` at 0x761590 loads 4 bytes from a2 (arg2 at entry) +0x4.
+  2 such `lw` accesses load 4 bytes from [a2] +0x24, including `lw` at 0x761594, `lw` at 0x7617b8.
+  The `lw` at 0x761598 loads 4 bytes from [a2] +0x2c.
+  The `lw` at 0x7615a0 loads 4 bytes from [a2+4] +0x18.
+  The `lw` at 0x7615b0 loads 4 bytes from [a2] +0x28.
+  2 such `lw` accesses load 4 bytes from [a2] +0x20, including `lw` at 0x7615bc, `lw` at 0x7617bc.
+  The `lw` at 0x7615c8 loads 4 bytes from [a2] +0x1c.
+  The `lw` at 0x7615d4 loads 4 bytes from [a2] +0x18.
+  The `lw` at 0x7615e0 loads 4 bytes from [a2+4] +0x1c.
+  The `sw` at 0x761654 stores 4 bytes to a1 (arg1 at entry) +0x0.
+  The `sw` at 0x76165c stores 4 bytes to a1 (arg1 at entry) +0x4.
+  The `sw` at 0x761664 stores 4 bytes to a1 (arg1 at entry) +0x8.
+  The `sw` at 0x76166c stores 4 bytes to a1 (arg1 at entry) +0xc.
+  The `sw` at 0x76167c stores 4 bytes to a1 (arg1 at entry) +0x10.
+  The `sw` at 0x761684 stores 4 bytes to a1 (arg1 at entry) +0x14.
+  The `sw` at 0x761690 stores 4 bytes to a1 (arg1 at entry) +0x18.
+  The `sw` at 0x7616a0 stores 4 bytes to a1 (arg1 at entry) +0x1c.
+  2 such `lbu` accesses load 1 byte from [a2+4] +0x36, including `lbu` at 0x7616b8, `lbu` at 0x761824.
+  18 such `sw` accesses store 4 bytes to ?, including `sw` at 0x7616e0, `sw` at 0x7616ec, `sw` at 0x761700.
+  The `lw` at 0x7616e8 loads 4 bytes from [a2+4] +0x30.
+  The `lw` at 0x761720 loads 4 bytes from [a2] +0x4c.
+  The `lw` at 0x76172c loads 4 bytes from [a2] +0xc.
+  The `lw` at 0x76176c loads 4 bytes from [a2+4] +0x4c.
+  The `lw` at 0x761778 loads 4 bytes from [a2+4] +0xc.
+  The `lw` at 0x7617d8 loads 4 bytes from [a2+4] +0x24.
+  The `lw` at 0x7617dc loads 4 bytes from [a2+4] +0x20.
+  The `jalr` at 0x7616b0 calls __glATIAddPaletteToList [0xb626c0] with a0=a0 at entry (arg0), a1=sp-20, a2=a1+16, a3=0xf, a4=a1+16, a5=a1 at entry (arg1), a6=0xd0b, a7=a1+16.
+  The `beq` branch at 0x761624 targets 0x761644, is taken when a4(=[[a2+4]+24]) == at(=0x3), and falls through when a4(=[[a2+4]+24]) != at(=0x3).
+  The `beq` branch at 0x76162c targets 0x76181c, is taken when a4(=[[a2+4]+24]) == t0(=0x4), and falls through when a4(=[[a2+4]+24]) != t0(=0x4).
+  The `beq` branch at 0x761634 targets 0x76181c, is taken when a4(=[[a2+4]+24]) == a3(=0xf), and falls through when a4(=[[a2+4]+24]) != a3(=0xf).
+  The `beq` branch at 0x76163c targets 0x761850, is taken when a4(=[[a2+4]+24]) == t1(=0x6), and falls through when a4(=[[a2+4]+24]) != t1(=0x6).
+  The `beq` branch at 0x761644 targets 0x761824, is taken when a7(=[[a2]+24]) == a6(=0x9), and falls through when a7(=[[a2]+24]) != a6(=0x9).
+  The `beq` branch at 0x7616d8 targets 0x7616fc, is taken when t8(=[[a2+4]+54]:1) == 0, and falls through when t8(=[[a2+4]+54]:1) != 0.
+  The `beq` branch at 0x76181c targets 0x761644 and is always taken.
+  The `beq` branch at 0x761848 targets 0x761650 and is always taken.
+  The `beq` branch at 0x761850 targets 0x761644 and is always taken.
+  The return at 0x761814 has v0 = ?.
+
+- `__R300OVSetupShader` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x761900 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x761900-0x761a7c (380 bytes).
+  It occupies 380 bytes.
+  The `sw` at 0x76190c stores 4 bytes to a1 (arg1 at entry) +0x0.
+  The `sw` at 0x761914 stores 4 bytes to a1 (arg1 at entry) +0x54.
+  The `sw` at 0x761918 stores 4 bytes to a1 (arg1 at entry) +0x3c.
+  The `sw` at 0x761920 stores 4 bytes to a1 (arg1 at entry) +0x44.
+  The `sw` at 0x761928 stores 4 bytes to a1 (arg1 at entry) +0x48.
+  The `sw` at 0x761930 stores 4 bytes to a1 (arg1 at entry) +0x4c.
+  The `sw` at 0x761938 stores 4 bytes to a1 (arg1 at entry) +0x50.
+  The `sw` at 0x761940 stores 4 bytes to a1 (arg1 at entry) +0x18.
+  The `sw` at 0x761948 stores 4 bytes to a1 (arg1 at entry) +0x20.
+  The `sw` at 0x761950 stores 4 bytes to a1 (arg1 at entry) +0x24.
+  The `sw` at 0x761958 stores 4 bytes to a1 (arg1 at entry) +0x8.
+  The `sw` at 0x761960 stores 4 bytes to a1 (arg1 at entry) +0x30.
+  The `sw` at 0x76196c stores 4 bytes to a1 (arg1 at entry) +0x10.
+  The `sw` at 0x761978 stores 4 bytes to a1 (arg1 at entry) +0x14.
+  The `sw` at 0x761984 stores 4 bytes to a1 (arg1 at entry) +0xc.
+  The `sw` at 0x76198c stores 4 bytes to a1 (arg1 at entry) +0x4.
+  The `sw` at 0x761998 stores 4 bytes to a1 (arg1 at entry) +0x40.
+  The `sw` at 0x7619a4 stores 4 bytes to a1 (arg1 at entry) +0x28.
+  The `sw` at 0x7619b0 stores 4 bytes to a1 (arg1 at entry) +0x38.
+  The `sw` at 0x7619c4 stores 4 bytes to a1 (arg1 at entry) +0x1c.
+  The `sw` at 0x7619d0 stores 4 bytes to a1 (arg1 at entry) +0x34.
+  The `sw` at 0x7619e0 stores 4 bytes to a1 (arg1 at entry) +0x2c.
+  The `sw` at 0x7619f0 stores 4 bytes to ret(__R300SetupCLUTTextures) +0x8.
+  The `sw` at 0x7619fc stores 4 bytes to ret(__R300SetupCLUTTextures) +0x0.
+  The `sw` at 0x761a14 stores 4 bytes to ret(__R300SetupCLUTTextures) +0x10.
+  The `sw` at 0x761a28 stores 4 bytes to ret(__R300SetupCLUTTextures) +0x18.
+  The `sw` at 0x761a34 stores 4 bytes to ret(__R300SetupCLUTTextures) +0x14.
+  The `sw` at 0x761a40 stores 4 bytes to ret(__R300SetupCLUTTextures) +0xc.
+  The `sw` at 0x761a4c stores 4 bytes to ret(__R300SetupCLUTTextures) +0x20.
+  The `sw` at 0x761a58 stores 4 bytes to ret(__R300SetupCLUTTextures) +0x1c.
+  The `sw` at 0x761a68 stores 4 bytes to ret(__R300SetupCLUTTextures) +0x24.
+  The `sw` at 0x761a70 stores 4 bytes to ret(__R300SetupCLUTTextures) +0x4.
+  The `bgezall` at 0x7619dc calls __R300SetupCLUTTextures [0x761880] with a0=a0 at entry (arg0), a1=a1+88, a2=0x401000, a3=0x1000001, a4=0x40891, a5=0x1c000001, a6=0x50a80, a7=0x8840.
+  The return at 0x761a74 has v0 = ret(__R300SetupCLUTTextures)+40.
+
+- `__R300ColorBlt3DSync` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x761d40 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x761d40-0x761e24 (228 bytes).
+  It occupies 228 bytes.
+  The `lw` at 0x761d84 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `sw` at 0x761d90 stores 4 bytes to [a0+290136] +0x0.
+  The `sw` at 0x761d94 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x761d9c stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x761da0 stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x761da8 stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x761db4 stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x761dc0 stores 4 bytes to [a0+290136] +0x18.
+  The `sw` at 0x761dcc stores 4 bytes to [a0+290136] +0x1c.
+  The `sw` at 0x761ddc stores 4 bytes to ret(__R300HWBltFunc) +0x0.
+  The `sw` at 0x761de4 stores 4 bytes to ret(__R300HWBltFunc) +0x4.
+  The `sw` at 0x761dec stores 4 bytes to ret(__R300HWBltFunc) +0x8.
+  The `sw` at 0x761df8 stores 4 bytes to ret(__R300HWBltFunc) +0xc.
+  The `sw` at 0x761e00 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x761d6c calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3).
+  The `bgezall` at 0x761dc8 calls __R300HWBltFunc [0x764980] with a0=a1 at entry (arg1), a1=[a0+290136]+32, a2=a2 at entry (arg2), a3=0x1383, a4=0x7, a5=0x13c1, a6=0x13c0, a7=0x10a4.
+  The `jalr` at 0x761e04 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=a0+262144, a2=0x30000, a3=0x5c8, a4=0x3, a5=0x1393.
+  The return at 0x761e1c has v0 = 0x1.
+
+- `__R300AdjustCopyTexPixShaderOut` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x765e80 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x765e80-0x7661f0 (880 bytes).
+  It occupies 880 bytes.
+  2 such `sw` accesses store 4 bytes to ?, including `sw` at 0x765f14, `sw` at 0x765f64.
+  The `sw` at 0x765f78 stores 4 bytes to a0 (arg0 at entry) +0x10.
+  The `sw` at 0x765f7c stores 4 bytes to a0 (arg0 at entry) +0xc.
+  The `sw` at 0x765f80 stores 4 bytes to a0 (arg0 at entry) +0x8.
+  The `sw` at 0x765f8c stores 4 bytes to a0 (arg0 at entry) +0x4.
+  The `sw` at 0x765f98 stores 4 bytes to a0 (arg0 at entry) +0x0.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x14, including `sw` at 0x765fa8, `sw` at 0x766010.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x18, including `sw` at 0x765fb0, `sw` at 0x766018.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x1c, including `sw` at 0x765fbc, `sw` at 0x766024.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x20, including `sw` at 0x765fc4, `sw` at 0x76602c.
+  The `lw` at 0x766040 loads 4 bytes from a3 (arg3 at entry) +0x70.
+  3 such `lw` accesses load 4 bytes from a3 (arg3 at entry) +0x18, including `lw` at 0x766078, `lw` at 0x7660fc, `lw` at 0x766100.
+  The `lw` at 0x766080 loads 4 bytes from abs 0xb8d98c.
+  The `lw` at 0x76609c loads 4 bytes from table(0xb76584) +0x0.
+  The `lw` at 0x7660c0 loads 4 bytes from a3 (arg3 at entry) +0x80.
+  2 such `lw` accesses load 4 bytes from a2 (arg2 at entry) +0x70, including `lw` at 0x7660e4, `lw` at 0x766118.
+  The `beq` branch at 0x765e98 targets 0x765fe4, is taken when v1(?) == a5(=0x900), and falls through when v1(?) != a5(=0x900).
+  The `beq` branch at 0x765ea4 targets 0x765fd0, is taken when v1(?) == 0, and falls through when v1(?) != 0.
+  The `beq` branch at 0x765ec0 targets 0x766000, is taken when (a1 & 0x8000) == 0, and falls through when (a1 & 0x8000) != 0.
+  The `bne` branch at 0x765ed8 targets 0x765f30, is taken when a4 < 0x2 (unsigned), and falls through when a4 >= 0x2 (unsigned).
+  The `bne` branch at 0x765f10 targets 0x765f00, is taken when a3(?) != a7(=((a4-1 << 0x2) + sp-16)), and falls through when a3(?) == a7(=((a4-1 << 0x2) + sp-16)).
+  The `beq` branch at 0x765f20 targets 0x765f68, is taken when t3(?) >= 0x4 (unsigned), and falls through when t3(?) < 0x4 (unsigned).
+  The `beq` branch at 0x765f28 targets 0x765f40 and is always taken.
+  The `bne` branch at 0x765f60 targets 0x765f4c, is taken when a3(?) != a4(=sp-4), and falls through when a3(?) == a4(=sp-4).
+  The `beq` branch at 0x765f94 targets 0x765fa4, is taken when (a1 & 0x100) == 0, and falls through when (a1 & 0x100) != 0.
+  The `beq` branch at 0x765fa0 targets 0x766008, is taken when (a1 & 0x800) == 0, and falls through when (a1 & 0x800) != 0.
+  The `beq` branch at 0x765fd0 targets 0x766040, is taken when a5(?) == 0, and falls through when a5(?) != 0.
+  The `beq` branch at 0x765fdc targets 0x765eb4 and is always taken.
+  The `bne` branch at 0x765fe8 targets 0x765ea4, is taken when (a1 & 0x400) != 0, and falls through when (a1 & 0x400) == 0.
+  The `beq` branch at 0x765ff4 targets 0x765eb4 and is always taken.
+  The `beq` branch at 0x766000 targets 0x765ed4 and is always taken.
+  The `beq` branch at 0x766048 targets 0x7660c0, is taken when a7(=[a3+112]) == t3(=0x1908), and falls through when a7(=[a3+112]) != t3(=0x1908).
+  The `beq` branch at 0x766050 targets 0x7660c0, is taken when a7(=[a3+112]) == t8(=0x1907), and falls through when a7(=[a3+112]) != t8(=0x1907).
+  The `beq` branch at 0x766058 targets 0x766100, is taken when a7(=[a3+112]) == t9(=0x190a), and falls through when a7(=[a3+112]) != t9(=0x190a).
+  The `beq` branch at 0x766060 targets 0x766100, is taken when a7(=[a3+112]) == v0(=0x1), and falls through when a7(=[a3+112]) != v0(=0x1).
+  The `beq` branch at 0x766068 targets 0x766118, is taken when a7(=[a3+112]) == t0(=0x1906), and falls through when a7(=[a3+112]) != t0(=0x1906).
+  The `beq` branch at 0x766094 targets 0x7660a8, is taken when a7(=[a3+24]) >= 0x1d (unsigned), and falls through when a7(=[a3+24]) < 0x1d (unsigned).
+  The `beq` branch at 0x7660ac targets 0x765eb4 and is always taken.
+  The `bne` branch at 0x7660c8 targets 0x766058, is taken when t0(=[a3+128]) < 0x5 (unsigned), and falls through when t0(=[a3+128]) >= 0x5 (unsigned).
+  The `beq` branch at 0x7660d4 targets 0x766054, is taken when t0(=[a3+128]) == t1(=0x8036), and falls through when t0(=[a3+128]) != t1(=0x8036).
+  The `beq` branch at 0x7660dc targets 0x766058, is taken when t0(=[a3+128]) == t2(=0x8368), and falls through when t0(=[a3+128]) != t2(=0x8368).
+  The `beq` branch at 0x7660ec targets 0x7661e4, is taken when t3(=[a2+112]) == t8(=0x80e1), and falls through when t3(=[a2+112]) != t8(=0x80e1).
+  The `beq` branch at 0x7660f8 targets 0x76607c and is always taken.
+  The `beq` branch at 0x766108 targets 0x766130, is taken when a7(=[a3+24]) == t9(=0x13), and falls through when a7(=[a3+24]) != t9(=0x13).
+  The `beq` branch at 0x766110 targets 0x76607c and is always taken.
+  The `beq` branch at 0x76611c targets 0x766074, is taken when v0(=[a2+112]) == t0(=0x1906), and falls through when v0(=[a2+112]) != t0(=0x1906).
+  The `beq` branch at 0x766128 targets 0x766078 and is always taken.
+  The `beq` branch at 0x766134 targets 0x76607c and is always taken.
+  The `beq` branch at 0x766144 targets 0x765eb4 and is always taken.
+  The `beq` branch at 0x76614c targets 0x765eb4 and is always taken.
+  The `beq` branch at 0x766158 targets 0x765eb4 and is always taken.
+  The `beq` branch at 0x766164 targets 0x765eb4 and is always taken.
+  The `beq` branch at 0x766170 targets 0x765eb4 and is always taken.
+  The `beq` branch at 0x766184 targets 0x765eb4 and is always taken.
+  The `beq` branch at 0x766190 targets 0x765eb4 and is always taken.
+  The `beq` branch at 0x76619c targets 0x765eb4 and is always taken.
+  The `beq` branch at 0x7661a8 targets 0x765eb4 and is always taken.
+  The `beq` branch at 0x7661b4 targets 0x765eb4 and is always taken.
+  The `beq` branch at 0x7661c4 targets 0x765eb4 and is always taken.
+  The `beq` branch at 0x7661d0 targets 0x765eb4 and is always taken.
+  The `beq` branch at 0x7661dc targets 0x765eb4 and is always taken.
+  The `beq` branch at 0x7661e8 targets 0x7660f8 and is always taken.
+  The return at 0x765fc8 has v0 = a0+36.
+  The return at 0x766030 has v0 = a0+36.
+  The instructions from 0x765ffc to 0x765ffc are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x766038 to 0x76603c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x7660b4 to 0x7660bc are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x76613c to 0x76613c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x766178 to 0x76617c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x7661bc to 0x7661bc are not reached by any path from the entry, and their branches are not listed.
+  The indirect jump at 0x7660a0 uses the jump table at 0xb76584 with targets 0x7660a8, 0x7660a8, 0x7660a8, 0x7661d8, 0x7661d8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7661d8, 0x7661cc, 0x7661c0, 0x7661b0, 0x7661b0, 0x7661a4, 0x766198, 0x766140, 0x76618c, 0x766180, 0x76616c, 0x766160, 0x766154, 0x76614c.
+  The indirect jump at 0x7660a0 uses the jump table at 0xb76584 with targets 0x7660a8, 0x7660a8, 0x7660a8, 0x7661d8, 0x7661d8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7661d8, 0x7661cc, 0x7661c0, 0x7661b0, 0x7661b0, 0x7661a4, 0x766198, 0x766140, 0x76618c, 0x766180, 0x76616c, 0x766160, 0x766154, 0x76614c.
+  The indirect jump at 0x7660a0 uses the jump table at 0xb76584 with targets 0x7660a8, 0x7660a8, 0x7660a8, 0x7661d8, 0x7661d8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7661d8, 0x7661cc, 0x7661c0, 0x7661b0, 0x7661b0, 0x7661a4, 0x766198, 0x766140, 0x76618c, 0x766180, 0x76616c, 0x766160, 0x766154, 0x76614c.
+  The indirect jump at 0x7660a0 uses the jump table at 0xb76584 with targets 0x7660a8, 0x7660a8, 0x7660a8, 0x7661d8, 0x7661d8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7661d8, 0x7661cc, 0x7661c0, 0x7661b0, 0x7661b0, 0x7661a4, 0x766198, 0x766140, 0x76618c, 0x766180, 0x76616c, 0x766160, 0x766154, 0x76614c.
+  The indirect jump at 0x7660a0 uses the jump table at 0xb76584 with targets 0x7660a8, 0x7660a8, 0x7660a8, 0x7661d8, 0x7661d8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7660a8, 0x7661d8, 0x7661cc, 0x7661c0, 0x7661b0, 0x7661b0, 0x7661a4, 0x766198, 0x766140, 0x76618c, 0x766180, 0x76616c, 0x766160, 0x766154, 0x76614c.
+
+- `__R300HWBlt_SetupPitchAndOffset` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x766200 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x766200-0x766624 (1060 bytes).
+  It occupies 1060 bytes.
+  2 such `lw` accesses load 4 bytes from a2 (arg2 at entry) +0x4c, including `lw` at 0x766224, `lw` at 0x766454.
+  2 such `lw` accesses load 4 bytes from a2 (arg2 at entry) +0x10, including `lw` at 0x766228, `lw` at 0x766444.
+  4 such `sw` accesses store 4 bytes to ?, including `sw` at 0x76625c, `sw` at 0x766278, `sw` at 0x7662b4.
+  The `lw` at 0x7662c8 loads 4 bytes from a2 (arg2 at entry) +0x18.
+  2 such `lw` accesses load 4 bytes from a2 (arg2 at entry) +0x1c, including `lw` at 0x7662cc, `lw` at 0x766440.
+  The `lw` at 0x7662d4 loads 4 bytes from abs 0xb8d98c.
+  The `lw` at 0x7662e4 loads 4 bytes from abs 0xb95c74.
+  The `lw` at 0x766308 loads 4 bytes from table(0xb824c8) +0x0.
+  The `lw` at 0x766330 loads 4 bytes from table(0xb765f8) +0x0.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x4, including `sw` at 0x7663a0, `sw` at 0x766478.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x0, including `sw` at 0x7663ac, `sw` at 0x766480.
+  The `sw` at 0x7663b4 stores 4 bytes to a0 (arg0 at entry) +0x28.
+  The `sw` at 0x7663bc stores 4 bytes to a0 (arg0 at entry) +0x20.
+  The `sw` at 0x7663c4 stores 4 bytes to a0 (arg0 at entry) +0x18.
+  The `sw` at 0x7663c8 stores 4 bytes to a0 (arg0 at entry) +0x10.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x8, including `sw` at 0x7663cc, `sw` at 0x766490.
+  The `sw` at 0x7663d4 stores 4 bytes to a0 (arg0 at entry) +0x30.
+  The `sw` at 0x7663e0 stores 4 bytes to a0 (arg0 at entry) +0x38.
+  The `sw` at 0x7663ec stores 4 bytes to a0 (arg0 at entry) +0x40.
+  The `sw` at 0x766408 stores 4 bytes to a0 (arg0 at entry) +0x44.
+  The `sw` at 0x76640c stores 4 bytes to a0 (arg0 at entry) +0x3c.
+  The `sw` at 0x766410 stores 4 bytes to a0 (arg0 at entry) +0x34.
+  The `sw` at 0x766414 stores 4 bytes to a0 (arg0 at entry) +0x2c.
+  The `sw` at 0x766418 stores 4 bytes to a0 (arg0 at entry) +0x24.
+  The `sw` at 0x76641c stores 4 bytes to a0 (arg0 at entry) +0x1c.
+  The `sw` at 0x766420 stores 4 bytes to a0 (arg0 at entry) +0x14.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0xc, including `sw` at 0x766424, `sw` at 0x766498.
+  The `beq` branch at 0x766210 targets 0x766224, is taken when (a1 & 0x100) == 0, and falls through when (a1 & 0x100) != 0.
+  The `beq` branch at 0x76621c targets 0x766440, is taken when (a1 & 0x800) == 0, and falls through when (a1 & 0x800) != 0.
+  The `bne` branch at 0x766234 targets 0x766294, is taken when a3 < 0x2 (unsigned), and falls through when a3 >= 0x2 (unsigned).
+  The `bne` branch at 0x766274 targets 0x766258, is taken when a7(?) != t0(=((a3-1 << 0x2) + sp-32)), and falls through when a7(?) == t0(=((a3-1 << 0x2) + sp-32)).
+  The `beq` branch at 0x766284 targets 0x7662c8, is taken when v1(?) >= 0x4 (unsigned), and falls through when v1(?) < 0x4 (unsigned).
+  The `beq` branch at 0x76628c targets 0x7662a0 and is always taken.
+  The `bne` branch at 0x7662c0 targets 0x7662b0, is taken when a6(?) != a7(=sp-20), and falls through when a6(?) == a7(=sp-20).
+  The `beq` branch at 0x766328 targets 0x766340, is taken when t3(=[a2+24]) >= 0x20 (unsigned), and falls through when t3(=[a2+24]) < 0x20 (unsigned).
+  The `beq` branch at 0x766348 targets 0x7664a4, is taken when a3(?) == 0, and falls through when a3(?) != 0.
+  The `beq` branch at 0x766458 targets 0x766604, is taken when (a7(=[a2+28]) & 0x4) == 0, and falls through when (a7(=[a2+28]) & 0x4) != 0.
+  The `beq` branch at 0x7664a8 targets 0x766514, is taken when (a7(=[a2+28]) & 0x2) == 0, and falls through when (a7(=[a2+28]) & 0x2) != 0.
+  The `beq` branch at 0x7664f4 targets 0x766390 and is always taken.
+  The `bne` branch at 0x766500 targets 0x766354, is taken when a3(?) != 0, and falls through when a3(?) == 0.
+  The `bne` branch at 0x76650c targets 0x7664b0, is taken when (a7(=[a2+28]) & 0x2) != 0, and falls through when (a7(=[a2+28]) & 0x2) == 0.
+  The `beq` branch at 0x766520 targets 0x766390 and is always taken.
+  The `bne` branch at 0x766528 targets 0x766354, is taken when a3(?) != 0, and falls through when a3(?) == 0.
+  The `bne` branch at 0x766534 targets 0x766558, is taken when (a7(=[a2+28]) & 0x2) != 0, and falls through when (a7(=[a2+28]) & 0x2) == 0.
+  The `beq` branch at 0x76653c targets 0x766518 and is always taken.
+  The `bne` branch at 0x766544 targets 0x766354, is taken when a3(?) != 0, and falls through when a3(?) == 0.
+  The `beq` branch at 0x766550 targets 0x766518, is taken when (a7(=[a2+28]) & 0x2) == 0, and falls through when (a7(=[a2+28]) & 0x2) != 0.
+  The `beq` branch at 0x766558 targets 0x7664b0 and is always taken.
+  The `bne` branch at 0x766560 targets 0x766354, is taken when a3(?) != 0, and falls through when a3(?) == 0.
+  The `bne` branch at 0x76656c targets 0x7664b0, is taken when (a7(=[a2+28]) & 0x2) != 0, and falls through when (a7(=[a2+28]) & 0x2) == 0.
+  The `beq` branch at 0x766574 targets 0x766518 and is always taken.
+  The `bne` branch at 0x766580 targets 0x766354, is taken when a3(?) != 0, and falls through when a3(?) == 0.
+  The `bne` branch at 0x76658c targets 0x7664b0, is taken when (a7(=[a2+28]) & 0x2) != 0, and falls through when (a7(=[a2+28]) & 0x2) == 0.
+  The `beq` branch at 0x766594 targets 0x766518 and is always taken.
+  The `bne` branch at 0x76659c targets 0x766354, is taken when a3(?) != 0, and falls through when a3(?) == 0.
+  The `beq` branch at 0x7665a8 targets 0x766518, is taken when (a7(=[a2+28]) & 0x2) == 0, and falls through when (a7(=[a2+28]) & 0x2) != 0.
+  The `beq` branch at 0x7665b0 targets 0x7664b0 and is always taken.
+  The `beq` branch at 0x7665b8 targets 0x7665cc, is taken when t1(?) == 0, and falls through when t1(?) != 0.
+  The `bne` branch at 0x7665cc targets 0x766354, is taken when a3(?) != 0, and falls through when a3(?) == 0.
+  The `bne` branch at 0x7665d8 targets 0x7664b0, is taken when (a7(=[a2+28]) & 0x2) != 0, and falls through when (a7(=[a2+28]) & 0x2) == 0.
+  The `beq` branch at 0x7665e0 targets 0x766518 and is always taken.
+  The `bne` branch at 0x7665e8 targets 0x766354, is taken when a3(?) != 0, and falls through when a3(?) == 0.
+  The `bne` branch at 0x7665f4 targets 0x7664b0, is taken when (a7(=[a2+28]) & 0x2) != 0, and falls through when (a7(=[a2+28]) & 0x2) == 0.
+  The `beq` branch at 0x7665fc targets 0x766518 and is always taken.
+  The `beq` branch at 0x76660c targets 0x76661c, is taken when (a7(=[a2+28]) & 0x2) == 0, and falls through when (a7(=[a2+28]) & 0x2) != 0.
+  The `beq` branch at 0x766614 targets 0x76646c and is always taken.
+  The `beq` branch at 0x76661c targets 0x766468 and is always taken.
+  The return at 0x76642c has v0 = a0+72.
+  The return at 0x76649c has v0 = a0+16.
+  The instructions from 0x766434 to 0x76643c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x7664fc to 0x7664fc are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x76657c to 0x76657c are not reached by any path from the entry, and their branches are not listed.
+  The indirect jump at 0x766338 uses the jump table at 0xb765f8 with targets 0x766340, 0x766340, 0x766340, 0x7665e8, 0x7665b8, 0x766340, 0x76659c, 0x766340, 0x766580, 0x766580, 0x766340, 0x766340, 0x766340, 0x766340, 0x766340, 0x766500, 0x766560, 0x766544, 0x76659c, 0x766560, 0x766560, 0x766544, 0x766528, 0x76659c, 0x766544, 0x76659c, 0x76659c, 0x76659c, 0x76659c, 0x766340, 0x76659c, 0x76659c.
+  The indirect jump at 0x766338 uses the jump table at 0xb765f8 with targets 0x766340, 0x766340, 0x766340, 0x7665e8, 0x7665b8, 0x766340, 0x76659c, 0x766340, 0x766580, 0x766580, 0x766340, 0x766340, 0x766340, 0x766340, 0x766340, 0x766500, 0x766560, 0x766544, 0x76659c, 0x766560, 0x766560, 0x766544, 0x766528, 0x76659c, 0x766544, 0x76659c, 0x76659c, 0x76659c, 0x76659c, 0x766340, 0x76659c, 0x76659c.
+  The indirect jump at 0x766338 uses the jump table at 0xb765f8 with targets 0x766340, 0x766340, 0x766340, 0x7665e8, 0x7665b8, 0x766340, 0x76659c, 0x766340, 0x766580, 0x766580, 0x766340, 0x766340, 0x766340, 0x766340, 0x766340, 0x766500, 0x766560, 0x766544, 0x76659c, 0x766560, 0x766560, 0x766544, 0x766528, 0x76659c, 0x766544, 0x76659c, 0x76659c, 0x76659c, 0x76659c, 0x766340, 0x76659c, 0x76659c.
+  The indirect jump at 0x766338 uses the jump table at 0xb765f8 with targets 0x766340, 0x766340, 0x766340, 0x7665e8, 0x7665b8, 0x766340, 0x76659c, 0x766340, 0x766580, 0x766580, 0x766340, 0x766340, 0x766340, 0x766340, 0x766340, 0x766500, 0x766560, 0x766544, 0x76659c, 0x766560, 0x766560, 0x766544, 0x766528, 0x76659c, 0x766544, 0x76659c, 0x76659c, 0x76659c, 0x76659c, 0x766340, 0x76659c, 0x76659c.
+  The indirect jump at 0x766338 uses the jump table at 0xb765f8 with targets 0x766340, 0x766340, 0x766340, 0x7665e8, 0x7665b8, 0x766340, 0x76659c, 0x766340, 0x766580, 0x766580, 0x766340, 0x766340, 0x766340, 0x766340, 0x766340, 0x766500, 0x766560, 0x766544, 0x76659c, 0x766560, 0x766560, 0x766544, 0x766528, 0x76659c, 0x766544, 0x76659c, 0x76659c, 0x76659c, 0x76659c, 0x766340, 0x76659c, 0x76659c.
+  The indirect jump at 0x766338 uses the jump table at 0xb765f8 with targets 0x766340, 0x766340, 0x766340, 0x7665e8, 0x7665b8, 0x766340, 0x76659c, 0x766340, 0x766580, 0x766580, 0x766340, 0x766340, 0x766340, 0x766340, 0x766340, 0x766500, 0x766560, 0x766544, 0x76659c, 0x766560, 0x766560, 0x766544, 0x766528, 0x76659c, 0x766544, 0x76659c, 0x76659c, 0x76659c, 0x76659c, 0x766340, 0x76659c, 0x76659c.
+  The indirect jump at 0x766338 uses the jump table at 0xb765f8 with targets 0x766340, 0x766340, 0x766340, 0x7665e8, 0x7665b8, 0x766340, 0x76659c, 0x766340, 0x766580, 0x766580, 0x766340, 0x766340, 0x766340, 0x766340, 0x766340, 0x766500, 0x766560, 0x766544, 0x76659c, 0x766560, 0x766560, 0x766544, 0x766528, 0x76659c, 0x766544, 0x76659c, 0x76659c, 0x76659c, 0x76659c, 0x766340, 0x76659c, 0x76659c.
+
+- `__R300SetOverrideRendering` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x767140 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x767140-0x7678dc (1948 bytes).
+  It occupies 1948 bytes.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x471bc, including `lw` at 0x7671b4, `lw` at 0x767614.
+  The `sw` at 0x7671d0 stores 4 bytes to a0 (arg0 at entry) +0x471bc.
+  The `sw` at 0x7671dc stores 4 bytes to a5 (arg5 at entry) +0x70.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x471cc, including `lw` at 0x7671e8, `lw` at 0x767624.
+  3 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x471cc, including `sw` at 0x7671f4, `sw` at 0x767224, `sw` at 0x7678bc.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x470f0, including `lw` at 0x767214, `lw` at 0x767654.
+  The `sw` at 0x767234 stores 4 bytes to a0 (arg0 at entry) +0x470ec.
+  4 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x470f0, including `sw` at 0x76723c, `sw` at 0x767294, `sw` at 0x7678c8.
+  The `lw` at 0x767248 loads 4 bytes from a0 (arg0 at entry) +0x47144.
+  The `sw` at 0x767264 stores 4 bytes to a0 (arg0 at entry) +0x47144.
+  The `lh` at 0x767298 loads 2 bytes from a0 (arg0 at entry) +0xd10.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x470f4, including `lw` at 0x76729c, `lw` at 0x767664.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x470f4, including `sw` at 0x7672b0, `sw` at 0x7672d0.
+  The `lh` at 0x7672b4 loads 2 bytes from a0 (arg0 at entry) +0xd16.
+  13 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ebc, including `lw` at 0x7672d4, `lw` at 0x7672f4, `lw` at 0x767308.
+  The `sw` at 0x7672dc stores 4 bytes to a0 (arg0 at entry) +0x470d4.
+  13 such `lw` accesses load 4 bytes from [a0+294588] +0x0, including `lw` at 0x7672e0, `lw` at 0x7672f8, `lw` at 0x76730c.
+  12 such `sw` accesses store 4 bytes to [a0+294588] +0x0, including `sw` at 0x7672f0, `sw` at 0x767304, `sw` at 0x767318.
+  11 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ec0, including `lw` at 0x7673f8, `lw` at 0x767408, `lw` at 0x76741c.
+  11 such `lw` accesses load 4 bytes from [a0+294592] +0x0, including `lw` at 0x7673fc, `lw` at 0x76740c, `lw` at 0x767420.
+  10 such `sw` accesses store 4 bytes to [a0+294592] +0x0, including `sw` at 0x767404, `sw` at 0x767418, `sw` at 0x767430.
+  The `sw` at 0x7674e4 stores 4 bytes to a0 (arg0 at entry) +0x47174.
+  The `sw` at 0x7674e8 stores 4 bytes to a0 (arg0 at entry) +0x4713c.
+  The `sw` at 0x7674ec stores 4 bytes to a0 (arg0 at entry) +0x470a0.
+  The `sw` at 0x7674f0 stores 4 bytes to a0 (arg0 at entry) +0x470a4.
+  The `sw` at 0x7674f4 stores 4 bytes to a0 (arg0 at entry) +0x4714c.
+  The `sw` at 0x7674f8 stores 4 bytes to a0 (arg0 at entry) +0x471e4.
+  The `sw` at 0x767500 stores 4 bytes to a0 (arg0 at entry) +0x472ac.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47194, including `lw` at 0x767508, `lw` at 0x767768.
+  The `sw` at 0x767514 stores 4 bytes to a0 (arg0 at entry) +0x471e0.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x471a0, including `lw` at 0x767520, `lw` at 0x767720.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47154, including `lw` at 0x76752c, `lw` at 0x767730.
+  The `sw` at 0x767534 stores 4 bytes to a0 (arg0 at entry) +0x47194.
+  The `sw` at 0x767544 stores 4 bytes to a0 (arg0 at entry) +0x471a0.
+  The `sw` at 0x767550 stores 4 bytes to a0 (arg0 at entry) +0x47154.
+  The `sw` at 0x767558 stores 4 bytes to a0 (arg0 at entry) +0x47180.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46e44, including `lw` at 0x767564, `lw` at 0x767570.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x479d4, including `lw` at 0x767574, `lw` at 0x767778.
+  The `sw` at 0x767594 stores 4 bytes to a0 (arg0 at entry) +0x479d4.
+  The `sw` at 0x7675a4 stores 4 bytes to a0 (arg0 at entry) +0x46e44.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x4712c, including `lw` at 0x7675b0, `lw` at 0x7677a0.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x470fc, including `lw` at 0x7675b4, `lw` at 0x7677ac.
+  The `sw` at 0x7675bc stores 4 bytes to a0 (arg0 at entry) +0x4712c.
+  The `sw` at 0x7675c4 stores 4 bytes to a0 (arg0 at entry) +0x470fc.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x7675c8, `lw` at 0x7675f0.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x7675cc, `lw` at 0x7675f4.
+  The `sw` at 0x767610 stores 4 bytes to [a0+290136] +0x0.
+  The `sw` at 0x76761c stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x767620 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x76762c stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x767630 stores 4 bytes to [a0+290136] +0xc.
+  The `lw` at 0x767634 loads 4 bytes from a0 (arg0 at entry) +0x47174.
+  The `sw` at 0x76763c stores 4 bytes to [a0+290136] +0x18.
+  The `sw` at 0x767640 stores 4 bytes to [a0+290136] +0x14.
+  The `lw` at 0x767644 loads 4 bytes from a0 (arg0 at entry) +0x470ec.
+  The `sw` at 0x76764c stores 4 bytes to [a0+290136] +0x20.
+  The `sw` at 0x767650 stores 4 bytes to [a0+290136] +0x1c.
+  The `sw` at 0x76765c stores 4 bytes to [a0+290136] +0x28.
+  The `sw` at 0x767660 stores 4 bytes to [a0+290136] +0x24.
+  The `sw` at 0x76766c stores 4 bytes to [a0+290136] +0x30.
+  The `sw` at 0x767670 stores 4 bytes to [a0+290136] +0x2c.
+  The `lw` at 0x767674 loads 4 bytes from a0 (arg0 at entry) +0x4713c.
+  The `sw` at 0x76767c stores 4 bytes to [a0+290136] +0x38.
+  The `sw` at 0x767680 stores 4 bytes to [a0+290136] +0x34.
+  The `lw` at 0x767684 loads 4 bytes from a0 (arg0 at entry) +0x470a0.
+  The `sw` at 0x76768c stores 4 bytes to [a0+290136] +0x40.
+  The `sw` at 0x767690 stores 4 bytes to [a0+290136] +0x3c.
+  The `lw` at 0x767694 loads 4 bytes from a0 (arg0 at entry) +0x470a4.
+  The `sw` at 0x76769c stores 4 bytes to [a0+290136] +0x48.
+  The `sw` at 0x7676a0 stores 4 bytes to [a0+290136] +0x44.
+  The `lw` at 0x7676a4 loads 4 bytes from a0 (arg0 at entry) +0x470d4.
+  The `sw` at 0x7676ac stores 4 bytes to [a0+290136] +0x50.
+  The `sw` at 0x7676b0 stores 4 bytes to [a0+290136] +0x4c.
+  The `lw` at 0x7676b4 loads 4 bytes from a0 (arg0 at entry) +0x4714c.
+  The `sw` at 0x7676bc stores 4 bytes to [a0+290136] +0x58.
+  The `sw` at 0x7676c0 stores 4 bytes to [a0+290136] +0x54.
+  The `lw` at 0x7676c4 loads 4 bytes from a0 (arg0 at entry) +0x471e0.
+  The `sw` at 0x7676cc stores 4 bytes to [a0+290136] +0x60.
+  The `sw` at 0x7676d0 stores 4 bytes to [a0+290136] +0x5c.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x471e4, including `lw` at 0x7676d4, `lw` at 0x767788.
+  The `sw` at 0x7676dc stores 4 bytes to [a0+290136] +0x68.
+  The `sw` at 0x7676e0 stores 4 bytes to [a0+290136] +0x64.
+  The `lw` at 0x7676e4 loads 4 bytes from a0 (arg0 at entry) +0x472ac.
+  The `sw` at 0x7676ec stores 4 bytes to [a0+290136] +0x70.
+  The `sw` at 0x7676f0 stores 4 bytes to [a0+290136] +0x6c.
+  The `sw` at 0x767700 stores 4 bytes to [a0+290136] +0x78.
+  The `sw` at 0x767704 stores 4 bytes to [a0+290136] +0x74.
+  The `sw` at 0x767718 stores 4 bytes to [a0+290136] +0x80.
+  The `sw` at 0x76771c stores 4 bytes to [a0+290136] +0x7c.
+  The `sw` at 0x767728 stores 4 bytes to [a0+290136] +0x88.
+  The `sw` at 0x76772c stores 4 bytes to [a0+290136] +0x84.
+  The `sw` at 0x767738 stores 4 bytes to [a0+290136] +0x90.
+  The `sw` at 0x76773c stores 4 bytes to [a0+290136] +0x8c.
+  The `lw` at 0x767740 loads 4 bytes from a0 (arg0 at entry) +0x47180.
+  The `sw` at 0x767744 stores 4 bytes to [a0+290136] +0x94.
+  The `lw` at 0x76774c loads 4 bytes from a0 (arg0 at entry) +0x47148.
+  The `lw` at 0x767754 loads 4 bytes from a0 (arg0 at entry) +0x38da0.
+  The `sw` at 0x767764 stores 4 bytes to ret(__R300WriteColorChannelMask) +0x0.
+  The `sw` at 0x767770 stores 4 bytes to ret(__R300WriteColorChannelMask) +0x8.
+  The `sw` at 0x767774 stores 4 bytes to ret(__R300WriteColorChannelMask) +0x4.
+  The `sw` at 0x76777c stores 4 bytes to ret(__R300WriteColorChannelMask) +0x10.
+  The `sw` at 0x767780 stores 4 bytes to ret(__R300WriteColorChannelMask) +0xc.
+  The `sw` at 0x767794 stores 4 bytes to ret(__R300WriteColorChannelMask) +0x14.
+  The `sw` at 0x76779c stores 4 bytes to ret(__R300WriteColorChannelMask) +0x18.
+  The `sw` at 0x7677a4 stores 4 bytes to ret(__R300WriteColorChannelMask) +0x20.
+  The `sw` at 0x7677a8 stores 4 bytes to ret(__R300WriteColorChannelMask) +0x1c.
+  The `sw` at 0x7677b4 stores 4 bytes to ret(__R300WriteColorChannelMask) +0x24.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ec8, including `lw` at 0x7677c0, `lw` at 0x7677cc, `lw` at 0x7677e0.
+  The `sw` at 0x7677c8 stores 4 bytes to [a0+294600] +0x4.
+  The `sw` at 0x7677d4 stores 4 bytes to [a0+294600] +0x0.
+  The `lw` at 0x7677d8 loads 4 bytes from a0 (arg0 at entry) +0x47ec4.
+  The `lw` at 0x7677dc loads 4 bytes from a0 (arg0 at entry) +0x47ecc.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x47ec8, including `sw` at 0x7677f8, `sw` at 0x767824.
+  The `sw` at 0x767800 stores 4 bytes to a0 (arg0 at entry) +0x47ecc.
+  The `lw` at 0x767804 loads 4 bytes from a0 (arg0 at entry) +0x8.
+  The `sw` at 0x767818 stores 4 bytes to a0 (arg0 at entry) +0x47ec4.
+  The `sw` at 0x76782c stores 4 bytes to (ret(__R300WriteColorChannelMask) + one of 0x18, 0x28) +0x0.
+  The `sw` at 0x767838 stores 4 bytes to (ret(__R300WriteColorChannelMask) + one of 0x1c, 0x2c) +0x0.
+  The `sw` at 0x767840 stores 4 bytes to (ret(__R300WriteColorChannelMask) + one of 0x20, 0x30) +0x0.
+  The `sw` at 0x767844 stores 4 bytes to (ret(__R300WriteColorChannelMask) + one of 0x24, 0x34) +0x0.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x46d58, including `sw` at 0x76784c, `sw` at 0x767884.
+  The `sw` at 0x7678d8 stores 4 bytes to a0 (arg0 at entry) +0x47148.
+  The `jalr` at 0x76718c calls __R300AbortZFillPassBatching [0x775940] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3).
+  The `bgezall` at 0x7671a4 calls SaveOverrideRenderRegs [0x766f40] with a0=a0 at entry (arg0), a1=a5 at entry (arg5), a2=?, a3=?.
+  The `jalr` at 0x767568 calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=a0 at entry (arg0), a1=0x0, a2=0x0, a3=-0x2, a4=-0x8, a5=-0x39, a6=0x8, a7=[a0+294592].
+  The `jalr` at 0x76759c calls __R300LoadCachedPSProgToHwRegs [0x6f1380] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x7675e8 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=[a0+290136].
+  The `bgezall` at 0x767758 calls __R300WriteColorChannelMask [0x766640] with a0=[a0+290136]+152, a1=[a0+232864], a2=([a0+291144] << 0x20), a3=[a0+290136], a4=0x878, a5=[[a0+294588]], a6=0x854, a7=[a0+291500].
+  The `jalr` at 0x767810 calls (unknown callee) with a0=[a0+294596], a1=(([a0+294604] + [a0+294604]) << 0x4), a2=[a0+294604], a3=[a0+294600]+16, a4=(ret(__R300WriteColorChannelMask) + one of 0x1c, 0x2c), a5=[a0+294600], a6=0xe.
+  The `beq` branch at 0x7671e4 targets 0x7678ac, is taken when s4(=a4) == 0, and falls through when s4(=a4) != 0.
+  The `beq` branch at 0x767230 targets 0x7678c0, is taken when s3(=a2) == 0, and falls through when s3(=a2) != 0.
+  The `beq` branch at 0x767260 targets 0x7678cc, is taken when s2(=a3) == 0, and falls through when s2(=a3) != 0.
+  The `beq` branch at 0x76754c targets 0x7678d4, is taken when s8(=a1) == 0, and falls through when s8(=a1) != 0.
+  The `bgez` branch at 0x767590 targets 0x7675a8, is taken when t2(=([a0+290372] << 0x2b)) >= 0 (signed), and falls through when t2(=([a0+290372] << 0x2b)) < 0 (signed).
+  The `beq` branch at 0x7675a8 targets 0x7675c8, is taken when s3(=a2) == 0, and falls through when s3(=a2) != 0.
+  The `beq` branch at 0x7675dc targets 0x767610, is taken when t9(?) >= 0x38 (unsigned), and falls through when t9(?) < 0x38 (unsigned).
+  The `bne` branch at 0x767604 targets 0x7675e8, is taken when ra(?) < 0x38 (unsigned), and falls through when ra(?) >= 0x38 (unsigned).
+  The `beq` branch at 0x767790 targets 0x7677b8, is taken when s3(=a2) == 0, and falls through when s3(=a2) != 0.
+  The `beq` branch at 0x7677b8 targets 0x767880, is taken when s4(=a4) == 0, and falls through when s4(=a4) != 0.
+  The `bne` branch at 0x7677f4 targets 0x767828, is taken when a3(=[a0+294600]+16) < a7(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned), and falls through when a3(=[a0+294600]+16) >= a7(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned).
+  The `beq` branch at 0x7678b8 targets 0x7671f8 and is always taken.
+  The `beq` branch at 0x7678c4 targets 0x767240 and is always taken.
+  The `beq` branch at 0x7678cc targets 0x7672d4 and is always taken.
+  The `beq` branch at 0x7678d4 targets 0x767554 and is always taken.
+  The return at 0x76786c has v0 = one of ret(__R300WriteColorChannelMask), ret(?).
+  The return at 0x7678a4 has v0 = ret(__R300WriteColorChannelMask).
+  The instructions from 0x767874 to 0x76787c are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300CompleteOverrideRendering` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x767900 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x767900-0x767c44 (836 bytes).
+  It occupies 836 bytes.
+  The `lw` at 0x767934 loads 4 bytes from a0 (arg0 at entry) +0xdf0.
+  The `lw` at 0x767954 loads 4 bytes from a0 (arg0 at entry) +0x474b8.
+  The `lw` at 0x767968 loads 4 bytes from a0 (arg0 at entry) +0xcc48.
+  The `lw` at 0x767978 loads 4 bytes from a0 (arg0 at entry) +0x474a4.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46e44, including `lw` at 0x767994, `lw` at 0x7679ac.
+  The `sw` at 0x7679bc stores 4 bytes to a0 (arg0 at entry) +0x46e44.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x7679c0, `lw` at 0x7679e8.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x7679c4, `lw` at 0x7679ec.
+  The `sw` at 0x767a08 stores 4 bytes to [a0+290136] +0x0.
+  The `lw` at 0x767a0c loads 4 bytes from a0 (arg0 at entry) +0x471bc.
+  The `sw` at 0x767a14 stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x767a18 stores 4 bytes to [a0+290136] +0x4.
+  The `lw` at 0x767a1c loads 4 bytes from a0 (arg0 at entry) +0x471cc.
+  The `sw` at 0x767a24 stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x767a28 stores 4 bytes to [a0+290136] +0xc.
+  The `lw` at 0x767a2c loads 4 bytes from a0 (arg0 at entry) +0x47174.
+  The `sw` at 0x767a34 stores 4 bytes to [a0+290136] +0x18.
+  The `sw` at 0x767a38 stores 4 bytes to [a0+290136] +0x14.
+  The `lw` at 0x767a3c loads 4 bytes from a0 (arg0 at entry) +0x470ec.
+  The `sw` at 0x767a44 stores 4 bytes to [a0+290136] +0x20.
+  The `sw` at 0x767a48 stores 4 bytes to [a0+290136] +0x1c.
+  The `lw` at 0x767a4c loads 4 bytes from a0 (arg0 at entry) +0x470f0.
+  The `sw` at 0x767a54 stores 4 bytes to [a0+290136] +0x28.
+  The `sw` at 0x767a58 stores 4 bytes to [a0+290136] +0x24.
+  The `lw` at 0x767a5c loads 4 bytes from a0 (arg0 at entry) +0x470f4.
+  The `sw` at 0x767a64 stores 4 bytes to [a0+290136] +0x30.
+  The `sw` at 0x767a68 stores 4 bytes to [a0+290136] +0x2c.
+  The `lw` at 0x767a6c loads 4 bytes from a0 (arg0 at entry) +0x4713c.
+  The `sw` at 0x767a74 stores 4 bytes to [a0+290136] +0x38.
+  The `sw` at 0x767a78 stores 4 bytes to [a0+290136] +0x34.
+  The `lw` at 0x767a7c loads 4 bytes from a0 (arg0 at entry) +0x470a0.
+  The `sw` at 0x767a84 stores 4 bytes to [a0+290136] +0x40.
+  The `sw` at 0x767a88 stores 4 bytes to [a0+290136] +0x3c.
+  The `lw` at 0x767a8c loads 4 bytes from a0 (arg0 at entry) +0x470a4.
+  The `sw` at 0x767a94 stores 4 bytes to [a0+290136] +0x48.
+  The `sw` at 0x767a98 stores 4 bytes to [a0+290136] +0x44.
+  The `lw` at 0x767a9c loads 4 bytes from a0 (arg0 at entry) +0x470d4.
+  The `sw` at 0x767aa4 stores 4 bytes to [a0+290136] +0x50.
+  The `sw` at 0x767aa8 stores 4 bytes to [a0+290136] +0x4c.
+  The `lw` at 0x767aac loads 4 bytes from a0 (arg0 at entry) +0x4714c.
+  The `sw` at 0x767ab4 stores 4 bytes to [a0+290136] +0x58.
+  The `sw` at 0x767ab8 stores 4 bytes to [a0+290136] +0x54.
+  The `lw` at 0x767abc loads 4 bytes from a0 (arg0 at entry) +0x471e0.
+  The `sw` at 0x767ac4 stores 4 bytes to [a0+290136] +0x60.
+  The `sw` at 0x767ac8 stores 4 bytes to [a0+290136] +0x5c.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x471e4, including `lw` at 0x767acc, `lw` at 0x767b64.
+  The `sw` at 0x767ad4 stores 4 bytes to [a0+290136] +0x68.
+  The `sw` at 0x767ad8 stores 4 bytes to [a0+290136] +0x64.
+  The `lw` at 0x767adc loads 4 bytes from a0 (arg0 at entry) +0x472ac.
+  The `sw` at 0x767ae4 stores 4 bytes to [a0+290136] +0x70.
+  The `sw` at 0x767ae8 stores 4 bytes to [a0+290136] +0x6c.
+  The `lw` at 0x767aec loads 4 bytes from a0 (arg0 at entry) +0x47ebc.
+  The `lw` at 0x767af0 loads 4 bytes from [a0+294588] +0x0.
+  The `sw` at 0x767af8 stores 4 bytes to [a0+290136] +0x78.
+  The `sw` at 0x767afc stores 4 bytes to [a0+290136] +0x74.
+  The `lw` at 0x767b00 loads 4 bytes from a0 (arg0 at entry) +0x47ec0.
+  The `lw` at 0x767b08 loads 4 bytes from [a0+294592] +0x0.
+  The `sw` at 0x767b10 stores 4 bytes to [a0+290136] +0x80.
+  The `sw` at 0x767b14 stores 4 bytes to [a0+290136] +0x7c.
+  The `lw` at 0x767b18 loads 4 bytes from a0 (arg0 at entry) +0x47180.
+  The `sw` at 0x767b1c stores 4 bytes to [a0+290136] +0x84.
+  The `lw` at 0x767b24 loads 4 bytes from a0 (arg0 at entry) +0x47148.
+  The `lw` at 0x767b2c loads 4 bytes from a0 (arg0 at entry) +0x38da0.
+  The `sw` at 0x767b40 stores 4 bytes to ret(__R300WriteColorChannelMask) +0x0.
+  The `lw` at 0x767b44 loads 4 bytes from a0 (arg0 at entry) +0x47194.
+  The `sw` at 0x767b4c stores 4 bytes to ret(__R300WriteColorChannelMask) +0x8.
+  The `sw` at 0x767b50 stores 4 bytes to ret(__R300WriteColorChannelMask) +0x4.
+  The `lw` at 0x767b54 loads 4 bytes from a0 (arg0 at entry) +0x479d4.
+  The `sw` at 0x767b5c stores 4 bytes to ret(__R300WriteColorChannelMask) +0x10.
+  The `sw` at 0x767b60 stores 4 bytes to ret(__R300WriteColorChannelMask) +0xc.
+  The `sw` at 0x767b6c stores 4 bytes to ret(__R300WriteColorChannelMask) +0x18.
+  The `sw` at 0x767b70 stores 4 bytes to ret(__R300WriteColorChannelMask) +0x14.
+  The `lw` at 0x767b74 loads 4 bytes from a0 (arg0 at entry) +0x470b4.
+  The `sw` at 0x767b7c stores 4 bytes to ret(__R300WriteColorChannelMask) +0x20.
+  The `sw` at 0x767b80 stores 4 bytes to ret(__R300WriteColorChannelMask) +0x1c.
+  The `lw` at 0x767b84 loads 4 bytes from a0 (arg0 at entry) +0x470bc.
+  The `sw` at 0x767b8c stores 4 bytes to ret(__R300WriteColorChannelMask) +0x28.
+  The `sw` at 0x767b90 stores 4 bytes to ret(__R300WriteColorChannelMask) +0x24.
+  The `lw` at 0x767b94 loads 4 bytes from a0 (arg0 at entry) +0x470c0.
+  The `sw` at 0x767b9c stores 4 bytes to ret(__R300WriteColorChannelMask) +0x30.
+  The `sw` at 0x767ba0 stores 4 bytes to ret(__R300WriteColorChannelMask) +0x2c.
+  The `lw` at 0x767ba4 loads 4 bytes from a0 (arg0 at entry) +0x471a8.
+  The `sw` at 0x767bac stores 4 bytes to ret(__R300WriteColorChannelMask) +0x34.
+  The `lw` at 0x767bb8 loads 4 bytes from a0 (arg0 at entry) +0x47140.
+  The `lw` at 0x767bd0 loads 4 bytes from a1 (arg1 at entry) +0x70.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x46d58, including `sw` at 0x767bf4, `sw` at 0x767c0c.
+  The `lbu` at 0x767c20 loads 1 byte from a0 (arg0 at entry) +0xc9b0.
+  The `bgezall` at 0x76792c calls RestoreOverrideRenderRegs [0x767040] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3).
+  The `jalr` at 0x767980 calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=a0 at entry (arg0), a1=[a0+292004], a2=0x0, a3=?, a5=[a0+3568].
+  The `jalr` at 0x76798c calls __R300AdjustPixelShaderInput [0x6f35c0] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x7679a4 calls __R300LoadCachedPSProgToHwRegs [0x6f1380] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x7679e0 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `bgezall` at 0x767b30 calls __R300WriteColorChannelMask [0x766640] with a0=[a0+290136]+136, a1=[a0+232864], a2=([a0+291144] << 0x20), a3=[a0+291500], a4=0x82d, a5=[a0+291300], a6=0x825, a7=[a0+291296].
+  The `jalr` at 0x767bb4 calls __R300WriteCmaskEnableRegistersAbort [0x77c680] with a0=a0 at entry (arg0), a1=ret(__R300WriteColorChannelMask)+56, a2=[a0+291136], a3=[a0+290996], a4=0x1008, a5=[a0+291300], a6=0x825, a7=[a0+293332].
+  The `jalr` at 0x767bc4 calls __R300WriteScissorRegisters [0x77bc80] with a0=a0 at entry (arg0), a1=ret(__R300WriteCmaskEnableRegistersAbort), a2=?, a3=?.
+  The `jalr` at 0x767be4 calls __R300WriteViewportTransform [0x77bb40] with a0=a0 at entry (arg0), a1=ret(__R300WriteScissorRegisters), a2=?, a3=?.
+  The `jalr` at 0x767c34 calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=a0 at entry (arg0), a1=[a0+292024], a2=0x0, a3=?, a4=a0+65536, a5=[a0+3568].
+  The `beq` branch at 0x76794c targets 0x767970, is taken when at(?) == 0, and falls through when at(?) != 0.
+  The `beq` branch at 0x767958 targets 0x767970, is taken when a1(=[a0+292024]) == 0, and falls through when a1(=[a0+292024]) != 0.
+  The `beq` branch at 0x767960 targets 0x767c20, is taken when v1(?) == 0, and falls through when v1(?) != 0.
+  The `beq` branch at 0x76796c targets 0x767c2c, is taken when v0(=[a0+52296]) == 0, and falls through when v0(=[a0+52296]) != 0.
+  The `bgez` branch at 0x76799c targets 0x7679c0, is taken when a0(=([a0+290372] << 0x2b)) >= 0 (signed), and falls through when a0(=([a0+290372] << 0x2b)) < 0 (signed).
+  The `beq` branch at 0x7679d4 targets 0x767a08, is taken when a3(?) >= 0x46 (unsigned), and falls through when a3(?) < 0x46 (unsigned).
+  The `bne` branch at 0x7679fc targets 0x7679e0, is taken when a4(?) < 0x46 (unsigned), and falls through when a4(?) >= 0x46 (unsigned).
+  The `beq` branch at 0x767bd4 targets 0x767c08, is taken when t3(=[a1+112]) == 0, and falls through when t3(=[a1+112]) != 0.
+  The `bne` branch at 0x767c24 targets 0x767974, is taken when t8(=[a0+51632]:1) != 0, and falls through when t8(=[a0+51632]:1) == 0.
+  The `beq` branch at 0x767c3c targets 0x76798c and is always taken.
+  The return at 0x767c00 has v0 = ret(__R300WriteViewportTransform).
+  The return at 0x767c18 has v0 = ret(__R300WriteScissorRegisters).
+
+- `__R300ScissoredFastZStencilClear` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7682c0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7682c0-0x769208 (3912 bytes).
+  It occupies 3912 bytes.
+  8 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x38da0, including `lw` at 0x7682d0, `lw` at 0x768440, `lw` at 0x7687d8.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x38670, including `lw` at 0x768300, `lw` at 0x768338, `lw` at 0x768364.
+  The `lbu` at 0x768304 loads 1 byte from [a0+232864] +0x859.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x38690, including `lw` at 0x768328, `lw` at 0x768390.
+  The `lw` at 0x76833c loads 4 bytes from [a0+231024] +0x60.
+  The `lh` at 0x768348 loads 2 bytes from a0 (arg0 at entry) +0xd10.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47130, including `lw` at 0x768350, `lw` at 0x768368, `lw` at 0x768618.
+  The `sw` at 0x768360 stores 4 bytes to [a0+231024] +0xc8.
+  The `sw` at 0x768370 stores 4 bytes to [a0+231024] +0x84.
+  The `lw` at 0x768374 loads 4 bytes from a0 (arg0 at entry) +0x38624.
+  The `lw` at 0x7683c4 loads 4 bytes from a0 (arg0 at entry) +0x7460.
+  The `lw` at 0x7683cc loads 4 bytes from a0 (arg0 at entry) +0x35cec.
+  The `lw` at 0x7683d0 loads 4 bytes from a0 (arg0 at entry) +0x35ce4.
+  The `lwc1` at 0x7683e0 loads 4 bytes from a0 (arg0 at entry) +0x6028.
+  The `lw` at 0x7683e8 loads 4 bytes from a0 (arg0 at entry) +0x35ce8.
+  The `lw` at 0x7683f0 loads 4 bytes from a0 (arg0 at entry) +0x745c.
+  The `lw` at 0x7683f8 loads 4 bytes from a0 (arg0 at entry) +0x35ce0.
+  The `ldc1` at 0x7683fc loads 8 bytes from a0 (arg0 at entry) +0xcf0.
+  The `lw` at 0x768444 loads 4 bytes from [a0+232864] +0x278.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47c74, including `lw` at 0x76847c, `lw` at 0x768d2c.
+  7 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47100, including `lw` at 0x768560, `lw` at 0x7686d0, `lw` at 0x7686f8.
+  The `lw` at 0x76858c loads 4 bytes from [a0+231024] +0x6c.
+  5 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x7685ac, `lw` at 0x7685dc, `lw` at 0x768d84.
+  4 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x7685b0, `lw` at 0x7685e0, `lw` at 0x768d88.
+  2 such `sw` accesses store 4 bytes to [a0+290136] +0x8, including `sw` at 0x768604, `sw` at 0x768e68.
+  2 such `sw` accesses store 4 bytes to [a0+290136] +0x4, including `sw` at 0x76860c, `sw` at 0x768ddc.
+  2 such `sw` accesses store 4 bytes to [a0+290136] +0x0, including `sw` at 0x768614, `sw` at 0x768dd0.
+  The `sw` at 0x76861c stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x768628 stores 4 bytes to [a0+290136] +0x10.
+  2 such `sw` accesses store 4 bytes to [a0+290136] +0xc, including `sw` at 0x76862c, `sw` at 0x768e70.
+  6 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ec8, including `lw` at 0x768630, `lw` at 0x76863c, `lw` at 0x768650.
+  2 such `sw` accesses store 4 bytes to [a0+294600] +0x4, including `sw` at 0x768638, `sw` at 0x768de8.
+  2 such `sw` accesses store 4 bytes to [a0+294600] +0x0, including `sw` at 0x768644, `sw` at 0x768df4.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ec4, including `lw` at 0x768648, `lw` at 0x768df8.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ecc, including `lw` at 0x76864c, `lw` at 0x768dfc.
+  4 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x47ec8, including `sw` at 0x768674, `sw` at 0x768e1c, `sw` at 0x768e48.
+  The `sw` at 0x768678 stores 4 bytes to [a0+290136] +0x18.
+  The `sw` at 0x76867c stores 4 bytes to [a0+290136] +0x1c.
+  The `sw` at 0x768680 stores 4 bytes to [a0+290136] +0x20.
+  The `sw` at 0x768684 stores 4 bytes to [a0+290136] +0x24.
+  The `sw` at 0x768688 stores 4 bytes to [a0+290136] +0x28.
+  The `sw` at 0x76868c stores 4 bytes to [a0+290136] +0x2c.
+  The `sw` at 0x7686b8 stores 4 bytes to [a0+290136] +0x38.
+  The `sw` at 0x7686bc stores 4 bytes to [a0+290136] +0x3c.
+  The `sw` at 0x7686c0 stores 4 bytes to [a0+290136] +0x30.
+  The `sw` at 0x7686c8 stores 4 bytes to [a0+290136] +0x34.
+  The `sw` at 0x7686dc stores 4 bytes to [a0+290136] +0x4c.
+  The `sw` at 0x7686e8 stores 4 bytes to [a0+290136] +0x40.
+  48 such `sw` accesses store 4 bytes to ?, including `sw` at 0x7686ec, `sw` at 0x7686f4, `sw` at 0x7686fc.
+  6 such `lw` accesses load 4 bytes from [a0+232864] +0x878, including `lw` at 0x7687e4, `lw` at 0x76898c, `lw` at 0x768a84.
+  2 such `sw` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x0, including `sw` at 0x768810, `sw` at 0x768ab4.
+  2 such `sw` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x30, including `sw` at 0x76881c, `sw` at 0x768aac.
+  2 such `sw` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x8, including `sw` at 0x76882c, `sw` at 0x768acc.
+  2 such `sw` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0xc, including `sw` at 0x768834, `sw` at 0x768ac4.
+  2 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x18, including `swc1` at 0x768854, `swc1` at 0x768b08.
+  2 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x1c, including `swc1` at 0x76885c, `swc1` at 0x768b10.
+  2 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x20, including `swc1` at 0x768864, `swc1` at 0x768af0.
+  2 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x24, including `swc1` at 0x768874, `swc1` at 0x768ae4.
+  2 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x28, including `swc1` at 0x768884, `swc1` at 0x768b34.
+  2 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x2c, including `swc1` at 0x768894, `swc1` at 0x768ae0.
+  2 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x10, including `swc1` at 0x7688a8, `swc1` at 0x768b5c.
+  2 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x14, including `swc1` at 0x7688b4, `swc1` at 0x768b50.
+  2 such `sw` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x4, including `sw` at 0x7688c8, `sw` at 0x768b80.
+  6 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x472d4, including `lw` at 0x7688d0, `lw` at 0x768a64, `lw` at 0x768b8c.
+  2 such `sw` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x34, including `sw` at 0x7688dc, `sw` at 0x768b94.
+  32 such `swc1` accesses store 4 bytes to ?, including `swc1` at 0x7689e8, `swc1` at 0x7689f0, `swc1` at 0x7689f8.
+  3 such `lw` accesses load 4 bytes from ?, including `lw` at 0x768ce0, `lw` at 0x768ce8, `lw` at 0x768d28.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x46d58, including `sw` at 0x768cfc, `sw` at 0x768e80.
+  The `lw` at 0x768d38 loads 4 bytes from a0 (arg0 at entry) +0xce8.
+  The `lw` at 0x768d68 loads 4 bytes from a0 (arg0 at entry) +0x470fc.
+  3 such `sb` accesses store 1 byte to a0 (arg0 at entry) +0x605e, including `sb` at 0x768d80, `sb` at 0x768ee0, `sb` at 0x768f34.
+  The `lw` at 0x768dd4 loads 4 bytes from a0 (arg0 at entry) +0x472dc.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x47ecc, including `sw` at 0x768e24, `sw` at 0x768ef4.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x8, including `lw` at 0x768e28, `lw` at 0x768ef8.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x47ec4, including `sw` at 0x768e3c, `sw` at 0x768f14.
+  The `lw` at 0x768f40 loads 4 bytes from [a0+231024] +0x70.
+  The `lw` at 0x768f44 loads 4 bytes from [a0+231024] +0x9c.
+  The `jalr` at 0x768320 calls __R300CalcHWDepthClearValue [0x77fc40] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3).
+  The `jalr` at 0x7683b8 calls __glValidateZCount [0x6e8ec0] with a0=a0+231016, a1=[a0+291120], a2=[a0+291120], a3=[a0+231024], a5=0x3.
+  The `jalr` at 0x768454 calls (unknown callee) with a0=[a0+232864], a1=sp-368, a2=sp-364, a3=sp-360, a4=sp-356.
+  The `bgezall` at 0x7685a4 calls __R300SetOverrideRendering [0x767140] with a0=a0 at entry (arg0), a1=0x0, a2=one of 0x0, 0x1, a3=?, a4=0x0, a5=sp-352.
+  The `jalr` at 0x7685d4 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=[a0+290136], a2=?, a3=?.
+  The `jalr` at 0x768788 calls __R300TCLFFXProgramNullShader [0x7d8a40] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x7687f0 calls __R300WriteDrawRectRegisters [0x77c280] with a0=a0 at entry (arg0), a1=ret(__R300TCLFFXProgramNullShader), a2=?, a3=?.
+  The `jalr` at 0x768988 calls __R300WriteDrawRectRegisters [0x77c280] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x768a90 calls __R300WriteDrawRectRegisters [0x77c280] with a0=a0 at entry (arg0), a1=ret(__R300TCLFFXProgramNullShader), a2=?, a3=[[a0+232864]+2168].
+  The `jalr` at 0x768bc0 calls __R300WriteDrawRectRegisters [0x77c280] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x768cf8 calls __ATITCLFFXRestoreShader [0xac0000] with a0=a0 at entry (arg0), a1=?, a2=0xffffffffc00e1000, a3=0x1087, a4=0x10031, a5=0xffffffffc0083500.
+  The `bgezall` at 0x768d14 calls __R300CompleteOverrideRendering [0x767900] with a0=a0 at entry (arg0), a1=sp-352, a2=?, a3=?.
+  The `jalr` at 0x768da4 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=[a0+290136], a2=?, a3=?.
+  The `jalr` at 0x768e34 calls (unknown callee) with a0=[a0+294596], a1=(([a0+294604] + [a0+294604]) << 0x4), a2=?, a3=([a0+291548] + [a0+291548]), a4=0xffffffffc0023700.
+  The `jalr` at 0x768f08 calls (unknown callee) with a0=[a0+294596], a1=(([a0+294604] + [a0+294604]) << 0x4), a2=?, a3=0xffffffffc0061000, a4=[a0+291120], a5=0x13ca, a6=0x3, a7=0x13c6.
+  The `bgezall` at 0x768f98 calls NotSoFastZStencilClear [0x767f40] with a0=a0 at entry (arg0), a1=a2 at entry (arg2), a2=?, a3=?.
+  The `jalr` at 0x768fd8 calls __R300WriteDrawRectRegisters [0x77c280] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x7690dc calls __R300WriteDrawRectRegisters [0x77c280] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `beq` branch at 0x7682fc targets 0x768314, is taken when at(=[a0+232864]) == 0, and falls through when at(=[a0+232864]) != 0.
+  The `beq` branch at 0x76830c targets 0x768fa8, is taken when t8(=[[a0+232864]+2137]:1) == t9(=0x3), and falls through when t8(=[[a0+232864]+2137]:1) != t9(=0x3).
+  The `beq` branch at 0x768330 targets 0x768f28, is taken when ra(=[a0+231056]) == at(=0x10), and falls through when ra(=[a0+231056]) != at(=0x10).
+  The `beq` branch at 0x768340 targets 0x768350, is taken when v1(=[[a0+231024]+96]) == 0, and falls through when v1(=[[a0+231024]+96]) != 0.
+  The `bne` branch at 0x768354 targets 0x768f8c, is taken when a1(=[a0+291120]) != at(?), and falls through when a1(=[a0+291120]) == at(?).
+  The `beq` branch at 0x76836c targets 0x768ec0, is taken when a4(?) == 0, and falls through when a4(?) != 0.
+  The `blez` branch at 0x768378 targets 0x768ec0, is taken when a6(=[a0+230948]) <= 0 (signed), and falls through when a6(=[a0+230948]) > 0 (signed).
+  The `beq` branch at 0x768388 targets 0x768ec8, is taken when (s3(=a2) & 0x100) == 0, and falls through when (s3(=a2) & 0x100) != 0.
+  The `beq` branch at 0x768394 targets 0x768ec8, is taken when t1(=[a0+231056]) == 0, and falls through when t1(=[a0+231056]) != 0.
+  The `bc1f` branch at 0x768420 targets 0x76842c, is taken when not (f4(=[a0+24616]) < f22 (c.lt.s at 0x76840c)), and falls through when f4(=[a0+24616]) < f22 (c.lt.s at 0x76840c).
+  The `bc1f` branch at 0x768434 targets 0x768440, is taken when not (f4 < f20 (c.lt.s at 0x76842c)), and falls through when f4 < f20 (c.lt.s at 0x76842c).
+  The `bc1f` branch at 0x7684ac targets 0x7684c0, is taken when not (f25 <= f20 (c.le.s at 0x768490)), and falls through when f25 <= f20 (c.le.s at 0x768490).
+  The `beq` branch at 0x7684b8 targets 0x7684c8 and is always taken.
+  The `bc1f` branch at 0x7684fc targets 0x76850c, is taken when not (f29 <= f22 (c.le.s at 0x7684ec)), and falls through when f29 <= f22 (c.le.s at 0x7684ec).
+  The `beq` branch at 0x768504 targets 0x768510 and is always taken.
+  The `beq` branch at 0x768514 targets 0x768f40, is taken when (s7(=one of 0x0, 0x1) & 0xff) == 0, and falls through when (s7(=one of 0x0, 0x1) & 0xff) != 0.
+  The `bltz` branch at 0x768550 targets 0x768f78, is taken when ra(?) < 0 (signed), and falls through when ra(?) >= 0 (signed).
+  The `beq` branch at 0x7685c8 targets 0x768600, is taken when t2(?) >= s2(?) (unsigned), and falls through when t2(?) < s2(?) (unsigned).
+  The `bne` branch at 0x7685f8 targets 0x7685d4, is taken when t3(?) < s2(?) (unsigned), and falls through when t3(?) >= s2(?) (unsigned).
+  The `beq` branch at 0x768670 targets 0x768ef0, is taken when at(=[a0+294600]+16) >= t8(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned), and falls through when at(=[a0+294600]+16) < t8(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned).
+  The `blez` branch at 0x768690 targets 0x768f80, is taken when s7(?) <= 0 (signed), and falls through when s7(?) > 0 (signed).
+  The `blez` branch at 0x768698 targets 0x7691cc, is taken when s6(?) <= 0 (signed), and falls through when s6(?) > 0 (signed).
+  The `bne` branch at 0x7686b0 targets 0x7691d8, is taken when a0(?) != 0, and falls through when a0(?) == 0.
+  The `beq` branch at 0x768704 targets 0x768ed8, is taken when a4(?) == a0(?), and falls through when a4(?) != a0(?).
+  The `beq` branch at 0x768724 targets 0x768ed0, is taken when a3(?) == a0(?), and falls through when a3(?) != a0(?).
+  The `bne` branch at 0x768744 targets 0x7686ec, is taken when a5(?) != a0(?), and falls through when a5(?) == a0(?).
+  The `beq` branch at 0x768794 targets 0x768a70, is taken when s5(?) >= s8(?) (signed), and falls through when s5(?) < s8(?) (signed).
+  The `beq` branch at 0x7687a4 targets 0x768a74, is taken when s4(?) >= t1(?) (signed), and falls through when s4(?) < t1(?) (signed).
+  The `bc1f` branch at 0x7687c0 targets 0x7688e0, is taken when not (f26 < f30 (c.lt.s at 0x7687b8)), and falls through when f26 < f30 (c.lt.s at 0x7687b8).
+  The `bc1f` branch at 0x7687cc targets 0x7688ec, is taken when (condition not analyzed), and falls through when (condition not analyzed).
+  The `beq` branch at 0x7688d8 targets 0x7688ec and is always taken.
+  The `bc1f` branch at 0x768904 targets 0x768918, is taken when not (f24 < f28 (c.lt.s at 0x7688fc)), and falls through when f24 < f28 (c.lt.s at 0x7688fc).
+  The `bc1t` branch at 0x768914 targets 0x768fc0, is taken when f28 < f22 (c.lt.s at 0x76890c), and falls through when not (f28 < f22 (c.lt.s at 0x76890c)).
+  The `bc1f` branch at 0x768930 targets 0x768948, is taken when not (f26 < f29 (c.lt.s at 0x768928)), and falls through when f26 < f29 (c.lt.s at 0x768928).
+  The `bc1t` branch at 0x768940 targets 0x7690c8, is taken when f29 < f20 (c.lt.s at 0x768938), and falls through when not (f29 < f20 (c.lt.s at 0x768938)).
+  The `bc1f` branch at 0x76895c targets 0x768b98, is taken when not (f30 < f22 (c.lt.s at 0x768954)), and falls through when f30 < f22 (c.lt.s at 0x768954).
+  The `bc1f` branch at 0x768968 targets 0x768b9c, is taken when (condition not analyzed), and falls through when (condition not analyzed).
+  The `beq` branch at 0x768a68 targets 0x768b98 and is always taken.
+  The `beq` branch at 0x768d20 targets 0x768e94, is taken when t0(=a1) == 0, and falls through when t0(=a1) != 0.
+  The `beq` branch at 0x768d44 targets 0x768ee0, is taken when at(=[a0+3304]) == t2(=0x201), and falls through when at(=[a0+3304]) != t2(=0x201).
+  The `beq` branch at 0x768d50 targets 0x768ee0, is taken when at(=[a0+3304]) == t8(=0x203), and falls through when at(=[a0+3304]) != t8(=0x203).
+  The `beq` branch at 0x768d58 targets 0x768f34, is taken when at(=[a0+3304]) == t9(=0x204), and falls through when at(=[a0+3304]) != t9(=0x204).
+  The `beq` branch at 0x768d60 targets 0x768f34, is taken when at(=[a0+3304]) == ra(=0x206), and falls through when at(=[a0+3304]) != ra(=0x206).
+  The `beq` branch at 0x768d74 targets 0x768fb0, is taken when at(?) == 0, and falls through when at(?) != 0.
+  The `beq` branch at 0x768d98 targets 0x768dcc, is taken when v1(?) >= 0x4 (unsigned), and falls through when v1(?) < 0x4 (unsigned).
+  The `bne` branch at 0x768dc0 targets 0x768da4, is taken when a0(?) < 0x4 (unsigned), and falls through when a0(?) >= 0x4 (unsigned).
+  The `bne` branch at 0x768e18 targets 0x768e4c, is taken when at(=[a0+294600]+16) < a2(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned), and falls through when at(=[a0+294600]+16) >= a2(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned).
+  The `beq` branch at 0x768ec0 targets 0x768384 and is always taken.
+  The `beq` branch at 0x768ec8 targets 0x76839c and is always taken.
+  The `beq` branch at 0x768ed0 targets 0x76874c and is always taken.
+  The `beq` branch at 0x768ed8 targets 0x76874c and is always taken.
+  The `beq` branch at 0x768ee8 targets 0x768d84 and is always taken.
+  The `beq` branch at 0x768f20 targets 0x768678 and is always taken.
+  The `beq` branch at 0x768f2c targets 0x768338 and is always taken.
+  The `beq` branch at 0x768f38 targets 0x768d84 and is always taken.
+  The `beq` branch at 0x768f58 targets 0x768f64, is taken when v1(?) >= s8(?) (unsigned), and falls through when v1(?) < s8(?) (unsigned).
+  The `beq` branch at 0x768f68 targets 0x76851c, is taken when v1(?) >= s5(?) (unsigned), and falls through when v1(?) < s5(?) (unsigned).
+  The `beq` branch at 0x768f70 targets 0x76851c and is always taken.
+  The `beq` branch at 0x768f78 targets 0x768558 and is always taken.
+  The `beq` branch at 0x768f84 targets 0x768780 and is always taken.
+  The `beq` branch at 0x768fa0 targets 0x768e94 and is always taken.
+  The `beq` branch at 0x768fa8 targets 0x76831c and is always taken.
+  The `beq` branch at 0x768fb0 targets 0x768d80 and is always taken.
+  The `beq` branch at 0x7690c0 targets 0x768918 and is always taken.
+  The `beq` branch at 0x7691c4 targets 0x768948 and is always taken.
+  The `beq` branch at 0x7691d0 targets 0x768774 and is always taken.
+  The `beq` branch at 0x7691f8 targets 0x768764, is taken when v0(?) == at(?), and falls through when v0(?) != at(?).
+  The `beq` branch at 0x769200 targets 0x7691d8 and is always taken.
+  The return at 0x768e88 has v0 = one of [a0+294604], ret(?).
+  The return at 0x768eb4 has v0 = one of ret(__R300CompleteOverrideRendering), ret(NotSoFastZStencilClear).
+  The instructions from 0x768e90 to 0x768e90 are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x768ebc to 0x768ebc are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x768fb8 to 0x768fbc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300FastZStencilClear` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x769240 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x769240-0x7699f0 (1968 bytes).
+  It occupies 1968 bytes.
+  5 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x38da0, including `lw` at 0x769254, `lw` at 0x7692f8, `lw` at 0x769664.
+  5 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x38670, including `lw` at 0x769280, `lw` at 0x7692cc, `lw` at 0x7692ec.
+  The `lbu` at 0x769284 loads 1 byte from [a0+232864] +0x859.
+  The `sb` at 0x7692ac stores 1 byte to [a0+232864] +0x85a.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x38690, including `lw` at 0x7692b0, `lw` at 0x769478.
+  3 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x47130, including `sw` at 0x7692c8, `sw` at 0x7692e4, `sw` at 0x7697ac.
+  The `lw` at 0x7692d0 loads 4 bytes from [a0+231024] +0x60.
+  The `lh` at 0x7692dc loads 2 bytes from a0 (arg0 at entry) +0xd10.
+  The `sw` at 0x7692e8 stores 4 bytes to [a0+231024] +0xc8.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47130, including `lw` at 0x7692f0, `lw` at 0x76952c.
+  The `sw` at 0x7692f4 stores 4 bytes to [a0+231024] +0x84.
+  The `lw` at 0x7692fc loads 4 bytes from [a0+232864] +0x278.
+  2 such `lbu` accesses load 1 byte from [a0+231024] +0x88, including `lbu` at 0x769318, `lbu` at 0x76954c.
+  The `lw` at 0x76931c loads 4 bytes from [a0+231024] +0x70.
+  The `lw` at 0x76932c loads 4 bytes from [a0+231024] +0x9c.
+  4 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x769380, `lw` at 0x7693c8, `lw` at 0x7695b0.
+  4 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x769384, `lw` at 0x7693cc, `lw` at 0x7695b4.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47c74, including `lw` at 0x769388, `lw` at 0x76947c.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x470fc, including `lw` at 0x7693e4, `lw` at 0x769518.
+  The `sw` at 0x7693ec stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x7693f4 stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7693fc stores 4 bytes to [a0+290136] +0x0.
+  The `sw` at 0x76940c stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x769414 stores 4 bytes to [a0+290136] +0x4.
+  The `lw` at 0x769418 loads 4 bytes from a0 (arg0 at entry) +0x47134.
+  The `sw` at 0x76941c stores 4 bytes to [a0+290136] +0x14.
+  6 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ec8, including `lw` at 0x769420, `lw` at 0x76942c, `lw` at 0x769440.
+  2 such `sw` accesses store 4 bytes to [a0+294600] +0x4, including `sw` at 0x769428, `sw` at 0x7694a4.
+  2 such `sw` accesses store 4 bytes to [a0+294600] +0x0, including `sw` at 0x769434, `sw` at 0x7694b8.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ec4, including `lw` at 0x769438, `lw` at 0x7694bc.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ecc, including `lw` at 0x76943c, `lw` at 0x7694c0.
+  4 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x47ec8, including `sw` at 0x76945c, `sw` at 0x7694ec, `sw` at 0x76987c.
+  The `sw` at 0x769464 stores 4 bytes to [a0+290136] +0x1c.
+  The `sw` at 0x769474 stores 4 bytes to [a0+290136] +0x18.
+  The `lw` at 0x769484 loads 4 bytes from [a0+231024] +0xa8.
+  The `sw` at 0x76948c stores 4 bytes to [a0+290136] +0x20.
+  The `lw` at 0x769490 loads 4 bytes from a0 (arg0 at entry) +0x472dc.
+  The `sw` at 0x769498 stores 4 bytes to [a0+290136] +0x24.
+  The `sw` at 0x769500 stores 4 bytes to [a0+290136] +0x28.
+  The `sw` at 0x769510 stores 4 bytes to [a0+290136] +0x2c.
+  The `sw` at 0x769520 stores 4 bytes to ([a0+290136] + one of 0x28, 0x38) +0x0.
+  The `sw` at 0x769524 stores 4 bytes to ([a0+290136] + one of 0x20, 0x30) +0x0.
+  The `sw` at 0x769528 stores 4 bytes to ([a0+290136] + one of 0x24, 0x34) +0x0.
+  The `sw` at 0x769530 stores 4 bytes to ([a0+290136] + one of 0x2c, 0x3c) +0x0.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x46d58, including `sw` at 0x769538, `sw` at 0x76974c.
+  2 such `ldc1` accesses load 8 bytes from a0 (arg0 at entry) +0xcf0, including `ldc1` at 0x769658, `ldc1` at 0x7698ec.
+  2 such `lw` accesses load 4 bytes from [a0+232864] +0x878, including `lw` at 0x769670, `lw` at 0x7698fc.
+  2 such `sw` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x0, including `sw` at 0x769694, `sw` at 0x769920.
+  2 such `sw` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x30, including `sw` at 0x769698, `sw` at 0x769928.
+  2 such `sw` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x8, including `sw` at 0x7696a8, `sw` at 0x769934.
+  2 such `sw` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0xc, including `sw` at 0x7696b0, `sw` at 0x769940.
+  2 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x10, including `swc1` at 0x7696f4, `swc1` at 0x7699cc.
+  2 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x18, including `swc1` at 0x7696f8, `swc1` at 0x769984.
+  2 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x1c, including `swc1` at 0x769700, `swc1` at 0x76998c.
+  2 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x20, including `swc1` at 0x769704, `swc1` at 0x769994.
+  2 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x24, including `swc1` at 0x76970c, `swc1` at 0x76999c.
+  2 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x28, including `swc1` at 0x769714, `swc1` at 0x7699a8.
+  2 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x2c, including `swc1` at 0x76971c, `swc1` at 0x7699b0.
+  2 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x14, including `swc1` at 0x769724, `swc1` at 0x7699bc.
+  2 such `sw` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x4, including `sw` at 0x769730, `sw` at 0x7699dc.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x472d4, including `lw` at 0x769734, `lw` at 0x7699e0.
+  2 such `sw` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x34, including `sw` at 0x76973c, `sw` at 0x7699ec.
+  The `lw` at 0x769768 loads 4 bytes from a0 (arg0 at entry) +0xc0dc.
+  The `lw` at 0x76976c loads 4 bytes from [a0+49372] +0x8.
+  The `lbu` at 0x769770 loads 1 byte from [[a0+49372]+8] +0x88.
+  The `lbu` at 0x769824 loads 1 byte from [a0+232864] +0x2ed.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x47ecc, including `sw` at 0x769848, `sw` at 0x769890.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x8, including `lw` at 0x76984c, `lw` at 0x769894.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x47ec4, including `sw` at 0x76986c, `sw` at 0x7698b8.
+  The `jalr` at 0x7692a0 calls __R300CalcHWDepthClearValue [0x77fc40] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3).
+  The `jalr` at 0x76930c calls (unknown callee) with a0=[a0+232864], a1=sp-320, a2=sp-316, a3=sp-312, a4=sp-308.
+  The `jalr` at 0x7693c0 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `bgezall` at 0x7695a8 calls __R300SetOverrideRendering [0x767140] with a0=a0 at entry (arg0), a1=0x0, a2=0x1, a3=0x0, a5=sp-304.
+  The `jalr` at 0x7695d0 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x769604 calls __R300TCLFFXProgramNullShader [0x7d8a40] with a0=a0 at entry (arg0), a1=[a0+290136], a2=?, a3=?.
+  The `jalr` at 0x769648 calls __R300WriteMaskCorrectRectAbort [0x77c580] with a0=a0 at entry (arg0), a1=ret(__R300TCLFFXProgramNullShader), a2=?, a3=?.
+  The `jalr` at 0x769688 calls __R300WriteDrawRectRegisters [0x77c280] with a0=a0 at entry (arg0), a1=ret(__R300TCLFFXProgramNullShader), a2=?, a3=?.
+  The `jalr` at 0x769748 calls __ATITCLFFXRestoreShader [0xac0000] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?; fp f16=one of 0x3e99999a, 0x3ecccccd, f17=one of 0x3e4ccccd, 0x3e99999a, f18=one of 0x3dcccccd, 0x3e4ccccd, f19=one of 0x3dcccccd, 0x3f800000.
+  The `bgezall` at 0x769758 calls __R300CompleteOverrideRendering [0x767900] with a0=a0 at entry (arg0), a1=sp-304, a2=?, a3=?.
+  The `jalr` at 0x769834 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=[[[a0+49372]+8]+136]:1, a2=?, a3=?, a6=[[a0+232864]+749]:1.
+  The `jalr` at 0x76985c calls (unknown callee) with a0=[a0+294596], a1=(([a0+294604] + [a0+294604]) << 0x4), a2=?, a3=?, a5=[a0+294600]+16, a6=[a0+294604].
+  The `jalr` at 0x7698a4 calls (unknown callee) with a0=[a0+294596], a1=(([a0+294604] + [a0+294604]) << 0x4), a2=?, a3=[a0+231056]-8, a4=[a0+294004], a5=[a0+294600]+16, a6=[a0+294604], a7=[a0+294600].
+  The `jalr` at 0x769914 calls __R300WriteDrawRectRegisters [0x77c280] with a0=a0 at entry (arg0), a1=ret(__R300TCLFFXProgramNullShader), a2=?, a3=?.
+  The `beq` branch at 0x76927c targets 0x769290, is taken when s2(=[a0+232864]) == 0, and falls through when s2(=[a0+232864]) != 0.
+  The `beq` branch at 0x769288 targets 0x7698cc, is taken when t8(=[[a0+232864]+2137]:1) == v0(=0x3), and falls through when t8(=[[a0+232864]+2137]:1) != v0(=0x3).
+  The `beq` branch at 0x7692b8 targets 0x76979c, is taken when t9(=[a0+231056]) == ra(=0x10), and falls through when t9(=[a0+231056]) != ra(=0x10).
+  The `beq` branch at 0x7692d4 targets 0x7692e8, is taken when v1(=[[a0+231024]+96]) == 0, and falls through when v1(=[[a0+231024]+96]) != 0.
+  The `beq` branch at 0x769328 targets 0x7697b0, is taken when v1(=[[a0+231024]+136]:1) == 0, and falls through when v1(=[[a0+231024]+136]:1) != 0.
+  The `beq` branch at 0x769348 targets 0x769360, is taken when a5(=[[a0+231024]+112]) >= a0(?) (unsigned), and falls through when a5(=[[a0+231024]+112]) < a0(?) (unsigned).
+  The `beq` branch at 0x769358 targets 0x769364 and is always taken.
+  The `blez` branch at 0x769378 targets 0x769810, is taken when a3(?) <= 0 (signed), and falls through when a3(?) > 0 (signed).
+  The `beq` branch at 0x7693b4 targets 0x7693e4, is taken when a6(?) >= 0x10 (unsigned), and falls through when a6(?) < 0x10 (unsigned).
+  The `bne` branch at 0x7693dc targets 0x7693c0, is taken when t0(?) < 0x10 (unsigned), and falls through when t0(?) >= 0x10 (unsigned).
+  The `beq` branch at 0x769458 targets 0x769844, is taken when a5(=[a0+294600]+16) >= t1(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned), and falls through when a5(=[a0+294600]+16) < t1(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned).
+  The `beq` branch at 0x769470 targets 0x769514, is taken when a1 == 0, and falls through when a1 != 0.
+  The `beq` branch at 0x7694e8 targets 0x769888, is taken when a5(=[a0+294600]+16) >= a2(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned), and falls through when a5(=[a0+294600]+16) < a2(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned).
+  The `beq` branch at 0x769540 targets 0x769764, is taken when a2(?) == 0, and falls through when a2(?) != 0.
+  The `beq` branch at 0x769554 targets 0x769880, is taken when t0(=[[a0+231024]+136]:1) == 0, and falls through when t0(=[[a0+231024]+136]:1) != 0.
+  The `beq` branch at 0x769570 targets 0x769764, is taken when a0(?) >= v0(?) (signed), and falls through when a0(?) < v0(?) (signed).
+  The `beq` branch at 0x769580 targets 0x769590, is taken when a2(?) >= a0(?) (signed), and falls through when a2(?) < a0(?) (signed).
+  The `beq` branch at 0x7695c4 targets 0x769600, is taken when t8(?) >= 0x1f (unsigned), and falls through when t8(?) < 0x1f (unsigned).
+  The `bne` branch at 0x7695f4 targets 0x7695d0, is taken when t9(?) < 0x1f (unsigned), and falls through when t9(?) >= 0x1f (unsigned).
+  The `beq` branch at 0x769634 targets 0x7698d8, is taken when (ra(?) & 0xff) == 0, and falls through when (ra(?) & 0xff) != 0.
+  The `beq` branch at 0x769774 targets 0x769820, is taken when a1(=[[[a0+49372]+8]+136]:1) == 0, and falls through when a1(=[[[a0+49372]+8]+136]:1) != 0.
+  The `beq` branch at 0x7697a8 targets 0x7692cc and is always taken.
+  The `beq` branch at 0x7697dc targets 0x7697f0, is taken when a5(=[[a0+231024]+112]) >= a0(?) (unsigned), and falls through when a5(=[[a0+231024]+112]) < a0(?) (unsigned).
+  The `beq` branch at 0x7697e8 targets 0x7697f4 and is always taken.
+  The `bne` branch at 0x769808 targets 0x769380, is taken when a3(?) < a4(?) (signed), and falls through when a3(?) >= a4(?) (signed).
+  The `beq` branch at 0x769818 targets 0x76953c and is always taken.
+  The `bne` branch at 0x769828 targets 0x76977c, is taken when a6(=[[a0+232864]+749]:1) != 0, and falls through when a6(=[[a0+232864]+749]:1) == 0.
+  The `beq` branch at 0x76983c targets 0x76977c and is always taken.
+  The `beq` branch at 0x769878 targets 0x769460 and is always taken.
+  The `beq` branch at 0x769880 targets 0x769560 and is always taken.
+  The `beq` branch at 0x7698c4 targets 0x7694f0 and is always taken.
+  The `beq` branch at 0x7698d0 targets 0x769298 and is always taken.
+  The `beq` branch at 0x7699e8 targets 0x769740 and is always taken.
+  The return at 0x769794 has v0 = one of ?, ret(__glATISubmitBM).
+
+- `__R300FlushZStencilBuffer` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x769dc0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x769dc0-0x76a244 (1156 bytes).
+  It occupies 1156 bytes.
+  The `lw` at 0x769dd4 loads 4 bytes from a0 (arg0 at entry) +0x46830.
+  The `lbu` at 0x769df8 loads 1 byte from a0 (arg0 at entry) +0x6069.
+  The `lw` at 0x769e08 loads 4 bytes from a0 (arg0 at entry) +0x36ed8.
+  The `lw` at 0x769e0c loads 4 bytes from a0 (arg0 at entry) +0x36ecc.
+  4 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x769e1c, `lw` at 0x769e54, `lw` at 0x769fd4.
+  4 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x769e20, `lw` at 0x769e58, `lw` at 0x769fd8.
+  The `sw` at 0x769e74 stores 4 bytes to [a0+290136] +0x0.
+  The `sw` at 0x769e7c stores 4 bytes to [a0+290136] +0x4.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x470fc, including `lw` at 0x769e80, `lw` at 0x76a02c, `lw` at 0x76a154.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x46d58, including `sw` at 0x769e90, `sw` at 0x76a168.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x38670, including `lw` at 0x769e94, `lw` at 0x769fa0.
+  2 such `lbu` accesses load 1 byte from [a0+231024] +0x88, including `lbu` at 0x769e98, `lbu` at 0x769fa8.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x38da0, including `lw` at 0x769ea0, `lw` at 0x76a04c.
+  The `lw` at 0x769ea8 loads 4 bytes from [a0+232864] +0x278.
+  The `sw` at 0x76a03c stores 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x0.
+  The `sw` at 0x76a048 stores 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x4.
+  The `lw` at 0x76a058 loads 4 bytes from [a0+232864] +0x878.
+  8 such `sw` accesses store 4 bytes to ?, including `sw` at 0x76a0b8, `sw` at 0x76a0cc, `sw` at 0x76a0d8.
+  8 such `swc1` accesses store 4 bytes to ?, including `swc1` at 0x76a0e0, `swc1` at 0x76a0e8, `swc1` at 0x76a0ec.
+  The `lw` at 0x76a144 loads 4 bytes from a0 (arg0 at entry) +0x472d4.
+  The `lw` at 0x76a184 loads 4 bytes from a0 (arg0 at entry) +0xc0fc.
+  The `lbu` at 0x76a1a8 loads 1 byte from [a0+232864] +0x2ed.
+  The `lw` at 0x76a1c4 loads 4 bytes from [a0+231024] +0x4.
+  The `lw` at 0x76a1ec loads 4 bytes from [a0+231024] +0x0.
+  The `jalr` at 0x769e4c calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=[a0+290136], a2=?, a3=?.
+  The `jalr` at 0x769eb8 calls (unknown callee) with a0=[a0+232864], a1=sp-256, a2=sp-252, a3=sp-248, a4=sp-244, a5=[[a0+231024]+136]:1.
+  The `bgezall` at 0x769fcc calls __R300SetOverrideRendering [0x767140] with a0=a0 at entry (arg0), a1=0x0, a2=0x0, a3=0x0, a5=sp-240, a6=a4+4.
+  The `jalr` at 0x769ff4 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=[a0+290136], a2=?, a3=?.
+  The `jalr` at 0x76a01c calls __R300TCLFFXProgramNullShader [0x7d8a40] with a0=a0 at entry (arg0), a1=[a0+290136], a2=?, a3=?.
+  The `jalr` at 0x76a060 calls __R300WriteDrawRectRegisters [0x77c280] with a0=a0 at entry (arg0), a1=ret(__R300TCLFFXProgramNullShader)+8, a2=?, a3=?.
+  The `jalr` at 0x76a164 calls __ATITCLFFXRestoreShader [0xac0000] with a0=a0 at entry (arg0), a1=?, a2=?, a3=[a0+291068], a4=0x13c7, a5=[a0+291540], a6=0x1087, a7=0x10031; fp f14=0x3f000000.
+  The `bgezall` at 0x76a174 calls __R300CompleteOverrideRendering [0x767900] with a0=a0 at entry (arg0), a1=sp-240, a2=?, a3=?.
+  The `jalr` at 0x76a188 calls (unknown callee) with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `bne` branch at 0x769df0 targets 0x76a194, is taken when v1(=[a0+288816]) != 0, and falls through when v1(=[a0+288816]) == 0.
+  The `beq` branch at 0x769dfc targets 0x76a194, is taken when t8(=[a0+24681]:1) == 0, and falls through when t8(=[a0+24681]:1) != 0.
+  The `bne` branch at 0x769e14 targets 0x76a194, is taken when t9(=[a0+224972]) != at(?), and falls through when t9(=[a0+224972]) == at(?).
+  The `beq` branch at 0x769e40 targets 0x769e70, is taken when at(?) >= 0x2 (unsigned), and falls through when at(?) < 0x2 (unsigned).
+  The `bne` branch at 0x769e68 targets 0x769e4c, is taken when v1(?) < 0x2 (unsigned), and falls through when v1(?) >= 0x2 (unsigned).
+  The `beq` branch at 0x769e8c targets 0x76a17c, is taken when (a2(=[a0+291068]) & 0x1c) == 0, and falls through when (a2(=[a0+291068]) & 0x1c) != 0.
+  The `beq` branch at 0x769e9c targets 0x76a1a8, is taken when a5(=[[a0+231024]+136]:1) == 0, and falls through when a5(=[[a0+231024]+136]:1) != 0.
+  The `bc1f` branch at 0x769f2c targets 0x769f40, is taken when not (f17 < f16 (c.lt.s at 0x769f14)), and falls through when f17 < f16 (c.lt.s at 0x769f14).
+  The `bc1f` branch at 0x769f60 targets 0x769f6c, is taken when not (f5 < f4 (c.lt.s at 0x769f58)), and falls through when f5 < f4 (c.lt.s at 0x769f58).
+  The `bc1f` branch at 0x769f7c targets 0x769f8c, is taken when not (f15 < f7 (c.lt.s at 0x769f74)), and falls through when f15 < f7 (c.lt.s at 0x769f74).
+  The `bc1f` branch at 0x769fa4 targets 0x769fb0, is taken when not (f5 < f14 (c.lt.s at 0x769f9c)), and falls through when f5 < f14 (c.lt.s at 0x769f9c).
+  The `beq` branch at 0x769fb0 targets 0x76a1c0, is taken when t3(=[[a0+231024]+136]:1) == 0, and falls through when t3(=[[a0+231024]+136]:1) != 0.
+  The `beq` branch at 0x769fe8 targets 0x76a01c, is taken when t8(?) >= 0x23 (unsigned), and falls through when t8(?) < 0x23 (unsigned).
+  The `bne` branch at 0x76a010 targets 0x769ff4, is taken when t9(?) < 0x23 (unsigned), and falls through when t9(?) >= 0x23 (unsigned).
+  The `bne` branch at 0x76a1ac targets 0x769ea4, is taken when ra(=[[a0+232864]+749]:1) != 0, and falls through when ra(=[[a0+232864]+749]:1) == 0.
+  The `beq` branch at 0x76a1b4 targets 0x769ea8 and is always taken.
+  The `bc1f` branch at 0x76a1e8 targets 0x76a204, is taken when not (f19 < f21 (c.lt.s at 0x76a1e0)), and falls through when f19 < f21 (c.lt.s at 0x76a1e0).
+  The `bc1f` branch at 0x76a224 targets 0x769fb8, is taken when not (f25 < f27 (c.lt.s at 0x76a21c)), and falls through when f25 < f27 (c.lt.s at 0x76a21c).
+  The `beq` branch at 0x76a23c targets 0x769fb4 and is always taken.
+  The return at 0x76a1a0 has v0 = one of a2, ret(?).
+  The instructions from 0x76a1bc to 0x76a1bc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300NoGCFlushZStencilBuffer` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x76a340 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x76a340-0x76a6d4 (916 bytes).
+  It occupies 916 bytes.
+  4 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x48, including `lw` at 0x76a344, `lw` at 0x76a3e8, `lw` at 0x76a4c4.
+  The `lbu` at 0x76a35c loads 1 byte from [a0+72] +0x67.
+  The `lw` at 0x76a368 loads 4 bytes from [a0+72] +0xc8.
+  The `lw` at 0x76a3a0 loads 4 bytes from a1 (arg1 at entry) +0x0.
+  The `lw` at 0x76a3a8 loads 4 bytes from a1 (arg1 at entry) +0x4.
+  The `lw` at 0x76a3b0 loads 4 bytes from a1 (arg1 at entry) +0xc.
+  The `lw` at 0x76a3bc loads 4 bytes from a1 (arg1 at entry) +0x8.
+  The `lw` at 0x76a3ec loads 4 bytes from [a0+72] +0x0.
+  The `lw` at 0x76a3f0 loads 4 bytes from [a0+72] +0x4.
+  The `lw` at 0x76a488 loads 4 bytes from a0 (arg0 at entry) +0x874.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x39c, including `lw` at 0x76a4a0, `lw` at 0x76a6a0.
+  The `lw` at 0x76a500 loads 4 bytes from a0 (arg0 at entry) +0x868.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x57c, including `lw` at 0x76a508, `lw` at 0x76a594.
+  The `lw` at 0x76a514 loads 4 bytes from a0 (arg0 at entry) +0x898.
+  The `lw` at 0x76a520 loads 4 bytes from a0 (arg0 at entry) +0x8a4.
+  6 such `sw` accesses store 4 bytes to ?, including `sw` at 0x76a52c, `sw` at 0x76a534, `sw` at 0x76a53c.
+  The `sw` at 0x76a588 stores 4 bytes to ret(__R300UpdateMultisampleRegsForBlt) +0x0.
+  The `sw` at 0x76a590 stores 4 bytes to ret(__R300UpdateMultisampleRegsForBlt) +0x4.
+  The `lw` at 0x76a5c4 loads 4 bytes from [a0+72] +0x9c.
+  The `lw` at 0x76a5c8 loads 4 bytes from [a0+72] +0x6c.
+  The `lw` at 0x76a5cc loads 4 bytes from [a0+72] +0x84.
+  The `sw` at 0x76a5d4 stores 4 bytes to ret(__R300HWBlt_SetupPitchAndOffset) +0xc.
+  The `sw` at 0x76a5d8 stores 4 bytes to ret(__R300HWBlt_SetupPitchAndOffset) +0x4.
+  The `sw` at 0x76a5e0 stores 4 bytes to ret(__R300HWBlt_SetupPitchAndOffset) +0x0.
+  The `sw` at 0x76a5e8 stores 4 bytes to ret(__R300HWBlt_SetupPitchAndOffset) +0x8.
+  The `sw` at 0x76a614 stores 4 bytes to ret(__R300WriteColorChannelMask) +0x0.
+  The `sw` at 0x76a644 stores 4 bytes to ret(__R300WriteColorChannelMask) +0xc.
+  The `sw` at 0x76a654 stores 4 bytes to ret(__R300WriteColorChannelMask) +0x8.
+  The `sw` at 0x76a660 stores 4 bytes to ret(__R300WriteColorChannelMask) +0x10.
+  The `sw` at 0x76a66c stores 4 bytes to ret(__R300WriteColorChannelMask) +0x4.
+  The `sw` at 0x76a680 stores 4 bytes to ret(__R300NoGCDrawRectangle) +0x4.
+  The `sw` at 0x76a698 stores 4 bytes to ret(__R300NoGCDrawRectangle) +0x0.
+  The `bgezall` at 0x76a394 calls __R300GetPipeCount [0x767d80] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=[[a0+72]+200], a3=0x3.
+  The `jalr` at 0x76a49c calls fglX11GetQsList with a0=[a0+924], a1=sp-316, a2=sp-320, a3=-0x10.
+  The `jalr` at 0x76a4c0 calls fglX11DrawableBufToBltSurface with a0=a0 at entry (arg0), a1=[a0+72], a2=sp-312, a3=?.
+  The `jalr` at 0x76a51c calls (unknown callee) with a0=a0 at entry (arg0), a1=[a0+2212], a2=?, a3=?, a4=[a0+1404], a5=[a0+2152], a6=0x100, a7=sp-312.
+  The `bgezall` at 0x76a55c calls __R300NoGCSetOverrideRendering [0x7654c0] with a0=?, a1=sp-176, a2=?, a3=?.
+  The `jalr` at 0x76a578 calls __R300UpdateMultisampleRegsForBlt [0x7588c0] with a0=a0 at entry (arg0), a1=ret(__R300NoGCSetOverrideRendering), a2=?, a3=sp-112.
+  The `bgezall` at 0x76a5ac calls __R300HWBlt_SetupPitchAndOffset [0x766200] with a0=?, a1=0x100, a2=sp-312, a3=0x1.
+  The `bgezall` at 0x76a604 calls __R300WriteColorChannelMask [0x766640] with a0=ret(__R300HWBlt_SetupPitchAndOffset)+16, a1=a0 at entry (arg0), a2=0x0, a3=0x13c0.
+  The `bgezall` at 0x76a674 calls __R300NoGCDrawRectangle [0x76a280] with a0=a0 at entry (arg0), a1=ret(__R300WriteColorChannelMask)+20, a2=?, a3=0x13ca, a5=0x113cc.
+  The `jalr` at 0x76a6a4 calls fglX11SendQsList with a0=[a0+924], a1=sp-316, a2=?, a3=0x0, a4=0x13c7.
+  The `jalr` at 0x76a6c4 calls __R300SetupNullShader [0x761a80] with a0=ret(__R300UpdateMultisampleRegsForBlt)+8, a1=[a0+1404], a2=?, a3=0x1380.
+  The `beq` branch at 0x76a354 targets 0x76a37c, is taken when v0(=[a0+72]) == 0, and falls through when v0(=[a0+72]) != 0.
+  The `beq` branch at 0x76a360 targets 0x76a37c, is taken when v1(=[[a0+72]+103]:1) == 0, and falls through when v1(=[[a0+72]+103]:1) != 0.
+  The `beq` branch at 0x76a374 targets 0x76a388, is taken when a2(=[[a0+72]+200]) == a3(=0x3), and falls through when a2(=[[a0+72]+200]) != a3(=0x3).
+  The `bltz` branch at 0x76a3dc targets 0x76a6b4, is taken when a7(?) < 0 (signed), and falls through when a7(?) >= 0 (signed).
+  The `bltz` branch at 0x76a3f8 targets 0x76a440, is taken when a6(?) < 0 (signed), and falls through when a6(?) >= 0 (signed).
+  The `beq` branch at 0x76a400 targets 0x76a40c, is taken when v0(?) == 0, and falls through when v0(?) != 0.
+  The `beq` branch at 0x76a40c targets 0x76a41c, is taken when t0(?) == 0, and falls through when t0(?) != 0.
+  The `beq` branch at 0x76a41c targets 0x76a37c, is taken when t2(?) == 0, and falls through when t2(?) != 0.
+  The `beq` branch at 0x76a424 targets 0x76a37c, is taken when t3(?) == 0, and falls through when t3(?) != 0.
+  The `beq` branch at 0x76a438 targets 0x76a480 and is always taken.
+  The `beq` branch at 0x76a440 targets 0x76a44c, is taken when v0(?) == 0, and falls through when v0(?) != 0.
+  The `beq` branch at 0x76a44c targets 0x76a45c, is taken when t0(?) == 0, and falls through when t0(?) != 0.
+  The `beq` branch at 0x76a45c targets 0x76a37c, is taken when t8(?) == 0, and falls through when t8(?) != 0.
+  The `blez` branch at 0x76a464 targets 0x76a37c, is taken when a2(?) <= 0 (signed), and falls through when a2(?) > 0 (signed).
+  The `beq` branch at 0x76a4a8 targets 0x76a37c, is taken when v0(=ret(fglX11GetQsList)) == 0, and falls through when v0(=ret(fglX11GetQsList)) != 0.
+  The `beq` branch at 0x76a50c targets 0x76a524, is taken when a4(=[a0+1404]) == 0, and falls through when a4(=[a0+1404]) != 0.
+  The `beq` branch at 0x76a598 targets 0x76a6c0, is taken when a1(=[a0+1404]) == 0, and falls through when a1(=[a0+1404]) != 0.
+  The `beq` branch at 0x76a6ac targets 0x76a37c and is always taken.
+  The `beq` branch at 0x76a6b4 targets 0x76a3e4 and is always taken.
+  The `beq` branch at 0x76a6cc targets 0x76a5a0 and is always taken.
+  The return at 0x76a380 has v0 = one of [a0+72], ?, ret(fglX11GetQsList), ret(fglX11SendQsList).
+  The instructions from 0x76a6bc to 0x76a6bc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300UpdateHWState` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x779980 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x779980-0x77a35c (2524 bytes).
+  It occupies 2524 bytes.
+  4 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46e44, including `lw` at 0x7799c4, `lw` at 0x77a18c, `lw` at 0x77a1b0.
+  3 such `lbu` accesses load 1 byte from a0 (arg0 at entry) +0x4e2f8, including `lbu` at 0x7799d0, `lbu` at 0x779ebc, `lbu` at 0x77a22c.
+  7 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x4e2fc, including `lw` at 0x7799dc, `lw` at 0x779ec8, `lw` at 0x779eec.
+  The `lw` at 0x7799fc loads 4 bytes from a0 (arg0 at entry) +0x46e48.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x779a08, `lw` at 0x779a30.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x779a0c, `lw` at 0x779a34.
+  The `sw` at 0x779a5c stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x779a68 stores 4 bytes to [a0+290136] +0x0.
+  160 such `sw` accesses store 4 bytes to ?, including `sw` at 0x779a80, `sw` at 0x779a88, `sw` at 0x779a9c.
+  The `lw` at 0x779aa0 loads 4 bytes from a0 (arg0 at entry) +0x470a8.
+  The `lw` at 0x779aa8 loads 4 bytes from a0 (arg0 at entry) +0x470ac.
+  The `lw` at 0x779ab0 loads 4 bytes from a0 (arg0 at entry) +0x470b0.
+  The `lw` at 0x779ac0 loads 4 bytes from a0 (arg0 at entry) +0x4713c.
+  The `lw` at 0x779ad0 loads 4 bytes from a0 (arg0 at entry) +0x470cc.
+  The `lw` at 0x779ae0 loads 4 bytes from a0 (arg0 at entry) +0x470d0.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x470b8, including `lw` at 0x779af4, `lw` at 0x779cb8.
+  The `lw` at 0x779b10 loads 4 bytes from a0 (arg0 at entry) +0x470d4.
+  The `lw` at 0x779b18 loads 4 bytes from a0 (arg0 at entry) +0x470d8.
+  The `lw` at 0x779b28 loads 4 bytes from a0 (arg0 at entry) +0x470dc.
+  The `lw` at 0x779b3c loads 4 bytes from a0 (arg0 at entry) +0x47144.
+  The `lw` at 0x779b5c loads 4 bytes from a0 (arg0 at entry) +0x4714c.
+  The `lw` at 0x779b78 loads 4 bytes from a0 (arg0 at entry) +0x470a0.
+  The `lw` at 0x779b94 loads 4 bytes from a0 (arg0 at entry) +0x470a4.
+  The `lw` at 0x779bb0 loads 4 bytes from a0 (arg0 at entry) +0x47104.
+  The `lw` at 0x779bc8 loads 4 bytes from a0 (arg0 at entry) +0x470f0.
+  The `lw` at 0x779bdc loads 4 bytes from a0 (arg0 at entry) +0x470ec.
+  The `lw` at 0x779bf8 loads 4 bytes from a0 (arg0 at entry) +0x470f4.
+  The `lw` at 0x779c10 loads 4 bytes from a0 (arg0 at entry) +0x4712c.
+  The `lw` at 0x779c24 loads 4 bytes from a0 (arg0 at entry) +0x470fc.
+  The `lw` at 0x779c3c loads 4 bytes from a0 (arg0 at entry) +0x4715c.
+  The `lw` at 0x779c4c loads 4 bytes from a0 (arg0 at entry) +0x47164.
+  The `lw` at 0x779c5c loads 4 bytes from a0 (arg0 at entry) +0x47160.
+  The `lw` at 0x779c6c loads 4 bytes from a0 (arg0 at entry) +0x47168.
+  The `lw` at 0x779c80 loads 4 bytes from a0 (arg0 at entry) +0x47158.
+  The `lw` at 0x779c98 loads 4 bytes from a0 (arg0 at entry) +0x47180.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47194, including `lw` at 0x779ca8, `lw` at 0x779f9c.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x471e4, including `lw` at 0x779ccc, `lw` at 0x779f4c, `lw` at 0x779fb0.
+  The `lw` at 0x779ce4 loads 4 bytes from a0 (arg0 at entry) +0x472d4.
+  The `lw` at 0x779cf8 loads 4 bytes from a0 (arg0 at entry) +0x472c8.
+  The `lw` at 0x779d00 loads 4 bytes from a0 (arg0 at entry) +0x472d0.
+  The `lw` at 0x779d10 loads 4 bytes from a0 (arg0 at entry) +0x472d8.
+  The `lw` at 0x779d20 loads 4 bytes from a0 (arg0 at entry) +0x472c4.
+  The `lw` at 0x779d34 loads 4 bytes from a0 (arg0 at entry) +0x472cc.
+  The `lw` at 0x779d4c loads 4 bytes from a0 (arg0 at entry) +0x47184.
+  The `lw` at 0x779d5c loads 4 bytes from a0 (arg0 at entry) +0x471ac.
+  The `lw` at 0x779d70 loads 4 bytes from a0 (arg0 at entry) +0x471b8.
+  The `sw` at 0x779d98 stores 4 bytes to ret(SendColorMask) +0x0.
+  The `lw` at 0x779d9c loads 4 bytes from a0 (arg0 at entry) +0x47170.
+  The `sw` at 0x779da4 stores 4 bytes to ret(SendColorMask) +0x4.
+  The `lw` at 0x779dbc loads 4 bytes from a0 (arg0 at entry) +0x47bf4.
+  The `lw` at 0x779dc4 loads 4 bytes from a0 (arg0 at entry) +0x47bf8.
+  The `lw` at 0x779dcc loads 4 bytes from a0 (arg0 at entry) +0x47bfc.
+  The `lw` at 0x779dd4 loads 4 bytes from a0 (arg0 at entry) +0x47c00.
+  The `lw` at 0x779de4 loads 4 bytes from a0 (arg0 at entry) +0x470e0.
+  The `lw` at 0x779df8 loads 4 bytes from a0 (arg0 at entry) +0x47130.
+  The `lw` at 0x779e14 loads 4 bytes from a0 (arg0 at entry) +0x47174.
+  The `lw` at 0x779e30 loads 4 bytes from a0 (arg0 at entry) +0x470b4.
+  The `lw` at 0x779e44 loads 4 bytes from a0 (arg0 at entry) +0x470bc.
+  The `lw` at 0x779e4c loads 4 bytes from a0 (arg0 at entry) +0x470c0.
+  The `lw` at 0x779e5c loads 4 bytes from a0 (arg0 at entry) +0x471a8.
+  The `lw` at 0x779e70 loads 4 bytes from a0 (arg0 at entry) +0x47140.
+  2 such `sw` accesses store 4 bytes to table(0x4e30c) +0x0, including `sw` at 0x779ee8, `sw` at 0x77a260.
+  2 such `sw` accesses store 4 bytes to table(0x4e310) +0x0, including `sw` at 0x779f08, `sw` at 0x77a27c.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x4e2fc, including `sw` at 0x779f14, `sw` at 0x77a288.
+  The `lw` at 0x779f20 loads 4 bytes from a0 (arg0 at entry) +0x472a8.
+  The `lw` at 0x779f34 loads 4 bytes from a0 (arg0 at entry) +0x472ac.
+  The `lw` at 0x779f44 loads 4 bytes from a0 (arg0 at entry) +0x471e0.
+  The `lw` at 0x779f64 loads 4 bytes from a0 (arg0 at entry) +0x471c0.
+  The `lw` at 0x779f84 loads 4 bytes from a0 (arg0 at entry) +0x471bc.
+  The `lw` at 0x779fc4 loads 4 bytes from a0 (arg0 at entry) +0x7d88.
+  The `lw` at 0x779fcc loads 4 bytes from a0 (arg0 at entry) +0xc05c.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x479e0, including `lw` at 0x77a040, `lw` at 0x77a314.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x479e4, including `lw` at 0x77a048, `lw` at 0x77a31c.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x479e8, including `lw` at 0x77a050, `lw` at 0x77a324.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x479ec, including `lw` at 0x77a068, `lw` at 0x77a32c.
+  8 such `lw` accesses load 4 bytes from ?, including `lw` at 0x77a074, `lw` at 0x77a07c, `lw` at 0x77a084.
+  The `sw` at 0x77a1a0 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x46e48, including `sw` at 0x77a1f4, `sw` at 0x77a2fc.
+  The `sw` at 0x77a1f8 stores 4 bytes to a0 (arg0 at entry) +0x46e44.
+  The `lw` at 0x77a290 loads 4 bytes from a0 (arg0 at entry) +0x479d4.
+  The `lw` at 0x77a2a0 loads 4 bytes from a0 (arg0 at entry) +0x47994.
+  The `lw` at 0x77a2a8 loads 4 bytes from a0 (arg0 at entry) +0x47998.
+  The `lw` at 0x77a2b0 loads 4 bytes from a0 (arg0 at entry) +0x4799c.
+  The `lw` at 0x77a2b8 loads 4 bytes from a0 (arg0 at entry) +0x479a0.
+  The `lw` at 0x77a2c0 loads 4 bytes from a0 (arg0 at entry) +0x479a4.
+  The `lw` at 0x77a2c8 loads 4 bytes from a0 (arg0 at entry) +0x479a8.
+  The `lw` at 0x77a2d0 loads 4 bytes from a0 (arg0 at entry) +0x479ac.
+  The `lw` at 0x77a2dc loads 4 bytes from a0 (arg0 at entry) +0x479b0.
+  The `bgezall` at 0x7799c0 calls CheckIfBatchable [0x775a00] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3).
+  The `bgezall` at 0x7799f8 calls __R300UpdateHWTexState [0x778e40] with a0=a0 at entry (arg0), a1=[a0+290376], a2=?, a3=?.
+  The `jalr` at 0x779a28 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `bgezall` at 0x779d8c calls SendColorMask [0x774fc0] with a0=a0 at entry (arg0), a1=?, a2=0x1087, a3=?.
+  The `bgezall` at 0x779e6c calls __R300WriteCmaskEnableRegistersAbort [0x77c680] with a0=a0 at entry (arg0), a1=?, a2=[a0+291136], a3=?.
+  The `bgezall` at 0x779e88 calls __R300WriteScissorRegisters [0x77bc80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `bgezall` at 0x779ea4 calls __R300WriteViewportTransform [0x77bb40] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x77a1a8 calls __R300LoadCachedPSProgToHwRegs [0x6f1380] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?, a6=0x100000.
+  The `jalr` at 0x77a1c0 calls __R300TCLWritePointSpriteData [0x813e00] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x77a1d8 calls __R300TCLWriteUserClipPlaneData [0x88cd00] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x77a21c calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `beq` branch at 0x7799d4 targets 0x7799ec, is taken when at(=[a0+320248]:1) == 0, and falls through when at(=[a0+320248]:1) != 0.
+  The `beq` branch at 0x7799e8 targets 0x77a218, is taken when t8(=[a0+320252]+7) >= 0x3e9 (unsigned), and falls through when t8(=[a0+320252]+7) < 0x3e9 (unsigned).
+  The `beq` branch at 0x779a00 targets 0x77a2ec, is taken when s0(=[a0+290372]) == 0, and falls through when s0(=[a0+290372]) != 0.
+  The `beq` branch at 0x779a1c targets 0x779a50, is taken when t9(?) >= 0xbc (unsigned), and falls through when t9(?) < 0xbc (unsigned).
+  The `bne` branch at 0x779a44 targets 0x779a28, is taken when ra(?) < 0xbc (unsigned), and falls through when ra(?) >= 0xbc (unsigned).
+  The `beq` branch at 0x779a50 targets 0x779a6c, is taken when v1(?) == 0, and falls through when v1(?) != 0.
+  The `bgez` branch at 0x779a70 targets 0x779a90, is taken when a2(=([a0+290372] << 0x26)) >= 0 (signed), and falls through when a2(=([a0+290372] << 0x26)) < 0 (signed).
+  The `beq` branch at 0x779a90 targets 0x779afc, is taken when a5(?) == 0, and falls through when a5(?) != 0.
+  The `beq` branch at 0x779b00 targets 0x779b44, is taken when (s0(=[a0+290372]) & 0x4) == 0, and falls through when (s0(=[a0+290372]) & 0x4) != 0.
+  The `bgez` branch at 0x779b48 targets 0x779b64, is taken when t3(=([a0+290372] << 0x2f)) >= 0 (signed), and falls through when t3(=([a0+290372] << 0x2f)) < 0 (signed).
+  The `beq` branch at 0x779b68 targets 0x779b80, is taken when (s0(=[a0+290372]) & 0x200) == 0, and falls through when (s0(=[a0+290372]) & 0x200) != 0.
+  The `bgez` branch at 0x779b84 targets 0x779b9c, is taken when a0(=([a0+290372] << 0x24)) >= 0 (signed), and falls through when a0(=([a0+290372] << 0x24)) < 0 (signed).
+  The `bgez` branch at 0x779ba0 targets 0x779bb8, is taken when a3(=([a0+290372] << 0x2e)) >= 0 (signed), and falls through when a3(=([a0+290372] << 0x2e)) < 0 (signed).
+  The `beq` branch at 0x779bbc targets 0x779be4, is taken when (s0(=[a0+290372]) & 0x800) == 0, and falls through when (s0(=[a0+290372]) & 0x800) != 0.
+  The `beq` branch at 0x779be8 targets 0x779c00, is taken when (s0(=[a0+290372]) & 0x8) == 0, and falls through when (s0(=[a0+290372]) & 0x8) != 0.
+  The `beq` branch at 0x779c04 targets 0x779c2c, is taken when (s0(=[a0+290372]) & 0x1000) == 0, and falls through when (s0(=[a0+290372]) & 0x1000) != 0.
+  The `beq` branch at 0x779c30 targets 0x779c88, is taken when (s0(=[a0+290372]) & 0x20) == 0, and falls through when (s0(=[a0+290372]) & 0x20) != 0.
+  The `beq` branch at 0x779c8c targets 0x779cd4, is taken when (s0(=[a0+290372]) & 0x2000) == 0, and falls through when (s0(=[a0+290372]) & 0x2000) != 0.
+  The `beq` branch at 0x779cd8 targets 0x779d3c, is taken when (s0(=[a0+290372]) & 0x8000) == 0, and falls through when (s0(=[a0+290372]) & 0x8000) != 0.
+  The `beq` branch at 0x779d40 targets 0x779d78, is taken when (s0(=[a0+290372]) & 0x4000) == 0, and falls through when (s0(=[a0+290372]) & 0x4000) != 0.
+  The `beq` branch at 0x779d7c targets 0x779da8, is taken when (s0(=[a0+290372]) & 0x10) == 0, and falls through when (s0(=[a0+290372]) & 0x10) != 0.
+  The `beq` branch at 0x779dac targets 0x779e00, is taken when (s0(=[a0+290372]) & 0x40) == 0, and falls through when (s0(=[a0+290372]) & 0x40) != 0.
+  The `beq` branch at 0x779e04 targets 0x779e1c, is taken when (s0(=[a0+290372]) & 0x400) == 0, and falls through when (s0(=[a0+290372]) & 0x400) != 0.
+  The `bgez` branch at 0x779e20 targets 0x779e78, is taken when t9(=([a0+290372] << 0x2c)) >= 0 (signed), and falls through when t9(=([a0+290372] << 0x2c)) < 0 (signed).
+  The `beq` branch at 0x779e7c targets 0x779e94, is taken when (s0(=[a0+290372]) & 0x2) == 0, and falls through when (s0(=[a0+290372]) & 0x2) != 0.
+  The `beq` branch at 0x779e98 targets 0x779eb0, is taken when (s0(=[a0+290372]) & 0x80) == 0, and falls through when (s0(=[a0+290372]) & 0x80) != 0.
+  The `beq` branch at 0x779eb4 targets 0x779f70, is taken when (s0(=[a0+290372]) & s5(=0x40000)) == 0, and falls through when (s0(=[a0+290372]) & s5(=0x40000)) != 0.
+  The `beq` branch at 0x779ec0 targets 0x779f1c, is taken when t0(=[a0+320248]:1) == 0, and falls through when t0(=[a0+320248]:1) != 0.
+  The `beq` branch at 0x779f68 targets 0x77a22c, is taken when (s0(=[a0+290372]) & a6(=0x100000)) == 0, and falls through when (s0(=[a0+290372]) & a6(=0x100000)) != 0.
+  The `bgez` branch at 0x779f74 targets 0x779f8c, is taken when t3(=([a0+290372] << 0x29)) >= 0 (signed), and falls through when t3(=([a0+290372] << 0x29)) < 0 (signed).
+  The `bgez` branch at 0x779f90 targets 0x779fb8, is taken when ra(=([a0+290372] << 0x28)) >= 0 (signed), and falls through when ra(=([a0+290372] << 0x28)) < 0 (signed).
+  The `bgez` branch at 0x779fbc targets 0x77a0ec, is taken when a1(=([a0+290372] << 0x25)) >= 0 (signed), and falls through when a1(=([a0+290372] << 0x25)) < 0 (signed).
+  The `beq` branch at 0x779fd4 targets 0x779fe0, is taken when v0(=[a0+32136]) >= at(=[a0+49244]) (signed), and falls through when v0(=[a0+32136]) < at(=[a0+49244]) (signed).
+  The `beq` branch at 0x779fe0 targets 0x77a0e8, is taken when at(?) == 0, and falls through when at(?) != 0.
+  The `blez` branch at 0x77a024 targets 0x77a0c8, is taken when t0(?) <= 0 (signed), and falls through when t0(?) > 0 (signed).
+  The `bne` branch at 0x77a038 targets 0x77a314, is taken when t0(?) < 0x2 (signed), and falls through when t0(?) >= 0x2 (signed).
+  The `beq` branch at 0x77a090 targets 0x77a210, is taken when a1(?) == at(=table(0x3fff0)), and falls through when a1(?) != at(=table(0x3fff0)).
+  The `bne` branch at 0x77a0bc targets 0x77a06c, is taken when a1(?) != at(=table(0x3fff0)), and falls through when a1(?) == at(=table(0x3fff0)).
+  The `beq` branch at 0x77a0d0 targets 0x77a0dc, is taken when t0(?) >= 0 (signed), and falls through when t0(?) < 0 (signed).
+  The `beq` branch at 0x77a0fc targets 0x77a18c, is taken when v0(?) == 0, and falls through when v0(?) != 0.
+  The `beq` branch at 0x77a110 targets 0x77a128, is taken when at(?) == 0, and falls through when at(?) != 0.
+  The `bne` branch at 0x77a120 targets 0x77a118, is taken when at(?) != 0, and falls through when at(?) == 0.
+  The `beq` branch at 0x77a12c targets 0x77a18c, is taken when at(?) == 0, and falls through when at(?) != 0.
+  The `bne` branch at 0x77a134 targets 0x77a338, is taken when t1(?) != 0, and falls through when t1(?) == 0.
+  The `bne` branch at 0x77a168 targets 0x77a148, is taken when v1(?) != v0(?), and falls through when v1(?) == v0(?).
+  The `beq` branch at 0x77a19c targets 0x77a1b4, is taken when (at(=[a0+290372]) & a6(=0x100000)) == 0, and falls through when (at(=[a0+290372]) & a6(=0x100000)) != 0.
+  The `bgez` branch at 0x77a1b8 targets 0x77a1cc, is taken when t3(=([a0+290372] << 0x2a)) >= 0 (signed), and falls through when t3(=([a0+290372] << 0x2a)) < 0 (signed).
+  The `bgez` branch at 0x77a1d0 targets 0x77a1e0, is taken when t8(=([a0+290372] << 0x27)) >= 0 (signed), and falls through when t8(=([a0+290372] << 0x27)) < 0 (signed).
+  The `beq` branch at 0x77a210 targets 0x77a0c4 and is always taken.
+  The `beq` branch at 0x77a224 targets 0x7799f0 and is always taken.
+  The `beq` branch at 0x77a244 targets 0x77a28c, is taken when t9(=[a0+320248]:1) == 0, and falls through when t9(=[a0+320248]:1) != 0.
+  The `beq` branch at 0x77a2e4 targets 0x779f74 and is always taken.
+  The `beq` branch at 0x77a330 targets 0x77a0c8 and is always taken.
+  The `beq` branch at 0x77a354 targets 0x77a18c and is always taken.
+  The return at 0x77a208 has v0 = one of ?, ret(__R300TCLWriteUserClipPlaneData).
+  The return at 0x77a30c has v0 = ret(__R300UpdateHWTexState).
+
+- `__R300WriteViewportTransform` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x77bb40 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x77bb40-0x77bc68 (296 bytes).
+  It occupies 296 bytes.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ec8, including `lw` at 0x77bb50, `lw` at 0x77bb5c, `lw` at 0x77bb6c.
+  The `sw` at 0x77bb58 stores 4 bytes to [a0+294600] +0x4.
+  The `sw` at 0x77bb64 stores 4 bytes to [a0+294600] +0x0.
+  The `lw` at 0x77bb68 loads 4 bytes from a0 (arg0 at entry) +0x47ecc.
+  The `lw` at 0x77bb70 loads 4 bytes from a0 (arg0 at entry) +0x47ec4.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x47ec8, including `sw` at 0x77bb9c, `sw` at 0x77bc64.
+  The `sw` at 0x77bbac stores 4 bytes to a1 (arg1 at entry) +0x0.
+  The `lw` at 0x77bbb0 loads 4 bytes from a0 (arg0 at entry) +0x47294.
+  The `sw` at 0x77bbb4 stores 4 bytes to a1 (arg1 at entry) +0x4.
+  The `lw` at 0x77bbb8 loads 4 bytes from a0 (arg0 at entry) +0x47290.
+  The `sw` at 0x77bbbc stores 4 bytes to a1 (arg1 at entry) +0x8.
+  The `lw` at 0x77bbc0 loads 4 bytes from a0 (arg0 at entry) +0x4729c.
+  The `sw` at 0x77bbc4 stores 4 bytes to a1 (arg1 at entry) +0xc.
+  The `lw` at 0x77bbc8 loads 4 bytes from a0 (arg0 at entry) +0x47298.
+  The `sw` at 0x77bbcc stores 4 bytes to a1 (arg1 at entry) +0x10.
+  The `lw` at 0x77bbd0 loads 4 bytes from a0 (arg0 at entry) +0x472a4.
+  The `sw` at 0x77bbd4 stores 4 bytes to a1 (arg1 at entry) +0x14.
+  The `lw` at 0x77bbdc loads 4 bytes from a0 (arg0 at entry) +0x472a0.
+  The `sw` at 0x77bbe4 stores 4 bytes to a1 (arg1 at entry) +0x1c.
+  The `sw` at 0x77bbe8 stores 4 bytes to a1 (arg1 at entry) +0x18.
+  The `lw` at 0x77bbec loads 4 bytes from a0 (arg0 at entry) +0x472b0.
+  The `sw` at 0x77bbf0 stores 4 bytes to a1 (arg1 at entry) +0x20.
+  The `lw` at 0x77bbf4 loads 4 bytes from a0 (arg0 at entry) +0x472b4.
+  The `sw` at 0x77bbf8 stores 4 bytes to a1 (arg1 at entry) +0x24.
+  The `lw` at 0x77bbfc loads 4 bytes from a0 (arg0 at entry) +0x472b8.
+  The `sw` at 0x77bc00 stores 4 bytes to a1 (arg1 at entry) +0x28.
+  The `lw` at 0x77bc04 loads 4 bytes from a0 (arg0 at entry) +0x472bc.
+  The `sw` at 0x77bc10 stores 4 bytes to a1 (arg1 at entry) +0x2c.
+  The `sw` at 0x77bc24 stores 4 bytes to a0 (arg0 at entry) +0x47ecc.
+  The `lw` at 0x77bc28 loads 4 bytes from a0 (arg0 at entry) +0x8.
+  The `sw` at 0x77bc54 stores 4 bytes to a0 (arg0 at entry) +0x47ec4.
+  The `jalr` at 0x77bc40 calls (unknown callee) with a0=[a0+294596], a1=(([a0+294604] + [a0+294604]) << 0x4), a2=a2 at entry (arg2), a3=[a0+294596], a5=[a0+294604], a6=[a0+294600]+16, a7=a0 at entry (arg0).
+  The `beq` branch at 0x77bb98 targets 0x77bc1c, is taken when a6(=[a0+294600]+16) >= at(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned), and falls through when a6(=[a0+294600]+16) < at(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned).
+  The `beq` branch at 0x77bc60 targets 0x77bba0 and is always taken.
+  The return at 0x77bc14 has v0 = a1+48.
+
+- `__R300WriteScissorRegisters` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x77bc80 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x77bc80-0x77bdcc (332 bytes).
+  It occupies 332 bytes.
+  The `lbu` at 0x77bc8c loads 1 byte from a0 (arg0 at entry) +0x4e2f8.
+  The `lw` at 0x77bcbc loads 4 bytes from a0 (arg0 at entry) +0x38da0.
+  The `lbu` at 0x77bcc0 loads 1 byte from [a0+232864] +0x36a.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ec8, including `lw` at 0x77bccc, `lw` at 0x77bcd8, `lw` at 0x77bce8.
+  The `sw` at 0x77bcd4 stores 4 bytes to [a0+294600] +0x4.
+  The `sw` at 0x77bcdc stores 4 bytes to [a0+294600] +0x0.
+  The `lw` at 0x77bce0 loads 4 bytes from a0 (arg0 at entry) +0x47ec4.
+  The `lw` at 0x77bce4 loads 4 bytes from a0 (arg0 at entry) +0x47ecc.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x47ec8, including `sw` at 0x77bd00, `sw` at 0x77bd7c.
+  The `sw` at 0x77bd0c stores 4 bytes to a1 (arg1 at entry) +0x0.
+  The `lw` at 0x77bd10 loads 4 bytes from a0 (arg0 at entry) +0x471a0.
+  The `sw` at 0x77bd18 stores 4 bytes to a1 (arg1 at entry) +0x8.
+  The `sw` at 0x77bd1c stores 4 bytes to a1 (arg1 at entry) +0x4.
+  The `lw` at 0x77bd20 loads 4 bytes from a0 (arg0 at entry) +0x47154.
+  The `sw` at 0x77bd2c stores 4 bytes to a1 (arg1 at entry) +0xc.
+  The `sw` at 0x77bd44 stores 4 bytes to a0 (arg0 at entry) +0x47ecc.
+  The `lw` at 0x77bd48 loads 4 bytes from a0 (arg0 at entry) +0x8.
+  The `sw` at 0x77bd6c stores 4 bytes to a0 (arg0 at entry) +0x47ec4.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x4e2fc, including `lw` at 0x77bd80, `lw` at 0x77bda0, `lw` at 0x77bdbc.
+  The `sw` at 0x77bd9c stores 4 bytes to table(0x4e30c) +0x0.
+  The `sw` at 0x77bdb8 stores 4 bytes to table(0x4e310) +0x0.
+  The `sw` at 0x77bdc8 stores 4 bytes to a0 (arg0 at entry) +0x4e2fc.
+  The `jalr` at 0x77bd5c calls (unknown callee) with a0=[a0+294596], a1=(([a0+294604] + [a0+294604]) << 0x4), a2=a2 at entry (arg2), a3=a0 at entry (arg0), a4=[a0+294604], a5=[a0+294600]+16, a6=[a0+294600], a7=0x10.
+  The `beq` branch at 0x77bcb4 targets 0x77bccc, is taken when v1(=[a0+320248]:1) == 0, and falls through when v1(=[a0+320248]:1) != 0.
+  The `beq` branch at 0x77bcc4 targets 0x77bd80, is taken when t8(=[[a0+232864]+874]:1) == 0, and falls through when t8(=[[a0+232864]+874]:1) != 0.
+  The `beq` branch at 0x77bcfc targets 0x77bd40, is taken when a5(=[a0+294600]+16) >= t9(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned), and falls through when a5(=[a0+294600]+16) < t9(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned).
+  The `beq` branch at 0x77bd78 targets 0x77bd04 and is always taken.
+  The `beq` branch at 0x77bdc4 targets 0x77bccc and is always taken.
+  The return at 0x77bd34 has v0 = a1+16.
+  The instructions from 0x77bd3c to 0x77bd3c are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300WriteDepthOffsetRegisters` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x77c080 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x77c080-0x77c170 (240 bytes).
+  It occupies 240 bytes.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ec8, including `lw` at 0x77c08c, `lw` at 0x77c098, `lw` at 0x77c0ac.
+  The `sw` at 0x77c094 stores 4 bytes to [a0+294600] +0x4.
+  The `sw` at 0x77c0a0 stores 4 bytes to [a0+294600] +0x0.
+  The `lw` at 0x77c0a4 loads 4 bytes from a0 (arg0 at entry) +0x47ec4.
+  The `lw` at 0x77c0a8 loads 4 bytes from a0 (arg0 at entry) +0x47ecc.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x47ec8, including `sw` at 0x77c0e0, `sw` at 0x77c154.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x0, including `sw` at 0x77c0e4, `sw` at 0x77c160.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x4, including `sw` at 0x77c0ec, `sw` at 0x77c164.
+  The `sw` at 0x77c108 stores 4 bytes to a0 (arg0 at entry) +0x47ecc.
+  The `lw` at 0x77c10c loads 4 bytes from a0 (arg0 at entry) +0x8.
+  The `sw` at 0x77c148 stores 4 bytes to a0 (arg0 at entry) +0x47ec4.
+  The `jalr` at 0x77c128 calls (unknown callee) with a0=[a0+294596], a1=(([a0+294604] + [a0+294604]) << 0x4), a2=a2 at entry (arg2), a3=a3 at entry (arg3), a5=[a0+294596], a6=[a0+294600]+16, a7=[a0+294604].
+  The `beq` branch at 0x77c0dc targets 0x77c100, is taken when a6(=[a0+294600]+16) >= v1(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned), and falls through when a6(=[a0+294600]+16) < v1(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned).
+  The return at 0x77c0f4 has v0 = a1+8.
+  The return at 0x77c168 has v0 = a1+8.
+  The instructions from 0x77c0fc to 0x77c0fc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300WriteDepthPitchRegisters` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x77c180 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x77c180-0x77c270 (240 bytes).
+  It occupies 240 bytes.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ec8, including `lw` at 0x77c18c, `lw` at 0x77c198, `lw` at 0x77c1ac.
+  The `sw` at 0x77c194 stores 4 bytes to [a0+294600] +0x4.
+  The `sw` at 0x77c1a0 stores 4 bytes to [a0+294600] +0x0.
+  The `lw` at 0x77c1a4 loads 4 bytes from a0 (arg0 at entry) +0x47ec4.
+  The `lw` at 0x77c1a8 loads 4 bytes from a0 (arg0 at entry) +0x47ecc.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x47ec8, including `sw` at 0x77c1e0, `sw` at 0x77c254.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x0, including `sw` at 0x77c1e4, `sw` at 0x77c260.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x4, including `sw` at 0x77c1ec, `sw` at 0x77c264.
+  The `sw` at 0x77c208 stores 4 bytes to a0 (arg0 at entry) +0x47ecc.
+  The `lw` at 0x77c20c loads 4 bytes from a0 (arg0 at entry) +0x8.
+  The `sw` at 0x77c248 stores 4 bytes to a0 (arg0 at entry) +0x47ec4.
+  The `jalr` at 0x77c228 calls (unknown callee) with a0=[a0+294596], a1=(([a0+294604] + [a0+294604]) << 0x4), a2=a2 at entry (arg2), a3=a3 at entry (arg3), a4=[a0+294596], a5=[a0+294600]+16, a6=[a0+294604], a7=a0 at entry (arg0).
+  The `beq` branch at 0x77c1dc targets 0x77c200, is taken when a5(=[a0+294600]+16) >= v1(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned), and falls through when a5(=[a0+294600]+16) < v1(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned).
+  The return at 0x77c1f4 has v0 = a1+8.
+  The return at 0x77c268 has v0 = a1+8.
+  The instructions from 0x77c1fc to 0x77c1fc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300WriteAccumOffsetRegisters` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x77c380 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x77c380-0x77c470 (240 bytes).
+  It occupies 240 bytes.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ec8, including `lw` at 0x77c38c, `lw` at 0x77c398, `lw` at 0x77c3ac.
+  The `sw` at 0x77c394 stores 4 bytes to [a0+294600] +0x4.
+  The `sw` at 0x77c3a0 stores 4 bytes to [a0+294600] +0x0.
+  The `lw` at 0x77c3a4 loads 4 bytes from a0 (arg0 at entry) +0x47ec4.
+  The `lw` at 0x77c3a8 loads 4 bytes from a0 (arg0 at entry) +0x47ecc.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x47ec8, including `sw` at 0x77c3e0, `sw` at 0x77c454.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x0, including `sw` at 0x77c3e4, `sw` at 0x77c460.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x4, including `sw` at 0x77c3ec, `sw` at 0x77c464.
+  The `sw` at 0x77c408 stores 4 bytes to a0 (arg0 at entry) +0x47ecc.
+  The `lw` at 0x77c40c loads 4 bytes from a0 (arg0 at entry) +0x8.
+  The `sw` at 0x77c448 stores 4 bytes to a0 (arg0 at entry) +0x47ec4.
+  The `jalr` at 0x77c428 calls (unknown callee) with a0=[a0+294596], a1=(([a0+294604] + [a0+294604]) << 0x4), a2=a2 at entry (arg2), a3=a3 at entry (arg3), a4=[a0+294596], a5=[a0+294600]+16, a6=[a0+294604], a7=a0 at entry (arg0).
+  The `beq` branch at 0x77c3dc targets 0x77c400, is taken when a5(=[a0+294600]+16) >= v1(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned), and falls through when a5(=[a0+294600]+16) < v1(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned).
+  The return at 0x77c3f4 has v0 = a1+8.
+  The return at 0x77c468 has v0 = a1+8.
+  The instructions from 0x77c3fc to 0x77c3fc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300WriteAccumPitchRegisters` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x77c480 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x77c480-0x77c570 (240 bytes).
+  It occupies 240 bytes.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ec8, including `lw` at 0x77c48c, `lw` at 0x77c498, `lw` at 0x77c4ac.
+  The `sw` at 0x77c494 stores 4 bytes to [a0+294600] +0x4.
+  The `sw` at 0x77c4a0 stores 4 bytes to [a0+294600] +0x0.
+  The `lw` at 0x77c4a4 loads 4 bytes from a0 (arg0 at entry) +0x47ec4.
+  The `lw` at 0x77c4a8 loads 4 bytes from a0 (arg0 at entry) +0x47ecc.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x47ec8, including `sw` at 0x77c4e0, `sw` at 0x77c554.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x0, including `sw` at 0x77c4e4, `sw` at 0x77c560.
+  2 such `sw` accesses store 4 bytes to a1 (arg1 at entry) +0x4, including `sw` at 0x77c4ec, `sw` at 0x77c564.
+  The `sw` at 0x77c508 stores 4 bytes to a0 (arg0 at entry) +0x47ecc.
+  The `lw` at 0x77c50c loads 4 bytes from a0 (arg0 at entry) +0x8.
+  The `sw` at 0x77c548 stores 4 bytes to a0 (arg0 at entry) +0x47ec4.
+  The `jalr` at 0x77c528 calls (unknown callee) with a0=[a0+294596], a1=(([a0+294604] + [a0+294604]) << 0x4), a2=a2 at entry (arg2), a3=a3 at entry (arg3), a4=[a0+294596], a5=[a0+294600]+16, a6=[a0+294604], a7=a0 at entry (arg0).
+  The `beq` branch at 0x77c4dc targets 0x77c500, is taken when a5(=[a0+294600]+16) >= v1(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned), and falls through when a5(=[a0+294600]+16) < v1(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned).
+  The return at 0x77c4f4 has v0 = a1+8.
+  The return at 0x77c568 has v0 = a1+8.
+  The instructions from 0x77c4fc to 0x77c4fc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300WriteCmaskEnableRegistersAbort` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x77c680 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x77c680-0x77c7a8 (296 bytes).
+  It occupies 296 bytes.
+  The `lw` at 0x77c694 loads 4 bytes from a0 (arg0 at entry) +0x46c64.
+  The `lw` at 0x77c6b8 loads 4 bytes from a0 (arg0 at entry) +0x38da0.
+  The `lbu` at 0x77c6bc loads 1 byte from [a0+232864] +0x859.
+  The `lbu` at 0x77c6dc loads 1 byte from a0 (arg0 at entry) +0x47ef5.
+  The `lbu` at 0x77c6e4 loads 1 byte from a0 (arg0 at entry) +0x47ef6.
+  The `sw` at 0x77c6e8 stores 4 bytes to a1 (arg1 at entry) +0x0.
+  The `sw` at 0x77c6ec stores 4 bytes to a1 (arg1 at entry) +0x4.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ec8, including `lw` at 0x77c6f0, `lw` at 0x77c6fc, `lw` at 0x77c710.
+  The `sw` at 0x77c6f8 stores 4 bytes to [a0+294600] +0x4.
+  The `sw` at 0x77c704 stores 4 bytes to [a0+294600] +0x0.
+  The `lw` at 0x77c708 loads 4 bytes from a0 (arg0 at entry) +0x47ec4.
+  The `lw` at 0x77c70c loads 4 bytes from a0 (arg0 at entry) +0x47ecc.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x47ec8, including `sw` at 0x77c728, `sw` at 0x77c780.
+  The `sw` at 0x77c748 stores 4 bytes to a0 (arg0 at entry) +0x47ecc.
+  The `lw` at 0x77c74c loads 4 bytes from a0 (arg0 at entry) +0x8.
+  The `sw` at 0x77c774 stores 4 bytes to a0 (arg0 at entry) +0x47ec4.
+  The `jalr` at 0x77c760 calls (unknown callee) with a0=[a0+294596], a1=(([a0+294604] + [a0+294604]) << 0x4), a2=?, a3=?, a4=[a0+294600]+16, a5=[a0+294604], a6=a0 at entry (arg0), a7=0x1380.
+  The `beq` branch at 0x77c6b0 targets 0x77c6e8, is taken when v1(=[a0+289892]) == 0, and falls through when v1(=[a0+289892]) != 0.
+  The `beq` branch at 0x77c6d4 targets 0x77c6e8, is taken when t8(?) == 0, and falls through when t8(?) != 0.
+  The `beq` branch at 0x77c6e0 targets 0x77c798, is taken when at(=[a0+294645]:1) == 0, and falls through when at(=[a0+294645]:1) != 0.
+  The `beq` branch at 0x77c724 targets 0x77c744, is taken when a4(=[a0+294600]+16) >= v1(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned), and falls through when a4(=[a0+294600]+16) < v1(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned).
+  The `bne` branch at 0x77c798 targets 0x77c6e8, is taken when a0(=[a0+294646]:1) != 0, and falls through when a0(=[a0+294646]:1) == 0.
+  The `beq` branch at 0x77c7a0 targets 0x77c6e8 and is always taken.
+  The return at 0x77c73c has v0 = a1+8.
+  The return at 0x77c790 has v0 = a1+8.
+
+- `__R300LoadContext` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x77ee40 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x77ee40-0x77fc04 (3524 bytes).
+  It occupies 3524 bytes.
+  8 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x77ee50, `lw` at 0x77ee98, `lw` at 0x77f388.
+  6 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x77ee54, `lw` at 0x77ee9c, `lw` at 0x77f38c.
+  The `lw` at 0x77eeb4 loads 4 bytes from a0 (arg0 at entry) +0x46d54.
+  2 such `sw` accesses store 4 bytes to [a0+290136] +0x0, including `sw` at 0x77eec4, `sw` at 0x77f9dc.
+  The `lw` at 0x77eec8 loads 4 bytes from a0 (arg0 at entry) +0x38da0.
+  The `lw` at 0x77eecc loads 4 bytes from [a0+232864] +0x4.
+  The `lw` at 0x77eedc loads 4 bytes from [a0+232864] +0x1c.
+  The `lw` at 0x77eee0 loads 4 bytes from [[a0+232864]+28] +0x0.
+  3 such `sw` accesses store 4 bytes to [a0+290136] +0x4, including `sw` at 0x77ef08, `sw` at 0x77ef0c, `sw` at 0x77f9e8.
+  13 such `sw` accesses store 4 bytes to ?, including `sw` at 0x77ef1c, `sw` at 0x77ef28, `sw` at 0x77ef34.
+  The `lw` at 0x77ef44 loads 4 bytes from a0 (arg0 at entry) +0x47c30.
+  The `lw` at 0x77ef58 loads 4 bytes from a0 (arg0 at entry) +0x47c34.
+  The `sw` at 0x77ef5c stores 4 bytes to ret(__R300WriteColorOffsetRegisters) +0x0.
+  The `lw` at 0x77ef60 loads 4 bytes from a0 (arg0 at entry) +0x47c38.
+  The `sw` at 0x77ef64 stores 4 bytes to ret(__R300WriteColorOffsetRegisters) +0x4.
+  The `lw` at 0x77ef68 loads 4 bytes from a0 (arg0 at entry) +0x47c3c.
+  The `sw` at 0x77ef74 stores 4 bytes to ret(__R300WriteColorOffsetRegisters) +0x8.
+  The `lw` at 0x77ef84 loads 4 bytes from a0 (arg0 at entry) +0x47c40.
+  The `lw` at 0x77ef88 loads 4 bytes from a0 (arg0 at entry) +0x47c44.
+  The `sw` at 0x77ef8c stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x0.
+  The `lw` at 0x77ef90 loads 4 bytes from a0 (arg0 at entry) +0x47c48.
+  The `sw` at 0x77ef94 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x4.
+  The `lw` at 0x77ef98 loads 4 bytes from a0 (arg0 at entry) +0x47c4c.
+  The `sw` at 0x77efa0 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xc.
+  The `sw` at 0x77efa4 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x8.
+  The `lw` at 0x77efa8 loads 4 bytes from a0 (arg0 at entry) +0x47144.
+  The `sw` at 0x77efac stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x10.
+  18 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ec8, including `lw` at 0x77efb0, `lw` at 0x77efbc, `lw` at 0x77efd0.
+  6 such `sw` accesses store 4 bytes to [a0+294600] +0x4, including `sw` at 0x77efb8, `sw` at 0x77f024, `sw` at 0x77f43c.
+  6 such `sw` accesses store 4 bytes to [a0+294600] +0x0, including `sw` at 0x77efc4, `sw` at 0x77f030, `sw` at 0x77f448.
+  6 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ec4, including `lw` at 0x77efc8, `lw` at 0x77f034, `lw` at 0x77f44c.
+  6 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ecc, including `lw` at 0x77efcc, `lw` at 0x77f038, `lw` at 0x77f450.
+  12 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x47ec8, including `sw` at 0x77efec, `sw` at 0x77f054, `sw` at 0x77f470.
+  The `sw` at 0x77eff8 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x14.
+  The `lw` at 0x77effc loads 4 bytes from a0 (arg0 at entry) +0x47c50.
+  The `sw` at 0x77f000 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x18.
+  The `lw` at 0x77f004 loads 4 bytes from a0 (arg0 at entry) +0x47c54.
+  The `sw` at 0x77f008 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x1c.
+  The `lw` at 0x77f00c loads 4 bytes from a0 (arg0 at entry) +0x47c58.
+  The `sw` at 0x77f010 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x20.
+  The `lw` at 0x77f014 loads 4 bytes from a0 (arg0 at entry) +0x47c5c.
+  The `sw` at 0x77f018 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x24.
+  The `sw` at 0x77f060 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x28.
+  The `lw` at 0x77f064 loads 4 bytes from a0 (arg0 at entry) +0x47c60.
+  The `sw` at 0x77f068 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x2c.
+  The `lw` at 0x77f06c loads 4 bytes from a0 (arg0 at entry) +0x47c64.
+  The `sw` at 0x77f070 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x30.
+  The `lw` at 0x77f074 loads 4 bytes from a0 (arg0 at entry) +0x47c68.
+  The `sw` at 0x77f078 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x34.
+  The `lw` at 0x77f07c loads 4 bytes from a0 (arg0 at entry) +0x47c6c.
+  The `sw` at 0x77f084 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x3c.
+  The `sw` at 0x77f088 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x38.
+  The `lw` at 0x77f08c loads 4 bytes from a0 (arg0 at entry) +0x471c8.
+  The `sw` at 0x77f094 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x44.
+  The `sw` at 0x77f098 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x40.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47158, including `lw` at 0x77f09c, `lw` at 0x77f528.
+  The `sw` at 0x77f0a4 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x4c.
+  The `sw` at 0x77f0a8 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x48.
+  The `lw` at 0x77f0ac loads 4 bytes from a0 (arg0 at entry) +0x47174.
+  The `sw` at 0x77f0b4 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x54.
+  The `sw` at 0x77f0b8 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x50.
+  The `lw` at 0x77f0bc loads 4 bytes from a0 (arg0 at entry) +0x47180.
+  The `sw` at 0x77f0c4 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x5c.
+  The `sw` at 0x77f0c8 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x58.
+  The `lw` at 0x77f0cc loads 4 bytes from a0 (arg0 at entry) +0x47184.
+  The `sw` at 0x77f0d4 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x64.
+  The `sw` at 0x77f0d8 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x60.
+  The `lw` at 0x77f0dc loads 4 bytes from a0 (arg0 at entry) +0x4718c.
+  The `sw` at 0x77f0e4 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x6c.
+  The `sw` at 0x77f0e8 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x68.
+  The `lw` at 0x77f0ec loads 4 bytes from a0 (arg0 at entry) +0x47194.
+  The `sw` at 0x77f0f4 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x74.
+  The `sw` at 0x77f0f8 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x70.
+  The `lw` at 0x77f0fc loads 4 bytes from a0 (arg0 at entry) +0x4719c.
+  The `sw` at 0x77f104 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x7c.
+  The `sw` at 0x77f108 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x78.
+  The `lw` at 0x77f10c loads 4 bytes from a0 (arg0 at entry) +0x471ac.
+  The `sw` at 0x77f114 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x84.
+  The `sw` at 0x77f118 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x80.
+  The `lw` at 0x77f11c loads 4 bytes from a0 (arg0 at entry) +0x471b0.
+  The `sw` at 0x77f124 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x8c.
+  The `sw` at 0x77f128 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x88.
+  The `lw` at 0x77f12c loads 4 bytes from a0 (arg0 at entry) +0x471b4.
+  The `sw` at 0x77f134 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x94.
+  The `sw` at 0x77f138 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x90.
+  The `lw` at 0x77f13c loads 4 bytes from a0 (arg0 at entry) +0x471b8.
+  The `sw` at 0x77f144 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x9c.
+  The `sw` at 0x77f148 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x98.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x470b8, including `lw` at 0x77f14c, `lw` at 0x77f5d8.
+  The `sw` at 0x77f154 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xa4.
+  The `sw` at 0x77f158 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xa0.
+  The `lw` at 0x77f160 loads 4 bytes from a0 (arg0 at entry) +0x470b4.
+  The `sw` at 0x77f168 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xac.
+  The `sw` at 0x77f16c stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xa8.
+  The `lw` at 0x77f170 loads 4 bytes from a0 (arg0 at entry) +0x470bc.
+  The `sw` at 0x77f174 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xb0.
+  The `lw` at 0x77f178 loads 4 bytes from a0 (arg0 at entry) +0x470c0.
+  The `sw` at 0x77f180 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xb8.
+  The `sw` at 0x77f184 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xb4.
+  The `lw` at 0x77f188 loads 4 bytes from a0 (arg0 at entry) +0x471a8.
+  The `sw` at 0x77f190 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xc0.
+  The `sw` at 0x77f194 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xbc.
+  The `lw` at 0x77f198 loads 4 bytes from a0 (arg0 at entry) +0x47c70.
+  The `sw` at 0x77f1a0 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xc8.
+  The `sw` at 0x77f1a4 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xc4.
+  The `lw` at 0x77f1a8 loads 4 bytes from a0 (arg0 at entry) +0x47190.
+  The `sw` at 0x77f1b0 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xd0.
+  The `sw` at 0x77f1b4 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xcc.
+  The `lw` at 0x77f1bc loads 4 bytes from a0 (arg0 at entry) +0x4716c.
+  The `sw` at 0x77f1c4 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xd8.
+  The `sw` at 0x77f1c8 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xd4.
+  The `lw` at 0x77f1cc loads 4 bytes from a0 (arg0 at entry) +0x47bf4.
+  The `sw` at 0x77f1d0 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xdc.
+  The `lw` at 0x77f1d4 loads 4 bytes from a0 (arg0 at entry) +0x47bf8.
+  The `sw` at 0x77f1d8 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xe0.
+  The `lw` at 0x77f1dc loads 4 bytes from a0 (arg0 at entry) +0x47bfc.
+  The `sw` at 0x77f1e0 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xe4.
+  The `lw` at 0x77f1e4 loads 4 bytes from a0 (arg0 at entry) +0x47c00.
+  The `sw` at 0x77f1ec stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xec.
+  The `sw` at 0x77f1f0 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xe8.
+  The `lw` at 0x77f1f4 loads 4 bytes from a0 (arg0 at entry) +0x470e0.
+  The `sw` at 0x77f1fc stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xf4.
+  The `sw` at 0x77f200 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xf0.
+  The `lw` at 0x77f204 loads 4 bytes from a0 (arg0 at entry) +0x470d0.
+  The `sw` at 0x77f20c stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xfc.
+  The `sw` at 0x77f210 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0xf8.
+  The `lw` at 0x77f218 loads 4 bytes from a0 (arg0 at entry) +0x470cc.
+  The `sw` at 0x77f220 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x100.
+  The `lbu` at 0x77f224 loads 1 byte from a0 (arg0 at entry) +0x4e2f8.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x4e2fc, including `lw` at 0x77f230, `lw` at 0x77f24c, `lw` at 0x77f26c.
+  The `sw` at 0x77f248 stores 4 bytes to table(0x4e30c) +0x0.
+  The `sw` at 0x77f268 stores 4 bytes to table(0x4e310) +0x0.
+  The `sw` at 0x77f274 stores 4 bytes to a0 (arg0 at entry) +0x4e2fc.
+  The `sw` at 0x77f280 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x104.
+  The `lw` at 0x77f284 loads 4 bytes from a0 (arg0 at entry) +0x47170.
+  The `sw` at 0x77f28c stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x10c.
+  The `sw` at 0x77f290 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x108.
+  The `lw` at 0x77f298 loads 4 bytes from a0 (arg0 at entry) +0x472a8.
+  The `sw` at 0x77f2a0 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x114.
+  The `sw` at 0x77f2a4 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x110.
+  The `lw` at 0x77f2a8 loads 4 bytes from a0 (arg0 at entry) +0x471e0.
+  The `sw` at 0x77f2ac stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x118.
+  The `lw` at 0x77f2b0 loads 4 bytes from a0 (arg0 at entry) +0x471e4.
+  The `sw` at 0x77f2b8 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x120.
+  The `sw` at 0x77f2bc stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x11c.
+  The `lw` at 0x77f2c0 loads 4 bytes from a0 (arg0 at entry) +0x472ac.
+  The `sw` at 0x77f2c8 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x128.
+  The `sw` at 0x77f2cc stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x124.
+  The `lw` at 0x77f2d0 loads 4 bytes from a0 (arg0 at entry) +0x471c0.
+  The `sw` at 0x77f2d8 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x130.
+  The `sw` at 0x77f2dc stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x12c.
+  The `lw` at 0x77f2e0 loads 4 bytes from a0 (arg0 at entry) +0x471cc.
+  The `sw` at 0x77f2e8 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x138.
+  The `sw` at 0x77f2ec stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x134.
+  The `lw` at 0x77f2f0 loads 4 bytes from a0 (arg0 at entry) +0x471bc.
+  The `sw` at 0x77f2f8 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x140.
+  The `sw` at 0x77f2fc stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x13c.
+  The `lw` at 0x77f300 loads 4 bytes from a0 (arg0 at entry) +0x471d0.
+  The `sw` at 0x77f308 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x148.
+  The `sw` at 0x77f30c stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x144.
+  The `lw` at 0x77f310 loads 4 bytes from a0 (arg0 at entry) +0x472c0.
+  The `sw` at 0x77f318 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x168.
+  The `sw` at 0x77f320 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x164.
+  The `sw` at 0x77f32c stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x160.
+  The `sw` at 0x77f334 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x15c.
+  The `sw` at 0x77f33c stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x158.
+  The `sw` at 0x77f340 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x154.
+  The `sw` at 0x77f348 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x150.
+  The `sw` at 0x77f34c stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x14c.
+  The `lw` at 0x77f350 loads 4 bytes from a0 (arg0 at entry) +0x47198.
+  The `sw` at 0x77f358 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x170.
+  The `sw` at 0x77f35c stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x16c.
+  The `lw` at 0x77f360 loads 4 bytes from a0 (arg0 at entry) +0x47108.
+  The `sw` at 0x77f368 stores 4 bytes to ret(__R300WriteColorPitchRegisters) +0x174.
+  4 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x46d58, including `sw` at 0x77f374, `sw` at 0x77f800, `sw` at 0x77f9f8.
+  The `lw` at 0x77f37c loads 4 bytes from a0 (arg0 at entry) +0x47138.
+  The `sw` at 0x77f3dc stores 4 bytes to ret(__R300WriteViewportTransform) +0x0.
+  The `lw` at 0x77f3e0 loads 4 bytes from a0 (arg0 at entry) +0x472d8.
+  The `sw` at 0x77f3e8 stores 4 bytes to ret(__R300WriteViewportTransform) +0x8.
+  The `sw` at 0x77f3ec stores 4 bytes to ret(__R300WriteViewportTransform) +0x4.
+  The `lw` at 0x77f3f4 loads 4 bytes from a0 (arg0 at entry) +0x472d4.
+  The `sw` at 0x77f3fc stores 4 bytes to ret(__R300WriteViewportTransform) +0x10.
+  The `sw` at 0x77f400 stores 4 bytes to ret(__R300WriteViewportTransform) +0xc.
+  The `lw` at 0x77f404 loads 4 bytes from a0 (arg0 at entry) +0x472c4.
+  The `sw` at 0x77f408 stores 4 bytes to ret(__R300WriteViewportTransform) +0x14.
+  The `lw` at 0x77f40c loads 4 bytes from a0 (arg0 at entry) +0x472cc.
+  The `sw` at 0x77f410 stores 4 bytes to ret(__R300WriteViewportTransform) +0x18.
+  The `lw` at 0x77f414 loads 4 bytes from a0 (arg0 at entry) +0x472c8.
+  The `sw` at 0x77f418 stores 4 bytes to ret(__R300WriteViewportTransform) +0x1c.
+  The `lw` at 0x77f41c loads 4 bytes from a0 (arg0 at entry) +0x472d0.
+  The `sw` at 0x77f424 stores 4 bytes to ret(__R300WriteViewportTransform) +0x24.
+  The `sw` at 0x77f428 stores 4 bytes to ret(__R300WriteViewportTransform) +0x20.
+  The `lw` at 0x77f42c loads 4 bytes from a0 (arg0 at entry) +0x472dc.
+  The `sw` at 0x77f430 stores 4 bytes to ret(__R300WriteViewportTransform) +0x28.
+  The `sw` at 0x77f478 stores 4 bytes to ret(__R300WriteViewportTransform) +0x2c.
+  The `lw` at 0x77f47c loads 4 bytes from a0 (arg0 at entry) +0x472e0.
+  The `sw` at 0x77f480 stores 4 bytes to ret(__R300WriteViewportTransform) +0x30.
+  The `lw` at 0x77f4c0 loads 4 bytes from a0 (arg0 at entry) +0xdec.
+  The `lw` at 0x77f4d4 loads 4 bytes from a0 (arg0 at entry) +0x38624.
+  The `sw` at 0x77f4e0 stores 4 bytes to ret(__R300WriteViewportTransform) +0x34.
+  The `lw` at 0x77f4e8 loads 4 bytes from a0 (arg0 at entry) +0x470f4.
+  The `sw` at 0x77f4ec stores 4 bytes to ret(__R300WriteViewportTransform) +0x38.
+  The `sw` at 0x77f4f8 stores 4 bytes to (ret(__R300WriteViewportTransform) + one of 0x34, 0x3c) +0x0.
+  The `lw` at 0x77f4fc loads 4 bytes from a0 (arg0 at entry) +0x4714c.
+  The `sw` at 0x77f504 stores 4 bytes to (ret(__R300WriteViewportTransform) + one of 0x38, 0x40) +0x0.
+  The `lw` at 0x77f510 loads 4 bytes from a0 (arg0 at entry) +0x47140.
+  The `sw` at 0x77f53c stores 4 bytes to ret(SendColorMask) +0x0.
+  The `lw` at 0x77f540 loads 4 bytes from a0 (arg0 at entry) +0x4715c.
+  The `sw` at 0x77f548 stores 4 bytes to ret(SendColorMask) +0x8.
+  The `sw` at 0x77f54c stores 4 bytes to ret(SendColorMask) +0x4.
+  The `lw` at 0x77f550 loads 4 bytes from a0 (arg0 at entry) +0x47164.
+  The `sw` at 0x77f558 stores 4 bytes to ret(SendColorMask) +0x10.
+  The `sw` at 0x77f55c stores 4 bytes to ret(SendColorMask) +0xc.
+  The `lw` at 0x77f560 loads 4 bytes from a0 (arg0 at entry) +0x47160.
+  The `sw` at 0x77f568 stores 4 bytes to ret(SendColorMask) +0x18.
+  The `sw` at 0x77f56c stores 4 bytes to ret(SendColorMask) +0x14.
+  The `lw` at 0x77f574 loads 4 bytes from a0 (arg0 at entry) +0x47168.
+  The `sw` at 0x77f578 stores 4 bytes to ret(SendColorMask) +0x1c.
+  The `sw` at 0x77f590 stores 4 bytes to ret(__R300WriteScissorRegisters) +0x0.
+  The `lw` at 0x77f594 loads 4 bytes from a0 (arg0 at entry) +0x470a0.
+  The `sw` at 0x77f59c stores 4 bytes to ret(__R300WriteScissorRegisters) +0x8.
+  The `sw` at 0x77f5a0 stores 4 bytes to ret(__R300WriteScissorRegisters) +0x4.
+  The `lw` at 0x77f5a8 loads 4 bytes from a0 (arg0 at entry) +0x470a4.
+  The `sw` at 0x77f5b0 stores 4 bytes to ret(__R300WriteScissorRegisters) +0x10.
+  The `sw` at 0x77f5b4 stores 4 bytes to ret(__R300WriteScissorRegisters) +0xc.
+  The `lw` at 0x77f5b8 loads 4 bytes from a0 (arg0 at entry) +0x470a8.
+  The `sw` at 0x77f5bc stores 4 bytes to ret(__R300WriteScissorRegisters) +0x14.
+  The `lw` at 0x77f5c0 loads 4 bytes from a0 (arg0 at entry) +0x470ac.
+  The `sw` at 0x77f5c4 stores 4 bytes to ret(__R300WriteScissorRegisters) +0x18.
+  The `lw` at 0x77f5c8 loads 4 bytes from a0 (arg0 at entry) +0x470b0.
+  The `sw` at 0x77f5d0 stores 4 bytes to ret(__R300WriteScissorRegisters) +0x20.
+  The `sw` at 0x77f5d4 stores 4 bytes to ret(__R300WriteScissorRegisters) +0x1c.
+  The `sw` at 0x77f5e0 stores 4 bytes to ret(__R300WriteScissorRegisters) +0x28.
+  The `sw` at 0x77f5e4 stores 4 bytes to ret(__R300WriteScissorRegisters) +0x24.
+  The `lw` at 0x77f5e8 loads 4 bytes from a0 (arg0 at entry) +0x4713c.
+  The `sw` at 0x77f5f0 stores 4 bytes to ret(__R300WriteScissorRegisters) +0x30.
+  The `sw` at 0x77f5f4 stores 4 bytes to ret(__R300WriteScissorRegisters) +0x2c.
+  The `lw` at 0x77f5f8 loads 4 bytes from a0 (arg0 at entry) +0x470c4.
+  The `sw` at 0x77f600 stores 4 bytes to ret(__R300WriteScissorRegisters) +0x38.
+  The `sw` at 0x77f604 stores 4 bytes to ret(__R300WriteScissorRegisters) +0x34.
+  The `lw` at 0x77f60c loads 4 bytes from a0 (arg0 at entry) +0x470c8.
+  The `sw` at 0x77f614 stores 4 bytes to ret(__R300WriteScissorRegisters) +0x40.
+  The `sw` at 0x77f618 stores 4 bytes to ret(__R300WriteScissorRegisters) +0x3c.
+  The `lw` at 0x77f61c loads 4 bytes from a0 (arg0 at entry) +0x470d4.
+  The `sw` at 0x77f620 stores 4 bytes to ret(__R300WriteScissorRegisters) +0x44.
+  The `lw` at 0x77f624 loads 4 bytes from a0 (arg0 at entry) +0x470d8.
+  The `sw` at 0x77f62c stores 4 bytes to ret(__R300WriteScissorRegisters) +0x4c.
+  The `sw` at 0x77f630 stores 4 bytes to ret(__R300WriteScissorRegisters) +0x48.
+  The `lw` at 0x77f634 loads 4 bytes from a0 (arg0 at entry) +0x470dc.
+  The `sw` at 0x77f640 stores 4 bytes to ret(__R300WriteScissorRegisters) +0x50.
+  The `lw` at 0x77f64c loads 4 bytes from a0 (arg0 at entry) +0x470e4.
+  The `lw` at 0x77f660 loads 4 bytes from a0 (arg0 at entry) +0x470e8.
+  The `sw` at 0x77f668 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x0.
+  The `lw` at 0x77f66c loads 4 bytes from a0 (arg0 at entry) +0x47104.
+  The `sw` at 0x77f674 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x8.
+  The `sw` at 0x77f678 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x4.
+  The `lw` at 0x77f67c loads 4 bytes from a0 (arg0 at entry) +0x470f8.
+  The `sw` at 0x77f684 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x10.
+  The `sw` at 0x77f688 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0xc.
+  The `lw` at 0x77f68c loads 4 bytes from a0 (arg0 at entry) +0x470f0.
+  The `sw` at 0x77f694 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x18.
+  The `sw` at 0x77f698 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x14.
+  The `lw` at 0x77f69c loads 4 bytes from a0 (arg0 at entry) +0x470fc.
+  The `sw` at 0x77f6a4 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x20.
+  The `sw` at 0x77f6a8 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x1c.
+  The `lw` at 0x77f6ac loads 4 bytes from a0 (arg0 at entry) +0x470ec.
+  The `sw` at 0x77f6b4 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x28.
+  The `sw` at 0x77f6b8 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x24.
+  The `lw` at 0x77f6bc loads 4 bytes from a0 (arg0 at entry) +0x4712c.
+  The `sw` at 0x77f6c4 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x30.
+  The `sw` at 0x77f6c8 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x2c.
+  The `lw` at 0x77f6cc loads 4 bytes from a0 (arg0 at entry) +0x47178.
+  The `sw` at 0x77f6d4 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x38.
+  The `sw` at 0x77f6d8 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x34.
+  The `lw` at 0x77f6dc loads 4 bytes from a0 (arg0 at entry) +0x4717c.
+  The `sw` at 0x77f6e4 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x40.
+  The `sw` at 0x77f6e8 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x3c.
+  The `lw` at 0x77f6ec loads 4 bytes from a0 (arg0 at entry) +0x47130.
+  The `sw` at 0x77f6f4 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x48.
+  The `sw` at 0x77f6f8 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x44.
+  The `lw` at 0x77f6fc loads 4 bytes from a0 (arg0 at entry) +0x47134.
+  The `sw` at 0x77f700 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x4c.
+  The `sw` at 0x77f748 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x50.
+  The `lw` at 0x77f74c loads 4 bytes from a0 (arg0 at entry) +0x47100.
+  The `sw` at 0x77f750 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x54.
+  The `lbu` at 0x77f790 loads 1 byte from a0 (arg0 at entry) +0x47ef5.
+  The `sw` at 0x77f7a0 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x58.
+  The `lw` at 0x77f7a4 loads 4 bytes from a0 (arg0 at entry) +0x47c10.
+  The `sw` at 0x77f7b0 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x60.
+  The `sw` at 0x77f7b4 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x5c.
+  The `lw` at 0x77f7b8 loads 4 bytes from a0 (arg0 at entry) +0x47c18.
+  The `sw` at 0x77f7bc stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x64.
+  The `lw` at 0x77f7c4 loads 4 bytes from a0 (arg0 at entry) +0x47c14.
+  The `sw` at 0x77f7cc stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x6c.
+  The `sw` at 0x77f7d0 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x68.
+  The `lw` at 0x77f7d4 loads 4 bytes from a0 (arg0 at entry) +0x47c1c.
+  The `sw` at 0x77f7d8 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x70.
+  The `lw` at 0x77f7dc loads 4 bytes from a0 (arg0 at entry) +0x47c20.
+  The `sw` at 0x77f7e0 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x74.
+  The `lw` at 0x77f7e4 loads 4 bytes from a0 (arg0 at entry) +0x47c24.
+  The `sw` at 0x77f7e8 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x78.
+  The `lw` at 0x77f7ec loads 4 bytes from a0 (arg0 at entry) +0x47c28.
+  The `sw` at 0x77f7f0 stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x7c.
+  The `lw` at 0x77f7f8 loads 4 bytes from a0 (arg0 at entry) +0x47c2c.
+  The `sw` at 0x77f7fc stores 4 bytes to ret(__R300WriteDepthPitchRegisters) +0x80.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0xdf0, including `lw` at 0x77f804, `lw` at 0x77f96c.
+  The `sw` at 0x77f820 stores 4 bytes to (ret(__R300WriteDepthPitchRegisters) + one of 0x58, 0x84) +0x0.
+  The `lw` at 0x77f824 loads 4 bytes from a0 (arg0 at entry) +0x479e0.
+  The `sw` at 0x77f828 stores 4 bytes to (ret(__R300WriteDepthPitchRegisters) + one of 0x5c, 0x88) +0x0.
+  The `lw` at 0x77f82c loads 4 bytes from a0 (arg0 at entry) +0x479e4.
+  The `sw` at 0x77f838 stores 4 bytes to (ret(__R300WriteDepthPitchRegisters) + one of 0x60, 0x8c) +0x0.
+  The `lw` at 0x77f844 loads 4 bytes from a0 (arg0 at entry) +0x479e8.
+  The `sw` at 0x77f850 stores 4 bytes to (ret(__R300WriteDepthPitchRegisters) + one of 0x64, 0x90) +0x0.
+  The `lw` at 0x77f85c loads 4 bytes from a0 (arg0 at entry) +0x479ec.
+  8 such `lw` accesses load 4 bytes from ?, including `lw` at 0x77f868, `lw` at 0x77f870, `lw` at 0x77f878.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46890, including `lw` at 0x77f8d4, `lw` at 0x77f94c, `lw` at 0x77fc00.
+  2 such `lbu` accesses load 1 byte from a0 (arg0 at entry) +0x6064, including `lbu` at 0x77f8e0, `lbu` at 0x77f954.
+  The `lw` at 0x77f8ec loads 4 bytes from a0 (arg0 at entry) +0x600c.
+  The `lw` at 0x77f900 loads 4 bytes from a0 (arg0 at entry) +0xc884.
+  The `lbu` at 0x77f90c loads 1 byte from a0 (arg0 at entry) +0x6066.
+  The `lw` at 0x77f918 loads 4 bytes from a0 (arg0 at entry) +0xc06c.
+  The `lw` at 0x77f91c loads 4 bytes from a0 (arg0 at entry) +0xc070.
+  The `sw` at 0x77f938 stores 4 bytes to a0 (arg0 at entry) +0xc070.
+  The `sw` at 0x77f944 stores 4 bytes to a0 (arg0 at entry) +0xc06c.
+  The `sb` at 0x77f948 stores 1 byte to a0 (arg0 at entry) +0x63a6.
+  The `sb` at 0x77f968 stores 1 byte to a0 (arg0 at entry) +0x47cac.
+  The `lbu` at 0x77fa40 loads 1 byte from a0 (arg0 at entry) +0x47ef6.
+  6 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x47ecc, including `sw` at 0x77fa58, `sw` at 0x77fa94, `sw` at 0x77fad0.
+  6 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x8, including `lw` at 0x77fa5c, `lw` at 0x77fa98, `lw` at 0x77fad4.
+  6 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x47ec4, including `sw` at 0x77fa7c, `sw` at 0x77fab8, `sw` at 0x77faf0.
+  The `jalr` at 0x77ee90 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=[a0+290136], a2=?, a3=?.
+  The `bgezall` at 0x77ef48 calls __R300WriteColorOffsetRegisters [0x77be00] with a0=a0 at entry (arg0), a1=?, a2=[a0+293936], a3=0x4, a4=0x0.
+  The `bgezall` at 0x77ef80 calls __R300WriteColorPitchRegisters [0x77bf40] with a0=a0 at entry (arg0), a1=ret(__R300WriteColorOffsetRegisters)+12, a2=[a0+293952], a3=0x4.
+  The `bgezall` at 0x77f370 calls __R300PSCWrite [0x782f40] with a0=a0 at entry (arg0), a1=[a0+291520], a2=0x877, a3=[a0+291280], a4=0x8a2, a5=[a0+291260], a6=0x887, a7=[a0+291276].
+  The `bgezall` at 0x77f380 calls __R300UpdateHWTexState [0x778e40] with a0=a0 at entry (arg0), a1=[a0+291128], a2=?, a3=?.
+  The `jalr` at 0x77f3a8 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=[a0+290136], a2=?, a3=?.
+  The `bgezall` at 0x77f3d0 calls __R300WriteViewportTransform [0x77bb40] with a0=a0 at entry (arg0), a1=[a0+290136], a2=?, a3=?.
+  The `bgezall` at 0x77f50c calls __R300WriteCmaskEnableRegistersAbort [0x77c680] with a0=a0 at entry (arg0), a1=(ret(__R300WriteViewportTransform) + one of 0x3c, 0x44), a2=[a0+291136], a3=?.
+  The `jalr` at 0x77f520 calls SendColorMask [0x774fc0] with a0=a0 at entry (arg0), a1=ret(__R300WriteCmaskEnableRegistersAbort), a2=?, a3=?.
+  The `bgezall` at 0x77f580 calls __R300WriteScissorRegisters [0x77bc80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?, a6=0x10aa.
+  The `bgezall` at 0x77f648 calls __R300WriteDepthOffsetRegisters [0x77c080] with a0=a0 at entry (arg0), a1=ret(__R300WriteScissorRegisters)+84, a2=[a0+291044], a3=0x7, a4=[a0+290992], a5=[a0+290988], a6=[a0+290984], a7=[a0+291036].
+  The `bgezall` at 0x77f65c calls __R300WriteDepthPitchRegisters [0x77c180] with a0=a0 at entry (arg0), a1=ret(__R300WriteDepthOffsetRegisters), a2=[a0+291048], a3=?.
+  The `jalr` at 0x77f8c4 calls __R300LoadLargePSProgToHwRegs [0x6f1a40] with a0=a0 at entry (arg0), a1=0x1, a2=?, a3=?, a5=0x100a.
+  The `jalr` at 0x77f928 calls (unknown callee) with a0=a0 at entry (arg0), a1=0x1, a2=?, a3=?, a4=[a0+288912], a5=[a0+24676]:1, a6=[a0+24588].
+  The `jalr` at 0x77f964 calls __ATITCLWriteFFXData [0xac0040] with a0=a0 at entry (arg0), a1=0x1, a2=0x1, a3=?, a4=[a0+288912].
+  The `jalr` at 0x77f9a8 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=[a0+290136], a2=?, a3=?.
+  The `jalr` at 0x77fa6c calls (unknown callee) with a0=[a0+294596], a1=(([a0+294604] + [a0+294604]) << 0x4), a2=?, a3=?, a4=[a0+294600]+16, a5=[a0+294604], a6=[a0+294600], a7=[a0+294600].
+  The `jalr` at 0x77faa8 calls (unknown callee) with a0=[a0+294596], a1=(([a0+294604] + [a0+294604]) << 0x4), a2=?, a3=?, a4=[a0+294600]+16, a5=[a0+294604], a6=[a0+294600], a7=0x3.
+  The `jalr` at 0x77fae4 calls (unknown callee) with a0=[a0+294596], a1=(([a0+294604] + [a0+294604]) << 0x4), a2=?, a3=?, a4=[a0+294600]+16, a5=[a0+294604], a7=0xb.
+  The `jalr` at 0x77fb1c calls (unknown callee) with a0=[a0+294596], a1=(([a0+294604] + [a0+294604]) << 0x4), a2=?, a3=?, a4=[a0+294600]+16, a5=[a0+294604], a6=[a0+294600], a7=0xd.
+  The `jalr` at 0x77fb58 calls (unknown callee) with a0=[a0+294596], a1=(([a0+294604] + [a0+294604]) << 0x4), a2=?, a3=0x13c0, a4=[a0+294600]+16, a5=[a0+294604], a6=[a0+294600], a7=0x9.
+  The `jalr` at 0x77fb98 calls (unknown callee) with a0=[a0+294596], a1=(([a0+294604] + [a0+294604]) << 0x4), a2=?, a3=?, a4=[a0+294600]+16, a5=[a0+294604], a6=[a0+294600], a7=0xa.
+  The `jalr` at 0x77fbdc calls __R300LoadCachedPSProgToHwRegs [0x6f1380] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x77fbe8 calls __R300LoadAllCachedPSProgInstToHwRegs [0x6f1b40] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x77fbf4 calls __R300TCLWritePointSpriteData [0x813e00] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `beq` branch at 0x77ee84 targets 0x77eeb4, is taken when at(?) >= 0x6b (unsigned), and falls through when at(?) < 0x6b (unsigned).
+  The `bne` branch at 0x77eeac targets 0x77ee90, is taken when t8(?) < 0x6b (unsigned), and falls through when t8(?) >= 0x6b (unsigned).
+  The `bne` branch at 0x77eeb8 targets 0x77ef14, is taken when t9(=[a0+290132]) != a1(=[a0+290136]), and falls through when t9(=[a0+290132]) == a1(=[a0+290136]).
+  The `bne` branch at 0x77eed4 targets 0x77ef0c, is taken when a0(=[[a0+232864]+4]) < 0xa61 (unsigned), and falls through when a0(=[[a0+232864]+4]) >= 0xa61 (unsigned).
+  The `bne` branch at 0x77eeec targets 0x77ef0c, is taken when a6(=[[[a0+232864]+28]]) < 0xa61 (signed), and falls through when a6(=[[[a0+232864]+28]]) >= 0xa61 (signed).
+  The `beq` branch at 0x77ef04 targets 0x77ef10 and is always taken.
+  The `beq` branch at 0x77efe8 targets 0x77fa54, is taken when a4(=[a0+294600]+16) >= a2(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned), and falls through when a4(=[a0+294600]+16) < a2(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned).
+  The `beq` branch at 0x77f050 targets 0x77fa90, is taken when a4(=[a0+294600]+16) >= t9(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned), and falls through when a4(=[a0+294600]+16) < t9(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned).
+  The `beq` branch at 0x77f228 targets 0x77f27c, is taken when ra(=[a0+320248]:1) == 0, and falls through when ra(=[a0+320248]:1) != 0.
+  The `beq` branch at 0x77f39c targets 0x77f3d0, is taken when a3(?) >= 0x6b (unsigned), and falls through when a3(?) < 0x6b (unsigned).
+  The `bne` branch at 0x77f3c4 targets 0x77f3a8, is taken when a4(?) < 0x6b (unsigned), and falls through when a4(?) >= 0x6b (unsigned).
+  The `beq` branch at 0x77f46c targets 0x77facc, is taken when a4(=[a0+294600]+16) >= a6(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned), and falls through when a4(=[a0+294600]+16) < a6(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned).
+  The `beq` branch at 0x77f4b8 targets 0x77fb04, is taken when a4(=[a0+294600]+16) >= a2(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned), and falls through when a4(=[a0+294600]+16) < a2(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned).
+  The `beq` branch at 0x77f4cc targets 0x77f4f0, is taken when t3(?) == 0, and falls through when t3(?) != 0.
+  The `blez` branch at 0x77f4d8 targets 0x77f4f0, is taken when t8(=[a0+230948]) <= 0 (signed), and falls through when t8(=[a0+230948]) > 0 (signed).
+  The `beq` branch at 0x77f530 targets 0x77fa20, is taken when (a0(=[a0+291160]) & 0x1) == 0, and falls through when (a0(=[a0+291160]) & 0x1) != 0.
+  The `beq` branch at 0x77f73c targets 0x77fb40, is taken when a4(=[a0+294600]+16) >= t8(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned), and falls through when a4(=[a0+294600]+16) < t8(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned).
+  The `beq` branch at 0x77f788 targets 0x77fb80, is taken when a4(=[a0+294600]+16) >= t8(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned), and falls through when a4(=[a0+294600]+16) < t8(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned).
+  The `beq` branch at 0x77f794 targets 0x77fa40, is taken when t3(=[a0+294645]:1) == 0, and falls through when t3(=[a0+294645]:1) != 0.
+  The `bne` branch at 0x77f810 targets 0x77f8c0, is taken when a6(?) != 0, and falls through when a6(?) == 0.
+  The `beq` branch at 0x77f858 targets 0x77f888 and is always taken.
+  The `bne` branch at 0x77f8ac targets 0x77f860, is taken when a1(?) != at(=a0+262256), and falls through when a1(?) == at(=a0+262256).
+  The `beq` branch at 0x77f8cc targets 0x77fbdc, is taken when v0(=ret(__R300LoadLargePSProgToHwRegs)) == 0, and falls through when v0(=ret(__R300LoadLargePSProgToHwRegs)) != 0.
+  The `beq` branch at 0x77f8d8 targets 0x77f948, is taken when a4(=[a0+288912]) == 0, and falls through when a4(=[a0+288912]) != 0.
+  The `bne` branch at 0x77f8e4 targets 0x77f95c, is taken when a5(=[a0+24676]:1) != 0, and falls through when a5(=[a0+24676]:1) == 0.
+  The `bne` branch at 0x77f8f0 targets 0x77f95c, is taken when a6(=[a0+24588]) != 0, and falls through when a6(=[a0+24588]) == 0.
+  The `beq` branch at 0x77f904 targets 0x77f958, is taken when t9(=[a0+51332]) == 0, and falls through when t9(=[a0+51332]) != 0.
+  The `beq` branch at 0x77f910 targets 0x77f958, is taken when t8(=[a0+24678]:1) == 0, and falls through when t8(=[a0+24678]:1) != 0.
+  The `beq` branch at 0x77f940 targets 0x77f96c and is always taken.
+  The `bnel` branch at 0x77f950 targets 0x77f8e4, is taken when a0(=[a0+288912]) != 0, and falls through when a0(=[a0+288912]) == 0; its branch-likely delay slot `lbu a5,24676(s1)` at 0x77f954 runs only when taken and is annulled on fall-through.
+  The `beq` branch at 0x77f980 targets 0x77fbc0, is taken when a3(?) == 0, and falls through when a3(?) != 0.
+  The `beq` branch at 0x77f99c targets 0x77f9d0, is taken when a4(?) >= 0x2 (unsigned), and falls through when a4(?) < 0x2 (unsigned).
+  The `bne` branch at 0x77f9c4 targets 0x77f9a8, is taken when a5(?) < 0x2 (unsigned), and falls through when a5(?) >= 0x2 (unsigned).
+  The `bne` branch at 0x77fa28 targets 0x77f53c, is taken when t1(?) != 0, and falls through when t1(?) == 0.
+  The `beq` branch at 0x77fa30 targets 0x77f580 and is always taken.
+  The `bne` branch at 0x77fa44 targets 0x77f7a0, is taken when t2(=[a0+294646]:1) != 0, and falls through when t2(=[a0+294646]:1) == 0.
+  The `beq` branch at 0x77fa4c targets 0x77f804 and is always taken.
+  The `beq` branch at 0x77fa88 targets 0x77eff0 and is always taken.
+  The `beq` branch at 0x77fac4 targets 0x77f058 and is always taken.
+  The `beq` branch at 0x77fafc targets 0x77f474 and is always taken.
+  The `beq` branch at 0x77fb34 targets 0x77f4c0 and is always taken.
+  The `beq` branch at 0x77fb70 targets 0x77f744 and is always taken.
+  The `beq` branch at 0x77fbb0 targets 0x77f790 and is always taken.
+  The `bne` branch at 0x77fbcc targets 0x77f988, is taken when a4(?) != 0, and falls through when a4(?) == 0.
+  The `beq` branch at 0x77fbd4 targets 0x77fa08 and is always taken.
+  The `beq` branch at 0x77fbfc targets 0x77f8d8 and is always taken.
+  The return at 0x77fa00 has v0 = one of [a0+3568], ret(__glATISubmitBM).
+  The return at 0x77fa18 has v0 = [a0+3568].
+  The instructions from 0x77fa38 to 0x77fa3c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x77fb3c to 0x77fb3c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x77fb78 to 0x77fb7c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x77fbb8 to 0x77fbbc are not reached by any path from the entry, and their branches are not listed.
+
+- `__glim_R300DrawWireTrianglesFGL` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7ac6c0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7ac6c0-0x7ad7fc (4412 bytes).
+  It occupies 4412 bytes.
+  The `lw` at 0x7ac6e8 loads 4 bytes from abs 0x1010.
+  The `lw` at 0x7ac700 loads 4 bytes from [0x1010] +0x607c.
+  The `lw` at 0x7ac718 loads 4 bytes from [[0x1010]+24700] +0x10.
+  The `lw` at 0x7ac740 loads 4 bytes from [0x1010] +0x47eb0.
+  2 such `sb` accesses store 1 byte to [0x1010] +0x47ead, including `sb` at 0x7ac74c, `sb` at 0x7ac9a8.
+  The `lw` at 0x7ac750 loads 4 bytes from [0x1010] +0xa0.
+  The `lw` at 0x7ac790 loads 4 bytes from [0x1010] +0xa4.
+  The `sw` at 0x7ac798 stores 4 bytes to [0x1010] +0xa4.
+  7 such `sb` accesses store 1 byte to [0x1010] +0x610e, including `sb` at 0x7ac7a4, `sb` at 0x7ac7cc, `sb` at 0x7ad3ac.
+  3 such `sw` accesses store 4 bytes to [0x1010] +0x646c, including `sw` at 0x7ac7a8, `sw` at 0x7ad420, `sw` at 0x7ad4ec.
+  3 such `sw` accesses store 4 bytes to [0x1010] +0x6110, including `sw` at 0x7ac7b0, `sw` at 0x7ad424, `sw` at 0x7ad4f0.
+  10 such `lw` accesses load 4 bytes from [0x1010] +0xdec, including `lw` at 0x7ac7d0, `lw` at 0x7ac830, `lw` at 0x7ac908.
+  10 such `lw` accesses load 4 bytes from [0x1010] +0xdf0, including `lw` at 0x7ac7ec, `lw` at 0x7ac84c, `lw` at 0x7ac924.
+  12 such `lw` accesses load 4 bytes from [0x1010] +0x6450, including `lw` at 0x7ac800, `lw` at 0x7ac860, `lw` at 0x7ac890.
+  18 such `sw` accesses store 4 bytes to [0x1010] +0x6450, including `sw` at 0x7ac818, `sw` at 0x7ac878, `sw` at 0x7ac8ac.
+  3 such `lw` accesses load 4 bytes from [0x1010] +0x98c, including `lw` at 0x7ac880, `lw` at 0x7ad4ac, `lw` at 0x7ad6a0.
+  2 such `sw` accesses store 4 bytes to [0x1010] +0x6114, including `sw` at 0x7ac8b8, `sw` at 0x7ac95c.
+  2 such `lw` accesses load 4 bytes from [0x1010] +0xc10c, including `lw` at 0x7ac8bc, `lw` at 0x7ac960.
+  The `lw` at 0x7ac8c8 loads 4 bytes from [0x1010] +0x600c.
+  3 such `sb` accesses store 1 byte to [0x1010] +0x63a5, including `sb` at 0x7ac96c, `sb` at 0x7ad42c, `sb` at 0x7ad4f8.
+  The `lbu` at 0x7ac970 loads 1 byte from [0x1010] +0x47ead.
+  The `lw` at 0x7ac980 loads 4 bytes from [0x1010] +0x47eb4.
+  The `sw` at 0x7ac988 stores 4 bytes to [0x1010] +0x47eb8.
+  The `sw` at 0x7ac998 stores 4 bytes to [0x1010] +0x47ebc.
+  The `sw` at 0x7ac9a4 stores 4 bytes to [0x1010] +0x47ec0.
+  The `sw` at 0x7ac9ac stores 4 bytes to [0x1010] +0x47eb0.
+  The `lw` at 0x7ac9b0 loads 4 bytes from [0x1010] +0x47c7c.
+  22 such `lw` accesses load 4 bytes from [0x1010] +0x46d58, including `lw` at 0x7ac9bc, `lw` at 0x7ac9f4, `lw` at 0x7aca48.
+  8 such `lw` accesses load 4 bytes from [0x1010] +0x46d5c, including `lw` at 0x7ac9c0, `lw` at 0x7ac9f8, `lw` at 0x7acdb8.
+  The `sw` at 0x7ac9dc stores 4 bytes to [0x1010] +0x39298.
+  The `sw` at 0x7ac9e4 stores 4 bytes to [0x1010] +0x46d60.
+  3 such `lw` accesses load 4 bytes from [0x1010] +0x47180, including `lw` at 0x7aca10, `lw` at 0x7aca4c, `lw` at 0x7ad09c.
+  2 such `sw` accesses store 4 bytes to [0x1010] +0x47180, including `sw` at 0x7aca3c, `sw` at 0x7ad088.
+  3 such `sw` accesses store 4 bytes to [[0x1010]+290136] +0x0, including `sw` at 0x7aca44, `sw` at 0x7acd84, `sw` at 0x7ad168.
+  7 such `sw` accesses store 4 bytes to [[0x1010]+290136] +0x4, including `sw` at 0x7aca50, `sw` at 0x7acd60, `sw` at 0x7acd8c.
+  The `sw` at 0x7aca5c stores 4 bytes to [[0x1010]+290136] +0x8.
+  The `sw` at 0x7aca64 stores 4 bytes to [[0x1010]+290136] +0xc.
+  9 such `sw` accesses store 4 bytes to [0x1010] +0x46d58, including `sw` at 0x7aca70, `sw` at 0x7acd50, `sw` at 0x7acd78.
+  The `lw` at 0x7aca90 loads 4 bytes from [0x1010] +0x393b0.
+  The `lw` at 0x7acaa0 loads 4 bytes from [0x1010] +0x35a70.
+  3 such `lw` accesses load 4 bytes from [0x1010] +0x393ac, including `lw` at 0x7acaa4, `lw` at 0x7acbdc, `lw` at 0x7accc8.
+  The `lw` at 0x7acab8 loads 4 bytes from [0x1010] +0xc.
+  The `lw` at 0x7acac4 loads 4 bytes from [0x1010] +0x0.
+  The `sw` at 0x7acad0 stores 4 bytes to [0x1010] +0x393b0.
+  The `sw` at 0x7acad8 stores 4 bytes to [0x1010] +0x393ac.
+  2 such `lwc1` accesses load 4 bytes from [[0x1010]+219760] +0xcc, including `lwc1` at 0x7acae0, `lwc1` at 0x7acc10.
+  2 such `lwc1` accesses load 4 bytes from [[0x1010]+219760] +0xdc, including `lwc1` at 0x7acaf4, `lwc1` at 0x7acc14.
+  2 such `lwc1` accesses load 4 bytes from [[0x1010]+219760] +0xec, including `lwc1` at 0x7acb08, `lwc1` at 0x7acc0c.
+  2 such `lwc1` accesses load 4 bytes from [[0x1010]+219760] +0xfc, including `lwc1` at 0x7acb1c, `lwc1` at 0x7acc1c.
+  12 such `lwc1` accesses load 4 bytes from ?, including `lwc1` at 0x7acb48, `lwc1` at 0x7acb4c, `lwc1` at 0x7acb50.
+  2 such `lwc1` accesses load 4 bytes from [[0x1010]+219760] +0xe0, including `lwc1` at 0x7acb54, `lwc1` at 0x7acc34.
+  2 such `lwc1` accesses load 4 bytes from [[0x1010]+219760] +0xc0, including `lwc1` at 0x7acb58, `lwc1` at 0x7acc3c.
+  2 such `lwc1` accesses load 4 bytes from [[0x1010]+219760] +0xd0, including `lwc1` at 0x7acb5c, `lwc1` at 0x7acc40.
+  2 such `lwc1` accesses load 4 bytes from [[0x1010]+219760] +0xf0, including `lwc1` at 0x7acb64, `lwc1` at 0x7acc48.
+  2 such `lwc1` accesses load 4 bytes from [0x1010] +0xd30, including `lwc1` at 0x7acb78, `lwc1` at 0x7acc60.
+  2 such `lwc1` accesses load 4 bytes from [0x1010] +0xd50, including `lwc1` at 0x7acb80, `lwc1` at 0x7acc6c.
+  4 such `swc1` accesses store 4 bytes to ?, including `swc1` at 0x7acb8c, `swc1` at 0x7acbd4, `swc1` at 0x7acc78.
+  2 such `lwc1` accesses load 4 bytes from [[0x1010]+219760] +0xe4, including `lwc1` at 0x7acb90, `lwc1` at 0x7acc7c.
+  2 such `lwc1` accesses load 4 bytes from [[0x1010]+219760] +0xc4, including `lwc1` at 0x7acb98, `lwc1` at 0x7acc80.
+  2 such `lwc1` accesses load 4 bytes from [[0x1010]+219760] +0xd4, including `lwc1` at 0x7acb9c, `lwc1` at 0x7acc84.
+  2 such `lwc1` accesses load 4 bytes from [[0x1010]+219760] +0xf4, including `lwc1` at 0x7acba4, `lwc1` at 0x7acc8c.
+  2 such `lwc1` accesses load 4 bytes from [0x1010] +0xd34, including `lwc1` at 0x7acbb8, `lwc1` at 0x7acca0.
+  2 such `lwc1` accesses load 4 bytes from [0x1010] +0xd54, including `lwc1` at 0x7acbc0, `lwc1` at 0x7accac.
+  The `lw` at 0x7acccc loads 4 bytes from [0x1010] +0x9e4.
+  The `lbu` at 0x7accd0 loads 1 byte from [0x1010] +0x7d00.
+  The `lw` at 0x7acce8 loads 4 bytes from [0x1010] +0x9e0.
+  48 such `sw` accesses store 4 bytes to ?, including `sw` at 0x7acd44, `sw` at 0x7acd58, `sw` at 0x7acde4.
+  31 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7ace00, `lw` at 0x7ace08, `lw` at 0x7ace14.
+  6 such `lw` accesses load 4 bytes from [0x1010] +0x6114, including `lw` at 0x7ad3fc, `lw` at 0x7ad488, `lw` at 0x7ad4c8.
+  3 such `lw` accesses load 4 bytes from [0x1010] +0x9d8, including `lw` at 0x7ad5ac, `lw` at 0x7ad6c4, `lw` at 0x7ad700.
+  3 such `lw` accesses load 4 bytes from [0x1010] +0x9dc, including `lw` at 0x7ad5bc, `lw` at 0x7ad6d4, `lw` at 0x7ad710.
+  3 such `lhu` accesses load 2 bytes from [0x1010] +0x9d4, including `lhu` at 0x7ad5ec, `lhu` at 0x7ad754, `lhu` at 0x7ad780.
+  The `lw` at 0x7ad67c loads 4 bytes from [0x1010] +0x6110.
+  The `jalr` at 0x7ac760 calls __glSetError [0x6e42c0] with a0=0x502, a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3), a5=0x0, a6=0x0, a7=0x0.
+  The `jalr` at 0x7ac8c0 calls (unknown callee) with a0=[0x1010], a1=one of 0x0, 0x1, 0x2, a2=?, a3=?, a5=one of 0x0, 0xffff, 0x3fffffff.
+  The `jalr` at 0x7ac8e4 calls __glim_DrawWireTrianglesFGL [0x4f7b80] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3).
+  The `jalr` at 0x7ac964 calls (unknown callee) with a0=[0x1010], a1=?, a2=?, a3=0x3fffffff, a7=one of 0x0, 0x1, 0xfffff.
+  The `jalr` at 0x7ac9a0 calls __R300PSCWrite [0x782f40] with a0=[0x1010], a1=?, a2=?, a3=?.
+  The `jalr` at 0x7ac9ec calls __glATISubmitBM [0xab9b80] with a0=[0x1010], a1=?, a2=?, a3=?, a5=[[0x1010]+290136].
+  The `jalr` at 0x7acabc calls (unknown callee) with a0=[[0x1010]+234412], a1=?, a2=?, a3=0x7ffff, a5=[[0x1010]+290136]+16, a6=[[0x1010]+290136], a7=0x821.
+  The `jalr` at 0x7acac8 calls (unknown callee) with a0=(a2 << 0x3), a1=?, a2=?, a3=?.
+  The `jalr` at 0x7acd74 calls __glATISubmitBM [0xab9b80] with a0=[0x1010], a1=0x92b, a2=?, a3=?.
+  The `jalr` at 0x7ad040 calls __glATISubmitBM [0xab9b80] with a0=[0x1010], a1=?, a2=?, a3=?.
+  The `jalr` at 0x7ad0cc calls __glSetError [0x6e42c0] with a0=0x501, a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3), a5=0x0, a6=0x0, a7=0x0.
+  The `jalr` at 0x7ad0e0 calls __glSetError [0x6e42c0] with a0=0x501, a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3), a5=0x0, a6=0x0, a7=0x0.
+  The `jalr` at 0x7ad158 calls __glATISubmitBM [0xab9b80] with a0=[0x1010], a1=?, a2=?, a3=?.
+  The `jalr` at 0x7ad398 calls __R300AAStippleValidatePrim [0x7c7400] with a0=[0x1010], a1=0x4, a2=?, a3=?.
+  The `blez` branch at 0x7ac714 targets 0x7ad0c0, is taken when a0 <= 0 (signed), and falls through when a0 > 0 (signed).
+  The `beq` branch at 0x7ac71c targets 0x7ad0e0, is taken when a3 == 0, and falls through when a3 != 0.
+  The `beq` branch at 0x7ac724 targets 0x7ad0e0, is taken when a1 == 0, and falls through when a1 != 0.
+  The `blez` branch at 0x7ac72c targets 0x7ad0e0, is taken when a2 <= 0 (signed), and falls through when a2 > 0 (signed).
+  The `beq` branch at 0x7ac744 targets 0x7ac750, is taken when t9(=[[0x1010]+294576]) == 0, and falls through when t9(=[[0x1010]+294576]) != 0.
+  The `beq` branch at 0x7ac754 targets 0x7ac790, is taken when t9(=[[0x1010]+160]) == 0, and falls through when t9(=[[0x1010]+160]) != 0.
+  The `beq` branch at 0x7ac79c targets 0x7ad3a8, is taken when ra(=[[0x1010]+164]) == 0, and falls through when ra(=[[0x1010]+164]) != 0.
+  The `bne` branch at 0x7ac7ac targets 0x7ac81c, is taken when a0(?) != 0, and falls through when a0(?) == 0.
+  The `beq` branch at 0x7ac7b8 targets 0x7ac820, is taken when s4(=[[[0x1010]+24700]+16]) >= 0x10 (unsigned), and falls through when s4(=[[[0x1010]+24700]+16]) < 0x10 (unsigned).
+  The `beq` branch at 0x7ac7c4 targets 0x7ac7d0, is taken when s4(=[[[0x1010]+24700]+16]) >= 0x6 (unsigned), and falls through when s4(=[[[0x1010]+24700]+16]) < 0x6 (unsigned).
+  The `beq` branch at 0x7ac7e4 targets 0x7ac800, is taken when a1(?) == 0, and falls through when a1(?) != 0.
+  The `beq` branch at 0x7ac7f8 targets 0x7ad5ac, is taken when a3(?) == 0, and falls through when a3(?) != 0.
+  The `beq` branch at 0x7ac814 targets 0x7ac8b0 and is always taken.
+  The `bne` branch at 0x7ac820 targets 0x7ac880, is taken when a6(?) != 0, and falls through when a6(?) == 0.
+  The `beq` branch at 0x7ac828 targets 0x7ac880, is taken when a7(?) == 0, and falls through when a7(?) != 0.
+  The `beq` branch at 0x7ac844 targets 0x7ac860, is taken when t0(?) == 0, and falls through when t0(?) != 0.
+  The `beq` branch at 0x7ac858 targets 0x7ad5ec, is taken when t2(?) == 0, and falls through when t2(?) != 0.
+  The `beq` branch at 0x7ac874 targets 0x7ac8b0 and is always taken.
+  The `beq` branch at 0x7ac888 targets 0x7ad558, is taken when (t9(=[[0x1010]+2444]) & 0x1) == 0, and falls through when (t9(=[[0x1010]+2444]) & 0x1) != 0.
+  The `beq` branch at 0x7ac8cc targets 0x7ac970, is taken when ra(=[[0x1010]+24588]) == 0, and falls through when ra(=[[0x1010]+24588]) != 0.
+  The `beq` branch at 0x7ac8ec targets 0x7ac76c and is always taken.
+  The `beq` branch at 0x7ac8f8 targets 0x7ac94c, is taken when a2(?) == 0, and falls through when a2(?) != 0.
+  The `beq` branch at 0x7ac900 targets 0x7ac950, is taken when a4(?) == 0, and falls through when a4(?) != 0.
+  The `beq` branch at 0x7ac91c targets 0x7ac938, is taken when a5(?) == 0, and falls through when a5(?) != 0.
+  The `beq` branch at 0x7ac930 targets 0x7ad754, is taken when t1(?) == 0, and falls through when t1(?) != 0.
+  The `bne` branch at 0x7ac950 targets 0x7ad690, is taken when a2(?) != 0, and falls through when a2(?) == 0.
+  The `beq` branch at 0x7ac974 targets 0x7ac9b0, is taken when ra(=[[0x1010]+294573]:1) == 0, and falls through when ra(=[[0x1010]+294573]:1) != 0.
+  The `bne` branch at 0x7ac9b4 targets 0x7ad394, is taken when v1(=[[0x1010]+294012]) != 0, and falls through when v1(=[[0x1010]+294012]) == 0.
+  The `beq` branch at 0x7ac9e0 targets 0x7aca10, is taken when a0(?) >= 0x4 (unsigned), and falls through when a0(?) < 0x4 (unsigned).
+  The `bne` branch at 0x7aca08 targets 0x7ac9ec, is taken when a1(?) < 0x4 (unsigned), and falls through when a1(?) >= 0x4 (unsigned).
+  The `beq` branch at 0x7aca88 targets 0x7ad0f0, is taken when a2(?) == 0, and falls through when a2(?) != 0.
+  The `beq` branch at 0x7acaa8 targets 0x7acadc, is taken when t8(=[[0x1010]+234416]) >= s8(=a2) (signed), and falls through when t8(=[[0x1010]+234416]) < s8(=a2) (signed).
+  The `beq` branch at 0x7acab0 targets 0x7acac4, is taken when a0(=[[0x1010]+234412]) == 0, and falls through when a0(=[[0x1010]+234412]) != 0.
+  The `bc1f` branch at 0x7acaec targets 0x7acbe0, is taken when not (f0(=[[[0x1010]+219760]+204]) == f9 (c.eq.s at 0x7acae4)), and falls through when f0(=[[[0x1010]+219760]+204]) == f9 (c.eq.s at 0x7acae4).
+  The `bc1f` branch at 0x7acb00 targets 0x7acbe0, is taken when not (f1(=[[[0x1010]+219760]+220]) == f9 (c.eq.s at 0x7acaf8)), and falls through when f1(=[[[0x1010]+219760]+220]) == f9 (c.eq.s at 0x7acaf8).
+  The `bc1f` branch at 0x7acb14 targets 0x7acbe0, is taken when not (f2(=[[[0x1010]+219760]+236]) == f9 (c.eq.s at 0x7acb0c)), and falls through when f2(=[[[0x1010]+219760]+236]) == f9 (c.eq.s at 0x7acb0c).
+  The `bc1f` branch at 0x7acb28 targets 0x7acbe0, is taken when not (f3(=[[[0x1010]+219760]+252]) == f4(=0x3f800000) (c.eq.s at 0x7acb20)), and falls through when f3(=[[[0x1010]+219760]+252]) == f4(=0x3f800000) (c.eq.s at 0x7acb20).
+  The `blez` branch at 0x7acb30 targets 0x7acccc, is taken when s8(=a2) <= 0 (signed), and falls through when s8(=a2) > 0 (signed).
+  The `bne` branch at 0x7acbd0 targets 0x7acb48, is taken when a1(?) != a6(?), and falls through when a1(?) == a6(?).
+  The `beq` branch at 0x7acbd8 targets 0x7acccc and is always taken.
+  The `blez` branch at 0x7acbe0 targets 0x7acccc, is taken when s8(=a2) <= 0 (signed), and falls through when s8(=a2) > 0 (signed).
+  The `bne` branch at 0x7accc0 targets 0x7acc00, is taken when a5(?) != a6(?), and falls through when a5(?) == a6(?).
+  The `beq` branch at 0x7acce4 targets 0x7ad590, is taken when a7(?) == 0, and falls through when a7(?) != 0.
+  The `beq` branch at 0x7accfc targets 0x7ad5a0, is taken when a1(=[[0x1010]+2528]) == t2(=0x408), and falls through when a1(=[[0x1010]+2528]) != t2(=0x408).
+  The `beq` branch at 0x7acd14 targets 0x7acda8 and is always taken.
+  The `beq` branch at 0x7acd28 targets 0x7acd4c, is taken when s1(?) == 0, and falls through when s1(?) != 0.
+  The `beq` branch at 0x7acd4c targets 0x7ad008, is taken when s3(?) == 0, and falls through when s3(?) != 0.
+  The `beq` branch at 0x7acda0 targets 0x7ad008, is taken when s3(?) == 0, and falls through when s3(?) != 0.
+  The `beq` branch at 0x7acdb0 targets 0x7acd20, is taken when s3(?) == 0, and falls through when s3(?) != 0.
+  The `beq` branch at 0x7acdc4 targets 0x7acd1c, is taken when a7(?) >= t1(=[[0x1010]+290140]) (unsigned), and falls through when a7(?) < t1(=[[0x1010]+290140]) (unsigned).
+  The `beq` branch at 0x7acdcc targets 0x7ace3c and is always taken.
+  The `beq` branch at 0x7ace24 targets 0x7acd20, is taken when a0(?) == 0, and falls through when a0(?) != 0.
+  The `beq` branch at 0x7ace34 targets 0x7acd24, is taken when a7(?) >= t1(=[[0x1010]+290140]) (unsigned), and falls through when a7(?) < t1(=[[0x1010]+290140]) (unsigned).
+  The `bne` branch at 0x7ace48 targets 0x7ace24, is taken when (a3(?) & 0x8) != 0, and falls through when (a3(?) & 0x8) == 0.
+  The `bc1t` branch at 0x7aceb8 targets 0x7acec4, is taken when f9 <= f0 (c.le.s at 0x7aceac), and falls through when not (f9 <= f0 (c.le.s at 0x7aceac)).
+  The `bne` branch at 0x7acec4 targets 0x7ace24, is taken when t8(?) != t9(=one of 0x0, 0x1), and falls through when t8(?) == t9(=one of 0x0, 0x1).
+  The `beq` branch at 0x7aced4 targets 0x7acf1c, is taken when a3(?) == t0(?), and falls through when a3(?) != t0(?).
+  The `beq` branch at 0x7acedc targets 0x7acefc, is taken when s1(?) == 0, and falls through when s1(?) != 0.
+  The `beq` branch at 0x7acf54 targets 0x7acf9c, is taken when t8(?) == t0(?), and falls through when t8(?) != t0(?).
+  The `beq` branch at 0x7acf5c targets 0x7acf7c, is taken when s1(?) == 0, and falls through when s1(?) != 0.
+  The `beq` branch at 0x7acfe8 targets 0x7ace00, is taken when t8(?) == t0(?), and falls through when t8(?) != t0(?).
+  The `bne` branch at 0x7acff8 targets 0x7acdd4, is taken when s1(?) != 0, and falls through when s1(?) == 0.
+  The `beq` branch at 0x7ad000 targets 0x7acde8 and is always taken.
+  The `beq` branch at 0x7ad034 targets 0x7ad064, is taken when ra(?) >= 0x2 (unsigned), and falls through when ra(?) < 0x2 (unsigned).
+  The `bne` branch at 0x7ad05c targets 0x7ad040, is taken when t0(?) < 0x2 (unsigned), and falls through when t0(?) >= 0x2 (unsigned).
+  The `bgez` branch at 0x7ad0c0 targets 0x7ac76c, is taken when a0 >= 0 (signed), and falls through when a0 < 0 (signed).
+  The `beq` branch at 0x7ad0d4 targets 0x7ac76c and is always taken.
+  The `beq` branch at 0x7ad0e8 targets 0x7ac76c and is always taken.
+  The `beq` branch at 0x7ad100 targets 0x7ad188 and is always taken.
+  The `beq` branch at 0x7ad110 targets 0x7ad130, is taken when s1(?) == 0, and falls through when s1(?) != 0.
+  The `beq` branch at 0x7ad130 targets 0x7ad008, is taken when s3(?) == 0, and falls through when s3(?) != 0.
+  The `beq` branch at 0x7ad180 targets 0x7ad008, is taken when s3(?) == 0, and falls through when s3(?) != 0.
+  The `beq` branch at 0x7ad190 targets 0x7ad108, is taken when s3(?) == 0, and falls through when s3(?) != 0.
+  The `beq` branch at 0x7ad1a4 targets 0x7ad108, is taken when a6(=([[0x1010]+290136] + one of 0x50, 0x58)) >= t1(=[[0x1010]+290140]) (unsigned), and falls through when a6(=([[0x1010]+290136] + one of 0x50, 0x58)) < t1(=[[0x1010]+290140]) (unsigned).
+  The `beq` branch at 0x7ad1ac targets 0x7ad2e4 and is always taken.
+  The `beq` branch at 0x7ad238 targets 0x7ad280, is taken when a1(?) == t0(?), and falls through when a1(?) != t0(?).
+  The `beq` branch at 0x7ad240 targets 0x7ad260, is taken when s1(?) == 0, and falls through when s1(?) != 0.
+  The `beq` branch at 0x7ad2c8 targets 0x7ad108, is taken when s3(?) == 0, and falls through when s3(?) != 0.
+  The `beq` branch at 0x7ad2d8 targets 0x7ad10c, is taken when a6(?) >= t8(=[[0x1010]+290140]) (unsigned), and falls through when a6(?) < t8(=[[0x1010]+290140]) (unsigned).
+  The `bne` branch at 0x7ad2ec targets 0x7ad2c0, is taken when (a1(?) & 0x8) != 0, and falls through when (a1(?) & 0x8) == 0.
+  The `beq` branch at 0x7ad2f4 targets 0x7ad33c, is taken when a1(?) == t0(?), and falls through when a1(?) != t0(?).
+  The `beq` branch at 0x7ad2fc targets 0x7ad31c, is taken when s1(?) == 0, and falls through when s1(?) != 0.
+  The `beq` branch at 0x7ad37c targets 0x7ad1f8, is taken when a1(?) == t0(?), and falls through when a1(?) != t0(?).
+  The `bne` branch at 0x7ad384 targets 0x7ad1c0, is taken when s1(?) != 0, and falls through when s1(?) == 0.
+  The `beq` branch at 0x7ad38c targets 0x7ad1d8 and is always taken.
+  The `beq` branch at 0x7ad3a0 targets 0x7ac9bc and is always taken.
+  The `bne` branch at 0x7ad3a8 targets 0x7ad440, is taken when a0(?) != 0, and falls through when a0(?) == 0.
+  The `beq` branch at 0x7ad3b4 targets 0x7ad444, is taken when s4(=[[[0x1010]+24700]+16]) >= 0x10 (unsigned), and falls through when s4(=[[[0x1010]+24700]+16]) < 0x10 (unsigned).
+  The `beq` branch at 0x7ad3c0 targets 0x7ad3cc, is taken when s4(=[[[0x1010]+24700]+16]) >= 0x6 (unsigned), and falls through when s4(=[[[0x1010]+24700]+16]) < 0x6 (unsigned).
+  The `beq` branch at 0x7ad3e0 targets 0x7ad3fc, is taken when t3(?) == 0, and falls through when t3(?) != 0.
+  The `beq` branch at 0x7ad3f4 targets 0x7ad700, is taken when t9(?) == 0, and falls through when t9(?) != 0.
+  The `beq` branch at 0x7ad410 targets 0x7ad74c, is taken when ra(=[[0x1010]+24852]) == 0, and falls through when ra(=[[0x1010]+24852]) != 0.
+  The `bne` branch at 0x7ad428 targets 0x7ad4fc, is taken when a1(?) != 0, and falls through when a1(?) == 0.
+  The `beq` branch at 0x7ad434 targets 0x7ac8f8 and is always taken.
+  The `bne` branch at 0x7ad444 targets 0x7ad4ac, is taken when a2(?) != 0, and falls through when a2(?) == 0.
+  The `beq` branch at 0x7ad450 targets 0x7ad4ac, is taken when s4(=[[[0x1010]+24700]+16]) >= 0x4 (unsigned), and falls through when s4(=[[[0x1010]+24700]+16]) < 0x4 (unsigned).
+  The `beq` branch at 0x7ad46c targets 0x7ad488, is taken when a4(?) == 0, and falls through when a4(?) != 0.
+  The `beq` branch at 0x7ad480 targets 0x7ad780, is taken when t2(?) == 0, and falls through when t2(?) != 0.
+  The `beq` branch at 0x7ad49c targets 0x7ad7c0, is taken when t3(=[[0x1010]+24852]) == 0, and falls through when t3(=[[0x1010]+24852]) != 0.
+  The `beq` branch at 0x7ad4a4 targets 0x7ad4e8 and is always taken.
+  The `beq` branch at 0x7ad4b4 targets 0x7ad620, is taken when (a4(=[[0x1010]+2444]) & 0x1) == 0, and falls through when (a4(=[[0x1010]+2444]) & 0x1) != 0.
+  The `beq` branch at 0x7ad4dc targets 0x7ad660, is taken when t0(=[[0x1010]+24852]) == t1(=0x2), and falls through when t0(=[[0x1010]+24852]) != t1(=0x2).
+  The `beq` branch at 0x7ad4f4 targets 0x7ac8f8, is taken when a1(?) == 0, and falls through when a1(?) != 0.
+  The `beq` branch at 0x7ad500 targets 0x7ac8f4, is taken when s4(=[[[0x1010]+24700]+16]) >= 0x10 (unsigned), and falls through when s4(=[[[0x1010]+24700]+16]) < 0x10 (unsigned).
+  The `beq` branch at 0x7ad50c targets 0x7ad518, is taken when s4(=[[[0x1010]+24700]+16]) >= 0x6 (unsigned), and falls through when s4(=[[[0x1010]+24700]+16]) < 0x6 (unsigned).
+  The `beq` branch at 0x7ad52c targets 0x7ad54c, is taken when a6(?) == 0, and falls through when a6(?) != 0.
+  The `beq` branch at 0x7ad544 targets 0x7ad6c4, is taken when t0(?) == 0, and falls through when t0(?) != 0.
+  The `beq` branch at 0x7ad550 targets 0x7ac954 and is always taken.
+  The `bne` branch at 0x7ad56c targets 0x7ac890, is taken when t2(?) != 0, and falls through when t2(?) == 0.
+  The `beq` branch at 0x7ad588 targets 0x7ac8b0 and is always taken.
+  The `beq` branch at 0x7ad598 targets 0x7accf8 and is always taken.
+  The `beq` branch at 0x7ad5a4 targets 0x7acd00 and is always taken.
+  The `beq` branch at 0x7ad5b4 targets 0x7ad5c8, is taken when v1(=[[0x1010]+2520]) == a2(=0x1b02), and falls through when v1(=[[0x1010]+2520]) != a2(=0x1b02).
+  The `bne` branch at 0x7ad5c0 targets 0x7ac800, is taken when a0(=[[0x1010]+2524]) != a2(=0x1b02), and falls through when a0(=[[0x1010]+2524]) == a2(=0x1b02).
+  The `beq` branch at 0x7ad5e4 targets 0x7ac8b0 and is always taken.
+  The `beq` branch at 0x7ad5f4 targets 0x7ac860, is taken when a4(=[[0x1010]+2516]:2) == a5(=0xffff), and falls through when a4(=[[0x1010]+2516]:2) != a5(=0xffff).
+  The `beq` branch at 0x7ad618 targets 0x7ac8b0 and is always taken.
+  The `bne` branch at 0x7ad634 targets 0x7ad4bc, is taken when t0(?) != 0, and falls through when t0(?) == 0.
+  The `beq` branch at 0x7ad650 targets 0x7ad7c8, is taken when t2(=[[0x1010]+24852]) == 0, and falls through when t2(=[[0x1010]+24852]) != 0.
+  The `beq` branch at 0x7ad658 targets 0x7ad41c and is always taken.
+  The `bne` branch at 0x7ad674 targets 0x7ac970, is taken when a4(?) != 0, and falls through when a4(?) == 0.
+  The `beq` branch at 0x7ad680 targets 0x7ac970, is taken when t0(=[[0x1010]+24848]) == 0, and falls through when t0(=[[0x1010]+24848]) != 0.
+  The `beq` branch at 0x7ad688 targets 0x7ad41c and is always taken.
+  The `beq` branch at 0x7ad690 targets 0x7ac958, is taken when a2(?) == 0, and falls through when a2(?) != 0.
+  The `bne` branch at 0x7ad698 targets 0x7ac958, is taken when a7(=one of 0x0, 0x1) != 0, and falls through when a7(=one of 0x0, 0x1) == 0.
+  The `beq` branch at 0x7ad6a8 targets 0x7ad7d0, is taken when (t1(=[[0x1010]+2444]) & 0x1) == 0, and falls through when (t1(=[[0x1010]+2444]) & 0x1) != 0.
+  The `beq` branch at 0x7ad6bc targets 0x7ac954 and is always taken.
+  The `beq` branch at 0x7ad6cc targets 0x7ad6e4, is taken when t8(=[[0x1010]+2520]) == a2(=0x1b02), and falls through when t8(=[[0x1010]+2520]) != a2(=0x1b02).
+  The `bne` branch at 0x7ad6d8 targets 0x7ad54c, is taken when t9(=[[0x1010]+2524]) != a2(=0x1b02), and falls through when t9(=[[0x1010]+2524]) == a2(=0x1b02).
+  The `beq` branch at 0x7ad6f0 targets 0x7ac954 and is always taken.
+  The `beq` branch at 0x7ad708 targets 0x7ad71c, is taken when v1(=[[0x1010]+2520]) == a2(=0x1b02), and falls through when v1(=[[0x1010]+2520]) != a2(=0x1b02).
+  The `bne` branch at 0x7ad714 targets 0x7ad3fc, is taken when a0(=[[0x1010]+2524]) != a2(=0x1b02), and falls through when a0(=[[0x1010]+2524]) == a2(=0x1b02).
+  The `bne` branch at 0x7ad73c targets 0x7ad41c, is taken when a2(=[[0x1010]+24852]) != t0(=0x1), and falls through when a2(=[[0x1010]+24852]) == t0(=0x1).
+  The `beq` branch at 0x7ad744 targets 0x7ad668 and is always taken.
+  The `beq` branch at 0x7ad74c targets 0x7ad664 and is always taken.
+  The `beq` branch at 0x7ad75c targets 0x7ac938, is taken when a4(=[[0x1010]+2516]:2) == a5(=0xffff), and falls through when a4(=[[0x1010]+2516]:2) != a5(=0xffff).
+  The `beq` branch at 0x7ad778 targets 0x7ac948 and is always taken.
+  The `beq` branch at 0x7ad788 targets 0x7ad488, is taken when a3(=[[0x1010]+2516]:2) == a4(=0xffff), and falls through when a3(=[[0x1010]+2516]:2) != a4(=0xffff).
+  The `bne` branch at 0x7ad7b0 targets 0x7ad4e8, is taken when t2(=[[0x1010]+24852]) != t0(=0x1), and falls through when t2(=[[0x1010]+24852]) == t0(=0x1).
+  The `beq` branch at 0x7ad7b8 targets 0x7ad668 and is always taken.
+  The `beq` branch at 0x7ad7c0 targets 0x7ad664 and is always taken.
+  The `beq` branch at 0x7ad7c8 targets 0x7ad664 and is always taken.
+  The `bne` branch at 0x7ad7e4 targets 0x7ad6b0, is taken when a4(?) != 0, and falls through when a4(?) == 0.
+  The `beq` branch at 0x7ad7f4 targets 0x7ac954 and is always taken.
+  The return at 0x7ac788 has v0 = one of ret(__glSetError), ret(__glim_DrawWireTrianglesFGL), ?.
+  The return at 0x7ad0b8 has v0 = one of ?, ret(__glATISubmitBM).
+  The instructions from 0x7ac87c to 0x7ac87c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x7ad0dc to 0x7ad0dc are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x7ad1b4 to 0x7ad1bc are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x7ad43c to 0x7ad43c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x7ad6f8 to 0x7ad6fc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300TCLArrayElementV3D` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b1400 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b1400-0x7b149c (156 bytes).
+  It occupies 156 bytes.
+  The `lw` at 0x7b1404 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b1414 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b1418 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `sw` at 0x7b1428 stores 4 bytes to [a0+290136] +0x0.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b1430, `ldc1` at 0x7b143c, `ldc1` at 0x7b1448.
+  The `swc1` at 0x7b1438 stores 4 bytes to [a0+290136] +0x4.
+  The `swc1` at 0x7b1444 stores 4 bytes to [a0+290136] +0x8.
+  The `swc1` at 0x7b1450 stores 4 bytes to [a0+290136] +0xc.
+  The `lw` at 0x7b1454 loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b1474 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b148c calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e4398, a2=?, a3=a3 at entry (arg3).
+  The `beq` branch at 0x7b1470 targets 0x7b1484, is taken when at(=[a0+290136]+16) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+16) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b1494 targets 0x7b1478 and is always taken.
+  The return at 0x7b147c has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DC4UB_vcount` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b1880 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b1880-0x7b1984 (260 bytes).
+  It occupies 260 bytes.
+  The `lw` at 0x7b1884 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b1898 loads 4 bytes from a0 (arg0 at entry) +0x8804.
+  The `lw` at 0x7b18b0 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b18b4 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `lw` at 0x7b18b8 loads 4 bytes from a0 (arg0 at entry) +0x39268.
+  The `lw` at 0x7b18bc loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `sw` at 0x7b18c4 stores 4 bytes to a0 (arg0 at entry) +0x39268.
+  The `sw` at 0x7b18c8 stores 4 bytes to a0 (arg0 at entry) +0xcc.
+  The `sw` at 0x7b18d4 stores 4 bytes to [a0+290136] +0x0.
+  4 such `lbu` accesses load 1 byte from ?, including `lbu` at 0x7b18dc, `lbu` at 0x7b18e4, `lbu` at 0x7b18e8.
+  The `sw` at 0x7b1900 stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7b1914 stores 4 bytes to [a0+290136] +0x4.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b1918, `ldc1` at 0x7b1924, `ldc1` at 0x7b1930.
+  The `swc1` at 0x7b1920 stores 4 bytes to [a0+290136] +0xc.
+  The `swc1` at 0x7b192c stores 4 bytes to [a0+290136] +0x10.
+  The `swc1` at 0x7b1938 stores 4 bytes to [a0+290136] +0x14.
+  The `lw` at 0x7b193c loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b195c stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b1974 calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e3f18, a2=?, a3=?, a7=0x927.
+  The `beq` branch at 0x7b1958 targets 0x7b196c, is taken when at(=[a0+290136]+24) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+24) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b197c targets 0x7b1960 and is always taken.
+  The return at 0x7b1964 has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DC3F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b1bc0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b1bc0-0x7b1ca4 (228 bytes).
+  It occupies 228 bytes.
+  The `lw` at 0x7b1bc4 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b1bd4 loads 4 bytes from a0 (arg0 at entry) +0x8804.
+  The `lw` at 0x7b1bf0 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b1bf4 loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `sw` at 0x7b1bf8 stores 4 bytes to a0 (arg0 at entry) +0xcc.
+  The `lw` at 0x7b1bfc loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `sw` at 0x7b1c0c stores 4 bytes to [a0+290136] +0x0.
+  3 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7b1c14, `lw` at 0x7b1c1c, `lw` at 0x7b1c24.
+  The `sw` at 0x7b1c18 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x7b1c20 stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7b1c2c stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7b1c34 stores 4 bytes to [a0+290136] +0xc.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b1c38, `ldc1` at 0x7b1c44, `ldc1` at 0x7b1c50.
+  The `swc1` at 0x7b1c40 stores 4 bytes to [a0+290136] +0x14.
+  The `swc1` at 0x7b1c4c stores 4 bytes to [a0+290136] +0x18.
+  The `swc1` at 0x7b1c58 stores 4 bytes to [a0+290136] +0x1c.
+  The `lw` at 0x7b1c5c loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b1c7c stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b1c94 calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e3bd8, a2=?, a3=?, a6=0x20918.
+  The `beq` branch at 0x7b1c78 targets 0x7b1c8c, is taken when at(=[a0+290136]+32) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+32) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b1c9c targets 0x7b1c80 and is always taken.
+  The return at 0x7b1c84 has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DC3F_vcount` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b1cc0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b1cc0-0x7b1db0 (240 bytes).
+  It occupies 240 bytes.
+  The `lw` at 0x7b1cc4 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b1cd8 loads 4 bytes from a0 (arg0 at entry) +0x8804.
+  The `lw` at 0x7b1cf0 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b1cf4 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `lw` at 0x7b1cf8 loads 4 bytes from a0 (arg0 at entry) +0x39268.
+  The `lw` at 0x7b1cfc loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `sw` at 0x7b1d04 stores 4 bytes to a0 (arg0 at entry) +0x39268.
+  The `sw` at 0x7b1d08 stores 4 bytes to a0 (arg0 at entry) +0xcc.
+  The `sw` at 0x7b1d18 stores 4 bytes to [a0+290136] +0x0.
+  3 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7b1d20, `lw` at 0x7b1d28, `lw` at 0x7b1d30.
+  The `sw` at 0x7b1d24 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x7b1d2c stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7b1d38 stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7b1d40 stores 4 bytes to [a0+290136] +0xc.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b1d44, `ldc1` at 0x7b1d50, `ldc1` at 0x7b1d5c.
+  The `swc1` at 0x7b1d4c stores 4 bytes to [a0+290136] +0x14.
+  The `swc1` at 0x7b1d58 stores 4 bytes to [a0+290136] +0x18.
+  The `swc1` at 0x7b1d64 stores 4 bytes to [a0+290136] +0x1c.
+  The `lw` at 0x7b1d68 loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b1d88 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b1da0 calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e3ad8, a2=?, a3=?, a6=0x20918.
+  The `beq` branch at 0x7b1d84 targets 0x7b1d98, is taken when at(=[a0+290136]+32) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+32) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b1da8 targets 0x7b1d8c and is always taken.
+  The return at 0x7b1d90 has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DC4F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b1fc0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b1fc0-0x7b20b0 (240 bytes).
+  It occupies 240 bytes.
+  The `lw` at 0x7b1fc4 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b1fd4 loads 4 bytes from a0 (arg0 at entry) +0x8804.
+  The `lw` at 0x7b1ff0 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b1ff4 loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `sw` at 0x7b1ff8 stores 4 bytes to a0 (arg0 at entry) +0xcc.
+  The `lw` at 0x7b2000 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `sw` at 0x7b200c stores 4 bytes to [a0+290136] +0x0.
+  4 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7b2014, `lw` at 0x7b201c, `lw` at 0x7b2024.
+  The `sw` at 0x7b2018 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x7b2020 stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7b2028 stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x7b2038 stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7b2040 stores 4 bytes to [a0+290136] +0x10.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b2044, `ldc1` at 0x7b2050, `ldc1` at 0x7b205c.
+  The `swc1` at 0x7b204c stores 4 bytes to [a0+290136] +0x18.
+  The `swc1` at 0x7b2058 stores 4 bytes to [a0+290136] +0x1c.
+  The `swc1` at 0x7b2064 stores 4 bytes to [a0+290136] +0x20.
+  The `lw` at 0x7b2068 loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b2088 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b20a0 calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e37d8, a2=?, a3=?, a7=0x30918.
+  The `beq` branch at 0x7b2084 targets 0x7b2098, is taken when at(=[a0+290136]+36) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+36) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b20a8 targets 0x7b208c and is always taken.
+  The return at 0x7b2090 has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DC4F_vcount` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b20c0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b20c0-0x7b21bc (252 bytes).
+  It occupies 252 bytes.
+  The `lw` at 0x7b20c4 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b20d8 loads 4 bytes from a0 (arg0 at entry) +0x8804.
+  The `lw` at 0x7b20f0 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b20f4 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `lw` at 0x7b20f8 loads 4 bytes from a0 (arg0 at entry) +0x39268.
+  The `lw` at 0x7b20fc loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `sw` at 0x7b2104 stores 4 bytes to a0 (arg0 at entry) +0x39268.
+  The `sw` at 0x7b210c stores 4 bytes to a0 (arg0 at entry) +0xcc.
+  The `sw` at 0x7b2118 stores 4 bytes to [a0+290136] +0x0.
+  4 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7b2120, `lw` at 0x7b2128, `lw` at 0x7b2130.
+  The `sw` at 0x7b2124 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x7b212c stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7b2134 stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x7b2144 stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7b214c stores 4 bytes to [a0+290136] +0x10.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b2150, `ldc1` at 0x7b215c, `ldc1` at 0x7b2168.
+  The `swc1` at 0x7b2158 stores 4 bytes to [a0+290136] +0x18.
+  The `swc1` at 0x7b2164 stores 4 bytes to [a0+290136] +0x1c.
+  The `swc1` at 0x7b2170 stores 4 bytes to [a0+290136] +0x20.
+  The `lw` at 0x7b2174 loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b2194 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b21ac calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e36d8, a2=?, a3=?, a7=0x30918.
+  The `beq` branch at 0x7b2190 targets 0x7b21a4, is taken when at(=[a0+290136]+36) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+36) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b21b4 targets 0x7b2198 and is always taken.
+  The return at 0x7b219c has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DN3F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b23c0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b23c0-0x7b249c (220 bytes).
+  It occupies 220 bytes.
+  The `lw` at 0x7b23c4 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b23cc loads 4 bytes from a0 (arg0 at entry) +0x7fec.
+  The `lw` at 0x7b23e8 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b23ec loads 4 bytes from a0 (arg0 at entry) +0x7fc0.
+  The `sw` at 0x7b23f0 stores 4 bytes to a0 (arg0 at entry) +0xd0.
+  The `lw` at 0x7b23f4 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `sw` at 0x7b2404 stores 4 bytes to [a0+290136] +0x0.
+  3 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7b240c, `lw` at 0x7b2414, `lw` at 0x7b241c.
+  The `sw` at 0x7b2410 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x7b2418 stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7b2424 stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7b242c stores 4 bytes to [a0+290136] +0xc.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b2430, `ldc1` at 0x7b243c, `ldc1` at 0x7b2448.
+  The `swc1` at 0x7b2438 stores 4 bytes to [a0+290136] +0x14.
+  The `swc1` at 0x7b2444 stores 4 bytes to [a0+290136] +0x18.
+  The `swc1` at 0x7b2450 stores 4 bytes to [a0+290136] +0x1c.
+  The `lw` at 0x7b2454 loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b2474 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b248c calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e33d8, a2=?, a3=?, a6=0x208c4.
+  The `beq` branch at 0x7b2470 targets 0x7b2484, is taken when at(=[a0+290136]+32) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+32) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b2494 targets 0x7b2478 and is always taken.
+  The return at 0x7b247c has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DN3FC4UB` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b2840 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b2840-0x7b2978 (312 bytes).
+  It occupies 312 bytes.
+  The `lw` at 0x7b2844 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b284c loads 4 bytes from a0 (arg0 at entry) +0x7fec.
+  The `lw` at 0x7b2868 loads 4 bytes from a0 (arg0 at entry) +0x8804.
+  The `lw` at 0x7b2884 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b2888 loads 4 bytes from a0 (arg0 at entry) +0x7fc0.
+  The `lw` at 0x7b288c loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `sw` at 0x7b2890 stores 4 bytes to a0 (arg0 at entry) +0xcc.
+  The `lw` at 0x7b2894 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `sw` at 0x7b28a0 stores 4 bytes to [a0+290136] +0x0.
+  4 such `lbu` accesses load 1 byte from ?, including `lbu` at 0x7b28a8, `lbu` at 0x7b28ac, `lbu` at 0x7b28b0.
+  The `sw` at 0x7b28d0 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x7b28d8 stores 4 bytes to a0 (arg0 at entry) +0xd0.
+  The `sw` at 0x7b28e4 stores 4 bytes to [a0+290136] +0x8.
+  3 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7b28e8, `lw` at 0x7b28f0, `lw` at 0x7b28f8.
+  The `sw` at 0x7b28ec stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x7b28f4 stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7b2900 stores 4 bytes to [a0+290136] +0x18.
+  The `sw` at 0x7b2908 stores 4 bytes to [a0+290136] +0x14.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b290c, `ldc1` at 0x7b2918, `ldc1` at 0x7b2924.
+  The `swc1` at 0x7b2914 stores 4 bytes to [a0+290136] +0x1c.
+  The `swc1` at 0x7b2920 stores 4 bytes to [a0+290136] +0x20.
+  The `swc1` at 0x7b292c stores 4 bytes to [a0+290136] +0x24.
+  The `lw` at 0x7b2930 loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b2950 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b2968 calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e2f58, a2=?, a3=?, a6=0x208c4.
+  The `beq` branch at 0x7b294c targets 0x7b2960, is taken when at(=[a0+290136]+40) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+40) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b2970 targets 0x7b2954 and is always taken.
+  The return at 0x7b2958 has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DN3FC3F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b2d80 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b2d80-0x7b2ea8 (296 bytes).
+  It occupies 296 bytes.
+  The `lw` at 0x7b2d84 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b2d8c loads 4 bytes from a0 (arg0 at entry) +0x7fec.
+  The `lw` at 0x7b2da8 loads 4 bytes from a0 (arg0 at entry) +0x8804.
+  The `lw` at 0x7b2dc4 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b2dc8 loads 4 bytes from a0 (arg0 at entry) +0x7fc0.
+  The `lw` at 0x7b2dcc loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `sw` at 0x7b2dd0 stores 4 bytes to a0 (arg0 at entry) +0xcc.
+  The `lw` at 0x7b2dd4 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `sw` at 0x7b2de4 stores 4 bytes to [a0+290136] +0x0.
+  6 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7b2dec, `lw` at 0x7b2df4, `lw` at 0x7b2dfc.
+  The `sw` at 0x7b2df0 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x7b2df8 stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7b2e00 stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x7b2e08 stores 4 bytes to a0 (arg0 at entry) +0xd0.
+  The `sw` at 0x7b2e14 stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7b2e1c stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7b2e24 stores 4 bytes to [a0+290136] +0x18.
+  The `sw` at 0x7b2e30 stores 4 bytes to [a0+290136] +0x20.
+  The `sw` at 0x7b2e38 stores 4 bytes to [a0+290136] +0x1c.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b2e3c, `ldc1` at 0x7b2e48, `ldc1` at 0x7b2e54.
+  The `swc1` at 0x7b2e44 stores 4 bytes to [a0+290136] +0x24.
+  The `swc1` at 0x7b2e50 stores 4 bytes to [a0+290136] +0x28.
+  The `swc1` at 0x7b2e5c stores 4 bytes to [a0+290136] +0x2c.
+  The `lw` at 0x7b2e60 loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b2e80 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b2e98 calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e2a18, a2=?, a3=?, a6=0x208c4.
+  The `beq` branch at 0x7b2e7c targets 0x7b2e90, is taken when at(=[a0+290136]+48) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+48) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b2ea0 targets 0x7b2e84 and is always taken.
+  The return at 0x7b2e88 has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DN3FC3F_vcount` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b2ec0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b2ec0-0x7b2ff4 (308 bytes).
+  It occupies 308 bytes.
+  The `lw` at 0x7b2ec4 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b2ecc loads 4 bytes from a0 (arg0 at entry) +0x7fec.
+  The `lw` at 0x7b2eec loads 4 bytes from a0 (arg0 at entry) +0x8804.
+  The `lw` at 0x7b2ef4 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b2f08 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `lw` at 0x7b2f0c loads 4 bytes from a0 (arg0 at entry) +0x7fc0.
+  The `lw` at 0x7b2f10 loads 4 bytes from a0 (arg0 at entry) +0x39268.
+  The `lw` at 0x7b2f14 loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `sw` at 0x7b2f1c stores 4 bytes to a0 (arg0 at entry) +0x39268.
+  The `sw` at 0x7b2f20 stores 4 bytes to a0 (arg0 at entry) +0xcc.
+  The `sw` at 0x7b2f30 stores 4 bytes to [a0+290136] +0x0.
+  6 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7b2f38, `lw` at 0x7b2f40, `lw` at 0x7b2f48.
+  The `sw` at 0x7b2f3c stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x7b2f44 stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7b2f4c stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x7b2f54 stores 4 bytes to a0 (arg0 at entry) +0xd0.
+  The `sw` at 0x7b2f60 stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7b2f68 stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7b2f70 stores 4 bytes to [a0+290136] +0x18.
+  The `sw` at 0x7b2f7c stores 4 bytes to [a0+290136] +0x20.
+  The `sw` at 0x7b2f84 stores 4 bytes to [a0+290136] +0x1c.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b2f88, `ldc1` at 0x7b2f94, `ldc1` at 0x7b2fa0.
+  The `swc1` at 0x7b2f90 stores 4 bytes to [a0+290136] +0x24.
+  The `swc1` at 0x7b2f9c stores 4 bytes to [a0+290136] +0x28.
+  The `swc1` at 0x7b2fa8 stores 4 bytes to [a0+290136] +0x2c.
+  The `lw` at 0x7b2fac loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b2fcc stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b2fe4 calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e28d8, a2=?, a3=?, a6=0x208c4.
+  The `beq` branch at 0x7b2fc8 targets 0x7b2fdc, is taken when at(=[a0+290136]+48) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+48) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b2fec targets 0x7b2fd0 and is always taken.
+  The return at 0x7b2fd4 has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DN3FC4F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b3280 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b3280-0x7b33b0 (304 bytes).
+  It occupies 304 bytes.
+  The `lw` at 0x7b3284 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b328c loads 4 bytes from a0 (arg0 at entry) +0x7fec.
+  The `lw` at 0x7b32a8 loads 4 bytes from a0 (arg0 at entry) +0x8804.
+  The `lw` at 0x7b32c4 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b32c8 loads 4 bytes from a0 (arg0 at entry) +0x7fc0.
+  The `lw` at 0x7b32cc loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `sw` at 0x7b32d0 stores 4 bytes to a0 (arg0 at entry) +0xcc.
+  The `lw` at 0x7b32d8 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `sw` at 0x7b32e4 stores 4 bytes to [a0+290136] +0x0.
+  7 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7b32ec, `lw` at 0x7b32f4, `lw` at 0x7b32fc.
+  The `sw` at 0x7b32f0 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x7b32f8 stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7b3300 stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x7b3308 stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7b3310 stores 4 bytes to a0 (arg0 at entry) +0xd0.
+  The `sw` at 0x7b331c stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7b3324 stores 4 bytes to [a0+290136] +0x18.
+  The `sw` at 0x7b332c stores 4 bytes to [a0+290136] +0x1c.
+  The `sw` at 0x7b3338 stores 4 bytes to [a0+290136] +0x24.
+  The `sw` at 0x7b3340 stores 4 bytes to [a0+290136] +0x20.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b3344, `ldc1` at 0x7b3350, `ldc1` at 0x7b335c.
+  The `swc1` at 0x7b334c stores 4 bytes to [a0+290136] +0x28.
+  The `swc1` at 0x7b3358 stores 4 bytes to [a0+290136] +0x2c.
+  The `swc1` at 0x7b3364 stores 4 bytes to [a0+290136] +0x30.
+  The `lw` at 0x7b3368 loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b3388 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b33a0 calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e2518, a2=?, a3=?, a6=0x208c4.
+  The `beq` branch at 0x7b3384 targets 0x7b3398, is taken when at(=[a0+290136]+52) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+52) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b33a8 targets 0x7b338c and is always taken.
+  The return at 0x7b3390 has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DC4UBT02F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b3b80 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b3b80-0x7b3cb0 (304 bytes).
+  It occupies 304 bytes.
+  The `lw` at 0x7b3b84 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b3b94 loads 4 bytes from a0 (arg0 at entry) +0x8804.
+  The `lw` at 0x7b3ba8 loads 4 bytes from a0 (arg0 at entry) +0x8114.
+  The `lw` at 0x7b3bc4 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b3bc8 loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `lw` at 0x7b3bcc loads 4 bytes from a0 (arg0 at entry) +0x80e8.
+  The `sw` at 0x7b3bd0 stores 4 bytes to a0 (arg0 at entry) +0xf4.
+  The `lw` at 0x7b3bd4 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `sw` at 0x7b3be0 stores 4 bytes to [a0+290136] +0x0.
+  2 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7b3be8, `lw` at 0x7b3bf0.
+  The `sw` at 0x7b3bec stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x7b3bf4 stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7b3bf8 stores 4 bytes to a0 (arg0 at entry) +0xcc.
+  The `sw` at 0x7b3c04 stores 4 bytes to [a0+290136] +0xc.
+  4 such `lbu` accesses load 1 byte from ?, including `lbu` at 0x7b3c08, `lbu` at 0x7b3c10, `lbu` at 0x7b3c14.
+  The `sw` at 0x7b3c2c stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7b3c40 stores 4 bytes to [a0+290136] +0x10.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b3c44, `ldc1` at 0x7b3c50, `ldc1` at 0x7b3c5c.
+  The `swc1` at 0x7b3c4c stores 4 bytes to [a0+290136] +0x18.
+  The `swc1` at 0x7b3c58 stores 4 bytes to [a0+290136] +0x1c.
+  The `swc1` at 0x7b3c64 stores 4 bytes to [a0+290136] +0x20.
+  The `lw` at 0x7b3c68 loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b3c88 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b3ca0 calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e1c18, a2=?, a3=?, a7=0x927.
+  The `beq` branch at 0x7b3c84 targets 0x7b3c98, is taken when at(=[a0+290136]+36) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+36) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b3ca8 targets 0x7b3c8c and is always taken.
+  The return at 0x7b3c90 has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DC4UBT02F_vcount` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b3cc0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b3cc0-0x7b3dfc (316 bytes).
+  It occupies 316 bytes.
+  The `lw` at 0x7b3cc4 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b3cd4 loads 4 bytes from a0 (arg0 at entry) +0x8804.
+  The `lw` at 0x7b3cec loads 4 bytes from a0 (arg0 at entry) +0x8114.
+  The `lw` at 0x7b3cf4 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b3d08 loads 4 bytes from a0 (arg0 at entry) +0x39268.
+  The `lw` at 0x7b3d0c loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `lw` at 0x7b3d10 loads 4 bytes from a0 (arg0 at entry) +0x80e8.
+  The `lw` at 0x7b3d14 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `sw` at 0x7b3d1c stores 4 bytes to a0 (arg0 at entry) +0x39268.
+  The `sw` at 0x7b3d20 stores 4 bytes to a0 (arg0 at entry) +0xf4.
+  The `sw` at 0x7b3d2c stores 4 bytes to [a0+290136] +0x0.
+  2 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7b3d34, `lw` at 0x7b3d3c.
+  The `sw` at 0x7b3d38 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x7b3d40 stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7b3d44 stores 4 bytes to a0 (arg0 at entry) +0xcc.
+  The `sw` at 0x7b3d50 stores 4 bytes to [a0+290136] +0xc.
+  4 such `lbu` accesses load 1 byte from ?, including `lbu` at 0x7b3d54, `lbu` at 0x7b3d5c, `lbu` at 0x7b3d60.
+  The `sw` at 0x7b3d78 stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7b3d8c stores 4 bytes to [a0+290136] +0x10.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b3d90, `ldc1` at 0x7b3d9c, `ldc1` at 0x7b3da8.
+  The `swc1` at 0x7b3d98 stores 4 bytes to [a0+290136] +0x18.
+  The `swc1` at 0x7b3da4 stores 4 bytes to [a0+290136] +0x1c.
+  The `swc1` at 0x7b3db0 stores 4 bytes to [a0+290136] +0x20.
+  The `lw` at 0x7b3db4 loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b3dd4 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b3dec calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e1ad8, a2=?, a3=?, a7=0x927.
+  The `beq` branch at 0x7b3dd0 targets 0x7b3de4, is taken when at(=[a0+290136]+36) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+36) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b3df4 targets 0x7b3dd8 and is always taken.
+  The return at 0x7b3ddc has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DC3FT02F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b4080 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b4080-0x7b419c (284 bytes).
+  It occupies 284 bytes.
+  The `lw` at 0x7b4084 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b4094 loads 4 bytes from a0 (arg0 at entry) +0x8804.
+  The `lw` at 0x7b40a8 loads 4 bytes from a0 (arg0 at entry) +0x8114.
+  The `lw` at 0x7b40c4 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b40c8 loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `lw` at 0x7b40cc loads 4 bytes from a0 (arg0 at entry) +0x80e8.
+  The `sw` at 0x7b40d0 stores 4 bytes to a0 (arg0 at entry) +0xf4.
+  The `lw` at 0x7b40d4 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `sw` at 0x7b40e0 stores 4 bytes to [a0+290136] +0x0.
+  5 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7b40e8, `lw` at 0x7b40f0, `lw` at 0x7b410c.
+  The `sw` at 0x7b40ec stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x7b40f4 stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7b40fc stores 4 bytes to a0 (arg0 at entry) +0xcc.
+  The `sw` at 0x7b4108 stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x7b4110 stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7b4118 stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7b4124 stores 4 bytes to [a0+290136] +0x1c.
+  The `sw` at 0x7b412c stores 4 bytes to [a0+290136] +0x18.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b4130, `ldc1` at 0x7b413c, `ldc1` at 0x7b4148.
+  The `swc1` at 0x7b4138 stores 4 bytes to [a0+290136] +0x20.
+  The `swc1` at 0x7b4144 stores 4 bytes to [a0+290136] +0x24.
+  The `swc1` at 0x7b4150 stores 4 bytes to [a0+290136] +0x28.
+  The `lw` at 0x7b4154 loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b4174 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b418c calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e1718, a2=?, a3=?, a6=0x20918, a7=0x108e8.
+  The `beq` branch at 0x7b4170 targets 0x7b4184, is taken when at(=[a0+290136]+44) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+44) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b4194 targets 0x7b4178 and is always taken.
+  The return at 0x7b417c has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DC3FT02F_vcount` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b41c0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b41c0-0x7b42e8 (296 bytes).
+  It occupies 296 bytes.
+  The `lw` at 0x7b41c4 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b41d4 loads 4 bytes from a0 (arg0 at entry) +0x8804.
+  The `lw` at 0x7b41ec loads 4 bytes from a0 (arg0 at entry) +0x8114.
+  The `lw` at 0x7b41f4 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b4208 loads 4 bytes from a0 (arg0 at entry) +0x39268.
+  The `lw` at 0x7b420c loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `lw` at 0x7b4210 loads 4 bytes from a0 (arg0 at entry) +0x80e8.
+  The `lw` at 0x7b4214 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `sw` at 0x7b421c stores 4 bytes to a0 (arg0 at entry) +0x39268.
+  The `sw` at 0x7b4220 stores 4 bytes to a0 (arg0 at entry) +0xf4.
+  The `sw` at 0x7b422c stores 4 bytes to [a0+290136] +0x0.
+  5 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7b4234, `lw` at 0x7b423c, `lw` at 0x7b4258.
+  The `sw` at 0x7b4238 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x7b4240 stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7b4248 stores 4 bytes to a0 (arg0 at entry) +0xcc.
+  The `sw` at 0x7b4254 stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x7b425c stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7b4264 stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7b4270 stores 4 bytes to [a0+290136] +0x1c.
+  The `sw` at 0x7b4278 stores 4 bytes to [a0+290136] +0x18.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b427c, `ldc1` at 0x7b4288, `ldc1` at 0x7b4294.
+  The `swc1` at 0x7b4284 stores 4 bytes to [a0+290136] +0x20.
+  The `swc1` at 0x7b4290 stores 4 bytes to [a0+290136] +0x24.
+  The `swc1` at 0x7b429c stores 4 bytes to [a0+290136] +0x28.
+  The `lw` at 0x7b42a0 loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b42c0 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b42d8 calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e15d8, a2=?, a3=?, a6=0x20918, a7=0x108e8.
+  The `beq` branch at 0x7b42bc targets 0x7b42d0, is taken when at(=[a0+290136]+44) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+44) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b42e0 targets 0x7b42c4 and is always taken.
+  The return at 0x7b42c8 has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DC4FT02F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b4580 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b4580-0x7b46a8 (296 bytes).
+  It occupies 296 bytes.
+  The `lw` at 0x7b4584 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b4594 loads 4 bytes from a0 (arg0 at entry) +0x8804.
+  The `lw` at 0x7b45a8 loads 4 bytes from a0 (arg0 at entry) +0x8114.
+  The `lw` at 0x7b45c4 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b45c8 loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `lw` at 0x7b45cc loads 4 bytes from a0 (arg0 at entry) +0x80e8.
+  The `sw` at 0x7b45d0 stores 4 bytes to a0 (arg0 at entry) +0xf4.
+  The `lw` at 0x7b45d4 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `sw` at 0x7b45e0 stores 4 bytes to [a0+290136] +0x0.
+  6 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7b45e8, `lw` at 0x7b45f0, `lw` at 0x7b460c.
+  The `sw` at 0x7b45ec stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x7b45f4 stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7b45fc stores 4 bytes to a0 (arg0 at entry) +0xcc.
+  The `sw` at 0x7b4608 stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x7b4610 stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7b4618 stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7b4620 stores 4 bytes to [a0+290136] +0x18.
+  The `sw` at 0x7b4630 stores 4 bytes to [a0+290136] +0x20.
+  The `sw` at 0x7b4638 stores 4 bytes to [a0+290136] +0x1c.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b463c, `ldc1` at 0x7b4648, `ldc1` at 0x7b4654.
+  The `swc1` at 0x7b4644 stores 4 bytes to [a0+290136] +0x24.
+  The `swc1` at 0x7b4650 stores 4 bytes to [a0+290136] +0x28.
+  The `swc1` at 0x7b465c stores 4 bytes to [a0+290136] +0x2c.
+  The `lw` at 0x7b4660 loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b4680 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b4698 calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e1218, a2=?, a3=?, a7=0x30918.
+  The `beq` branch at 0x7b467c targets 0x7b4690, is taken when at(=[a0+290136]+48) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+48) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b46a0 targets 0x7b4684 and is always taken.
+  The return at 0x7b4688 has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DC4FT02F_vcount` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b46c0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b46c0-0x7b47f4 (308 bytes).
+  It occupies 308 bytes.
+  The `lw` at 0x7b46c4 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b46d4 loads 4 bytes from a0 (arg0 at entry) +0x8804.
+  The `lw` at 0x7b46ec loads 4 bytes from a0 (arg0 at entry) +0x8114.
+  The `lw` at 0x7b46f4 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b4708 loads 4 bytes from a0 (arg0 at entry) +0x39268.
+  The `lw` at 0x7b470c loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `lw` at 0x7b4710 loads 4 bytes from a0 (arg0 at entry) +0x80e8.
+  The `lw` at 0x7b4714 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `sw` at 0x7b471c stores 4 bytes to a0 (arg0 at entry) +0x39268.
+  The `sw` at 0x7b4720 stores 4 bytes to a0 (arg0 at entry) +0xf4.
+  The `sw` at 0x7b472c stores 4 bytes to [a0+290136] +0x0.
+  6 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7b4734, `lw` at 0x7b473c, `lw` at 0x7b4758.
+  The `sw` at 0x7b4738 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x7b4740 stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7b4748 stores 4 bytes to a0 (arg0 at entry) +0xcc.
+  The `sw` at 0x7b4754 stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x7b475c stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7b4764 stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7b476c stores 4 bytes to [a0+290136] +0x18.
+  The `sw` at 0x7b477c stores 4 bytes to [a0+290136] +0x20.
+  The `sw` at 0x7b4784 stores 4 bytes to [a0+290136] +0x1c.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b4788, `ldc1` at 0x7b4794, `ldc1` at 0x7b47a0.
+  The `swc1` at 0x7b4790 stores 4 bytes to [a0+290136] +0x24.
+  The `swc1` at 0x7b479c stores 4 bytes to [a0+290136] +0x28.
+  The `swc1` at 0x7b47a8 stores 4 bytes to [a0+290136] +0x2c.
+  The `lw` at 0x7b47ac loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b47cc stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b47e4 calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e10d8, a2=?, a3=?, a7=0x30918.
+  The `beq` branch at 0x7b47c8 targets 0x7b47dc, is taken when at(=[a0+290136]+48) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+48) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b47ec targets 0x7b47d0 and is always taken.
+  The return at 0x7b47d4 has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DN3FC4UBT02F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b5000 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b5000-0x7b5170 (368 bytes).
+  It occupies 368 bytes.
+  The `lw` at 0x7b5004 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b500c loads 4 bytes from a0 (arg0 at entry) +0x7fec.
+  The `lw` at 0x7b5028 loads 4 bytes from a0 (arg0 at entry) +0x8804.
+  The `lw` at 0x7b5040 loads 4 bytes from a0 (arg0 at entry) +0x8114.
+  The `lw` at 0x7b5058 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b505c loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `lw` at 0x7b5060 loads 4 bytes from a0 (arg0 at entry) +0x80e8.
+  The `sw` at 0x7b5064 stores 4 bytes to a0 (arg0 at entry) +0xf4.
+  The `lw` at 0x7b5068 loads 4 bytes from a0 (arg0 at entry) +0x7fc0.
+  The `lw` at 0x7b506c loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `sw` at 0x7b5078 stores 4 bytes to [a0+290136] +0x0.
+  5 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7b5080, `lw` at 0x7b5088, `lw` at 0x7b50e0.
+  The `sw` at 0x7b5084 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x7b508c stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7b5090 stores 4 bytes to a0 (arg0 at entry) +0xcc.
+  The `sw` at 0x7b509c stores 4 bytes to [a0+290136] +0xc.
+  4 such `lbu` accesses load 1 byte from ?, including `lbu` at 0x7b50a0, `lbu` at 0x7b50a4, `lbu` at 0x7b50a8.
+  The `sw` at 0x7b50c8 stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7b50d0 stores 4 bytes to a0 (arg0 at entry) +0xd0.
+  The `sw` at 0x7b50dc stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7b50e4 stores 4 bytes to [a0+290136] +0x18.
+  The `sw` at 0x7b50ec stores 4 bytes to [a0+290136] +0x1c.
+  The `sw` at 0x7b50f8 stores 4 bytes to [a0+290136] +0x24.
+  The `sw` at 0x7b5100 stores 4 bytes to [a0+290136] +0x20.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b5104, `ldc1` at 0x7b5110, `ldc1` at 0x7b511c.
+  The `swc1` at 0x7b510c stores 4 bytes to [a0+290136] +0x28.
+  The `swc1` at 0x7b5118 stores 4 bytes to [a0+290136] +0x2c.
+  The `swc1` at 0x7b5124 stores 4 bytes to [a0+290136] +0x30.
+  The `lw` at 0x7b5128 loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b5148 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b5160 calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e0798, a2=?, a3=?, a6=0x208c4.
+  The `beq` branch at 0x7b5144 targets 0x7b5158, is taken when at(=[a0+290136]+52) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+52) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b5168 targets 0x7b514c and is always taken.
+  The return at 0x7b5150 has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DN3FC3FT02F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b5600 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b5600-0x7b5760 (352 bytes).
+  It occupies 352 bytes.
+  The `lw` at 0x7b5604 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b560c loads 4 bytes from a0 (arg0 at entry) +0x7fec.
+  The `lw` at 0x7b5628 loads 4 bytes from a0 (arg0 at entry) +0x8804.
+  The `lw` at 0x7b5640 loads 4 bytes from a0 (arg0 at entry) +0x8114.
+  The `lw` at 0x7b5658 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b565c loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `lw` at 0x7b5660 loads 4 bytes from a0 (arg0 at entry) +0x80e8.
+  The `sw` at 0x7b5664 stores 4 bytes to a0 (arg0 at entry) +0xf4.
+  The `lw` at 0x7b5668 loads 4 bytes from a0 (arg0 at entry) +0x7fc0.
+  The `lw` at 0x7b566c loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `sw` at 0x7b5678 stores 4 bytes to [a0+290136] +0x0.
+  8 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7b5680, `lw` at 0x7b5688, `lw` at 0x7b56a4.
+  The `sw` at 0x7b5684 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x7b568c stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7b5694 stores 4 bytes to a0 (arg0 at entry) +0xcc.
+  The `sw` at 0x7b56a0 stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x7b56a8 stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7b56b0 stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7b56b8 stores 4 bytes to [a0+290136] +0x18.
+  The `sw` at 0x7b56c0 stores 4 bytes to a0 (arg0 at entry) +0xd0.
+  The `sw` at 0x7b56cc stores 4 bytes to [a0+290136] +0x1c.
+  The `sw` at 0x7b56d4 stores 4 bytes to [a0+290136] +0x20.
+  The `sw` at 0x7b56dc stores 4 bytes to [a0+290136] +0x24.
+  The `sw` at 0x7b56e8 stores 4 bytes to [a0+290136] +0x2c.
+  The `sw` at 0x7b56f0 stores 4 bytes to [a0+290136] +0x28.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b56f4, `ldc1` at 0x7b5700, `ldc1` at 0x7b570c.
+  The `swc1` at 0x7b56fc stores 4 bytes to [a0+290136] +0x30.
+  The `swc1` at 0x7b5708 stores 4 bytes to [a0+290136] +0x34.
+  The `swc1` at 0x7b5714 stores 4 bytes to [a0+290136] +0x38.
+  The `lw` at 0x7b5718 loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b5738 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b5750 calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e0198, a2=?, a3=?, a6=0x208c4.
+  The `beq` branch at 0x7b5734 targets 0x7b5748, is taken when at(=[a0+290136]+60) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+60) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b5758 targets 0x7b573c and is always taken.
+  The return at 0x7b5740 has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DN3FC3FT02F_vcount` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b5780 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b5780-0x7b58ec (364 bytes).
+  It occupies 364 bytes.
+  The `lw` at 0x7b5784 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b578c loads 4 bytes from a0 (arg0 at entry) +0x7fec.
+  The `lw` at 0x7b57a8 loads 4 bytes from a0 (arg0 at entry) +0x8804.
+  The `lw` at 0x7b57c4 loads 4 bytes from a0 (arg0 at entry) +0x8114.
+  The `lw` at 0x7b57c8 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b57cc loads 4 bytes from a0 (arg0 at entry) +0x39268.
+  The `lw` at 0x7b57e0 loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `lw` at 0x7b57e4 loads 4 bytes from a0 (arg0 at entry) +0x80e8.
+  The `lw` at 0x7b57e8 loads 4 bytes from a0 (arg0 at entry) +0x7fc0.
+  The `lw` at 0x7b57ec loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `sw` at 0x7b57f4 stores 4 bytes to a0 (arg0 at entry) +0x39268.
+  The `sw` at 0x7b57f8 stores 4 bytes to a0 (arg0 at entry) +0xf4.
+  The `sw` at 0x7b5804 stores 4 bytes to [a0+290136] +0x0.
+  8 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7b580c, `lw` at 0x7b5814, `lw` at 0x7b5830.
+  The `sw` at 0x7b5810 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x7b5818 stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7b5820 stores 4 bytes to a0 (arg0 at entry) +0xcc.
+  The `sw` at 0x7b582c stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x7b5834 stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7b583c stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7b5844 stores 4 bytes to [a0+290136] +0x18.
+  The `sw` at 0x7b584c stores 4 bytes to a0 (arg0 at entry) +0xd0.
+  The `sw` at 0x7b5858 stores 4 bytes to [a0+290136] +0x1c.
+  The `sw` at 0x7b5860 stores 4 bytes to [a0+290136] +0x20.
+  The `sw` at 0x7b5868 stores 4 bytes to [a0+290136] +0x24.
+  The `sw` at 0x7b5874 stores 4 bytes to [a0+290136] +0x2c.
+  The `sw` at 0x7b587c stores 4 bytes to [a0+290136] +0x28.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b5880, `ldc1` at 0x7b588c, `ldc1` at 0x7b5898.
+  The `swc1` at 0x7b5888 stores 4 bytes to [a0+290136] +0x30.
+  The `swc1` at 0x7b5894 stores 4 bytes to [a0+290136] +0x34.
+  The `swc1` at 0x7b58a0 stores 4 bytes to [a0+290136] +0x38.
+  The `lw` at 0x7b58a4 loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b58c4 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b58dc calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3e0018, a2=?, a3=?, a6=0x208c4.
+  The `beq` branch at 0x7b58c0 targets 0x7b58d4, is taken when at(=[a0+290136]+60) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+60) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b58e4 targets 0x7b58c8 and is always taken.
+  The return at 0x7b58cc has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLArrayElementV3DN3FC4FT02F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7b5c00 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7b5c00-0x7b5d68 (360 bytes).
+  It occupies 360 bytes.
+  The `lw` at 0x7b5c04 loads 4 bytes from a0 (arg0 at entry) +0x7ec4.
+  The `lw` at 0x7b5c0c loads 4 bytes from a0 (arg0 at entry) +0x7fec.
+  The `lw` at 0x7b5c28 loads 4 bytes from a0 (arg0 at entry) +0x8804.
+  The `lw` at 0x7b5c40 loads 4 bytes from a0 (arg0 at entry) +0x8114.
+  The `lw` at 0x7b5c58 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x7b5c5c loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `lw` at 0x7b5c60 loads 4 bytes from a0 (arg0 at entry) +0x80e8.
+  The `sw` at 0x7b5c64 stores 4 bytes to a0 (arg0 at entry) +0xf4.
+  The `lw` at 0x7b5c68 loads 4 bytes from a0 (arg0 at entry) +0x7fc0.
+  The `lw` at 0x7b5c6c loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `sw` at 0x7b5c78 stores 4 bytes to [a0+290136] +0x0.
+  9 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7b5c80, `lw` at 0x7b5c88, `lw` at 0x7b5ca4.
+  The `sw` at 0x7b5c84 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x7b5c8c stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x7b5c94 stores 4 bytes to a0 (arg0 at entry) +0xcc.
+  The `sw` at 0x7b5ca0 stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x7b5ca8 stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7b5cb0 stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7b5cb8 stores 4 bytes to [a0+290136] +0x18.
+  The `sw` at 0x7b5cc0 stores 4 bytes to [a0+290136] +0x1c.
+  The `sw` at 0x7b5cc8 stores 4 bytes to a0 (arg0 at entry) +0xd0.
+  The `sw` at 0x7b5cd4 stores 4 bytes to [a0+290136] +0x20.
+  The `sw` at 0x7b5cdc stores 4 bytes to [a0+290136] +0x24.
+  The `sw` at 0x7b5ce4 stores 4 bytes to [a0+290136] +0x28.
+  The `sw` at 0x7b5cf0 stores 4 bytes to [a0+290136] +0x30.
+  The `sw` at 0x7b5cf8 stores 4 bytes to [a0+290136] +0x2c.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7b5cfc, `ldc1` at 0x7b5d08, `ldc1` at 0x7b5d14.
+  The `swc1` at 0x7b5d04 stores 4 bytes to [a0+290136] +0x34.
+  The `swc1` at 0x7b5d10 stores 4 bytes to [a0+290136] +0x38.
+  The `swc1` at 0x7b5d1c stores 4 bytes to [a0+290136] +0x3c.
+  The `lw` at 0x7b5d20 loads 4 bytes from a0 (arg0 at entry) +0x46d5c.
+  The `sw` at 0x7b5d40 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7b5d58 calls __R300HandleBrokenPrimitive [0x88b080] with a0=a0 at entry (arg0), a1=0x3dfb98, a2=?, a3=?, a6=0x208c4.
+  The `beq` branch at 0x7b5d3c targets 0x7b5d50, is taken when at(=[a0+290136]+64) >= v1(=[a0+290140]) (unsigned), and falls through when at(=[a0+290136]+64) < v1(=[a0+290140]) (unsigned).
+  The `beq` branch at 0x7b5d60 targets 0x7b5d44 and is always taken.
+  The return at 0x7b5d48 has v0 = one of a0+262144, ret(__R300HandleBrokenPrimitive).
+
+- `__R300TCLDrawArraysV3DC3F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7bd800 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7bd800-0x7bd9fc (508 bytes).
+  It occupies 508 bytes.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x7bd810, `lw` at 0x7bd9b0.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x7bd814, `lw` at 0x7bd9b4.
+  The `sw` at 0x7bd864 stores 4 bytes to [a0+290136] +0x0.
+  The `lw` at 0x7bd868 loads 4 bytes from a0 (arg0 at entry) +0x607c.
+  The `lw` at 0x7bd874 loads 4 bytes from ([a0+24700] + (a1 << 0x2)) +0x0.
+  The `sw` at 0x7bd878 stores 4 bytes to [a0+290136] +0x4.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x7ec4, including `lw` at 0x7bd87c, `lw` at 0x7bd930.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x8804, including `lw` at 0x7bd88c, `lw` at 0x7bd900.
+  The `lw` at 0x7bd8bc loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `lw` at 0x7bd8c4 loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  7 such `sw` accesses store 4 bytes to ?, including `sw` at 0x7bd8e4, `sw` at 0x7bd8ec, `sw` at 0x7bd8f4.
+  3 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7bd8e8, `lw` at 0x7bd8f0, `lw` at 0x7bd8f8.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7bd908, `ldc1` at 0x7bd914, `ldc1` at 0x7bd924.
+  3 such `swc1` accesses store 4 bytes to ?, including `swc1` at 0x7bd910, `swc1` at 0x7bd91c, `swc1` at 0x7bd92c.
+  The `sw` at 0x7bd968 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7bd9a8 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3), a5=a2 at entry (arg2).
+  The `bgezall` at 0x7bd9ec calls __glR300BreakDrawArrays [0x7bc100] with a0=a0 at entry (arg0), a1=0x7bd800, a2=0x4, a3=0x8, a4=a1 at entry (arg1), a5=a2 at entry (arg2), a6=a3 at entry (arg3).
+  The `bne` branch at 0x7bd858 targets 0x7bd99c, is taken when v0(?) < v1(=(a3 << 0x3)+4) (unsigned), and falls through when v0(?) >= v1(=(a3 << 0x3)+4) (unsigned).
+  The `blez` branch at 0x7bd8dc targets 0x7bd940, is taken when s1(=a3) <= 0 (signed), and falls through when s1(=a3) > 0 (signed).
+  The `bne` branch at 0x7bd938 targets 0x7bd8e4, is taken when a1(?) != a0(=((a3 << 0x5) + [a0+290136])), and falls through when a1(?) == a0(=((a3 << 0x5) + [a0+290136])).
+  The `beq` branch at 0x7bd940 targets 0x7bd94c, is taken when a3(?) == 0, and falls through when a3(?) != 0.
+  The `beq` branch at 0x7bd9cc targets 0x7bd860, is taken when v0(?) >= v1(=(a3 << 0x3)+4) (unsigned), and falls through when v0(?) < v1(=(a3 << 0x3)+4) (unsigned).
+  The `beq` branch at 0x7bd9f4 targets 0x7bd980 and is always taken.
+  The return at 0x7bd970 has v0 = 0x92b.
+  The return at 0x7bd994 has v0 = ret(__glR300BreakDrawArrays).
+  The instructions from 0x7bd978 to 0x7bd97c are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300TCLDrawArraysV3DC4F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7bdcc0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7bdcc0-0x7bdedc (540 bytes).
+  It occupies 540 bytes.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x7bdcd4, `lw` at 0x7bde94.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x7bdcd8, `lw` at 0x7bde98.
+  The `sw` at 0x7bdd2c stores 4 bytes to [a0+290136] +0x0.
+  The `lw` at 0x7bdd30 loads 4 bytes from a0 (arg0 at entry) +0x607c.
+  The `lw` at 0x7bdd3c loads 4 bytes from ([a0+24700] + (a1 << 0x2)) +0x0.
+  The `sw` at 0x7bdd40 stores 4 bytes to [a0+290136] +0x4.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x7ec4, including `lw` at 0x7bdd44, `lw` at 0x7bde14.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x8804, including `lw` at 0x7bdd54, `lw` at 0x7bdde4.
+  The `lw` at 0x7bdd8c loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `lw` at 0x7bdd94 loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  8 such `sw` accesses store 4 bytes to ?, including `sw` at 0x7bddc0, `sw` at 0x7bddc8, `sw` at 0x7bddd0.
+  4 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7bddc4, `lw` at 0x7bddcc, `lw` at 0x7bddd4.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7bddec, `ldc1` at 0x7bddf8, `ldc1` at 0x7bde08.
+  3 such `swc1` accesses store 4 bytes to ?, including `swc1` at 0x7bddf4, `swc1` at 0x7bde04, `swc1` at 0x7bde10.
+  The `sw` at 0x7bde4c stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7bde8c calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3), a5=a2 at entry (arg2).
+  The `bgezall` at 0x7bdecc calls __glR300BreakDrawArrays [0x7bc100] with a0=a0 at entry (arg0), a1=0x7bdcc0, a2=0x4, a3=0x9, a4=a1 at entry (arg1), a5=a2 at entry (arg2), a6=a3 at entry (arg3).
+  The `bne` branch at 0x7bdd20 targets 0x7bde84, is taken when v0(?) < v1(=((a3 << 0x3) + a3)+4) (unsigned), and falls through when v0(?) >= v1(=((a3 << 0x3) + a3)+4) (unsigned).
+  The `blez` branch at 0x7bddb8 targets 0x7bde24, is taken when s1(=a3) <= 0 (signed), and falls through when s1(=a3) > 0 (signed).
+  The `bne` branch at 0x7bde1c targets 0x7bddc0, is taken when a1(?) != a0(=((((a3 << 0x3) + a3) << 0x2) + [a0+290136])), and falls through when a1(?) == a0(=((((a3 << 0x3) + a3) << 0x2) + [a0+290136])).
+  The `beq` branch at 0x7bde24 targets 0x7bde30, is taken when a2(?) == 0, and falls through when a2(?) != 0.
+  The `beq` branch at 0x7bdeac targets 0x7bdd28, is taken when v1(?) >= a0(=((a3 << 0x3) + a3)+4) (unsigned), and falls through when v1(?) < a0(=((a3 << 0x3) + a3)+4) (unsigned).
+  The `beq` branch at 0x7bded4 targets 0x7bde68 and is always taken.
+  The return at 0x7bde60 has v0 = one of (((a3 << 0x3) + a3) << 0x2), 0x0.
+  The return at 0x7bde7c has v0 = ret(__glR300BreakDrawArrays).
+
+- `__R300TCLDrawArraysV3DN3F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7bdf00 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7bdf00-0x7be2bc (956 bytes).
+  It occupies 956 bytes.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x7bdf14, `lw` at 0x7be270.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x7bdf18, `lw` at 0x7be274.
+  The `sw` at 0x7bdf70 stores 4 bytes to [a0+290136] +0x0.
+  The `lw` at 0x7bdf74 loads 4 bytes from a0 (arg0 at entry) +0x607c.
+  The `lw` at 0x7bdf80 loads 4 bytes from ([a0+24700] + (a1 << 0x2)) +0x0.
+  The `sw` at 0x7bdf84 stores 4 bytes to [a0+290136] +0x4.
+  5 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x7ec4, including `lw` at 0x7bdf88, `lw` at 0x7be030, `lw` at 0x7be0d0.
+  5 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x7fec, including `lw` at 0x7bdf90, `lw` at 0x7bdfd8, `lw` at 0x7be0a4.
+  The `lw` at 0x7bdfa4 loads 4 bytes from a0 (arg0 at entry) +0x7fc0.
+  The `lw` at 0x7bdfac loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `sw` at 0x7bdfbc stores 4 bytes to [a0+290136] +0x8.
+  30 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7bdfc0, `lw` at 0x7bdfc8, `lw` at 0x7bdfd0.
+  The `sw` at 0x7bdfc4 stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x7bdfcc stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7bdfd4 stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7bdfe4 stores 4 bytes to [a0+290136] +0x18.
+  12 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7bdfe8, `ldc1` at 0x7bdff4, `ldc1` at 0x7be004.
+  The `swc1` at 0x7bdff0 stores 4 bytes to [a0+290136] +0x1c.
+  The `swc1` at 0x7be000 stores 4 bytes to [a0+290136] +0x20.
+  The `swc1` at 0x7be024 stores 4 bytes to [a0+290136] +0x24.
+  The `sw` at 0x7be080 stores 4 bytes to [a0+290136] +0x28.
+  The `sw` at 0x7be088 stores 4 bytes to [a0+290136] +0x2c.
+  The `sw` at 0x7be090 stores 4 bytes to [a0+290136] +0x30.
+  The `sw` at 0x7be0a0 stores 4 bytes to [a0+290136] +0x34.
+  The `sw` at 0x7be0a8 stores 4 bytes to ([a0+290136] + one of 0x28, 0x38) +0x0.
+  The `swc1` at 0x7be0b4 stores 4 bytes to ([a0+290136] + one of 0x2c, 0x3c) +0x0.
+  The `swc1` at 0x7be0c0 stores 4 bytes to ([a0+290136] + one of 0x30, 0x40) +0x0.
+  The `swc1` at 0x7be0cc stores 4 bytes to ([a0+290136] + one of 0x34, 0x44) +0x0.
+  12 such `sw` accesses store 4 bytes to ?, including `sw` at 0x7be120, `sw` at 0x7be128, `sw` at 0x7be130.
+  6 such `swc1` accesses store 4 bytes to ?, including `swc1` at 0x7be154, `swc1` at 0x7be160, `swc1` at 0x7be16c.
+  The `sw` at 0x7be230 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7be268 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3).
+  The `bgezall` at 0x7be2ac calls __glR300BreakDrawArrays [0x7bc100] with a0=a0 at entry (arg0), a1=0x7bdf00, a2=0x4, a3=0x8, a4=a1 at entry (arg1), a5=a2 at entry (arg2), a6=a3 at entry (arg3).
+  The `bne` branch at 0x7bdf64 targets 0x7be264, is taken when at(?) < v0(=(a3 << 0x3)+4) (unsigned), and falls through when at(?) >= v0(=(a3 << 0x3)+4) (unsigned).
+  The `bne` branch at 0x7be044 targets 0x7be218, is taken when s5(=a3) < 0x2 (signed), and falls through when s5(=a3) >= 0x2 (signed).
+  The `beq` branch at 0x7be04c targets 0x7be0e0, is taken when a1(?) == 0, and falls through when a1(?) != 0.
+  The `beq` branch at 0x7be078 targets 0x7be0a4, is taken when a1(?) == 0, and falls through when a1(?) != 0.
+  The `beq` branch at 0x7be0e4 targets 0x7be218, is taken when a4(?) == 0, and falls through when a4(?) != 0.
+  The `beq` branch at 0x7be118 targets 0x7be144, is taken when a5(?) == 0, and falls through when a5(?) != 0.
+  The `beq` branch at 0x7be1a8 targets 0x7be1d4, is taken when a6(?) == 0, and falls through when a6(?) != 0.
+  The `bne` branch at 0x7be210 targets 0x7be0ec, is taken when a0(?) != ra(=a3-1), and falls through when a0(?) == ra(=a3-1).
+  The `beq` branch at 0x7be288 targets 0x7bdf70, is taken when v1(?) >= a0(=(a3 << 0x3)+4) (unsigned), and falls through when v1(?) < a0(=(a3 << 0x3)+4) (unsigned).
+  The `beq` branch at 0x7be2b4 targets 0x7be240 and is always taken.
+  The return at 0x7be238 has v0 = one of [a0+290136]+48, ([a0+290136] + one of 0x30, 0x40, 0x50), ?.
+  The return at 0x7be25c has v0 = ret(__glR300BreakDrawArrays).
+
+- `__R300TCLDrawArraysV3DN3FC3F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7bec40 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7bec40-0x7bef40 (768 bytes).
+  It occupies 768 bytes.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x7bec54, `lw` at 0x7beef8.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x7bec5c, `lw` at 0x7beefc.
+  The `sw` at 0x7becbc stores 4 bytes to [a0+290136] +0x0.
+  The `lw` at 0x7becc0 loads 4 bytes from a0 (arg0 at entry) +0x607c.
+  The `lw` at 0x7beccc loads 4 bytes from ([a0+24700] + (a1 << 0x2)) +0x0.
+  The `sw` at 0x7becd0 stores 4 bytes to [a0+290136] +0x4.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x7ec4, including `lw` at 0x7becd4, `lw` at 0x7bedbc, `lw` at 0x7bee80.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x7fec, including `lw` at 0x7becdc, `lw` at 0x7bed40, `lw` at 0x7bee30.
+  The `lw` at 0x7becf4 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `lw` at 0x7becfc loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `lw` at 0x7bed00 loads 4 bytes from a0 (arg0 at entry) +0x7fc0.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x8804, including `lw` at 0x7bed08, `lw` at 0x7bed6c, `lw` at 0x7bee50.
+  The `sw` at 0x7bed14 stores 4 bytes to [a0+290136] +0x8.
+  18 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7bed1c, `lw` at 0x7bed28, `lw` at 0x7bed30.
+  The `sw` at 0x7bed24 stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x7bed2c stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7bed38 stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7bed4c stores 4 bytes to [a0+290136] +0x18.
+  The `sw` at 0x7bed58 stores 4 bytes to [a0+290136] +0x1c.
+  The `sw` at 0x7bed60 stores 4 bytes to [a0+290136] +0x20.
+  The `sw` at 0x7bed68 stores 4 bytes to [a0+290136] +0x24.
+  The `sw` at 0x7bed78 stores 4 bytes to [a0+290136] +0x28.
+  6 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7bed7c, `ldc1` at 0x7bed88, `ldc1` at 0x7bed94.
+  The `swc1` at 0x7bed84 stores 4 bytes to [a0+290136] +0x2c.
+  The `swc1` at 0x7bed90 stores 4 bytes to [a0+290136] +0x30.
+  The `swc1` at 0x7bedb0 stores 4 bytes to [a0+290136] +0x34.
+  11 such `sw` accesses store 4 bytes to ?, including `sw` at 0x7bee0c, `sw` at 0x7bee14, `sw` at 0x7bee1c.
+  3 such `swc1` accesses store 4 bytes to ?, including `swc1` at 0x7bee60, `swc1` at 0x7bee6c, `swc1` at 0x7bee78.
+  The `sw` at 0x7beeb0 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7beef0 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3), a5=a2 at entry (arg2).
+  The `bgezall` at 0x7bef30 calls __glR300BreakDrawArrays [0x7bc100] with a0=a0 at entry (arg0), a1=0x7bec40, a2=0x4, a3=0xc, a4=a1 at entry (arg1), a5=a2 at entry (arg2), a6=a3 at entry (arg3).
+  The `bne` branch at 0x7becb0 targets 0x7beee8, is taken when at(?) < v0(?) (unsigned), and falls through when at(?) >= v0(?) (unsigned).
+  The `bne` branch at 0x7bedd0 targets 0x7bee94, is taken when s7(=a3) < 0x2 (signed), and falls through when s7(=a3) >= 0x2 (signed).
+  The `beq` branch at 0x7bee04 targets 0x7bee30, is taken when a7(?) == 0, and falls through when a7(?) != 0.
+  The `bne` branch at 0x7bee8c targets 0x7bedd8, is taken when a1(?) != s2(=a3-1), and falls through when a1(?) == s2(=a3-1).
+  The `beq` branch at 0x7bef10 targets 0x7becb8, is taken when a7(?) >= t0(?) (unsigned), and falls through when a7(?) < t0(?) (unsigned).
+  The `beq` branch at 0x7bef38 targets 0x7beec0 and is always taken.
+  The return at 0x7beeb8 has v0 = one of ?, [a0+34820].
+  The return at 0x7beee0 has v0 = ret(__glR300BreakDrawArrays).
+
+- `__R300TCLDrawArraysV3DN3FC4F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7bf240 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7bf240-0x7bf558 (792 bytes).
+  It occupies 792 bytes.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x7bf258, `lw` at 0x7bf510.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x7bf260, `lw` at 0x7bf514.
+  The `sw` at 0x7bf2c0 stores 4 bytes to [a0+290136] +0x0.
+  The `lw` at 0x7bf2c4 loads 4 bytes from a0 (arg0 at entry) +0x607c.
+  The `lw` at 0x7bf2d0 loads 4 bytes from ([a0+24700] + (a1 << 0x2)) +0x0.
+  The `sw` at 0x7bf2d4 stores 4 bytes to [a0+290136] +0x4.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x7ec4, including `lw` at 0x7bf2d8, `lw` at 0x7bf3c8, `lw` at 0x7bf498.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x7fec, including `lw` at 0x7bf2e0, `lw` at 0x7bf344, `lw` at 0x7bf43c.
+  The `lw` at 0x7bf2f8 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `lw` at 0x7bf300 loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `lw` at 0x7bf304 loads 4 bytes from a0 (arg0 at entry) +0x7fc0.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x8804, including `lw` at 0x7bf30c, `lw` at 0x7bf378, `lw` at 0x7bf464.
+  The `sw` at 0x7bf318 stores 4 bytes to [a0+290136] +0x8.
+  20 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7bf320, `lw` at 0x7bf32c, `lw` at 0x7bf334.
+  The `sw` at 0x7bf328 stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x7bf330 stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7bf33c stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7bf350 stores 4 bytes to [a0+290136] +0x18.
+  The `sw` at 0x7bf35c stores 4 bytes to [a0+290136] +0x1c.
+  The `sw` at 0x7bf364 stores 4 bytes to [a0+290136] +0x20.
+  The `sw` at 0x7bf36c stores 4 bytes to [a0+290136] +0x24.
+  The `sw` at 0x7bf374 stores 4 bytes to [a0+290136] +0x28.
+  The `sw` at 0x7bf384 stores 4 bytes to [a0+290136] +0x2c.
+  6 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7bf388, `ldc1` at 0x7bf394, `ldc1` at 0x7bf3a0.
+  The `swc1` at 0x7bf390 stores 4 bytes to [a0+290136] +0x30.
+  The `swc1` at 0x7bf39c stores 4 bytes to [a0+290136] +0x34.
+  The `swc1` at 0x7bf3bc stores 4 bytes to [a0+290136] +0x38.
+  12 such `sw` accesses store 4 bytes to ?, including `sw` at 0x7bf418, `sw` at 0x7bf420, `sw` at 0x7bf428.
+  3 such `swc1` accesses store 4 bytes to ?, including `swc1` at 0x7bf474, `swc1` at 0x7bf480, `swc1` at 0x7bf490.
+  The `sw` at 0x7bf4c8 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7bf508 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3), a5=a2 at entry (arg2).
+  The `bgezall` at 0x7bf548 calls __glR300BreakDrawArrays [0x7bc100] with a0=a0 at entry (arg0), a1=0x7bf240, a2=0x4, a3=0xd, a4=a1 at entry (arg1), a5=a2 at entry (arg2), a6=a3 at entry (arg3).
+  The `bne` branch at 0x7bf2b4 targets 0x7bf500, is taken when at(?) < v0(?) (unsigned), and falls through when at(?) >= v0(?) (unsigned).
+  The `bne` branch at 0x7bf3dc targets 0x7bf4ac, is taken when s7(=a3) < 0x2 (signed), and falls through when s7(=a3) >= 0x2 (signed).
+  The `beq` branch at 0x7bf410 targets 0x7bf43c, is taken when a7(?) == 0, and falls through when a7(?) != 0.
+  The `bne` branch at 0x7bf4a4 targets 0x7bf3e4, is taken when a1(?) != s2(=a3-1), and falls through when a1(?) == s2(=a3-1).
+  The `beq` branch at 0x7bf528 targets 0x7bf2bc, is taken when t0(?) >= t1(?) (unsigned), and falls through when t0(?) < t1(?) (unsigned).
+  The `beq` branch at 0x7bf550 targets 0x7bf4d8 and is always taken.
+  The return at 0x7bf4d0 has v0 = one of ?, [a0+34820].
+  The return at 0x7bf4f8 has v0 = ret(__glR300BreakDrawArrays).
+
+- `__R300TCLDrawArraysV3DC3FT02F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7c01c0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7c01c0-0x7c042c (620 bytes).
+  It occupies 620 bytes.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x7c01d4, `lw` at 0x7c03e0.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x7c01dc, `lw` at 0x7c03e4.
+  The `sw` at 0x7c0234 stores 4 bytes to [a0+290136] +0x0.
+  The `lw` at 0x7c0238 loads 4 bytes from a0 (arg0 at entry) +0x607c.
+  The `lw` at 0x7c0244 loads 4 bytes from ([a0+24700] + (a1 << 0x2)) +0x0.
+  The `sw` at 0x7c0248 stores 4 bytes to [a0+290136] +0x4.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x7ec4, including `lw` at 0x7c024c, `lw` at 0x7c0350.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x8804, including `lw` at 0x7c0260, `lw` at 0x7c0308.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x8114, including `lw` at 0x7c027c, `lw` at 0x7c0320.
+  The `lw` at 0x7c02b8 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `lw` at 0x7c02c4 loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `lw` at 0x7c02c8 loads 4 bytes from a0 (arg0 at entry) +0x80e8.
+  10 such `sw` accesses store 4 bytes to ?, including `sw` at 0x7c02ec, `sw` at 0x7c02f4, `sw` at 0x7c02fc.
+  5 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7c02f0, `lw` at 0x7c02f8, `lw` at 0x7c0300.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7c0328, `ldc1` at 0x7c0334, `ldc1` at 0x7c0344.
+  3 such `swc1` accesses store 4 bytes to ?, including `swc1` at 0x7c0330, `swc1` at 0x7c033c, `swc1` at 0x7c034c.
+  The `sw` at 0x7c03a0 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7c03d8 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3), a6=[a0+290136].
+  The `bgezall` at 0x7c041c calls __glR300BreakDrawArrays [0x7bc100] with a0=a0 at entry (arg0), a1=0x7c01c0, a2=0x4, a3=0xb, a4=a1 at entry (arg1), a5=a2 at entry (arg2), a6=a3 at entry (arg3).
+  The `bne` branch at 0x7c0228 targets 0x7c03d0, is taken when v0(?) < v1(?) (unsigned), and falls through when v0(?) >= v1(?) (unsigned).
+  The `blez` branch at 0x7c02e4 targets 0x7c0364, is taken when s1(=a3) <= 0 (signed), and falls through when s1(=a3) > 0 (signed).
+  The `bne` branch at 0x7c035c targets 0x7c02ec, is taken when a1(?) != a5(?), and falls through when a1(?) == a5(?).
+  The `beq` branch at 0x7c0364 targets 0x7c0370, is taken when a3(?) == 0, and falls through when a3(?) != 0.
+  The `beq` branch at 0x7c03f8 targets 0x7c0230, is taken when at(?) >= v0(?) (unsigned), and falls through when at(?) < v0(?) (unsigned).
+  The `beq` branch at 0x7c0424 targets 0x7c03b0 and is always taken.
+  The return at 0x7c03a8 has v0 = ?.
+  The return at 0x7c03c8 has v0 = ret(__glR300BreakDrawArrays).
+
+- `__R300TCLDrawArraysV3DC4FT02F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7c06c0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7c06c0-0x7c0920 (608 bytes).
+  It occupies 608 bytes.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x7c06d0, `lw` at 0x7c08d4.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x7c06d8, `lw` at 0x7c08d8.
+  The `sw` at 0x7c072c stores 4 bytes to [a0+290136] +0x0.
+  The `lw` at 0x7c0730 loads 4 bytes from a0 (arg0 at entry) +0x607c.
+  The `lw` at 0x7c073c loads 4 bytes from ([a0+24700] + (a1 << 0x2)) +0x0.
+  The `sw` at 0x7c0740 stores 4 bytes to [a0+290136] +0x4.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x7ec4, including `lw` at 0x7c0744, `lw` at 0x7c0840.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x8804, including `lw` at 0x7c0754, `lw` at 0x7c07f8.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x8114, including `lw` at 0x7c0768, `lw` at 0x7c0810.
+  The `lw` at 0x7c0788 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `lw` at 0x7c0790 loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `lw` at 0x7c079c loads 4 bytes from a0 (arg0 at entry) +0x80e8.
+  11 such `sw` accesses store 4 bytes to ?, including `sw` at 0x7c07d4, `sw` at 0x7c07dc, `sw` at 0x7c07e4.
+  6 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7c07d8, `lw` at 0x7c07e0, `lw` at 0x7c07e8.
+  3 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7c0818, `ldc1` at 0x7c0824, `ldc1` at 0x7c0834.
+  3 such `swc1` accesses store 4 bytes to ?, including `swc1` at 0x7c0820, `swc1` at 0x7c082c, `swc1` at 0x7c083c.
+  The `sw` at 0x7c0888 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7c08cc calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3), a5=a2 at entry (arg2), a6=[a0+290136].
+  The `bgezall` at 0x7c0910 calls __glR300BreakDrawArrays [0x7bc100] with a0=a0 at entry (arg0), a1=0x7c06c0, a2=0x4, a3=0xc, a4=a1 at entry (arg1), a5=a2 at entry (arg2), a6=a3 at entry (arg3).
+  The `bne` branch at 0x7c0720 targets 0x7c08c0, is taken when v0(?) < v1(?) (unsigned), and falls through when v0(?) >= v1(?) (unsigned).
+  The `blez` branch at 0x7c07b4 targets 0x7c0854, is taken when s1(=a3) <= 0 (signed), and falls through when s1(=a3) > 0 (signed).
+  The `bne` branch at 0x7c084c targets 0x7c07d4, is taken when a1(?) != t3(?), and falls through when a1(?) == t3(?).
+  The `beq` branch at 0x7c0854 targets 0x7c0860, is taken when a3(?) == 0, and falls through when a3(?) != 0.
+  The `beq` branch at 0x7c08f0 targets 0x7c0728, is taken when v0(?) >= v1(?) (unsigned), and falls through when v0(?) < v1(?) (unsigned).
+  The `beq` branch at 0x7c0918 targets 0x7c0898 and is always taken.
+  The return at 0x7c0890 has v0 = 0x92b.
+  The return at 0x7c08ac has v0 = ret(__glR300BreakDrawArrays).
+  The instructions from 0x7c08b4 to 0x7c08bc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300TCLDrawArraysV3DN3FC3FT02F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7c1b80 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7c1b80-0x7c1ee0 (864 bytes).
+  It occupies 864 bytes.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x7c1b94, `lw` at 0x7c1e98.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x7c1b98, `lw` at 0x7c1e9c.
+  The `sw` at 0x7c1bfc stores 4 bytes to [a0+290136] +0x0.
+  The `lw` at 0x7c1c00 loads 4 bytes from a0 (arg0 at entry) +0x607c.
+  The `lw` at 0x7c1c0c loads 4 bytes from ([a0+24700] + (a1 << 0x2)) +0x0.
+  The `sw` at 0x7c1c10 stores 4 bytes to [a0+290136] +0x4.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x7ec4, including `lw` at 0x7c1c14, `lw` at 0x7c1d2c, `lw` at 0x7c1e10.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x7fec, including `lw` at 0x7c1c1c, `lw` at 0x7c1c84, `lw` at 0x7c1da0.
+  The `lw` at 0x7c1c30 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `lw` at 0x7c1c38 loads 4 bytes from a0 (arg0 at entry) +0x7fc0.
+  The `lw` at 0x7c1c40 loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `lw` at 0x7c1c44 loads 4 bytes from a0 (arg0 at entry) +0x80e8.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x8114, including `lw` at 0x7c1c48, `lw` at 0x7c1cd8, `lw` at 0x7c1dd8.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x8804, including `lw` at 0x7c1c50, `lw` at 0x7c1cb4, `lw` at 0x7c1dc0.
+  The `sw` at 0x7c1c5c stores 4 bytes to [a0+290136] +0x8.
+  22 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7c1c64, `lw` at 0x7c1c70, `lw` at 0x7c1c78.
+  The `sw` at 0x7c1c6c stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x7c1c74 stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7c1c7c stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7c1c90 stores 4 bytes to [a0+290136] +0x18.
+  The `sw` at 0x7c1ca0 stores 4 bytes to [a0+290136] +0x1c.
+  The `sw` at 0x7c1ca8 stores 4 bytes to [a0+290136] +0x20.
+  The `sw` at 0x7c1cb0 stores 4 bytes to [a0+290136] +0x24.
+  The `sw` at 0x7c1cc0 stores 4 bytes to [a0+290136] +0x28.
+  The `sw` at 0x7c1ccc stores 4 bytes to [a0+290136] +0x2c.
+  The `sw` at 0x7c1cd4 stores 4 bytes to [a0+290136] +0x30.
+  The `sw` at 0x7c1ce4 stores 4 bytes to [a0+290136] +0x34.
+  6 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7c1ce8, `ldc1` at 0x7c1cf4, `ldc1` at 0x7c1d04.
+  The `swc1` at 0x7c1cf0 stores 4 bytes to [a0+290136] +0x38.
+  The `swc1` at 0x7c1d00 stores 4 bytes to [a0+290136] +0x3c.
+  The `swc1` at 0x7c1d20 stores 4 bytes to [a0+290136] +0x40.
+  14 such `sw` accesses store 4 bytes to ?, including `sw` at 0x7c1d7c, `sw` at 0x7c1d84, `sw` at 0x7c1d8c.
+  3 such `swc1` accesses store 4 bytes to ?, including `swc1` at 0x7c1de8, `swc1` at 0x7c1df8, `swc1` at 0x7c1e04.
+  The `sw` at 0x7c1e48 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7c1e90 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3), a4=a1 at entry (arg1), a6=a3 at entry (arg3).
+  The `bgezall` at 0x7c1ed0 calls __glR300BreakDrawArrays [0x7bc100] with a0=a0 at entry (arg0), a1=0x7c1b80, a2=0x4, a3=0xf, a4=a1 at entry (arg1), a5=a2 at entry (arg2), a6=a3 at entry (arg3).
+  The `bne` branch at 0x7c1bf0 targets 0x7c1e84, is taken when at(?) < v0(?) (unsigned), and falls through when at(?) >= v0(?) (unsigned).
+  The `bne` branch at 0x7c1d40 targets 0x7c1e24, is taken when a6(=a3) < 0x2 (signed), and falls through when a6(=a3) >= 0x2 (signed).
+  The `beq` branch at 0x7c1d74 targets 0x7c1da0, is taken when a2(?) == 0, and falls through when a2(?) != 0.
+  The `bne` branch at 0x7c1e1c targets 0x7c1d48, is taken when a1(?) != s4(=a3-1), and falls through when a1(?) == s4(=a3-1).
+  The `beq` branch at 0x7c1eb4 targets 0x7c1bf8, is taken when a5(?) >= a7(?) (unsigned), and falls through when a5(?) < a7(?) (unsigned).
+  The `beq` branch at 0x7c1ed8 targets 0x7c1e58 and is always taken.
+  The return at 0x7c1e50 has v0 = ?.
+  The return at 0x7c1e7c has v0 = ret(__glR300BreakDrawArrays).
+
+- `__R300TCLDrawArraysV3DN3FC4FT02F` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7c2280 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7c2280-0x7c25ec (876 bytes).
+  It occupies 876 bytes.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x7c2294, `lw` at 0x7c25a4.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x7c2298, `lw` at 0x7c25a8.
+  The `sw` at 0x7c22f8 stores 4 bytes to [a0+290136] +0x0.
+  The `lw` at 0x7c22fc loads 4 bytes from a0 (arg0 at entry) +0x607c.
+  The `lw` at 0x7c2308 loads 4 bytes from ([a0+24700] + (a1 << 0x2)) +0x0.
+  The `sw` at 0x7c230c stores 4 bytes to [a0+290136] +0x4.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x7ec4, including `lw` at 0x7c2310, `lw` at 0x7c2430, `lw` at 0x7c251c.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x7fec, including `lw` at 0x7c2318, `lw` at 0x7c2380, `lw` at 0x7c24a4.
+  The `lw` at 0x7c232c loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  The `lw` at 0x7c2334 loads 4 bytes from a0 (arg0 at entry) +0x7fc0.
+  The `lw` at 0x7c233c loads 4 bytes from a0 (arg0 at entry) +0x87d8.
+  The `lw` at 0x7c2340 loads 4 bytes from a0 (arg0 at entry) +0x80e8.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x8114, including `lw` at 0x7c2344, `lw` at 0x7c23dc, `lw` at 0x7c24e4.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x8804, including `lw` at 0x7c234c, `lw` at 0x7c23b8, `lw` at 0x7c24cc.
+  The `sw` at 0x7c2358 stores 4 bytes to [a0+290136] +0x8.
+  24 such `lw` accesses load 4 bytes from ?, including `lw` at 0x7c2360, `lw` at 0x7c236c, `lw` at 0x7c2374.
+  The `sw` at 0x7c2368 stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x7c2370 stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x7c2378 stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x7c238c stores 4 bytes to [a0+290136] +0x18.
+  The `sw` at 0x7c2398 stores 4 bytes to [a0+290136] +0x1c.
+  The `sw` at 0x7c23a4 stores 4 bytes to [a0+290136] +0x20.
+  The `sw` at 0x7c23ac stores 4 bytes to [a0+290136] +0x24.
+  The `sw` at 0x7c23b4 stores 4 bytes to [a0+290136] +0x28.
+  The `sw` at 0x7c23c4 stores 4 bytes to [a0+290136] +0x2c.
+  The `sw` at 0x7c23d0 stores 4 bytes to [a0+290136] +0x30.
+  The `sw` at 0x7c23d8 stores 4 bytes to [a0+290136] +0x34.
+  The `sw` at 0x7c23e8 stores 4 bytes to [a0+290136] +0x38.
+  6 such `ldc1` accesses load 8 bytes from ?, including `ldc1` at 0x7c23ec, `ldc1` at 0x7c23f8, `ldc1` at 0x7c2408.
+  The `swc1` at 0x7c23f4 stores 4 bytes to [a0+290136] +0x3c.
+  The `swc1` at 0x7c2400 stores 4 bytes to [a0+290136] +0x40.
+  The `swc1` at 0x7c2424 stores 4 bytes to [a0+290136] +0x44.
+  15 such `sw` accesses store 4 bytes to ?, including `sw` at 0x7c2480, `sw` at 0x7c2488, `sw` at 0x7c2490.
+  3 such `swc1` accesses store 4 bytes to ?, including `swc1` at 0x7c24f4, `swc1` at 0x7c2500, `swc1` at 0x7c2510.
+  The `sw` at 0x7c2554 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x7c259c calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3), a4=a1 at entry (arg1), a6=a3 at entry (arg3).
+  The `bgezall` at 0x7c25dc calls __glR300BreakDrawArrays [0x7bc100] with a0=a0 at entry (arg0), a1=0x7c2280, a2=0x4, a3=0x10, a4=a1 at entry (arg1), a5=a2 at entry (arg2), a6=a3 at entry (arg3).
+  The `bne` branch at 0x7c22ec targets 0x7c2590, is taken when at(?) < v0(=(a3 << 0x4)+4) (unsigned), and falls through when at(?) >= v0(=(a3 << 0x4)+4) (unsigned).
+  The `bne` branch at 0x7c2444 targets 0x7c2530, is taken when a6(=a3) < 0x2 (signed), and falls through when a6(=a3) >= 0x2 (signed).
+  The `beq` branch at 0x7c2478 targets 0x7c24a4, is taken when a2(?) == 0, and falls through when a2(?) != 0.
+  The `bne` branch at 0x7c2528 targets 0x7c244c, is taken when a1(?) != s4(=a3-1), and falls through when a1(?) == s4(=a3-1).
+  The `beq` branch at 0x7c25c0 targets 0x7c22f4, is taken when a7(?) >= t0(=(a3 << 0x4)+4) (unsigned), and falls through when a7(?) < t0(=(a3 << 0x4)+4) (unsigned).
+  The `beq` branch at 0x7c25e4 targets 0x7c2564 and is always taken.
+  The return at 0x7c255c has v0 = ?.
+  The return at 0x7c2588 has v0 = ret(__glR300BreakDrawArrays).
+
+- `__R300FastDownload__Imaging_SetupState` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x7e9b40 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x7e9b40-0x7ea030 (1264 bytes).
+  It occupies 1264 bytes.
+  The `lw` at 0x7e9b94 loads 4 bytes from a0 (arg0 at entry) +0xbb4.
+  The `lw` at 0x7e9b9c loads 4 bytes from [a0+2996] +0x1c.
+  The `lw` at 0x7e9bb0 loads 4 bytes from [[a0+2996]+28] +0xb0.
+  2 such `lw` accesses load 4 bytes from [[a0+2996]+28] +0xc, including `lw` at 0x7e9bc0, `lw` at 0x7e9cbc.
+  3 such `lw` accesses load 4 bytes from [[a0+2996]+28] +0x10, including `lw` at 0x7e9bc8, `lw` at 0x7e9cc4, `lw` at 0x7e9f6c.
+  5 such `lw` accesses load 4 bytes from [[a0+2996]+28] +0x14, including `lw` at 0x7e9be8, `lw` at 0x7e9cb4, `lw` at 0x7e9dbc.
+  4 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x7e9c04, `lw` at 0x7e9c30, `lw` at 0x7e9fe0.
+  4 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x7e9c08, `lw` at 0x7e9c34, `lw` at 0x7e9fe4.
+  The `sw` at 0x7e9c58 stores 4 bytes to [a0+290136] +0x0.
+  The `sw` at 0x7e9c60 stores 4 bytes to [a0+290136] +0x4.
+  The `ldl` at 0x7e9c64 loads 8 bytes from [[a0+2996]+28] +0x1c.
+  The `ldl` at 0x7e9c68 loads 8 bytes from [[a0+2996]+28] +0x14.
+  The `ldl` at 0x7e9c6c loads 8 bytes from [[a0+2996]+28] +0x4.
+  The `ldl` at 0x7e9c70 loads 8 bytes from [[a0+2996]+28] +0xc.
+  The `ldr` at 0x7e9c74 loads 8 bytes from [[a0+2996]+28] +0xb.
+  The `ldr` at 0x7e9c78 loads 8 bytes from [[a0+2996]+28] +0x13.
+  The `ldr` at 0x7e9c7c loads 8 bytes from [[a0+2996]+28] +0x1b.
+  The `ldr` at 0x7e9c84 loads 8 bytes from [[a0+2996]+28] +0x23.
+  The `lw` at 0x7e9c8c loads 4 bytes from [[[a0+2996]+28]+176] +0x10.
+  The `sw` at 0x7e9ca8 stores 4 bytes to ret(__R300SetOverrideRendering_Imaging) +0x4.
+  The `sw` at 0x7e9cb0 stores 4 bytes to ret(__R300SetOverrideRendering_Imaging) +0x0.
+  2 such `lw` accesses load 4 bytes from [[a0+2996]+28] +0x18, including `lw` at 0x7e9cb8, `lw` at 0x7e9d6c.
+  The `lw` at 0x7e9d34 loads 4 bytes from [[a0+2996]+28] +0x58.
+  The `lw` at 0x7e9d50 loads 4 bytes from a0 (arg0 at entry) +0x36b3c.
+  The `lw` at 0x7e9d84 loads 4 bytes from [[a0+2996]+28] +0x60.
+  The `lw` at 0x7e9da0 loads 4 bytes from a0 (arg0 at entry) +0x36bf4.
+  The `lw` at 0x7e9dd4 loads 4 bytes from [[a0+2996]+28] +0x5c.
+  The `lw` at 0x7e9df0 loads 4 bytes from a0 (arg0 at entry) +0x36b98.
+  2 such `sw` accesses store 4 bytes to ?, including `sw` at 0x7e9e0c, `sw` at 0x7e9e18.
+  The `lw` at 0x7e9e60 loads 4 bytes from a0 (arg0 at entry) +0xdec.
+  The `sw` at 0x7e9eac stores 4 bytes to ret(SetupTextureUnitForBlt) +0x8.
+  The `sw` at 0x7e9ec0 stores 4 bytes to ret(SetupTextureUnitForBlt) +0x0.
+  The `sw` at 0x7e9ecc stores 4 bytes to ret(SetupTextureUnitForBlt) +0x4.
+  The `sw` at 0x7e9ed4 stores 4 bytes to ret(SetupTextureUnitForBlt) +0xc.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x46d58, including `sw` at 0x7e9edc, `sw` at 0x7e9f1c.
+  The `lw` at 0x7e9f50 loads 4 bytes from [[a0+2996]+28] +0x4c.
+  The `bgezall` at 0x7e9bb8 calls __R300LoadImagingShader [0x7e8100] with a0=a0 at entry (arg0), a1=?, a2=a6 at entry (arg6), a3=?, a4=[[[a0+2996]+28]+176].
+  The `jalr` at 0x7e9c28 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `bgezall` at 0x7e9ca0 calls __R300SetOverrideRendering_Imaging [0x7e8f40] with a0=a0 at entry (arg0), a1=[a0+290136]+8, a2=a1 at entry (arg1), a3=?.
+  The `bgezall` at 0x7e9d4c calls __R300SetupColorTable_Imaging [0x7e9680] with a0=a0 at entry (arg0), a1=[[[a0+2996]+28]+88], a2=?, a3=?, a4=[a0+224060].
+  The `bgezall` at 0x7e9d9c calls __R300SetupColorTable_Imaging [0x7e9680] with a0=a0 at entry (arg0), a1=[[[a0+2996]+28]+96], a2=?, a3=?, a4=[a0+224244].
+  The `bgezall` at 0x7e9dec calls __R300SetupColorTable_Imaging [0x7e9680] with a0=a0 at entry (arg0), a1=[[[a0+2996]+28]+92], a2=?, a3=?, a4=[a0+224152].
+  The `jalr` at 0x7e9e58 calls SetupTextureUnitForBlt [0x762380] with a0=?, a1=0x0, a2=a6 at entry (arg6), a3=?, a4=0x0, a5=0x0, a7=one of 0x0, 0x40000.
+  The `jalr` at 0x7e9e88 calls __glFogVertex [0x55f940] with a0=a0 at entry (arg0), a1=a0+564, a2=?, a3=?.
+  The `bgezall` at 0x7e9f58 calls __R300SetupPixelMap_Imaging [0x7e9600] with a0=a0 at entry (arg0), a1=[[[a0+2996]+28]+76], a2=one of 0x0, 0x3, 0x6, 0xc, a3=ret(__R300SetOverrideRendering_Imaging)+8.
+  The `beq` branch at 0x7e9b84 targets 0x7e9b94, is taken when (a2 & 0x1) == 0, and falls through when (a2 & 0x1) != 0.
+  The `beq` branch at 0x7e9bd4 targets 0x7e9f80, is taken when ra(?) == 0, and falls through when ra(?) != 0.
+  The `beq` branch at 0x7e9bdc targets 0x7e9f98, is taken when a0(?) == 0, and falls through when a0(?) != 0.
+  The `beq` branch at 0x7e9bf0 targets 0x7e9bfc, is taken when at(?) == 0, and falls through when at(?) != 0.
+  The `beq` branch at 0x7e9c18 targets 0x7e9c50, is taken when v1(?) >= s2(=one of 0x56, 0x5e, 0x66, 0x6e) (unsigned), and falls through when v1(?) < s2(=one of 0x56, 0x5e, 0x66, 0x6e) (unsigned).
+  The `bne` branch at 0x7e9c44 targets 0x7e9c28, is taken when t8(?) < s2(?) (unsigned), and falls through when t8(?) >= s2(?) (unsigned).
+  The `beq` branch at 0x7e9cf8 targets 0x7e9f38, is taken when s6(?) == v1(=0x3), and falls through when s6(?) != v1(=0x3).
+  The `beq` branch at 0x7e9d04 targets 0x7e9f38, is taken when s6(?) == a3(=0x4), and falls through when s6(?) != a3(=0x4).
+  The `beq` branch at 0x7e9d0c targets 0x7e9fb0, is taken when s6(?) == a4(=0x2), and falls through when s6(?) != a4(=0x2).
+  The `beq` branch at 0x7e9d14 targets 0x7e9f3c, is taken when s6(?) == a5(=0x1), and falls through when s6(?) != a5(=0x1).
+  The `bne` branch at 0x7e9d1c targets 0x7e9f40, is taken when a1(?) != 0, and falls through when a1(?) == 0.
+  The `beq` branch at 0x7e9d24 targets 0x7e9d6c, is taken when a0(?) == 0, and falls through when a0(?) != 0.
+  The `beq` branch at 0x7e9d74 targets 0x7e9dbc, is taken when a7(?) == 0, and falls through when a7(?) != 0.
+  The `beq` branch at 0x7e9dc4 targets 0x7e9e08, is taken when a7(?) == 0, and falls through when a7(?) != 0.
+  The `beq` branch at 0x7e9e14 targets 0x7e9f90, is taken when s6(?) == 0, and falls through when s6(?) != 0.
+  The `beq` branch at 0x7e9e6c targets 0x7e9f00, is taken when t3(?) == 0, and falls through when t3(?) != 0.
+  The `beq` branch at 0x7e9f3c targets 0x7e9d24, is taken when a1(?) == 0, and falls through when a1(?) != 0.
+  The `beq` branch at 0x7e9f78 targets 0x7e9d24 and is always taken.
+  The `beq` branch at 0x7e9f80 targets 0x7e9fc0, is taken when a0(?) == 0, and falls through when a0(?) != 0.
+  The `beq` branch at 0x7e9f88 targets 0x7e9be8 and is always taken.
+  The `beq` branch at 0x7e9f90 targets 0x7e9e20 and is always taken.
+  The `beq` branch at 0x7e9fa0 targets 0x7e9fd8, is taken when t9(?) == 0, and falls through when t9(?) != 0.
+  The `beq` branch at 0x7e9fa8 targets 0x7e9bfc and is always taken.
+  The `beq` branch at 0x7e9fb0 targets 0x7e9f3c and is always taken.
+  The `beq` branch at 0x7e9fc8 targets 0x7ea004, is taken when ra(?) == 0, and falls through when ra(?) != 0.
+  The `beq` branch at 0x7e9fd0 targets 0x7e9bfc and is always taken.
+  The `beq` branch at 0x7e9ff4 targets 0x7e9c50, is taken when at(?) >= 0x56 (unsigned), and falls through when at(?) < 0x56 (unsigned).
+  The `beq` branch at 0x7e9ffc targets 0x7e9c20 and is always taken.
+  The `beq` branch at 0x7ea020 targets 0x7e9c50, is taken when t8(?) >= 0x4e (unsigned), and falls through when t8(?) < 0x4e (unsigned).
+  The `beq` branch at 0x7ea028 targets 0x7e9c20 and is always taken.
+  The return at 0x7e9ef0 has v0 = ret(__glFogVertex).
+  The return at 0x7e9f30 has v0 = ret(SetupTextureUnitForBlt).
+  The instructions from 0x7e9ef8 to 0x7e9efc are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x7e9fb8 to 0x7e9fbc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300DPSetupShaderMapped1_4` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x819000 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x819000-0x819538 (1336 bytes).
+  It occupies 1336 bytes.
+  The `lw` at 0x819010 loads 4 bytes from a0 (arg0 at entry) +0x468f0.
+  The `sw` at 0x819090 stores 4 bytes to a1 (arg1 at entry) +0x8.
+  The `sw` at 0x81909c stores 4 bytes to a1 (arg1 at entry) +0x0.
+  The `sw` at 0x8190ac stores 4 bytes to a1 (arg1 at entry) +0xc.
+  The `sw` at 0x8190c4 stores 4 bytes to a1 (arg1 at entry) +0x18.
+  The `sw` at 0x8190d0 stores 4 bytes to a1 (arg1 at entry) +0x14.
+  The `sw` at 0x8190dc stores 4 bytes to a1 (arg1 at entry) +0x4.
+  The `sw` at 0x8190e4 stores 4 bytes to a1 (arg1 at entry) +0x10.
+  The `sw` at 0x8190f0 stores 4 bytes to a1 (arg1 at entry) +0x1c.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0xee4, including `lw` at 0x8190fc, `lw` at 0x81917c, `lw` at 0x819208.
+  56 such `sw` accesses store 4 bytes to ?, including `sw` at 0x819104, `sw` at 0x81910c, `sw` at 0x819118.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0xb0c, including `lw` at 0x819288, `lw` at 0x819334.
+  The `lw` at 0x81928c loads 4 bytes from a0 (arg0 at entry) +0xac8.
+  The `lw` at 0x81934c loads 4 bytes from a0 (arg0 at entry) +0xacc.
+  The `jalr` at 0x8192f4 calls FloatToS16E7 [0x6ef3c0] with a0=[a0+2828], a1=?, a2=a2 at entry (arg2), a3=[a0+2760], a4=0x1401, a5=0x1402, a6=0x1403, a7=0x31300.
+  The `jalr` at 0x819308 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=f20.
+  The `jalr` at 0x819318 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=f20.
+  The `jalr` at 0x819328 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=f20.
+  The `jalr` at 0x81936c calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?.
+  The `jalr` at 0x81937c calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=f20.
+  The `jalr` at 0x81938c calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=f20.
+  The `jalr` at 0x8193a0 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=0x3f800000.
+  The `bgezall` at 0x8194cc calls __R300SetupPixelMappingTextures [0x818c80] with a0=a0 at entry (arg0), a1=?, a2=0x100000, a3=0x118b, a4=0x9080, a5=0x118a, a6=0x8840, a7=0x8000.
+  The `bgezall` at 0x8194f8 calls __R300DPSetupShaderMapped1_4IL [0x818e80] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=0x50000, a4=0x1271, a5=0x11f1, a6=0x11b1, a7=0x1231.
+  The `bne` branch at 0x819078 targets 0x8194f0, is taken when at(=[a0+289008]) != 0, and falls through when at(=[a0+289008]) == 0.
+  The `bne` branch at 0x819150 targets 0x819104, is taken when t0(?) != 0, and falls through when t0(?) == 0.
+  The `bne` branch at 0x8191d4 targets 0x819188, is taken when t0(?) != 0, and falls through when t0(?) == 0.
+  The `bne` branch at 0x819280 targets 0x819220, is taken when t0(?) != 0, and falls through when t0(?) == 0.
+  The `beq` branch at 0x8192b4 targets 0x819514, is taken when a2 == v1(=0x1400), and falls through when a2 != v1(=0x1400).
+  The `beq` branch at 0x8192bc targets 0x819520, is taken when a2 == a4(=0x1401), and falls through when a2 != a4(=0x1401).
+  The `beq` branch at 0x8192c4 targets 0x81952c, is taken when a2 == a5(=0x1402), and falls through when a2 != a5(=0x1402).
+  The `bne` branch at 0x8192cc targets 0x8192dc, is taken when a2 != a6(=0x1403), and falls through when a2 == a6(=0x1403).
+  The `beq` branch at 0x819518 targets 0x8192dc and is always taken.
+  The `beq` branch at 0x819524 targets 0x8192dc and is always taken.
+  The `beq` branch at 0x819530 targets 0x8192dc and is always taken.
+  The return at 0x8194e8 has v0 = ret(__R300SetupPixelMappingTextures).
+  The return at 0x81950c has v0 = ret(__R300DPSetupShaderMapped1_4IL).
+
+- `__R300DPSetupShaderBasic` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x819a00 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x819a00-0x81a55c (2908 bytes).
+  It occupies 2908 bytes.
+  The `lw` at 0x819a0c loads 4 bytes from a0 (arg0 at entry) +0x468f0.
+  The `lw` at 0x819a38 loads 4 bytes from a0 (arg0 at entry) +0x35cbc.
+  The `lwc1` at 0x819acc loads 4 bytes from a0 (arg0 at entry) +0xa70.
+  The `lwc1` at 0x819ad0 loads 4 bytes from a0 (arg0 at entry) +0xa7c.
+  The `lwc1` at 0x819ad4 loads 4 bytes from a0 (arg0 at entry) +0xa78.
+  The `lwc1` at 0x819ad8 loads 4 bytes from a0 (arg0 at entry) +0xa74.
+  74 such `sw` accesses store 4 bytes to ?, including `sw` at 0x819adc, `sw` at 0x819afc, `sw` at 0x819b0c.
+  The `lwc1` at 0x819b2c loads 4 bytes from a0 (arg0 at entry) +0xa84.
+  The `lwc1` at 0x819b30 loads 4 bytes from a0 (arg0 at entry) +0xa90.
+  The `lwc1` at 0x819b34 loads 4 bytes from a0 (arg0 at entry) +0xa8c.
+  The `lwc1` at 0x819b3c loads 4 bytes from a0 (arg0 at entry) +0xa88.
+  The `lw` at 0x819dc0 loads 4 bytes from a0 (arg0 at entry) +0xee4.
+  The `lw` at 0x819df4 loads 4 bytes from [a0+220348] +0x40.
+  2 such `lwc1` accesses load 4 bytes from a0 (arg0 at entry) +0xaac, including `lwc1` at 0x819e08, `lwc1` at 0x81a248.
+  2 such `lwc1` accesses load 4 bytes from a0 (arg0 at entry) +0xab0, including `lwc1` at 0x819e1c, `lwc1` at 0x81a258.
+  2 such `lwc1` accesses load 4 bytes from a0 (arg0 at entry) +0xab4, including `lwc1` at 0x819e30, `lwc1` at 0x81a250.
+  2 such `lwc1` accesses load 4 bytes from a0 (arg0 at entry) +0xab8, including `lwc1` at 0x819e48, `lwc1` at 0x81a24c.
+  2 such `lwc1` accesses load 4 bytes from a0 (arg0 at entry) +0xa98, including `lwc1` at 0x819e5c, `lwc1` at 0x81a1e4.
+  2 such `lwc1` accesses load 4 bytes from a0 (arg0 at entry) +0xa9c, including `lwc1` at 0x819e70, `lwc1` at 0x81a1f4.
+  2 such `lwc1` accesses load 4 bytes from a0 (arg0 at entry) +0xaa0, including `lwc1` at 0x819e88, `lwc1` at 0x81a1ec.
+  2 such `lwc1` accesses load 4 bytes from a0 (arg0 at entry) +0xaa4, including `lwc1` at 0x819e9c, `lwc1` at 0x81a1e8.
+  The `sw` at 0x819ebc stores 4 bytes to a1 (arg1 at entry) +0x38.
+  The `sw` at 0x819ec4 stores 4 bytes to a1 (arg1 at entry) +0x30.
+  The `sw` at 0x819ecc stores 4 bytes to a1 (arg1 at entry) +0x28.
+  The `sw` at 0x819ed4 stores 4 bytes to a1 (arg1 at entry) +0x20.
+  The `sw` at 0x819edc stores 4 bytes to a1 (arg1 at entry) +0x18.
+  The `sw` at 0x819ee8 stores 4 bytes to a1 (arg1 at entry) +0x10.
+  The `sw` at 0x819ef0 stores 4 bytes to a1 (arg1 at entry) +0x8.
+  The `sw` at 0x819efc stores 4 bytes to a1 (arg1 at entry) +0x0.
+  The `sw` at 0x819f0c stores 4 bytes to a1 (arg1 at entry) +0x3c.
+  The `sw` at 0x819f18 stores 4 bytes to a1 (arg1 at entry) +0x34.
+  The `sw` at 0x819f24 stores 4 bytes to a1 (arg1 at entry) +0x2c.
+  The `sw` at 0x819f30 stores 4 bytes to a1 (arg1 at entry) +0x24.
+  The `sw` at 0x819f38 stores 4 bytes to a1 (arg1 at entry) +0x1c.
+  The `sw` at 0x819f44 stores 4 bytes to a1 (arg1 at entry) +0x14.
+  The `sw` at 0x819f4c stores 4 bytes to a1 (arg1 at entry) +0xc.
+  The `sw` at 0x819f54 stores 4 bytes to a1 (arg1 at entry) +0x4.
+  The `lwc1` at 0x819f58 loads 4 bytes from [a0+220348] +0x0.
+  The `lwc1` at 0x819f5c loads 4 bytes from [a0+220348] +0x30.
+  The `lwc1` at 0x819f60 loads 4 bytes from [a0+220348] +0x20.
+  The `lwc1` at 0x819f68 loads 4 bytes from [a0+220348] +0x10.
+  The `sw` at 0x819f70 stores 4 bytes to a1 (arg1 at entry) +0x40.
+  The `sw` at 0x819f8c stores 4 bytes to a1 (arg1 at entry) +0x44.
+  The `sw` at 0x819f9c stores 4 bytes to a1 (arg1 at entry) +0x48.
+  The `sw` at 0x819fac stores 4 bytes to a1 (arg1 at entry) +0x4c.
+  The `sw` at 0x819fbc stores 4 bytes to a1 (arg1 at entry) +0x6c.
+  The `sw` at 0x819fc4 stores 4 bytes to a1 (arg1 at entry) +0x64.
+  The `sw` at 0x819fc8 stores 4 bytes to a1 (arg1 at entry) +0x50.
+  The `sw` at 0x819fd0 stores 4 bytes to a1 (arg1 at entry) +0x5c.
+  The `sw` at 0x819fd8 stores 4 bytes to a1 (arg1 at entry) +0x54.
+  The `sw` at 0x819fe8 stores 4 bytes to a1 (arg1 at entry) +0x70.
+  The `sw` at 0x819ff4 stores 4 bytes to a1 (arg1 at entry) +0x68.
+  The `sw` at 0x819ffc stores 4 bytes to a1 (arg1 at entry) +0x60.
+  The `sw` at 0x81a00c stores 4 bytes to a1 (arg1 at entry) +0x58.
+  The `lwc1` at 0x81a010 loads 4 bytes from [a0+220348] +0x4.
+  The `lwc1` at 0x81a014 loads 4 bytes from [a0+220348] +0x34.
+  The `lwc1` at 0x81a018 loads 4 bytes from [a0+220348] +0x24.
+  The `lwc1` at 0x81a020 loads 4 bytes from [a0+220348] +0x14.
+  The `sw` at 0x81a028 stores 4 bytes to a1 (arg1 at entry) +0x74.
+  The `sw` at 0x81a044 stores 4 bytes to a1 (arg1 at entry) +0x78.
+  The `sw` at 0x81a054 stores 4 bytes to a1 (arg1 at entry) +0x7c.
+  The `sw` at 0x81a064 stores 4 bytes to a1 (arg1 at entry) +0x80.
+  The `sw` at 0x81a074 stores 4 bytes to a1 (arg1 at entry) +0xa0.
+  The `sw` at 0x81a07c stores 4 bytes to a1 (arg1 at entry) +0x98.
+  The `sw` at 0x81a084 stores 4 bytes to a1 (arg1 at entry) +0x90.
+  The `sw` at 0x81a08c stores 4 bytes to a1 (arg1 at entry) +0x88.
+  The `sw` at 0x81a090 stores 4 bytes to a1 (arg1 at entry) +0x84.
+  The `sw` at 0x81a0a0 stores 4 bytes to a1 (arg1 at entry) +0xa4.
+  The `sw` at 0x81a0ac stores 4 bytes to a1 (arg1 at entry) +0x9c.
+  The `sw` at 0x81a0b4 stores 4 bytes to a1 (arg1 at entry) +0x94.
+  The `sw` at 0x81a0c4 stores 4 bytes to a1 (arg1 at entry) +0x8c.
+  The `lwc1` at 0x81a0c8 loads 4 bytes from [a0+220348] +0x8.
+  The `lwc1` at 0x81a0cc loads 4 bytes from [a0+220348] +0x38.
+  The `lwc1` at 0x81a0d0 loads 4 bytes from [a0+220348] +0x28.
+  The `lwc1` at 0x81a0d8 loads 4 bytes from [a0+220348] +0x18.
+  The `sw` at 0x81a0e0 stores 4 bytes to a1 (arg1 at entry) +0xa8.
+  The `sw` at 0x81a0fc stores 4 bytes to a1 (arg1 at entry) +0xac.
+  The `sw` at 0x81a10c stores 4 bytes to a1 (arg1 at entry) +0xb0.
+  The `sw` at 0x81a11c stores 4 bytes to a1 (arg1 at entry) +0xb4.
+  The `sw` at 0x81a12c stores 4 bytes to a1 (arg1 at entry) +0xd4.
+  The `sw` at 0x81a130 stores 4 bytes to a1 (arg1 at entry) +0xb8.
+  The `sw` at 0x81a138 stores 4 bytes to a1 (arg1 at entry) +0xcc.
+  The `sw` at 0x81a140 stores 4 bytes to a1 (arg1 at entry) +0xc4.
+  The `sw` at 0x81a148 stores 4 bytes to a1 (arg1 at entry) +0xbc.
+  The `sw` at 0x81a158 stores 4 bytes to a1 (arg1 at entry) +0xd8.
+  The `sw` at 0x81a164 stores 4 bytes to a1 (arg1 at entry) +0xd0.
+  The `sw` at 0x81a16c stores 4 bytes to a1 (arg1 at entry) +0xc8.
+  The `sw` at 0x81a17c stores 4 bytes to a1 (arg1 at entry) +0xc0.
+  The `lwc1` at 0x81a180 loads 4 bytes from [a0+220348] +0xc.
+  The `lwc1` at 0x81a184 loads 4 bytes from [a0+220348] +0x3c.
+  The `lwc1` at 0x81a188 loads 4 bytes from [a0+220348] +0x2c.
+  The `lwc1` at 0x81a190 loads 4 bytes from [a0+220348] +0x1c.
+  The `sw` at 0x81a198 stores 4 bytes to a1 (arg1 at entry) +0xdc.
+  The `sw` at 0x81a1b4 stores 4 bytes to a1 (arg1 at entry) +0xe0.
+  The `sw` at 0x81a1c4 stores 4 bytes to a1 (arg1 at entry) +0xe4.
+  The `sw` at 0x81a1d4 stores 4 bytes to a1 (arg1 at entry) +0xe8.
+  The `sw` at 0x81a1e0 stores 4 bytes to a1 (arg1 at entry) +0xec.
+  The `sw` at 0x81a1fc stores 4 bytes to a1 (arg1 at entry) +0xf0.
+  The `sw` at 0x81a218 stores 4 bytes to a1 (arg1 at entry) +0xf4.
+  The `sw` at 0x81a228 stores 4 bytes to a1 (arg1 at entry) +0xf8.
+  The `sw` at 0x81a238 stores 4 bytes to a1 (arg1 at entry) +0xfc.
+  The `sw` at 0x81a244 stores 4 bytes to a1 (arg1 at entry) +0x100.
+  The `sw` at 0x81a260 stores 4 bytes to a1 (arg1 at entry) +0x104.
+  The `sw` at 0x81a27c stores 4 bytes to a1 (arg1 at entry) +0x108.
+  The `sw` at 0x81a28c stores 4 bytes to a1 (arg1 at entry) +0x10c.
+  The `sw` at 0x81a29c stores 4 bytes to a1 (arg1 at entry) +0x110.
+  The `sw` at 0x81a2b8 stores 4 bytes to a1 (arg1 at entry) +0x114.
+  The `lw` at 0x81a2dc loads 4 bytes from a0 (arg0 at entry) +0xac8.
+  The `lw` at 0x81a300 loads 4 bytes from a0 (arg0 at entry) +0xacc.
+  The `lwc1` at 0x81a3d0 loads 4 bytes from a0 (arg0 at entry) +0xa80.
+  The `lwc1` at 0x81a420 loads 4 bytes from a0 (arg0 at entry) +0xa94.
+  The `bgezall` at 0x819a44 calls __R300DPSetupShaderBasicIL [0x819540] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3), a6=[a0+220348].
+  The `jalr` at 0x819af0 calls FloatToS16E7 [0x6ef3c0] with a0=0x31300, a1=0x1902, a2=?, a3=?; fp f12=[a0+2672].
+  The `jalr` at 0x819b00 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+2676].
+  The `jalr` at 0x819b10 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+2680].
+  The `jalr` at 0x819b20 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+2684].
+  The `jalr` at 0x819b54 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=0x31304, a3=?; fp f12=[a0+2692].
+  The `jalr` at 0x819b64 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+2696].
+  The `jalr` at 0x819b74 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+2700].
+  The `jalr` at 0x819b84 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+2704].
+  The `jalr` at 0x819f80 calls FloatToS16E7 [0x6ef3c0] with a0=0x1231, a1=0x821800, a2=0x11f0, a3=0x2c509, a4=0x1270, a5=0x3821800, a6=0x11b0, a7=0x20200; fp f12=[[a0+220348]], f14=[[a0+220348]+48], f15=[[a0+220348]+32], f16=[[a0+220348]+16].
+  The `jalr` at 0x819f90 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[[a0+220348]+16].
+  The `jalr` at 0x819fa0 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[[a0+220348]+32].
+  The `jalr` at 0x819fb0 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[[a0+220348]+48].
+  The `jalr` at 0x81a038 calls FloatToS16E7 [0x6ef3c0] with a0=0x1232, a1=?, a2=?, a3=?; fp f12=[[a0+220348]+4], f17=[[a0+220348]+52], f18=[[a0+220348]+36], f19=[[a0+220348]+20].
+  The `jalr` at 0x81a048 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[[a0+220348]+20].
+  The `jalr` at 0x81a058 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[[a0+220348]+36].
+  The `jalr` at 0x81a068 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[[a0+220348]+52].
+  The `jalr` at 0x81a0f0 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=0x31310, a2=[a0+220348], a3=0x61900, a4=0x11f3, a5=0x82c509, a6=0x1273, a7=0x2061900; fp f12=[[a0+220348]+8].
+  The `jalr` at 0x81a100 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[[a0+220348]+24].
+  The `jalr` at 0x81a110 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[[a0+220348]+40].
+  The `jalr` at 0x81a120 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[[a0+220348]+56].
+  The `jalr` at 0x81a1a8 calls FloatToS16E7 [0x6ef3c0] with a0=0x11b4, a1=0x1020200, a2=0x1234, a3=?; fp f12=[[a0+220348]+12].
+  The `jalr` at 0x81a1b8 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[[a0+220348]+28].
+  The `jalr` at 0x81a1c8 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[[a0+220348]+44].
+  The `jalr` at 0x81a1d8 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[[a0+220348]+60].
+  The `jalr` at 0x81a20c calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=0x31318; fp f12=[a0+2712].
+  The `jalr` at 0x81a21c calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+2716].
+  The `jalr` at 0x81a22c calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+2720].
+  The `jalr` at 0x81a23c calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+2724].
+  The `jalr` at 0x81a270 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?, a4=0x3131c; fp f12=[a0+2732].
+  The `jalr` at 0x81a280 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+2736].
+  The `jalr` at 0x81a290 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+2740].
+  The `jalr` at 0x81a2a0 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+2744].
+  The `jalr` at 0x81a33c calls FloatToS16E7 [0x6ef3c0] with a0=0x31300, a1=?, a2=0x1402, a3=[a0+2764].
+  The `jalr` at 0x81a34c calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?.
+  The `jalr` at 0x81a35c calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?.
+  The `jalr` at 0x81a36c calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?.
+  The `jalr` at 0x81a388 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?, a7=0x31304.
+  The `jalr` at 0x81a398 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?.
+  The `jalr` at 0x81a3a8 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?.
+  The `jalr` at 0x81a3b8 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?.
+  The `jalr` at 0x81a3dc calls FloatToS16E7 [0x6ef3c0] with a0=0x31300, a1=0x1902, a2=?, a3=?; fp f12=[a0+2688].
+  The `jalr` at 0x81a3ec calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+2688].
+  The `jalr` at 0x81a3fc calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+2688].
+  The `jalr` at 0x81a40c calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+2688].
+  The `jalr` at 0x81a42c calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+2708].
+  The `jalr` at 0x81a43c calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+2708].
+  The `jalr` at 0x81a44c calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+2708].
+  The `jalr` at 0x81a45c calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+2708].
+  The `beq` branch at 0x819a34 targets 0x819a64, is taken when at(=[a0+289008]) == 0, and falls through when at(=[a0+289008]) != 0.
+  The `beq` branch at 0x819a6c targets 0x819db8, is taken when (a2 & 0x100) == 0, and falls through when (a2 & 0x100) != 0.
+  The `beq` branch at 0x819a74 targets 0x819df0, is taken when s4(?) == 0, and falls through when s4(?) != 0.
+  The `beq` branch at 0x819a80 targets 0x81a470, is taken when s4(?) == 0, and falls through when s4(?) != 0.
+  The `beq` branch at 0x819ab8 targets 0x81a2d8, is taken when s3(=a3) == a1(=0x1901), and falls through when s3(=a3) != a1(=0x1901).
+  The `beq` branch at 0x819ac4 targets 0x81a3cc, is taken when s3(=a3) == a1(=0x1902), and falls through when s3(=a3) != a1(=0x1902).
+  The `beq` branch at 0x819b94 targets 0x819da0, is taken when s5(?) == 0, and falls through when s5(?) != 0.
+  The `bne` branch at 0x819bc4 targets 0x81a528, is taken when t8(?) != 0, and falls through when t8(?) == 0.
+  The `beq` branch at 0x819c50 targets 0x819d98, is taken when t1(?) == a1(?), and falls through when t1(?) != a1(?).
+  The `bne` branch at 0x819ca8 targets 0x819c00, is taken when t8(?) != a1(?), and falls through when t8(?) == a1(?).
+  The `beq` branch at 0x819cd8 targets 0x819ce4, is taken when s5(?) >= 0 (signed), and falls through when s5(?) < 0 (signed).
+  The `beq` branch at 0x819ce4 targets 0x819da8, is taken when s4(?) == 0, and falls through when s4(?) != 0.
+  The `beq` branch at 0x819d98 targets 0x819cb4 and is always taken.
+  The `bne` branch at 0x819da0 targets 0x819ce8, is taken when s4(?) != 0, and falls through when s4(?) == 0.
+  The `beq` branch at 0x819db0 targets 0x819cf4 and is always taken.
+  The `beq` branch at 0x819db8 targets 0x819a74, is taken when a3 == a1(=0x1901), and falls through when a3 != a1(=0x1901).
+  The `beq` branch at 0x819dc8 targets 0x819de8, is taken when v1(=[a0+3812]) == 0, and falls through when v1(=[a0+3812]) != 0.
+  The `beq` branch at 0x819dd4 targets 0x819de8, is taken when v1(?) == 0, and falls through when v1(?) != 0.
+  The `bne` branch at 0x819de0 targets 0x819dd0, is taken when v1(?) != 0, and falls through when v1(?) == 0.
+  The `beq` branch at 0x819de8 targets 0x819df4 and is always taken.
+  The `bne` branch at 0x819dfc targets 0x819eb0, is taken when a7(=[[a0+220348]+64]) != t0(=0x4), and falls through when a7(=[[a0+220348]+64]) == t0(=0x4).
+  The `bc1f` branch at 0x819e14 targets 0x819eb0, is taken when not (f6(=[a0+2732]) == f4 (c.eq.s at 0x819e0c)), and falls through when f6(=[a0+2732]) == f4 (c.eq.s at 0x819e0c).
+  The `bc1f` branch at 0x819e28 targets 0x819eb0, is taken when not (f7(=[a0+2736]) == f4 (c.eq.s at 0x819e20)), and falls through when f7(=[a0+2736]) == f4 (c.eq.s at 0x819e20).
+  The `bc1f` branch at 0x819e40 targets 0x819eb0, is taken when not (f8(=[a0+2740]) == f4 (c.eq.s at 0x819e34)), and falls through when f8(=[a0+2740]) == f4 (c.eq.s at 0x819e34).
+  The `bc1f` branch at 0x819e54 targets 0x819eb0, is taken when not (f9(=[a0+2744]) == f4 (c.eq.s at 0x819e4c)), and falls through when f9(=[a0+2744]) == f4 (c.eq.s at 0x819e4c).
+  The `bc1f` branch at 0x819e68 targets 0x819eb0, is taken when not (f10(=[a0+2712]) == f4(=0x3f800000) (c.eq.s at 0x819e60)), and falls through when f10(=[a0+2712]) == f4(=0x3f800000) (c.eq.s at 0x819e60).
+  The `bc1f` branch at 0x819e80 targets 0x819eb0, is taken when not (f11(=[a0+2716]) == f4(=0x3f800000) (c.eq.s at 0x819e74)), and falls through when f11(=[a0+2716]) == f4(=0x3f800000) (c.eq.s at 0x819e74).
+  The `bc1f` branch at 0x819e94 targets 0x819eb0, is taken when not (f12(=[a0+2720]) == f4(=0x3f800000) (c.eq.s at 0x819e8c)), and falls through when f12(=[a0+2720]) == f4(=0x3f800000) (c.eq.s at 0x819e8c).
+  The `bc1t` branch at 0x819ea8 targets 0x819a80, is taken when f13(=[a0+2724]) == f4(=0x3f800000) (c.eq.s at 0x819ea0), and falls through when not (f13(=[a0+2724]) == f4(=0x3f800000) (c.eq.s at 0x819ea0)).
+  The `beq` branch at 0x81a2b4 targets 0x81a49c, is taken when s4(?) == 0, and falls through when s4(?) != 0.
+  The `beq` branch at 0x81a2d0 targets 0x819aa0 and is always taken.
+  The `bltz` branch at 0x81a2e0 targets 0x81a4c0, is taken when v0(=[a0+2760]) < 0 (signed), and falls through when v0(=[a0+2760]) >= 0 (signed).
+  The `beq` branch at 0x81a31c targets 0x81a4e8, is taken when a4 == a2(=0x1402), and falls through when a4 != a2(=0x1402).
+  The `beq` branch at 0x81a328 targets 0x81a500, is taken when a4 == a5(=0x1403), and falls through when a4 != a5(=0x1403).
+  The `beq` branch at 0x81a330 targets 0x81a514, is taken when a4 == a6(=0x1406), and falls through when a4 != a6(=0x1406).
+  The `beq` branch at 0x81a3c4 targets 0x819b94 and is always taken.
+  The `beq` branch at 0x81a468 targets 0x819b94 and is always taken.
+  The `beq` branch at 0x81a494 targets 0x819aa8 and is always taken.
+  The `beq` branch at 0x81a4b0 targets 0x81a488 and is always taken.
+  The `beq` branch at 0x81a4e0 targets 0x81a300 and is always taken.
+  The `beq` branch at 0x81a4f4 targets 0x81a334 and is always taken.
+  The `beq` branch at 0x81a50c targets 0x81a334 and is always taken.
+  The `beq` branch at 0x81a520 targets 0x81a334 and is always taken.
+  The `beq` branch at 0x81a554 targets 0x819cd0 and is always taken.
+  The return at 0x819a5c has v0 = ret(__R300DPSetupShaderBasicIL).
+  The return at 0x819d90 has v0 = ?.
+  The instructions from 0x81a4b8 to 0x81a4bc are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x81a4fc to 0x81a4fc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300DPPixelShaderOp` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x81aac0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x81aac0-0x81acec (556 bytes).
+  It occupies 556 bytes.
+  2 such `lbu` accesses load 1 byte from a0 (arg0 at entry) +0xad0, including `lbu` at 0x81aac4, `lbu` at 0x81abe8.
+  19 such `sw` accesses store 4 bytes to ?, including `sw` at 0x81ab50, `sw` at 0x81ab58, `sw` at 0x81ab60.
+  The `lw` at 0x81ab9c loads 4 bytes from a0 (arg0 at entry) +0x468f0.
+  The `bgezall` at 0x81ab30 calls __R300DPPixelShader_SetupOutputFormat [0x81a5c0] with a0=a0 at entry (arg0), a1=a4 at entry (arg4), a2=a2 at entry (arg2), a3=sp-80, a4=a3 at entry (arg3).
+  The `bgezall` at 0x81ac68 calls __R300DPSetupShaderBasic [0x819a00] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a4 at entry (arg4), a3=a2 at entry (arg2), a4=a3 at entry (arg3).
+  The `bgezall` at 0x81acb8 calls __R300DPSetupShaderMapped1_4 [0x819000] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a3 at entry (arg3), a3=a3 at entry (arg3).
+  The `bgezall` at 0x81acdc calls __R300DPSetupShaderMapped1_4 [0x819000] with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a3 at entry (arg3), a3=a3 at entry (arg3).
+  The `beq` branch at 0x81aafc targets 0x81ac50, is taken when at(=[a0+2768]:1) == 0, and falls through when at(=[a0+2768]:1) != 0.
+  The `beq` branch at 0x81ab08 targets 0x81acac, is taken when a2 == v1(=0x1900), and falls through when a2 != v1(=0x1900).
+  The `beq` branch at 0x81ab10 targets 0x81aca8, is taken when a2 == v0(=0x1901), and falls through when a2 != v0(=0x1901).
+  The `beq` branch at 0x81ab40 targets 0x81ab4c, is taken when (s3(=a4) & 0x100) == 0, and falls through when (s3(=a4) & 0x100) != 0.
+  The `beq` branch at 0x81abb4 targets 0x81ac80, is taken when ra(=[a0+289008]) == 0, and falls through when ra(=[a0+289008]) != 0.
+  The `beq` branch at 0x81abc8 targets 0x81abdc, is taken when v0(?) == 0, and falls through when v0(?) != 0.
+  The `beq` branch at 0x81abe0 targets 0x81ac1c, is taken when s1(=a2) == a7(=0x1900), and falls through when s1(=a2) != a7(=0x1900).
+  The `beq` branch at 0x81abec targets 0x81acc8, is taken when t1(=[a0+2768]:1) == 0, and falls through when t1(=[a0+2768]:1) != 0.
+  The `beq` branch at 0x81abf4 targets 0x81ac1c, is taken when s1(=a2) == a1(=0x1901), and falls through when s1(=a2) != a1(=0x1901).
+  The `beq` branch at 0x81ac50 targets 0x81acd0, is taken when a2 == t8(=0x1900), and falls through when a2 != t8(=0x1900).
+  The `beq` branch at 0x81ac70 targets 0x81ab14 and is always taken.
+  The `beq` branch at 0x81aca0 targets 0x81abbc and is always taken.
+  The `beq` branch at 0x81acc0 targets 0x81ab14 and is always taken.
+  The `beq` branch at 0x81acc8 targets 0x81ac00 and is always taken.
+  The `beq` branch at 0x81ace4 targets 0x81ab14 and is always taken.
+  The return at 0x81ac14 has v0 = ?.
+  The return at 0x81ac48 has v0 = ?.
+  The instructions from 0x81ac78 to 0x81ac7c are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300DrawPixelsBlt` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x81ad00 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x81ad00-0x81b354 (1620 bytes).
+  It occupies 1620 bytes.
+  The `lw` at 0x81ad10 loads 4 bytes from a0 (arg0 at entry) +0x38690.
+  The `lw` at 0x81ad5c loads 4 bytes from a0 (arg0 at entry) +0x38da0.
+  The `lw` at 0x81ad90 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x81adc4 loads 4 bytes from a0 (arg0 at entry) +0xdec.
+  The `sw` at 0x81ae04 stores 4 bytes to ret(__R300DPPixelShaderOp) +0x0.
+  The `sw` at 0x81ae0c stores 4 bytes to ret(__R300DPPixelShaderOp) +0x4.
+  The `sw` at 0x81ae18 stores 4 bytes to ret(__R300DPPixelShaderOp) +0x8.
+  The `sw` at 0x81ae20 stores 4 bytes to ret(__R300DPPixelShaderOp) +0xc.
+  2 such `lw` accesses load 4 bytes from a4 (arg4 at entry) +0x1c, including `lw` at 0x81ae24, `lw` at 0x81af00.
+  The `lw` at 0x81ae30 loads 4 bytes from a4 (arg4 at entry) +0x4c.
+  2 such `lw` accesses load 4 bytes from a6 (arg6 at entry) +0x1c, including `lw` at 0x81ae5c, `lw` at 0x81b244.
+  2 such `lw` accesses load 4 bytes from a6 (arg6 at entry) +0x10, including `lw` at 0x81ae60, `lw` at 0x81b248.
+  2 such `lw` accesses load 4 bytes from a6 (arg6 at entry) +0x4c, including `lw` at 0x81aeb0, `lw` at 0x81b258.
+  The `sw` at 0x81aec0 stores 4 bytes to ret(__R300WriteDepthOffsetRegisters) +0x4.
+  The `sw` at 0x81aecc stores 4 bytes to ret(__R300WriteDepthOffsetRegisters) +0x0.
+  8 such `sw` accesses store 4 bytes to ?, including `sw` at 0x81aed8, `sw` at 0x81aee0, `sw` at 0x81aee8.
+  The `lw` at 0x81af40 loads 4 bytes from a4 (arg4 at entry) +0x2c.
+  The `lw` at 0x81af64 loads 4 bytes from a4 (arg4 at entry) +0x20.
+  The `lwc1` at 0x81af6c loads 4 bytes from a0 (arg0 at entry) +0x29c.
+  2 such `lwc1` accesses load 4 bytes from a5 (arg5 at entry) +0xc, including `lwc1` at 0x81af70, `lwc1` at 0x81b154.
+  2 such `lwc1` accesses load 4 bytes from a5 (arg5 at entry) +0x8, including `lwc1` at 0x81af74, `lwc1` at 0x81b160.
+  2 such `lwc1` accesses load 4 bytes from a5 (arg5 at entry) +0x4, including `lwc1` at 0x81af78, `lwc1` at 0x81b150.
+  2 such `lwc1` accesses load 4 bytes from a5 (arg5 at entry) +0x0, including `lwc1` at 0x81af80, `lwc1` at 0x81b15c.
+  The `lw` at 0x81af90 loads 4 bytes from a4 (arg4 at entry) +0x28.
+  The `lw` at 0x81afac loads 4 bytes from a4 (arg4 at entry) +0x24.
+  The `sw` at 0x81b020 stores 4 bytes to ret(__R300DrawCopyRectangle) +0x4.
+  The `sw` at 0x81b02c stores 4 bytes to ret(__R300DrawCopyRectangle) +0x0.
+  The `sw` at 0x81b038 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x81b03c loads 4 bytes from a0 (arg0 at entry) +0x468f0.
+  The `lw` at 0x81b048 loads 4 bytes from a0 (arg0 at entry) +0xdf0.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x474b8, including `lw` at 0x81b05c, `lw` at 0x81b1d8.
+  The `lw` at 0x81b078 loads 4 bytes from a0 (arg0 at entry) +0xcc48.
+  The `lw` at 0x81b09c loads 4 bytes from a0 (arg0 at entry) +0x474a4.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46e44, including `lw` at 0x81b0c0, `lw` at 0x81b0d8.
+  The `sw` at 0x81b0e8 stores 4 bytes to a0 (arg0 at entry) +0x46e44.
+  The `lw` at 0x81b120 loads 4 bytes from [a0+232864] +0x278.
+  The `lw` at 0x81b1a8 loads 4 bytes from ?.
+  The `lbu` at 0x81b1dc loads 1 byte from a0 (arg0 at entry) +0xc9b0.
+  The `lbu` at 0x81b22c loads 1 byte from ?.
+  The `lbu` at 0x81b238 loads 1 byte from a6 (arg6 at entry) +0x37.
+  The `lw` at 0x81b288 loads 4 bytes from a6 (arg6 at entry) +0x18.
+  The `lw` at 0x81b2b4 loads 4 bytes from table(0xb824c8) +0x0.
+  The `sw` at 0x81b2ec stores 4 bytes to ret(__R300WriteColorOffsetRegisters) +0x0.
+  The `sw` at 0x81b2f0 stores 4 bytes to ret(__R300WriteColorOffsetRegisters) +0x4.
+  The `sw` at 0x81b2f4 stores 4 bytes to ret(__R300WriteColorOffsetRegisters) +0x8.
+  The `sw` at 0x81b2f8 stores 4 bytes to ret(__R300WriteColorOffsetRegisters) +0x14.
+  The `sw` at 0x81b2fc stores 4 bytes to ret(__R300WriteColorOffsetRegisters) +0x18.
+  The `sw` at 0x81b300 stores 4 bytes to ret(__R300WriteColorOffsetRegisters) +0x1c.
+  The `sw` at 0x81b310 stores 4 bytes to ret(__R300WriteColorOffsetRegisters) +0x10.
+  The `sw` at 0x81b31c stores 4 bytes to ret(__R300WriteColorOffsetRegisters) +0xc.
+  The `jalr` at 0x81ad70 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x81ad7c calls __R300TemporarilyDisableGuardBandClipping [0x781900] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `bgezall` at 0x81ad94 calls __R300DPSetOverrideRendering [0x818a40] with a0=a0 at entry (arg0), a1=[a0+290136], a2=a7 at entry (arg7), a3=?.
+  The `bgezall` at 0x81adbc calls __R300DPPixelShaderOp [0x81aac0] with a0=a0 at entry (arg0), a1=ret(__R300DPSetOverrideRendering), a2=?, a3=?, a4=a7 at entry (arg7), a5=0x1.
+  The `jalr` at 0x81ade0 calls __glFogVertex [0x55f940] with a0=a0 at entry (arg0), a1=a0+564, a2=?, a3=?.
+  The `jalr` at 0x81aeb4 calls __R300WriteDepthOffsetRegisters [0x77c080] with a0=a0 at entry (arg0), a1=?, a2=[a6+76], a3=0x1e, a5=-0x5.
+  The `jalr` at 0x81af38 calls SetupTextureUnitForBlt [0x762380] with a0=?, a1=0x0, a2=a2 at entry (arg2), a3=a3 at entry (arg3), a4=0x0, a5=[a4+28], a6=a2 at entry (arg2).
+  The `jalr` at 0x81b004 calls __R300DrawCopyRectangle [0x764500] with a0=ret(SetupTextureUnitForBlt), a1=0x0, a2=?, a3=?; fp f14=[a5], f15=[a5+4], f16=[a5+8], f17=[a5+12], f18=[a0+668].
+  The `jalr` at 0x81b034 calls __R300ReenableGuardBandClipping [0x781a00] with a0=a0 at entry (arg0), a1=ret(__R300DrawCopyRectangle)+8, a2=0xa, a3=0x1393.
+  The `jalr` at 0x81b088 calls __R300ProgramPixelShader [0x6f8c40] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?, a4=[a0+289008].
+  The `jalr` at 0x81b0a4 calls __R300AdjustPixelShaderInput [0x6f35c0] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x81b0b8 calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=a0 at entry (arg0), a1=?, a2=0x1, a3=?.
+  The `jalr` at 0x81b0d0 calls __R300LoadCachedPSProgToHwRegs [0x6f1380] with a0=a0 at entry (arg0), a1=?, a2=?, a3=([a0+290372] << 0x2b).
+  The `jalr` at 0x81b0f8 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x81b134 calls (unknown callee) with a0=[a0+232864], a1=sp-208, a2=sp-204, a3=sp-200, a4=sp-196.
+  The `jalr` at 0x81b194 calls __R300FlushZStencilBuffer [0x769dc0] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?, a7=a5 at entry (arg5).
+  The `jalr` at 0x81b2e0 calls __R300WriteColorOffsetRegisters [0x77be00] with a0=a0 at entry (arg0), a1=?, a2=[a6+76], a3=0x4, a4=0x1d.
+  The `beq` branch at 0x81ad58 targets 0x81b110, is taken when at(=[a0+231056]) == v1(=0x10), and falls through when at(=[a0+231056]) != v1(=0x10).
+  The `beq` branch at 0x81ad64 targets 0x81b120, is taken when s4(?) == t8(=0x1901), and falls through when s4(?) != t8(=0x1901).
+  The `beq` branch at 0x81add0 targets 0x81ae24, is taken when ra(?) == 0, and falls through when ra(?) != 0.
+  The `beq` branch at 0x81ae54 targets 0x81b1a4, is taken when (s3(=a7) & 0x100) == 0, and falls through when (s3(=a7) & 0x100) != 0.
+  The `beq` branch at 0x81ae70 targets 0x81b208, is taken when (v0(=[a6+28]) & 0x4) == 0, and falls through when (v0(=[a6+28]) & 0x4) != 0.
+  The `beq` branch at 0x81aef4 targets 0x81b1f0, is taken when s4(?) == a0(=0x1901), and falls through when s4(?) != a0(=0x1901).
+  The `beq` branch at 0x81b040 targets 0x81b0f0, is taken when a4(=[a0+289008]) == 0, and falls through when a4(=[a0+289008]) != 0.
+  The `beq` branch at 0x81b054 targets 0x81b084, is taken when a5(?) == 0, and falls through when a5(?) != 0.
+  The `beq` branch at 0x81b060 targets 0x81b080, is taken when a6(=[a0+292024]) == 0, and falls through when a6(=[a0+292024]) != 0.
+  The `beq` branch at 0x81b070 targets 0x81b1dc, is taken when a1(?) == 0, and falls through when a1(?) != 0.
+  The `beq` branch at 0x81b07c targets 0x81b1e8, is taken when v0(=[a0+52296]) == 0, and falls through when v0(=[a0+52296]) != 0.
+  The `beq` branch at 0x81b094 targets 0x81b1d4, is taken when (s6(=one of 0x0, 0x1) & 0xff) == 0, and falls through when (s6(=one of 0x0, 0x1) & 0xff) != 0.
+  The `bgez` branch at 0x81b0c8 targets 0x81b0ec, is taken when a3(=([a0+290372] << 0x2b)) >= 0 (signed), and falls through when a3(=([a0+290372] << 0x2b)) < 0 (signed).
+  The `bne` branch at 0x81b114 targets 0x81ad64, is taken when s4(?) != a6(=0x1902), and falls through when s4(?) == a6(=0x1902).
+  The `beq` branch at 0x81b19c targets 0x81ad70 and is always taken.
+  The `beq` branch at 0x81b1b4 targets 0x81b228, is taken when v0(?) == t1(=0x4), and falls through when v0(?) != t1(=0x4).
+  The `beq` branch at 0x81b1bc targets 0x81b22c, is taken when v0(?) == a2(=0x3), and falls through when v0(?) != a2(=0x3).
+  The `beq` branch at 0x81b1c4 targets 0x81b244, is taken when s4(?) == v1(=0x1901), and falls through when s4(?) != v1(=0x1901).
+  The `beq` branch at 0x81b1cc targets 0x81aed4 and is always taken.
+  The `beq` branch at 0x81b1d4 targets 0x81b0a0 and is always taken.
+  The `bne` branch at 0x81b1e0 targets 0x81b084, is taken when a1(=[a0+51632]:1) != 0, and falls through when a1(=[a0+51632]:1) == 0.
+  The `beq` branch at 0x81b1e8 targets 0x81b084 and is always taken.
+  The `beq` branch at 0x81b200 targets 0x81aefc and is always taken.
+  The `beq` branch at 0x81b214 targets 0x81b320, is taken when (v0(=[a6+28]) & 0x2) == 0, and falls through when (v0(=[a6+28]) & 0x2) != 0.
+  The `beq` branch at 0x81b220 targets 0x81ae8c and is always taken.
+  The `beq` branch at 0x81b230 targets 0x81b1c4, is taken when a5(?) == 0, and falls through when a5(?) != 0.
+  The `beq` branch at 0x81b23c targets 0x81b1c4, is taken when a6(=[a6+55]:1) == 0, and falls through when a6(=[a6+55]:1) != 0.
+  The `beq` branch at 0x81b25c targets 0x81b330, is taken when (v0(=[a6+28]) & 0x4) == 0, and falls through when (v0(=[a6+28]) & 0x4) != 0.
+  The `beq` branch at 0x81b318 targets 0x81aed0 and is always taken.
+  The `beq` branch at 0x81b328 targets 0x81ae8c and is always taken.
+  The `beq` branch at 0x81b334 targets 0x81b34c, is taken when (v0(=[a6+28]) & 0x2) == 0, and falls through when (v0(=[a6+28]) & 0x2) != 0.
+  The `beq` branch at 0x81b344 targets 0x81b274 and is always taken.
+  The `beq` branch at 0x81b34c targets 0x81b274 and is always taken.
+  The return at 0x81b108 has v0 = ret(__glATISubmitBM).
+
+- `__R300FastDownload_SetupState` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x81b600 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x81b600-0x81b8c8 (712 bytes).
+  It occupies 712 bytes.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x81b610, `lw` at 0x81b670.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x81b614, `lw` at 0x81b674.
+  The `sw` at 0x81b694 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x81b69c stores 4 bytes to [a0+290136] +0x0.
+  The `sw` at 0x81b6ac stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x81b6bc stores 4 bytes to [a0+290136] +0xc.
+  The `lw` at 0x81b724 loads 4 bytes from a0 (arg0 at entry) +0xdec.
+  The `sw` at 0x81b764 stores 4 bytes to ret(SetupTextureUnitForBlt) +0x8.
+  The `sw` at 0x81b76c stores 4 bytes to ret(SetupTextureUnitForBlt) +0x4.
+  The `sw` at 0x81b778 stores 4 bytes to ret(SetupTextureUnitForBlt) +0x0.
+  The `sw` at 0x81b780 stores 4 bytes to ret(SetupTextureUnitForBlt) +0xc.
+  The `lw` at 0x81b794 loads 4 bytes from a0 (arg0 at entry) +0x38670.
+  The `lw` at 0x81b798 loads 4 bytes from [a0+231024] +0x78.
+  The `lw` at 0x81b7ac loads 4 bytes from [a0+231024] +0x80.
+  The `lw` at 0x81b7b8 loads 4 bytes from [a0+231024] +0x20.
+  The `lw` at 0x81b7c0 loads 4 bytes from [a0+231024] +0xcc.
+  The `lw` at 0x81b7f4 loads 4 bytes from table(0xb824c8) +0x0.
+  12 such `sw` accesses store 4 bytes to ?, including `sw` at 0x81b804, `sw` at 0x81b80c, `sw` at 0x81b810.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x46d58, including `sw` at 0x81b864, `sw` at 0x81b888.
+  The `jalr` at 0x81b668 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `bgezall` at 0x81b6b8 calls __R300FastDPSetOverrideRendering [0x81b380] with a0=a0 at entry (arg0), a1=[a0+290136]+16, a2=a1 at entry (arg1), a3=?.
+  The `bgezall` at 0x81b6dc calls __R300DPPixelShaderOp [0x81aac0] with a0=a0 at entry (arg0), a1=ret(__R300FastDPSetOverrideRendering), a2=a3 at entry (arg3), a3=a4 at entry (arg4), a4=a1 at entry (arg1), a5=0x1.
+  The `jalr` at 0x81b71c calls SetupTextureUnitForBlt [0x762380] with a0=ret(__R300DPPixelShaderOp), a1=0x0, a2=a5 at entry (arg5), a3=a6 at entry (arg6), a4=0x0, a5=0x0, a6=a7 at entry (arg7), a7=a1 at entry (arg1).
+  The `jalr` at 0x81b740 calls __glFogVertex [0x55f940] with a0=a0 at entry (arg0), a1=a0+564, a2=?, a3=?.
+  The `beq` branch at 0x81b65c targets 0x81b68c, is taken when at(?) >= 0xff (unsigned), and falls through when at(?) < 0xff (unsigned).
+  The `bne` branch at 0x81b684 targets 0x81b668, is taken when t8(?) < 0xff (unsigned), and falls through when t8(?) >= 0xff (unsigned).
+  The `beq` branch at 0x81b730 targets 0x81b784, is taken when at(?) == 0, and falls through when at(?) != 0.
+  The `bne` branch at 0x81b78c targets 0x81b880, is taken when a2 != a3(=0x1901), and falls through when a2 == a3(=0x1901).
+  The `beq` branch at 0x81b7f0 targets 0x81b8a8, is taken when (v0(=[[a0+231024]+120]) & 0x4) == 0, and falls through when (v0(=[[a0+231024]+120]) & 0x4) != 0.
+  The `beq` branch at 0x81b8b0 targets 0x81b8c0, is taken when (v0(=[[a0+231024]+120]) & 0x2) == 0, and falls through when (v0(=[[a0+231024]+120]) & 0x2) != 0.
+  The `beq` branch at 0x81b8b8 targets 0x81b804 and is always taken.
+  The `beq` branch at 0x81b8c0 targets 0x81b800 and is always taken.
+  The return at 0x81b870 has v0 = [[a0+231024]+120].
+  The return at 0x81b8a0 has v0 = ?.
+  The instructions from 0x81b878 to 0x81b87c are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300DrawPixels_FastDownload` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x81ba40 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x81ba40-0x81d404 (6596 bytes).
+  It occupies 6596 bytes.
+  2 such `lbu` accesses load 1 byte from a0 (arg0 at entry) +0x7d00, including `lbu` at 0x81ba44, `lbu` at 0x81c508.
+  The `lwc1` at 0x81ba54 loads 4 bytes from a0 (arg0 at entry) +0xac0.
+  The `lw` at 0x81ba6c loads 4 bytes from a0 (arg0 at entry) +0x7460.
+  The `lw` at 0x81ba70 loads 4 bytes from a0 (arg0 at entry) +0x745c.
+  The `lwc1` at 0x81ba80 loads 4 bytes from a0 (arg0 at entry) +0x29c.
+  The `lwc1` at 0x81ba8c loads 4 bytes from a0 (arg0 at entry) +0xac4.
+  The `lwc1` at 0x81ba94 loads 4 bytes from a0 (arg0 at entry) +0x298.
+  The `lwc1` at 0x81ba9c loads 4 bytes from a0 (arg0 at entry) +0x294.
+  The `lw` at 0x81bb9c loads 4 bytes from a0 (arg0 at entry) +0xb8c.
+  The `lw` at 0x81bbd0 loads 4 bytes from a0 (arg0 at entry) +0xb98.
+  The `lw` at 0x81bc0c loads 4 bytes from a0 (arg0 at entry) +0xb90.
+  The `lw` at 0x81bc1c loads 4 bytes from a0 (arg0 at entry) +0xb94.
+  The `lw` at 0x81bc34 loads 4 bytes from a0 (arg0 at entry) +0x7454.
+  The `lw` at 0x81bccc loads 4 bytes from a0 (arg0 at entry) +0x38690.
+  The `lw` at 0x81c090 loads 4 bytes from table(0xb777e0) +0x0.
+  38 such `lw` accesses load 4 bytes from ?, including `lw` at 0x81c158, `lw` at 0x81c2c4, `lw` at 0x81c36c.
+  43 such `sh` accesses store 2 bytes to ?, including `sh` at 0x81c384, `sh` at 0x81c398, `sh` at 0x81c3a4.
+  The `lw` at 0x81c51c loads 4 bytes from a0 (arg0 at entry) +0x7478.
+  3 such `lwc1` accesses load 4 bytes from ?, including `lwc1` at 0x81c670, `lwc1` at 0x81c678, `lwc1` at 0x81c688.
+  4 such `swc1` accesses store 4 bytes to ?, including `swc1` at 0x81c674, `swc1` at 0x81c680, `swc1` at 0x81c68c.
+  12 such `lhu` accesses load 2 bytes from ?, including `lhu` at 0x81c77c, `lhu` at 0x81c794, `lhu` at 0x81c79c.
+  12 such `lbu` accesses load 1 byte from ?, including `lbu` at 0x81c920, `lbu` at 0x81c934, `lbu` at 0x81c944.
+  16 such `sb` accesses store 1 byte to ?, including `sb` at 0x81c92c, `sb` at 0x81c940, `sb` at 0x81c948.
+  6 such `sw` accesses store 4 bytes to ?, including `sw` at 0x81ca68, `sw` at 0x81ca7c, `sw` at 0x81ca84.
+  3 such `ld` accesses load 8 bytes from ?, including `ld` at 0x81d20c, `ld` at 0x81d218, `ld` at 0x81d234.
+  4 such `sd` accesses store 8 bytes to ?, including `sd` at 0x81d268, `sd` at 0x81d274, `sd` at 0x81d280.
+  The `jalr` at 0x81bce4 calls __R300TemporarilyDisableGuardBandClipping [0x781900] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x81bf84 calls ceilf with a0=?, a1=?, a2=?, a3=?; fp f13=0x3f000000.
+  The `jalr` at 0x81bfb8 calls ceilf with a0=?, a1=?, a2=?, a3=?; fp f13=0x3f000000.
+  The `jalr` at 0x81c024 calls __glATIAllocBlitBuffer [0xb21700] with a0=a0 at entry (arg0), a1=?, a2=?, a3=sp-720, a4=sp-716, a5=sp-712.
+  The `jalr` at 0x81c164 calls (unknown callee) with a0=?, a1=?, a2=?, a3=?.
+  The `jalr` at 0x81c1b8 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x81c2d0 calls (unknown callee) with a0=?, a1=?, a2=?, a3=?.
+  The `jalr` at 0x81c560 calls __R300FlushZStencilBuffer [0x769dc0] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `bgezall` at 0x81ca0c calls __R300FastDownload_SetupState [0x81b600] with a0=a0 at entry (arg0), a1=?, a2=a3 at entry (arg3), a3=?, a6=ret(__glATIAllocBlitBuffer).
+  The `jalr` at 0x81ca38 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x81ca88 calls floorf with a0=?, a1=0x1150, a2=?, a3=?; fp f13=0x3f000000.
+  The `jalr` at 0x81cac0 calls floorf with a0=?, a1=?, a2=?, a3=?; fp f13=0x3f000000.
+  The `bgezall` at 0x81cae4 calls __R300FastDownload_DrawTexRect [0x81b900] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?; fp f16=ret(floorf).
+  The `jalr` at 0x81cb44 calls __R300_Imaging_DrawTexRectDWords [0x7e8a00] with a0=a0 at entry (arg0), a1=?, a2=0x1, a3=?.
+  The `jalr` at 0x81cb94 calls __R300FastDownload__Imaging_SetupState [0x7e9b40] with a0=a0 at entry (arg0), a1=0x0, a2=one of 0x10001, 0x30001, a3=a3 at entry (arg3), a7=a2 at entry (arg2).
+  The `jalr` at 0x81cbc0 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x81cc10 calls floorf with a0=?, a1=0x1150, a2=?, a3=?; fp f13=0x3f000000.
+  The `jalr` at 0x81cc48 calls floorf with a0=?, a1=?, a2=?, a3=?; fp f13=0x3f000000.
+  The `jalr` at 0x81ccc0 calls __R300FastDownload__Imaging_DrawTexRect [0x7e9740] with a0=a0 at entry (arg0), a1=0x10001, a2=?, a3=?; fp f17=ret(floorf).
+  The `bgezall` at 0x81cde4 calls __R300DrawPixelsOp [0x8183c0] with a0=a0 at entry (arg0), a1=?, a2=a2 at entry (arg2), a3=a3 at entry (arg3), a6=0x0.
+  The `jalr` at 0x81ce10 calls fprintf with a0=sym(__iob)+32, a1=0xb777b8, a2=?, a3=?.
+  The `jalr` at 0x81cf9c calls (unknown callee) with a0=?, a1=?, a2=?, a3=?.
+  The `jalr` at 0x81cfc0 calls (unknown callee) with a0=?, a1=?, a2=?, a3=a3 at entry (arg3), a4=0x1901.
+  The `jalr` at 0x81d05c calls __R300ReenableGuardBandClipping [0x781a00] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x81d090 calls getenv with a0=0xb777a0, a1=?, a2=?, a3=?.
+  The `jalr` at 0x81d1a8 calls getenv with a0=0xb77708, a1=?, a2=?, a3=?.
+  The `jalr` at 0x81d31c calls atoi with a0=ret(getenv), a1=?, a2=?, a3=?.
+  The `jalr` at 0x81d344 calls __R300ProgramPixelShader [0x6f8c40] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?, a4=a6 at entry (arg6), a5=0x1.
+  The `jalr` at 0x81d35c calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=a0 at entry (arg0), a1=?, a2=0x0, a3=?.
+  The `jalr` at 0x81d36c calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `beq` branch at 0x81bad0 targets 0x81badc, is taken when a7(=[a0+32000]:1) == 0, and falls through when a7(=[a0+32000]:1) != 0.
+  The `bne` branch at 0x81bae8 targets 0x81c240, is taken when s0(=a3) < 0x1907 (unsigned), and falls through when s0(=a3) >= 0x1907 (unsigned).
+  The `beq` branch at 0x81baf4 targets 0x81c408, is taken when s0(=a3) >= 0x1908 (unsigned), and falls through when s0(=a3) < 0x1908 (unsigned).
+  The `bne` branch at 0x81bb24 targets 0x81c30c, is taken when a2(=a4) < v0(=0x8033) (unsigned), and falls through when a2(=a4) >= v0(=0x8033) (unsigned).
+  The `beq` branch at 0x81bb30 targets 0x81bb54, is taken when v0(=0x8033) >= a2(=a4) (unsigned), and falls through when v0(=0x8033) < a2(=a4) (unsigned).
+  The `bne` branch at 0x81bb40 targets 0x81c828, is taken when a2(=a4) < v0(=0x8365) (unsigned), and falls through when a2(=a4) >= v0(=0x8365) (unsigned).
+  The `bne` branch at 0x81bb48 targets 0x81cd34, is taken when a5(?) != 0, and falls through when a5(?) == 0.
+  The `beq` branch at 0x81bb54 targets 0x81cd1c, is taken when s0(=a3) == a6(=0x8000), and falls through when s0(=a3) != a6(=0x8000).
+  The `beq` branch at 0x81bb5c targets 0x81cd1c, is taken when s0(=a3) == a7(=0x80e1), and falls through when s0(=a3) != a7(=0x80e1).
+  The `bne` branch at 0x81bb68 targets 0x81cb18, is taken when s2(=a1) < 0x4 (unsigned), and falls through when s2(=a1) >= 0x4 (unsigned).
+  The `beq` branch at 0x81bb88 targets 0x81bb98, is taken when v0(?) == 0, and falls through when v0(?) != 0.
+  The `beq` branch at 0x81bba0 targets 0x81c9dc, is taken when v0(=[a0+2956]) == 0, and falls through when v0(=[a0+2956]) != 0.
+  The `beq` branch at 0x81bbec targets 0x81bbfc, is taken when t9(?) == 0, and falls through when t9(?) != 0.
+  The `beq` branch at 0x81bc64 targets 0x81bc8c, is taken when t8(=[a0+29780]) >= t9(?) (signed), and falls through when t8(=[a0+29780]) < t9(?) (signed).
+  The `bltz` branch at 0x81bc90 targets 0x81d198, is taken when t8(=[0xb96db8]) < 0 (signed), and falls through when t8(=[0xb96db8]) >= 0 (signed).
+  The `bltz` branch at 0x81bc98 targets 0x81d084, is taken when v0(=[0xb96dbc]) < 0 (signed), and falls through when v0(=[0xb96dbc]) >= 0 (signed).
+  The `beq` branch at 0x81bca4 targets 0x81bcbc, is taken when s3(=one of 0x1, 0x2, 0x3, 0x4) == t9(=0x3), and falls through when s3(=one of 0x1, 0x2, 0x3, 0x4) != t9(=0x3).
+  The `beq` branch at 0x81bcb8 targets 0x81cd70, is taken when (ra(?) & 0x3) == 0, and falls through when (ra(?) & 0x3) != 0.
+  The `beq` branch at 0x81bcd4 targets 0x81c4f4, is taken when a1(=[a0+231056]) == a2(=0x10), and falls through when a1(=[a0+231056]) != a2(=0x10).
+  The `beq` branch at 0x81bcdc targets 0x81c500, is taken when s0(=a3) == a3(=0x1901), and falls through when s0(=a3) != a3(=0x1901).
+  The `beq` branch at 0x81bcec targets 0x81d054, is taken when s2(?) == 0, and falls through when s2(?) != 0.
+  The `bne` branch at 0x81bed8 targets 0x81bf00, is taken when at(?) < 0x801 (unsigned), and falls through when at(?) >= 0x801 (unsigned).
+  The `beq` branch at 0x81bef8 targets 0x81bf4c and is always taken.
+  The `beq` branch at 0x81bf10 targets 0x81bf24, is taken when s0(?) >= 0x40 (unsigned), and falls through when s0(?) < 0x40 (unsigned).
+  The `beq` branch at 0x81bfc4 targets 0x81c1d0, is taken when v1(=a2) == 0, and falls through when v1(=a2) != 0.
+  The `beq` branch at 0x81c030 targets 0x81cfd0, is taken when v0(=ret(__glATIAllocBlitBuffer)) == 0, and falls through when v0(=ret(__glATIAllocBlitBuffer)) != 0.
+  The `beq` branch at 0x81c03c targets 0x81c09c, is taken when a2(?) == 0, and falls through when a2(?) != 0.
+  The `beq` branch at 0x81c044 targets 0x81c070, is taken when a3(?) == 0, and falls through when a3(?) != 0.
+  The `beq` branch at 0x81c04c targets 0x81c480, is taken when a4(?) == 0, and falls through when a4(?) != 0.
+  The `beq` branch at 0x81c058 targets 0x81c284, is taken when a6(?) == 0, and falls through when a6(?) != 0.
+  The `beq` branch at 0x81c060 targets 0x81c280, is taken when a7(?) == 0, and falls through when a7(?) != 0.
+  The `bne` branch at 0x81c06c targets 0x81c0cc, is taken when t0(=a3) != t1(=0x80e0), and falls through when t0(=a3) == t1(=0x80e0).
+  The `beq` branch at 0x81c088 targets 0x81c12c, is taken when v1(?) >= 0x7 (unsigned), and falls through when v1(?) < 0x7 (unsigned).
+  The `beq` branch at 0x81c0a8 targets 0x81cf28, is taken when a0(?) == 0, and falls through when a0(?) != 0.
+  The `beq` branch at 0x81c0b4 targets 0x81c284, is taken when a1(?) == 0, and falls through when a1(?) != 0.
+  The `beq` branch at 0x81c0bc targets 0x81d020, is taken when a2(?) == 0, and falls through when a2(?) != 0.
+  The `beq` branch at 0x81c0c4 targets 0x81c288, is taken when a3 == a4(=0x1905), and falls through when a3 != a4(=0x1905).
+  The `bne` branch at 0x81c12c targets 0x81c140, is taken when s1(?) != a5(?), and falls through when s1(?) == a5(?).
+  The `beq` branch at 0x81c138 targets 0x81cf88, is taken when a6(?) == a5(?), and falls through when a6(?) != a5(?).
+  The `beq` branch at 0x81c140 targets 0x81c198, is taken when s0(=ret(__glATIAllocBlitBuffer)) == 0, and falls through when s0(=ret(__glATIAllocBlitBuffer)) != 0.
+  The `bne` branch at 0x81c190 targets 0x81c154, is taken when ra(?) != s0(=ret(__glATIAllocBlitBuffer)), and falls through when ra(?) == s0(=ret(__glATIAllocBlitBuffer)).
+  The `beq` branch at 0x81c19c targets 0x81c9e8, is taken when a0(=a6) == 0, and falls through when a0(=a6) != 0.
+  The `beq` branch at 0x81c1a4 targets 0x81cb40, is taken when a0(=a6) == a2(=0x1), and falls through when a0(=a6) != a2(=0x1).
+  The `beq` branch at 0x81c1ac targets 0x81c1c4, is taken when a3(?) == 0, and falls through when a3(?) != 0.
+  The `bne` branch at 0x81c1c8 targets 0x81c010, is taken when a4(?) != 0, and falls through when a4(?) == 0.
+  The `bne` branch at 0x81c210 targets 0x81bed4, is taken when a5(?) < a6(?) (unsigned), and falls through when a5(?) >= a6(?) (unsigned).
+  The `beq` branch at 0x81c230 targets 0x81d058 and is always taken.
+  The `bne` branch at 0x81c248 targets 0x81c44c, is taken when s0(=a3) < 0x1904 (unsigned), and falls through when s0(=a3) >= 0x1904 (unsigned).
+  The `bne` branch at 0x81c254 targets 0x81c26c, is taken when s0(=a3) < 0x1905 (unsigned), and falls through when s0(=a3) >= 0x1905 (unsigned).
+  The `bne` branch at 0x81c260 targets 0x81c5c4, is taken when s0(=a3) < 0x1906 (unsigned), and falls through when s0(=a3) >= 0x1906 (unsigned).
+  The `beq` branch at 0x81c268 targets 0x81c5c8, is taken when a1(?) == 0, and falls through when a1(?) != 0.
+  The `beq` branch at 0x81c278 targets 0x81bb18 and is always taken.
+  The `beq` branch at 0x81c280 targets 0x81c0cc, is taken when t3(?) == 0, and falls through when t3(?) != 0.
+  The `bne` branch at 0x81c294 targets 0x81c348, is taken when t8(?) != t9(?), and falls through when t8(?) == t9(?).
+  The `bne` branch at 0x81c29c targets 0x81c2ac, is taken when s1(?) != a5(?), and falls through when s1(?) == a5(?).
+  The `beq` branch at 0x81c2a4 targets 0x81cfac, is taken when ra(?) == a5(?), and falls through when ra(?) != a5(?).
+  The `beq` branch at 0x81c2ac targets 0x81c198, is taken when s0(=ret(__glATIAllocBlitBuffer)) == 0, and falls through when s0(=ret(__glATIAllocBlitBuffer)) != 0.
+  The `bne` branch at 0x81c2fc targets 0x81c2c0, is taken when ra(?) != s0(=ret(__glATIAllocBlitBuffer)), and falls through when ra(?) == s0(=ret(__glATIAllocBlitBuffer)).
+  The `beq` branch at 0x81c304 targets 0x81c19c and is always taken.
+  The `bne` branch at 0x81c310 targets 0x81c4b4, is taken when a2(=a4) < 0x1404 (unsigned), and falls through when a2(=a4) >= 0x1404 (unsigned).
+  The `beq` branch at 0x81c31c targets 0x81c86c, is taken when a2(=a4) >= 0x1405 (unsigned), and falls through when a2(=a4) < 0x1405 (unsigned).
+  The `beq` branch at 0x81c340 targets 0x81bb88 and is always taken.
+  The `beq` branch at 0x81c34c targets 0x81ce20, is taken when a3 == a4(=0x1901), and falls through when a3 != a4(=0x1901).
+  The `beq` branch at 0x81c354 targets 0x81c198, is taken when s0(=ret(__glATIAllocBlitBuffer)) == 0, and falls through when s0(=ret(__glATIAllocBlitBuffer)) != 0.
+  The `beq` branch at 0x81c364 targets 0x81d3e4 and is always taken.
+  The `bne` branch at 0x81c380 targets 0x81c36c, is taken when v0(?) != 0, and falls through when v0(?) == 0.
+  The `beq` branch at 0x81c388 targets 0x81c3cc, is taken when a3(?) == 0, and falls through when a3(?) != 0.
+  The `bne` branch at 0x81c3c4 targets 0x81c390, is taken when v1(?) != t8(?), and falls through when v1(?) == t8(?).
+  The `beq` branch at 0x81c3d4 targets 0x81c198, is taken when a6(?) == s0(=ret(__glATIAllocBlitBuffer)), and falls through when a6(?) != s0(=ret(__glATIAllocBlitBuffer)).
+  The `beq` branch at 0x81c3ec targets 0x81c3cc, is taken when t2(?) == 0, and falls through when t2(?) != 0.
+  The `bne` branch at 0x81c3f8 targets 0x81c36c, is taken when (t2(?) & 0x3) != 0, and falls through when (t2(?) & 0x3) == 0.
+  The `beq` branch at 0x81c400 targets 0x81c388 and is always taken.
+  The `bne` branch at 0x81c414 targets 0x81c570, is taken when s0(=a3) < a1(=0x8000) (unsigned), and falls through when s0(=a3) >= a1(=0x8000) (unsigned).
+  The `beq` branch at 0x81c420 targets 0x81c5b4, is taken when a1(=0x8000) >= s0(=a3) (unsigned), and falls through when a1(=0x8000) < s0(=a3) (unsigned).
+  The `bne` branch at 0x81c430 targets 0x81d030, is taken when s0(=a3) < v0(=0x80e1) (unsigned), and falls through when s0(=a3) >= v0(=0x80e1) (unsigned).
+  The `beq` branch at 0x81c43c targets 0x81c5b4, is taken when v0(=0x80e1) >= s0(=a3) (unsigned), and falls through when v0(=0x80e1) < s0(=a3) (unsigned).
+  The `beq` branch at 0x81c444 targets 0x81c5cc and is always taken.
+  The `bne` branch at 0x81c450 targets 0x81c5ec, is taken when s0(=a3) < 0x1902 (unsigned), and falls through when s0(=a3) >= 0x1902 (unsigned).
+  The `beq` branch at 0x81c45c targets 0x81cd24, is taken when s0(=a3) >= 0x1903 (unsigned), and falls through when s0(=a3) < 0x1903 (unsigned).
+  The `beq` branch at 0x81c474 targets 0x81bb18 and is always taken.
+  The `beq` branch at 0x81c490 targets 0x81d010, is taken when t1(?) == 0, and falls through when t1(?) != 0.
+  The `beq` branch at 0x81c49c targets 0x81c288, is taken when t2(?) == 0, and falls through when t2(?) != 0.
+  The `beq` branch at 0x81c4a4 targets 0x81c288, is taken when t3(=a3) == t8(=0x190a), and falls through when t3(=a3) != t8(=0x190a).
+  The `beq` branch at 0x81c4ac targets 0x81c0d0 and is always taken.
+  The `bne` branch at 0x81c4b4 targets 0x81c898, is taken when v0(?) != 0, and falls through when v0(?) == 0.
+  The `bne` branch at 0x81c4c0 targets 0x81c4dc, is taken when a2(=a4) < 0x1403 (unsigned), and falls through when a2(=a4) >= 0x1403 (unsigned).
+  The `bne` branch at 0x81c4d0 targets 0x81c8c0, is taken when a1(=a4) != a2(=0x1403), and falls through when a1(=a4) == a2(=0x1403).
+  The `beq` branch at 0x81c4ec targets 0x81bb88 and is always taken.
+  The `bne` branch at 0x81c4f8 targets 0x81bcdc, is taken when s0(=a3) != a2(=0x1902), and falls through when s0(=a3) == a2(=0x1902).
+  The `beq` branch at 0x81c514 targets 0x81d2c8, is taken when a3(=[a0+32000]:1) == 0, and falls through when a3(=[a0+32000]:1) != 0.
+  The `beq` branch at 0x81c568 targets 0x81bce4 and is always taken.
+  The `bne` branch at 0x81c574 targets 0x81c5a8, is taken when s0(=a3) < 0x1909 (unsigned), and falls through when s0(=a3) >= 0x1909 (unsigned).
+  The `bne` branch at 0x81c580 targets 0x81c270, is taken when s0(=a3) < 0x190a (unsigned), and falls through when s0(=a3) >= 0x190a (unsigned).
+  The `bne` branch at 0x81c58c targets 0x81c5cc, is taken when s0(=a3) != a6(=0x190a), and falls through when s0(=a3) == a6(=0x190a).
+  The `beq` branch at 0x81c5a0 targets 0x81bb18 and is always taken.
+  The `bne` branch at 0x81c5a8 targets 0x81c5cc, is taken when s0(=a3) != t0(=0x1908), and falls through when s0(=a3) == t0(=0x1908).
+  The `beq` branch at 0x81c5bc targets 0x81bb18 and is always taken.
+  The `beq` branch at 0x81c5c4 targets 0x81c26c, is taken when s0(=a3) == t2(=0x1905), and falls through when s0(=a3) != t2(=0x1905).
+  The `bne` branch at 0x81c5f0 targets 0x81c5cc, is taken when s0(=a3) != t3(=0x1901), and falls through when s0(=a3) == t3(=0x1901).
+  The `beq` branch at 0x81c604 targets 0x81bb18 and is always taken.
+  The `beq` branch at 0x81c62c targets 0x81d1c8, is taken when (t8(?) & 0x7) == 0, and falls through when (t8(?) & 0x7) != 0.
+  The `beq` branch at 0x81c634 targets 0x81c198, is taken when s0(=ret(__glATIAllocBlitBuffer)) == 0, and falls through when s0(=ret(__glATIAllocBlitBuffer)) != 0.
+  The `beq` branch at 0x81c640 targets 0x81d3f0 and is always taken.
+  The `beq` branch at 0x81c648 targets 0x81c198, is taken when s0(=ret(__glATIAllocBlitBuffer)) == 0, and falls through when s0(=ret(__glATIAllocBlitBuffer)) != 0.
+  The `beq` branch at 0x81c650 targets 0x81c198, is taken when s2(?) == 0, and falls through when s2(?) != 0.
+  The `bne` branch at 0x81c690 targets 0x81c670, is taken when v1(?) != t8(?), and falls through when v1(?) == t8(?).
+  The `bne` branch at 0x81c6a0 targets 0x81c664, is taken when ra(?) != s0(=ret(__glATIAllocBlitBuffer)), and falls through when ra(?) == s0(=ret(__glATIAllocBlitBuffer)).
+  The `beq` branch at 0x81c6a8 targets 0x81c19c and is always taken.
+  The `beq` branch at 0x81c6b8 targets 0x81d2b8, is taken when t9(=a4) == ra(=0x1404), and falls through when t9(=a4) != ra(=0x1404).
+  The `beq` branch at 0x81c6c4 targets 0x81c198, is taken when s0(=ret(__glATIAllocBlitBuffer)) == 0, and falls through when s0(=ret(__glATIAllocBlitBuffer)) != 0.
+  The `bne` branch at 0x81c714 targets 0x81c6e8, is taken when at(?) != t8(?), and falls through when at(?) == t8(?).
+  The `bne` branch at 0x81c72c targets 0x81c6e4, is taken when a6(?) != s0(=ret(__glATIAllocBlitBuffer)), and falls through when a6(?) == s0(=ret(__glATIAllocBlitBuffer)).
+  The `beq` branch at 0x81c734 targets 0x81c19c and is always taken.
+  The `beq` branch at 0x81c74c targets 0x81d2c0, is taken when a3(=a4) == a4(=0x1402), and falls through when a3(=a4) != a4(=0x1402).
+  The `beq` branch at 0x81c758 targets 0x81c198, is taken when s0(=ret(__glATIAllocBlitBuffer)) == 0, and falls through when s0(=ret(__glATIAllocBlitBuffer)) != 0.
+  The `beq` branch at 0x81c760 targets 0x81c198, is taken when s2(?) == 0, and falls through when s2(?) != 0.
+  The `bne` branch at 0x81c774 targets 0x81d3a0, is taken when t0(?) != 0, and falls through when t0(?) == 0.
+  The `beq` branch at 0x81c7b8 targets 0x81c81c, is taken when a2(?) == v0(?), and falls through when a2(?) != v0(?).
+  The `bne` branch at 0x81c7e0 targets 0x81c798, is taken when a3(?) != v0(?), and falls through when a3(?) == v0(?).
+  The `bne` branch at 0x81c80c targets 0x81c774, is taken when a7(?) != s0(=ret(__glATIAllocBlitBuffer)), and falls through when a7(?) == s0(=ret(__glATIAllocBlitBuffer)).
+  The `beq` branch at 0x81c814 targets 0x81c19c and is always taken.
+  The `beq` branch at 0x81c820 targets 0x81c7ec and is always taken.
+  The `bne` branch at 0x81c830 targets 0x81c8b0, is taken when a2(=a4) < v0(=0x8363) (unsigned), and falls through when a2(=a4) >= v0(=0x8363) (unsigned).
+  The `bne` branch at 0x81c83c targets 0x81d154, is taken when v0(=0x8363) < a2(=a4) (unsigned), and falls through when v0(=0x8363) >= a2(=a4) (unsigned).
+  The `bne` branch at 0x81c848 targets 0x81cb18, is taken when s2(=a1) < 0x4 (unsigned), and falls through when s2(=a1) >= 0x4 (unsigned).
+  The `beq` branch at 0x81c864 targets 0x81bb98 and is always taken.
+  The `bne` branch at 0x81c86c targets 0x81cf54, is taken when a2(?) != 0, and falls through when a2(?) == 0.
+  The `beq` branch at 0x81c87c targets 0x81d184, is taken when a3(=a4) >= 0x1407 (unsigned), and falls through when a3(=a4) < 0x1407 (unsigned).
+  The `beq` branch at 0x81c890 targets 0x81bb98 and is always taken.
+  The `bne` branch at 0x81c898 targets 0x81c8e0, is taken when a6(?) != 0, and falls through when a6(?) == 0.
+  The `bne` branch at 0x81c8a0 targets 0x81c8ec, is taken when v0(?) != 0, and falls through when v0(?) == 0.
+  The `beq` branch at 0x81c8a8 targets 0x81c8c0 and is always taken.
+  The `beq` branch at 0x81c8b8 targets 0x81cd48, is taken when a2(=a4) == t0(=0x8035), and falls through when a2(=a4) != t0(=0x8035).
+  The `bne` branch at 0x81c8e0 targets 0x81c8c0, is taken when a2(=a4) != t2(=0x1400), and falls through when a2(=a4) == t2(=0x1400).
+  The `beq` branch at 0x81c8ec targets 0x81d334, is taken when s3(=one of 0x1, 0x2, 0x3, 0x4) == t3(=0x1), and falls through when s3(=one of 0x1, 0x2, 0x3, 0x4) != t3(=0x1).
+  The `beq` branch at 0x81c904 targets 0x81bb88 and is always taken.
+  The `beq` branch at 0x81c910 targets 0x81c9a4, is taken when s2(?) == 0, and falls through when s2(?) != 0.
+  The `bne` branch at 0x81c918 targets 0x81d380, is taken when a2(?) != 0, and falls through when a2(?) == 0.
+  The `beq` branch at 0x81c960 targets 0x81c9d0, is taken when a2(?) == v0(?), and falls through when a2(?) != v0(?).
+  The `bne` branch at 0x81c988 targets 0x81c940, is taken when a3(?) != v0(?), and falls through when a3(?) == v0(?).
+  The `beq` branch at 0x81c9b0 targets 0x81c198, is taken when a7(?) == s0(=ret(__glATIAllocBlitBuffer)), and falls through when a7(?) != s0(=ret(__glATIAllocBlitBuffer)).
+  The `bne` branch at 0x81c9c0 targets 0x81c90c, is taken when t1(=a4) != t2(=0x1400), and falls through when t1(=a4) == t2(=0x1400).
+  The `beq` branch at 0x81c9c8 targets 0x81c910 and is always taken.
+  The `beq` branch at 0x81c9d4 targets 0x81c994 and is always taken.
+  The `beq` branch at 0x81c9e0 targets 0x81bbb0 and is always taken.
+  The `beq` branch at 0x81ca2c targets 0x81ca64, is taken when ra(?) >= 0x2 (unsigned), and falls through when ra(?) < 0x2 (unsigned).
+  The `bne` branch at 0x81ca58 targets 0x81ca38, is taken when v1(?) < 0x2 (unsigned), and falls through when v1(?) >= 0x2 (unsigned).
+  The `beq` branch at 0x81cb10 targets 0x81c1a8 and is always taken.
+  The `bne` branch at 0x81cb54 targets 0x81cb64, is taken when a0(=a2) != a1(?), and falls through when a0(=a2) == a1(?).
+  The `beq` branch at 0x81cb5c targets 0x81cb6c and is always taken.
+  The `beq` branch at 0x81cbb4 targets 0x81cbec, is taken when a7(?) >= 0x2 (unsigned), and falls through when a7(?) < 0x2 (unsigned).
+  The `bne` branch at 0x81cbe0 targets 0x81cbc0, is taken when v1(?) < 0x2 (unsigned), and falls through when v1(?) >= 0x2 (unsigned).
+  The `beq` branch at 0x81cd14 targets 0x81c1a8 and is always taken.
+  The `beq` branch at 0x81cd1c targets 0x81bb64 and is always taken.
+  The `bne` branch at 0x81cd24 targets 0x81c5cc, is taken when s0(=a3) != t2(=0x1903), and falls through when s0(=a3) == t2(=0x1903).
+  The `beq` branch at 0x81cd2c targets 0x81c270 and is always taken.
+  The `bne` branch at 0x81cd38 targets 0x81d124, is taken when a2(=a4) < v0(=0x8367) (unsigned), and falls through when a2(=a4) >= v0(=0x8367) (unsigned).
+  The `bne` branch at 0x81cd44 targets 0x81d2d0, is taken when v0(=0x8367) < a2(=a4) (unsigned), and falls through when v0(=0x8367) >= a2(=a4) (unsigned).
+  The `beq` branch at 0x81cd4c targets 0x81d2f0, is taken when s0(=a3) == t9(=0x8000), and falls through when s0(=a3) != t9(=0x8000).
+  The `beq` branch at 0x81cd54 targets 0x81d2f0, is taken when s0(=a3) == ra(=0x80e1), and falls through when s0(=a3) != ra(=0x80e1).
+  The `beq` branch at 0x81cd68 targets 0x81bb88 and is always taken.
+  The `bne` branch at 0x81cd78 targets 0x81bcc0, is taken when (a2(?) & 0x3) != 0, and falls through when (a2(?) & 0x3) == 0.
+  The `bne` branch at 0x81cd84 targets 0x81bcc0, is taken when (s1(?) & 0x1f) != 0, and falls through when (s1(?) & 0x1f) == 0.
+  The `beq` branch at 0x81cd94 targets 0x81bcc0, is taken when a4(?) >= 0x801 (unsigned), and falls through when a4(?) < 0x801 (unsigned).
+  The `bne` branch at 0x81cda0 targets 0x81bcc0, is taken when a5(=a6) != 0, and falls through when a5(=a6) == 0.
+  The `bne` branch at 0x81cdb8 targets 0x81bcbc, is taken when a6(?) < v0(?) (unsigned), and falls through when a6(?) >= v0(?) (unsigned).
+  The `beq` branch at 0x81cdec targets 0x81bcbc, is taken when v0(=ret(__R300DrawPixelsOp)) == 0, and falls through when v0(=ret(__R300DrawPixelsOp)) != 0.
+  The `beq` branch at 0x81cdf8 targets 0x81ce18, is taken when t0(=[0xb96db8]) == 0, and falls through when t0(=[0xb96db8]) != 0.
+  The `beq` branch at 0x81ce18 targets 0x81c10c and is always taken.
+  The `beq` branch at 0x81ce20 targets 0x81c198, is taken when s0(=ret(__glATIAllocBlitBuffer)) == 0, and falls through when s0(=ret(__glATIAllocBlitBuffer)) != 0.
+  The `beq` branch at 0x81ce38 targets 0x81d3f8 and is always taken.
+  The `beq` branch at 0x81ce50 targets 0x81c198, is taken when a3(?) == s0(=ret(__glATIAllocBlitBuffer)), and falls through when a3(?) != s0(=ret(__glATIAllocBlitBuffer)).
+  The `beq` branch at 0x81ce68 targets 0x81ce48, is taken when t0(?) == 0, and falls through when t0(?) != 0.
+  The `beq` branch at 0x81ce74 targets 0x81ce90, is taken when (t0(?) & 0x3) == 0, and falls through when (t0(?) & 0x3) != 0.
+  The `bne` branch at 0x81ce88 targets 0x81ce78, is taken when at(?) != 0, and falls through when at(?) == 0.
+  The `beq` branch at 0x81ce94 targets 0x81ce48, is taken when at(?) == 0, and falls through when at(?) != 0.
+  The `bne` branch at 0x81ce9c targets 0x81d3c0, is taken when a2(?) != 0, and falls through when a2(?) == 0.
+  The `beq` branch at 0x81ceec targets 0x81ce40, is taken when a1(?) == at(?), and falls through when a1(?) != at(?).
+  The `bne` branch at 0x81cf18 targets 0x81cec8, is taken when a1(?) != at(?), and falls through when a1(?) == at(?).
+  The `beq` branch at 0x81cf20 targets 0x81ce48 and is always taken.
+  The `beq` branch at 0x81cf34 targets 0x81d300, is taken when t1(?) == 0, and falls through when t1(?) != 0.
+  The `beq` branch at 0x81cf3c targets 0x81c288, is taken when t2(?) == 0, and falls through when t2(?) != 0.
+  The `beq` branch at 0x81cf44 targets 0x81c288, is taken when t3(=a3) == t8(=0x1903), and falls through when t3(=a3) != t8(=0x1903).
+  The `beq` branch at 0x81cf4c targets 0x81c0d0 and is always taken.
+  The `bne` branch at 0x81cf58 targets 0x81c8c0, is taken when t9(=a4) != ra(=0x1405), and falls through when t9(=a4) == ra(=0x1405).
+  The `beq` branch at 0x81cf80 targets 0x81bb88 and is always taken.
+  The `beq` branch at 0x81cfa4 targets 0x81c19c and is always taken.
+  The `beq` branch at 0x81cfc8 targets 0x81c19c and is always taken.
+  The `beq` branch at 0x81d010 targets 0x81c288, is taken when at(=a3) == v1(=0x1908), and falls through when at(=a3) != v1(=0x1908).
+  The `beq` branch at 0x81d018 targets 0x81c0d0 and is always taken.
+  The `bne` branch at 0x81d020 targets 0x81c288, is taken when a0(?) != 0, and falls through when a0(?) == 0.
+  The `beq` branch at 0x81d028 targets 0x81c0d0 and is always taken.
+  The `bne` branch at 0x81d030 targets 0x81c5cc, is taken when s0(=a3) != a1(=0x80e0), and falls through when s0(=a3) == a1(=0x80e0).
+  The `beq` branch at 0x81d04c targets 0x81bb18 and is always taken.
+  The `beq` branch at 0x81d06c targets 0x81d340, is taken when a4(=a6) == a5(=0x1), and falls through when a4(=a6) != a5(=0x1).
+  The `beq` branch at 0x81d074 targets 0x81d36c, is taken when a6(?) == 0, and falls through when a6(?) != 0.
+  The `beq` branch at 0x81d07c targets 0x81c10c and is always taken.
+  The `bne` branch at 0x81d098 targets 0x81d318, is taken when v0(=ret(getenv)) != 0, and falls through when v0(=ret(getenv)) == 0.
+  The `beq` branch at 0x81d0ac targets 0x81bcbc, is taken when s3(=one of 0x1, 0x2, 0x3, 0x4) == a1(=0x3), and falls through when s3(=one of 0x1, 0x2, 0x3, 0x4) != a1(=0x3).
+  The `bne` branch at 0x81d0c4 targets 0x81bcc0, is taken when (a0(?) & 0x3) != 0, and falls through when (a0(?) & 0x3) == 0.
+  The `bne` branch at 0x81d0d4 targets 0x81bcc0, is taken when (a2(?) & 0x3) != 0, and falls through when (a2(?) & 0x3) == 0.
+  The `bne` branch at 0x81d0e0 targets 0x81bcc0, is taken when (s1(?) & 0x1f) != 0, and falls through when (s1(?) & 0x1f) == 0.
+  The `beq` branch at 0x81d0f0 targets 0x81bcc0, is taken when a4(?) >= 0x801 (unsigned), and falls through when a4(?) < 0x801 (unsigned).
+  The `bne` branch at 0x81d0fc targets 0x81bcc0, is taken when a5(=a6) != 0, and falls through when a5(=a6) == 0.
+  The `bne` branch at 0x81d114 targets 0x81bcc0, is taken when a6(?) < at(=0x16900) (unsigned), and falls through when a6(?) >= at(=0x16900) (unsigned).
+  The `beq` branch at 0x81d11c targets 0x81cdc4 and is always taken.
+  The `bne` branch at 0x81d124 targets 0x81c8c0, is taken when a2(=a4) != t1(=0x8366), and falls through when a2(=a4) == t1(=0x8366).
+  The `bne` branch at 0x81d130 targets 0x81cb18, is taken when s2(=a1) < 0x4 (unsigned), and falls through when s2(=a1) >= 0x4 (unsigned).
+  The `beq` branch at 0x81d14c targets 0x81bb98 and is always taken.
+  The `bne` branch at 0x81d154 targets 0x81c8c0, is taken when a2(=a4) != a0(=0x8364), and falls through when a2(=a4) == a0(=0x8364).
+  The `bne` branch at 0x81d160 targets 0x81cb18, is taken when s2(=a1) < 0x4 (unsigned), and falls through when s2(=a1) >= 0x4 (unsigned).
+  The `beq` branch at 0x81d17c targets 0x81bb98 and is always taken.
+  The `bne` branch at 0x81d188 targets 0x81c8c0, is taken when a5(=a4) != a6(=0x8032), and falls through when a5(=a4) == a6(=0x8032).
+  The `beq` branch at 0x81d190 targets 0x81c10c and is always taken.
+  The `beq` branch at 0x81d1c0 targets 0x81bc94 and is always taken.
+  The `beq` branch at 0x81d1c8 targets 0x81c198, is taken when s0(=ret(__glATIAllocBlitBuffer)) == 0, and falls through when s0(=ret(__glATIAllocBlitBuffer)) != 0.
+  The `beq` branch at 0x81d1d0 targets 0x81c198, is taken when s2(?) == 0, and falls through when s2(?) != 0.
+  The `bne` branch at 0x81d290 targets 0x81d204, is taken when at(?) < a6(?) (unsigned), and falls through when at(?) >= a6(?) (unsigned).
+  The `bne` branch at 0x81d2a8 targets 0x81d1f0, is taken when a3(?) != s0(=ret(__glATIAllocBlitBuffer)), and falls through when a3(?) == s0(=ret(__glATIAllocBlitBuffer)).
+  The `beq` branch at 0x81d2b0 targets 0x81c198 and is always taken.
+  The `beq` branch at 0x81d2b8 targets 0x81c6c4 and is always taken.
+  The `beq` branch at 0x81d2c0 targets 0x81c758 and is always taken.
+  The `beq` branch at 0x81d2c8 targets 0x81c528 and is always taken.
+  The `bne` branch at 0x81d2d4 targets 0x81c8c0, is taken when a2(=a4) != t9(=0x8368), and falls through when a2(=a4) == t9(=0x8368).
+  The `beq` branch at 0x81d2e8 targets 0x81bb98 and is always taken.
+  The `beq` branch at 0x81d2f0 targets 0x81cd5c and is always taken.
+  The `beq` branch at 0x81d308 targets 0x81c288, is taken when a1(=a3) == a2(=0x1901), and falls through when a1(=a3) != a2(=0x1901).
+  The `beq` branch at 0x81d310 targets 0x81c0d0 and is always taken.
+  The `beq` branch at 0x81d32c targets 0x81bca0 and is always taken.
+  The `beq` branch at 0x81d334 targets 0x81c10c and is always taken.
+  The `beq` branch at 0x81d364 targets 0x81d074 and is always taken.
+  The `beq` branch at 0x81d374 targets 0x81d07c and is always taken.
+  The `beq` branch at 0x81d398 targets 0x81c9a4 and is always taken.
+  The `beq` branch at 0x81d3b8 targets 0x81c7fc and is always taken.
+  The `beq` branch at 0x81d3dc targets 0x81ce48 and is always taken.
+  The `beq` branch at 0x81d3e8 targets 0x81c3e0 and is always taken.
+  The `beq` branch at 0x81d3f0 targets 0x81c9bc and is always taken.
+  The `beq` branch at 0x81d3fc targets 0x81ce5c and is always taken.
+  The return at 0x81c104 has v0 = 0x0.
+  The return at 0x81c124 has v0 = one of 0x0, 0x1.
+  The return at 0x81c5e4 has v0 = 0x0.
+  The return at 0x81c8d8 has v0 = 0x0.
+  The return at 0x81cb34 has v0 = 0x0.
+  The return at 0x81d008 has v0 = 0x0.
+  The instructions from 0x81c238 to 0x81c23c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x81c47c to 0x81c47c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x81c73c to 0x81c73c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x81cb3c to 0x81cb3c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x81d2f8 to 0x81d2fc are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x81d33c to 0x81d33c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x81d37c to 0x81d37c are not reached by any path from the entry, and their branches are not listed.
+  The indirect jump at 0x81c094 uses the jump table at 0xb777e0 with targets 0x81c60c, 0x81c60c, 0x81c740, 0x81c740, 0x81c6b0, 0x81c6b0, 0x81c648.
+  The indirect jump at 0x81c094 uses the jump table at 0xb777e0 with targets 0x81c60c, 0x81c60c, 0x81c740, 0x81c740, 0x81c6b0, 0x81c6b0, 0x81c648.
+  The indirect jump at 0x81c094 uses the jump table at 0xb777e0 with targets 0x81c60c, 0x81c60c, 0x81c740, 0x81c740, 0x81c6b0, 0x81c6b0, 0x81c648.
+  The indirect jump at 0x81c094 uses the jump table at 0xb777e0 with targets 0x81c60c, 0x81c60c, 0x81c740, 0x81c740, 0x81c6b0, 0x81c6b0, 0x81c648.
+  The indirect jump at 0x81c094 uses the jump table at 0xb777e0 with targets 0x81c60c, 0x81c60c, 0x81c740, 0x81c740, 0x81c6b0, 0x81c6b0, 0x81c648.
+
+- `__R300ReadPixels_UseLockUpload` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x81eb00 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x81eb00-0x81f5dc (2780 bytes).
+  It occupies 2780 bytes.
+  The `lw` at 0x81eb30 loads 4 bytes from a0 (arg0 at entry) +0xc0ec.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x38d8c, including `lw` at 0x81eb38, `lw` at 0x81ed80.
+  The `lw` at 0x81eb44 loads 4 bytes from a0 (arg0 at entry) +0x64.
+  The `lw` at 0x81eb48 loads 4 bytes from [a0+49388] +0x8.
+  The `lw` at 0x81eb4c loads 4 bytes from [a0+100] +0x4.
+  The `lw` at 0x81eb54 loads 4 bytes from [[a0+100]+4] +0x1c.
+  The `lbu` at 0x81eb5c loads 1 byte from [a0+232844] +0x17.
+  The `lw` at 0x81eb60 loads 4 bytes from [[[a0+100]+4]+28] +0xb4.
+  The `lw` at 0x81eb70 loads 4 bytes from [[[[a0+100]+4]+28]+180] +0x78.
+  The `lw` at 0x81eb88 loads 4 bytes from [[[[[a0+100]+4]+28]+180]+120] +0x0.
+  The `lw` at 0x81ebd8 loads 4 bytes from a0 (arg0 at entry) +0xb70.
+  The `lw` at 0x81ebf0 loads 4 bytes from a0 (arg0 at entry) +0xb7c.
+  The `lw` at 0x81ec20 loads 4 bytes from a0 (arg0 at entry) +0xb74.
+  The `lw` at 0x81ec2c loads 4 bytes from a0 (arg0 at entry) +0xb78.
+  The `lw` at 0x81ed84 loads 4 bytes from [a0+232844] +0x278.
+  11 such `lbu` accesses load 1 byte from ?, including `lbu` at 0x81edd0, `lbu` at 0x81f3d0, `lbu` at 0x81f4c0.
+  11 such `lw` accesses load 4 bytes from ?, including `lw` at 0x81eddc, `lw` at 0x81ee60, `lw` at 0x81eea4.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x81f118, `lw` at 0x81f150, `lw` at 0x81f3a8.
+  The `sw` at 0x81f15c stores 4 bytes to [a0+290136] +0x0.
+  The `sw` at 0x81f164 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x81f16c stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x81f178 stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x81f1f4 stores 4 bytes to ret(SetupTextureUnitForBlt) +0x0.
+  The `sw` at 0x81f1f8 stores 4 bytes to ret(SetupTextureUnitForBlt) +0x4.
+  The `sw` at 0x81f200 stores 4 bytes to ret(SetupTextureUnitForBlt) +0x8.
+  The `sw` at 0x81f208 stores 4 bytes to ret(SetupTextureUnitForBlt) +0x10.
+  The `sw` at 0x81f214 stores 4 bytes to ret(SetupTextureUnitForBlt) +0xc.
+  The `sw` at 0x81f21c stores 4 bytes to ret(SetupTextureUnitForBlt) +0x14.
+  3 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x46d58, including `sw` at 0x81f250, `sw` at 0x81f268, `sw` at 0x81f350.
+  6 such `sw` accesses store 4 bytes to ?, including `sw` at 0x81f25c, `sw` at 0x81f260, `sw` at 0x81f27c.
+  20 such `swc1` accesses store 4 bytes to ?, including `swc1` at 0x81f2b0, `swc1` at 0x81f2b4, `swc1` at 0x81f2b8.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x81f354, `lw` at 0x81f3ac.
+  The `sw` at 0x81f3dc stores 4 bytes to ret(SetupTextureUnitForBlt) +0x18.
+  The `sw` at 0x81f3e0 stores 4 bytes to ret(SetupTextureUnitForBlt) +0x1c.
+  9 such `sb` accesses store 1 byte to ?, including `sb` at 0x81f4cc, `sb` at 0x81f4d4, `sb` at 0x81f4dc.
+  The `jalr` at 0x81ec9c calls firegl_VerifyArea with a0=[[[[[[a0+100]+4]+28]+180]+120]], a1=?, a2=?, a3=0x1.
+  The `jalr` at 0x81ed38 calls firegl_AgpLockPages with a0=[[[[[[a0+100]+4]+28]+180]+120]], a1=sp-464, a2=?, a3=?.
+  The `jalr` at 0x81ed9c calls (unknown callee) with a0=[a0+232844], a1=sp-432, a2=sp-428, a3=sp-424, a4=sp-420.
+  The `jalr` at 0x81f070 calls __R300ComputeTiledAddr [0x783cc0] with a0=?, a1=?, a2=?, a3=?.
+  The `bgezall` at 0x81f138 calls __R300DPPixelShaderDWords [0x81a580] with a0=?, a1=?, a2=0xffffffffc0143500, a3=?.
+  The `bgezall` at 0x81f17c calls __R300FastRPSetOverrideRendering [0x81e940] with a0=a0 at entry (arg0), a1=[a0+290136]+16, a2=?, a3=?.
+  The `bgezall` at 0x81f198 calls __R300DPPixelShader [0x81aa80] with a0=a0 at entry (arg0), a1=ret(__R300FastRPSetOverrideRendering), a2=?, a3=0x1401, a4=0x0.
+  The `jalr` at 0x81f1e4 calls SetupTextureUnitForBlt [0x762380] with a0=ret(__R300DPPixelShader), a1=0x0, a2=?, a3=?, a4=0x0, a5=0x0, a7=0x0.
+  The `jalr` at 0x81f3a0 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x81f430 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x81f458 calls __glATIWaitChipIdle [0x4e3000] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x81f470 calls firegl_AgpLockPages with a0=?, a1=sp-464, a2=?, a3=?, a4=0x6.
+  The `jalr` at 0x81f51c calls free with a0=?, a1=?, a2=?, a3=?.
+  The `jalr` at 0x81f554 calls malloc with a0=?, a1=?, a2=?, a3=0x1907, a4=0x80e0.
+  The `beq` branch at 0x81eb84 targets 0x81ee64, is taken when a5 == t8(=0x1907), and falls through when a5 != t8(=0x1907).
+  The `beq` branch at 0x81eb90 targets 0x81ee80, is taken when a5 == t8(=0x80e0), and falls through when a5 != t8(=0x80e0).
+  The `beq` branch at 0x81eb98 targets 0x81ebd0, is taken when a5 == t9(=0x1908), and falls through when a5 != t9(=0x1908).
+  The `beq` branch at 0x81eba0 targets 0x81ebd4, is taken when a5 == at(=0x80e1), and falls through when a5 != at(=0x80e1).
+  The `beq` branch at 0x81ebdc targets 0x81ee94, is taken when v0(=[a0+2928]) == 0, and falls through when v0(=[a0+2928]) != 0.
+  The `beq` branch at 0x81ec0c targets 0x81ec20, is taken when a3(?) == 0, and falls through when a3(?) != 0.
+  The `beq` branch at 0x81eca4 targets 0x81ed04, is taken when v0(=ret(firegl_VerifyArea)) == 0, and falls through when v0(=ret(firegl_VerifyArea)) != 0.
+  The `beq` branch at 0x81ed08 targets 0x81f540, is taken when s2(=a5) == a3(=0x1907), and falls through when s2(=a5) != a3(=0x1907).
+  The `beq` branch at 0x81ed10 targets 0x81f540, is taken when s2(=a5) == a4(=0x80e0), and falls through when s2(=a5) != a4(=0x80e0).
+  The `beq` branch at 0x81ed40 targets 0x81ed78, is taken when v0(=ret(firegl_AgpLockPages)) == 0, and falls through when v0(=ret(firegl_AgpLockPages)) != 0.
+  The `beq` branch at 0x81ed78 targets 0x81ed34, is taken when a7(?) == 0, and falls through when a7(?) != 0.
+  The `beq` branch at 0x81edb4 targets 0x81f580, is taken when t1(?) == 0, and falls through when t1(?) != 0.
+  The `beq` branch at 0x81edd4 targets 0x81f58c, is taken when a5(?) == 0, and falls through when a5(?) != 0.
+  The `blez` branch at 0x81ee10 targets 0x81f42c, is taken when a1(?) <= 0 (signed), and falls through when a1(?) > 0 (signed).
+  The `beq` branch at 0x81ee5c targets 0x81eed8 and is always taken.
+  The `beq` branch at 0x81ee70 targets 0x81ebd8 and is always taken.
+  The `beq` branch at 0x81ee8c targets 0x81ebd8 and is always taken.
+  The `beq` branch at 0x81ee98 targets 0x81ebe8 and is always taken.
+  The `beq` branch at 0x81eed0 targets 0x81f42c, is taken when a3(?) >= a1(?) (signed), and falls through when a3(?) < a1(?) (signed).
+  The `bne` branch at 0x81eeec targets 0x81eef8, is taken when a4(?) < a6(=0x800) (signed), and falls through when a4(?) >= a6(=0x800) (signed).
+  The `beq` branch at 0x81ef04 targets 0x81ef10, is taken when t2(?) >= 0 (signed), and falls through when t2(?) < 0 (signed).
+  The `beq` branch at 0x81ef14 targets 0x81ef20, is taken when a5(?) == 0, and falls through when a5(?) != 0.
+  The `beq` branch at 0x81ef28 targets 0x81ef3c, is taken when t2(?) >= a4(?) (signed), and falls through when t2(?) < a4(?) (signed).
+  The `beq` branch at 0x81ef34 targets 0x81ef40 and is always taken.
+  The `blez` branch at 0x81ef40 targets 0x81f41c, is taken when v1(?) <= 0 (signed), and falls through when v1(?) > 0 (signed).
+  The `beq` branch at 0x81ef90 targets 0x81efd8 and is always taken.
+  The `beq` branch at 0x81efd0 targets 0x81eea0, is taken when at(?) >= v1(?) (signed), and falls through when at(?) < v1(?) (signed).
+  The `bne` branch at 0x81eff4 targets 0x81f000, is taken when s2(?) < a5(=0x800) (signed), and falls through when s2(?) >= a5(=0x800) (signed).
+  The `beq` branch at 0x81f004 targets 0x81f010, is taken when a6(?) == 0, and falls through when a6(?) != 0.
+  The `beq` branch at 0x81f014 targets 0x81f020, is taken when a1(?) == 0, and falls through when a1(?) != 0.
+  The `beq` branch at 0x81f030 targets 0x81ef98, is taken when s7(?) >= s2(?) (signed), and falls through when s7(?) < s2(?) (signed).
+  The `beq` branch at 0x81f038 targets 0x81ef9c, is taken when t8(?) == 0, and falls through when t8(?) != 0.
+  The `beq` branch at 0x81f040 targets 0x81efa0, is taken when t9(?) == 0, and falls through when t9(?) != 0.
+  The `beq` branch at 0x81f048 targets 0x81f054, is taken when ra(?) == 0, and falls through when ra(?) != 0.
+  The `beq` branch at 0x81f0b4 targets 0x81f400, is taken when (a1(?) & 0x2) == 0, and falls through when (a1(?) & 0x2) != 0.
+  The `beq` branch at 0x81f12c targets 0x81f354 and is always taken.
+  The `bne` branch at 0x81f148 targets 0x81f3a0, is taken when s7(?) < s2(=ret(__R300DPPixelShaderDWords)+89) (unsigned), and falls through when s7(?) >= s2(=ret(__R300DPPixelShaderDWords)+89) (unsigned).
+  The `beq` branch at 0x81f234 targets 0x81f3cc, is taken when a1(?) == a0(=0x4), and falls through when a1(?) != a0(=0x4).
+  The `beq` branch at 0x81f240 targets 0x81f3cc, is taken when a1(?) == a3(=0x3), and falls through when a1(?) != a3(=0x3).
+  The `beq` branch at 0x81f24c targets 0x81f3ec, is taken when (s3(?) & a1(=-0x20)) == 0, and falls through when (s3(?) & a1(=-0x20)) != 0.
+  The `beq` branch at 0x81f290 targets 0x81f29c, is taken when a4(?) == 0, and falls through when a4(?) != 0.
+  The `beq` branch at 0x81f34c targets 0x81f3f4, is taken when a6(?) == s5(?), and falls through when a6(?) != s5(?).
+  The `bne` branch at 0x81f364 targets 0x81f138, is taken when s7(?) < 0x1a (signed), and falls through when s7(?) >= 0x1a (signed).
+  The `bne` branch at 0x81f36c targets 0x81f138, is taken when t3(=one of 0x0, 0x1) != 0, and falls through when t3(=one of 0x0, 0x1) == 0.
+  The `beq` branch at 0x81f37c targets 0x81f278, is taken when a1(?) == t8(?), and falls through when a1(?) != t8(?).
+  The `beq` branch at 0x81f394 targets 0x81f258 and is always taken.
+  The `bne` branch at 0x81f3bc targets 0x81f3a0, is taken when a5(?) < s2(=ret(__R300DPPixelShaderDWords)+89) (unsigned), and falls through when a5(?) >= s2(=ret(__R300DPPixelShaderDWords)+89) (unsigned).
+  The `beq` branch at 0x81f3c4 targets 0x81f158 and is always taken.
+  The `beq` branch at 0x81f3d4 targets 0x81f244, is taken when a6(?) == 0, and falls through when a6(?) != 0.
+  The `beq` branch at 0x81f3e4 targets 0x81f244 and is always taken.
+  The `beq` branch at 0x81f3ec targets 0x81f278 and is always taken.
+  The `beq` branch at 0x81f3f8 targets 0x81ef9c and is always taken.
+  The `beq` branch at 0x81f404 targets 0x81f414, is taken when (a1(?) & 0x4) == 0, and falls through when (a1(?) & 0x4) != 0.
+  The `beq` branch at 0x81f40c targets 0x81f0c0 and is always taken.
+  The `beq` branch at 0x81f414 targets 0x81f0c4 and is always taken.
+  The `beq` branch at 0x81f424 targets 0x81eea8 and is always taken.
+  The `beq` branch at 0x81f47c targets 0x81f48c, is taken when s4(=a5) == a5(=0x1907), and falls through when s4(=a5) != a5(=0x1907).
+  The `bne` branch at 0x81f484 targets 0x81f528, is taken when s4(=a5) != a6(=0x80e0), and falls through when s4(=a5) == a6(=0x80e0).
+  The `blez` branch at 0x81f48c targets 0x81f51c, is taken when s2(=a4) <= 0 (signed), and falls through when s2(=a4) > 0 (signed).
+  The `blez` branch at 0x81f494 targets 0x81f518, is taken when s0(=a3) <= 0 (signed), and falls through when s0(=a3) > 0 (signed).
+  The `bne` branch at 0x81f4b8 targets 0x81f5c0, is taken when s0(=a3) < 0x2 (signed), and falls through when s0(=a3) >= 0x2 (signed).
+  The `bne` branch at 0x81f4ec targets 0x81f4d0, is taken when a0(?) != at(?), and falls through when a0(?) == at(?).
+  The `bne` branch at 0x81f510 targets 0x81f4b4, is taken when a3(?) != s2(=a4), and falls through when a3(?) == s2(=a4).
+  The `beq` branch at 0x81f530 targets 0x81ecd8 and is always taken.
+  The `beq` branch at 0x81f55c targets 0x81f5b8, is taken when v0(=ret(malloc)) == 0, and falls through when v0(=ret(malloc)) != 0.
+  The `beq` branch at 0x81f578 targets 0x81ed1c and is always taken.
+  The `beq` branch at 0x81f584 targets 0x81edcc and is always taken.
+  The `beq` branch at 0x81f5b0 targets 0x81edd8 and is always taken.
+  The `beq` branch at 0x81f5b8 targets 0x81ecd8 and is always taken.
+  The `beq` branch at 0x81f5d4 targets 0x81f504 and is always taken.
+  The return at 0x81ebc8 has v0 = 0x0.
+  The return at 0x81ecd0 has v0 = 0x0.
+  The return at 0x81ecfc has v0 = one of 0x0, 0x1.
+  The return at 0x81ed70 has v0 = 0x0.
+  The instructions from 0x81ee78 to 0x81ee7c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x81f134 to 0x81f134 are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x81f39c to 0x81f39c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x81f538 to 0x81f53c are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300TCLDrawArrayInsertGeneralTIMMO` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x84e3c0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x84e3c0-0x84ecb4 (2292 bytes).
+  It occupies 2292 bytes.
+  The `lw` at 0x84e3d0 loads 4 bytes from a0 (arg0 at entry) +0xbf9c.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x36f3c, including `lw` at 0x84e438, `lw` at 0x84e9a0, `lw` at 0x84eb48.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x36f44, including `lw` at 0x84e43c, `lw` at 0x84e9a4, `lw` at 0x84eb4c.
+  The `sw` at 0x84e45c stores 4 bytes to [a0+225084] +0x0.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x607c, including `lw` at 0x84e460, `lw` at 0x84e474.
+  2 such `lw` accesses load 4 bytes from ([a0+24700] + (a1 << 0x2)) +0x0, including `lw` at 0x84e46c, `lw` at 0x84e47c.
+  The `sw` at 0x84e470 stores 4 bytes to [a0+225084] +0x4.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x7ec4, including `lw` at 0x84e4c0, `lw` at 0x84e5e0, `lw` at 0x84e758.
+  The `lw` at 0x84e4c8 loads 4 bytes from a0 (arg0 at entry) +0x7e98.
+  31 such `sw` accesses store 4 bytes to ?, including `sw` at 0x84e4dc, `sw` at 0x84e4e4, `sw` at 0x84e4ec.
+  70 such `lw` accesses load 4 bytes from ?, including `lw` at 0x84e4e0, `lw` at 0x84e4e8, `lw` at 0x84e4f0.
+  12 such `lwc1` accesses load 4 bytes from ?, including `lwc1` at 0x84e4f8, `lwc1` at 0x84e540, `lwc1` at 0x84e564.
+  12 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x37034, including `lw` at 0x84e4fc, `lw` at 0x84e53c, `lw` at 0x84e55c.
+  2 such `lwc1` accesses load 4 bytes from [a0+225332] +0x0, including `lwc1` at 0x84e504, `lwc1` at 0x84e680.
+  2 such `swc1` accesses store 4 bytes to [a0+225332] +0x0, including `swc1` at 0x84e538, `swc1` at 0x84e6b4.
+  2 such `lwc1` accesses load 4 bytes from [a0+225332] +0x4, including `lwc1` at 0x84e544, `lwc1` at 0x84e6c0.
+  2 such `swc1` accesses store 4 bytes to [a0+225332] +0x4, including `swc1` at 0x84e558, `swc1` at 0x84e6d4.
+  2 such `lwc1` accesses load 4 bytes from [a0+225332] +0x8, including `lwc1` at 0x84e560, `lwc1` at 0x84e6dc.
+  2 such `swc1` accesses store 4 bytes to [a0+225332] +0x8, including `swc1` at 0x84e578, `swc1` at 0x84e6f4.
+  2 such `lwc1` accesses load 4 bytes from [a0+225332] +0xc, including `lwc1` at 0x84e584, `lwc1` at 0x84e700.
+  2 such `swc1` accesses store 4 bytes to [a0+225332] +0xc, including `swc1` at 0x84e598, `swc1` at 0x84e714.
+  2 such `lwc1` accesses load 4 bytes from [a0+225332] +0x10, including `lwc1` at 0x84e5a0, `lwc1` at 0x84e71c.
+  2 such `swc1` accesses store 4 bytes to [a0+225332] +0x10, including `swc1` at 0x84e5b8, `swc1` at 0x84e734.
+  2 such `lwc1` accesses load 4 bytes from [a0+225332] +0x14, including `lwc1` at 0x84e5c4, `lwc1` at 0x84e740.
+  2 such `swc1` accesses store 4 bytes to [a0+225332] +0x14, including `swc1` at 0x84e5d8, `swc1` at 0x84e754.
+  9 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x8804, including `lw` at 0x84e638, `lw` at 0x84e790, `lw` at 0x84e8c4.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x7fec, including `lw` at 0x84e828, `lw` at 0x84e9ec, `lw` at 0x84ea38.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x8114, including `lw` at 0x84e860, `lw` at 0x84eacc, `lw` at 0x84eb04.
+  The `lw` at 0x84e8f8 loads 4 bytes from a0 (arg0 at entry) +0x37014.
+  The `sw` at 0x84e918 stores 4 bytes to a0 (arg0 at entry) +0x36f3c.
+  The `lw` at 0x84e91c loads 4 bytes from a0 (arg0 at entry) +0x37030.
+  The `lw` at 0x84e924 loads 4 bytes from a0 (arg0 at entry) +0x3702c.
+  The `lw` at 0x84e944 loads 4 bytes from a0 (arg0 at entry) +0x36f48.
+  The `sw` at 0x84e950 stores 4 bytes to a0 (arg0 at entry) +0x36f48.
+  The `sw` at 0x84e954 stores 4 bytes to [a0+225096] +0x0.
+  The `lw` at 0x84e958 loads 4 bytes from a0 (arg0 at entry) +0x36f30.
+  The `sw` at 0x84e970 stores 4 bytes to a0 (arg0 at entry) +0x36f30.
+  The `sw` at 0x84e974 stores 4 bytes to [a0+225072] +0x0.
+  The `lw` at 0x84e9f4 loads 4 bytes from a0 (arg0 at entry) +0x7fc0.
+  The `sw` at 0x84ea04 stores 4 bytes to [a0+225084] +0x8.
+  The `sw` at 0x84ea10 stores 4 bytes to [a0+225084] +0xc.
+  The `sw` at 0x84ea18 stores 4 bytes to [a0+225084] +0x10.
+  The `sw` at 0x84ea20 stores 4 bytes to [a0+225084] +0x14.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x87d8, including `lw` at 0x84ea64, `lw` at 0x84ebdc, `lw` at 0x84ec5c.
+  3 such `sw` accesses store 4 bytes to ([a0+225084] + one of 0x8, 0x18) +0x0, including `sw` at 0x84ea74, `sw` at 0x84ebec, `sw` at 0x84ec68.
+  3 such `sw` accesses store 4 bytes to ([a0+225084] + one of 0xc, 0x1c) +0x0, including `sw` at 0x84ea80, `sw` at 0x84ebf8, `sw` at 0x84ec74.
+  2 such `sw` accesses store 4 bytes to ([a0+225084] + one of 0x10, 0x20) +0x0, including `sw` at 0x84ea88, `sw` at 0x84ec00.
+  2 such `sw` accesses store 4 bytes to ([a0+225084] + one of 0x14, 0x24) +0x0, including `sw` at 0x84ea90, `sw` at 0x84ec08.
+  The `lw` at 0x84ead4 loads 4 bytes from a0 (arg0 at entry) +0x80e8.
+  The `sw` at 0x84ec10 stores 4 bytes to ([a0+225084] + one of 0x18, 0x28) +0x0.
+  The `jalr` at 0x84eb88 calls __glATIInitBBoxTIMMO [0xae4080] with a0=a0 at entry (arg0), a1=?, a2=[a0+225300], a3=0x92b, a5=[a0+225324], a6=a0+196608.
+  The `beq` branch at 0x84e408 targets 0x84eb24, is taken when t8(?) == s0(=0x8), and falls through when t8(?) != s0(=0x8).
+  The `beq` branch at 0x84e410 targets 0x84e980, is taken when t1(?) == s3(=0x2), and falls through when t1(?) != s3(=0x2).
+  The `beq` branch at 0x84e418 targets 0x84ebbc, is taken when t1(?) == ra(=0x4), and falls through when t1(?) != ra(=0x4).
+  The `beq` branch at 0x84e420 targets 0x84ebc8, is taken when t1(?) == t9(=0x6), and falls through when t1(?) != t9(=0x6).
+  The `beq` branch at 0x84e42c targets 0x84ebb0, is taken when t3(?) == s1(=0x10), and falls through when t3(?) != s1(=0x10).
+  The `bne` branch at 0x84e454 targets 0x84e9c4, is taken when at(?) < v0(=(a3 << 0x2)+4) (unsigned), and falls through when at(?) >= v0(=(a3 << 0x2)+4) (unsigned).
+  The `beq` branch at 0x84e48c targets 0x84e9ec, is taken when t8(?) == s0(=0x8), and falls through when t8(?) != s0(=0x8).
+  The `beq` branch at 0x84e498 targets 0x84ea5c, is taken when t1(?) == ra(=0x4), and falls through when t1(?) != ra(=0x4).
+  The `beq` branch at 0x84e4a4 targets 0x84ebd4, is taken when t1(?) == a1(=0x6), and falls through when t1(?) != a1(=0x6).
+  The `beq` branch at 0x84e4ac targets 0x84ec54, is taken when t1(?) == s3(=0x2), and falls through when t1(?) != s3(=0x2).
+  The `beq` branch at 0x84e4b4 targets 0x84eacc, is taken when t3(?) == s1(=0x10), and falls through when t3(?) != s1(=0x10).
+  The `bc1f` branch at 0x84e530 targets 0x84e544, is taken when not (f5 < f0(=[[a0+225332]]) (c.lt.s at 0x84e518)), and falls through when f5 < f0(=[[a0+225332]]) (c.lt.s at 0x84e518).
+  The `bc1f` branch at 0x84e550 targets 0x84e560, is taken when not (f1(=[[a0+225332]+4]) < f4 (c.lt.s at 0x84e548)), and falls through when f1(=[[a0+225332]+4]) < f4 (c.lt.s at 0x84e548).
+  The `bc1f` branch at 0x84e570 targets 0x84e584, is taken when not (f5 < f2(=[[a0+225332]+8]) (c.lt.s at 0x84e568)), and falls through when f5 < f2(=[[a0+225332]+8]) (c.lt.s at 0x84e568).
+  The `bc1f` branch at 0x84e590 targets 0x84e5a0, is taken when not (f3(=[[a0+225332]+12]) < f4 (c.lt.s at 0x84e588)), and falls through when f3(=[[a0+225332]+12]) < f4 (c.lt.s at 0x84e588).
+  The `bc1f` branch at 0x84e5b0 targets 0x84e5c4, is taken when not (f5 < f4(=[[a0+225332]+16]) (c.lt.s at 0x84e5a8)), and falls through when f5 < f4(=[[a0+225332]+16]) (c.lt.s at 0x84e5a8).
+  The `bc1f` branch at 0x84e5d0 targets 0x84e5e0, is taken when not (f5(=[[a0+225332]+20]) < f4 (c.lt.s at 0x84e5c8)), and falls through when f5(=[[a0+225332]+20]) < f4 (c.lt.s at 0x84e5c8).
+  The `bne` branch at 0x84e5e4 targets 0x84e8ec, is taken when at(?) != 0, and falls through when at(?) == 0.
+  The `beq` branch at 0x84e5f8 targets 0x84e764 and is always taken.
+  The `beq` branch at 0x84e650 targets 0x84e840, is taken when t3(?) == s1(=0x10), and falls through when t3(?) != s1(=0x10).
+  The `bc1f` branch at 0x84e6ac targets 0x84e6c0, is taken when not (f5 < f6(=[[a0+225332]]) (c.lt.s at 0x84e694)), and falls through when f5 < f6(=[[a0+225332]]) (c.lt.s at 0x84e694).
+  The `bc1f` branch at 0x84e6cc targets 0x84e6dc, is taken when not (f7(=[[a0+225332]+4]) < f4 (c.lt.s at 0x84e6c4)), and falls through when f7(=[[a0+225332]+4]) < f4 (c.lt.s at 0x84e6c4).
+  The `bc1f` branch at 0x84e6ec targets 0x84e700, is taken when not (f5 < f8(=[[a0+225332]+8]) (c.lt.s at 0x84e6e4)), and falls through when f5 < f8(=[[a0+225332]+8]) (c.lt.s at 0x84e6e4).
+  The `bc1f` branch at 0x84e70c targets 0x84e71c, is taken when not (f9(=[[a0+225332]+12]) < f4 (c.lt.s at 0x84e704)), and falls through when f9(=[[a0+225332]+12]) < f4 (c.lt.s at 0x84e704).
+  The `bc1f` branch at 0x84e72c targets 0x84e740, is taken when not (f5 < f10(=[[a0+225332]+16]) (c.lt.s at 0x84e724)), and falls through when f5 < f10(=[[a0+225332]+16]) (c.lt.s at 0x84e724).
+  The `bc1f` branch at 0x84e74c targets 0x84e758, is taken when not (f11(=[[a0+225332]+20]) < f4 (c.lt.s at 0x84e744)), and falls through when f11(=[[a0+225332]+20]) < f4 (c.lt.s at 0x84e744).
+  The `beq` branch at 0x84e75c targets 0x84e8e8, is taken when a2(?) == t9(=a3-1), and falls through when a2(?) != t9(=a3-1).
+  The `beq` branch at 0x84e764 targets 0x84e7ac, is taken when t8(?) == s0(=0x8), and falls through when t8(?) != s0(=0x8).
+  The `beq` branch at 0x84e76c targets 0x84e600, is taken when t1(?) == ra(=0x4), and falls through when t1(?) != ra(=0x4).
+  The `beq` branch at 0x84e774 targets 0x84e880, is taken when t1(?) == s2(=0x6), and falls through when t1(?) != s2(=0x6).
+  The `bne` branch at 0x84e77c targets 0x84e650, is taken when t1(?) != s3(=0x2), and falls through when t1(?) == s3(=0x2).
+  The `beq` branch at 0x84e7a4 targets 0x84e650 and is always taken.
+  The `beq` branch at 0x84e7dc targets 0x84e828, is taken when a1(?) == 0, and falls through when a1(?) != 0.
+  The `beq` branch at 0x84e830 targets 0x84e76c and is always taken.
+  The `beq` branch at 0x84e878 targets 0x84e658 and is always taken.
+  The `beq` branch at 0x84e8e0 targets 0x84e650 and is always taken.
+  The `beq` branch at 0x84e914 targets 0x84e938, is taken when a2(=[a0+225300]) == 0, and falls through when a2(=[a0+225300]) != 0.
+  The `beq` branch at 0x84e934 targets 0x84eb80, is taken when a4(?) >= a5(=[a0+225324]) (signed), and falls through when a4(?) < a5(=[a0+225324]) (signed).
+  The `beq` branch at 0x84e98c targets 0x84ebb4, is taken when t3(?) == s1(=0x10), and falls through when t3(?) != s1(=0x10).
+  The `beq` branch at 0x84e9bc targets 0x84e45c, is taken when t9(?) >= at(?) (unsigned), and falls through when t9(?) < at(?) (unsigned).
+  The `bne` branch at 0x84ea54 targets 0x84e4a0, is taken when t1(?) != ra(=0x4), and falls through when t1(?) == ra(=0x4).
+  The `bne` branch at 0x84eac4 targets 0x84e4bc, is taken when t3(?) != s1(=0x10), and falls through when t3(?) == s1(=0x10).
+  The `beq` branch at 0x84eb1c targets 0x84e4c0 and is always taken.
+  The `beq` branch at 0x84eb24 targets 0x84ec94, is taken when t1(?) == s3(=0x2), and falls through when t1(?) != s3(=0x2).
+  The `beq` branch at 0x84eb2c targets 0x84ec9c, is taken when t1(?) == ra(=0x4), and falls through when t1(?) != ra(=0x4).
+  The `beq` branch at 0x84eb34 targets 0x84eca4, is taken when t1(?) == a4(=0x6), and falls through when t1(?) != a4(=0x6).
+  The `beq` branch at 0x84eb3c targets 0x84ecac, is taken when t3(?) == s1(=0x10), and falls through when t3(?) != s1(=0x10).
+  The `bne` branch at 0x84eb64 targets 0x84e9c4, is taken when a7(?) < t0(=(a3 << 0x3)+4) (unsigned), and falls through when a7(?) >= t0(=(a3 << 0x3)+4) (unsigned).
+  The `beq` branch at 0x84eb6c targets 0x84e45c and is always taken.
+  The `beq` branch at 0x84ebb4 targets 0x84e994 and is always taken.
+  The `beq` branch at 0x84ebc0 targets 0x84e984 and is always taken.
+  The `beq` branch at 0x84ebcc targets 0x84e984 and is always taken.
+  The `beq` branch at 0x84ec4c targets 0x84e4b4 and is always taken.
+  The `beq` branch at 0x84ec8c targets 0x84e4b4 and is always taken.
+  The `beq` branch at 0x84ec94 targets 0x84e980 and is always taken.
+  The `beq` branch at 0x84ec9c targets 0x84ebc0 and is always taken.
+  The `beq` branch at 0x84eca4 targets 0x84ebcc and is always taken.
+  The `beq` branch at 0x84ecac targets 0x84ebb4 and is always taken.
+  The return at 0x84e978 has v0 = 0x0.
+  The return at 0x84e9e4 has v0 = 0x2.
+  The return at 0x84eba8 has v0 = 0x0.
+  The instructions from 0x84e838 to 0x84e83c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x84eb74 to 0x84eb7c are not reached by any path from the entry, and their branches are not listed.
+
+- `BltSrcToIntermediate` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x863a00 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x863a00-0x863c34 (564 bytes).
+  It occupies 564 bytes.
+  The `lw` at 0x863a4c loads 4 bytes from a0 (arg0 at entry) +0x38d8c.
+  The `lw` at 0x863a50 loads 4 bytes from a1 (arg1 at entry) +0x20.
+  The `lw` at 0x863a54 loads 4 bytes from a1 (arg1 at entry) +0x28.
+  The `sw` at 0x863a5c stores 4 bytes to a3 (arg3 at entry) +0x0.
+  The `lw` at 0x863a60 loads 4 bytes from a1 (arg1 at entry) +0x2c.
+  The `lw` at 0x863a64 loads 4 bytes from a1 (arg1 at entry) +0x24.
+  The `sw` at 0x863a68 stores 4 bytes to a3 (arg3 at entry) +0x24.
+  The `sw` at 0x863a6c stores 4 bytes to a3 (arg3 at entry) +0x20.
+  The `sw` at 0x863a70 stores 4 bytes to a3 (arg3 at entry) +0x28.
+  The `sw` at 0x863a78 stores 4 bytes to a3 (arg3 at entry) +0x4.
+  The `sw` at 0x863a7c stores 4 bytes to a3 (arg3 at entry) +0x2c.
+  The `lw` at 0x863a80 loads 4 bytes from a1 (arg1 at entry) +0x18.
+  The `sw` at 0x863a84 stores 4 bytes to a3 (arg3 at entry) +0x18.
+  The `lw` at 0x863a88 loads 4 bytes from a1 (arg1 at entry) +0x70.
+  The `sw` at 0x863a90 stores 4 bytes to a3 (arg3 at entry) +0x70.
+  The `lw` at 0x863a94 loads 4 bytes from a1 (arg1 at entry) +0x80.
+  The `sw` at 0x863a9c stores 4 bytes to a3 (arg3 at entry) +0x80.
+  2 such `sw` accesses store 4 bytes to a3 (arg3 at entry) +0x1c, including `sw` at 0x863aa4, `sw` at 0x863aac.
+  The `lw` at 0x863aa8 loads 4 bytes from a1 (arg1 at entry) +0x1c.
+  The `lw` at 0x863ad4 loads 4 bytes from a0 (arg0 at entry) +0xc69c.
+  The `lw` at 0x863af4 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `sw` at 0x863b08 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x863b14 stores 4 bytes to [a0+290136] +0x0.
+  The `sw` at 0x863b28 stores 4 bytes to [a0+290136] +0x10.
+  The `sw` at 0x863b2c stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x863b30 stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x863b3c stores 4 bytes to [a0+290136] +0x14.
+  The `sw` at 0x863bb8 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x863a48 calls memset with a0=a3 at entry (arg3), a1=0x0, a2=0x88, a3=a3 at entry (arg3).
+  The `jalr` at 0x863ac0 calls __glATIAllocBltSurface [0x4d9400] with a0=a0 at entry (arg0), a1=0x0, a2=0x1, a3=a3 at entry (arg3).
+  The `jalr` at 0x863ad8 calls (unknown callee) with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x863ae4 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `bgezall` at 0x863b60 calls (unnamed) [0x862ec0] with a0=[a0+290136]+24, a1=[a0+232844], a2=(one of 0x0, 0xf << 0x20), a3=?, a6=0x13c1, a7=0x13c0.
+  The `jalr` at 0x863bac calls __R300HWBltFunc [0x764980] with a0=[a0+232844], a1=?, a2=sp-120, a3=?.
+  The `jalr` at 0x863bbc calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `beq` branch at 0x863a98 targets 0x863aa8, is taken when t9(?) >= 0x5 (unsigned), and falls through when t9(?) < 0x5 (unsigned).
+  The `beq` branch at 0x863aa0 targets 0x863ab0 and is always taken.
+  The `beq` branch at 0x863ac8 targets 0x863bec, is taken when v0(=ret(__glATIAllocBltSurface)) == 0, and falls through when v0(=ret(__glATIAllocBltSurface)) != 0.
+  The `beq` branch at 0x863b10 targets 0x863c14, is taken when (s2(=a2) & 0x100) == 0, and falls through when (s2(=a2) & 0x100) != 0.
+  The `beq` branch at 0x863b18 targets 0x863c28, is taken when a0(?) == 0, and falls through when a0(?) != 0.
+  The `beq` branch at 0x863b38 targets 0x863b68, is taken when a3(?) == 0, and falls through when a3(?) != 0.
+  The `beq` branch at 0x863b40 targets 0x863c20, is taken when a5(?) == 0, and falls through when a5(?) != 0.
+  The `beq` branch at 0x863c18 targets 0x863b24 and is always taken.
+  The `beq` branch at 0x863c20 targets 0x863b4c and is always taken.
+  The `beq` branch at 0x863c2c targets 0x863b24 and is always taken.
+  The return at 0x863be4 has v0 = 0x1.
+  The return at 0x863c0c has v0 = 0x0.
+
+- `CopyToSystem` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x865e80 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x865e80-0x866834 (2484 bytes).
+  It occupies 2484 bytes.
+  The `lw` at 0x865e88 loads 4 bytes from a1 (arg1 at entry) +0x8.
+  The `lw` at 0x865ea0 loads 4 bytes from a1 (arg1 at entry) +0x1c.
+  The `lw` at 0x865eb4 loads 4 bytes from ([a1+28] + (a2 << 0x2)) +0x0.
+  3 such `lw` accesses load 4 bytes from [([a1+28] + (a2 << 0x2))] +0x88, including `lw` at 0x865ebc, `lw` at 0x866190, `lw` at 0x8661f4.
+  2 such `lw` accesses load 4 bytes from [([a1+28] + (a2 << 0x2))] +0x0, including `lw` at 0x865ec4, `lw` at 0x865f18.
+  The `lw` at 0x865ed4 loads 4 bytes from a1 (arg1 at entry) +0x4.
+  The `lw` at 0x865ef0 loads 4 bytes from a0 (arg0 at entry) +0x44b70.
+  The `lw` at 0x865efc loads 4 bytes from [a0+281456] +0x4.
+  The `lw` at 0x865f00 loads 4 bytes from [a1+4] +0x1c.
+  5 such `lw` accesses load 4 bytes from ?, including `lw` at 0x865f38, `lw` at 0x865fd4, `lw` at 0x8661d0.
+  The `lw` at 0x865f44 loads 4 bytes from [([a1+28] + (a2 << 0x2))] +0x4c.
+  The `lw` at 0x865f6c loads 4 bytes from [([a1+28] + (a2 << 0x2))] +0x94.
+  3 such `lw` accesses load 4 bytes from [([a1+28] + (a2 << 0x2))] +0x8, including `lw` at 0x865f7c, `lw` at 0x866398, `lw` at 0x8664b0.
+  3 such `lw` accesses load 4 bytes from [([a1+28] + (a2 << 0x2))] +0xc, including `lw` at 0x865fb4, `lw` at 0x8663bc, `lw` at 0x8664cc.
+  The `lw` at 0x865fd0 loads 4 bytes from [([a1+28] + (a2 << 0x2))] +0x10.
+  5 such `ld` accesses load 8 bytes from ?, including `ld` at 0x866128, `ld` at 0x86612c, `ld` at 0x866150.
+  5 such `sd` accesses store 8 bytes to ?, including `sd` at 0x866138, `sd` at 0x866144, `sd` at 0x866160.
+  The `lw` at 0x866188 loads 4 bytes from [([a1+28] + (a2 << 0x2))] +0x8c.
+  The `lw` at 0x8662e8 loads 4 bytes from ret(__R300ComputeTiledAddr) +0x0.
+  The `sw` at 0x8662f0 stores 4 bytes to ?.
+  The `lw` at 0x866350 loads 4 bytes from a0 (arg0 at entry) +0x58.
+  The `sw` at 0x866408 stores 4 bytes to ret(fglX11GetQsList) +0x2c.
+  The `sw` at 0x866410 stores 4 bytes to ret(fglX11GetQsList) +0x20.
+  The `sw` at 0x866418 stores 4 bytes to ret(fglX11GetQsList) +0x1c.
+  The `sw` at 0x866420 stores 4 bytes to ret(fglX11GetQsList) +0x18.
+  The `sw` at 0x866428 stores 4 bytes to ret(fglX11GetQsList) +0x14.
+  The `sw` at 0x866430 stores 4 bytes to ret(fglX11GetQsList) +0x10.
+  The `sw` at 0x866434 stores 4 bytes to ret(fglX11GetQsList) +0xc.
+  The `sw` at 0x86643c stores 4 bytes to ret(fglX11GetQsList) +0x8.
+  The `sw` at 0x866440 stores 4 bytes to ret(fglX11GetQsList) +0x4.
+  The `sw` at 0x866448 stores 4 bytes to ret(fglX11GetQsList) +0x0.
+  The `sw` at 0x866450 stores 4 bytes to ret(fglX11GetQsList) +0x24.
+  The `sw` at 0x866460 stores 4 bytes to ret(fglX11GetQsList) +0x28.
+  The `sw` at 0x866478 stores 4 bytes to ret(__R300HWBltFunc) +0xc.
+  The `sw` at 0x866484 stores 4 bytes to ret(__R300HWBltFunc) +0x8.
+  The `sw` at 0x866490 stores 4 bytes to ret(__R300HWBltFunc) +0x4.
+  The `sw` at 0x86649c stores 4 bytes to ret(__R300HWBltFunc) +0x0.
+  The `lbu` at 0x866638 loads 1 byte from ret(__R300ComputeTiledAddr) +0x0.
+  The `sb` at 0x866644 stores 1 byte to ?.
+  The `lhu` at 0x866740 loads 2 bytes from ret(__R300ComputeTiledAddr) +0x0.
+  The `sh` at 0x866748 stores 2 bytes to ?.
+  The `jalr` at 0x865ecc calls fglX11GLDRMLock with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3).
+  The `bgezall` at 0x865f3c calls (unnamed) [0x8637c0] with a0=?, a1=?, a2=?, a3=?.
+  The `bgezall` at 0x865fe4 calls __R300ComputeTexPitch [0x8609c0] with a0=?, a1=?, a2=[[([a1+28] + (a2 << 0x2))]+76], a3=?, a4=[[([a1+28] + (a2 << 0x2))]+16].
+  The `jalr` at 0x866000 calls __R300CalcTextureMinDims [0x7e2e00] with a0=a1 at entry (arg1), a1=[([a1+28] + (a2 << 0x2))], a2=sp-656, a3=sp-652.
+  The `jalr` at 0x866044 calls memset with a0=sp-640, a1=0x0, a2=0x88, a3=?, a5=0x1000.
+  The `jalr` at 0x8660d0 calls __glATIAllocBltSurface [0x4d9400] with a0=a0 at entry (arg0), a1=0x0, a2=?, a3=sp-640.
+  The `jalr` at 0x8661e4 calls fglX11GetQsList with a0=?, a1=sp-304, a2=sp-648, a3=?.
+  The `jalr` at 0x866200 calls __glATIWaitTimeStamp [0xab9400] with a0=?, a1=?, a2=?, a3=?.
+  The `jalr` at 0x866214 calls fglX11GLDRMUnlock with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x8662d8 calls __R300ComputeTiledAddr [0x783cc0] with a0=?, a1=?, a2=?, a3=?.
+  The `jalr` at 0x866360 calls (unknown callee) with a0=a0 at entry (arg0), a1=0x0, a2=0x2, a3=sp-568.
+  The `jalr` at 0x866468 calls __R300HWBltFunc [0x764980] with a0=?, a1=ret(fglX11GetQsList)+48, a2=sp-368, a3=0x1393, a4=0xf, a5=0x1383, a6=0x7, a7=0x13c1.
+  The `jalr` at 0x8664a0 calls fglX11SendQsList with a0=?, a1=sp-304, a2=?, a3=sp-296, a4=0x1393, a5=0x3, a6=0x5c8.
+  The `jalr` at 0x86655c calls memcpy with a0=?, a1=?, a2=?, a3=?.
+  The `jalr` at 0x866628 calls __R300ComputeTiledAddr [0x783cc0] with a0=?, a1=?, a2=?, a3=?.
+  The `jalr` at 0x866730 calls __R300ComputeTiledAddr [0x783cc0] with a0=?, a1=?, a2=?, a3=?.
+  The `jalr` at 0x866800 calls memcpy with a0=?, a1=?, a2=?, a3=?.
+  The `jalr` at 0x866824 calls fglX11GLDRMUnlock with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `beq` branch at 0x865ef8 targets 0x865f14, is taken when v0(=[a1+4]) == 0, and falls through when v0(=[a1+4]) != 0.
+  The `beq` branch at 0x865f08 targets 0x865f14, is taken when (v1(=[[a1+4]+28]) & 0x7) == 0, and falls through when (v1(=[[a1+4]+28]) & 0x7) != 0.
+  The `beq` branch at 0x865f10 targets 0x866508, is taken when v1(?) == a0(=0x1), and falls through when v1(?) != a0(=0x1).
+  The `beq` branch at 0x865f1c targets 0x866368, is taken when a1(=[[([a1+28] + (a2 << 0x2))]]) == 0, and falls through when a1(=[[([a1+28] + (a2 << 0x2))]]) != 0.
+  The `beq` branch at 0x865f50 targets 0x8664b0, is taken when a2(=[[([a1+28] + (a2 << 0x2))]+76]) == a3(=0xb), and falls through when a2(=[[([a1+28] + (a2 << 0x2))]+76]) != a3(=0xb).
+  The `beq` branch at 0x865f5c targets 0x866398, is taken when a2(=[[([a1+28] + (a2 << 0x2))]+76]) == a4(=0xc), and falls through when a2(=[[([a1+28] + (a2 << 0x2))]+76]) != a4(=0xc).
+  The `beq` branch at 0x865f64 targets 0x866398, is taken when a2(=[[([a1+28] + (a2 << 0x2))]+76]) == a5(=0xd), and falls through when a2(=[[([a1+28] + (a2 << 0x2))]+76]) != a5(=0xd).
+  The `bne` branch at 0x865f78 targets 0x865fa4, is taken when a3(=[[([a1+28] + (a2 << 0x2))]+148]) < 0x5 (signed), and falls through when a3(=[[([a1+28] + (a2 << 0x2))]+148]) >= 0x5 (signed).
+  The `beq` branch at 0x865f9c targets 0x865fb0 and is always taken.
+  The `bne` branch at 0x866014 targets 0x866020, is taken when t1(?) < a7(?) (signed), and falls through when t1(?) >= a7(?) (signed).
+  The `bne` branch at 0x866090 targets 0x86609c, is taken when s4(=ret(__R300ComputeTexPitch)) < ra(=0x100) (signed), and falls through when s4(=ret(__R300ComputeTexPitch)) >= ra(=0x100) (signed).
+  The `bne` branch at 0x8660bc targets 0x8660c8, is taken when t8(?) < t2(=0x20) (signed), and falls through when t8(?) >= t2(=0x20) (signed).
+  The `beq` branch at 0x8660d8 targets 0x8667a4, is taken when v0(=ret(__glATIAllocBltSurface)) == 0, and falls through when v0(=ret(__glATIAllocBltSurface)) != 0.
+  The `beq` branch at 0x86611c targets 0x86614c and is always taken.
+  The `bgtz` branch at 0x866170 targets 0x866124, is taken when t8(?) > 0 (signed), and falls through when t8(?) <= 0 (signed).
+  The `bne` branch at 0x8661ec targets 0x866400, is taken when v0(=ret(fglX11GetQsList)) != 0, and falls through when v0(=ret(fglX11GetQsList)) == 0.
+  The `beq` branch at 0x86621c targets 0x866344, is taken when s8(?) == 0, and falls through when s8(?) != 0.
+  The `beq` branch at 0x866224 targets 0x866510, is taken when s2(?) == 0, and falls through when s2(?) != 0.
+  The `beq` branch at 0x86622c targets 0x866598, is taken when s5(?) == a0(=0x1), and falls through when s5(?) != a0(=0x1).
+  The `beq` branch at 0x866234 targets 0x86669c, is taken when s5(?) == a1(=0x2), and falls through when s5(?) != a1(=0x2).
+  The `bne` branch at 0x86623c targets 0x866344, is taken when s5(?) != a2(=0x4), and falls through when s5(?) == a2(=0x4).
+  The `blez` branch at 0x866248 targets 0x866344, is taken when a3(?) <= 0 (signed), and falls through when a3(?) > 0 (signed).
+  The `blez` branch at 0x866254 targets 0x866344, is taken when a4(?) <= 0 (signed), and falls through when a4(?) > 0 (signed).
+  The `blez` branch at 0x86625c targets 0x866344, is taken when s1(?) <= 0 (signed), and falls through when s1(?) > 0 (signed).
+  The `bne` branch at 0x8662ec targets 0x8662c0, is taken when s0(?) != s1(?), and falls through when s0(?) == s1(?).
+  The `bne` branch at 0x86630c targets 0x8662bc, is taken when s7(?) != t3(?), and falls through when s7(?) == t3(?).
+  The `bne` branch at 0x86633c targets 0x8662b0, is taken when at(?) != v1(?), and falls through when at(?) == v1(?).
+  The `beq` branch at 0x866348 targets 0x866368, is taken when a2(?) == 0, and falls through when a2(?) != 0.
+  The `blez` branch at 0x8663b4 targets 0x8667c0, is taken when a4(?) <= 0 (signed), and falls through when a4(?) > 0 (signed).
+  The `blez` branch at 0x8663d0 targets 0x8667c8, is taken when a5(?) <= 0 (signed), and falls through when a5(?) > 0 (signed).
+  The `beq` branch at 0x8663f0 targets 0x865fc8 and is always taken.
+  The `beq` branch at 0x8664a8 targets 0x8661f8 and is always taken.
+  The `blez` branch at 0x8664c4 targets 0x866810, is taken when v0(?) <= 0 (signed), and falls through when v0(?) > 0 (signed).
+  The `blez` branch at 0x8664e4 targets 0x866818, is taken when a0(?) <= 0 (signed), and falls through when a0(?) > 0 (signed).
+  The `beq` branch at 0x866500 targets 0x865fc8 and is always taken.
+  The `beq` branch at 0x866508 targets 0x865f18 and is always taken.
+  The `beq` branch at 0x866510 targets 0x8667d8, is taken when s3(?) == s4(=ret(__R300ComputeTexPitch)), and falls through when s3(?) != s4(=ret(__R300ComputeTexPitch)).
+  The `blez` branch at 0x866518 targets 0x866344, is taken when t9(?) <= 0 (signed), and falls through when t9(?) > 0 (signed).
+  The `blez` branch at 0x866524 targets 0x866344, is taken when ra(?) <= 0 (signed), and falls through when ra(?) > 0 (signed).
+  The `bne` branch at 0x866570 targets 0x866550, is taken when s2(?) != v0(?), and falls through when s2(?) == v0(?).
+  The `bne` branch at 0x866588 targets 0x866544, is taken when s6(?) != v1(?), and falls through when s6(?) == v1(?).
+  The `beq` branch at 0x866590 targets 0x866348 and is always taken.
+  The `blez` branch at 0x86659c targets 0x866344, is taken when a1(?) <= 0 (signed), and falls through when a1(?) > 0 (signed).
+  The `blez` branch at 0x8665a8 targets 0x866344, is taken when a2(?) <= 0 (signed), and falls through when a2(?) > 0 (signed).
+  The `blez` branch at 0x8665b0 targets 0x866344, is taken when s1(?) <= 0 (signed), and falls through when s1(?) > 0 (signed).
+  The `bne` branch at 0x866640 targets 0x866610, is taken when s0(?) != s1(?), and falls through when s0(?) == s1(?).
+  The `bne` branch at 0x86665c targets 0x86660c, is taken when s7(?) != t0(?), and falls through when s7(?) == t0(?).
+  The `bne` branch at 0x86668c targets 0x866600, is taken when t3(?) != t8(?), and falls through when t3(?) == t8(?).
+  The `beq` branch at 0x866694 targets 0x866348 and is always taken.
+  The `blez` branch at 0x8666a0 targets 0x866344, is taken when at(?) <= 0 (signed), and falls through when at(?) > 0 (signed).
+  The `blez` branch at 0x8666ac targets 0x866344, is taken when v1(?) <= 0 (signed), and falls through when v1(?) > 0 (signed).
+  The `blez` branch at 0x8666b4 targets 0x866344, is taken when s1(?) <= 0 (signed), and falls through when s1(?) > 0 (signed).
+  The `bne` branch at 0x866744 targets 0x866718, is taken when s0(?) != s1(?), and falls through when s0(?) == s1(?).
+  The `bne` branch at 0x866764 targets 0x866714, is taken when s7(?) != a6(?), and falls through when s7(?) == a6(?).
+  The `bne` branch at 0x866794 targets 0x866708, is taken when t2(?) != t3(?), and falls through when t2(?) == t3(?).
+  The `beq` branch at 0x86679c targets 0x866348 and is always taken.
+  The `beq` branch at 0x8667ac targets 0x866824, is taken when ra(?) == at(=0x3), and falls through when ra(?) != at(=0x3).
+  The `beq` branch at 0x8667b4 targets 0x866210 and is always taken.
+  The `beq` branch at 0x8667c0 targets 0x8663bc and is always taken.
+  The `beq` branch at 0x8667d0 targets 0x8663d8 and is always taken.
+  The `beq` branch at 0x866808 targets 0x866344 and is always taken.
+  The `beq` branch at 0x866810 targets 0x8664cc and is always taken.
+  The `beq` branch at 0x86681c targets 0x8664ec and is always taken.
+  The `beq` branch at 0x86682c targets 0x86636c and is always taken.
+  The return at 0x866390 has v0 = one of ?, ret(fglX11GLDRMUnlock).
+  The instructions from 0x8663f8 to 0x8663fc are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x8667bc to 0x8667bc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300ClearColorBuffer3D` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x890340 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x890340-0x891068 (3368 bytes).
+  It occupies 3368 bytes.
+  The `lw` at 0x890344 loads 4 bytes from a2 (arg2 at entry) +0x544.
+  The `lbu` at 0x8903a8 loads 1 byte from a2 (arg2 at entry) +0x859.
+  The `lbu` at 0x8903b4 loads 1 byte from a1 (arg1 at entry) +0x88.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x64a0, including `lw` at 0x8903dc, `lw` at 0x890564.
+  The `lwc1` at 0x8903e8 loads 4 bytes from a0 (arg0 at entry) +0xed8.
+  The `lw` at 0x890400 loads 4 bytes from a0 (arg0 at entry) +0xc0dc.
+  The `lbu` at 0x890404 loads 1 byte from [a0+49372] +0x29.
+  The `lwc1` at 0x890408 loads 4 bytes from a0 (arg0 at entry) +0xed4.
+  The `lwc1` at 0x89040c loads 4 bytes from a0 (arg0 at entry) +0xed0.
+  The `lwc1` at 0x890414 loads 4 bytes from a0 (arg0 at entry) +0xecc.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0xee4, including `lw` at 0x890420, `lw` at 0x890d2c, `lw` at 0x890f04.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x63bc, including `lw` at 0x890450, `lw` at 0x8906a8.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x63bc, including `sw` at 0x890468, `sw` at 0x8906d8.
+  The `sw` at 0x890474 stores 4 bytes to a0 (arg0 at entry) +0x6440.
+  The `sw` at 0x89048c stores 4 bytes to a0 (arg0 at entry) +0x495b0.
+  The `sw` at 0x890494 stores 4 bytes to a0 (arg0 at entry) +0x49630.
+  The `sw` at 0x8904a4 stores 4 bytes to a0 (arg0 at entry) +0x496b0.
+  The `lw` at 0x8904b0 loads 4 bytes from a0 (arg0 at entry) +0x496f0.
+  The `sw` at 0x8904b8 stores 4 bytes to a0 (arg0 at entry) +0x49530.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x474a4, including `lw` at 0x8904d4, `lw` at 0x8906e4.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46e44, including `lw` at 0x8904e0, `lw` at 0x8904f8.
+  The `sw` at 0x890508 stores 4 bytes to a0 (arg0 at entry) +0x46e44.
+  4 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x89050c, `lw` at 0x890534, `lw` at 0x890e44.
+  4 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x890510, `lw` at 0x890538, `lw` at 0x890e48.
+  5 such `lw` accesses load 4 bytes from a3 (arg3 at entry) +0x4, including `lw` at 0x890570, `lw` at 0x89076c, `lw` at 0x89091c.
+  5 such `lw` accesses load 4 bytes from a3 (arg3 at entry) +0xc, including `lw` at 0x890574, `lw` at 0x89075c, `lw` at 0x890924.
+  5 such `lw` accesses load 4 bytes from a3 (arg3 at entry) +0x8, including `lw` at 0x890580, `lw` at 0x890760, `lw` at 0x890900.
+  5 such `lw` accesses load 4 bytes from a3 (arg3 at entry) +0x0, including `lw` at 0x890584, `lw` at 0x890758, `lw` at 0x8908cc.
+  4 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x38da0, including `lw` at 0x89058c, `lw` at 0x89073c, `lw` at 0x890934.
+  4 such `lw` accesses load 4 bytes from [a0+232864] +0x878, including `lw` at 0x8905a0, `lw` at 0x89079c, `lw` at 0x890940.
+  4 such `sw` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x30, including `sw` at 0x8905ec, `sw` at 0x8907f8, `sw` at 0x890994.
+  4 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x20, including `swc1` at 0x8905f0, `swc1` at 0x890818, `swc1` at 0x8909b4.
+  4 such `sw` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x0, including `sw` at 0x8905fc, `sw` at 0x890820, `sw` at 0x8909bc.
+  4 such `sw` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0xc, including `sw` at 0x890610, `sw` at 0x890830, `sw` at 0x8909c8.
+  4 such `sw` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x8, including `sw` at 0x89061c, `sw` at 0x890844, `sw` at 0x8909e0.
+  4 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x2c, including `swc1` at 0x89062c, `swc1` at 0x8907fc, `swc1` at 0x890998.
+  4 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x28, including `swc1` at 0x890634, `swc1` at 0x890808, `swc1` at 0x8909a4.
+  4 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x24, including `swc1` at 0x89063c, `swc1` at 0x890810, `swc1` at 0x8909ac.
+  4 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x1c, including `swc1` at 0x890648, `swc1` at 0x890854, `swc1` at 0x8909ec.
+  4 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x18, including `swc1` at 0x890654, `swc1` at 0x890860, `swc1` at 0x8909f8.
+  4 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x14, including `swc1` at 0x890660, `swc1` at 0x890870, `swc1` at 0x890a14.
+  4 such `swc1` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x10, including `swc1` at 0x890670, `swc1` at 0x89087c, `swc1` at 0x890a04.
+  4 such `sw` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x4, including `sw` at 0x890680, `sw` at 0x89088c, `sw` at 0x890a24.
+  4 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x472d4, including `lw` at 0x890684, `lw` at 0x890890, `lw` at 0x890a28.
+  4 such `sw` accesses store 4 bytes to ret(__R300TCLFFXProgramNullShader) +0x34, including `sw` at 0x89068c, `sw` at 0x89089c, `sw` at 0x890a34.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x46d58, including `sw` at 0x8906a4, `sw` at 0x890ef0.
+  The `lbu` at 0x890730 loads 1 byte from a0 (arg0 at entry) +0x47ef5.
+  The `lbu` at 0x890740 loads 1 byte from [a0+232864] +0x859.
+  The `lbu` at 0x8908a0 loads 1 byte from a2 (arg2 at entry) +0x7a4.
+  The `lw` at 0x8908ac loads 4 bytes from a2 (arg2 at entry) +0x278.
+  The `lbu` at 0x8908ec loads 1 byte from a0 (arg0 at entry) +0x47ef6.
+  The `lbu` at 0x890a40 loads 1 byte from a2 (arg2 at entry) +0x2ed.
+  The `lwc1` at 0x890a54 loads 4 bytes from a0 (arg0 at entry) +0xec8.
+  The `sw` at 0x890a7c stores 4 bytes to a0 (arg0 at entry) +0x496f0.
+  The `lbu` at 0x890c4c loads 1 byte from a0 (arg0 at entry) +0xee0.
+  The `lbu` at 0x890c58 loads 1 byte from a0 (arg0 at entry) +0xee1.
+  The `lbu` at 0x890c64 loads 1 byte from a0 (arg0 at entry) +0xee2.
+  The `lbu` at 0x890c70 loads 1 byte from a0 (arg0 at entry) +0xee3.
+  The `lw` at 0x890c7c loads 4 bytes from a0 (arg0 at entry) +0x6034.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0xeec, including `lw` at 0x890d1c, `lw` at 0x890ef4.
+  2 such `lbu` accesses load 1 byte from ?, including `lbu` at 0x890d70, `lbu` at 0x890df8.
+  7 such `lw` accesses load 4 bytes from ?, including `lw` at 0x890d80, `lw` at 0x890d90, `lw` at 0x890df0.
+  The `lw` at 0x890e34 loads 4 bytes from a2 (arg2 at entry) +0x550.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47140, including `lw` at 0x890e60, `lw` at 0x890ed8.
+  The `sw` at 0x890e90 stores 4 bytes to a0 (arg0 at entry) +0x47140.
+  The `sw` at 0x890ec8 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x890ed4 stores 4 bytes to [a0+290136] +0x0.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x3806c, including `lw` at 0x890f68, `lw` at 0x891030.
+  The `lbu` at 0x890f6c loads 1 byte from [a0+229484] +0x65.
+  The `lw` at 0x890f78 loads 4 bytes from [a0+229484] +0xac.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x38138, including `lw` at 0x890f84, `lw` at 0x890fb8, `lw` at 0x891040.
+  The `lbu` at 0x890f88 loads 1 byte from [a0+229688] +0x65.
+  The `lw` at 0x890f94 loads 4 bytes from [a0+229688] +0xac.
+  The `lbu` at 0x890fbc loads 1 byte from [a0+229688] +0x88.
+  The `lw` at 0x890fcc loads 4 bytes from [a0+229688] +0x9c.
+  The `lw` at 0x890fe0 loads 4 bytes from [a0+229688] +0xb4.
+  The `jalr` at 0x8903d4 calls __R300SetOverrideRendering [0x767140] with a0=a0 at entry (arg0), a1=0x1, a2=0x0, a3=0x0, a4=one of 0x0, 0x1, a5=sp-336.
+  The `jalr` at 0x890470 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?, a5=[a0+25760].
+  The `jalr` at 0x890488 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+3788].
+  The `jalr` at 0x890498 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+3792].
+  The `jalr` at 0x8904a8 calls FloatToS16E7 [0x6ef3c0] with a0=?, a1=?, a2=?, a3=?; fp f12=[a0+3796].
+  The `jalr` at 0x8904c4 calls __R300ProgramPixelShader [0x6f8c40] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x8904d8 calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=a0 at entry (arg0), a1=[a0+292004], a2=0x0, a3=?.
+  The `jalr` at 0x8904f0 calls __R300LoadCachedPSProgToHwRegs [0x6f1380] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x89052c calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x89055c calls __R300TCLFFXProgramNullShader [0x7d8a40] with a0=a0 at entry (arg0), a1=[a0+290136], a2=?, a3=?.
+  The `jalr` at 0x8905c0 calls __R300WriteDrawRectRegisters [0x77c280] with a0=a0 at entry (arg0), a1=ret(__R300TCLFFXProgramNullShader), a2=[a0+25760], a3=[[a0+232864]+2168], a4=[a3], a5=[a3+8], a6=[a3+12], a7=[a3+4].
+  The `jalr` at 0x8906a0 calls __ATITCLFFXRestoreShader [0xac0000] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x8906d4 calls __R300ProgramPixelShader [0x6f8c40] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x8906e8 calls __R300LoadPixelShaderProgram [0x6f2cc0] with a0=a0 at entry (arg0), a1=[a0+292004], a2=0x0, a3=?.
+  The `jalr` at 0x8906f8 calls __R300CompleteOverrideRendering [0x767900] with a0=a0 at entry (arg0), a1=sp-336, a2=?, a3=?.
+  The `jalr` at 0x8907c0 calls __R300WriteDrawRectRegisters [0x77c280] with a0=a0 at entry (arg0), a1=ret(__R300TCLFFXProgramNullShader), a2=?, a3=[[a0+232864]+2168], a4=[a3], a5=[a3+8].
+  The `jalr` at 0x8908c4 calls (unknown callee) with a0=a2 at entry (arg2), a1=sp-352, a2=sp-348, a3=sp-344, a4=sp-340.
+  The `jalr` at 0x890914 calls __R300WriteMaskCorrectRectAbort [0x77c580] with a0=a0 at entry (arg0), a1=ret(__R300TCLFFXProgramNullShader), a2=[a3+8], a3=?.
+  The `jalr` at 0x890960 calls __R300WriteDrawRectRegisters [0x77c280] with a0=a0 at entry (arg0), a1=ret(__R300TCLFFXProgramNullShader), a2=?, a3=[[a0+232864]+2168], a4=[a3], a5=[a3+12], a6=[a3+4].
+  The `jalr` at 0x890a78 calls __R300ValidateShaderProgram [0x6ef740] with a0=a0 at entry (arg0), a1=?, a2=0x1, a3=?.
+  The `jalr` at 0x890b54 calls __R300WriteDrawRectRegisters [0x77c280] with a0=a0 at entry (arg0), a1=ret(__R300TCLFFXProgramNullShader), a2=[a3+4], a3=?.
+  The `jalr` at 0x890e98 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x890edc calls __R300WriteCmaskEnableRegistersAbort [0x77c680] with a0=a0 at entry (arg0), a1=[a0+290136]+8, a2=[a0+291136], a3=?.
+  The `jalr` at 0x890f20 calls __R300ClearCMask [0x758380] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x891034 calls __R300ClearCMask [0x758380] with a0=a0 at entry (arg0), a1=[a0+229484], a2=?, a3=?.
+  The `jalr` at 0x891044 calls __R300ClearCMask [0x758380] with a0=a0 at entry (arg0), a1=[a0+229688], a2=?, a3=?.
+  The `beq` branch at 0x890374 targets 0x8908a0, is taken when v0(=[a2+1348]) == at(=0x4), and falls through when v0(=[a2+1348]) != at(=0x4).
+  The `beq` branch at 0x890380 targets 0x8908a0, is taken when v0(=[a2+1348]) == a0(=0x3), and falls through when v0(=[a2+1348]) != a0(=0x3).
+  The `beq` branch at 0x8903a0 targets 0x8903b4, is taken when a2(?) == 0, and falls through when a2(?) != 0.
+  The `beq` branch at 0x8903ac targets 0x890a88, is taken when a3(=[a2+2137]:1) == 0, and falls through when a3(=[a2+2137]:1) != 0.
+  The `beq` branch at 0x8903b8 targets 0x890a40, is taken when a4(=[a1+136]:1) == 0, and falls through when a4(=[a1+136]:1) != 0.
+  The `blez` branch at 0x8903e0 targets 0x890a54, is taken when a5(=[a0+25760]) <= 0 (signed), and falls through when a5(=[a0+25760]) > 0 (signed).
+  The `beq` branch at 0x890418 targets 0x89050c, is taken when t8(=[[a0+49372]+41]:1) == 0, and falls through when t8(=[[a0+49372]+41]:1) != 0.
+  The `beq` branch at 0x890424 targets 0x890444, is taken when v0(=[a0+3812]) == 0, and falls through when v0(=[a0+3812]) != 0.
+  The `beq` branch at 0x890430 targets 0x890444, is taken when v0(?) == 0, and falls through when v0(?) != 0.
+  The `bne` branch at 0x89043c targets 0x89042c, is taken when v0(?) != 0, and falls through when v0(?) == 0.
+  The `bne` branch at 0x8904b4 targets 0x890a68, is taken when t9(=[a0+300784]) != s0(?), and falls through when t9(=[a0+300784]) == s0(?).
+  The `bgez` branch at 0x8904e8 targets 0x89050c, is taken when ra(=([a0+290372] << 0x2b)) >= 0 (signed), and falls through when ra(=([a0+290372] << 0x2b)) < 0 (signed).
+  The `beq` branch at 0x890520 targets 0x890554, is taken when a0(?) >= 0x1f (unsigned), and falls through when a0(?) < 0x1f (unsigned).
+  The `bne` branch at 0x890548 targets 0x89052c, is taken when a1(?) < 0x1f (unsigned), and falls through when a1(?) >= 0x1f (unsigned).
+  The `blez` branch at 0x890568 targets 0x890724, is taken when a2(=[a0+25760]) <= 0 (signed), and falls through when a2(=[a0+25760]) > 0 (signed).
+  The `beq` branch at 0x8906bc targets 0x8906f0, is taken when ra(?) == 0, and falls through when ra(?) != 0.
+  The `beq` branch at 0x890728 targets 0x890b00, is taken when v0(?) == 0, and falls through when v0(?) != 0.
+  The `beq` branch at 0x890734 targets 0x8908ec, is taken when v1(=[a0+294645]:1) == 0, and falls through when v1(=[a0+294645]:1) != 0.
+  The `beq` branch at 0x890748 targets 0x890900, is taken when a0(=[[a0+232864]+2137]:1) == a1(=0x3), and falls through when a0(=[[a0+232864]+2137]:1) != a1(=0x3).
+  The `beq` branch at 0x890750 targets 0x890900, is taken when a2(?) == 0, and falls through when a2(?) != 0.
+  The `beq` branch at 0x890898 targets 0x890690 and is always taken.
+  The `beq` branch at 0x8908a4 targets 0x890ac0, is taken when v1(=[a2+1956]:1) == 0, and falls through when v1(=[a2+1956]:1) != 0.
+  The `beq` branch at 0x8908d0 targets 0x890ad4, is taken when a0(=[a3]) == 0, and falls through when a0(=[a3]) != 0.
+  The `beq` branch at 0x8908e4 targets 0x89039c and is always taken.
+  The `bne` branch at 0x8908f8 targets 0x89073c, is taken when a1(=[a0+294646]:1) != 0, and falls through when a1(=[a0+294646]:1) == 0.
+  The `beq` branch at 0x890a30 targets 0x890690 and is always taken.
+  The `bne` branch at 0x890a44 targets 0x8903c0, is taken when t9(=[a2+749]:1) != 0, and falls through when t9(=[a2+749]:1) == 0.
+  The `beq` branch at 0x890a4c targets 0x8903c0 and is always taken.
+  The `beq` branch at 0x890a60 targets 0x8903f8 and is always taken.
+  The `beq` branch at 0x890a80 targets 0x8904c0 and is always taken.
+  The `bne` branch at 0x890a88 targets 0x8903b4, is taken when ra(?) != 0, and falls through when ra(?) == 0.
+  The `beq` branch at 0x890aac targets 0x890708 and is always taken.
+  The `beq` branch at 0x890acc targets 0x89039c and is always taken.
+  The `beq` branch at 0x890ad8 targets 0x890c34, is taken when at(=[a3+4]) == 0, and falls through when at(=[a3+4]) != 0.
+  The `beq` branch at 0x890aec targets 0x89039c and is always taken.
+  The `beq` branch at 0x890c2c targets 0x890690 and is always taken.
+  The `bne` branch at 0x890c38 targets 0x890c9c, is taken when t1(=[a3+8]) != t2(?), and falls through when t1(=[a3+8]) == t2(?).
+  The `bne` branch at 0x890c44 targets 0x890cb0, is taken when t3(=[a3+12]) != a7(?), and falls through when t3(=[a3+12]) == a7(?).
+  The `beq` branch at 0x890c50 targets 0x890cc8, is taken when t8(=[a0+3808]:1) == 0, and falls through when t8(=[a0+3808]:1) != 0.
+  The `beq` branch at 0x890c5c targets 0x890cdc, is taken when t9(=[a0+3809]:1) == 0, and falls through when t9(=[a0+3809]:1) != 0.
+  The `beq` branch at 0x890c68 targets 0x890cf0, is taken when ra(=[a0+3810]:1) == 0, and falls through when ra(=[a0+3810]:1) != 0.
+  The `beq` branch at 0x890c74 targets 0x890d08, is taken when at(=[a0+3811]:1) == 0, and falls through when at(=[a0+3811]:1) != 0.
+  The `beq` branch at 0x890c80 targets 0x890d1c, is taken when v1(=[a0+24628]) == 0, and falls through when v1(=[a0+24628]) != 0.
+  The `beq` branch at 0x890c94 targets 0x89039c and is always taken.
+  The `beq` branch at 0x890ca8 targets 0x89039c and is always taken.
+  The `beq` branch at 0x890cc0 targets 0x89039c and is always taken.
+  The `beq` branch at 0x890cd4 targets 0x89039c and is always taken.
+  The `beq` branch at 0x890ce8 targets 0x89039c and is always taken.
+  The `beq` branch at 0x890d00 targets 0x89039c and is always taken.
+  The `beq` branch at 0x890d14 targets 0x89039c and is always taken.
+  The `beq` branch at 0x890d24 targets 0x890f64, is taken when a0(=[a0+3820]) == t3(=0x408), and falls through when a0(=[a0+3820]) != t3(=0x408).
+  The `beq` branch at 0x890d30 targets 0x891014, is taken when v0(=[a0+3812]) == 0, and falls through when v0(=[a0+3812]) != 0.
+  The `beq` branch at 0x890d54 targets 0x890de4 and is always taken.
+  The `beq` branch at 0x890d68 targets 0x890e24, is taken when (a6(?) & 0xff) == 0, and falls through when (a6(?) & 0xff) != 0.
+  The `beq` branch at 0x890d74 targets 0x890e1c, is taken when t8(?) == 0, and falls through when t8(?) != 0.
+  The `beq` branch at 0x890dcc targets 0x890dd8, is taken when a4(?) >= t9(?) (unsigned), and falls through when a4(?) < t9(?) (unsigned).
+  The `beq` branch at 0x890ddc targets 0x890e24, is taken when v0(?) == 0, and falls through when v0(?) != 0.
+  The `beq` branch at 0x890de8 targets 0x890dd8, is taken when (v0(?) & 0x1) == 0, and falls through when (v0(?) & 0x1) != 0.
+  The `beq` branch at 0x890e00 targets 0x890e14, is taken when at(?) == 0, and falls through when at(?) != 0.
+  The `bne` branch at 0x890e0c targets 0x890d5c, is taken when a3(?) != 0, and falls through when a3(?) == 0.
+  The `beq` branch at 0x890e14 targets 0x890d5c and is always taken.
+  The `beq` branch at 0x890e1c targets 0x890d7c and is always taken.
+  The `beq` branch at 0x890e2c targets 0x890f5c, is taken when a4(?) == 0, and falls through when a4(?) != 0.
+  The `beq` branch at 0x890e38 targets 0x890f58, is taken when a5(=[a2+1360]) == 0, and falls through when a5(=[a2+1360]) != 0.
+  The `beq` branch at 0x890e8c targets 0x890ec0, is taken when a7(?) >= 0x4 (unsigned), and falls through when a7(?) < 0x4 (unsigned).
+  The `bne` branch at 0x890eb8 targets 0x890e98, is taken when t0(?) < 0x4 (unsigned), and falls through when t0(?) >= 0x4 (unsigned).
+  The `beq` branch at 0x890eec targets 0x89039c, is taken when t3(?) == 0, and falls through when t3(?) != 0.
+  The `beq` branch at 0x890efc targets 0x891030, is taken when t8(=[a0+3820]) == t9(=0x408), and falls through when t8(=[a0+3820]) != t9(=0x408).
+  The `beq` branch at 0x890f08 targets 0x89039c, is taken when s2(=[a0+3812]) == 0, and falls through when s2(=[a0+3812]) != 0.
+  The `beq` branch at 0x890f10 targets 0x890f38 and is always taken.
+  The `beq` branch at 0x890f30 targets 0x89039c, is taken when s2(?) == 0, and falls through when s2(?) != 0.
+  The `bne` branch at 0x890f3c targets 0x890f18, is taken when (s2(?) & 0x1) != 0, and falls through when (s2(?) & 0x1) == 0.
+  The `bne` branch at 0x890f48 targets 0x890f38, is taken when s2(?) != 0, and falls through when s2(?) == 0.
+  The `beq` branch at 0x890f50 targets 0x8903a0 and is always taken.
+  The `beq` branch at 0x890f5c targets 0x890e44 and is always taken.
+  The `beq` branch at 0x890f70 targets 0x890fa8, is taken when a3(=[[a0+229484]+101]:1) == 0, and falls through when a3(=[[a0+229484]+101]:1) != 0.
+  The `beq` branch at 0x890f7c targets 0x890fac, is taken when a4(=[[a0+229484]+172]) == 0, and falls through when a4(=[[a0+229484]+172]) != 0.
+  The `beq` branch at 0x890f8c targets 0x890fa8, is taken when a5(=[[a0+229688]+101]:1) == 0, and falls through when a5(=[[a0+229688]+101]:1) != 0.
+  The `beq` branch at 0x890f98 targets 0x890fac, is taken when a6(=[[a0+229688]+172]) == 0, and falls through when a6(=[[a0+229688]+172]) != 0.
+  The `beq` branch at 0x890fa0 targets 0x890fac and is always taken.
+  The `beq` branch at 0x890fb0 targets 0x891054, is taken when (v0(=one of 0x0, 0x1) & 0xff) == 0, and falls through when (v0(=one of 0x0, 0x1) & 0xff) != 0.
+  The `beq` branch at 0x890fc0 targets 0x891060, is taken when t1(=[[a0+229688]+136]:1) == 0, and falls through when t1(=[[a0+229688]+136]:1) != 0.
+  The `beq` branch at 0x89100c targets 0x890e28 and is always taken.
+  The `beq` branch at 0x891028 targets 0x890e34 and is always taken.
+  The `beq` branch at 0x89104c targets 0x89039c and is always taken.
+  The `beq` branch at 0x891058 targets 0x890e28 and is always taken.
+  The `beq` branch at 0x891060 targets 0x890fc8 and is always taken.
+  The return at 0x89071c has v0 = one of ret(__R300CompleteOverrideRendering), ?.
+  The instructions from 0x890a38 to 0x890a3c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x890ab4 to 0x890abc are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x890af4 to 0x890afc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300BltBlock` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x89a180 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x89a180-0x89a94c (1996 bytes).
+  It occupies 1996 bytes.
+  30 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x89a190, `lw` at 0x89a200, `lw` at 0x89a2cc.
+  9 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x89a194, `lw` at 0x89a204, `lw` at 0x89a2c4.
+  5 such `sw` accesses store 4 bytes to [a0+290136] +0x0, including `sw` at 0x89a220, `sw` at 0x89a310, `sw` at 0x89a47c.
+  5 such `sw` accesses store 4 bytes to [a0+290136] +0x4, including `sw` at 0x89a228, `sw` at 0x89a328, `sw` at 0x89a494.
+  6 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x46d58, including `sw` at 0x89a234, `sw` at 0x89a358, `sw` at 0x89a4b0.
+  The `lw` at 0x89a240 loads 4 bytes from a0 (arg0 at entry) +0xc0dc.
+  The `lw` at 0x89a244 loads 4 bytes from [a0+49372] +0x8.
+  The `lbu` at 0x89a248 loads 1 byte from [[a0+49372]+8] +0x88.
+  2 such `lbu` accesses load 1 byte from a0 (arg0 at entry) +0x46d7b, including `lbu` at 0x89a254, `lbu` at 0x89a934.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46a0c, including `lw` at 0x89a260, `lw` at 0x89a920.
+  The `ld` at 0x89a278 loads 8 bytes from a1 (arg1 at entry) +0x8.
+  9 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d9c, including `lw` at 0x89a2a8, `lw` at 0x89a2f0, `lw` at 0x89a3f4.
+  4 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d98, including `lw` at 0x89a2ac, `lw` at 0x89a56c, `lw` at 0x89a5b4.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d94, including `lw` at 0x89a300, `lw` at 0x89a46c, `lw` at 0x89a66c.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46dac, including `lw` at 0x89a304, `lw` at 0x89a470, `lw` at 0x89a670.
+  4 such `sw` accesses store 4 bytes to [a0+290136] +0x8, including `sw` at 0x89a340, `sw` at 0x89a4a0, `sw` at 0x89a6ac.
+  2 such `sw` accesses store 4 bytes to [a0+290204] +0x3c, including `sw` at 0x89a360, `sw` at 0x89a6d0.
+  2 such `sw` accesses store 4 bytes to [a0+290204] +0x34, including `sw` at 0x89a364, `sw` at 0x89a6dc.
+  2 such `sw` accesses store 4 bytes to [a0+290204] +0x2c, including `sw` at 0x89a36c, `sw` at 0x89a6f0.
+  2 such `sw` accesses store 4 bytes to [a0+290204] +0x28, including `sw` at 0x89a370, `sw` at 0x89a6f4.
+  2 such `sw` accesses store 4 bytes to [a0+290204] +0x24, including `sw` at 0x89a378, `sw` at 0x89a6fc.
+  2 such `sw` accesses store 4 bytes to [a0+290204] +0x20, including `sw` at 0x89a380, `sw` at 0x89a704.
+  2 such `sw` accesses store 4 bytes to [a0+290204] +0x1c, including `sw` at 0x89a388, `sw` at 0x89a70c.
+  2 such `sw` accesses store 4 bytes to [a0+290204] +0x18, including `sw` at 0x89a38c, `sw` at 0x89a710.
+  2 such `sw` accesses store 4 bytes to [a0+290204] +0x14, including `sw` at 0x89a394, `sw` at 0x89a718.
+  2 such `sw` accesses store 4 bytes to [a0+290204] +0x10, including `sw` at 0x89a39c, `sw` at 0x89a71c.
+  2 such `sw` accesses store 4 bytes to [a0+290204] +0xc, including `sw` at 0x89a3a8, `sw` at 0x89a720.
+  2 such `sw` accesses store 4 bytes to [a0+290204] +0x8, including `sw` at 0x89a3b4, `sw` at 0x89a72c.
+  2 such `sw` accesses store 4 bytes to [a0+290204] +0x4, including `sw` at 0x89a3bc, `sw` at 0x89a734.
+  2 such `sw` accesses store 4 bytes to [a0+290204] +0x0, including `sw` at 0x89a3c4, `sw` at 0x89a73c.
+  2 such `sw` accesses store 4 bytes to [a0+290204] +0x30, including `sw` at 0x89a3cc, `sw` at 0x89a6e8.
+  2 such `sw` accesses store 4 bytes to [a0+290204] +0x38, including `sw` at 0x89a3d8, `sw` at 0x89a6d8.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0xc988, including `lw` at 0x89a3dc, `lw` at 0x89a530, `lw` at 0x89a740.
+  3 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x46d9c, including `sw` at 0x89a410, `sw` at 0x89a568, `sw` at 0x89a764.
+  20 such `sw` accesses store 4 bytes to ?, including `sw` at 0x89a4bc, `sw` at 0x89a4c8, `sw` at 0x89a4d0.
+  The `sb` at 0x89a76c stores 1 byte to a0 (arg0 at entry) +0x606d.
+  The `sw` at 0x89a7e4 stores 4 bytes to [a0+290136] +0xc.
+  The `lbu` at 0x89a88c loads 1 byte from a0 (arg0 at entry) +0x46d90.
+  2 such `sb` accesses store 1 byte to a0 (arg0 at entry) +0x46d90, including `sb` at 0x89a8c0, `sb` at 0x89a948.
+  The `lw` at 0x89a90c loads 4 bytes from a0 (arg0 at entry) +0x38da0.
+  The `lbu` at 0x89a910 loads 1 byte from [a0+232864] +0x2ed.
+  The `jalr` at 0x89a1f8 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?, a6=[a0+290136].
+  The `jalr` at 0x89a2e4 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?, a4=[a0+290204], a6=[a0+290136].
+  The `jalr` at 0x89a3e8 calls (unknown callee) with a0=[a0+290204]+64, a1=a2 at entry (arg2), a2=?, a3=0x10501, a4=[a0+290204], a5=0x54cc72ff, a6=0x51b, a7=[a0+290136]+12.
+  The `jalr` at 0x89a540 calls (unknown callee) with a0=?, a1=?, a2=?, a3=?, a5=0x51b, a6=[a0+290136]+12.
+  The `jalr` at 0x89a5a8 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?, a6=[a0+290136].
+  The `jalr` at 0x89a654 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=0x1, a2=?, a3=?, a4=[a0+290204], a6=[a0+290136].
+  The `jalr` at 0x89a74c calls (unknown callee) with a0=[a0+290204]+64, a1=?, a2=?, a3=0x10501, a4=[a0+290204], a5=0x54cc72ff, a6=0x51b, a7=[a0+290136]+12.
+  The `jalr` at 0x89a790 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?, a6=[a0+290136].
+  The `jalr` at 0x89a810 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x89a8b0 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x89a92c calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?, a6=[a0+290136].
+  The `beq` branch at 0x89a1ec targets 0x89a21c, is taken when at(?) >= 0x2 (unsigned), and falls through when at(?) < 0x2 (unsigned).
+  The `bne` branch at 0x89a214 targets 0x89a1f8, is taken when t8(?) < 0x2 (unsigned), and falls through when t8(?) >= 0x2 (unsigned).
+  The `beq` branch at 0x89a24c targets 0x89a90c, is taken when t9(=[[[a0+49372]+8]+136]:1) == 0, and falls through when t9(=[[[a0+49372]+8]+136]:1) != 0.
+  The `beq` branch at 0x89a258 targets 0x89a924, is taken when v0(=[a0+290171]:1) == 0, and falls through when v0(=[a0+290171]:1) != 0.
+  The `beq` branch at 0x89a268 targets 0x89a92c, is taken when (v1(=[a0+289292]) & 0x2) == 0, and falls through when (v1(=[a0+289292]) & 0x2) != 0.
+  The `beq` branch at 0x89a288 targets 0x89a414, is taken when (s5(=((a4 + [a1+8]:8) << 0x0)) & 0x3ff) == 0, and falls through when (s5(=((a4 + [a1+8]:8) << 0x0)) & 0x3ff) != 0.
+  The `beq` branch at 0x89a29c targets 0x89a2a8, is taken when s6(=a3) >= s2(?) (unsigned), and falls through when s6(=a3) < s2(?) (unsigned).
+  The `bne` branch at 0x89a2c8 targets 0x89a2e0, is taken when t8(?) < t9(?) (unsigned), and falls through when t8(?) >= t9(?) (unsigned).
+  The `beq` branch at 0x89a2dc targets 0x89a300, is taken when t9(?) >= 0x3 (signed), and falls through when t9(?) < 0x3 (signed).
+  The `beq` branch at 0x89a424 targets 0x89a60c, is taken when a3(?) == 0, and falls through when a3(?) != 0.
+  The `beq` branch at 0x89a430 targets 0x89a56c and is always taken.
+  The `beq` branch at 0x89a444 targets 0x89a454, is taken when s2(?) >= s1(?) (unsigned), and falls through when s2(?) < s1(?) (unsigned).
+  The `bne` branch at 0x89a45c targets 0x89a46c, is taken when a3(?) < 0x4001 (unsigned), and falls through when a3(?) >= 0x4001 (unsigned).
+  The `beq` branch at 0x89a564 targets 0x89a608, is taken when s2(?) == 0, and falls through when s2(?) != 0.
+  The `bne` branch at 0x89a590 targets 0x89a5a4, is taken when a2(?) < 0x440 (unsigned), and falls through when a2(?) >= 0x440 (unsigned).
+  The `beq` branch at 0x89a59c targets 0x89a440, is taken when a0(?) >= 0x3 (signed), and falls through when a0(?) < 0x3 (signed).
+  The `beq` branch at 0x89a5d0 targets 0x89a5e0, is taken when s2(?) >= s1(?) (unsigned), and falls through when s2(?) < s1(?) (unsigned).
+  The `bne` branch at 0x89a5e8 targets 0x89a600, is taken when a3(?) < 0x4001 (unsigned), and falls through when a3(?) >= 0x4001 (unsigned).
+  The `beq` branch at 0x89a5f8 targets 0x89a46c and is always taken.
+  The `beq` branch at 0x89a600 targets 0x89a46c and is always taken.
+  The `blez` branch at 0x89a60c targets 0x89a76c, is taken when s6(?) <= 0 (signed), and falls through when s6(?) > 0 (signed).
+  The `bne` branch at 0x89a634 targets 0x89a650, is taken when a5(?) < a6(?) (unsigned), and falls through when a5(?) >= a6(?) (unsigned).
+  The `beq` branch at 0x89a648 targets 0x89a668, is taken when a7(?) >= 0x3 (signed), and falls through when a7(?) < 0x3 (signed).
+  The `beq` branch at 0x89a784 targets 0x89a7c0, is taken when a0(?) >= 0x4 (unsigned), and falls through when a0(?) < 0x4 (unsigned).
+  The `bne` branch at 0x89a7b4 targets 0x89a790, is taken when a2(?) < 0x4 (unsigned), and falls through when a2(?) >= 0x4 (unsigned).
+  The `beq` branch at 0x89a804 targets 0x89a834, is taken when a3(?) >= 0x90 (unsigned), and falls through when a3(?) < 0x90 (unsigned).
+  The `bne` branch at 0x89a82c targets 0x89a810, is taken when a1(?) < 0x90 (unsigned), and falls through when a1(?) >= 0x90 (unsigned).
+  The `bne` branch at 0x89a834 targets 0x89a88c, is taken when a6(?) != s2(=[a0+290136]+16), and falls through when a6(?) == s2(=[a0+290136]+16).
+  The `bne` branch at 0x89a878 targets 0x89a844, is taken when a1(?) != a2(=0x240), and falls through when a1(?) == a2(=0x240).
+  The `beq` branch at 0x89a894 targets 0x89a8e0, is taken when t1(=[a0+290192]:1) == 0, and falls through when t1(=[a0+290192]:1) != 0.
+  The `bne` branch at 0x89a914 targets 0x89a254, is taken when t2(=[[a0+232864]+749]:1) != 0, and falls through when t2(=[[a0+232864]+749]:1) == 0.
+  The `beq` branch at 0x89a91c targets 0x89a264 and is always taken.
+  The `beq` branch at 0x89a924 targets 0x89a274 and is always taken.
+  The `bne` branch at 0x89a938 targets 0x89a274, is taken when t3(=[a0+290171]:1) != 0, and falls through when t3(=[a0+290171]:1) == 0.
+  The `beq` branch at 0x89a944 targets 0x89a270 and is always taken.
+  The return at 0x89a8d8 has v0 = ret(__glATISubmitBM).
+  The return at 0x89a904 has v0 = ?.
+  The instructions from 0x89a438 to 0x89a43c are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300FlushCaches` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x8b54c0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x8b54c0-0x8b558c (204 bytes).
+  It occupies 204 bytes.
+  The `lw` at 0x8b54d0 loads 4 bytes from a0 (arg0 at entry) +0x46830.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x8b54f0, `lw` at 0x8b551c.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x8b54f4, `lw` at 0x8b5520.
+  The `sw` at 0x8b5544 stores 4 bytes to [a0+290136] +0x0.
+  The `sw` at 0x8b554c stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x8b5554 stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x8b555c stores 4 bytes to [a0+290136] +0xc.
+  The `sw` at 0x8b5564 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x8b5514 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `bne` branch at 0x8b54e8 targets 0x8b5578, is taken when v0(=[a0+288816]) != 0, and falls through when v0(=[a0+288816]) == 0.
+  The `beq` branch at 0x8b5504 targets 0x8b553c, is taken when t8(?) >= 0x4 (unsigned), and falls through when t8(?) < 0x4 (unsigned).
+  The `bne` branch at 0x8b5530 targets 0x8b5514, is taken when t9(?) < 0x4 (unsigned), and falls through when t9(?) >= 0x4 (unsigned).
+  The return at 0x8b5570 has v0 = 0x1.
+  The return at 0x8b5584 has v0 = [a0+288816].
+
+- `__R300SetupRenderingBitmap` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x8b56c0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x8b56c0-0x8b5d70 (1712 bytes).
+  It occupies 1712 bytes.
+  8 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x393f0, including `lw` at 0x8b56d4, `lw` at 0x8b586c, `lw` at 0x8b5914.
+  The `lw` at 0x8b56ec loads 4 bytes from table(0xb83448) +0x0.
+  The `lw` at 0x8b5718 loads 4 bytes from a0 (arg0 at entry) +0x38da0.
+  The `lw` at 0x8b571c loads 4 bytes from [a0+232864] +0x878.
+  The `lw` at 0x8b573c loads 4 bytes from a0 (arg0 at entry) +0xdec.
+  The `lw` at 0x8b5748 loads 4 bytes from a0 (arg0 at entry) +0x46d9c.
+  The `lw` at 0x8b5758 loads 4 bytes from a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x8b5764 loads 4 bytes from a0 (arg0 at entry) +0x471bc.
+  The `lw` at 0x8b576c loads 4 bytes from a0 (arg0 at entry) +0x471cc.
+  The `sw` at 0x8b57ac stores 4 bytes to [a0+290136] +0x8.
+  The `sw` at 0x8b57b4 stores 4 bytes to [a0+290136] +0x4.
+  The `sw` at 0x8b57c0 stores 4 bytes to [a0+290136] +0x0.
+  The `sw` at 0x8b57c8 stores 4 bytes to [a0+290136] +0xc.
+  30 such `sw` accesses store 4 bytes to ?, including `sw` at 0x8b57d0, `sw` at 0x8b57dc, `sw` at 0x8b57ec.
+  3 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x47ec8, including `lw` at 0x8b57fc, `lw` at 0x8b5808, `lw` at 0x8b581c.
+  The `sw` at 0x8b5804 stores 4 bytes to [a0+294600] +0x4.
+  The `sw` at 0x8b5810 stores 4 bytes to [a0+294600] +0x0.
+  The `lw` at 0x8b5814 loads 4 bytes from a0 (arg0 at entry) +0x47ec4.
+  The `lw` at 0x8b5818 loads 4 bytes from a0 (arg0 at entry) +0x47ecc.
+  2 such `sw` accesses store 4 bytes to a0 (arg0 at entry) +0x47ec8, including `sw` at 0x8b5834, `sw` at 0x8b5d34.
+  The `sw` at 0x8b5864 stores 4 bytes to a0 (arg0 at entry) +0x47ebc.
+  The `sw` at 0x8b5868 stores 4 bytes to a0 (arg0 at entry) +0x47ec0.
+  The `sw` at 0x8b5870 stores 4 bytes to a0 (arg0 at entry) +0x47eb8.
+  The `lw` at 0x8b5920 loads 4 bytes from a0 (arg0 at entry) +0x3b578.
+  The `lw` at 0x8b5938 loads 4 bytes from [a0+243064] +0x48.
+  14 such `lw` accesses load 4 bytes from ?, including `lw` at 0x8b599c, `lw` at 0x8b59a8, `lw` at 0x8b59b8.
+  The `lw` at 0x8b5ad8 loads 4 bytes from table(0xb77f40) +0x0.
+  The `sw` at 0x8b5b40 stores 4 bytes to a0 (arg0 at entry) +0x46d9c.
+  The `lw` at 0x8b5bfc loads 4 bytes from (sp-208 + ([a0+234480] << 0x2)) -0x4.
+  The `sw` at 0x8b5c14 stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `lw` at 0x8b5ce0 loads 4 bytes from a0 (arg0 at entry) +0x288.
+  The `sw` at 0x8b5d0c stores 4 bytes to a0 (arg0 at entry) +0x47ecc.
+  The `lw` at 0x8b5d10 loads 4 bytes from a0 (arg0 at entry) +0x8.
+  The `sw` at 0x8b5d24 stores 4 bytes to a0 (arg0 at entry) +0x47ec4.
+  The `jalr` at 0x8b5700 calls __glATITCLGetSpaceImmediate [0xa44140] with a0=a0 at entry (arg0), a1=entry(0xb83448)+38, a2=a1+112, a3=a3 at entry (arg3).
+  The `jalr` at 0x8b5788 calls __glFogVertex [0x55f940] with a0=a0 at entry (arg0), a1=a0+564, a2=?, a3=?.
+  The `jalr` at 0x8b5c18 calls __R300PSCWrite [0x782f40] with a0=a0 at entry (arg0), a1=?, a2=?, a3=?.
+  The `jalr` at 0x8b5d1c calls (unknown callee) with a0=[a0+294596], a1=(([a0+294604] + [a0+294604]) << 0x4), a2=?, a3=?, a4=[a0+294600]+16, a6=[a0+294600], a7=0xe.
+  The `beq` branch at 0x8b5710 targets 0x8b5d4c, is taken when v0(=ret(__glATITCLGetSpaceImmediate)) == 0, and falls through when v0(=ret(__glATITCLGetSpaceImmediate)) != 0.
+  The `beq` branch at 0x8b5778 targets 0x8b57cc, is taken when t8(?) == 0, and falls through when t8(?) != 0.
+  The `beq` branch at 0x8b5830 targets 0x8b5d08, is taken when a4(=[a0+294600]+16) >= a1(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned), and falls through when a4(=[a0+294600]+16) < a1(=([a0+294596] + ([a0+294604] << 0x4))) (unsigned).
+  The `bne` branch at 0x8b5934 targets 0x8b5af8, is taken when a6(=[a0+234480]) < 0x2 (unsigned), and falls through when a6(=[a0+234480]) >= 0x2 (unsigned).
+  The `beq` branch at 0x8b597c targets 0x8b5aa4 and is always taken.
+  The `beq` branch at 0x8b59b4 targets 0x8b5c40, is taken when (a3(?) & 0x1) == 0, and falls through when (a3(?) & 0x1) != 0.
+  The `beq` branch at 0x8b5a9c targets 0x8b5ae4, is taken when a3(?) >= a6(=[a0+234480]) (unsigned), and falls through when a3(?) < a6(=[a0+234480]) (unsigned).
+  The `beq` branch at 0x8b5ad0 targets 0x8b5984, is taken when t8(?) >= 0x15 (unsigned), and falls through when t8(?) < 0x15 (unsigned).
+  The `beq` branch at 0x8b5b30 targets 0x8b5d40, is taken when (t1(=[a0+234480]-1) & 0x1) == 0, and falls through when (t1(=[a0+234480]-1) & 0x1) != 0.
+  The `beq` branch at 0x8b5b64 targets 0x8b5bb8, is taken when a7(?) == 0, and falls through when a7(?) != 0.
+  The `bne` branch at 0x8b5bb0 targets 0x8b5b80, is taken when a3(?) < t8(?) (unsigned), and falls through when a3(?) >= t8(?) (unsigned).
+  The `beq` branch at 0x8b5bd8 targets 0x8b5c08, is taken when (a6(=[a0+234480]) & 0x1) == 0, and falls through when (a6(=[a0+234480]) & 0x1) != 0.
+  The `beq` branch at 0x8b5ccc targets 0x8b5a60 and is always taken.
+  The `beq` branch at 0x8b5cdc targets 0x8b598c and is always taken.
+  The `beq` branch at 0x8b5cf4 targets 0x8b598c and is always taken.
+  The `beq` branch at 0x8b5d00 targets 0x8b598c and is always taken.
+  The `beq` branch at 0x8b5d30 targets 0x8b5838 and is always taken.
+  The `beq` branch at 0x8b5d44 targets 0x8b5b40 and is always taken.
+  The return at 0x8b5c34 has v0 = 0x1.
+  The return at 0x8b5d68 has v0 = 0x0.
+  The instructions from 0x8b5c3c to 0x8b5c3c are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x8b5cfc to 0x8b5cfc are not reached by any path from the entry, and their branches are not listed.
+  The instructions from 0x8b5d38 to 0x8b5d3c are not reached by any path from the entry, and their branches are not listed.
+  The indirect jump at 0x8b5adc uses the jump table at 0xb77f40 with targets 0x8b5d00, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5cd4, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4.
+  The indirect jump at 0x8b5adc uses the jump table at 0xb77f40 with targets 0x8b5d00, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5cd4, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4.
+  The indirect jump at 0x8b5adc uses the jump table at 0xb77f40 with targets 0x8b5d00, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5cd4, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4.
+  The indirect jump at 0x8b5adc uses the jump table at 0xb77f40 with targets 0x8b5d00, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5cd4, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4.
+  The indirect jump at 0x8b5adc uses the jump table at 0xb77f40 with targets 0x8b5d00, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5cd4, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5984, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4, 0x8b5ce4.
+
+- `__R300CompleteRenderingBitmap` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x8b5d80 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x8b5d80-0x8b5e5c (220 bytes).
+  It occupies 220 bytes.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d58, including `lw` at 0x8b5d90, `lw` at 0x8b5dc0.
+  2 such `lw` accesses load 4 bytes from a0 (arg0 at entry) +0x46d5c, including `lw` at 0x8b5d94, `lw` at 0x8b5dc4.
+  The `lw` at 0x8b5ddc loads 4 bytes from a0 (arg0 at entry) +0xdec.
+  The `sw` at 0x8b5df4 stores 4 bytes to [a0+290136] +0x0.
+  The `lw` at 0x8b5df8 loads 4 bytes from a0 (arg0 at entry) +0x4713c.
+  The `sw` at 0x8b5e00 stores 4 bytes to [a0+290136] +0x4.
+  6 such `sw` accesses store 4 bytes to ?, including `sw` at 0x8b5e0c, `sw` at 0x8b5e18, `sw` at 0x8b5e1c.
+  The `lw` at 0x8b5e10 loads 4 bytes from a0 (arg0 at entry) +0x471bc.
+  The `lw` at 0x8b5e20 loads 4 bytes from a0 (arg0 at entry) +0x471cc.
+  The `lw` at 0x8b5e34 loads 4 bytes from a0 (arg0 at entry) +0x472d4.
+  The `sw` at 0x8b5e4c stores 4 bytes to a0 (arg0 at entry) +0x46d58.
+  The `jalr` at 0x8b5db8 calls __glATISubmitBM [0xab9b80] with a0=a0 at entry (arg0), a1=?, a2=[a0+290136], a3=?.
+  The `jalr` at 0x8b5e3c calls __R300WriteViewportTransform [0x77bb40] with a0=a0 at entry (arg0), a1=?, a2=0x887, a3=?.
+  The `beq` branch at 0x8b5dac targets 0x8b5ddc, is taken when at(?) >= 0x14 (unsigned), and falls through when at(?) < 0x14 (unsigned).
+  The `bne` branch at 0x8b5dd4 targets 0x8b5db8, is taken when t8(?) < 0x14 (unsigned), and falls through when t8(?) >= 0x14 (unsigned).
+  The `beq` branch at 0x8b5dec targets 0x8b5e04, is taken when t9(?) == 0, and falls through when t9(?) != 0.
+  The return at 0x8b5e54 has v0 = ret(__R300WriteViewportTransform).
+
+- `ColorBlt3DFSAAFunc` in `usr/X11R6/lib/modules/extensions/fglrx_glx.so` at 0x8ea7c0 (n32).
+  Evidence grade: inferred.
+  Exact binary: `usr/X11R6/lib/modules/extensions/fglrx_glx.so`.
+  Range: 0x8ea7c0-0x8ead68 (1448 bytes).
+  It occupies 1448 bytes.
+  The `lw` at 0x8ea7dc loads 4 bytes from abs 0x1010.
+  The `lw` at 0x8ea7e4 loads 4 bytes from a2 (arg2 at entry) +0x0.
+  The `lw` at 0x8ea804 loads 4 bytes from a2 (arg2 at entry) +0x4.
+  The `sw` at 0x8ea844 stores 4 bytes to a1 (arg1 at entry) +0x1c.
+  The `sw` at 0x8ea84c stores 4 bytes to a1 (arg1 at entry) +0x18.
+  The `sw` at 0x8ea850 stores 4 bytes to a1 (arg1 at entry) +0x14.
+  The `sw` at 0x8ea858 stores 4 bytes to a1 (arg1 at entry) +0x10.
+  The `sw` at 0x8ea860 stores 4 bytes to a1 (arg1 at entry) +0xc.
+  The `sw` at 0x8ea868 stores 4 bytes to a1 (arg1 at entry) +0x8.
+  The `sw` at 0x8ea870 stores 4 bytes to a1 (arg1 at entry) +0x4.
+  The `sw` at 0x8ea878 stores 4 bytes to a1 (arg1 at entry) +0x0.
+  The `sw` at 0x8ea884 stores 4 bytes to a1 (arg1 at entry) +0x20.
+  The `sw` at 0x8ea88c stores 4 bytes to a1 (arg1 at entry) +0x24.
+  The `sw` at 0x8ea894 stores 4 bytes to a1 (arg1 at entry) +0x28.
+  The `sw` at 0x8ea89c stores 4 bytes to a1 (arg1 at entry) +0x2c.
+  The `sw` at 0x8ea8a4 stores 4 bytes to a1 (arg1 at entry) +0x30.
+  The `sw` at 0x8ea8ac stores 4 bytes to a1 (arg1 at entry) +0x34.
+  The `sw` at 0x8ea8b4 stores 4 bytes to a1 (arg1 at entry) +0x38.
+  The `sw` at 0x8ea8c0 stores 4 bytes to a1 (arg1 at entry) +0x40.
+  The `sw` at 0x8ea8c4 stores 4 bytes to a1 (arg1 at entry) +0x3c.
+  The `sw` at 0x8ea8d0 stores 4 bytes to a1 (arg1 at entry) +0x48.
+  The `sw` at 0x8ea8d4 stores 4 bytes to a1 (arg1 at entry) +0x44.
+  The `sw` at 0x8ea8e0 stores 4 bytes to a1 (arg1 at entry) +0x50.
+  The `sw` at 0x8ea8e4 stores 4 bytes to a1 (arg1 at entry) +0x4c.
+  The `sw` at 0x8ea8f0 stores 4 bytes to a1 (arg1 at entry) +0x58.
+  The `sw` at 0x8ea8f4 stores 4 bytes to a1 (arg1 at entry) +0x54.
+  The `sw` at 0x8ea900 stores 4 bytes to a1 (arg1 at entry) +0x60.
+  The `sw` at 0x8ea904 stores 4 bytes to a1 (arg1 at entry) +0x5c.
+  The `sw` at 0x8ea90c stores 4 bytes to a1 (arg1 at entry) +0x64.
+  2 such `lbu` accesses load 1 byte from [a2+4] +0x36, including `lbu` at 0x8ea910, `lbu` at 0x8eacd0.
+  The `sw` at 0x8ea938 stores 4 bytes to a1 (arg1 at entry) +0x68.
+  The `sw` at 0x8ea944 stores 4 bytes to a1 (arg1 at entry) +0x6c.
+  The `sw` at 0x8ea948 stores 4 bytes to (a1 + one of 0x68, 0x70) +0x0.
+  The `sw` at 0x8ea950 stores 4 bytes to (a1 + one of 0x6c, 0x74) +0x0.
+  The `sw` at 0x8ea960 stores 4 bytes to (a1 + one of 0x70, 0x78) +0x0.
+  13 such `lw` accesses load 4 bytes from ?, including `lw` at 0x8ea994, `lw` at 0x8ea99c, `lw` at 0x8ea9b8.
+  The `lw` at 0x8ea9a4 loads 4 bytes from table(0xb859d8) +0x0.
+  The `lw` at 0x8ea9a8 loads 4 bytes from table(0xb859f0) +0x0.
+  51 such `sw` accesses store 4 bytes to ?, including `sw` at 0x8ea9b4, `sw` at 0x8ea9bc, `sw` at 0x8ea9c4.
+  The `lw` at 0x8ea9e8 loads 4 bytes from table(0xb85a08) +0x0.
+  The `lw` at 0x8ea9f8 loads 4 bytes from table(0xb859b8) +0x0.
+  The `lw` at 0x8eaa6c loads 4 bytes from [a2+4] +0x28.
+  The `lw` at 0x8eaa74 loads 4 bytes from [a2+4] +0x24.
+  The `lw` at 0x8eaa7c loads 4 bytes from [a2+4] +0x20.
+  The `lw` at 0x8eaa88 loads 4 bytes from [a2] +0x2c.
+  The `lw` at 0x8eaa90 loads 4 bytes from [a2] +0x28.
+  The `lw` at 0x8eaaa4 loads 4 bytes from [a2+4] +0x2c.
+  16 such `swc1` accesses store 4 bytes to ?, including `swc1` at 0x8eaad4, `swc1` at 0x8eaadc, `swc1` at 0x8eab04.
+  8 such `lwc1` accesses load 4 bytes from ?, including `lwc1` at 0x8eab00, `lwc1` at 0x8eab08, `lwc1` at 0x8eab50.
+  The `lw` at 0x8eac3c loads 4 bytes from [0x1010] +0x4808c.
+  The `lw` at 0x8eac4c loads 4 bytes from [0x1010] +0x46e80.
+  The `lw` at 0x8eac54 loads 4 bytes from [0x1010] +0x46e88.
+  The `lw` at 0x8eac5c loads 4 bytes from [0x1010] +0x46e8c.
+  The `lw` at 0x8eac64 loads 4 bytes from [0x1010] +0x46e90.
+  The `lw` at 0x8eac6c loads 4 bytes from [0x1010] +0x46e94.
+  The `lw` at 0x8eac74 loads 4 bytes from [0x1010] +0x46e98.
+  The `lw` at 0x8eac7c loads 4 bytes from [0x1010] +0x46ea8.
+  The `lw` at 0x8eac88 loads 4 bytes from [0x1010] +0x46ea4.
+  The `lw` at 0x8eac98 loads 4 bytes from [0x1010] +0x46e68.
+  The `lw` at 0x8eaca8 loads 4 bytes from [0x1010] +0x46eb4.
+  The `lw` at 0x8eacb8 loads 4 bytes from [0x1010] +0x48008.
+  The `lw` at 0x8eacc8 loads 4 bytes from [0x1010] +0x47260.
+  The `lw` at 0x8ead00 loads 4 bytes from [0x1010] +0x47248.
+  2 such `lw` accesses load 4 bytes from [0x1010] +0x46eac, including `lw` at 0x8ead10, `lw` at 0x8ead4c.
+  2 such `lw` accesses load 4 bytes from [0x1010] +0x46eb0, including `lw` at 0x8ead18, `lw` at 0x8ead58.
+  The `jalr` at 0x8ea80c calls memset with a0=sp-544, a1=0x0, a2=0x1e0, a3=a3 at entry (arg3).
+  The `bgezall` at 0x8ea820 calls __R200SetFSAAScaledBltInfo [0x8e9d40] with a0=a0 at entry (arg0), a1=sp-544, a2=?, a3=?.
+  The `bgezall` at 0x8ea83c calls __R200SetFSAAScaledBltRegisters [0x8ea0c0] with a0=a0 at entry (arg0), a1=[a2], a2=[a2+4], a3=sp-544.
+  The `beq` branch at 0x8ea92c targets 0x8ea948, is taken when ra(=[[a2+4]+54]:1) == 0, and falls through when ra(=[[a2+4]+54]:1) != 0.
+  The `blez` branch at 0x8ea97c targets 0x8eaa64, is taken when a4(?) <= 0 (signed), and falls through when a4(?) > 0 (signed).
+  The `bne` branch at 0x8eaa5c targets 0x8ea994, is taken when a5(?) < a4(?) (signed), and falls through when a5(?) >= a4(?) (signed).
+  The `blez` branch at 0x8eaaf0 targets 0x8eab28, is taken when v0(?) <= 0 (signed), and falls through when v0(?) > 0 (signed).
+  The `bne` branch at 0x8eab20 targets 0x8eab00, is taken when a6(?) < t1(?) (signed), and falls through when a6(?) >= t1(?) (signed).
+  The `blez` branch at 0x8eab44 targets 0x8eab7c, is taken when t2(?) <= 0 (signed), and falls through when t2(?) > 0 (signed).
+  The `bne` branch at 0x8eab74 targets 0x8eab50, is taken when a4(?) < a3(?) (signed), and falls through when a4(?) >= a3(?) (signed).
+  The `blez` branch at 0x8eab94 targets 0x8eabcc, is taken when a6(?) <= 0 (signed), and falls through when a6(?) > 0 (signed).
+  The `bne` branch at 0x8eabc4 targets 0x8eaba0, is taken when a6(?) < a7(?) (signed), and falls through when a6(?) >= a7(?) (signed).
+  The `blez` branch at 0x8eabe0 targets 0x8eac1c, is taken when a4(?) <= 0 (signed), and falls through when a4(?) > 0 (signed).
+  The `bne` branch at 0x8eac14 targets 0x8eabec, is taken when a7(?) < a4(?) (signed), and falls through when a7(?) >= a4(?) (signed).
+  The `beq` branch at 0x8eace4 targets 0x8ead28, is taken when a5(=[[a2+4]+54]:1) == 0, and falls through when a5(=[[a2+4]+54]:1) != 0.
+  The return at 0x8ead20 has v0 = ?.
+  The return at 0x8ead60 has v0 = ?.
