@@ -30,7 +30,7 @@ number	hex	table	handler	evidence	senders	binaries	example	status	doc	section
 79	0x4f	firegl ioctl	drm_rmmap	table		1		understood	software/kernel/kernel-drm-functions.md#buffer-lock-release-name-and-area-ioctls-and-capability-query	Buffer-lock release, name and area ioctls, and capability query
 83	0x53	firegl ioctl	firegl_cp_init	table		1		understood	software/kernel/kernel-attach.md#command-processor-microcode-and-memory-controller-in-the-kernel	Command processor, microcode and memory controller in the kernel
 86	0x56	firegl ioctl	firegl_bufmeminfo	table		1		understood	software/kernel/kernel-drm-functions.md#lock-release-allocation-tracking-and-drawable-removal	Lock release, allocation tracking and drawable removal
-87	0x57	firegl ioctl	firegl_get_lockid	table		1		located	software/kernel/readings/fglrx.o.md#readings-usrcpusysgenip35bootfglrxo	Readings: `usr/cpu/sysgen/IP35boot/fglrx.o`
+87	0x57	firegl ioctl	firegl_get_lockid	table		1		understood	software/kernel/readings/fglrx.o.md#readings-usrcpusysgenip35bootfglrxo	Readings: `usr/cpu/sysgen/IP35boot/fglrx.o`
 88	0x58	firegl ioctl	firegl_set_cap_ipc_lock	table		1		understood	software/kernel/readings/fglrx.o.md#readings-usrcpusysgenip35bootfglrxo	Readings: `usr/cpu/sysgen/IP35boot/fglrx.o`
 89	0x59	firegl ioctl	firegl_restore_cap	table		1		understood	software/kernel/readings/fglrx.o.md#readings-usrcpusysgenip35bootfglrxo	Readings: `usr/cpu/sysgen/IP35boot/fglrx.o`
 91	0x5b	firegl ioctl	firegl_umm_init	table		1		understood	software/kernel/kernel-drm-functions.md#hardware-lock-takedown-and-mapping	Hardware lock, takedown and mapping
@@ -40,7 +40,7 @@ number	hex	table	handler	evidence	senders	binaries	example	status	doc	section
 95	0x5f	firegl ioctl	firegl_vs_validate	table		1		understood	software/kernel/kernel-drm-functions.md#locked-memory-stereo-reference-counting-and-mapping-tables	Locked memory, stereo reference counting and mapping tables
 96	0x60	firegl ioctl	firegl_modify_buf	table		1		understood	software/kernel/kernel-drm-functions.md#aperture-pools-buffer-ioctls-and-device-set-up	Aperture pools, buffer ioctls and device set-up
 97	0x61	firegl ioctl	firegl_sync_dacs	table		1		understood	software/kernel/kernel-ioctl-irq-functions.md#display-control	Display control
-100	0x64	firegl ioctl	firegl_cp_resume	table		1		located	software/kernel/readings/fglrx.o.md#readings-usrcpusysgenip35bootfglrxo	Readings: `usr/cpu/sysgen/IP35boot/fglrx.o`
+100	0x64	firegl ioctl	firegl_cp_resume	table		1		understood	software/kernel/readings/fglrx.o.md#readings-usrcpusysgenip35bootfglrxo	Readings: `usr/cpu/sysgen/IP35boot/fglrx.o`
 536896589	0x2000644d			constant	firegl_FlushCache	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_FlushCache	understood	software/xsgi/libfglrxdrm-functions.md#ioctl-request-numbers-and-the-kernel-handlers-they-reach	Ioctl request numbers and the kernel handlers they reach
 536896609	0x20006461			constant	firegl_SyncDacs	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_SyncDacs	understood	software/xsgi/libfglrxdrm-functions.md#ioctl-request-numbers-and-the-kernel-handlers-they-reach	Ioctl request numbers and the kernel handlers they reach
 536896612	0x20006464			constant	firegl_CPResume	1	usr/X11R6/lib/modules/irix/libfglrxdrm.so:firegl_CPResume	located	software/xsgi/libfglrxdrm-functions.md#ioctl-request-numbers-and-the-kernel-handlers-they-reach	Ioctl request numbers and the kernel handlers they reach

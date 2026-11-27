@@ -5286,8 +5286,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x41d374 has v0 = ?.
 
 - `R200Save2ndTMDSRegs` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x41d340
-  **Inferred.** Saves the second TMDS (digital output) state. It reads the byte at +0x5a of the driver private: when that byte is non-zero the routine returns at 0x41d350. When the byte is zero it copies four words from the state block reached through the pointer at +0x30 of the private (+0xd64, +0xd6c, +0x7c and +0x288) into the argument block at +0x90, +0x94, +0x80 and +0xc4 (0x41d35c to 0x41d378). The name suggests these are the TMDS registers saved for a later restore. The meaning of each word is not derived here.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Saves four display registers of the second digital output into a caller's save block. With the driver record at a0 +248, it returns at once when the byte at record +90 is non-zero (0x41d344 to 0x41d348). Otherwise it reads the register window at record +48 and copies `DISP_OUTPUT_CNTL` (+0xd64) to save +0x90, `DISP_TV_OUT_CNTL` (+0xd6c) to +0x94, `DAC_CNTL2` (+0x7c) to +0x80 and `FP2_GEN_CNTL` (+0x288) to +0xc4 (0x41d358 to 0x41d378). It writes no register. Register names follow the public Linux radeon header; that mapping is inferred.
 
 - `R200SaveSurface` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x41d380 (n32).
   Evidence grade: inferred.
@@ -5640,8 +5639,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x41dc74 has v0 = ?.
 
 - `R200Restore2ndTMDSRegisters` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x41dc40
-  **Inferred.** Copies four words. The render shows loads at offsets 0x90, 0x94, 0x80 and 0xc4 and stores at offsets 0xd64, 0xd6c, 0x7c and 0x288, but does not show the base registers of those loads and stores. A byte at `[a0+248]+0x5a` is tested at 0x41dc48: when it is non-zero the routine returns at 0x41dc50 without the copy, and when it is zero the four loads and stores run and it returns at 0x41dc74. Role (from name): restoring registers of a second TMDS transmitter; the facts show only the conditional copy.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Write-back twin of the save routine at 0x41d340, with the same guard on the byte at record +90 (0x41dc44 to 0x41dc48). The words from save +0x90, +0x94, +0x80 and +0xc4 are stored to register offsets 0xd64, 0xd6c, 0x7c and 0x288 of the window at record +48 (0x41dc58 to 0x41dc78), in that order. The register names are inferred from the public Linux radeon header.
 
 - `R200RestoreSurface` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x41dc80 (n32).
   Evidence grade: inferred.
@@ -5656,6 +5654,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `beq` branch at 0x41dc88 targets 0x41dc98, is taken when at(=[[a0+248]+90]:1) == 0, and falls through when at(=[[a0+248]+90]:1) != 0.
   The return at 0x41dc90 has v0 = ?.
   The return at 0x41dca0 has v0 = [a1+2952].
+
+- `R200RestoreSurface` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x41dc80
+  **Established.** Restores the tiling surface control register. Unless the byte at record +90 is non-zero (0x41dc84 to 0x41dc88), it stores the word at +0xb88 of the saved-state block in a1 to register offset 0xb00 (`SURFACE_CNTL`, a name taken from the public Linux radeon header and so inferred) of the window at record +48 (0x41dc9c to 0x41dca4). Nothing else is written.
 
 - `R200RestoreConsoleModeRegs` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x41dcc0 (n32).
   Evidence grade: inferred.
@@ -7703,8 +7704,7 @@ One entry per routine, filed here from the reading batches by binary.
   The `bgezl` branch at 0x426ccc targets 0x424fc0 and is always taken.
 
 - `__R300FlushZCache` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x426c80
-  **Inferred.** Writes a two-word request into the buffer returned by the routine at 0x424d40, then jumps to 0x424fc0. The call at 0x426c9c passes a0 loaded from `[a0+7660]`, the constant 2 as its second argument, and a2 and a3 unchanged. The stores at 0x426cb0 and 0x426cb8 write the two words at offsets 0 and 4 of that buffer. The render gives the callee no name, so the meaning of the request on the chip is not established here.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Queues a depth-cache flush on the command stream. It calls the space-reserve routine at 0x424d40 (`bgezall` at 0x426c9c) with the stream at word +7660 and a request of 2 words, writes the type-0 packet header 5062 (0x13c6, register byte offset 0x4f18, `ZB_ZCACHE_CTLSTAT`) and the value 1 (`ZC_FLUSH`, bit 0) at 0x426cb0 and 0x426cb8, then jumps to the submit routine at 0x424fc0 with the end pointer (`bgezl` at 0x426ccc).
 
 - `R200DRIMoveBuffers` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x427a00 (n32).
   Evidence grade: inferred.
@@ -8672,14 +8672,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x42c1e8 has v0 = 0xfffffffff7ffffff.
 
 - `r200_EnableRPTRwriteback` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42c1c0
-  **Inferred.** A 48-byte routine. It loads a word from the argument at a1+0x2c and stores a value
-  at a0+0x70c (`sw` at 0x42c1cc); the render does not show whether that value is the loaded word
-  unchanged. It then loads the word at a0+0x704 and stores a value back there (`lw` at 0x42c1d4,
-  `sw` at 0x42c1e0). The return at 0x42c1e8 reports v0 as 0xfffffffff7ffffff, the sign-extended form
-  of the 32-bit value 0xf7ffffff, not a 60-bit constant. The render does not show what operation
-  changes the word at +0x704, so the bit it affects is not identified. The name and the store
-  to +0x70c fit a read-pointer writeback enable.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Points the command processor's read-pointer writeback at host memory and turns the writeback on. With a0 as the register window, it stores the word at a1 +0x2c plus 512 to window +0x70c (`CP_RB_RPTR_ADDR`, 0x42c1c8 to 0x42c1cc), issues `sync` (0x42c1d0), then clears bit 27 of the word at +0x704 (`CP_RB_CNTL`, mask 0xf7ffffff built at 0x42c1c4 and 0x42c1d8; bit 27 is `RB_NO_UPDATE` in the public Linux header) and issues a second `sync` (0x42c1e4).
 
 - `r200_WriteTimeStamp` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42c240 (n32).
   Evidence grade: inferred.
@@ -12228,6 +12221,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `sw` at 0x43a564 stores 4 bytes to [[a0+248]+48] +0x5c.
   The return at 0x43a560 has v0 = [[a0+248]+48].
 
+- `AtomicUpdateUnlock` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x43a540
+  **Inferred.** Ends an overlay register update window. It reads the register window at driver record +48 (a0 +248, then +48), clears bit 0 of the word at +0x410 (`OV0_REG_LOAD_CNTL`; mask -2 built at 0x43a54c) and sets bit 1 of the word at +0x5c (`CRTC_STATUS`; `ori` 0x2 at 0x43a55c), each as a read-modify-write (0x43a554 and 0x43a564). Bit 0 being the overlay register-load lock comes from the public Linux radeon header.
+
 - `FIREGL_OverlayMoveWindow` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x43a580 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/drivers/fglrx_drv.so`.
@@ -13106,6 +13102,9 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x43d6dc has v0 = ?.
   The return at 0x43d6e4 has v0 = ?.
 
+- `SrcColorkey` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x43d6c0
+  **Inferred.** Turns the overlay source colour key on or off. It loads the word at window +0x4f4 (`OV0_KEY_CNTL`, window at driver record +48), clears bits 0, 1, 4, 5 and 8 (mask -308 at 0x43d6cc) and, when a1 is non-zero, sets 0x103 (bits 0, 1 and 8; `ori` at 0x43d6d8) before storing it back at 0x43d6e0 or 0x43d6e8.
+
 - `DstColorkey` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x43d700 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/drivers/fglrx_drv.so`.
@@ -13120,8 +13119,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x43d728 has v0 = ?.
 
 - `DstColorkey` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x43d700
-  **Inferred.** Role (from name): writes the destination colorkey state into the driver record. It loads the record at [a0+248] (0x43d700), a word at +48 of it (0x43d704) and a word at +0x4f4 (0x43d708), then stores a word at +0x4f4 in one of two places (0x43d720, 0x43d72c). A zero a1 branches to 0x43d724 (0x43d710) and otherwise execution continues in line. The values stored are not visible in the render, so what each one turns on is unknown.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Selects the destination colour key compare in the overlay key control register. It clears bits 4 and 5 of the word at window +0x4f4 (`OV0_KEY_CNTL`; mask -49 at 0x43d70c) and then sets bit 5 (0x20, `ori` at 0x43d718) when a1 is non-zero or bit 4 (0x10, at 0x43d724) when it is zero, storing the result at 0x43d720 or 0x43d72c.
 
 - `SetSrcColorkey` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x43d740 (n32).
   Evidence grade: inferred.
@@ -13135,12 +13133,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x43d778 has v0 = [[a0+248]+48].
 
 - `SetSrcColorkey` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x43d740
-  **Inferred.** A 64-byte routine that reads the adapter block at [a0+248] and its sub-block at
-  +48. It writes two words at +0x4e4 and +0x4e8 of that sub-block (`sw` at 0x43d770 and 0x43d77c),
-  and returns the sub-block pointer (return at 0x43d778). The name suggests it sets the source
-  colour key for the overlay. The render shows the two stores but not the values written, so
-  that purpose is not confirmed.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Loads the overlay source colour key range from a 16-bit 5-6-5 pixel in a1. The red field (mask 0xf800) is shifted left 14, green (0x7e0) left 9 and blue (0x1f) left 5 (0x43d744 to 0x43d760); the combined word is stored to window +0x4e4 (`OV0_GRAPHICS_KEY_CLR_LOW` in the public Linux header, 0x43d770) and the same word OR 0x01f03c1f to +0x4e8 (`OV0_GRAPHICS_KEY_CLR_HIGH`, 0x43d77c), which widens each field to its upper bound.
 
 - `QBSSrcColorkey` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x43d780 (n32).
   Evidence grade: inferred.
@@ -13155,6 +13148,9 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x43d79c has v0 = ?.
   The return at 0x43d7a4 has v0 = ?.
 
+- `QBSSrcColorkey` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x43d780
+  **Inferred.** Source colour key switch for the quad-buffered-stereo overlay path, with the same register edit as `SrcColorkey` at 0x43d6c0: it clears bits 0, 1, 4, 5 and 8 of `OV0_KEY_CNTL` (+0x4f4, mask -308 at 0x43d78c) and, for a non-zero a1, ORs in 0x103 (0x43d798) before the store at 0x43d79c or 0x43d7a4.
+
 - `QBSDstColorkey` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x43d7c0 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/drivers/fglrx_drv.so`.
@@ -13168,6 +13164,9 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x43d7dc has v0 = ?.
   The return at 0x43d7e8 has v0 = ?.
 
+- `QBSDstColorkey` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x43d7c0
+  **Inferred.** Destination colour key selector for the quad-buffered-stereo overlay path: bits 4 and 5 of the word at window +0x4f4 are cleared (mask -49 at 0x43d7cc), then 0x20 is ORed in for a non-zero a1 (0x43d7d8) or 0x10 for zero (0x43d7e4) and the word is stored back. It repeats the edit of `DstColorkey` at 0x43d700.
+
 - `QBSSetSrcColorkey` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x43d800 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/drivers/fglrx_drv.so`.
@@ -13178,6 +13177,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `sw` at 0x43d814 stores 4 bytes to [[a0+248]+48] +0x4e4.
   The `sw` at 0x43d820 stores 4 bytes to [[a0+248]+48] +0x4e8.
   The return at 0x43d81c has v0 = [[a0+248]+48].
+
+- `QBSSetSrcColorkey` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x43d800
+  **Inferred.** Programs a fixed colour key range for the quad-buffered-stereo overlay. It stores the constant 0x000ff004 to window +0x4e4 (`OV0_GRAPHICS_KEY_CLR_LOW`, 0x43d814) and 0x003ffc07 to +0x4e8 (`OV0_GRAPHICS_KEY_CLR_HIGH`, 0x43d820) of the register window at driver record +48. It reads no argument other than the screen in a0.
 
 - `ReadRomOffset` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x43ea00 (n32).
   Evidence grade: inferred.

@@ -11,8 +11,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x3228 has v0 = 0x16.
 
 - `fglrx_invalid_ioctl` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x31dc
-  **Inferred.** Role (from name): handler for an ioctl that is not handled. Its only call is `cmn_err` at 0x3218 with level argument 0x5 and a format string from `.rodata`, then it returns 0x16 (22, the Linux EINVAL value) at 0x3228.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Fallback for an ioctl number that has no handler. It calls `cmn_err` at 0x3218 with level 5 and the text "fglrx: Unknown ioctl" from `.rodata` +0xa40, and returns 22 at 0x3228, so the caller sees an invalid-argument error. It reads no argument and touches no hardware; ten pointers in `.data` between +0x180 and +0x240 fill unused slots of a handler table with it.
 
 - `fglrx_test_ioctl` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x3230 (n64).
   Evidence grade: inferred.
@@ -47,10 +46,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x3374 has v0 = 0xe.
 
 - `fglrx_drm_unmap` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x336c
-  **Inferred.** Returns the constant 14 (0xe) at 0x3374, and executes a word store at offset 0 of some
-  register base in the return's delay slot (sw at 0x3378); the facts do not show which register or value.
-  Role (from name): an unmap hook; the body shows no mapping work.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Four-instruction hook that reports failure for a DRM unmap request: it loads 14 into v0 at 0x336c and -1 at 0x3370, and the delay slot of the return at 0x3374 stores the -1 through the result pointer in a3 (0x3378). It unmaps nothing and reads nothing.
 
 - `fglrx_give_up_privdev` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x337c (n64).
   Evidence grade: inferred.
@@ -96,8 +92,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x3b6c has v0 = 0x0.
 
 - `fglrx_swapbuf_stat` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x3b34
-  **Inferred.** Role (from name): reports a swap-buffer statistic. It loads a halfword at 0x3b4c and a doubleword at 0x3b50 (the entry names `gfxinfo` as the source of the latter), loads a word at offset 0x14 at 0x3b5c and stores a word at offset 0x14 at 0x3b64, then stores a word at offset 0 at 0x3b68 and returns 0 at 0x3b6c. The render does not give the base registers of these accesses, the value stored at either offset, or which argument receives the store at 0x3b68.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Counts one swap-buffer request: it takes the `gfxinfo` pointer, indexes it by the halfword at the absolute address -15320 scaled by 32 (0x3b4c to 0x3b58), adds 1 to the word at +20 of that record (0x3b5c to 0x3b64), stores 0 through the result pointer in a3 (0x3b68) and returns 0. Reading the halfword at that fixed kernel address as the processor number is inferred from its use as a record index.
 
 - `fglrx_add_exit_callback` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x45a4 (n64).
   Evidence grade: inferred.
@@ -143,6 +138,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `beq` branch at 0x4938 targets 0x4948, is taken when a4(?) == 0, and falls through when a4(?) != 0.
   The return at 0x4948 has v0 = one of 0x5, ?.
 
+- `FGLRXReadRegister` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x4908
+  **Established.** Reads one 32-bit chip register for a board. The board number in a0 (zero-extended, scaled by 8 at 0x4920 to 0x4928) indexes the pointer table at `.data` +328; the register window is the doubleword at +656 of that board record (0x4934). A null window returns 5 (0x493c); otherwise it loads the word at window plus the offset in a1 with `lwu` (0x4944) and returns it.
+
 - `FGLRXWriteRegister` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x4950 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
@@ -153,6 +151,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `sw` at 0x4990 stores 4 bytes to ?.
   The `beq` branch at 0x4980 targets 0x4998, is taken when a5(?) == 0, and falls through when a5(?) != 0.
   The return at 0x4998 has v0 = one of 0x5, ?.
+
+- `FGLRXWriteRegister` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x4950
+  **Established.** Writes one 32-bit chip register for a board, the store counterpart of the register read at 0x4908. The board table at `.data` +328 is indexed by a0 and the register window is the doubleword at +656 of the record (0x497c). A null window returns 5 (0x4984); otherwise the word in a2 is stored at window plus the offset in a1 (`sw` at 0x4990) and the value zero-extended is returned (0x4994).
 
 - `FGLRXWriteRegister8` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x49a0 (n64).
   Evidence grade: inferred.
@@ -166,6 +167,9 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x49e0 has v0 = a2.
   The return at 0x49e8 has v0 = 0x5.
 
+- `FGLRXWriteRegister8` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x49a0
+  **Established.** Same board-table walk as the 32-bit write (`.data` +328, then record +656) but the store at 0x49dc is `sw`, a full 32-bit word, not a byte; the 8 in the name is not a byte-wide access. It returns the unmodified a2 (delay slot at 0x49d4) or 5 when the window pointer is null (0x49ec). `FGLRXINPLL` calls it.
+
 - `FGLRXinfo` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x4b00 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
@@ -178,8 +182,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x4b4c has v0 = one of 0x0, 0xe.
 
 - `FGLRXinfo` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x4b00
-  **Inferred.** Copies a block out with `copyout` at 0x4b38, whose first argument is a0+224 (0xe0) and whose second is a1 (arg1); the length is not shown. A zero `copyout` result takes the branch at 0x4b40 to 0x4b54, where a 32-bit word is stored at offset 0 of a base register the render does not name (0x4b5c). The return at 0x4b4c gives 0 or 0xe (14, the Linux EFAULT value). The render does not show which path returns which value, though 0xe is on the path without the store.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Copies the board's information block to a caller buffer. It calls `copyout` at 0x4b38 with source a0 plus 224, destination a1 and a length of 184 or the caller's a2 when that is smaller (`sltiu` and `movn` at 0x4b24 to 0x4b30). A non-zero `copyout` result returns 14; otherwise the copied length is stored through the pointer in a3 (0x4b5c) and 0 is returned. Its pointer is the first slot, at `.data` +0x0, of the table that holds `FGLRXattach` next.
 
 - `FGLRXinit` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x4b68 (n64).
   Evidence grade: inferred.
@@ -201,8 +204,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x4b70 has v0 = -0x1.
 
 - `FGLRXattach` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x4b70
-  **Inferred.** The routine is 8 bytes: it returns the constant -1 and does nothing else. Role (from name): an attach entry point; this body does not touch any state, and -1 is the only value it returns.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Attach entry that always fails: it returns -1 from the delay slot of the return at 0x4b70 without reading its arguments or calling anything. Its pointer is the second slot, at `.data` +0x8, of the table that starts with `FGLRXinfo`; the real attach work is done by `fglrx_attach`.
 
 - `FGLRXmap` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x4b78 (n64).
   Evidence grade: inferred.
@@ -223,6 +225,9 @@ One entry per routine, filed here from the reading batches by binary.
   It occupies 44 bytes.
   The return at 0x53dc has v0 = ?.
 
+- `fglrx_hpipe_log` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x53b8
+  **Established.** Disabled hyperpipe log sink: it spills the eight argument registers a0 to a7 to the stack words at sp+0 to sp+56 (0x53bc to 0x53d8) and returns at 0x53dc after popping the 64-byte frame. It formats and prints nothing, and no code in `.text` loads its address.
+
 - `fglrx_usb_comp_update_tiles` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x53e4 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
@@ -231,13 +236,8 @@ One entry per routine, filed here from the reading batches by binary.
   The `jalr` at 0x5418 calls printf with a0=sym(.rodata)+3408, a1=sym(.rodata)+3408, a2=sym(printf), a3=sym(printf).
   The return at 0x5428 has v0 = -0x1.
 
-- `usb_comp_update_tiles` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x53e4
-  **Inferred.** Role (from name): update tiles for a USB companion. The only call is `printf` at 0x5418 with a format string from `.rodata`, and the routine returns -1 at 0x5428. The constant -1 return is consistent with an operation this build does not support, but the render does not show that.
-  Reviewed: 2026-11-12 (sonnet)
-
 - `fglrx_usb_comp_update_tiles` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x53e4
-  **Inferred.** The body makes one `jalr` to `printf` at 0x5418, passing an address in .rodata at offset 3408 as the format, and returns -1 at 0x5428. Nothing else in the render touches memory or the arguments, so the routine reports a message and fails. The render lists the same address for two printf argument registers, so the format string itself is not confirmed.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Placeholder for the USB compositor tile update when that driver is absent from the kernel: it calls `printf` at 0x5418 with "usb_comp driver not in kernel!" from `.rodata` +0xd50 and returns -1 at 0x5424. The same bytes carry the name `usb_comp_update_tiles`, and neither touches hardware.
 
 - `fglrx_usb_comp_readwrite_register` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x5430 (n64).
   Evidence grade: inferred.
@@ -324,8 +324,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x8fb8 has v0 = one of ret(is_specified), ret(atoi).
 
 - `set_showconfig` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x8f14
-  **Inferred.** Role (from name): set the showconfig option. `is_specified` is called with `arg_showconfig` at 0x8f48. A zero result takes the branch at 0x8f50 to 0x8fb4. Otherwise `atoi` is called at 0x8f80, a word at offset 0x258 is loaded at 0x8fa4 and a word at offset 0x258 is stored at 0x8fb0. The render does not show the base register of those two accesses, the value stored, or what `atoi` converts. The routine returns the `is_specified` or `atoi` result at 0x8fb8.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Reads the boot argument `arg_showconfig` into a driver flag. It calls `is_specified` at 0x8f48 on that name; when the result is non-zero it calls `atoi` at 0x8f80 on the same string and, when the value is exactly 1 (`xor` and `movz` at 0x8fa8 to 0x8fac), stores 1 into the word at `.data` +0x258 (0x8fb0). Any other value leaves the stored word as it was. `fglrxProbeCompositor` references it.
 
 - `fglrx_hpipe_add_log` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x8fc0 (n64).
   Evidence grade: inferred.
@@ -367,12 +366,18 @@ One entry per routine, filed here from the reading batches by binary.
   It occupies 44 bytes.
   The return at 0x90fc has v0 = ?.
 
+- `__KE_INFO` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x90d8
+  **Established.** Info-level log macro with its output compiled out: it spills a0 to a7 into the 64-byte frame (0x90dc to 0x90f8), then returns at 0x90fc. `firegl_init_module` is the only caller of this address; no message is formatted or printed.
+
 - `__KE_DEBUG` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9104 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0x9104-0x9130 (44 bytes).
   It occupies 44 bytes.
   The return at 0x9128 has v0 = ?.
+
+- `__KE_DEBUG` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9104
+  **Established.** Debug-level log macro with its output compiled out. Its body at 0x9104 to 0x912c saves a0 to a7 at sp+0 to sp+56 and pops the frame, with no call. The module teardown routine `firegl_cleanup_module` is the one routine that calls this address.
 
 - `__ke_down` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x98c0 (n64).
   Evidence grade: inferred.
@@ -517,12 +522,18 @@ One entry per routine, filed here from the reading batches by binary.
   It occupies 8 bytes.
   The return at 0x9ad4 has v0 = ?.
 
+- `__ke_capable` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9ad4
+  **Established.** Capability test with no body: `jr ra` at 0x9ad4 and a `nop` at 0x9ad8, so v0 is left as the caller had it. Six routines call it (`firegl_alloc_bufs`, `firegl_ioctl`, `firegl_lock_memory`, `firegl_mmap`, `firegl_free_memlock`, `firegl_set_cap_ipc_lock`), so their privilege branches act on whatever value v0 holds.
+
 - `__ke_cap_effective_raise` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9adc (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0x9adc-0x9ae4 (8 bytes).
   It occupies 8 bytes.
   The return at 0x9adc has v0 = ?.
+
+- `__ke_cap_effective_raise` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9adc
+  **Established.** Empty shim for raising a process capability: a bare `jr ra` at 0x9adc with a `nop` at 0x9ae0. It changes no state and sets no result; it is called from `firegl_lock_memory`, `firegl_free_memlock` and `firegl_set_cap_ipc_lock`.
 
 - `__ke_get_cap_effective` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9ae4 (n64).
   Evidence grade: inferred.
@@ -532,9 +543,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x9ae4 has v0 = 0x0.
 
 - `__ke_get_cap_effective` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9ae4
-  **Inferred.** Returns the constant 0 and does nothing else. The routine is 8 bytes.
-  Role (from name): reports the effective capability set; the constant 0 would mean an empty set.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Returns 0 as the saved capability mask: the delay slot of the return at 0x9ae4 is `move v0,zero` at 0x9ae8. The three routines that save and restore the mask (`firegl_lock_memory`, `firegl_free_memlock`, `firegl_set_cap_ipc_lock`) therefore always save 0.
 
 - `__ke_set_cap_effective` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9aec (n64).
   Evidence grade: inferred.
@@ -542,6 +551,9 @@ One entry per routine, filed here from the reading batches by binary.
   Range: 0x9aec-0x9af4 (8 bytes).
   It occupies 8 bytes.
   The return at 0x9aec has v0 = ?.
+
+- `__ke_set_cap_effective` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9aec
+  **Established.** Restore half of the capability save and restore pair, with no body: `jr ra` at 0x9aec and `nop` at 0x9af0. The mask passed in a0 is dropped. `firegl_restore_cap`, `firegl_lock_memory` and `firegl_free_memlock` call it.
 
 - `__ke_copy_from_user` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9af4 (n64).
   Evidence grade: inferred.
@@ -568,8 +580,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x9bbc has v0 = 0x0.
 
 - `__ke_verify_area` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9b74
-  **Inferred.** One `jalr` at 0x9bac calls `printf`, and the return at 0x9bbc yields 0. The render labels the first argument with the symbol `__ke_LINUX_VERSION_CODE`, so what it points to, and whether it is a format string, is not confirmed. The render shows no comparison of the requested area against anything, so the routine returns 0 without checking the area on any path.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** User-pointer range check that was never filled in: it calls `printf` at 0x9bac with the text "__ke_verify_area NOT IMPLEMENTED !!!!" from `.rodata` +0x17c0 and returns 0 (0x9bb8), which reads as success. No code in `.text` loads its address.
 
 - `__ke_get_pci_device_info` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9bc4 (n64).
   Evidence grade: inferred.
@@ -690,12 +701,18 @@ One entry per routine, filed here from the reading batches by binary.
   It occupies 8 bytes.
   The return at 0x9de0 has v0 = ?.
 
+- `__ke_get_free_page` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9de0
+  **Established.** Linux page-allocator shim that is an empty body: `jr ra` at 0x9de0 and `nop` at 0x9de4. It allocates nothing and leaves v0 as it was; no relocation in the object points at it.
+
 - `__ke_get_free_pages` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9de8 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0x9de8-0x9df0 (8 bytes).
   It occupies 8 bytes.
   The return at 0x9de8 has v0 = ?.
+
+- `__ke_get_free_pages` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9de8
+  **Established.** Multi-page counterpart of the single-page allocator shim, equally empty: the two instructions at 0x9de8 and 0x9dec are a return and a `nop`. The order argument in a1 is never read, and no relocation in the object points at it.
 
 - `__ke_free_page` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9df0 (n64).
   Evidence grade: inferred.
@@ -704,12 +721,18 @@ One entry per routine, filed here from the reading batches by binary.
   It occupies 8 bytes.
   The return at 0x9df0 has v0 = ?.
 
+- `__ke_free_page` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9df0
+  **Established.** Page release shim with no body, only `jr ra` at 0x9df0 and `nop` at 0x9df4. With the allocators at 0x9de0 and 0x9de8 also empty, this pair never moves a page; no relocation in the object points at it.
+
 - `__ke_free_pages` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9df8 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0x9df8-0x9e00 (8 bytes).
   It occupies 8 bytes.
   The return at 0x9df8 has v0 = ?.
+
+- `__ke_free_pages` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9df8
+  **Established.** Multi-page release shim, an empty return at 0x9df8 and `nop` at 0x9dfc. `drm_free_pages` calls it after its own bookkeeping, so that call frees no memory.
 
 - `__ke_mem_map_reserve` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9e00 (n64).
   Evidence grade: inferred.
@@ -718,12 +741,18 @@ One entry per routine, filed here from the reading batches by binary.
   It occupies 8 bytes.
   The return at 0x9e00 has v0 = ?.
 
+- `__ke_mem_map_reserve` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9e00
+  **Established.** Page-reservation shim whose body is only a return at 0x9e00 and a `nop` at 0x9e04, so no page flag is set. `drm_alloc_pages` and `drm_alloc_pages_consistent` call it after allocating, and gain nothing from it.
+
 - `__ke_mem_map_unreserve` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9e08 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0x9e08-0x9e10 (8 bytes).
   It occupies 8 bytes.
   The return at 0x9e08 has v0 = ?.
+
+- `__ke_mem_map_unreserve` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9e08
+  **Established.** Mirror of the reserve shim at 0x9e00: the return at 0x9e08 and the `nop` at 0x9e0c are the whole routine, so no page flag is cleared. It is called from `drm_free_pages` and `drm_free_pages_consistent`.
 
 - `__ke_virt_reserve` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9e10 (n64).
   Evidence grade: inferred.
@@ -732,12 +761,18 @@ One entry per routine, filed here from the reading batches by binary.
   It occupies 8 bytes.
   The return at 0x9e10 has v0 = ?.
 
+- `__ke_virt_reserve` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9e10
+  **Established.** Virtual-address reservation shim with an empty body (`jr ra` at 0x9e10, `nop` at 0x9e14); it neither marks nor records anything and no relocation in the object points at it.
+
 - `__ke_virt_unreserve` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9e18 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0x9e18-0x9e20 (8 bytes).
   It occupies 8 bytes.
   The return at 0x9e18 has v0 = ?.
+
+- `__ke_virt_unreserve` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9e18
+  **Established.** Empty counterpart of the virtual reservation shim at 0x9e10, consisting of only a return at 0x9e18 and a `nop` at 0x9e1c. No relocation in the object points at it.
 
 - `__ke_ioremap` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9e20 (n64).
   Evidence grade: inferred.
@@ -747,9 +782,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x9e20 has v0 = a0.
 
 - `__ke_ioremap` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9e20
-  **Inferred.** An 8-byte routine that returns its first argument unchanged (v0 = a0) and makes no calls.
-  Role (from name): a mapping routine that passes the address through; the facts show only the unchanged return.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Identity mapping: the delay slot of the return at 0x9e20 is `move v0,a0` at 0x9e24, so the physical address argument comes back as the usable pointer with no mapping work. `drm_ioremap` is its caller, and `firegl_addmap` reaches it through that routine for the register map and the other mapped types.
 
 - `__ke_ioremap_nocache` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9e28 (n64).
   Evidence grade: inferred.
@@ -769,6 +802,9 @@ One entry per routine, filed here from the reading batches by binary.
   It occupies 8 bytes.
   The return at 0x9e30 has v0 = ?.
 
+- `__ke_iounmap` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9e30
+  **Established.** Undo of the identity mapping above, with nothing to undo: `jr ra` at 0x9e30 and `nop` at 0x9e34. `drm_ioremapfree` calls it.
+
 - `__ke_verify_read_access` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9e38 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
@@ -777,8 +813,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x9e38 has v0 = 0x0.
 
 - `__ke_verify_read_access` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9e38
-  **Established.** The routine is 8 bytes and its only effect is the return at 0x9e38 with v0 = 0. It reads no argument and makes no check. Role (from name): a read-access verifier; whether 0 means valid is not shown by the facts.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Read-access check that always succeeds: `move v0,zero` in the return delay slot at 0x9e3c. The address and length arguments are not examined. `firegl_verify_area` is its only caller.
 
 - `__ke_verify_write_access` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9e40 (n64).
   Evidence grade: inferred.
@@ -788,8 +823,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x9e40 has v0 = 0x0.
 
 - `__ke_verify_write_access` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9e40
-  **Inferred.** The body is 8 bytes, a single return at 0x9e40 with v0 = 0 and no loads, stores, calls or branches. Role (from name): a write-access check; because it always returns 0 and the facts do not say which value means permitted, whether it permits every access is not established.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Write-access check that always reports success: v0 is cleared at 0x9e44 in the delay slot of the return at 0x9e40 and the arguments are ignored. It is called by `firegl_verify_area` and `firegl_lock_memory`, whose failure branches are therefore never taken here.
 
 - `__ke_init_mm` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9e48 (n64).
   Evidence grade: inferred.
@@ -824,12 +858,18 @@ One entry per routine, filed here from the reading batches by binary.
   It occupies 8 bytes.
   The return at 0x9ef8 has v0 = ?.
 
+- `__ke_get_vm_phys_addr` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9ef8
+  **Established.** Virtual-to-physical translation shim with no body (`jr ra` at 0x9ef8, `nop` at 0x9efc), so it returns whatever v0 held. `firegl_lock_memory` calls it per page to fill the physical-address list it copies to the user.
+
 - `__ke_get_vm_phys_addr_list` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9f00 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0x9f00-0x9f08 (8 bytes).
   It occupies 8 bytes.
   The return at 0x9f00 has v0 = ?.
+
+- `__ke_get_vm_phys_addr_list` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9f00
+  **Established.** List-form translation shim, empty like the single-address one at 0x9ef8: the only instructions are the return at 0x9f00 and a `nop` at 0x9f04. No relocation in the object points at it.
 
 - `__ke_memset` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x9f08
   **Inferred.** A 52-byte wrapper. The `jalr` at 0x9f28 forwards the argument registers unchanged to `memset`, and the return at 0x9f34 returns its v0.
@@ -918,6 +958,9 @@ One entry per routine, filed here from the reading batches by binary.
   It occupies 48 bytes.
   The return at 0xa0b0 has v0 = 0x0.
 
+- `__ke_sprintf` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa088
+  **Established.** Formatting shim that formats nothing: it spills a0 to a7 to a 64-byte frame (0xa08c to 0xa0ac), sets v0 to 0 at 0xa0a4 and returns at 0xa0b0, so the destination buffer in a0 is untouched and the reported length is 0. `drm_setunique` calls it.
+
 - `__ke_set_bit` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa0b8 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
@@ -966,8 +1009,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0xa188 has v0 = -0x1.
 
 - `__ke_mtrr_add_wc` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa188
-  **Inferred.** Returns the constant -1 at 0xa188 and does no other work in its 8 bytes. Role (from name): adds a write-combining range; this body makes no such change, and -1 reads as a failure code.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Write-combining region request that always fails: the delay slot of the return at 0xa188 loads -1 into v0 (0xa18c). `firegl_addmap` is the only caller and treats a failed reservation as non-fatal, so no write-combining range is ever set up on this build.
 
 - `__ke_mtrr_del` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa190 (n64).
   Evidence grade: inferred.
@@ -977,21 +1019,10 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0xa190 has v0 = -0x1.
 
 - `__ke_mtrr_del` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa190
-  **Inferred.** Stub. It returns -1 and does nothing else. The routine is 8 bytes.
-  Role (from name): removes a memory-type range; this body removes none.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Write-combining region removal that only reports -1 (`li v0,-1` at 0xa194, in the delay slot of the return at 0xa190). `firegl_rmmap` and `firegl_takedown` call it; nothing was reserved to remove.
 
 - `__ke_pci_read_config_byte` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa198
-  **Inferred.** A 52-byte wrapper. The `jalr` at 0xa1b8 forwards the argument registers unchanged to `pci_read_config_byte`, and the return at 0xa1c4 returns its v0. The body performs no configuration-space access of its own.
-  Reviewed: 2026-11-12 (sonnet)
-
-- `__ke_pci_read_config_byte` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa198
-  **Inferred.** The `jalr` at 0xa1b8 calls `pci_read_config_byte` with a0 to a3 as received. The return at 0xa1c4 passes that callee's v0 upward. Role (from name): a PCI configuration-space byte read, performed by the callee.
-  Reviewed: 2026-11-12 (sonnet)
-
-- `__ke_pci_read_config_byte` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa198
-  **Inferred.** It calls pci_read_config_byte with a0 at entry as its first argument, a1 at entry as its second, a2 at entry as its third and a3 at entry as its fourth [call 1]. It returns the callee's v0 [@0xa1c4]. Role (from facts): a pass-through to pci_read_config_byte [call 1], with no branch and no other call in the facts.
-  Reviewed: 2026-11-12
+  **Established.** Thin forwarder to the PCI configuration read of the same shape: it builds the address of `pci_read_config_byte` (0xa19c to 0xa1ac), saves ra, calls it with `jalr` at 0xa1b8 without changing a0 to a3 and returns its result. It adds no check of its own.
 
 - `__ke_pci_read_config_word` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa1cc
   **Inferred.** A 52-byte wrapper. The `jalr` at 0xa1ec forwards the argument registers unchanged to `pci_read_config_word`, and the return at 0xa1f8 returns its v0. The body performs no configuration-space access of its own.
@@ -1010,16 +1041,7 @@ One entry per routine, filed here from the reading batches by binary.
   Reviewed: 2026-11-12 (sonnet)
 
 - `__ke_pci_write_config_byte` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa234
-  **Inferred.** A 52-byte wrapper. The `jalr` at 0xa254 forwards the argument registers unchanged to `pci_write_config_byte`, and the return at 0xa260 returns its v0. The body performs no configuration-space access of its own.
-  Reviewed: 2026-11-12 (sonnet)
-
-- `__ke_pci_write_config_byte` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa234
-  **Inferred.** Through a `jalr` at 0xa254 the entry registers a0 to a3 go to `pci_write_config_byte`. The return at 0xa260 gives back the v0 of that write routine. Role (from name): a PCI configuration-space byte write, performed by the callee.
-  Reviewed: 2026-11-12 (sonnet)
-
-- `__ke_pci_write_config_byte` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa234
-  **Inferred.** It calls pci_write_config_byte with a0 at entry as its first argument, a1 at entry as its second, a2 at entry as its third and a3 at entry as its fourth [call 1]. It returns the callee's v0 [@0xa260]. Role (from facts): a pass-through to pci_write_config_byte [call 1], with no branch and no other call in the facts.
-  Reviewed: 2026-11-12
+  **Established.** Forwarder for the PCI configuration byte write, laid out like the read forwarder at 0xa198: it loads the address of `pci_write_config_byte` (0xa238 to 0xa248), calls it with `jalr` at 0xa254 and returns that call's value, leaving the device, offset and value arguments untouched.
 
 - `__ke_pci_write_config_word` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa268
   **Inferred.** A 52-byte wrapper. The `jalr` at 0xa288 forwards the argument registers unchanged to `pci_write_config_word`, and the return at 0xa294 returns its v0. The body performs no configuration-space access of its own.
@@ -1049,6 +1071,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `beq` branch at 0xa2f8 targets 0xa340, is taken when at(=[sym(GfxBoardLimit)]) == 0, and falls through when at(=[sym(GfxBoardLimit)]) != 0.
   The `bne` branch at 0xa338 targets 0xa310, is taken when a3(?) < t1(=[sym(GfxBoardLimit)]) (unsigned), and falls through when a3(?) >= t1(=[sym(GfxBoardLimit)]) (unsigned).
   The return at 0xa340 has v0 = ?.
+
+- `__ke_outb` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa2d0
+  **Established.** Byte write to the legacy I/O window of every attached board. It loops from 0 to the word at `GfxBoardLimit` (0xa2e8, 0xa32c) over the pointer table `fglrx_boards` (0xa30c) and, for each board record, stores the byte in a0 with `sb` at 0xa328 to the address window pointer at record +584 plus the port offset in a1 (0xa320 to 0xa324). With a limit of zero it stores nothing.
 
 - `__ke_outw` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa348 (n64).
   Evidence grade: inferred.
@@ -1080,6 +1105,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `bne` branch at 0xa428 targets 0xa400, is taken when a3(?) < t1(=[sym(GfxBoardLimit)]) (unsigned), and falls through when a3(?) >= t1(=[sym(GfxBoardLimit)]) (unsigned).
   The return at 0xa430 has v0 = ?.
 
+- `__ke_outl` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa3c0
+  **Established.** 32-bit write to the legacy I/O window of each attached board: the same loop over `GfxBoardLimit` boards of `fglrx_boards` as the byte write at 0xa2d0, but the store at 0xa418 is `sw` of a0 at record +584 plus the port offset in a1 (0xa410 to 0xa414). The return carries no value.
+
 - `__ke_inb` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa438 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
@@ -1092,11 +1120,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0xa460 has v0 = [(a0 + [[[sym(fglrx_boards)]:8]:8+584]:8)]:1.
 
 - `__ke_inb` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa438
-  **Inferred.** Loads the pointer stored at `fglrx_boards`, loads the pointer at offset 0 of that record,
-  loads the 8-byte word at offset 0x248 (584) of the next record, and returns the byte at that word plus a0
-  (load at 0xa458, `lbu` at 0xa464, return at 0xa460). Role (from name): an 8-bit port read; the facts do not
-  show that the address is an I/O address.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Byte read from the legacy I/O window of the first board only: it loads `fglrx_boards` (0xa450), takes the first entry (0xa454), adds the port offset in a0 to the window pointer at record +584 (0xa458 to 0xa45c) and returns the `lbu` of that address at 0xa464. It does not look at `GfxBoardLimit`.
 
 - `__ke_inw` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa468 (n64).
   Evidence grade: inferred.
@@ -1137,12 +1161,18 @@ One entry per routine, filed here from the reading batches by binary.
   It occupies 8 bytes.
   The return at 0xa4c8 has v0 = ?.
 
+- `__ke_enable_irq` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa4c8
+  **Established.** Interrupt-enable shim with no body, just `jr ra` at 0xa4c8 and `nop` at 0xa4cc. Its only caller is `firegl_wait_for_vertical_retrace`, so the vertical-retrace wait does not re-arm any interrupt through this call.
+
 - `__ke_disable_irq` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa4d0 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0xa4d0-0xa4d8 (8 bytes).
   It occupies 8 bytes.
   The return at 0xa4d0 has v0 = ?.
+
+- `__ke_disable_irq` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa4d0
+  **Established.** Interrupt-mask shim whose body is a return at 0xa4d0 and a `nop` at 0xa4d4, so it masks nothing. `firegl_wait_for_vertical_retrace`, `_r6x_vs_stereo_swap` and `_r6x_vs_validate` call it with an IRQ number.
 
 - `__ke_request_irq` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa4d8 (n64).
   Evidence grade: inferred.
@@ -1162,6 +1192,9 @@ One entry per routine, filed here from the reading batches by binary.
   It occupies 8 bytes.
   The return at 0xa4e0 has v0 = ?.
 
+- `__ke_free_irq` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa4e0
+  **Established.** IRQ release shim, empty (`jr ra` at 0xa4e0, `nop` at 0xa4e4). `_r6x_close_irq` calls it, but no handler was registered through a Linux-style request so nothing is released.
+
 - `vm_nopage` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa4e8 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
@@ -1180,12 +1213,18 @@ One entry per routine, filed here from the reading batches by binary.
   It occupies 8 bytes.
   The return at 0xa4f0 has v0 = ?.
 
+- `vm_shm_nopage` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa4f0
+  **Established.** Page-fault handler for shared-memory maps with no body: a return at 0xa4f0 and a `nop` at 0xa4f4. No relocation in the object points at it, so no fault reaches it.
+
 - `vm_dma_nopage` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa4f8 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0xa4f8-0xa500 (8 bytes).
   It occupies 8 bytes.
   The return at 0xa4f8 has v0 = ?.
+
+- `vm_dma_nopage` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa4f8
+  **Established.** Page-fault handler for DMA-buffer maps, also empty (return at 0xa4f8, `nop` at 0xa4fc); like the shared-memory one at 0xa4f0 no relocation in the object points at it.
 
 - `__ke_vma_file_priv` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa500 (n64).
   Evidence grade: inferred.
@@ -1221,9 +1260,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0xa514 has v0 = [a0+8]:8.
 
 - `__ke_vm_end` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa514
-  **Established.** Returns the 8-byte word at offset 8 of its argument (load at 0xa518, return at 0xa514).
-  Role (from name): that word is the end address of a VM area record; the facts do not name the field.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Returns the end address of a memory-map descriptor: the delay slot of the return at 0xa514 loads the doubleword at a0 +8 into v0 (0xa518). `drm_vm_open`, `drm_vm_close` and `firegl_mmap` call it.
 
 - `__ke_vm_offset` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa51c (n64).
   Evidence grade: inferred.
@@ -1252,6 +1289,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `sb` at 0xa5c4 stores 1 byte to a1 (arg1 at entry) +0x5.
   The return at 0xa5c0 has v0 = a1.
 
+- `__ke_vm_flags_str` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa528
+  **Established.** Writes a seven-byte flag string to the buffer in a1 from the doubleword at a0 +48: bit 0 chooses `r` or `-` at byte 0, bit 1 `w` or `-` at byte 1, bit 2 `x` or `-` at byte 2, bit 2 again `s` or `p` at byte 3, bit 0 `l` or `-` at byte 4 and `i` or `-` at byte 5, and byte 6 is the terminating zero (0xa5b4). It returns a1, and no relocation in the object points at it.
+
 - `__ke_vm_page_prot_str` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa5c8 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
@@ -1270,6 +1310,9 @@ One entry per routine, filed here from the reading batches by binary.
   Range: 0xa5d4-0xa5dc (8 bytes).
   It occupies 8 bytes.
   The return at 0xa5d4 has v0 = ?.
+
+- `__ke_vm_phys_addr_str` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa5d4
+  **Established.** Debug string shim for a mapping's physical address, with an empty body (return at 0xa5d4, `nop` at 0xa5d8). It writes nothing to the buffer and no relocation in the object points at it.
 
 - `memcpy` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa720 (n64).
   Evidence grade: inferred.
@@ -1291,10 +1334,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0xa768 has v0 = a0+24.
 
 - `get_queue_mutex` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa768
-  **Established.** An 8-byte routine (0xa768 to 0xa770) that returns the address a0+24, which is offset
-  0x18 of its argument, and makes no memory access. Role (from name): the object at that offset is a mutex;
-  the facts do not show it.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Accessor returning the address of the mutex embedded in a wait-queue record: a0 plus 24 in the delay slot at 0xa76c. `init_waitqueue_head` initialises the same offset, and `__ke_get_queue_mutex` is the wrapper that calls this.
 
 - `wake_up_interruptible` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa770 (n64).
   Evidence grade: inferred.
@@ -1325,11 +1365,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0xa890 has v0 = ret(init_mutex).
 
 - `init_waitqueue_head` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa804
-  **Inferred.** Calls sv_alloc with the 8-byte field at a0+8 as its third argument (jalr at 0xa834),
-  stores an 8-byte value at offset 0 (sd at 0xa870) and a 4-byte value at offset 16 (sw at 0xa87c) of a
-  register base the facts do not name, and calls init_mutex with a0+24 as its first argument (jalr at 0xa880).
-  Role (from name): initialises a wait queue head at arg0.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Builds a wait-queue record: it calls `sv_alloc` at 0xa834 with 0, 0 and the doubleword at a0 +8 and stores the result at record +0 (0xa870), clears the word at +16 (0xa87c), and calls `init_mutex` at 0xa880 on record +24 with name "wq mutex" from `.rodata` +0x1930 and a last argument of -1. It is called by `__ke_alloc_wait_queue_head_struct`.
 
 - `sleep_on_queue` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa964 (n64).
   Evidence grade: inferred.
@@ -1345,8 +1381,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0xaa10 has v0 = ret(sv_timedwait_sig_notify).
 
 - `sleep_on_queue` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xa964
-  **Inferred.** Role (from name): blocks the caller on a wait object. It calls `hold_nonfatalsig` at 0xa98c, then `sv_timedwait_sig_notify` at 0xa9d8 with the pointer loaded from `*a0` as its first argument, 0x1e as its second and `a0+24` as its third. It calls `release_nonfatalsig` at 0xa9fc and returns the wait's result at 0xaa10. A word at +0x10 of a base the render does not name is loaded at 0xa9a8 and a word is stored at +0x10 at 0xa9b8. The meaning of the arguments and of that word is not recovered.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Sleeps on a wait-queue record with signals allowed: it brackets the wait with `hold_nonfatalsig` at 0xa98c and `release_nonfatalsig` at 0xa9fc, adds 1 to the count word at +16 (0xa9b8), and calls `sv_timedwait_sig_notify` at 0xa9d8 on the synchronisation variable at +0 with the mutex at +24 and the value 30 as its second argument. It returns the wait's own result; `__ke_sleep_on_queue` calls it.
 
 - `fglrx_add_thread_exit_callback` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xabd4 (n64).
   Evidence grade: inferred.
@@ -1387,10 +1422,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0xac8c has v0 = ([a0+40]:8 + [a0+48]:8).
 
 - `fglrx_avl_mem_end` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xac84
-  **Inferred.** Returns the sum of the 8-byte words at offsets 0x28 and 0x30 of its argument (loads at
-  0xac84 and 0xac88, return at 0xac8c). Role (from name): an end address formed from a start and a length;
-  the render does not name the two fields.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Computes the end of an available-memory range: it loads the doublewords at a0 +48 and a0 +40 and returns their sum in the delay slot of the return (0xac84 to 0xac90). It makes no calls and no relocation in the object points at it.
 
 - `fglrx_avl_map_start` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xac94 (n64).
   Evidence grade: inferred.
@@ -1465,6 +1497,9 @@ One entry per routine, filed here from the reading batches by binary.
   It occupies 44 bytes.
   The return at 0xbb10 has v0 = ?.
 
+- `__KE_DEBUG3` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xbaec
+  **Established.** Third debug log macro whose output is compiled out: it spills a0 to a7 at sp+0 to sp+56 (0xbaf0 to 0xbb0c) and returns at 0xbb10. `drm_vm_open` and `drm_vm_close` call this address and so get no log line.
+
 - `drm_mem_dec_locked_pages` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xd034 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
@@ -1495,6 +1530,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `bne` branch at 0xdad8 targets 0xdaec, is taken when a1 != 0, and falls through when a1 == 0.
   The `beq` branch at 0xdb44 targets 0xdae0 and is always taken.
   The return at 0xdae4 has v0 = one of ?, ret(drm_free).
+
+- `drm_strfree` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0xdac4
+  **Established.** Frees a string allocated through the driver's allocator: a null pointer in a1 returns at once (0xdad8); otherwise it calls `__ke_strlen` at 0xdb04 and then `drm_free` at 0xdb3c with the device in a0, the string in a1, a size of length plus 1 (0xdb20) and the type taken from the caller's a2.
 
 - `firegl_modify_ldt` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x10278
   **Inferred.** An 8-byte stub. The only rendered fact is that the return at 0x10278 leaves v0 at 0x0, with no calls, memory accesses or branches. The name suggests an LDT edit, which this build does not perform, so the stub may stand in for an unsupported call.
@@ -1567,12 +1605,18 @@ One entry per routine, filed here from the reading batches by binary.
   The `beq` branch at 0x143a8 targets 0x14364 and is always taken.
   The return at 0x14364 has v0 = one of 0x1, ret(cmn_err).
 
+- `firegl_unbind` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x14330
+  **Established.** Unbind hook used when the image-sync driver is not in the kernel; the same bytes carry the name `is1_unbind`. It adds 1 to the word at `.data` +0x9a4 (0x14348 to 0x14360) and only when the new value is exactly 1 calls `cmn_err` at 0x143a0 with level 4 and "fops: is1_unbind not present in kernel?". `firegl_release_helper` calls it.
+
 - `firegl_hash_mutex` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x15054 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0x15054-0x1505c (8 bytes).
   It occupies 8 bytes.
   The return at 0x15054 has v0 = ?.
+
+- `firegl_hash_mutex` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x15054
+  **Established.** Hash for the mutex identifier table: it masks a0 with 0xf in the delay slot of the return (0x15058), giving a slot from 0 to 15. `_firegl_add_mutex`, `_firegl_find_file` and `firegl_remove_mutex` call it.
 
 - `_firegl_find_file` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x1505c (n64).
   Evidence grade: inferred.
@@ -1589,6 +1633,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `beq` branch at 0x150d8 targets 0x150cc and is always taken.
   The return at 0x150d0 has v0 = one of 0x0, ?.
 
+- `_firegl_find_file` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x1505c
+  **Established.** Looks up an identifier in the 16-slot chain table at +144 of the record in a0. The slot is the identifier in a1 hashed by the routine at 0x15054 (call at 0x1508c); the chain head is the doubleword at a0 +144 plus 16 times the slot (0x15094 to 0x1509c). It walks nodes by the next pointer at +8 (0x150b8) until the word at +0 equals the identifier (0x150b0), and returns the node or 0. `firegl_new_mutex` calls it.
+
 - `firegl_get_lockid` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x17484 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
@@ -1603,12 +1650,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x17530 has v0 = one of -0xe, 0x0.
 
 - `firegl_get_lockid` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x17484
-  **Inferred.** Role (from name): return a lock identifier to user space. It calls `__ke_get_file_priv` at 0x174ac with arg1 and loads a word at offset 28 (0x1c) of the returned pointer at 0x174e4. A call to `.text+90428` at 0x174f0 takes a `.rodata` string and that word as arguments. `__ke_copy_to_user` at 0x17518 copies 4 bytes from sp-32 to arg3. A zero copy result takes the branch at 0x17520 to 0x17538, and the routine returns 0 or -14 (EFAULT) at 0x17530. The render does not show what is stored at sp-32.
-  Reviewed: 2026-11-12 (sonnet)
-
-- `firegl_get_lockid` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x17484
-  **Inferred.** Looks up the per-open-file private record with `__ke_get_file_priv` at 0x174ac, with a0 set from the entry's a1. It loads the 4-byte field at offset 0x1c of that record at 0x174e4, calls the routine at `.text+90428` at 0x174f0 with a fixed string at `.rodata+15136` and that value, and copies the value to a stack buffer at sp-32 for `__ke_copy_to_user` at 0x17518 (destination from the entry's a3, length 4). The name suggests the field is the lock id reported to user space; the role of the `.text+90428` routine is not shown. The return at 0x17530 gives 0 or -0xe, chosen by the copy's result at the branch at 0x17520; which arm yields which value is unknown.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Returns the lock identifier of a file to user space. It calls `__ke_get_file_priv` at 0x174ac on the file in a1, logs "lockid = %d" with the word at +28 of the private record (call at 0x174f0), then `__ke_copy_to_user` at 0x17518 writes that 4-byte word to the pointer in a3. A failed copy returns -14; otherwise 0. Its pointer sits at `.data` +0x8b8.
 
 - `firegl_cp_resume` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x17cc8 (n64).
   Evidence grade: inferred.
@@ -1622,17 +1664,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x17d50 has v0 = 0x0.
 
 - `firegl_cp_resume` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x17cc8
-  **Inferred.** Calls `__ke_get_file_priv` at 0x17cf0 with its second argument in a0, then calls one unnamed
-  routine (.text+95700) three times at 0x17d28, 0x17d30 and 0x17d38, each time with .rodata+16448 in a0. It
-  returns 0. Role (from name): a resume hook; the facts show only this call sequence and do not confirm it.
-  Reviewed: 2026-11-12 (sonnet)
-
-- `firegl_cp_resume` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x17cc8
-  **Inferred.** Calls __ke_get_file_priv (jalr at 0x17cf0) with its second argument in both a0 and a1 and
-  its third and fourth arguments in a2 and a3. It then calls one helper at .text+95700 three times (at
-  0x17d28, 0x17d30 and 0x17d38) with the same .rodata string as its first argument, and returns 0 at 0x17d50.
-  Role (from name): resume entry point of a command-processor driver; the facts do not show what it resumes.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Command-processor resume request that only logs. It calls `__ke_get_file_priv` at 0x17cf0, then the argument-spilling log stub at 0x175d4 three times (0x17d28, 0x17d30, 0x17d38) with the text "\n", "Starting firegl_cp_resume()" and "done!" from `.rodata` +0x4068, +0x4288 and +0x4280, and returns 0. It writes no register and starts no engine. Its pointer sits at `.data` +0x988.
 
 - `drm_hash_magic` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x17e18 (n64).
   Evidence grade: inferred.
@@ -1641,12 +1673,18 @@ One entry per routine, filed here from the reading batches by binary.
   It occupies 8 bytes.
   The return at 0x17e18 has v0 = ?.
 
+- `drm_hash_magic` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x17e18
+  **Established.** Hash for the DRM authentication magic table: the delay slot of the return at 0x17e18 masks a0 with 0xf (0x17e1c), choosing one of 16 slots. Called by `drm_add_magic`, `drm_find_file` and `drm_remove_magic`.
+
 - `__KE_DEBUG2` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x1883c (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
   Range: 0x1883c-0x18868 (44 bytes).
   It occupies 44 bytes.
   The return at 0x18860 has v0 = ?.
+
+- `__KE_DEBUG2` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x1883c
+  **Established.** Second debug macro of the object with its output removed: it spills a0 to a7 at 0x18840 to 0x1885c and pops its 64-byte frame at 0x18864. Only `_r6x_switch_context` calls this address.
 
 - `add_buffer_queue` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x18da0 (n64).
   Evidence grade: inferred.
@@ -1666,8 +1704,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x18e58 has v0 = ret(__ke_up).
 
 - `add_buffer_queue` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x18da0
-  **Inferred.** Role (from name): adds a buffer to a queue. It calls an unnamed routine at `.text`+101448 at 0x18de8, then `__ke_down` at 0x18e08 and `__ke_up` at 0x18e44, both with a0 loaded from `[a0+96]`. The word at `a0+0xd0` is copied to `a1+0x68` at 0x18e10 to 0x18e14, and a word is stored at `a0+0xd0` at 0x18e28, with the stored value not recovered. The word at +0x490 of the object at `[a0+72]` is loaded at 0x18e34 and a word is stored there at 0x18e40. The words at `a0+0x60` and `a0+0x48` are loaded at 0x18e0c, 0x18e1c and 0x18e48. The routine returns `__ke_up`'s result at 0x18e58.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Pushes a new buffer queue on the front of the list at +208 of the record in a0. It logs "bufs 0x%08lx" with the queue address (call at 0x18de8), takes the semaphore pointed to by +96 with `__ke_down` (0x18e08), sets queue +104 to the old head (0x18e10 to 0x18e14) and the head to the queue (0x18e28), adds 1 to the doubleword at +1168 of the structure at record +72 (0x18e34 to 0x18e40) and releases with `__ke_up` (0x18e44). `firegl_alloc_bufs` calls it.
 
 - `firegl_aperture_size` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x1b034 (n64).
   Evidence grade: inferred.
@@ -1682,8 +1719,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x1b0d8 has v0 = [a0+24].
 
 - `firegl_aperture_size` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x1b034
-  **Inferred.** The object at a0 is reached through its first word, and that object's lock is taken with `__ke_down` at 0x1b09c and released with `__ke_up` at 0x1b0c0. A helper at .text+108452 is called at 0x1b07c before the lock, with a0 pointing into .rodata, and the render does not name it. The 4-byte field at +0x18 of a0 is read at 0x1b0bc and returned at 0x1b0d8. The render does not show what that field holds, so the value's meaning is unknown.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Reports the size of a unified-memory pool. It logs "request max. free blocksize from pool=0x%08lx" with the pool pointer (call at 0x1b07c), takes the semaphore at pool +0 with `__ke_down` (0x1b0a0), reads the word at pool +24 (0x1b0bc), releases with `__ke_up` (0x1b0c4) and returns the word. `firegl_init_aperture` stores the pool's page count at that offset when the pool is created.
 
 - `firegl_aperture_slot_size_in_elements` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x1b8f0 (n64).
   Evidence grade: inferred.
@@ -1700,6 +1736,10 @@ One entry per routine, filed here from the reading batches by binary.
 - `firegl_aperture_slot_size_in_elements` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x1b8f0
   **Inferred.** A leaf accessor: it loads the 4-byte word at offset 0x20 of the structure in a0 and returns it in v0 at 0x1b8f0. The structure's type is unknown.
   Reviewed: 2026-11-12 (sonnet)
+
+- `firegl_addmap` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x1bc50
+  **Established.** Registers one memory map on the device record in a0 from the request in a1, allocating its backing store by map type. An offset or size that is not a multiple of 0x4000 (the `andi` tests at 0x1bc6c and 0x1bccc) prints "map offset ... not page aligned" or "map size ... not page aligned" and returns -22. Under the semaphore at record +0 (`__ke_down_struct_sem` at 0x1bd50) a flag bit 0x20 in the word at request +20 marks the shared-area map; when a SAREA already sits at record +104 the request's offset is replaced by it. The offset is then recomputed from the type word at +16 by the routine at 0x1bb6c, and the list at +848 is searched for it: an identical offset, size, type and flags returns the old map's address at +24 with 0 (0x1bf3c), a mismatch returns -22.
+  A new map is dispatched through the 14-entry jump table at `.rodata` +0x59f0 on the type word. Type 1 refuses a second register map when record +1000 is non-zero (0x1c054). Types 0 and 1 call `__ke_config_mtrr` and then `__ke_mtrr_add_wc` at 0x1c0e0 (a negative result is logged and ignored, a positive one is stored at map +32). Type 0 takes its address from the doubleword at +632 of the structure that record +11656 points to (0x1c10c). Type 1 maps with `drm_ioremap` (call at 0x1bf88), stores the address at record +1000 and stores the word at register offset 0xf18 masked with 0xffff0000 at record +1008 (0x1c2bc to 0x1c2cc). Type 2 calls `drm_vmalloc` (0x1c1e0); with the 0x20 flag it also stores the address at record +104, address +64 at +400 and address +2200 at +992. Types 10 to 13 only log; any other type logs "type = UNKNOWN" and returns -22. The map is linked after the tail at record +928 (0x1bfa8 to 0x1bfc8), the semaphore is released and the result is 0, -12 or -22.
 
 - `firegl_noop` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x1eec0 (n64).
   Evidence grade: inferred.
@@ -1729,6 +1769,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `jalr` at 0x1f044 calls _r6x_service_irq_vsync_handler with a0=a1 at entry (arg1), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3).
   The return at 0x1f050 has v0 = ret(_r6x_service_irq_vsync_handler).
 
+- `firegl_irq_vsync` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x1f024
+  **Established.** Vertical-sync interrupt entry that forwards to the R6xx-named service handler: it moves the board pointer from a1 into a0 and calls `_r6x_service_irq_vsync_handler` with `jalr` at 0x1f044, returning that call's result. It adds no work of its own.
+
 - `firegl_irq_framelock` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x1f058 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
@@ -1736,6 +1779,9 @@ One entry per routine, filed here from the reading batches by binary.
   It occupies 52 bytes.
   The `jalr` at 0x1f078 calls _r6x_service_irq_framelock_handler with a0=a1 at entry (arg1), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3).
   The return at 0x1f084 has v0 = ret(_r6x_service_irq_framelock_handler).
+
+- `firegl_irq_framelock` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x1f058
+  **Established.** Frame-lock interrupt entry laid out like the vertical-sync one at 0x1f024: the board pointer a1 becomes a0 and `_r6x_service_irq_framelock_handler` is called at 0x1f078; its result is returned. No state is kept here.
 
 - `add_memlock` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x1f940 (n64).
   Evidence grade: inferred.
@@ -1752,8 +1798,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x1f9e8 has v0 = ret(__ke_up).
 
 - `add_memlock` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x1f940
-  **Inferred.** Role (from name): adds a record to a list. The `jalr` at 0x1f988 calls an unnamed routine at `.text`+128900 with a `.rodata` pointer as its first argument. It then calls `__ke_down` at 0x1f9a8 and `__ke_up` at 0x1f9d4, both with a0 loaded from `[a0+96]`. The word at `a0+0xf0` is copied to `a1+0x18` at 0x1f9bc to 0x1f9c8, and a word is stored at `a0+0xf0` at 0x1f9d0, with the stored value not recovered. It has the same shape as `add_buffer_queue` around its lock calls. The routine returns `__ke_up`'s result at 0x1f9e8.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Pushes a locked-memory record on the list at +240 of the record in a0. It logs "memlock 0x%08lx" with the record address (call at 0x1f988), takes the semaphore at +96 with `__ke_down` (0x1f9a8), sets record +24 to the old list head at +240 (0x1f9bc to 0x1f9c8), makes the new record the head (0x1f9d0) and releases with `__ke_up` (0x1f9d4). `firegl_lock_memory` calls it.
 
 - `firegl_flush_cache` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x202d4 (n64).
   Evidence grade: inferred.
@@ -1825,6 +1870,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `beq` branch at 0x20a90 targets 0x20abc, is taken when at(=[a0+11632]:8) == 0, and falls through when at(=[a0+11632]:8) != 0.
   The return at 0x20abc has v0 = one of ?, ret(__ke_disable_irq).
 
+- `_r6x_vs_stereo_swap` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x20a84
+  **Established.** Stereo swap step of the vertical-sync service. When the doubleword at +11632 of the device record is non-zero (0x20a88 to 0x20a90) it calls `__ke_disable_irq` at 0x20ab0 with the IRQ number in the word at +11628; otherwise it does nothing. `firegl_vs_stereo_swap` calls it.
+
 - `_r6x_vs_validate` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x20ac4 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/fglrx.o`.
@@ -1835,3 +1883,6 @@ One entry per routine, filed here from the reading batches by binary.
   The `jalr` at 0x20af0 calls __ke_disable_irq with a0=[a0+11628], a1=a1 at entry (arg1), a2=a0 at entry (arg0), a3=a3 at entry (arg3).
   The `beq` branch at 0x20ad0 targets 0x20afc, is taken when at(=[a0+11632]:8) == 0, and falls through when at(=[a0+11632]:8) != 0.
   The return at 0x20b00 has v0 = 0x0.
+
+- `_r6x_vs_validate` in `usr/cpu/sysgen/IP35boot/fglrx.o` at 0x20ac4
+  **Established.** Vertical-sync validation step with the same guard as the stereo swap at 0x20a84: a non-zero doubleword at device +11632 leads to `__ke_disable_irq` at 0x20af0 on the IRQ number at +11628. Unlike the swap, it always returns 0 (0x20afc). `firegl_vs_validate` calls it.

@@ -99318,6 +99318,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `jalr` at 0x769e04 calls __glATISubmitBM [0xac1b80] with a0=a0 at entry (arg0), a1=a0+262144, a2=0x30000, a3=0x5c8, a4=0x3, a5=0x1393.
   The return at 0x769e1c has v0 = 0x1.
 
+- `__R300ColorBlt3DSync` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x769d40
+  **Inferred.** Runs a colour blit with the depth pipeline forced off and the destination cache drained afterwards. After reserving command space it writes header 4260 (`GA_OFFSET`, byte offset 0x4290) with 0, 5056 (`ZB_CNTL`, 0x4f00) with 0, 5057 (`ZB_ZSTENCILCNTL`, 0x4f04) with 7 and 4995 (`RB3D_COLOR_CHANNEL_MASK`, 0x4e0c) with 15 (0x769d8c to 0x769dcc), calls `__R300HWBltFunc` through `bgezall` at 0x769dc8, then writes header 5011 (`RB3D_DSTCACHE_CTLSTAT`) with value 3 and header 1480 with 0x30000 (0x769ddc to 0x769df8) and returns 1.
+
 - `__R300ColorBlt2D` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x769e40 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/dri/fglrx_dri.so`.
@@ -107066,6 +107069,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `beq` branch at 0x783c60 targets 0x783ba0 and is always taken.
   The return at 0x783c14 has v0 = a1+48.
 
+- `__R300WriteViewportTransform` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x783b40
+  **Established.** Emits the viewport transform as two packets. The first, header 0x00050766 (six registers from byte offset 0x1d98, `VAP_VPORT_XSCALE` to `VAP_VPORT_ZOFFSET`), takes its values from context words +0x47294, +0x47290, +0x4729c, +0x47298, +0x472a4 and +0x472a0 (0x783bb0 to 0x783bd4). The second, header 0x00030888 (four registers from 0x2220, `VAP_GB_VERT_CLIP_ADJ` to `VAP_GB_HORZ_DISC_ADJ`), takes words +0x472b0 to +0x472bc (0x783bec to 0x783c10). It returns a1 plus 48. A shadow entry with tag 14 is recorded first, and a full table grows through the callback at context +8 (0x783c40).
+
 - `__R300WriteScissorRegisters` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x783c80 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/dri/fglrx_dri.so`.
@@ -107101,6 +107107,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `beq` branch at 0x783dc4 targets 0x783ccc and is always taken.
   The return at 0x783d34 has v0 = a1+16.
   The instructions from 0x783d3c to 0x783d3c are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300WriteScissorRegisters` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x783c80
+  **Inferred.** Emits the two scissor corner registers. After recording a shadow entry with tag 16 and the cursor a1, it writes header 4344 (0x10f8, `SC_SCISSOR0` at byte offset 0x43e0) with context word +0x471a0 and header 4345 (0x10f9, `SC_SCISSOR1` at 0x43e4) with context word +0x47154 (0x783d08 to 0x783d2c), returning a1 plus 16. A flag byte at context +0x4e2f8 and a second flag byte reached through the pointer at context +0x38e20 select a side path at 0x783d80, which appends a 12-byte tag-6 record to a separate list before the common emission.
 
 - `__R300WriteColorOffsetRegisters` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x783e00 (n32).
   Evidence grade: inferred.
@@ -107166,6 +107175,9 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x784168 has v0 = a1+8.
   The instructions from 0x7840fc to 0x7840fc are not reached by any path from the entry, and their branches are not listed.
 
+- `__R300WriteDepthOffsetRegisters` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x784080
+  **Established.** Emits the depth buffer base address into the command stream. a1 is the stream cursor and a2 the value: the routine writes the type-0 packet header 5064 (0x13c8, register byte offset 0x4f20, `ZB_DEPTHOFFSET`) at a1 and a2 at a1 +4 (0x7840e4 to 0x7840ec) and returns a1 plus 8. Beforehand it appends a 16-byte shadow entry at the cursor kept in context +0x47ec8, holding the tag byte a3 & 0xff and the address a1 +4 (0x784094 to 0x7840a0); a full shadow table is doubled through the allocation callback at context +8 (`jalr` at 0x784128).
+
 - `__R300WriteDepthPitchRegisters` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x784180 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/dri/fglrx_dri.so`.
@@ -107187,6 +107199,9 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x7841f4 has v0 = a1+8.
   The return at 0x784268 has v0 = a1+8.
   The instructions from 0x7841fc to 0x7841fc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300WriteDepthPitchRegisters` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x784180
+  **Established.** Emits the depth buffer pitch into the command stream: header 5065 (0x13c9, register byte offset 0x4f24, `ZB_DEPTHPITCH`) at a1 and the value a2 at a1 +4 (0x7841e4 to 0x7841ec), returning a1 plus 8. The shadow entry it records for the packet carries the fixed tag 8 (0x784190) and the address a1 +4, unlike the depth-offset writer at 0x784080 whose tag comes from a3. The table at context +0x47ec8 doubles through the callback at context +8 when full (0x784228).
 
 - `__R300WriteDrawRectRegisters` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x784280 (n32).
   Evidence grade: inferred.
@@ -107233,6 +107248,9 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x784468 has v0 = a1+8.
   The instructions from 0x7843fc to 0x7843fc are not reached by any path from the entry, and their branches are not listed.
 
+- `__R300WriteAccumOffsetRegisters` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x784380
+  **Established.** Writes the accumulation buffer base address through a colour-buffer register. It stores header 5002 (0x138a, register byte offset 0x4e28, `RB3D_COLOROFFSET0`) at a1 and the value in a2 after it (0x7843e4 to 0x7843ec), and returns a1 plus 8. A shadow entry for the packet is queued first at context +0x47ec8, and an exhausted table is grown by the allocation callback at context +8 (0x784428).
+
 - `__R300WriteAccumPitchRegisters` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x784480 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/dri/fglrx_dri.so`.
@@ -107254,6 +107272,9 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x7844f4 has v0 = a1+8.
   The return at 0x784568 has v0 = a1+8.
   The instructions from 0x7844fc to 0x7844fc are not reached by any path from the entry, and their branches are not listed.
+
+- `__R300WriteAccumPitchRegisters` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x784480
+  **Established.** Writes the accumulation buffer pitch through a colour-buffer register: header 5006 (0x138e, register byte offset 0x4e38, `RB3D_COLORPITCH0`) then a2 at a1 (0x7844e4 to 0x7844ec); the return value is a1 plus 8. It queues the usual shadow entry at context +0x47ec8 first and calls the table-growth callback at context +8 at 0x784528 when the table is full.
 
 - `__R300WriteMaskCorrectRectAbort` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x784580 (n32).
   Evidence grade: inferred.
@@ -107308,6 +107329,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `beq` branch at 0x7847a0 targets 0x7846e8 and is always taken.
   The return at 0x78473c has v0 = a1+8.
   The return at 0x784790 has v0 = a1+8.
+
+- `__R300WriteCmaskEnableRegistersAbort` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x784680
+  **Inferred.** Writes the colour-buffer control register for an aborted compression-mask enable: header 4992 (0x1380, register byte offset 0x4e00, `RB3D_CCTL`) and the value a2 go to the stream cursor in a1 (0x7846e8 to 0x7846ec). A shadow entry is queued first at context +0x47ec8 and the table-growth callback at context +8 runs at 0x784760 when it is full.
 
 - `__R300DoAMultiPumpPass` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x7847c0 (n32).
   Evidence grade: inferred.
@@ -184083,6 +184107,9 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x8bd570 has v0 = 0x1.
   The return at 0x8bd584 has v0 = [a0+288816].
 
+- `__R300FlushCaches` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x8bd4c0
+  **Established.** Queues a flush of both render caches on the context's command stream. It returns without writing when the word at context +0x46830 is non-zero (0x8bd4e8); otherwise it waits until at least four words are free, calling the routine behind GOT slot -8720 in a loop (0x8bd514, 0x8bd530), and writes header 5011 (0x1393, `RB3D_DSTCACHE_CTLSTAT`) with value 2 and header 5062 (0x13c6, `ZB_ZCACHE_CTLSTAT`) with value 1 (0x8bd544 to 0x8bd55c), advancing the cursor word at context +0x46d58 by 16 bytes (the end pointer is at +0x46d5c).
+
 - `__R300InvalidateCaches` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x8bd5c0 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/dri/fglrx_dri.so`.
@@ -184197,6 +184224,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `bne` branch at 0x8bddd4 targets 0x8bddb8, is taken when t8(?) < 0x14 (unsigned), and falls through when t8(?) >= 0x14 (unsigned).
   The `beq` branch at 0x8bddec targets 0x8bde04, is taken when t9(?) == 0, and falls through when t9(?) != 0.
   The return at 0x8bde54 has v0 = ret(__R300WriteViewportTransform).
+
+- `__R300CompleteRenderingBitmap` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x8bdd80
+  **Established.** Finishes an override-rendering bitmap blit by restoring saved state words to the stream. It waits for at least 20 free command words (0x8bdda0, loop at 0x8bddb8), writes header 4848 (0x12f0, `FG_FOG_BLEND`) with context word +0x4713c only when bit 9 of the context word at +3564 is set (0x8bdde0 to 0x8bde00), then headers 2183 (`VAP_CLIP_CNTL`, 0x221c), 2092 (`VAP_VTE_CNTL`, 0x20b0) and 4231 (`GA_POINT_SIZE`, 0x421c) with context words +0x471bc, +0x471cc and +0x472d4 (0x8bde0c to 0x8bde40), and stores the new cursor at context +0x46d58 (0x8bde4c).
 
 - `__R300Bitmap` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x8bde80 (n32).
   Evidence grade: inferred.
