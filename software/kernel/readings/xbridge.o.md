@@ -12,6 +12,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `jal` at 0x40 calls xwidget_driver_register with a0=0xc002, a1=0x36, a2=sym(.rodata), a3=0x0.
   The return at 0x4c has v0 = ret(xwidget_driver_register).
 
+- `xbridge_init` in `usr/cpu/sysgen/IP35boot/xbridge.o` at 0x0
+  **Inferred.** Registers the two crosstalk bridge widget variants that this object drives. After `pcibr_debug` with 1 and 0 (0x10) it calls `xwidget_driver_register` twice with the same `.srdata` +16 name string: part 0xd002 with manufacturer 36 (0x28) and part 0xc002 with manufacturer 54 (0x40). It touches no register itself.
+
 - `xbridge_attach` in `usr/cpu/sysgen/IP35boot/xbridge.o` at 0x54 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/xbridge.o`.

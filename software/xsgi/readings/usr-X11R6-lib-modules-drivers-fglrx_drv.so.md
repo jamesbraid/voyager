@@ -1369,6 +1369,9 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x40f410 has v0 = ?.
   The return at 0x40f478 has v0 = ?.
 
+- `ENCODE_DEVICE_ID` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x40f6c0
+  **Established.** Scrambles a 32-bit identifier. It XORs a0 with the key 0xfa3c89b5 (0x40f6c0 to 0x40f6cc), stores the four bytes of the result in the order 23:16, 7:0, 31:24, 15:8 into a stack word (0x40f6d8 to 0x40f6f8), XORs that word with the same key again (0x40f700) and returns the doubleword at the stack slot (0x40f708).
+
 - `asicHwRevID2chipRev` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x40f800 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/drivers/fglrx_drv.so`.
@@ -1906,6 +1909,9 @@ One entry per routine, filed here from the reading batches by binary.
   Range: 0x4112c0-0x4112e0 (32 bytes).
   It occupies 32 bytes.
   The return at 0x4112d8 has v0 = ?.
+
+- `R200Div` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x4112c0
+  **Established.** Divides a0 by a1 rounded to nearest: it adds half the divisor (a1 plus its sign bit, shifted right 1, at 0x4112c0 to 0x4112c8) to a0 and does a signed `div` (0x4112d0), returning the quotient. A zero divisor traps through `teq` at 0x4112dc.
 
 - `R200DisplayDDCConnected` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x411300 (n32).
   Evidence grade: inferred.
@@ -3379,8 +3385,7 @@ One entry per routine, filed here from the reading batches by binary.
   The instructions from 0x415b8c to 0x415b8c are not reached by any path from the entry, and their branches are not listed.
 
 - `R200SetPitch` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x415b40
-  **Inferred.** Compares a2 with 1, 2, 3 and 4 in four `beq` branches at 0x415b64, 0x415b6c, 0x415b74 and 0x415b7c, and every exit ends in a store to the field at a0+0xac. The facts show a2 as unknown at those compares, so it is not an incoming argument; it is computed in the routine after the load of a0+0x50. The branches at 0x415b74 and 0x415b7c share the target 0x415b90, so 3 and 4 take one path; 1 and 2 each have their own, and a value matching none of them returns at 0x415b84 after its own store to a0+0xac. The word at a0+0x9c is also read. Role (from name): the name suggests setting a pitch, but the facts do not give the stored values.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Rounds the screen width up to the surface alignment for the pixel size and stores it. The bits-per-pixel word at a0 +80 is divided by 8 (0x415b44 to 0x415b54); the width at +156 is then rounded up to a multiple of 256 for 1 byte per pixel (0x415ba4), 128 for 2 bytes (0x415bb4) and 64 for 3 or 4 bytes (0x415b90); any other size keeps the width. The result goes to a0 +172 (0x415b88 and the three other stores).
 
 - `R200PreInitGamma` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x415c00 (n32).
   Evidence grade: inferred.
@@ -4986,8 +4991,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x41c4a4 has v0 = ret(R200INPLL).
 
 - `R200PLL2WaitForReadUpdateComplete` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x41c440
-  **Inferred.** Role (from name): waits for a PLL2 read update to complete. It reads PLL index 0x2b through `R200INPLL` (the calls at 0x41c458 and 0x41c478) and tests bit 0x8000 of the value; the `beq` branches at 0x41c464 and 0x41c484 leave the loop when that bit is clear. The loop from 0x41c474 to 0x41c490 repeats while a register the render does not resolve is nonzero. The return at 0x41c4a4 yields the last value `R200INPLL` returned.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Polls the second pixel clock PLL until a read-update flag drops. It reads PLL register 0x2b through `R200INPLL` (call at 0x41c458) and returns when bit 15 (mask 0x8000, `andi` at 0x41c460) is clear; otherwise it re-reads the register in a loop of at most 10000 further reads (`slti` at 0x41c470 and 0x41c48c, call at 0x41c478). It has no delay between reads and returns no value.
 
 - `R200PLL2WriteUpdate` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x41c4c0 (n32).
   Evidence grade: inferred.
@@ -7643,8 +7647,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x426ac0 has v0 = 0x1.
 
 - `R200CreateContext` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x426ac0
-  **Established.** The routine is 8 bytes and has one return, at 0x426ac0, of the constant 1; it does not read its arguments. Role (from name): a success stub for a context-creation hook.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Context-create hook with no work: the delay slot of the return at 0x426ac0 loads 1 into v0 (0x426ac4) and nothing else executes, so every context creation reports success.
 
 - `R200DestroyContext` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x426b00 (n32).
   Evidence grade: inferred.
@@ -7652,6 +7655,9 @@ One entry per routine, filed here from the reading batches by binary.
   Range: 0x426b00-0x426b08 (8 bytes).
   It occupies 8 bytes.
   The return at 0x426b00 has v0 = ?.
+
+- `R200DestroyContext` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x426b00
+  **Established.** Context-destroy hook that does nothing: its only instructions are the return at 0x426b00 and a `nop` at 0x426b04, so it leaves v0 and all memory untouched.
 
 - `R200DRIInitBuffers` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x426b40 (n32).
   Evidence grade: inferred.
@@ -8482,6 +8488,9 @@ One entry per routine, filed here from the reading batches by binary.
   It occupies 8 bytes.
   The return at 0x42b9c0 has v0 = ?.
 
+- `FIREGL_DRIResetExtension` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42b9c0
+  **Inferred.** Reset hook of the FireGL DRI X extension, which has nothing to release: the body is a return at 0x42b9c0 and a `nop` at 0x42b9c4. The reset-hook role follows from the name and the extension-registration convention of the X server.
+
 - `FIREGL_DRIExtensionInit` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42ba00 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/drivers/fglrx_drv.so`.
@@ -8562,8 +8571,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x42be94 has v0 = 0x10000000.
 
 - `vR200_PM4Init` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42be40
-  **Inferred.** Makes twelve word stores at offsets 0x40, 0x44, 0x48, 0x4c, 0x50, 0x54, 0x58, 0x5c, 0x60, 0x64, 0x68 and 0x6c. The render does not show the base register or the values stored. The routine makes no calls and returns the constant 0x10000000 at 0x42be94. Role (from name): PM4 initialisation.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Fills a command-processor constants block with the fixed values of the R200 packet set. Twelve stores relative to a0 (0x42be44 to 0x42be98) write 0xc97 at +0x6c, 0x76000000 at +0x4c, 3 at +0x68, 1 at +0x64, 0 at +0x60, 0x7ff at +0x58, 0x10 at +0x5c, 0x736 at +0x54, 0 at +0x50, 0x70000000 at +0x48, 0x10000000 at +0x44 and 0x9bc at +0x40. It reads nothing, touches no register and returns no value.
 
 - `vR300_PM4Init` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42bec0 (n32).
   Evidence grade: inferred.
@@ -8584,6 +8592,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `sw` at 0x42bf1c stores 4 bytes to a0 (arg0 at entry) +0x60.
   The return at 0x42bf18 has v0 = 0x10f4.
 
+- `vR300_PM4Init` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42bec0
+  **Established.** R300 counterpart of the R200 constants block at 0x42be40, storing a different set of twelve words relative to a0 (0x42bec4 to 0x42bf1c): 5011 (0x1393, the `RB3D_DSTCACHE_CTLSTAT` packet index) at +0x6c, 2 at +0x4c, 0xfffe at +0x48 and +0x44, 0xffff at +0x50, 4 at +0x68 and +0x64, 8191 at +0x58, 13 at +0x5c, 4332 at +0x54, 4340 at +0x40 and 0x000b45a0 at +0x60. No register is touched.
+
 - `LogBase2` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42bf40 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/drivers/fglrx_drv.so`.
@@ -8596,6 +8607,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `bne` branch at 0x42bf68 targets 0x42bf48, is taken when a0(?) != 0, and falls through when a0(?) == 0.
   The return at 0x42bf70 has v0 = ?.
   The return at 0x42bf78 has v0 = 0x0.
+
+- `LogBase2` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42bf40
+  **Established.** Returns the index of the lowest set bit of a0, which is the base-2 logarithm for a power of two. The loop at 0x42bf48 to 0x42bf68 shifts a0 right one bit at a time, counting in v0 until bit 0 is set; a0 equal to 0 returns 0 (0x42bf40 and 0x42bf78).
 
 - `r200_RegisterRingBufferLocation` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42bf80 (n32).
   Evidence grade: inferred.
@@ -8638,6 +8652,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `sw` at 0x42c0d4 stores 4 bytes to [[a0+7660]+4] +0x14c.
   The return at 0x42c0dc has v0 = [[a0+7660]+4].
 
+- `r200_EnableCommonBusMaster` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42c080
+  **Inferred.** Turns on PCI bus mastering and programs the AGP window. With the register window at [a0 +0x1dec] +4 it clears bit 6 (mask -65) of the saved word at a0 +0x40 and of the window word at +0x30 (`BUS_CNTL` in the public Linux header, 0x42c098 to 0x42c0a0), then stores the word at a0 +6676 to window +0x170 (`AGP_BASE`, 0x42c0ac) and a packed value to +0x14c (`MC_AGP_LOCATION`): the aperture end (a0 +6672 plus +6676, minus 1) masked with 0xffff0000 ORed with the base shifted right 16 (0x42c0b8 to 0x42c0d4). A `sync` follows each store.
+
 - `r200_SetPm4OperationMode` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42c100 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/drivers/fglrx_drv.so`.
@@ -8657,8 +8674,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x42c1a4 has v0 = ret(r200_EnableCommonBusMaster).
 
 - `r200_SetPm4OperationMode` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42c100
-  **Inferred.** Role (from name): works on the record reached through [[a0+7660]+4]. It loads a word at offset 0x740 of that record (0x42c118), stores a word at the same offset (0x42c134) and calls `r200_EnableCommonBusMaster` with a0 to a3 as passed in (0x42c13c). It then reloads the word at offset 3648 (0xe40) five times (0x42c150 to 0x42c190) and tests it against the mask 0x10200 after each load (0x42c158 to 0x42c198). The first four tests branch to 0x42c1a0 when the masked value is zero. The fifth branches back to 0x42c150 when it is nonzero. The routine returns the result of `r200_EnableCommonBusMaster` (0x42c1a4). The reason for the repeated reads is unknown.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Selects the command-processor queue mode and waits for the engine. With the register window at [a0 +0x1dec] +4 it replaces bits 31:28 of the word at +0x740 (`CP_CSQ_CNTL` in the public Linux header) with the mode in a1 (mask 0x0fffffff at 0x42c114 and shift 28 at 0x42c12c, store at 0x42c134), calls `r200_EnableCommonBusMaster` (0x42c13c), then polls the word at +0xe40 (`RBBM_STATUS`) until bits 9 and 16 (mask 0x10200) read zero; the poll is unrolled five times (0x42c150 to 0x42c198) and the last test branches back to the first.
 
 - `r200_EnableRPTRwriteback` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42c1c0 (n32).
   Evidence grade: inferred.
@@ -8693,8 +8709,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x42c280 has v0 = [[a0+7660]+4].
 
 - `r200_WriteTimeStamp` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42c240
-  **Inferred.** Loads the pointer at a0+7660, then the words at +0x234, +0x230, +0x22c and +0x228 reached through that record's field at +16, and stores them at +0x15ec, +0x15e8, +0x15e4 and +0x15e0 of the record's field at +4. The return at 0x42c280 gives the pointer at +4. The routine makes no call; the facts do not show whether the stores reach a register. Role (from name): the name suggests writing a time stamp, which the facts do not confirm.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Copies four consecutive words of the ring-state block into the register window. With the block at [a0 +0x1dec] +16 and the window at +4, it stores the words at block +0x234, +0x230, +0x22c and +0x228 to window +0x15ec, +0x15e8, +0x15e4 and +0x15e0 (0x42c254, 0x42c260, 0x42c26c, 0x42c278), with a `sync` after each store.
 
 - `r200_StampPDEV` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42c2c0 (n32).
   Evidence grade: inferred.
@@ -8706,6 +8721,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `ld` at 0x42c2c8 loads 8 bytes from [[a0+7660]+16] +0x238.
   The `sd` at 0x42c2d8 stores 8 bytes to [[a0+7660]+16] +0x238.
   The return at 0x42c2d4 has v0 = [[a0+7660]+16].
+
+- `r200_StampPDEV` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42c2c0
+  **Established.** Counts one more use of the ring-state block: it adds 1 to the doubleword at +0x238 of the block at [a0 +0x1dec] +16 (load at 0x42c2c8, store at 0x42c2d8). It touches no register and returns no value.
 
 - `CheckForAthlon` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42ca80 (n32).
   Evidence grade: inferred.
@@ -8775,8 +8793,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x42e900 has v0 = 0x0.
 
 - `ulRage6GetFractional` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42e8c0
-  **Inferred.** Returns zero when `a0 >= a1` (unsigned; the `beq` at 0x42e8c4 is taken in that case) and also when `a1` is zero (0x42e8cc); both branches reach the return at 0x42e900. Otherwise (`a0 < a1` and `a1` non-zero) it compares two derived values at 0x42e8ec and reaches a return at 0x42e8f8 whose value the render does not show. Role (from name): the name suggests a fractional-part helper for a fixed-point ratio. What the value on the non-zero path is, and which argument is the numerator, is not derived here.
-  Reviewed: 2026-11-12 (sonnet)
+  **Established.** Computes the fraction a0 over a1 as an 8-bit fixed-point number, rounded to nearest. It returns 0 when a0 is not below a1 or a1 is 0 (0x42e8c0 to 0x42e8cc); otherwise it divides a0 shifted left 8 by a1 with `divu` (0x42e8d4) and adds 1 when the remainder exceeds half of a1 (0x42e8d8 to 0x42e8f4).
 
 - `ProcFGLGetDriverData` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42eb00 (n32).
   Evidence grade: inferred.
@@ -9167,10 +9184,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x42fc00 has v0 = 0x1.
 
 - `FGLRXSwapDispatch` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42fc00
-  **Established.** The routine is 8 bytes. Its only path returns the constant 1 (return at
-  0x42fc00), with no calls, memory accesses or branches. The name suggests a swap-dispatch
-  callback, but the render cannot show its callers, so the purpose is not established.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Byte-swapped request handler of the FGLRX X extension that rejects every request: it returns 1 at 0x42fc04, the value of the X protocol error `BadRequest`, without reading its arguments.
 
 - `FGLRXResetExtension` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42fc40 (n32).
   Evidence grade: inferred.
@@ -9178,6 +9192,9 @@ One entry per routine, filed here from the reading batches by binary.
   Range: 0x42fc40-0x42fc48 (8 bytes).
   It occupies 8 bytes.
   The return at 0x42fc40 has v0 = ?.
+
+- `FGLRXResetExtension` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42fc40
+  **Inferred.** Server-reset hook of the FGLRX extension with an empty body: a return at 0x42fc40 and a `nop` at 0x42fc44. No state of the extension is cleared there.
 
 - `FGLRXExtensionInit` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x42fc80 (n32).
   Evidence grade: inferred.
@@ -9264,8 +9281,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x430984 has v0 = ?.
 
 - `msf_program_aperture` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x430940
-  **Inferred.** Writes three words into an indexed table for the index in a1. The table pointer is `[a0+248]+48` (loaded at 0x430944), and the stores at 0x430968, 0x430978 and 0x430980 go to table word indexes `4*a1+705`, `4*a1+706` and `4*a1+707`. The stores are skipped when the table pointer is zero (the `beq` at 0x430954). The render does not resolve the values written, so the content of those entries is not established here.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Programs one memory-surface aperture. The register window is the pointer at driver record +48; a null window returns without writing (0x430954). Otherwise, for the slot number in a1, a3 goes to window +0xb04 plus 16 times the slot, a4 to +0xb08 plus 16 times the slot and a2 to +0xb0c plus 16 times the slot (stores at 0x430968, 0x430978 and 0x430980). The names `SURFACE0_LOWER_BOUND`, `SURFACE0_UPPER_BOUND` and `SURFACE0_INFO` for those offsets come from the public Linux header.
 
 - `vR200SetSurfaceInfo` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x4309c0 (n32).
   Evidence grade: inferred.
@@ -9342,8 +9358,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x4317c8 has v0 = ?.
 
 - `InOverlay` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x4317c0
-  **Inferred.** A 16-byte routine. It loads a byte at offset 2 (load at 0x4317c0) and returns (0x4317c8). The render does not name the base register of the load and shows v0 as unknown at the return, so that the base is the first argument and that the result is that byte are both unestablished. Role (from name): overlay-membership test; weak.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Predicate on a visual or window record: it loads the byte at a0 +2 (0x4317c0), XORs it with 8 and compares with 1 unsigned (0x4317c4 to 0x4317cc), so it returns 1 exactly when that byte is 8. Reading that byte as the overlay depth is an inference from the name.
 
 - `FIREGL_ClipNotify` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x432bc0 (n32).
   Evidence grade: inferred.
@@ -10587,6 +10602,9 @@ One entry per routine, filed here from the reading batches by binary.
   Range: 0x435b00-0x435b08 (8 bytes).
   It occupies 8 bytes.
   The return at 0x435b00 has v0 = 0x1.
+
+- `CMapInitDefMap` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x435b00
+  **Established.** Default-colormap initialiser that only reports success: v0 is set to 1 in the delay slot of the return at 0x435b00 (0x435b04) and no colormap state is touched.
 
 - `CMapCloseScreen` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x435b40 (n32).
   Evidence grade: inferred.
@@ -13089,6 +13107,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `lw` at 0x43d69c loads 4 bytes from [[a0+248]+48] +0xc.
   The return at 0x43d6a8 has v0 = ?.
 
+- `ReadECPDivider` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x43d680
+  **Inferred.** Reads the 2-bit video clock divider from a PLL register. With the window at driver record +48 it rewrites the index word at +8 as (old and 0xffffffc0) or 0x88, selecting PLL register 8 with the write-enable bit (0x43d68c to 0x43d698), reads the data word at +12, masks bits 9:8 and shifts them down (0x43d6a4 to 0x43d6ac), and restores the old index word at 0x43d6a0. PLL register 8 as the ECP clock control follows the public Linux header.
+
 - `SrcColorkey` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x43d6c0 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/drivers/fglrx_drv.so`.
@@ -13945,6 +13966,9 @@ One entry per routine, filed here from the reading batches by binary.
   It occupies 32 bytes.
   The return at 0x443618 has v0 = ?.
 
+- `MulDiv64` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x443600
+  **Established.** Scales a0 by a1 over a2 using only the low 32 bits of the product: `multu` at 0x443600 and `mflo` at 0x443604 take the low word, `divu` by a2 at 0x443610 divides it and the quotient is returned. The high product word is never read despite the 64 in the name; a zero a2 traps through `teq` at 0x44361c.
+
 - `TpCopy` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x4436c0 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/drivers/fglrx_drv.so`.
@@ -14349,10 +14373,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x4461c0 has v0 = 0x1.
 
 - `ATITVOSwapDispatch` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x4461c0
-  **Established.** The routine is 8 bytes. Its only path returns the constant 1 (return at
-  0x4461c0), with no calls, memory accesses or branches. The name suggests a swap-dispatch
-  callback, but the render cannot show its callers, so the purpose is not established.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Swapped-client dispatcher of the ATITVO TV-output extension: it returns 1 (0x4461c4, the X protocol `BadRequest` value) and reads no argument, so byte-swapped clients cannot use the extension.
 
 - `ATITVOResetExtension` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x446200 (n32).
   Evidence grade: inferred.
@@ -14360,6 +14381,9 @@ One entry per routine, filed here from the reading batches by binary.
   Range: 0x446200-0x446208 (8 bytes).
   It occupies 8 bytes.
   The return at 0x446200 has v0 = ?.
+
+- `ATITVOResetExtension` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x446200
+  **Inferred.** Reset hook of the ATITVO extension, empty: only the return at 0x446200 and a `nop` at 0x446204 execute, so no TV-output state is released at server reset.
 
 - `ATITVODispatch` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x446240 (n32).
   Evidence grade: inferred.
@@ -14482,6 +14506,9 @@ One entry per routine, filed here from the reading batches by binary.
   Range: 0x446640-0x446648 (8 bytes).
   It occupies 8 bytes.
   The return at 0x446640 has v0 = ?.
+
+- `ATIHPVResetExtension` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x446640
+  **Inferred.** Reset hook of the ATIHPV (hyperpipe video) extension that does nothing: the return at 0x446640 is followed by a `nop` at 0x446644 and no call or store.
 
 - `ATIHPVDispatch` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x446680 (n32).
   Evidence grade: inferred.
@@ -14807,6 +14834,9 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x447b8c has v0 = ?.
   The return at 0x447b94 has v0 = ?.
 
+- `R200SetCntrl` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x447b80
+  **Inferred.** Control-code handler that acts on one code only: when a2 equals 10 (0x447b80 to 0x447b84) it stores 0 at +32 of the block in a3 (0x447b98); any other code returns without a store. It touches no register.
+
 - `R200QryCntrl` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x447bc0 (n32).
   Evidence grade: inferred.
   Exact binary: `usr/X11R6/lib/modules/drivers/fglrx_drv.so`.
@@ -14818,8 +14848,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x447bd4 has v0 = ?.
 
 - `R200QryCntrl` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x447bc0
-  **Inferred.** A 28-byte routine. When arg2 equals 0xa, the beq at 0x447bc4 jumps to the return at 0x447bd4, and the delay slot of that return holds a word store at +0x20 (0x447bd8) whose base register the render does not show. Otherwise it returns at 0x447bcc. The value stored and the meaning of selector 0xa are not shown by the body. The render shows no v0 value for either return.
-  Reviewed: 2026-11-12 (sonnet)
+  **Inferred.** Query counterpart of the control handler at 0x447b80, with the same shape: only a2 equal to 10 (0x447bc0 to 0x447bc4) stores 0 at +32 of the block in a3 (0x447bd8), and every other code returns at once. No register is read.
 
 - `R200ResetProc` in `usr/X11R6/lib/modules/drivers/fglrx_drv.so` at 0x447c00 (n32).
   Evidence grade: inferred.

@@ -11,6 +11,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `jal` at 0x28 calls xwidget_driver_register with a0=0xd102, a1=0x24, a2=sym(.rodata), a3=0x0.
   The return at 0x34 has v0 = ret(xwidget_driver_register).
 
+- `pic_init` in `usr/cpu/sysgen/IP35boot/pic.o` at 0x0
+  **Inferred.** Registers the PIC PCI bridge as a crosstalk widget driver. It calls `pcibr_debug` at 0x10 with 1 and 0, then `xwidget_driver_register` at 0x28 with the part number 0xd102 in a0, 36 in a1 (the manufacturer number), a name string from `.srdata` +16 in a2 and 0 in a3, and returns. Reading the first two arguments as part and manufacturer numbers follows the register call's usual signature; the call is the routine's only effect.
+
 - `pic_bus1_inventory_dup` in `usr/cpu/sysgen/IP35boot/pic.o` at 0x3c (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/pic.o`.
@@ -76,6 +79,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `jal` at 0x26c calls device_desc_dup with a0=a0 at entry (arg0), a1=a1 at entry (arg1), a2=a2 at entry (arg2), a3=a3 at entry (arg3).
   The `jal` at 0x278 calls device_desc_default_set with a0=a1 at entry (arg1), a1=ret(device_desc_dup), a2=?, a3=?.
   The return at 0x288 has v0 = ret(device_desc_default_set).
+
+- `pic_bus1_device_desc_dup` in `usr/cpu/sysgen/IP35boot/pic.o` at 0x260
+  **Established.** Gives a second bus the same default device descriptor as its first. It copies the descriptor in a0 with `device_desc_dup` (call at 0x26c) and passes the copy with the object in a1 to `device_desc_default_set` (call at 0x278). It returns what that call returns.
 
 - `pic_bus1_redist` in `usr/cpu/sysgen/IP35boot/pic.o` at 0x290 (n64).
   Evidence grade: inferred.
@@ -434,6 +440,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `jal` at 0x1498 calls pcireg_force_always_set with a0=[a0+64]:8, a1=[a0+88], a2=a2 at entry (arg2), a3=a3 at entry (arg3).
   The return at 0x14a4 has v0 = ret(pcireg_force_always_set).
 
+- `issue_force_interrupt` in `usr/cpu/sysgen/IP35boot/pic.o` at 0x1484
+  **Established.** Raises a software interrupt on a PIC bridge. It zeroes the doubleword at record +80 (0x1484), then calls `pcireg_force_always_set` (0x1498) with the register handle at record +64 and the word at +88 as arguments. No other instruction touches memory.
+
 - `pio_spin_wait` in `usr/cpu/sysgen/IP35boot/pic.o` at 0x14ac (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/pic.o`.
@@ -445,6 +454,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `beq` branch at 0x14cc targets 0x14e0, is taken when a2(=0x1ed) == v1(=[a0+80]:8), and falls through when a2(=0x1ed) != v1(=[a0+80]:8).
   The `bne` branch at 0x14d8 targets 0x14bc, is taken when a2(=0x1ed) != a1(=[a0+80]:8), and falls through when a2(=0x1ed) == a1(=[a0+80]:8).
   The return at 0x14e0 has v0 = one of ?, [a0+80]:8.
+
+- `pio_spin_wait` in `usr/cpu/sysgen/IP35boot/pic.o` at 0x14ac
+  **Established.** Busy-waits for a flush acknowledgement. It reads the doubleword at record +80 and compares it with the constant 493 (0x1ed, loaded at 0x14b0), repeating the load and test until they match (loop at 0x14bc to 0x14d8, unrolled four times) and returning with no value.
 
 - `pcibr_pio_flush_read` in `usr/cpu/sysgen/IP35boot/pic.o` at 0x14e8 (n64).
   Evidence grade: inferred.
@@ -484,6 +496,9 @@ One entry per routine, filed here from the reading batches by binary.
   The `jal` at 0x15a4 calls kmem_free with a0=a0 at entry (arg0), a1=0x60, a2=a2 at entry (arg2), a3=a3 at entry (arg3).
   The return at 0x15b0 has v0 = ret(kmem_free).
 
+- `pcibr_pio_flush_del` in `usr/cpu/sysgen/IP35boot/pic.o` at 0x159c
+  **Established.** Releases a programmed-I/O flush record. It calls `kmem_free` at 0x15a4 with the record in a0 and a size of 96 bytes (0x15a8), which is the size `pcibr_pio_flush_init` allocates, and returns.
+
 - `pcibr_pio_flush_init` in `usr/cpu/sysgen/IP35boot/pic.o` at 0x15b8 (n64).
   Evidence grade: inferred.
   Exact binary: `usr/cpu/sysgen/IP35boot/pic.o`.
@@ -498,3 +513,6 @@ One entry per routine, filed here from the reading batches by binary.
   The `beq` branch at 0x15f4 targets 0x1610, is taken when v0(=ret(pic_pio_flush_new)) == 0, and falls through when v0(=ret(pic_pio_flush_new)) != 0.
   The `beq` branch at 0x1618 targets 0x15fc and is always taken.
   The return at 0x1608 has v0 = one of 0x0, ret(kmem_zalloc).
+
+- `pcibr_pio_flush_init` in `usr/cpu/sysgen/IP35boot/pic.o` at 0x15b8
+  **Established.** Builds a programmed-I/O flush record. It looks up the bridge information with `pcibr_info_get` (0x15c0), allocates 96 zeroed bytes with `kmem_zalloc` (0x15d0) and returns 0 when that fails. Otherwise `pic_pio_flush_new` is called with the record and the bridge information (0x15ec); a zero result frees the record again with `kmem_free` (0x1610, size 96) and returns 0, and a non-zero result returns the record.
