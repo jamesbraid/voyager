@@ -100306,7 +100306,7 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0x76cf10 has v0 = 0x1.
 
 - `__R300DrawBuffer` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x76ce80
-  **Inferred.** Splits a request to draw into both front and back into two single-buffer selections. It acts only when the byte at context +25744 is nonzero, the requested mode a1 equals 1032 (front and back) and a count field is at most 32 (0x76ce84 to 0x76ceb8). It then calls `glDrawBuffersATI` with 2 buffers, 1024 and 1026 (call at 0x76ceec), stores 1032 and 0 at context +3836 and +3840 (0x76cf08 to 0x76cf0c) and returns 1; in every other case it returns 0.
+  **Inferred.** Splits a request to draw into both front and back into two single-buffer selections. It acts only when the byte at context +25744 is nonzero, the requested mode a1 equals 1032 (front and back) and a count field at context +0x38090 is 33 or more (0x76ce84 to 0x76ceb8). It then calls `glDrawBuffersATI` with 2 buffers, 1024 and 1026 (call at 0x76ceec), stores 1032 and 0 at context +3836 and +3840 (0x76cf08 to 0x76cf0c) and returns 1; in every other case it returns 0.
 
 - `__R300BitBltDestinationCaps` in `usr/X11R6/lib/modules/dri/fglrx_dri.so` at 0x76cf40 (n32).
   Evidence grade: inferred.
