@@ -336542,3 +336542,48 @@ One entry per routine, filed here from the reading batches by binary.
   The return at 0xb73824 has v0 = ret(?).
   The return at 0xb73844 has v0 = 0x2a260.
   The instructions from 0xb738f8 to 0xb738fc are not reached by any path from the entry, and their branches are not listed.
+
+## R300 TCL integer entries
+
+Each family block below credits the R300 TCL immediate-mode entries of one arity that take int or short
+arguments (the `i` and `s` forms). The bytes are the same apart from four operands: the two halves of the
+gp displacement, the GOT slot the call loads, and the call's word offset.
+
+```family
+binaries: usr/X11R6/lib/modules/dri/fglrx_dri.so, usr/X11R6/lib/modules/extensions/fglrx_glx.so
+members: __glim_R300TCLVertex2[is], __glim_R300TCLVertex2[is]_vcount, __glim_R300TCLTexCoord2[is]
+match: 3c 01 00 3d/fd 24 21 00/80 00/07 44 84 60 00 27 bd ff f0 ff bc 00 08 03 21 e0 21 44 85 68 00 8f 99 a2/e2 00/07 46 80 63 20 ff bf 00 00 04 13 fe/fe 05/8f 46 80 6b 60 df bf 00 00 df bc 00 08 03 e0 00 08 27 bd 00 10
+field: gp_hi = u16be@2
+field: gp_lo = u16be@6
+field: got_off = s16be@30
+field: call_off = s16be@42
+shape: Saves gp and ra in a 16-byte frame. Moves a0 and a1 into f12 and f13 and converts each with cvt.s.w. Rebuilds gp from t9 and a lui and addiu displacement. Loads t9 from the GOT slot. Calls the float entry through bgezall, with the second conversion in the delay slot. The epilogue restores ra and gp and pops the frame.
+varies: gp_hi and gp_lo are the two halves of the gp displacement, got_off is the offset of the GOT slot the lw reads, and call_off is the word offset of the bgezall. Each can differ between entries.
+role: Inferred. An integer-argument entry of the R300 TCL immediate-mode path. It converts two integers to floats and calls the float entry of the same arity through bgezall, with the second conversion in its delay slot, then returns. Vertex2i at 0x7a9180 calls 0x7a8f80 (__glim_R300TCLVertex2f), and Vertex2i_vcount at 0x7a9d40 calls 0x7a9ac0 (__glim_R300TCLVertex2f_vcount).
+```
+
+```family
+binaries: usr/X11R6/lib/modules/dri/fglrx_dri.so, usr/X11R6/lib/modules/extensions/fglrx_glx.so
+members: __glim_R300TCLVertex3[is], __glim_R300TCLVertex3[is]_vcount, __glim_R300TCLTexCoord3[is]
+match: 44 84 60 00 3c 01 00 3d/fd 24 21 00/80 00/07 44 85 68 00 46 80 63 20 27 bd ff f0 ff bc 00 08 03 21 e0 21 44 86 70 00 8f 99 a3/e3 00/03 46 80 6b 60 ff bf 00 00 04 13 fe/fe 03/1f 46 80 73 a0 df bf 00 00 df bc 00 08 03 e0 00 08 27 bd 00 10
+field: gp_hi = u16be@6
+field: gp_lo = u16be@10
+field: got_off = s16be@38
+field: call_off = s16be@50
+shape: Saves gp and ra in a 16-byte frame. Moves a0, a1 and a2 into f12, f13 and f14 and converts each with cvt.s.w. Rebuilds gp from t9 and a lui and addiu displacement. Loads t9 from the GOT slot. Calls the float entry through bgezall, with the third conversion in the delay slot. The epilogue restores ra and gp and pops the frame.
+varies: gp_hi and gp_lo are the two halves of the gp displacement, got_off is the offset of the GOT slot the lw reads, and call_off is the word offset of the bgezall. Each can differ between entries.
+role: Inferred. An integer-argument entry of the R300 TCL immediate-mode path for three coordinates. It converts three integers to floats and calls the float entry of the same arity through bgezall, with the last conversion in its delay slot, then returns. Vertex3i at 0x7a93c0 calls 0x7a9000 (__glim_R300TCLVertex3f).
+```
+
+```family
+binaries: usr/X11R6/lib/modules/dri/fglrx_dri.so, usr/X11R6/lib/modules/extensions/fglrx_glx.so
+members: __glim_R300TCLVertex4[is], __glim_R300TCLVertex4[is]_vcount, __glim_R300TCLTexCoord4[is]
+match: 44 84 60 00 44 85 68 00 3c 01 00 3d/fd 24 21 00/8a 00/07 46 80 63 20 44 86 70 00 46 80 6b 60 27 bd ff f0 ff bc 00 08 03 21 e0 21 44 87 78 00 8f 99 a3/e3 00/07 46 80 73 a0 ff bf 00 00 04 13 fc/fc 01/0f 46 80 7b e0 df bf 00 00 df bc 00 08 03 e0 00 08 27 bd 00 10
+field: gp_hi = u16be@10
+field: gp_lo = u16be@14
+field: got_off = s16be@46
+field: call_off = s16be@58
+shape: Saves gp and ra in a 16-byte frame. Moves a0 to a3 into f12 to f15 and converts each with cvt.s.w. Rebuilds gp from t9 and a lui and addiu displacement. Loads t9 from the GOT slot. Calls the float entry through bgezall, with the last conversion in the delay slot. The epilogue restores ra and gp and pops the frame.
+varies: gp_hi and gp_lo are the two halves of the gp displacement, got_off is the offset of the GOT slot the lw reads, and call_off is the word offset of the bgezall. Each can differ between entries.
+role: Inferred. An integer-argument entry of the R300 TCL immediate-mode path for four coordinates. It converts four integers to floats and calls the float entry of the same arity through bgezall, with the last conversion in its delay slot, then returns. Vertex4i at 0x7a9680 calls 0x7a9080 (__glim_R300TCLVertex4f).
+```
