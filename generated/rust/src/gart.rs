@@ -1,9 +1,11 @@
-// generated from devices/gart/registers.toml by defs-gen - do not edit, change the source
+// @generated from devices/gart/registers.toml by defs-gen - do not edit, change the source
 // SPDX-License-Identifier: BSD-3-Clause
-// defs-gen 2
+// defs-gen 4
 // input sha256 7a4b4167ec5845ba012d8b67a0e3e5a3042273b13933438c5f1985fdd2536629
 // AGP and PCI GART registers of the R3xx-class FireGL boards
 #![allow(dead_code)]
+#![allow(clippy::doc_markdown)]
+#![cfg_attr(rustfmt, rustfmt_skip)]
 
 /// (inferred)
 pub mod agp_cntl {

@@ -1,11 +1,14 @@
-// generated from devices/cp/registers.toml by defs-gen - do not edit, change the source
+// @generated from devices/cp/registers.toml by defs-gen - do not edit, change the source
 // SPDX-License-Identifier: BSD-3-Clause
-// defs-gen 2
+// defs-gen 4
 // input sha256 292f6629f6377b5166461499fbd6206ddb0589ceeaf9ddb855fae73fe3716ed5
 // command processor registers of the R3xx-class FireGL boards
 #![allow(dead_code)]
+#![allow(clippy::doc_markdown)]
+#![cfg_attr(rustfmt, rustfmt_skip)]
 
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod rb_rptr_wr {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x71c;
@@ -66,6 +69,7 @@ pub mod gui_command {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod ib2_base {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x730;
@@ -81,6 +85,7 @@ pub mod ib2_base {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod ib2_bufsz {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x734;
@@ -96,6 +101,7 @@ pub mod ib2_bufsz {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod ib_base {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x738;
@@ -111,6 +117,7 @@ pub mod ib_base {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod ib_bufsz {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x73c;
@@ -211,6 +218,7 @@ pub mod csq_mode {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod resync_addr {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x778;
@@ -226,6 +234,7 @@ pub mod resync_addr {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod resync_data {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x77c;
@@ -321,6 +330,7 @@ pub mod vid_command {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod me_ram_raddr {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x7d8;
@@ -441,6 +451,7 @@ pub mod vp_addr_cntl {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod csq_addr {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x7f0;
@@ -456,6 +467,7 @@ pub mod csq_addr {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod csq_data {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x7f4;

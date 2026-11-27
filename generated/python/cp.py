@@ -1,6 +1,6 @@
 """generated from devices/cp/registers.toml by defs-gen - do not edit, change the source
 SPDX-License-Identifier: BSD-3-Clause
-defs-gen 2
+defs-gen 4
 input sha256 292f6629f6377b5166461499fbd6206ddb0589ceeaf9ddb855fae73fe3716ed5
 command processor registers of the R3xx-class FireGL boards"""
 

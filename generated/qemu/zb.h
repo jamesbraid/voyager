@@ -1,9 +1,11 @@
-/* generated from devices/zb/registers.toml by defs-gen - do not edit, change the source */
+/* generated from devices/zb/registers.toml by defs-gen - do not edit, change
+ * the source */
 /* SPDX-License-Identifier: BSD-3-Clause */
-/* defs-gen 2 */
+/* defs-gen 4 */
 /* input sha256 eed73ffdc42030ce14850ecd8ff9b1a241d2c785d53276b348bfbdff9a247780 */
 /* Z buffer and hierarchical Z registers of the R300 and R350 3D engine */
-/* Names are R300_ZB_*; name source: public (AMD Radeon R3xx 3D Register Reference, revision 1.0). */
+/* Names are R300_ZB_*; name source: public (AMD Radeon R3xx 3D Register
+ * Reference, revision 1.0). */
 #ifndef HW_SGI_GPU_R300_ZB_REGS_H
 #define HW_SGI_GPU_R300_ZB_REGS_H
 
@@ -57,15 +59,20 @@ FIELD(R300_ZB_DEPTHPITCH, DEPTHPITCH, 2, 12) /* established */
 REG32(R300_ZB_DEPTHCLEARVALUE, 0x4f28) /* established */
 FIELD(R300_ZB_DEPTHCLEARVALUE, DEPTHCLEARVALUE, 0, 32) /* established */
 
-REG32(R300_ZB_ZMASK_OFFSET, 0x4f30) /* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+/* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+REG32(R300_ZB_ZMASK_OFFSET, 0x4f30)
 
-REG32(R300_ZB_ZMASK_PITCH, 0x4f34) /* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+/* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+REG32(R300_ZB_ZMASK_PITCH, 0x4f34)
 
-REG32(R300_ZB_ZMASK_WRINDEX, 0x4f38) /* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+/* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+REG32(R300_ZB_ZMASK_WRINDEX, 0x4f38)
 
-REG32(R300_ZB_ZMASK_DWORD, 0x4f3c) /* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+/* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+REG32(R300_ZB_ZMASK_DWORD, 0x4f3c)
 
-REG32(R300_ZB_ZMASK_RDINDEX, 0x4f40) /* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+/* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+REG32(R300_ZB_ZMASK_RDINDEX, 0x4f40)
 
 REG32(R300_ZB_DEPTHXY_OFFSET, 0x4f60) /* established */
 FIELD(R300_ZB_DEPTHXY_OFFSET, DEPTHY_OFFSET, 17, 11) /* established */

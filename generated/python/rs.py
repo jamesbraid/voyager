@@ -1,6 +1,6 @@
 """generated from devices/rs/registers.toml by defs-gen - do not edit, change the source
 SPDX-License-Identifier: BSD-3-Clause
-defs-gen 2
+defs-gen 4
 input sha256 edb28dd4e62253a48534c96dbcd487bceba38c394a9adcbf775935987876084e
 rasteriser interpolator registers of the R300 and R350 3D engine"""
 

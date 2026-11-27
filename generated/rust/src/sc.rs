@@ -1,9 +1,11 @@
-// generated from devices/sc/registers.toml by defs-gen - do not edit, change the source
+// @generated from devices/sc/registers.toml by defs-gen - do not edit, change the source
 // SPDX-License-Identifier: BSD-3-Clause
-// defs-gen 2
+// defs-gen 4
 // input sha256 89ce7846f26fd566b7c475d2dcfe95762d0b08c56fc2d0da243a116e94ab78e4
 // scan converter registers (clip rectangles, scissors, Hi-Z enable) of the R300 and R350 3D engine
 #![allow(dead_code)]
+#![allow(clippy::doc_markdown)]
+#![cfg_attr(rustfmt, rustfmt_skip)]
 
 /// (established)
 pub mod hyperz_en {
@@ -206,6 +208,7 @@ pub mod clip_3_b {
     pub const OFFSET: u64 = 0x43cc;
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod clip_rule {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x43d0;
@@ -271,6 +274,7 @@ pub mod scissor1 {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod screendoor {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x43e8;

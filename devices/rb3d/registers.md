@@ -1,6 +1,6 @@
 <!-- generated from devices/rb3d/registers.toml by defs-gen - do not edit, change the source -->
 <!-- SPDX-License-Identifier: BSD-3-Clause -->
-<!-- defs-gen 2 -->
+<!-- defs-gen 4 -->
 <!-- input sha256 9bbc7124c5c41069a98513ea953dc08a33aaca0f429eb5e4385d8eaaedbf9edb -->
 
 # colour buffer registers of the R300 and R350 3D engine

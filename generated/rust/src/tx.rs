@@ -1,9 +1,11 @@
-// generated from devices/tx/registers.toml by defs-gen - do not edit, change the source
+// @generated from devices/tx/registers.toml by defs-gen - do not edit, change the source
 // SPDX-License-Identifier: BSD-3-Clause
-// defs-gen 2
+// defs-gen 4
 // input sha256 3182bec562aa83900a02fc72f4b5bb6a3ce852f0d98aaeaf2f0e8b15f70b0ef8
 // texture unit registers of the R300 and R350 3D engine
 #![allow(dead_code)]
+#![allow(clippy::doc_markdown)]
+#![cfg_attr(rustfmt, rustfmt_skip)]
 
 /// (established)
 pub mod invaltags {
@@ -598,6 +600,7 @@ pub mod offset {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod chroma_key {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x4580;
@@ -615,6 +618,7 @@ pub mod chroma_key {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod border_color {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x45c0;

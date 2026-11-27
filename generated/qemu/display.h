@@ -1,8 +1,10 @@
-/* generated from devices/display/registers.toml by defs-gen - do not edit, change the source */
+/* generated from devices/display/registers.toml by defs-gen - do not edit,
+ * change the source */
 /* SPDX-License-Identifier: BSD-3-Clause */
-/* defs-gen 2 */
+/* defs-gen 4 */
 /* input sha256 826a0462250b9b22e39916b1dc2e64676d2c247917aba8ef8dee5fc9e2c9f965 */
-/* display, interrupt and engine registers of the R3xx-class FireGL boards (publish-safe decode header) */
+/* display, interrupt and engine registers of the R3xx-class FireGL boards
+ * (publish-safe decode header) */
 /* Names are R300_DISPLAY_*; name source: imported-unchecked. */
 #ifndef HW_SGI_GPU_R300_DISPLAY_REGS_H
 #define HW_SGI_GPU_R300_DISPLAY_REGS_H
@@ -55,7 +57,8 @@ REG32(R300_DISPLAY_GEN_INT_STATUS, 0x44) /* inferred */
 FIELD(R300_DISPLAY_GEN_INT_STATUS, VIDDMA_STAT, 31, 1) /* inferred */
 FIELD(R300_DISPLAY_GEN_INT_STATUS, GUIDMA_STAT, 30, 1) /* inferred */
 FIELD(R300_DISPLAY_GEN_INT_STATUS, DVI_I2C_INT_STAT, 29, 1) /* inferred */
-FIELD(R300_DISPLAY_GEN_INT_STATUS, HDCP_AUTHORIZED_INT_STAT, 28, 1) /* inferred */
+/* inferred */
+FIELD(R300_DISPLAY_GEN_INT_STATUS, HDCP_AUTHORIZED_INT_STAT, 28, 1)
 FIELD(R300_DISPLAY_GEN_INT_STATUS, GEYSERVILLE_STAT, 27, 1) /* inferred */
 FIELD(R300_DISPLAY_GEN_INT_STATUS, SW_INT_SET, 26, 1) /* inferred */
 FIELD(R300_DISPLAY_GEN_INT_STATUS, SW_INT, 25, 1) /* established */
@@ -66,7 +69,8 @@ FIELD(R300_DISPLAY_GEN_INT_STATUS, DMA_VIPH3_INT, 15, 1) /* inferred */
 FIELD(R300_DISPLAY_GEN_INT_STATUS, DMA_VIPH2_INT, 14, 1) /* inferred */
 FIELD(R300_DISPLAY_GEN_INT_STATUS, DMA_VIPH1_INT, 13, 1) /* inferred */
 FIELD(R300_DISPLAY_GEN_INT_STATUS, DMA_VIPH0_INT, 12, 1) /* inferred */
-FIELD(R300_DISPLAY_GEN_INT_STATUS, VSYNC_DIFF_OVER_LIMIT_STAT, 11, 1) /* inferred */
+/* inferred */
+FIELD(R300_DISPLAY_GEN_INT_STATUS, VSYNC_DIFF_OVER_LIMIT_STAT, 11, 1)
 FIELD(R300_DISPLAY_GEN_INT_STATUS, FP2_DETECT_STAT, 10, 1) /* inferred */
 FIELD(R300_DISPLAY_GEN_INT_STATUS, CRTC2_VBLANK_STAT, 9, 1) /* inferred */
 FIELD(R300_DISPLAY_GEN_INT_STATUS, CAP0_INT_ACTIVE, 8, 1) /* inferred */
@@ -179,8 +183,10 @@ FIELD(R300_DISPLAY_CRTC_H_TOTAL_DISP, CRTC_H_TOTAL, 0, 10) /* inferred */
 REG32(R300_DISPLAY_CRTC_H_SYNC_STRT_WID, 0x204) /* established */
 FIELD(R300_DISPLAY_CRTC_H_SYNC_STRT_WID, CRTC_H_SYNC_POL, 23, 1) /* inferred */
 FIELD(R300_DISPLAY_CRTC_H_SYNC_STRT_WID, CRTC_H_SYNC_WID, 16, 6) /* inferred */
-FIELD(R300_DISPLAY_CRTC_H_SYNC_STRT_WID, CRTC_H_SYNC_STRT_CHAR, 3, 10) /* inferred */
-FIELD(R300_DISPLAY_CRTC_H_SYNC_STRT_WID, CRTC_H_SYNC_STRT_PIX, 0, 3) /* inferred */
+/* inferred */
+FIELD(R300_DISPLAY_CRTC_H_SYNC_STRT_WID, CRTC_H_SYNC_STRT_CHAR, 3, 10)
+/* inferred */
+FIELD(R300_DISPLAY_CRTC_H_SYNC_STRT_WID, CRTC_H_SYNC_STRT_PIX, 0, 3)
 
 REG32(R300_DISPLAY_CRTC_V_TOTAL_DISP, 0x208) /* established */
 FIELD(R300_DISPLAY_CRTC_V_TOTAL_DISP, CRTC_V_DISP, 16, 11) /* inferred */
@@ -193,7 +199,8 @@ FIELD(R300_DISPLAY_CRTC_V_SYNC_STRT_WID, CRTC_V_SYNC_STRT, 0, 11) /* inferred */
 
 REG32(R300_DISPLAY_CRTC_OFFSET_CNTL, 0x228) /* inferred */
 FIELD(R300_DISPLAY_CRTC_OFFSET_CNTL, STEREO_AUX, 20, 1) /* inferred */
-FIELD(R300_DISPLAY_CRTC_OFFSET_CNTL, CRTC_STEREO_OFFSET_EN, 17, 1) /* established */
+/* established */
+FIELD(R300_DISPLAY_CRTC_OFFSET_CNTL, CRTC_STEREO_OFFSET_EN, 17, 1)
 FIELD(R300_DISPLAY_CRTC_OFFSET_CNTL, CRTC_OFFSET_FLIP_CNTL, 16, 1) /* inferred */
 FIELD(R300_DISPLAY_CRTC_OFFSET_CNTL, CRTC_TILE_EN, 15, 1) /* inferred */
 FIELD(R300_DISPLAY_CRTC_OFFSET_CNTL, CRTC_MICRO_TILE_EN, 13, 1) /* inferred */

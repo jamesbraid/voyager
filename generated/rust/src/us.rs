@@ -1,9 +1,11 @@
-// generated from devices/us/registers.toml by defs-gen - do not edit, change the source
+// @generated from devices/us/registers.toml by defs-gen - do not edit, change the source
 // SPDX-License-Identifier: BSD-3-Clause
-// defs-gen 2
+// defs-gen 4
 // input sha256 80becab3c0b740e55268ba2bbbe58a6b232c7a30e094a0abfae67f17f4dc7017
 // fragment shader (unified shader) registers of the R300 and R350 3D engine
 #![allow(dead_code)]
+#![allow(clippy::doc_markdown)]
+#![cfg_attr(rustfmt, rustfmt_skip)]
 
 /// (established)
 pub mod config {
@@ -215,6 +217,7 @@ pub mod tex_inst {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod out_fmt {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x46a4;
@@ -282,6 +285,7 @@ pub mod out_fmt {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod w_fmt {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x46b4;

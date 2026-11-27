@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <!-- generated from devices/ga/registers.toml by defs-gen - do not edit, change the source -->
 <!-- SPDX-License-Identifier: BSD-3-Clause -->
-<!-- defs-gen 2 -->
+<!-- defs-gen 4 -->
 <!-- input sha256 b474daa9d295799fe8f5e5ddf58374b9d80cdb167b2acb0dfa77d323e342828f -->
 <genxml unit="ga" prefix="R300_GA" title="geometry assembly registers of the R300 and R350 3D engine" from="AMD Radeon R3xx 3D Register Reference, revision 1.0">
   <doc>Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes the R300 and R350. Registers already defined in the display or pipes unit are not repeated.</doc>

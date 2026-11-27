@@ -1,9 +1,11 @@
-// generated from devices/ga/registers.toml by defs-gen - do not edit, change the source
+// @generated from devices/ga/registers.toml by defs-gen - do not edit, change the source
 // SPDX-License-Identifier: BSD-3-Clause
-// defs-gen 2
+// defs-gen 4
 // input sha256 b474daa9d295799fe8f5e5ddf58374b9d80cdb167b2acb0dfa77d323e342828f
 // geometry assembly registers of the R300 and R350 3D engine
 #![allow(dead_code)]
+#![allow(clippy::doc_markdown)]
+#![cfg_attr(rustfmt, rustfmt_skip)]
 
 /// (established)
 pub mod point_s0 {
@@ -406,6 +408,7 @@ pub mod solid_ba {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod poly_mode {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x4288;

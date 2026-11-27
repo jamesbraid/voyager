@@ -1,6 +1,6 @@
 {
  "license": "BSD-3-Clause",
- "generator": "defs-gen 2",
+ "generator": "defs-gen 4",
  "input_sha256": "27e3a56aa0329a5f09ed7dc6f590fcc82a75e49b2b88a9c924ec399bc0eb3377",
  "schema": "defs-flat/1",
  "source": "devices/su/registers.toml",

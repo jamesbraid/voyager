@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <!-- generated from devices/gart/registers.toml by defs-gen - do not edit, change the source -->
 <!-- SPDX-License-Identifier: BSD-3-Clause -->
-<!-- defs-gen 2 -->
+<!-- defs-gen 4 -->
 <!-- input sha256 7a4b4167ec5845ba012d8b67a0e3e5a3042273b13933438c5f1985fdd2536629 -->
 <genxml unit="gart" prefix="R300_GART" title="AGP and PCI GART registers of the R3xx-class FireGL boards" from="Linux drivers/gpu/drm/radeon/radeon_reg.h">
   <doc>The chip-side translation of bus addresses: the AGP control word and the PCI GART table registers of the public Linux driver. The shipped IRIX driver parks the aperture and never touches the table registers, so these describe the chip for a guest that uses them, not what IRIX does.</doc>

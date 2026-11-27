@@ -1,6 +1,6 @@
 {
  "license": "BSD-3-Clause",
- "generator": "defs-gen 2",
+ "generator": "defs-gen 4",
  "input_sha256": "3b8ae7410ab910f79ca79ae8117cfa7efcb514eb7342b7158f00fc0bf00e96e0",
  "schema": "defs-flat/1",
  "source": "devices/vap/registers.toml",

@@ -1,9 +1,11 @@
-/* generated from devices/us/registers.toml by defs-gen - do not edit, change the source */
+/* generated from devices/us/registers.toml by defs-gen - do not edit, change
+ * the source */
 /* SPDX-License-Identifier: BSD-3-Clause */
-/* defs-gen 2 */
+/* defs-gen 4 */
 /* input sha256 80becab3c0b740e55268ba2bbbe58a6b232c7a30e094a0abfae67f17f4dc7017 */
 /* fragment shader (unified shader) registers of the R300 and R350 3D engine */
-/* Names are R300_US_*; name source: public (AMD Radeon R3xx 3D Register Reference, revision 1.0). */
+/* Names are R300_US_*; name source: public (AMD Radeon R3xx 3D Register
+ * Reference, revision 1.0). */
 #ifndef HW_SGI_GPU_R300_US_REGS_H
 #define HW_SGI_GPU_R300_US_REGS_H
 

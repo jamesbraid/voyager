@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <!-- generated from devices/cp/registers.toml by defs-gen - do not edit, change the source -->
 <!-- SPDX-License-Identifier: BSD-3-Clause -->
-<!-- defs-gen 2 -->
+<!-- defs-gen 4 -->
 <!-- input sha256 292f6629f6377b5166461499fbd6206ddb0589ceeaf9ddb855fae73fe3716ed5 -->
 <genxml unit="cp" prefix="R300_CP" title="command processor registers of the R3xx-class FireGL boards" from="AMD Radeon R5xx Acceleration, revision 1.5">
   <doc>Command processor registers from AMD's public R5xx acceleration guide, whose command processor chapter is the common R3xx to R5xx design. Registers already defined in the display unit (ring, mode, microcode, status) are not repeated.</doc>

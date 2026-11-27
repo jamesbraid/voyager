@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <!-- generated from devices/vap/registers.toml by defs-gen - do not edit, change the source -->
 <!-- SPDX-License-Identifier: BSD-3-Clause -->
-<!-- defs-gen 2 -->
+<!-- defs-gen 4 -->
 <!-- input sha256 3b8ae7410ab910f79ca79ae8117cfa7efcb514eb7342b7158f00fc0bf00e96e0 -->
 <genxml unit="vap" prefix="R300_VAP" title="vertex array processor and programmable vertex shader registers of the R300 and R350 3D engine" from="AMD Radeon R3xx 3D Register Reference, revision 1.0">
   <doc>Layout of the block from AMD's public register reference; the chip is documented as the R3xx family, which includes the R300 and R350. Registers already defined in the display or pipes unit are not repeated.</doc>

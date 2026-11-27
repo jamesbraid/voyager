@@ -1,9 +1,12 @@
-/* generated from devices/crtc/registers.toml by defs-gen - do not edit, change the source */
+/* generated from devices/crtc/registers.toml by defs-gen - do not edit, change
+ * the source */
 /* SPDX-License-Identifier: BSD-3-Clause */
-/* defs-gen 2 */
+/* defs-gen 4 */
 /* input sha256 8de5d72a19c60f074396ab93989685d8a6b14d2556e8c6fa2415d67524c77b30 */
-/* second CRTC, cursor, palette and DAC registers of the R3xx-class FireGL boards */
-/* Names are R300_CRTC_*; name source: public (Linux drivers/gpu/drm/radeon/radeon_reg.h). */
+/* second CRTC, cursor, palette and DAC registers of the R3xx-class FireGL
+ * boards */
+/* Names are R300_CRTC_*; name source: public (Linux
+ * drivers/gpu/drm/radeon/radeon_reg.h). */
 #ifndef HW_SGI_GPU_R300_CRTC_REGS_H
 #define HW_SGI_GPU_R300_CRTC_REGS_H
 

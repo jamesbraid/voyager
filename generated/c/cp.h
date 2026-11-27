@@ -1,6 +1,7 @@
-/* generated from devices/cp/registers.toml by defs-gen - do not edit, change the source */
+/* generated from devices/cp/registers.toml by defs-gen - do not edit, change
+ * the source */
 /* SPDX-License-Identifier: BSD-3-Clause */
-/* defs-gen 2 */
+/* defs-gen 4 */
 /* input sha256 292f6629f6377b5166461499fbd6206ddb0589ceeaf9ddb855fae73fe3716ed5 */
 /* command processor registers of the R3xx-class FireGL boards */
 #ifndef R300_CP_GEN_H
@@ -9,187 +10,208 @@
 #include <stdint.h>
 
 
-/* rb_rptr_wr: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 153 */
+/* rb_rptr_wr: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5,
+ * p. 153 */
 #define R300_CP_RB_RPTR_WR_OFFSET                    0x71cu /* established */
 #define R300_CP_RB_RPTR_WR_RB_RPTR_WR_SHIFT          0 /* established */
 #define R300_CP_RB_RPTR_WR_RB_RPTR_WR_MASK           0x7fffffu
-#define R300_CP_RB_RPTR_WR_RB_RPTR_WR_INPLACE        (R300_CP_RB_RPTR_WR_RB_RPTR_WR_MASK << R300_CP_RB_RPTR_WR_RB_RPTR_WR_SHIFT)
+#define R300_CP_RB_RPTR_WR_RB_RPTR_WR_INPLACE (R300_CP_RB_RPTR_WR_RB_RPTR_WR_MASK << R300_CP_RB_RPTR_WR_RB_RPTR_WR_SHIFT)
 
-/* gui_src_addr: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 150 */
+/* gui_src_addr: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision
+ * 1.5, p. 150 */
 #define R300_CP_GUI_SRC_ADDR_OFFSET                  0x720u /* established */
 #define R300_CP_GUI_SRC_ADDR_CP_GUI_SRC_ADDR_SHIFT   0 /* established */
 #define R300_CP_GUI_SRC_ADDR_CP_GUI_SRC_ADDR_MASK    0xffffffffu
 #define R300_CP_GUI_SRC_ADDR_CP_GUI_SRC_ADDR_INPLACE (R300_CP_GUI_SRC_ADDR_CP_GUI_SRC_ADDR_MASK << R300_CP_GUI_SRC_ADDR_CP_GUI_SRC_ADDR_SHIFT)
 
-/* gui_dst_addr: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 149 */
+/* gui_dst_addr: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision
+ * 1.5, p. 149 */
 #define R300_CP_GUI_DST_ADDR_OFFSET                  0x724u /* established */
 #define R300_CP_GUI_DST_ADDR_CP_GUI_DST_ADDR_SHIFT   0 /* established */
 #define R300_CP_GUI_DST_ADDR_CP_GUI_DST_ADDR_MASK    0xffffffffu
 #define R300_CP_GUI_DST_ADDR_CP_GUI_DST_ADDR_INPLACE (R300_CP_GUI_DST_ADDR_CP_GUI_DST_ADDR_MASK << R300_CP_GUI_DST_ADDR_CP_GUI_DST_ADDR_SHIFT)
 
-/* gui_command: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 149 */
+/* gui_command: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5,
+ * p. 149 */
 #define R300_CP_GUI_COMMAND_OFFSET                   0x728u /* established */
 #define R300_CP_GUI_COMMAND_CP_GUI_COMMAND_SHIFT     0 /* established */
 #define R300_CP_GUI_COMMAND_CP_GUI_COMMAND_MASK      0xffffffffu
-#define R300_CP_GUI_COMMAND_CP_GUI_COMMAND_INPLACE   (R300_CP_GUI_COMMAND_CP_GUI_COMMAND_MASK << R300_CP_GUI_COMMAND_CP_GUI_COMMAND_SHIFT)
+#define R300_CP_GUI_COMMAND_CP_GUI_COMMAND_INPLACE (R300_CP_GUI_COMMAND_CP_GUI_COMMAND_MASK << R300_CP_GUI_COMMAND_CP_GUI_COMMAND_SHIFT)
 
-/* ib2_base: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 150 */
+/* ib2_base: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p.
+ * 150 */
 #define R300_CP_IB2_BASE_OFFSET                      0x730u /* established */
 #define R300_CP_IB2_BASE_IB2_BASE_SHIFT              2 /* established */
 #define R300_CP_IB2_BASE_IB2_BASE_MASK               0x3fffffffu
-#define R300_CP_IB2_BASE_IB2_BASE_INPLACE            (R300_CP_IB2_BASE_IB2_BASE_MASK << R300_CP_IB2_BASE_IB2_BASE_SHIFT)
+#define R300_CP_IB2_BASE_IB2_BASE_INPLACE (R300_CP_IB2_BASE_IB2_BASE_MASK << R300_CP_IB2_BASE_IB2_BASE_SHIFT)
 
-/* ib2_bufsz: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 150 */
+/* ib2_bufsz: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5,
+ * p. 150 */
 #define R300_CP_IB2_BUFSZ_OFFSET                     0x734u /* established */
 #define R300_CP_IB2_BUFSZ_IB2_BUFSZ_SHIFT            0 /* established */
 #define R300_CP_IB2_BUFSZ_IB2_BUFSZ_MASK             0x7fffffu
-#define R300_CP_IB2_BUFSZ_IB2_BUFSZ_INPLACE          (R300_CP_IB2_BUFSZ_IB2_BUFSZ_MASK << R300_CP_IB2_BUFSZ_IB2_BUFSZ_SHIFT)
+#define R300_CP_IB2_BUFSZ_IB2_BUFSZ_INPLACE (R300_CP_IB2_BUFSZ_IB2_BUFSZ_MASK << R300_CP_IB2_BUFSZ_IB2_BUFSZ_SHIFT)
 
-/* ib_base: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 150 */
+/* ib_base: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p.
+ * 150 */
 #define R300_CP_IB_BASE_OFFSET                       0x738u /* established */
 #define R300_CP_IB_BASE_IB_BASE_SHIFT                2 /* established */
 #define R300_CP_IB_BASE_IB_BASE_MASK                 0x3fffffffu
-#define R300_CP_IB_BASE_IB_BASE_INPLACE              (R300_CP_IB_BASE_IB_BASE_MASK << R300_CP_IB_BASE_IB_BASE_SHIFT)
+#define R300_CP_IB_BASE_IB_BASE_INPLACE (R300_CP_IB_BASE_IB_BASE_MASK << R300_CP_IB_BASE_IB_BASE_SHIFT)
 
-/* ib_bufsz: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 150 */
+/* ib_bufsz: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p.
+ * 150 */
 #define R300_CP_IB_BUFSZ_OFFSET                      0x73cu /* established */
 #define R300_CP_IB_BUFSZ_IB_BUFSZ_SHIFT              0 /* established */
 #define R300_CP_IB_BUFSZ_IB_BUFSZ_MASK               0x7fffffu
-#define R300_CP_IB_BUFSZ_IB_BUFSZ_INPLACE            (R300_CP_IB_BUFSZ_IB_BUFSZ_MASK << R300_CP_IB_BUFSZ_IB_BUFSZ_SHIFT)
+#define R300_CP_IB_BUFSZ_IB_BUFSZ_INPLACE (R300_CP_IB_BUFSZ_IB_BUFSZ_MASK << R300_CP_IB_BUFSZ_IB_BUFSZ_SHIFT)
 
-/* csq_mode: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 148 */
+/* csq_mode: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p.
+ * 148 */
 #define R300_CP_CSQ_MODE_OFFSET                      0x744u /* established */
 #define R300_CP_CSQ_MODE_CSQ_PRIMARY_ENABLE_SHIFT    31 /* established */
 #define R300_CP_CSQ_MODE_CSQ_PRIMARY_ENABLE_MASK     0x1u
-#define R300_CP_CSQ_MODE_CSQ_PRIMARY_ENABLE_INPLACE  (R300_CP_CSQ_MODE_CSQ_PRIMARY_ENABLE_MASK << R300_CP_CSQ_MODE_CSQ_PRIMARY_ENABLE_SHIFT)
+#define R300_CP_CSQ_MODE_CSQ_PRIMARY_ENABLE_INPLACE (R300_CP_CSQ_MODE_CSQ_PRIMARY_ENABLE_MASK << R300_CP_CSQ_MODE_CSQ_PRIMARY_ENABLE_SHIFT)
 #define R300_CP_CSQ_MODE_CSQ_PRIMARY_MODE_SHIFT      30 /* established */
 #define R300_CP_CSQ_MODE_CSQ_PRIMARY_MODE_MASK       0x1u
-#define R300_CP_CSQ_MODE_CSQ_PRIMARY_MODE_INPLACE    (R300_CP_CSQ_MODE_CSQ_PRIMARY_MODE_MASK << R300_CP_CSQ_MODE_CSQ_PRIMARY_MODE_SHIFT)
+#define R300_CP_CSQ_MODE_CSQ_PRIMARY_MODE_INPLACE (R300_CP_CSQ_MODE_CSQ_PRIMARY_MODE_MASK << R300_CP_CSQ_MODE_CSQ_PRIMARY_MODE_SHIFT)
 #define R300_CP_CSQ_MODE_CSQ_INDIRECT1_ENABLE_SHIFT  29 /* established */
 #define R300_CP_CSQ_MODE_CSQ_INDIRECT1_ENABLE_MASK   0x1u
 #define R300_CP_CSQ_MODE_CSQ_INDIRECT1_ENABLE_INPLACE (R300_CP_CSQ_MODE_CSQ_INDIRECT1_ENABLE_MASK << R300_CP_CSQ_MODE_CSQ_INDIRECT1_ENABLE_SHIFT)
 #define R300_CP_CSQ_MODE_CSQ_INDIRECT1_MODE_SHIFT    28 /* established */
 #define R300_CP_CSQ_MODE_CSQ_INDIRECT1_MODE_MASK     0x1u
-#define R300_CP_CSQ_MODE_CSQ_INDIRECT1_MODE_INPLACE  (R300_CP_CSQ_MODE_CSQ_INDIRECT1_MODE_MASK << R300_CP_CSQ_MODE_CSQ_INDIRECT1_MODE_SHIFT)
+#define R300_CP_CSQ_MODE_CSQ_INDIRECT1_MODE_INPLACE (R300_CP_CSQ_MODE_CSQ_INDIRECT1_MODE_MASK << R300_CP_CSQ_MODE_CSQ_INDIRECT1_MODE_SHIFT)
 #define R300_CP_CSQ_MODE_CSQ_INDIRECT2_ENABLE_SHIFT  27 /* established */
 #define R300_CP_CSQ_MODE_CSQ_INDIRECT2_ENABLE_MASK   0x1u
 #define R300_CP_CSQ_MODE_CSQ_INDIRECT2_ENABLE_INPLACE (R300_CP_CSQ_MODE_CSQ_INDIRECT2_ENABLE_MASK << R300_CP_CSQ_MODE_CSQ_INDIRECT2_ENABLE_SHIFT)
 #define R300_CP_CSQ_MODE_CSQ_INDIRECT2_MODE_SHIFT    26 /* established */
 #define R300_CP_CSQ_MODE_CSQ_INDIRECT2_MODE_MASK     0x1u
-#define R300_CP_CSQ_MODE_CSQ_INDIRECT2_MODE_INPLACE  (R300_CP_CSQ_MODE_CSQ_INDIRECT2_MODE_MASK << R300_CP_CSQ_MODE_CSQ_INDIRECT2_MODE_SHIFT)
+#define R300_CP_CSQ_MODE_CSQ_INDIRECT2_MODE_INPLACE (R300_CP_CSQ_MODE_CSQ_INDIRECT2_MODE_MASK << R300_CP_CSQ_MODE_CSQ_INDIRECT2_MODE_SHIFT)
 #define R300_CP_CSQ_MODE_INDIRECT1_START_SHIFT       8 /* established */
 #define R300_CP_CSQ_MODE_INDIRECT1_START_MASK        0x7fu
-#define R300_CP_CSQ_MODE_INDIRECT1_START_INPLACE     (R300_CP_CSQ_MODE_INDIRECT1_START_MASK << R300_CP_CSQ_MODE_INDIRECT1_START_SHIFT)
+#define R300_CP_CSQ_MODE_INDIRECT1_START_INPLACE (R300_CP_CSQ_MODE_INDIRECT1_START_MASK << R300_CP_CSQ_MODE_INDIRECT1_START_SHIFT)
 #define R300_CP_CSQ_MODE_INDIRECT2_START_SHIFT       0 /* established */
 #define R300_CP_CSQ_MODE_INDIRECT2_START_MASK        0x7fu
-#define R300_CP_CSQ_MODE_INDIRECT2_START_INPLACE     (R300_CP_CSQ_MODE_INDIRECT2_START_MASK << R300_CP_CSQ_MODE_INDIRECT2_START_SHIFT)
+#define R300_CP_CSQ_MODE_INDIRECT2_START_INPLACE (R300_CP_CSQ_MODE_INDIRECT2_START_MASK << R300_CP_CSQ_MODE_INDIRECT2_START_SHIFT)
 
-/* resync_addr: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 154 */
+/* resync_addr: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5,
+ * p. 154 */
 #define R300_CP_RESYNC_ADDR_OFFSET                   0x778u /* established */
 #define R300_CP_RESYNC_ADDR_RESYNC_ADDR_SHIFT        0 /* established */
 #define R300_CP_RESYNC_ADDR_RESYNC_ADDR_MASK         0x7u
-#define R300_CP_RESYNC_ADDR_RESYNC_ADDR_INPLACE      (R300_CP_RESYNC_ADDR_RESYNC_ADDR_MASK << R300_CP_RESYNC_ADDR_RESYNC_ADDR_SHIFT)
+#define R300_CP_RESYNC_ADDR_RESYNC_ADDR_INPLACE (R300_CP_RESYNC_ADDR_RESYNC_ADDR_MASK << R300_CP_RESYNC_ADDR_RESYNC_ADDR_SHIFT)
 
-/* resync_data: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 154 */
+/* resync_data: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5,
+ * p. 154 */
 #define R300_CP_RESYNC_DATA_OFFSET                   0x77cu /* established */
 #define R300_CP_RESYNC_DATA_RESYNC_DATA_SHIFT        0 /* established */
 #define R300_CP_RESYNC_DATA_RESYNC_DATA_MASK         0xffffffffu
-#define R300_CP_RESYNC_DATA_RESYNC_DATA_INPLACE      (R300_CP_RESYNC_DATA_RESYNC_DATA_MASK << R300_CP_RESYNC_DATA_RESYNC_DATA_SHIFT)
+#define R300_CP_RESYNC_DATA_RESYNC_DATA_INPLACE (R300_CP_RESYNC_DATA_RESYNC_DATA_MASK << R300_CP_RESYNC_DATA_RESYNC_DATA_SHIFT)
 
-/* csq_avail: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 148 */
+/* csq_avail: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5,
+ * p. 148 */
 #define R300_CP_CSQ_AVAIL_OFFSET                     0x7b8u /* established */
 #define R300_CP_CSQ_AVAIL_CSQ_CNT_INDIRECT2_SHIFT    20 /* established */
 #define R300_CP_CSQ_AVAIL_CSQ_CNT_INDIRECT2_MASK     0x3ffu
-#define R300_CP_CSQ_AVAIL_CSQ_CNT_INDIRECT2_INPLACE  (R300_CP_CSQ_AVAIL_CSQ_CNT_INDIRECT2_MASK << R300_CP_CSQ_AVAIL_CSQ_CNT_INDIRECT2_SHIFT)
+#define R300_CP_CSQ_AVAIL_CSQ_CNT_INDIRECT2_INPLACE (R300_CP_CSQ_AVAIL_CSQ_CNT_INDIRECT2_MASK << R300_CP_CSQ_AVAIL_CSQ_CNT_INDIRECT2_SHIFT)
 #define R300_CP_CSQ_AVAIL_CSQ_CNT_INDIRECT_SHIFT     10 /* established */
 #define R300_CP_CSQ_AVAIL_CSQ_CNT_INDIRECT_MASK      0x3ffu
-#define R300_CP_CSQ_AVAIL_CSQ_CNT_INDIRECT_INPLACE   (R300_CP_CSQ_AVAIL_CSQ_CNT_INDIRECT_MASK << R300_CP_CSQ_AVAIL_CSQ_CNT_INDIRECT_SHIFT)
+#define R300_CP_CSQ_AVAIL_CSQ_CNT_INDIRECT_INPLACE (R300_CP_CSQ_AVAIL_CSQ_CNT_INDIRECT_MASK << R300_CP_CSQ_AVAIL_CSQ_CNT_INDIRECT_SHIFT)
 #define R300_CP_CSQ_AVAIL_CSQ_CNT_PRIMARY_SHIFT      0 /* established */
 #define R300_CP_CSQ_AVAIL_CSQ_CNT_PRIMARY_MASK       0x3ffu
-#define R300_CP_CSQ_AVAIL_CSQ_CNT_PRIMARY_INPLACE    (R300_CP_CSQ_AVAIL_CSQ_CNT_PRIMARY_MASK << R300_CP_CSQ_AVAIL_CSQ_CNT_PRIMARY_SHIFT)
+#define R300_CP_CSQ_AVAIL_CSQ_CNT_PRIMARY_INPLACE (R300_CP_CSQ_AVAIL_CSQ_CNT_PRIMARY_MASK << R300_CP_CSQ_AVAIL_CSQ_CNT_PRIMARY_SHIFT)
 
-/* vid_src_addr: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 155 */
+/* vid_src_addr: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision
+ * 1.5, p. 155 */
 #define R300_CP_VID_SRC_ADDR_OFFSET                  0x7c4u /* established */
 #define R300_CP_VID_SRC_ADDR_CP_VID_SRC_ADDR_SHIFT   0 /* established */
 #define R300_CP_VID_SRC_ADDR_CP_VID_SRC_ADDR_MASK    0xffffffffu
 #define R300_CP_VID_SRC_ADDR_CP_VID_SRC_ADDR_INPLACE (R300_CP_VID_SRC_ADDR_CP_VID_SRC_ADDR_MASK << R300_CP_VID_SRC_ADDR_CP_VID_SRC_ADDR_SHIFT)
 
-/* vid_dst_addr: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 155 */
+/* vid_dst_addr: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision
+ * 1.5, p. 155 */
 #define R300_CP_VID_DST_ADDR_OFFSET                  0x7c8u /* established */
 #define R300_CP_VID_DST_ADDR_CP_VID_DST_ADDR_SHIFT   0 /* established */
 #define R300_CP_VID_DST_ADDR_CP_VID_DST_ADDR_MASK    0xffffffffu
 #define R300_CP_VID_DST_ADDR_CP_VID_DST_ADDR_INPLACE (R300_CP_VID_DST_ADDR_CP_VID_DST_ADDR_MASK << R300_CP_VID_DST_ADDR_CP_VID_DST_ADDR_SHIFT)
 
-/* vid_command: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 154 */
+/* vid_command: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5,
+ * p. 154 */
 #define R300_CP_VID_COMMAND_OFFSET                   0x7ccu /* established */
 #define R300_CP_VID_COMMAND_CP_VID_COMMAND_SHIFT     0 /* established */
 #define R300_CP_VID_COMMAND_CP_VID_COMMAND_MASK      0xffffffffu
-#define R300_CP_VID_COMMAND_CP_VID_COMMAND_INPLACE   (R300_CP_VID_COMMAND_CP_VID_COMMAND_MASK << R300_CP_VID_COMMAND_CP_VID_COMMAND_SHIFT)
+#define R300_CP_VID_COMMAND_CP_VID_COMMAND_INPLACE (R300_CP_VID_COMMAND_CP_VID_COMMAND_MASK << R300_CP_VID_COMMAND_CP_VID_COMMAND_SHIFT)
 
-/* me_ram_raddr: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 151 */
+/* me_ram_raddr: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision
+ * 1.5, p. 151 */
 #define R300_CP_ME_RAM_RADDR_OFFSET                  0x7d8u /* established */
 #define R300_CP_ME_RAM_RADDR_ME_RAM_RADDR_SHIFT      0 /* established */
 #define R300_CP_ME_RAM_RADDR_ME_RAM_RADDR_MASK       0xffu
-#define R300_CP_ME_RAM_RADDR_ME_RAM_RADDR_INPLACE    (R300_CP_ME_RAM_RADDR_ME_RAM_RADDR_MASK << R300_CP_ME_RAM_RADDR_ME_RAM_RADDR_SHIFT)
+#define R300_CP_ME_RAM_RADDR_ME_RAM_RADDR_INPLACE (R300_CP_ME_RAM_RADDR_ME_RAM_RADDR_MASK << R300_CP_ME_RAM_RADDR_ME_RAM_RADDR_SHIFT)
 
-/* vp_addr_cntl: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 155 */
+/* vp_addr_cntl: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision
+ * 1.5, p. 155 */
 #define R300_CP_VP_ADDR_CNTL_OFFSET                  0x7e8u /* established */
 #define R300_CP_VP_ADDR_CNTL_RING_VP_FETCH_SHIFT     9 /* established */
 #define R300_CP_VP_ADDR_CNTL_RING_VP_FETCH_MASK      0x1u
-#define R300_CP_VP_ADDR_CNTL_RING_VP_FETCH_INPLACE   (R300_CP_VP_ADDR_CNTL_RING_VP_FETCH_MASK << R300_CP_VP_ADDR_CNTL_RING_VP_FETCH_SHIFT)
+#define R300_CP_VP_ADDR_CNTL_RING_VP_FETCH_INPLACE (R300_CP_VP_ADDR_CNTL_RING_VP_FETCH_MASK << R300_CP_VP_ADDR_CNTL_RING_VP_FETCH_SHIFT)
 #define R300_CP_VP_ADDR_CNTL_INDR1_VP_FETCH_SHIFT    8 /* established */
 #define R300_CP_VP_ADDR_CNTL_INDR1_VP_FETCH_MASK     0x1u
-#define R300_CP_VP_ADDR_CNTL_INDR1_VP_FETCH_INPLACE  (R300_CP_VP_ADDR_CNTL_INDR1_VP_FETCH_MASK << R300_CP_VP_ADDR_CNTL_INDR1_VP_FETCH_SHIFT)
+#define R300_CP_VP_ADDR_CNTL_INDR1_VP_FETCH_INPLACE (R300_CP_VP_ADDR_CNTL_INDR1_VP_FETCH_MASK << R300_CP_VP_ADDR_CNTL_INDR1_VP_FETCH_SHIFT)
 #define R300_CP_VP_ADDR_CNTL_INDR2_VP_FETCH_SHIFT    7 /* established */
 #define R300_CP_VP_ADDR_CNTL_INDR2_VP_FETCH_MASK     0x1u
-#define R300_CP_VP_ADDR_CNTL_INDR2_VP_FETCH_INPLACE  (R300_CP_VP_ADDR_CNTL_INDR2_VP_FETCH_MASK << R300_CP_VP_ADDR_CNTL_INDR2_VP_FETCH_SHIFT)
+#define R300_CP_VP_ADDR_CNTL_INDR2_VP_FETCH_INPLACE (R300_CP_VP_ADDR_CNTL_INDR2_VP_FETCH_MASK << R300_CP_VP_ADDR_CNTL_INDR2_VP_FETCH_SHIFT)
 #define R300_CP_VP_ADDR_CNTL_GUIDMA_VP_RD_SHIFT      6 /* established */
 #define R300_CP_VP_ADDR_CNTL_GUIDMA_VP_RD_MASK       0x1u
-#define R300_CP_VP_ADDR_CNTL_GUIDMA_VP_RD_INPLACE    (R300_CP_VP_ADDR_CNTL_GUIDMA_VP_RD_MASK << R300_CP_VP_ADDR_CNTL_GUIDMA_VP_RD_SHIFT)
+#define R300_CP_VP_ADDR_CNTL_GUIDMA_VP_RD_INPLACE (R300_CP_VP_ADDR_CNTL_GUIDMA_VP_RD_MASK << R300_CP_VP_ADDR_CNTL_GUIDMA_VP_RD_SHIFT)
 #define R300_CP_VP_ADDR_CNTL_GUIDMA_VP_WR_SHIFT      5 /* established */
 #define R300_CP_VP_ADDR_CNTL_GUIDMA_VP_WR_MASK       0x1u
-#define R300_CP_VP_ADDR_CNTL_GUIDMA_VP_WR_INPLACE    (R300_CP_VP_ADDR_CNTL_GUIDMA_VP_WR_MASK << R300_CP_VP_ADDR_CNTL_GUIDMA_VP_WR_SHIFT)
+#define R300_CP_VP_ADDR_CNTL_GUIDMA_VP_WR_INPLACE (R300_CP_VP_ADDR_CNTL_GUIDMA_VP_WR_MASK << R300_CP_VP_ADDR_CNTL_GUIDMA_VP_WR_SHIFT)
 #define R300_CP_VP_ADDR_CNTL_VIDDMA_VP_RD_SHIFT      4 /* established */
 #define R300_CP_VP_ADDR_CNTL_VIDDMA_VP_RD_MASK       0x1u
-#define R300_CP_VP_ADDR_CNTL_VIDDMA_VP_RD_INPLACE    (R300_CP_VP_ADDR_CNTL_VIDDMA_VP_RD_MASK << R300_CP_VP_ADDR_CNTL_VIDDMA_VP_RD_SHIFT)
+#define R300_CP_VP_ADDR_CNTL_VIDDMA_VP_RD_INPLACE (R300_CP_VP_ADDR_CNTL_VIDDMA_VP_RD_MASK << R300_CP_VP_ADDR_CNTL_VIDDMA_VP_RD_SHIFT)
 #define R300_CP_VP_ADDR_CNTL_VIDDMA_VP_WR_SHIFT      3 /* established */
 #define R300_CP_VP_ADDR_CNTL_VIDDMA_VP_WR_MASK       0x1u
-#define R300_CP_VP_ADDR_CNTL_VIDDMA_VP_WR_INPLACE    (R300_CP_VP_ADDR_CNTL_VIDDMA_VP_WR_MASK << R300_CP_VP_ADDR_CNTL_VIDDMA_VP_WR_SHIFT)
+#define R300_CP_VP_ADDR_CNTL_VIDDMA_VP_WR_INPLACE (R300_CP_VP_ADDR_CNTL_VIDDMA_VP_WR_MASK << R300_CP_VP_ADDR_CNTL_VIDDMA_VP_WR_SHIFT)
 #define R300_CP_VP_ADDR_CNTL_RPTR_VP_UPDATE_SHIFT    2 /* established */
 #define R300_CP_VP_ADDR_CNTL_RPTR_VP_UPDATE_MASK     0x1u
-#define R300_CP_VP_ADDR_CNTL_RPTR_VP_UPDATE_INPLACE  (R300_CP_VP_ADDR_CNTL_RPTR_VP_UPDATE_MASK << R300_CP_VP_ADDR_CNTL_RPTR_VP_UPDATE_SHIFT)
+#define R300_CP_VP_ADDR_CNTL_RPTR_VP_UPDATE_INPLACE (R300_CP_VP_ADDR_CNTL_RPTR_VP_UPDATE_MASK << R300_CP_VP_ADDR_CNTL_RPTR_VP_UPDATE_SHIFT)
 #define R300_CP_VP_ADDR_CNTL_SCRATCH_VP_WR_SHIFT     1 /* established */
 #define R300_CP_VP_ADDR_CNTL_SCRATCH_VP_WR_MASK      0x1u
-#define R300_CP_VP_ADDR_CNTL_SCRATCH_VP_WR_INPLACE   (R300_CP_VP_ADDR_CNTL_SCRATCH_VP_WR_MASK << R300_CP_VP_ADDR_CNTL_SCRATCH_VP_WR_SHIFT)
+#define R300_CP_VP_ADDR_CNTL_SCRATCH_VP_WR_INPLACE (R300_CP_VP_ADDR_CNTL_SCRATCH_VP_WR_MASK << R300_CP_VP_ADDR_CNTL_SCRATCH_VP_WR_SHIFT)
 #define R300_CP_VP_ADDR_CNTL_SCRATCH_ALT_VP_WR_SHIFT 0 /* established */
 #define R300_CP_VP_ADDR_CNTL_SCRATCH_ALT_VP_WR_MASK  0x1u
 #define R300_CP_VP_ADDR_CNTL_SCRATCH_ALT_VP_WR_INPLACE (R300_CP_VP_ADDR_CNTL_SCRATCH_ALT_VP_WR_MASK << R300_CP_VP_ADDR_CNTL_SCRATCH_ALT_VP_WR_SHIFT)
 
-/* csq_addr: w32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 147 */
+/* csq_addr: w32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p.
+ * 147 */
 #define R300_CP_CSQ_ADDR_OFFSET                      0x7f0u /* established */
 #define R300_CP_CSQ_ADDR_CSQ_ADDR_SHIFT              2 /* established */
 #define R300_CP_CSQ_ADDR_CSQ_ADDR_MASK               0x3ffu
-#define R300_CP_CSQ_ADDR_CSQ_ADDR_INPLACE            (R300_CP_CSQ_ADDR_CSQ_ADDR_MASK << R300_CP_CSQ_ADDR_CSQ_ADDR_SHIFT)
+#define R300_CP_CSQ_ADDR_CSQ_ADDR_INPLACE (R300_CP_CSQ_ADDR_CSQ_ADDR_MASK << R300_CP_CSQ_ADDR_CSQ_ADDR_SHIFT)
 
-/* csq_data: r32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 148 */
+/* csq_data: r32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p.
+ * 148 */
 #define R300_CP_CSQ_DATA_OFFSET                      0x7f4u /* established */
 #define R300_CP_CSQ_DATA_CSQ_DATA_SHIFT              0 /* established */
 #define R300_CP_CSQ_DATA_CSQ_DATA_MASK               0xffffffffu
-#define R300_CP_CSQ_DATA_CSQ_DATA_INPLACE            (R300_CP_CSQ_DATA_CSQ_DATA_MASK << R300_CP_CSQ_DATA_CSQ_DATA_SHIFT)
+#define R300_CP_CSQ_DATA_CSQ_DATA_INPLACE (R300_CP_CSQ_DATA_CSQ_DATA_MASK << R300_CP_CSQ_DATA_CSQ_DATA_SHIFT)
 
-/* csq_stat: r32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 149 */
+/* csq_stat: r32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p.
+ * 149 */
 #define R300_CP_CSQ_STAT_OFFSET                      0x7f8u /* established */
 #define R300_CP_CSQ_STAT_CSQ_RPTR_INDIRECT_SHIFT     20 /* established */
 #define R300_CP_CSQ_STAT_CSQ_RPTR_INDIRECT_MASK      0x3ffu
-#define R300_CP_CSQ_STAT_CSQ_RPTR_INDIRECT_INPLACE   (R300_CP_CSQ_STAT_CSQ_RPTR_INDIRECT_MASK << R300_CP_CSQ_STAT_CSQ_RPTR_INDIRECT_SHIFT)
+#define R300_CP_CSQ_STAT_CSQ_RPTR_INDIRECT_INPLACE (R300_CP_CSQ_STAT_CSQ_RPTR_INDIRECT_MASK << R300_CP_CSQ_STAT_CSQ_RPTR_INDIRECT_SHIFT)
 #define R300_CP_CSQ_STAT_CSQ_WPTR_PRIMARY_SHIFT      10 /* established */
 #define R300_CP_CSQ_STAT_CSQ_WPTR_PRIMARY_MASK       0x3ffu
-#define R300_CP_CSQ_STAT_CSQ_WPTR_PRIMARY_INPLACE    (R300_CP_CSQ_STAT_CSQ_WPTR_PRIMARY_MASK << R300_CP_CSQ_STAT_CSQ_WPTR_PRIMARY_SHIFT)
+#define R300_CP_CSQ_STAT_CSQ_WPTR_PRIMARY_INPLACE (R300_CP_CSQ_STAT_CSQ_WPTR_PRIMARY_MASK << R300_CP_CSQ_STAT_CSQ_WPTR_PRIMARY_SHIFT)
 #define R300_CP_CSQ_STAT_CSQ_RPTR_PRIMARY_SHIFT      0 /* established */
 #define R300_CP_CSQ_STAT_CSQ_RPTR_PRIMARY_MASK       0x3ffu
-#define R300_CP_CSQ_STAT_CSQ_RPTR_PRIMARY_INPLACE    (R300_CP_CSQ_STAT_CSQ_RPTR_PRIMARY_MASK << R300_CP_CSQ_STAT_CSQ_RPTR_PRIMARY_SHIFT)
+#define R300_CP_CSQ_STAT_CSQ_RPTR_PRIMARY_INPLACE (R300_CP_CSQ_STAT_CSQ_RPTR_PRIMARY_MASK << R300_CP_CSQ_STAT_CSQ_RPTR_PRIMARY_SHIFT)
 
-/* csq2_stat: r32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 147 */
+/* csq2_stat: r32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p.
+ * 147 */
 #define R300_CP_CSQ2_STAT_OFFSET                     0x7fcu /* established */
 #define R300_CP_CSQ2_STAT_CSQ_WPTR_INDIRECT2_SHIFT   20 /* established */
 #define R300_CP_CSQ2_STAT_CSQ_WPTR_INDIRECT2_MASK    0x3ffu
@@ -199,9 +221,10 @@
 #define R300_CP_CSQ2_STAT_CSQ_RPTR_INDIRECT2_INPLACE (R300_CP_CSQ2_STAT_CSQ_RPTR_INDIRECT2_MASK << R300_CP_CSQ2_STAT_CSQ_RPTR_INDIRECT2_SHIFT)
 #define R300_CP_CSQ2_STAT_CSQ_WPTR_INDIRECT_SHIFT    0 /* established */
 #define R300_CP_CSQ2_STAT_CSQ_WPTR_INDIRECT_MASK     0x3ffu
-#define R300_CP_CSQ2_STAT_CSQ_WPTR_INDIRECT_INPLACE  (R300_CP_CSQ2_STAT_CSQ_WPTR_INDIRECT_MASK << R300_CP_CSQ2_STAT_CSQ_WPTR_INDIRECT_SHIFT)
+#define R300_CP_CSQ2_STAT_CSQ_WPTR_INDIRECT_INPLACE (R300_CP_CSQ2_STAT_CSQ_WPTR_INDIRECT_MASK << R300_CP_CSQ2_STAT_CSQ_WPTR_INDIRECT_SHIFT)
 
-/* csq_aper_primary: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 147 */
+/* csq_aper_primary: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision
+ * 1.5, p. 147 */
 #define R300_CP_CSQ_APER_PRIMARY_OFFSET              0x1000u /* established */
 #define R300_CP_CSQ_APER_PRIMARY_COUNT               128
 #define R300_CP_CSQ_APER_PRIMARY_STRIDE              4
@@ -209,15 +232,18 @@
 #define R300_CP_CSQ_APER_PRIMARY_CP_CSQ_APER_PRIMARY_MASK 0xffffffffu
 #define R300_CP_CSQ_APER_PRIMARY_CP_CSQ_APER_PRIMARY_INPLACE (R300_CP_CSQ_APER_PRIMARY_CP_CSQ_APER_PRIMARY_MASK << R300_CP_CSQ_APER_PRIMARY_CP_CSQ_APER_PRIMARY_SHIFT)
 
-/* csq_aper_indirect2: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 147 */
+/* csq_aper_indirect2: rw32, reset unknown; AMD Radeon R5xx Acceleration,
+ * revision 1.5, p. 147 */
 #define R300_CP_CSQ_APER_INDIRECT2_OFFSET            0x1200u /* established */
 #define R300_CP_CSQ_APER_INDIRECT2_COUNT             64
 #define R300_CP_CSQ_APER_INDIRECT2_STRIDE            4
-#define R300_CP_CSQ_APER_INDIRECT2_CP_CSQ_APER_INDIRECT2_SHIFT 0 /* established */
+/* established */
+#define R300_CP_CSQ_APER_INDIRECT2_CP_CSQ_APER_INDIRECT2_SHIFT 0
 #define R300_CP_CSQ_APER_INDIRECT2_CP_CSQ_APER_INDIRECT2_MASK 0xffffffffu
 #define R300_CP_CSQ_APER_INDIRECT2_CP_CSQ_APER_INDIRECT2_INPLACE (R300_CP_CSQ_APER_INDIRECT2_CP_CSQ_APER_INDIRECT2_MASK << R300_CP_CSQ_APER_INDIRECT2_CP_CSQ_APER_INDIRECT2_SHIFT)
 
-/* csq_aper_indirect: rw32, reset unknown; AMD Radeon R5xx Acceleration, revision 1.5, p. 147 */
+/* csq_aper_indirect: rw32, reset unknown; AMD Radeon R5xx Acceleration,
+ * revision 1.5, p. 147 */
 #define R300_CP_CSQ_APER_INDIRECT_OFFSET             0x1300u /* established */
 #define R300_CP_CSQ_APER_INDIRECT_COUNT              64
 #define R300_CP_CSQ_APER_INDIRECT_STRIDE             4

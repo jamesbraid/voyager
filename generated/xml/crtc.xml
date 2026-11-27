@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <!-- generated from devices/crtc/registers.toml by defs-gen - do not edit, change the source -->
 <!-- SPDX-License-Identifier: BSD-3-Clause -->
-<!-- defs-gen 2 -->
+<!-- defs-gen 4 -->
 <!-- input sha256 8de5d72a19c60f074396ab93989685d8a6b14d2556e8c6fa2415d67524c77b30 -->
 <genxml unit="crtc" prefix="R300_CRTC" title="second CRTC, cursor, palette and DAC registers of the R3xx-class FireGL boards" from="Linux drivers/gpu/drm/radeon/radeon_reg.h">
   <doc>Registers of the second display head and its cursor, the palette port, DAC and panel-link registers beyond those the display unit holds. Names and offsets come from the public Linux radeon header, so the grade is inferred; bit layouts are not carried. Whether IRIX programs each one is read in the display notes where it does.</doc>

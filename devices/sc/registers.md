@@ -1,6 +1,6 @@
 <!-- generated from devices/sc/registers.toml by defs-gen - do not edit, change the source -->
 <!-- SPDX-License-Identifier: BSD-3-Clause -->
-<!-- defs-gen 2 -->
+<!-- defs-gen 4 -->
 <!-- input sha256 89ce7846f26fd566b7c475d2dcfe95762d0b08c56fc2d0da243a116e94ab78e4 -->
 
 # scan converter registers (clip rectangles, scissors, Hi-Z enable) of the R300 and R350 3D engine

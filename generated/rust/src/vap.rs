@@ -1,9 +1,11 @@
-// generated from devices/vap/registers.toml by defs-gen - do not edit, change the source
+// @generated from devices/vap/registers.toml by defs-gen - do not edit, change the source
 // SPDX-License-Identifier: BSD-3-Clause
-// defs-gen 2
+// defs-gen 4
 // input sha256 3b8ae7410ab910f79ca79ae8117cfa7efcb514eb7342b7158f00fc0bf00e96e0
 // vertex array processor and programmable vertex shader registers of the R300 and R350 3D engine
 #![allow(dead_code)]
+#![allow(clippy::doc_markdown)]
+#![cfg_attr(rustfmt, rustfmt_skip)]
 
 /// (established)
 pub mod vport_xscale_alias {
@@ -400,6 +402,7 @@ pub mod out_vtx_fmt_1 {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod vport_xscale {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x2098;
@@ -415,6 +418,7 @@ pub mod vport_xscale {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod vport_xoffset {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x209c;
@@ -430,6 +434,7 @@ pub mod vport_xoffset {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod vport_yscale {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x20a0;
@@ -445,6 +450,7 @@ pub mod vport_yscale {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod vport_yoffset {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x20a4;
@@ -460,6 +466,7 @@ pub mod vport_yoffset {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod vport_zscale {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x20a8;
@@ -475,6 +482,7 @@ pub mod vport_zscale {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod vport_zoffset {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x20ac;
@@ -625,6 +633,7 @@ pub mod port_data_idx_128 {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod vtx_num_arrays {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x20c0;

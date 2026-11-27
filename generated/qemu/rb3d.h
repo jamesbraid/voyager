@@ -1,9 +1,11 @@
-/* generated from devices/rb3d/registers.toml by defs-gen - do not edit, change the source */
+/* generated from devices/rb3d/registers.toml by defs-gen - do not edit, change
+ * the source */
 /* SPDX-License-Identifier: BSD-3-Clause */
-/* defs-gen 2 */
+/* defs-gen 4 */
 /* input sha256 9bbc7124c5c41069a98513ea953dc08a33aaca0f429eb5e4385d8eaaedbf9edb */
 /* colour buffer registers of the R300 and R350 3D engine */
-/* Names are R300_RB3D_*; name source: public (AMD Radeon R3xx 3D Register Reference, revision 1.0). */
+/* Names are R300_RB3D_*; name source: public (AMD Radeon R3xx 3D Register
+ * Reference, revision 1.0). */
 #ifndef HW_SGI_GPU_R300_RB3D_REGS_H
 #define HW_SGI_GPU_R300_RB3D_REGS_H
 
@@ -79,19 +81,24 @@ REG32(R300_RB3D_DITHER_CTL, 0x4e50) /* established */
 FIELD(R300_RB3D_DITHER_CTL, ALPHA_DITHER_MODE, 2, 2) /* established */
 FIELD(R300_RB3D_DITHER_CTL, DITHER_MODE, 0, 2) /* established */
 
-REG32(R300_RB3D_CMASK_OFFSET, 0x4e54) /* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+/* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+REG32(R300_RB3D_CMASK_OFFSET, 0x4e54)
 #define R300_RB3D_CMASK_OFFSET_COUNT 4
 #define R300_RB3D_CMASK_OFFSET_STRIDE 0x4
 
-REG32(R300_RB3D_CMASK_PITCH, 0x4e64) /* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+/* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+REG32(R300_RB3D_CMASK_PITCH, 0x4e64)
 #define R300_RB3D_CMASK_PITCH_COUNT 4
 #define R300_RB3D_CMASK_PITCH_STRIDE 0x4
 
-REG32(R300_RB3D_CMASK_WRINDEX, 0x4e74) /* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+/* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+REG32(R300_RB3D_CMASK_WRINDEX, 0x4e74)
 
-REG32(R300_RB3D_CMASK_DWORD, 0x4e78) /* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+/* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+REG32(R300_RB3D_CMASK_DWORD, 0x4e78)
 
-REG32(R300_RB3D_CMASK_RDINDEX, 0x4e7c) /* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+/* inferred; name source: public (Mesa 20.3.5 r300 driver, r300_reg.h) */
+REG32(R300_RB3D_CMASK_RDINDEX, 0x4e7c)
 
 REG32(R300_RB3D_AARESOLVE_OFFSET, 0x4e80) /* established */
 FIELD(R300_RB3D_AARESOLVE_OFFSET, AARESOLVE_OFFSET, 5, 27) /* established */

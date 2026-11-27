@@ -1,9 +1,11 @@
-// generated from devices/pipes/registers.toml by defs-gen - do not edit, change the source
+// @generated from devices/pipes/registers.toml by defs-gen - do not edit, change the source
 // SPDX-License-Identifier: BSD-3-Clause
-// defs-gen 2
+// defs-gen 4
 // input sha256 e34450f0e3a1cdb6a394d0c3d5325db659d980425921c14e955301c3fb584e8d
 // per-pipe select and Z-buffer registers of the R3xx-class FireGL boards
 #![allow(dead_code)]
+#![allow(clippy::doc_markdown)]
+#![cfg_attr(rustfmt, rustfmt_skip)]
 
 /// Selects the pixel pipes that receive register writes. Writes reach both pipes unless this register restricts them. (established)
 pub mod su_reg_dest {

@@ -1,9 +1,11 @@
-// generated from devices/zb/registers.toml by defs-gen - do not edit, change the source
+// @generated from devices/zb/registers.toml by defs-gen - do not edit, change the source
 // SPDX-License-Identifier: BSD-3-Clause
-// defs-gen 2
+// defs-gen 4
 // input sha256 eed73ffdc42030ce14850ecd8ff9b1a241d2c785d53276b348bfbdff9a247780
 // Z buffer and hierarchical Z registers of the R300 and R350 3D engine
 #![allow(dead_code)]
+#![allow(clippy::doc_markdown)]
+#![cfg_attr(rustfmt, rustfmt_skip)]
 
 /// (established)
 pub mod cntl {
@@ -226,6 +228,7 @@ pub mod format {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod ztop {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x4f14;
@@ -276,6 +279,7 @@ pub mod zcache_ctlstat {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod depthoffset {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x4f20;
@@ -291,6 +295,7 @@ pub mod depthoffset {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod depthpitch {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x4f24;
@@ -336,6 +341,7 @@ pub mod depthpitch {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod depthclearvalue {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x4f28;

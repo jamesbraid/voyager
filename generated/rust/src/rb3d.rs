@@ -1,9 +1,11 @@
-// generated from devices/rb3d/registers.toml by defs-gen - do not edit, change the source
+// @generated from devices/rb3d/registers.toml by defs-gen - do not edit, change the source
 // SPDX-License-Identifier: BSD-3-Clause
-// defs-gen 2
+// defs-gen 4
 // input sha256 9bbc7124c5c41069a98513ea953dc08a33aaca0f429eb5e4385d8eaaedbf9edb
 // colour buffer registers of the R300 and R350 3D engine
 #![allow(dead_code)]
+#![allow(clippy::doc_markdown)]
+#![cfg_attr(rustfmt, rustfmt_skip)]
 
 /// (established)
 pub mod cctl {
@@ -281,6 +283,7 @@ pub mod ropcntl {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod clrcmp_flipe {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x4e1c;
@@ -296,6 +299,7 @@ pub mod clrcmp_flipe {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod clrcmp_clr {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x4e20;
@@ -311,6 +315,7 @@ pub mod clrcmp_clr {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod clrcmp_msk {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x4e24;
@@ -326,6 +331,7 @@ pub mod clrcmp_msk {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod coloroffset {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x4e28;
@@ -343,6 +349,7 @@ pub mod coloroffset {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod colorpitch {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x4e38;
@@ -489,6 +496,7 @@ pub mod cmask_rdindex {
     pub const OFFSET: u64 = 0x4e7c;
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod aaresolve_offset {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x4e80;
@@ -504,6 +512,7 @@ pub mod aaresolve_offset {
     }
 }
 /// (established)
+#[allow(clippy::module_inception)]
 pub mod aaresolve_pitch {
     pub const WIDTH: u32 = 32;
     pub const OFFSET: u64 = 0x4e84;

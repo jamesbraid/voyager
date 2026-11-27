@@ -1,9 +1,12 @@
-/* generated from devices/vap/registers.toml by defs-gen - do not edit, change the source */
+/* generated from devices/vap/registers.toml by defs-gen - do not edit, change
+ * the source */
 /* SPDX-License-Identifier: BSD-3-Clause */
-/* defs-gen 2 */
+/* defs-gen 4 */
 /* input sha256 3b8ae7410ab910f79ca79ae8117cfa7efcb514eb7342b7158f00fc0bf00e96e0 */
-/* vertex array processor and programmable vertex shader registers of the R300 and R350 3D engine */
-/* Names are R300_VAP_*; name source: public (AMD Radeon R3xx 3D Register Reference, revision 1.0). */
+/* vertex array processor and programmable vertex shader registers of the R300
+ * and R350 3D engine */
+/* Names are R300_VAP_*; name source: public (AMD Radeon R3xx 3D Register
+ * Reference, revision 1.0). */
 #ifndef HW_SGI_GPU_R300_VAP_REGS_H
 #define HW_SGI_GPU_R300_VAP_REGS_H
 
@@ -246,7 +249,8 @@ REG32(R300_VAP_PVS_FLOW_CNTL_ADDRS, 0x2230) /* established */
 #define R300_VAP_PVS_FLOW_CNTL_ADDRS_STRIDE 0x4
 FIELD(R300_VAP_PVS_FLOW_CNTL_ADDRS, PVS_FC_RTN_INST_0, 24, 8) /* established */
 FIELD(R300_VAP_PVS_FLOW_CNTL_ADDRS, PVS_FC_LAST_INST_0, 16, 8) /* established */
-FIELD(R300_VAP_PVS_FLOW_CNTL_ADDRS, PVS_FC_LOOP_CNT_JMP_INST_0, 8, 8) /* established */
+/* established */
+FIELD(R300_VAP_PVS_FLOW_CNTL_ADDRS, PVS_FC_LOOP_CNT_JMP_INST_0, 8, 8)
 FIELD(R300_VAP_PVS_FLOW_CNTL_ADDRS, PVS_FC_ACT_ADRS_0, 0, 8) /* established */
 
 REG32(R300_VAP_PVS_STATE_FLUSH_REG, 0x2284) /* established */
@@ -257,8 +261,10 @@ REG32(R300_VAP_PVS_VTX_TIMEOUT_REG, 0x2288) /* established */
 REG32(R300_VAP_PVS_FLOW_CNTL_LOOP_INDEX, 0x2290) /* established */
 #define R300_VAP_PVS_FLOW_CNTL_LOOP_INDEX_COUNT 16
 #define R300_VAP_PVS_FLOW_CNTL_LOOP_INDEX_STRIDE 0x4
-FIELD(R300_VAP_PVS_FLOW_CNTL_LOOP_INDEX, PVS_FC_LOOP_STEP_VAL_0, 8, 8) /* established */
-FIELD(R300_VAP_PVS_FLOW_CNTL_LOOP_INDEX, PVS_FC_LOOP_INIT_VAL_0, 0, 8) /* established */
+/* established */
+FIELD(R300_VAP_PVS_FLOW_CNTL_LOOP_INDEX, PVS_FC_LOOP_STEP_VAL_0, 8, 8)
+/* established */
+FIELD(R300_VAP_PVS_FLOW_CNTL_LOOP_INDEX, PVS_FC_LOOP_INIT_VAL_0, 0, 8)
 
 REG32(R300_VAP_PVS_CODE_CNTL_0, 0x22d0) /* established */
 FIELD(R300_VAP_PVS_CODE_CNTL_0, PVS_LAST_INST, 20, 10) /* established */

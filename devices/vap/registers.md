@@ -1,6 +1,6 @@
 <!-- generated from devices/vap/registers.toml by defs-gen - do not edit, change the source -->
 <!-- SPDX-License-Identifier: BSD-3-Clause -->
-<!-- defs-gen 2 -->
+<!-- defs-gen 4 -->
 <!-- input sha256 3b8ae7410ab910f79ca79ae8117cfa7efcb514eb7342b7158f00fc0bf00e96e0 -->
 
 # vertex array processor and programmable vertex shader registers of the R300 and R350 3D engine

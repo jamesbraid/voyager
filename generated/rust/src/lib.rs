@@ -1,8 +1,9 @@
-// generated from devices/ and formats/ by defs-gen - do not edit, change the source
+// @generated from devices/ and formats/ by defs-gen - do not edit, change the source
 // SPDX-License-Identifier: BSD-3-Clause
-// defs-gen 2
+// defs-gen 4
 // input sha256 4464babe16febc0c44c587e62842506c3d91d1a7e43be6802e491d20bb83e0ca
 #![no_std]
+#![cfg_attr(rustfmt, rustfmt_skip)]
 pub mod cp;
 pub mod crtc;
 pub mod display;
