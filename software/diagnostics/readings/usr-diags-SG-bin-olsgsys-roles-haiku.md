@@ -1,0 +1,6 @@
+# Role readings: `usr/diags/SG/bin/olsgsys`
+
+Routine roles, each read from the routine's own body. Calls through GOT slots are named by the slot's offset from gp where the symbol table does not name them.
+
+- `main` in `usr/diags/SG/bin/olsgsys` at 0x10008a5c
+  **Inferred.** Startup driver for the diagnostic binary. It calls the routine in the GOT slot at gp-0x7de4 with the original a0 and a1 and the doublewords at block+0x18 and block+0x10 as a2 and a3, where block is the pointer in the slot at gp-0x7fb4 plus 0x4000. The 0x2c bytes at that block are copied to the outgoing area at sp+0. If that call returns non-zero, it calls the slot at gp-0x7e34 with the pointer at gp-0x7e38 plus 0x20 and block plus 0x4030, then calls the slot at gp-0x7e14 with 1; a zero return skips both. It then makes two direct calls, to 0x1001d31c with block plus 0x4078 and to 0x10020ad4 with block plus 0x4088, and stores the address sp+0x30 through the pointer in the slot at gp-0x7ac0. The last call, to 0x100205ac, takes argc in a0, the saved original a1 in a1, the words behind the pointers in the slots at gp-0x7afc, gp-0x7af8, gp-0x7af4 and gp-0x7af0 in a2 through a5, and sp+0 and sp+0x30 in a6 and a7. Its return value is left in v0 as main's return value. The frame is 0x70 bytes, with fp, gp, a1 and ra saved at sp+0x48, sp+0x50, sp+0x58 and sp+0x60.
